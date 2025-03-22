@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>03  内存流 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. 基本使用方法1234567891011121314151617181920#include &lt;iostream&gt;#include &lt;sstream&gt;#include &lt;iomanip&gt;int main()&#123;    std::ostringstream os;     &#x2F;&#x2F;os &lt;&lt; std::setw(10) &lt;&lt; std">
+<meta property="og:type" content="article">
+<meta property="og:title" content="03  内存流">
+<meta property="og:url" content="http://example.com/2025/03/16/03-neicunliu/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 基本使用方法1234567891011121314151617181920#include &lt;iostream&gt;#include &lt;sstream&gt;#include &lt;iomanip&gt;int main()&#123;    std::ostringstream os;     &#x2F;&#x2F;os &lt;&lt; std::setw(10) &lt;&lt; std">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-16T10:41:18.000Z">
+<meta property="article:modified_time" content="2025-03-22T04:41:23.043Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-03-neicunliu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/16/03-neicunliu/" class="article-date">
+  <time class="dt-published" datetime="2025-03-16T10:41:18.000Z" itemprop="datePublished">2025-03-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cpp/">cpp</a>►<a class="article-category-link" href="/categories/cpp/%E6%B5%81/">流</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      03  内存流
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-基本使用方法"><a href="#1-基本使用方法" class="headerlink" title="1. 基本使用方法"></a>1. 基本使用方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;sstream&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os; </span><br><span class="line"></span><br><span class="line">    //os &lt;&lt; std::setw(10) &lt;&lt; std::setfill(&#x27;.&#x27;) &lt;&lt; 666;  //也可以进行格式控制</span><br><span class="line"></span><br><span class="line">    os &lt;&lt; 666; //向os写入数据，格式化输入，整数666被格式化为字符串&quot;666&quot;</span><br><span class="line">    std::string str = os.str(); //获取os中的数据， 即&quot;666&quot;</span><br><span class="line">    std::cout &lt;&lt; str &lt;&lt; std::endl; //输出&quot;666&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    std::istringstream is(str); //将str中的数据写入is</span><br><span class="line">    int num;</span><br><span class="line">    is &gt;&gt; num; //从is中读取数据， 格式化为整数类型，即666</span><br><span class="line">    std::cout &lt;&lt; num &lt;&lt; std::endl; //输出666</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-打开模式"><a href="#2-打开模式" class="headerlink" title="2. 打开模式"></a>2. 打开模式</h2><p>打开模式， 参考文件流。</p>
+<h2 id="3-注意"><a href="#3-注意" class="headerlink" title="3. 注意"></a>3. 注意</h2><p>str().c_str(), 转换为C字符串， 谨慎使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os; </span><br><span class="line">    os &lt;&lt; 666; //向os写入数据，格式化输入，整数666被格式化为字符串&quot;666&quot;</span><br><span class="line"></span><br><span class="line">    // os.str()返回的是右值</span><br><span class="line">    // 由于是右值，所以这行代码执行完，这个右值就会被销毁。</span><br><span class="line">    // 但是cstr作为C字符串， cstr2指向这个右值所在的内存地址。</span><br><span class="line">    auto cstr = os.str().c_str();  </span><br><span class="line">    // 所以下面这行代码是错误的</span><br><span class="line">    std::cout &lt;&lt; cstr &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    // 正确</span><br><span class="line">    std::cout &lt;&lt; os.str().c_str() &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-字符串拼接"><a href="#4-字符串拼接" class="headerlink" title="4. 字符串拼接"></a>4. 字符串拼接</h2><p>需要拼接字符串时不使用string, 而是使用stringstream更加方便。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os;</span><br><span class="line">    os &lt;&lt; &quot;Hello&quot;;</span><br><span class="line">    os &lt;&lt; &quot;, &quot;;</span><br><span class="line">    os &lt;&lt; &quot;world&quot;;</span><br><span class="line">    os &lt;&lt; &quot;!&quot;;</span><br><span class="line">    std::cout &lt;&lt; os.str() &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/16/03-neicunliu/" data-id="cm8jq2v6s00006qprd3qn2wbr" data-title="03  内存流" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/20/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/15/wp-global-styles-theme-document-12105/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Custom Styles</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CAD/">CAD</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cpp/">cpp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cpp/%E6%B5%81/">流</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">系统分析工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/uncategorized/">uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/virtualization/">virtualization</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/virtualization/VirtualBox/">VirtualBox</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/20/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/03-neicunliu/">03  内存流</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/wp-global-styles-theme-document-12105/">Custom Styles</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/wenjian-yu-neicun/">02  文件流</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/shuru-yu-shuchu/">01 输入 与 输出</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>02  文件流 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. 输出文件流12345678910#include &lt;fstream&gt;int main()&#123;    &#x2F;&#x2F;输出文件流    std::ofstream out(&quot;file&quot;);    out &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; std::endl;  &#x2F;&#x2F;向文件写入数据    out.close();">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02  文件流">
+<meta property="og:url" content="http://example.com/2025/03/15/wenjian-yu-neicun/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 输出文件流12345678910#include &lt;fstream&gt;int main()&#123;    &#x2F;&#x2F;输出文件流    std::ofstream out(&quot;file&quot;);    out &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; std::endl;  &#x2F;&#x2F;向文件写入数据    out.close();">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-03-15T14:36:36.000Z">
+<meta property="article:modified_time" content="2025-03-22T04:41:23.043Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-wenjian-yu-neicun" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/15/wenjian-yu-neicun/" class="article-date">
+  <time class="dt-published" datetime="2025-03-15T14:36:36.000Z" itemprop="datePublished">2025-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cpp/">cpp</a>►<a class="article-category-link" href="/categories/cpp/%E6%B5%81/">流</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      02  文件流
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-输出文件流"><a href="#1-输出文件流" class="headerlink" title="1. 输出文件流"></a>1. 输出文件流</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;fstream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //输出文件流</span><br><span class="line">    std::ofstream out(&quot;file&quot;);</span><br><span class="line">    out &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; std::endl;  //向文件写入数据</span><br><span class="line">    out.close();  //把缓存中的数据写入文件, 然后关闭文件</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-输入文件流"><a href="#2-输入文件流" class="headerlink" title="2. 输入文件流"></a>2. 输入文件流</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //输入文件流</span><br><span class="line">    std::ifstream in(&quot;file&quot;);</span><br><span class="line">    std::string line;</span><br><span class="line">    in &gt;&gt; line;  //从文件读取数据</span><br><span class="line">    std::cout &lt;&lt; line &lt;&lt; std::endl;</span><br><span class="line">    in.close();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>is_open() 检查文件是否打开</p>
+<h1 id="3-文件流的打开模式"><a href="#3-文件流的打开模式" class="headerlink" title="3. 文件流的打开模式"></a>3. 文件流的打开模式</h1><p>ios_base::ate</p>
+<p>起始位置在文件末尾</p>
+<p>ios_base::app</p>
+<p>追加模式，新行。</p>
+<p>ios_base::in</p>
+<p>ifstream的默认打开模式</p>
+<p>ios_base::out</p>
+<p>ofstream的默认打开模式</p>
+<p>ios_base::trunc</p>
+<p>截断模式， 删除文件中之前的内容， 然后开始写入新内容</p>
+<p>ios_base::binary</p>
+<p>二进制模式， 禁止系统进行特定的转换， 例如在Windows平台， 我们在文本模式下写入一个换行符， 系统实际上写入的是“\r\n”， 而不是“\n”， 使用二进制模式写入的就是“\n”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">std::ifstream in(&quot;file&quot;, std::ios::in  std::ios::app);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/15/wenjian-yu-neicun/" data-id="cm8jq2v7t001e6qpr7n7f1y2b" data-title="02  文件流" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/15/wp-global-styles-theme-document-12105/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Custom Styles
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/03/15/shuru-yu-shuchu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">01 输入 与 输出</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CAD/">CAD</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cpp/">cpp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cpp/%E6%B5%81/">流</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">系统分析工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/uncategorized/">uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/virtualization/">virtualization</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/virtualization/VirtualBox/">VirtualBox</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/03/20/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/03-neicunliu/">03  内存流</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/wp-global-styles-theme-document-12105/">Custom Styles</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/wenjian-yu-neicun/">02  文件流</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/shuru-yu-shuchu/">01 输入 与 输出</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -122,13 +122,456 @@
 
 
   
+    <article id="post-03-neicunliu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/16/03-neicunliu/" class="article-date">
+  <time class="dt-published" datetime="2025-03-16T10:41:18.000Z" itemprop="datePublished">2025-03-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cpp/">cpp</a>►<a class="article-category-link" href="/categories/cpp/%E6%B5%81/">流</a>
+  </div>
 
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/16/03-neicunliu/">03  内存流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="1-基本使用方法"><a href="#1-基本使用方法" class="headerlink" title="1. 基本使用方法"></a>1. 基本使用方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;sstream&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os; </span><br><span class="line"></span><br><span class="line">    //os &lt;&lt; std::setw(10) &lt;&lt; std::setfill(&#x27;.&#x27;) &lt;&lt; 666;  //也可以进行格式控制</span><br><span class="line"></span><br><span class="line">    os &lt;&lt; 666; //向os写入数据，格式化输入，整数666被格式化为字符串&quot;666&quot;</span><br><span class="line">    std::string str = os.str(); //获取os中的数据， 即&quot;666&quot;</span><br><span class="line">    std::cout &lt;&lt; str &lt;&lt; std::endl; //输出&quot;666&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    std::istringstream is(str); //将str中的数据写入is</span><br><span class="line">    int num;</span><br><span class="line">    is &gt;&gt; num; //从is中读取数据， 格式化为整数类型，即666</span><br><span class="line">    std::cout &lt;&lt; num &lt;&lt; std::endl; //输出666</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-打开模式"><a href="#2-打开模式" class="headerlink" title="2. 打开模式"></a>2. 打开模式</h2><p>打开模式， 参考文件流。</p>
+<h2 id="3-注意"><a href="#3-注意" class="headerlink" title="3. 注意"></a>3. 注意</h2><p>str().c_str(), 转换为C字符串， 谨慎使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os; </span><br><span class="line">    os &lt;&lt; 666; //向os写入数据，格式化输入，整数666被格式化为字符串&quot;666&quot;</span><br><span class="line"></span><br><span class="line">    // os.str()返回的是右值</span><br><span class="line">    // 由于是右值，所以这行代码执行完，这个右值就会被销毁。</span><br><span class="line">    // 但是cstr作为C字符串， cstr2指向这个右值所在的内存地址。</span><br><span class="line">    auto cstr = os.str().c_str();  </span><br><span class="line">    // 所以下面这行代码是错误的</span><br><span class="line">    std::cout &lt;&lt; cstr &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    // 正确</span><br><span class="line">    std::cout &lt;&lt; os.str().c_str() &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-字符串拼接"><a href="#4-字符串拼接" class="headerlink" title="4. 字符串拼接"></a>4. 字符串拼接</h2><p>需要拼接字符串时不使用string, 而是使用stringstream更加方便。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os;</span><br><span class="line">    os &lt;&lt; &quot;Hello&quot;;</span><br><span class="line">    os &lt;&lt; &quot;, &quot;;</span><br><span class="line">    os &lt;&lt; &quot;world&quot;;</span><br><span class="line">    os &lt;&lt; &quot;!&quot;;</span><br><span class="line">    std::cout &lt;&lt; os.str() &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/16/03-neicunliu/" data-id="cm8jq2v6s00006qprd3qn2wbr" data-title="03  内存流" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-wp-global-styles-theme-document-12105" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/15/wp-global-styles-theme-document-12105/" class="article-date">
+  <time class="dt-published" datetime="2025-03-15T15:45:33.000Z" itemprop="datePublished">2025-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/uncategorized/">uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/15/wp-global-styles-theme-document-12105/">Custom Styles</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>{“version”: 3, “isGlobalStylesUserThemeJSON”: true }</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/15/wp-global-styles-theme-document-12105/" data-id="cm8jq2v7v001l6qprfka9dkvc" data-title="Custom Styles" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-wenjian-yu-neicun" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/15/wenjian-yu-neicun/" class="article-date">
+  <time class="dt-published" datetime="2025-03-15T14:36:36.000Z" itemprop="datePublished">2025-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cpp/">cpp</a>►<a class="article-category-link" href="/categories/cpp/%E6%B5%81/">流</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/15/wenjian-yu-neicun/">02  文件流</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-输出文件流"><a href="#1-输出文件流" class="headerlink" title="1. 输出文件流"></a>1. 输出文件流</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;fstream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //输出文件流</span><br><span class="line">    std::ofstream out(&quot;file&quot;);</span><br><span class="line">    out &lt;&lt; &quot;Hello, World!&quot; &lt;&lt; std::endl;  //向文件写入数据</span><br><span class="line">    out.close();  //把缓存中的数据写入文件, 然后关闭文件</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-输入文件流"><a href="#2-输入文件流" class="headerlink" title="2. 输入文件流"></a>2. 输入文件流</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //输入文件流</span><br><span class="line">    std::ifstream in(&quot;file&quot;);</span><br><span class="line">    std::string line;</span><br><span class="line">    in &gt;&gt; line;  //从文件读取数据</span><br><span class="line">    std::cout &lt;&lt; line &lt;&lt; std::endl;</span><br><span class="line">    in.close();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>is_open() 检查文件是否打开</p>
+<h1 id="3-文件流的打开模式"><a href="#3-文件流的打开模式" class="headerlink" title="3. 文件流的打开模式"></a>3. 文件流的打开模式</h1><p>ios_base::ate</p>
+<p>起始位置在文件末尾</p>
+<p>ios_base::app</p>
+<p>追加模式，新行。</p>
+<p>ios_base::in</p>
+<p>ifstream的默认打开模式</p>
+<p>ios_base::out</p>
+<p>ofstream的默认打开模式</p>
+<p>ios_base::trunc</p>
+<p>截断模式， 删除文件中之前的内容， 然后开始写入新内容</p>
+<p>ios_base::binary</p>
+<p>二进制模式， 禁止系统进行特定的转换， 例如在Windows平台， 我们在文本模式下写入一个换行符， 系统实际上写入的是“\r\n”， 而不是“\n”， 使用二进制模式写入的就是“\n”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">std::ifstream in(&quot;file&quot;, std::ios::in  std::ios::app);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/15/wenjian-yu-neicun/" data-id="cm8jq2v7t001e6qpr7n7f1y2b" data-title="02  文件流" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-shuru-yu-shuchu" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/15/shuru-yu-shuchu/" class="article-date">
+  <time class="dt-published" datetime="2025-03-15T14:32:52.000Z" itemprop="datePublished">2025-03-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/cpp/">cpp</a>►<a class="article-category-link" href="/categories/cpp/%E6%B5%81/">流</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/15/shuru-yu-shuchu/">01 输入 与 输出</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>输入与输出分为<strong>格式化</strong>与 <strong>非格式化</strong>两种。</p>
+<h1 id="1-非格式化IO"><a href="#1-非格式化IO" class="headerlink" title="1. 非格式化IO"></a>1. 非格式化IO</h1><p>非格式化IO不涉及数据表示形式的变化。</p>
+<p>非格式化输入： get、read、getline、gcount<br>格式化输出： put、write、</p>
+<h1 id="2-格式化IO"><a href="#2-格式化IO" class="headerlink" title="2. 格式化IO"></a>2. 格式化IO</h1><p>使用移位操作符（“&lt;&lt;”、“&gt;&gt;”）来进行格式化输出，类型通过重载移位操作符来提供格式化IO功能。</p>
+<h2 id="2-1-格式控制"><a href="#2-1-格式控制" class="headerlink" title="2.1 格式控制"></a>2.1 格式控制</h2><ul>
+<li><strong>位掩码类型</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123;</span><br><span class="line">    int x =  888;</span><br><span class="line">    int y = -888;</span><br><span class="line">    char z = &#x27;6&#x27;;</span><br><span class="line">    std::cout.setf(std::ios_base::showpos);</span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; y &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; z &lt;&lt; std::endl;  // showpos对于char类型无效</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>输出：</strong><br>+999<br>-888<br>6</p>
+<ul>
+<li><strong>输出宽度控制</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123;</span><br><span class="line">    int x = 100;</span><br><span class="line">    std::cout.width(10);</span><br><span class="line">    std::cout.setf(std::ios_base::showpos);</span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line">// 输出， 以空格填充：      +100</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int main() &#123;</span><br><span class="line">    int x = 100;</span><br><span class="line">    std::cout.width(10);  // 触发后就会被重置为0</span><br><span class="line">    std::cout.fill(&#x27;.&#x27;);</span><br><span class="line">    std::cout.setf(std::ios_base::showpos);</span><br><span class="line">    std::cout &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line">// 输出: ......+100</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>操纵符</strong></li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    int x = 666;</span><br><span class="line">    int y = 888;</span><br><span class="line"></span><br><span class="line">    // std::setw()出发后就会被重置</span><br><span class="line">    std::cout &lt;&lt; std::showpos &lt;&lt; std::setw(10) &lt;&lt; x &lt;&lt; std::setw(10) &lt;&lt; y &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/15/shuru-yu-shuchu/" data-id="cm8jq2v7p000z6qpr5q80fk60" data-title="01 输入 与 输出" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-wp-global-styles-minimalistflex" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/12/wp-global-styles-minimalistflex/" class="article-date">
+  <time class="dt-published" datetime="2025-03-12T14:56:21.000Z" itemprop="datePublished">2025-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/uncategorized/">uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/12/wp-global-styles-minimalistflex/">Custom Styles</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>{“version”: 3, “isGlobalStylesUserThemeJSON”: true }</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/12/wp-global-styles-minimalistflex/" data-id="cm8jq2v7u001g6qprdvl62qr7" data-title="Custom Styles" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ptrace" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/11/ptrace/" class="article-date">
+  <time class="dt-published" datetime="2025-03-11T14:23:53.000Z" itemprop="datePublished">2025-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">系统分析工具</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/11/ptrace/">ptrace</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>先占个位， 有空再写</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/11/ptrace/" data-id="cm8jq2v7o000u6qpr6qrgfhbg" data-title="ptrace" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-149" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/11/149/" class="article-date">
+  <time class="dt-published" datetime="2025-03-11T14:21:40.000Z" itemprop="datePublished">2025-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/uncategorized/">uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/11/149/">Untitled Post - 10</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/11/149/" data-id="cm8jq2v7a00056qpr6e869szq" data-title="Untitled Post - 10" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-150" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/11/150/" class="article-date">
+  <time class="dt-published" datetime="2025-03-11T14:21:40.000Z" itemprop="datePublished">2025-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/uncategorized/">uncategorized</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/11/150/">Untitled Post - 11</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/11/150/" data-id="cm8jq2v7b00076qprdx9u8sde" data-title="Untitled Post - 11" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-ipmingling" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/11/ipmingling/" class="article-date">
+  <time class="dt-published" datetime="2025-03-11T14:07:07.000Z" itemprop="datePublished">2025-03-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">系统分析工具</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/11/ipmingling/">ip命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-基本用法"><a href="#1-基本用法" class="headerlink" title="1.  基本用法"></a>1.  基本用法</h1><p><code>ip link</code>  # 查看网络设备运行状态。 <code>ip -s link</code>  # 查看网络设备运行状态， 包含数据收发的详细信息。 <code>ip addr </code> # 查看网络接口信息。 <code>ip addr show wlp4s0</code> # 查看指定设备的信息， 例如我的无限网卡wlp4s0。 <code>ip route</code>  # 查看路由信息。 <code>ip addr add</code> #增加ip地址。</p>
+<hr>
+<h1 id="2-命令输出解释"><a href="#2-命令输出解释" class="headerlink" title="2.  命令输出解释"></a><strong>2.  命令输出解释</strong></h1><h2 id="2-1-ip-link"><a href="#2-1-ip-link" class="headerlink" title="2.1 ip link"></a>2.1 ip link</h2><p><img src="http://www.lizoco.top/wp-content/uploads/2025/03/2025031114451544.png"> 可以看到， 我的电脑上有4张网卡： <code>lo:</code> 本地回环。 <code>eno1:</code> 一个板载的以太网端口， en表示以太网。 <code>enp3s0:</code> 一个通过PCI总线连接的以太网端口，p表示PCI，3, s, 0应该也是硬件总线相关的。 <code>wlp4s0:</code>  一个无线网卡。 <code>NO-CARRIER：</code> 表明它也没有建立物理连接。 <code>LOWER_UP：</code> 标志，这意味着它已成功与一个无线接入点建立了连接。 在虚拟机中网卡一般为eth0, 因为找不到相关的信息来命名。</p>
+<h2 id="2-2-ip-route"><a href="#2-2-ip-route" class="headerlink" title="2.2  ip route"></a>2.2  ip route</h2><p><img src="http://www.lizoco.top/wp-content/uploads/2025/03/202503111411397.png"> <strong>第一行：</strong> <strong>default:</strong> 表示这是一条默认路由。当一个数据包的目的地不在其他更具体的路由表中时，将使用此路由。 <strong>via 192.168.251.245</strong>: 这是网关的IP地址，所有非本地的数据包都将通过这个IP地址进行转发。 <strong>dev wlp4s0</strong>: 数据将通过名为 wlp4s0 的网络接口发送。通常，这种命名方式表示这是一个无线网络接口。 <strong>proto dhcp</strong>: 路由是通过DHCP协议自动获取的。 <strong>src 192.168.251.39</strong>: 当有数据需要发送到外部网络时，将会使用这个源IP地址。 <strong>metric 600</strong>: 路由的优先级度量值，数字越小表示优先级越高。 <strong>第二行：</strong> <strong>192.168.251.0&#x2F;24:</strong> 这是一个子网定义，表示所有目标为 192.168.251.X (X的范围是0到255)的流量都属于这个子网。 <strong>dev wlp4s0:</strong> 指定数据将通过名为 wlp4s0 的网络接口发送。 <strong>proto kernel:</strong> 表明这条路由是由内核根据接口配置自动生成的。 <strong>scope link:</strong> 表示这个路由适用于直接连接到同一链路的设备。 <strong>src 192.168.251.39:</strong> 发往该子网的数据包将使用这个源地址。 <strong>metric 600:</strong> 同样代表了这条路由的优先级度量值。</p>
+<hr>
+<h1 id="3-给指定网口添加-删除一个IP"><a href="#3-给指定网口添加-删除一个IP" class="headerlink" title="3.  给指定网口添加&#x2F;删除一个IP"></a>3.  给指定网口添加&#x2F;删除一个IP</h1><p><code>sudo ip addr add 192.168.251.101/24 dev eth0</code> <code>sudo ip addr del 192.168.251.101/24 dev eth0</code> 这都是临时修改， 重启后就会失效。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/11/ipmingling/" data-id="cm8jq2v7m000p6qprd13b6r11" data-title="ip命令" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/CAD/">CAD</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/cpp/">cpp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/cpp/%E6%B5%81/">流</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/%E7%B3%BB%E7%BB%9F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">系统分析工具</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/uncategorized/">uncategorized</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/virtualization/">virtualization</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/virtualization/VirtualBox/">VirtualBox</a></li></ul></li></ul>
+    </div>
+  </div>
+
 
   
     
@@ -140,7 +583,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">March 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">January 2025</a></li></ul>
     </div>
   </div>
 
@@ -154,6 +597,22 @@
         
           <li>
             <a href="/2025/03/20/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/16/03-neicunliu/">03  内存流</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/wp-global-styles-theme-document-12105/">Custom Styles</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/wenjian-yu-neicun/">02  文件流</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/15/shuru-yu-shuchu/">01 输入 与 输出</a>
           </li>
         
       </ul>
