@@ -118,7 +118,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -207,101 +207,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id><a href="#" class="headerlink" title></a></h1><h1 id="-1"><a href="#-1" class="headerlink" title></a></h1><h1 id="-2"><a href="#-2" class="headerlink" title></a></h1>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/16/03-neicunliu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="阿左">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="阿左笔记">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | 阿左笔记">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/16/03-neicunliu/" class="post-title-link" itemprop="url">03  内存流</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2025-03-16 18:41:18" itemprop="dateCreated datePublished" datetime="2025-03-16T18:41:18+08:00">2025-03-16</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-22 12:41:23" itemprop="dateModified" datetime="2025-03-22T12:41:23+08:00">2025-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="1-基本使用方法"><a href="#1-基本使用方法" class="headerlink" title="1. 基本使用方法"></a>1. 基本使用方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;sstream&gt;</span><br><span class="line">#include &lt;iomanip&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os; </span><br><span class="line"></span><br><span class="line">    //os &lt;&lt; std::setw(10) &lt;&lt; std::setfill(&#x27;.&#x27;) &lt;&lt; 666;  //也可以进行格式控制</span><br><span class="line"></span><br><span class="line">    os &lt;&lt; 666; //向os写入数据，格式化输入，整数666被格式化为字符串&quot;666&quot;</span><br><span class="line">    std::string str = os.str(); //获取os中的数据， 即&quot;666&quot;</span><br><span class="line">    std::cout &lt;&lt; str &lt;&lt; std::endl; //输出&quot;666&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    std::istringstream is(str); //将str中的数据写入is</span><br><span class="line">    int num;</span><br><span class="line">    is &gt;&gt; num; //从is中读取数据， 格式化为整数类型，即666</span><br><span class="line">    std::cout &lt;&lt; num &lt;&lt; std::endl; //输出666</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="2-打开模式"><a href="#2-打开模式" class="headerlink" title="2. 打开模式"></a>2. 打开模式</h2><p>打开模式， 参考文件流。</p>
-<h2 id="3-注意"><a href="#3-注意" class="headerlink" title="3. 注意"></a>3. 注意</h2><p>str().c_str(), 转换为C字符串， 谨慎使用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os; </span><br><span class="line">    os &lt;&lt; 666; //向os写入数据，格式化输入，整数666被格式化为字符串&quot;666&quot;</span><br><span class="line"></span><br><span class="line">    // os.str()返回的是右值</span><br><span class="line">    // 由于是右值，所以这行代码执行完，这个右值就会被销毁。</span><br><span class="line">    // 但是cstr作为C字符串， cstr2指向这个右值所在的内存地址。</span><br><span class="line">    auto cstr = os.str().c_str();  </span><br><span class="line">    // 所以下面这行代码是错误的</span><br><span class="line">    std::cout &lt;&lt; cstr &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">    // 正确</span><br><span class="line">    std::cout &lt;&lt; os.str().c_str() &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="4-字符串拼接"><a href="#4-字符串拼接" class="headerlink" title="4. 字符串拼接"></a>4. 字符串拼接</h2><p>需要拼接字符串时不使用string, 而是使用stringstream更加方便。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    std::ostringstream os;</span><br><span class="line">    os &lt;&lt; &quot;Hello&quot;;</span><br><span class="line">    os &lt;&lt; &quot;, &quot;;</span><br><span class="line">    os &lt;&lt; &quot;world&quot;;</span><br><span class="line">    os &lt;&lt; &quot;!&quot;;</span><br><span class="line">    std::cout &lt;&lt; os.str() &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -422,7 +327,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/15/wenjian-yu-neicun/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/15/02-%E6%96%87%E4%BB%B6%E6%B5%81%E5%8A%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -440,7 +345,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/15/wenjian-yu-neicun/" class="post-title-link" itemprop="url">02  文件流</a>
+          <a href="/2025/03/15/02-%E6%96%87%E4%BB%B6%E6%B5%81%E5%8A%A8/" class="post-title-link" itemprop="url">02  文件流</a>
         </h2>
 
         <div class="post-meta-container">
@@ -527,7 +432,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/15/shuru-yu-shuchu/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/15/01-%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -545,7 +450,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/15/shuru-yu-shuchu/" class="post-title-link" itemprop="url">01 输入 与 输出</a>
+          <a href="/2025/03/15/01-%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA/" class="post-title-link" itemprop="url">01 输入 与 输出</a>
         </h2>
 
         <div class="post-meta-container">
@@ -635,7 +540,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/11/ipmingling/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/11/ip%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -653,7 +558,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/11/ipmingling/" class="post-title-link" itemprop="url">ip命令</a>
+          <a href="/2025/03/11/ip%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">ip命令</a>
         </h2>
 
         <div class="post-meta-container">
@@ -729,7 +634,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/10/125/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/10/00-%E6%B5%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -747,7 +652,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/10/125/" class="post-title-link" itemprop="url">00  IOStream  概述</a>
+          <a href="/2025/03/10/00-%E6%B5%81/" class="post-title-link" itemprop="url">00  IOStream  概述</a>
         </h2>
 
         <div class="post-meta-container">
@@ -835,7 +740,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/10/wangluominglingzhi-ss/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/10/ss%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -853,7 +758,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/10/wangluominglingzhi-ss/" class="post-title-link" itemprop="url">网络命令之 “ss”</a>
+          <a href="/2025/03/10/ss%E5%91%BD%E4%BB%A4/" class="post-title-link" itemprop="url">网络命令之 “ss”</a>
         </h2>
 
         <div class="post-meta-container">
@@ -927,7 +832,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/09/virtualboxwangluopeizhi/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/09/VirtualBox%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -945,7 +850,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2025/03/09/virtualboxwangluopeizhi/" class="post-title-link" itemprop="url">virtualBox网络配置</a>
+          <a href="/2025/03/09/VirtualBox%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">virtualBox网络配置</a>
         </h2>
 
         <div class="post-meta-container">
