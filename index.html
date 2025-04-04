@@ -118,13 +118,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -141,6 +141,106 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2025/04/04/cpp20%E7%9A%84HelloWorld/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2025/04/04/cpp20%E7%9A%84HelloWorld/" class="post-title-link" itemprop="url">c++20的HelloWorld</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2025-04-04 11:22:53 / 修改时间：11:31:55" itemprop="dateCreated datePublished" datetime="2025-04-04T11:22:53+08:00">2025-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/C-20/" itemprop="url" rel="index"><span itemprop="name">C++20</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <ul>
+<li><a href="#1-%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83">1. 编译环境</a><ul>
+<li><a href="#11-clang">1.1. Clang</a></li>
+<li><a href="#12-libc">1.2. libc++</a></li>
+<li><a href="#13-libclang-rt-xx-dev">1.3. libclang-rt-xx-dev</a></li>
+</ul>
+</li>
+<li><a href="#2-%E7%BC%96%E8%AF%91">2. 编译</a></li>
+</ul>
+<h1 id="1-编译环境"><a href="#1-编译环境" class="headerlink" title="1. 编译环境"></a>1. 编译环境</h1><h2 id="1-1-Clang"><a href="#1-1-Clang" class="headerlink" title="1.1. Clang"></a>1.1. Clang</h2><p>LLVM前端工具，使用apt命令安装clang-xx，“xx”为版本号。<br>前端工具包含三部分：<br>clang++-19， 编译链接C++。<br>clang-19，编译链接C。<br>clang-cpp-19， 只进行预处理工作。   </p>
+<h2 id="1-2-libc"><a href="#1-2-libc" class="headerlink" title="1.2. libc++"></a>1.2. libc++</h2><p>LLVM标准库，使用apt命令安装，包括libc++-xx-dev和libc++abi-xx-dev，“xx”为版本号。</p>
+<h2 id="1-3-libclang-rt-xx-dev"><a href="#1-3-libclang-rt-xx-dev" class="headerlink" title="1.3. libclang-rt-xx-dev"></a>1.3. libclang-rt-xx-dev</h2><p>LLVM运行时库，使用apt命令安装，包括libclang-rt-xx-dev，“xx”为版本号。</p>
+<h1 id="2-编译"><a href="#2-编译" class="headerlink" title="2. 编译"></a>2. 编译</h1><p><code>看如下main.cpp文件：</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &lt;iostream&gt;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Hello, World!&quot;</span> &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>编译命令</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">clang++-19 \</span><br><span class="line">        -std=c++20 \</span><br><span class="line">        -stdlib=libc++ \           <span class="comment"># 指定使用 LLVM 的 libc++ 标准库（而非 GCC 的 libstdc++）。</span></span><br><span class="line">        -rtlib=compiler-rt \       <span class="comment"># 使用LLVM的compiler-rt 运行时库替代 GCC 的 libgcc。</span></span><br><span class="line">        -fimplicit-modules \       <span class="comment"># 启用头文件到模块的自动转换。</span></span><br><span class="line">        -fimplicit-module-maps \   <span class="comment"># 启用模块映射文件的自动生成。</span></span><br><span class="line">        main.cpp -o hello</span><br></pre></td></tr></table></figure>
+<p>关于<code>-fimplicit-modules -fimplicit-module-maps</code>，先不研究细节，当下只需要知道，在传统的C&#x2F;C++项目中，<br>代码通常通过头文件（.h或.hpp）组织，并通过 #include 指令来引入其他头文件的内容。然而，<br>随着C++20引入的模块特性，这种方式被更高效的模块系统所补充甚至替代。这两个命令选项正是帮助实现这种过渡的关键。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -178,9 +278,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-03-30 15:50:24 / 修改时间：16:50:42" itemprop="dateCreated datePublished" datetime="2025-03-30T15:50:24+08:00">2025-03-30</time>
+      <time title="创建时间：2025-03-30 15:50:24" itemprop="dateCreated datePublished" datetime="2025-03-30T15:50:24+08:00">2025-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-04 11:29:49" itemprop="dateModified" datetime="2025-04-04T11:29:49+08:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -188,11 +294,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
         </span>
     </span>
 
@@ -363,9 +469,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2025-03-30 13:47:37 / 修改时间：17:22:15" itemprop="dateCreated datePublished" datetime="2025-03-30T13:47:37+08:00">2025-03-30</time>
+      <time title="创建时间：2025-03-30 13:47:37" itemprop="dateCreated datePublished" datetime="2025-03-30T13:47:37+08:00">2025-03-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-04-04 11:29:54" itemprop="dateModified" datetime="2025-04-04T11:29:54+08:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -373,11 +485,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
         </span>
     </span>
 
@@ -485,7 +597,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-30 15:52:56" itemprop="dateModified" datetime="2025-03-30T15:52:56+08:00">2025-03-30</time>
+      <time title="修改时间：2025-04-04 11:29:39" itemprop="dateModified" datetime="2025-04-04T11:29:39+08:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -493,11 +605,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
         </span>
     </span>
 
@@ -596,7 +708,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-30 15:49:38" itemprop="dateModified" datetime="2025-03-30T15:49:38+08:00">2025-03-30</time>
+      <time title="修改时间：2025-04-04 11:29:32" itemprop="dateModified" datetime="2025-04-04T11:29:32+08:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -604,11 +716,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
         </span>
     </span>
 
@@ -691,7 +803,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-30 15:55:18" itemprop="dateModified" datetime="2025-03-30T15:55:18+08:00">2025-03-30</time>
+      <time title="修改时间：2025-04-04 11:30:02" itemprop="dateModified" datetime="2025-04-04T11:30:02+08:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -699,11 +811,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
         </span>
     </span>
 
@@ -796,7 +908,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-30 15:49:31" itemprop="dateModified" datetime="2025-03-30T15:49:31+08:00">2025-03-30</time>
+      <time title="修改时间：2025-04-04 11:29:44" itemprop="dateModified" datetime="2025-04-04T11:29:44+08:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -804,11 +916,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
         </span>
     </span>
 
@@ -904,7 +1016,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2025-03-30 17:08:49" itemprop="dateModified" datetime="2025-03-30T17:08:49+08:00">2025-03-30</time>
+      <time title="修改时间：2025-04-04 11:30:15" itemprop="dateModified" datetime="2025-04-04T11:30:15+08:00">2025-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -912,11 +1024,11 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/" itemprop="url" rel="index"><span itemprop="name">cpp</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/" itemprop="url" rel="index"><span itemprop="name">现代C++</span></a>
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/cpp/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
+          <a href="/categories/%E7%8E%B0%E4%BB%A3C/%E6%B5%81/" itemprop="url" rel="index"><span itemprop="name">流</span></a>
         </span>
     </span>
 
