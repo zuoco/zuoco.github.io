@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 	<head>
 		
-<title>00 Deskflow介绍 - 阿左笔记</title>
+<title>00 Deskflow介绍与使用 - 阿左笔记</title>
 <meta charset="utf-8" />
 <meta name="keywords" content="" />
 <meta
@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1, maximum-scale=5"
 />
 <meta name="generator" content="Hexo 7.3.0">
-<link rel="stylesheet" href="/css/style.css?v=1744516448839">
+<link rel="stylesheet" href="/css/style.css?v=1744646045693">
 <link rel="shortcut icon" href="/mylogo.png" type="image/png" />
 <link
     rel="stylesheet"
@@ -21,7 +21,7 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/solarized-light.css"
 />
-<script src="/js/core.js?v=1744516448839"></script>
+<script src="/js/core.js?v=1744646045693"></script>
 
 
 
@@ -44,7 +44,48 @@
         <div class="content">
 	<div class="container">
 		<article class="post">
-			
+			<ul>
+<li><a href="#1-deskflow%E4%BB%8B%E7%BB%8D">1. Deskflow介绍</a></li>
+<li><a href="#2-%E5%8A%9F%E8%83%BD">2. 功能</a></li>
+<li><a href="#3-%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE">3. 软件配置</a></li>
+<li><a href="#4-%E6%9C%8D%E5%8A%A1%E7%AB%AF">4. 服务端</a></li>
+<li><a href="#5-%E9%94%AE%E9%BC%A0%E5%9C%A8pc%E4%B9%8B%E9%97%B4%E7%9A%84%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91">5. 键鼠在PC之间的切换逻辑</a></li>
+<li><a href="#6-%E5%AE%A2%E6%88%B7%E7%AB%AF">6. 客户端</a></li>
+</ul>
+<h1 id="1-Deskflow介绍"><a href="#1-Deskflow介绍" class="headerlink" title="1. Deskflow介绍"></a>1. Deskflow介绍</h1><p>在多台电脑上共享一套键鼠，支持Windows、Linux、MacOS。<br>我们以1.21.2版本为例，介绍一下软件的功能，<a target="_blank" rel="noopener" href="https://github.com/deskflow/deskflow">Deskflow下载</a>。</p>
+<h1 id="2-功能"><a href="#2-功能" class="headerlink" title="2. 功能"></a>2. 功能</h1><p>首次启动软件时，需要选择当前的电脑模式，是作为服务端还是客户端，界面如下：<br><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/Deskflow.svg"><br>接入物理键盘鼠标的就是服务端，其他电脑就是客户端。</p>
+<h1 id="3-软件配置"><a href="#3-软件配置" class="headerlink" title="3. 软件配置"></a>3. 软件配置</h1><p>【Edit】–&gt;【Preferences】<br><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE.png"><br>有三项配置：Basics、APP、Enable TSL Encryption。<br><code>1. Basics</code>：</p>
+<ul>
+<li>阻止计算机休眠。</li>
+<li>使用服务器键盘语言（该配置在客户端上使用），因为客户端和服务端键盘语言可能不一致，统一使用服务器键盘语言，这样就一致了。</li>
+<li>反转鼠标滚轮滚动时页面滚动方向（该配置在客户端上使用），这算是一个个性化配置。</li>
+</ul>
+<p><code>2. APP</code>：</p>
+<ul>
+<li>应用启动时检查更新。</li>
+<li>关闭应用窗口时，后台运行。</li>
+<li>后台启动。</li>
+<li>Tray Icon style，系统托盘图标样式。</li>
+</ul>
+<p><code>3. Enable TSL Encryption</code>：     </p>
+<ul>
+<li>启用TSL加密，这是一个安全配置。</li>
+</ul>
+<p><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE.png">        </p>
+<ul>
+<li>Network Address，配置网络地址，默认即可。</li>
+<li>Logs，配置日志文件保存路径、日志级别。</li>
+</ul>
+<p><code>服务端和客户端在这一层面的配置界面是一样的。</code></p>
+<h1 id="4-服务端"><a href="#4-服务端" class="headerlink" title="4. 服务端"></a>4. 服务端</h1><p><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE.png"><br>(2) 加载已有的配置文件，如果没有现成的配置文件，就点击【Configure Server】。<br>(1) 配置服务器信息，界面如下：<br><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png">    </p>
+<p><code>【Computers】</code><br>该项设置配置客户端与服务端的布局，中间的<code>GEM12</code>是服务器，服务器周围的格子用于放置客户端，通过拖动右上角的电脑图标来创建客户端PC，如下图所示：<br><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF.png"><br>双击创建的客户端PC，就可以配置客户端的信息了，如下图所示：<br><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE.png"><br>该页面中需要注意的是Fixes，部分按键在一些平台上不可用，可以通过Fixes来修复，例如在Linux系统上Scroll Lock键不可用。        </p>
+<h1 id="5-键鼠在PC之间的切换逻辑"><a href="#5-键鼠在PC之间的切换逻辑" class="headerlink" title="5. 键鼠在PC之间的切换逻辑"></a>5. 键鼠在PC之间的切换逻辑</h1><p><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91.png"><br>红框区域提供了两种切换方式：    </p>
+<ul>
+<li>在两台PC之间的边界超过指定时间切换到对应的PC。    </li>
+<li>在指定的时间内，两次tap切换到对应的PC，这个没有好像有BUG，不起作用。</li>
+</ul>
+<h1 id="6-客户端"><a href="#6-客户端" class="headerlink" title="6. 客户端"></a>6. 客户端</h1><p>客户端配置： 【3. 软件配置】<br>客户端使用：<br><img src="/2025/04/06/Deskflow-%E4%BB%8B%E7%BB%8D%E4%B8%8E%E4%BD%BF%E7%94%A8/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.png"><br>输入服务器IP或者服务器名称，然后点击连接。</p>
+
 			<br>
 			
 		</article>
