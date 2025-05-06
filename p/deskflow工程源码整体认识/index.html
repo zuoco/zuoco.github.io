@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 项目目录结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 deskflow-1.21.2/ ├── cmake/ ├── CMakeLists.txt ├── cspell.json ├── deploy/ ├── doc/ ├── src/ ├── LICENSE ├── LICENSES/ ├── README.md ├── REUSE.toml ├── SECURITY.md ├── sonar-project.properties ├── vcpkg-configuration.json └── vcpkg.json 下面大概介绍一下主要文件的用途：\n">
+<title>DeskFlow工程源码整体认识</title>
+
+<link rel='canonical' href='https://zuoco.github.io/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/'>
+
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="DeskFlow工程源码整体认识">
+<meta property='og:description' content="1. 项目目录结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 deskflow-1.21.2/ ├── cmake/ ├── CMakeLists.txt ├── cspell.json ├── deploy/ ├── doc/ ├── src/ ├── LICENSE ├── LICENSES/ ├── README.md ├── REUSE.toml ├── SECURITY.md ├── sonar-project.properties ├── vcpkg-configuration.json └── vcpkg.json 下面大概介绍一下主要文件的用途：\n">
+<meta property='og:url' content='https://zuoco.github.io/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/'>
+<meta property='og:site_name' content='阿左笔记'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-06T20:50:21&#43;08:00'/><meta property='article:modified_time' content='2025-05-06T20:50:21&#43;08:00'/><meta property='og:image' content='https://zuoco.github.io/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/AAA.jpg' />
+<meta name="twitter:title" content="DeskFlow工程源码整体认识">
+<meta name="twitter:description" content="1. 项目目录结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 deskflow-1.21.2/ ├── cmake/ ├── CMakeLists.txt ├── cspell.json ├── deploy/ ├── doc/ ├── src/ ├── LICENSE ├── LICENSES/ ├── README.md ├── REUSE.toml ├── SECURITY.md ├── sonar-project.properties ├── vcpkg-configuration.json └── vcpkg.json 下面大概介绍一下主要文件的用途：\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://zuoco.github.io/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/AAA.jpg' />
+    <link rel="shortcut icon" href="/mylogo.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/mylogo_hu_f20dd4e72a570e6a.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🏡</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">阿左笔记</a></h1>
+            <h2 class="site-description">妖魔鬼怪快离开</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://space.bilibili.com/267707178?spm_id_from=333.934.0.0'
+                        target="_blank"
+                        title="bilibili"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/zuoco'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%8F%8B%E6%83%85%E9%93%BE%E6%8E%A5/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友情链接</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="https://zuoco.github.io/en/" >English</option>
+                                
+                                    <option value="https://zuoco.github.io/" selected>简体中文</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#11-vcpkgjson和vcpkg-configurationjson">1.1. vcpkg.json和vcpkg-configuration.json</a></li>
+    <li><a href="#12-sonar-projectproperties">1.2. sonar-project.properties</a></li>
+    <li><a href="#13-securitymd">1.3. SECURITY.md</a></li>
+    <li><a href="#14-reseuetoml">1.4. RESEUE.toml</a></li>
+    <li><a href="#15-license">1.5. LICENSE</a></li>
+    <li><a href="#16-cspelljson">1.6. cspell.json</a></li>
+    <li><a href="#17-目录licenses">1.7. 目录LICENSES</a></li>
+    <li><a href="#18-目录src">1.8. 目录src</a></li>
+    <li><a href="#19-目录deploy">1.9. 目录deploy</a></li>
+    <li><a href="#110-cmake">1.10. cmake</a></li>
+    <li><a href="#111-doc">1.11. doc</a></li>
+  </ol>
+
+  <ol>
+    <li><a href="#22-lib">2.2. lib</a></li>
+    <li><a href="#21-apps">2.1. apps</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">
+                <img src="/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/AAA_hu_f23f4b3a3c860b7.jpg"
+                        srcset="/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/AAA_hu_f23f4b3a3c860b7.jpg 800w, /p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/AAA_hu_f6c9e25f66bd8094.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post DeskFlow工程源码整体认识" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/" style="background-color: #8B4513; color: #FFFFFF;">
+                《开源项目赏析》
+            </a>
+        
+            <a href="/categories/deskflow/" >
+                DeskFlow
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">DeskFlow工程源码整体认识</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2025-05-05</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="1-项目目录结构">1. 项目目录结构
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">deskflow-1.21.2/
+</span></span><span class="line"><span class="cl">├── cmake/
+</span></span><span class="line"><span class="cl">├── CMakeLists.txt
+</span></span><span class="line"><span class="cl">├── cspell.json
+</span></span><span class="line"><span class="cl">├── deploy/
+</span></span><span class="line"><span class="cl">├── doc/
+</span></span><span class="line"><span class="cl">├── src/
+</span></span><span class="line"><span class="cl">├── LICENSE
+</span></span><span class="line"><span class="cl">├── LICENSES/
+</span></span><span class="line"><span class="cl">├── README.md
+</span></span><span class="line"><span class="cl">├── REUSE.toml
+</span></span><span class="line"><span class="cl">├── SECURITY.md
+</span></span><span class="line"><span class="cl">├── sonar-project.properties
+</span></span><span class="line"><span class="cl">├── vcpkg-configuration.json
+</span></span><span class="line"><span class="cl">└── vcpkg.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面大概介绍一下主要文件的用途：</p>
+<h2 id="11-vcpkgjson和vcpkg-configurationjson">1.1. vcpkg.json和vcpkg-configuration.json
+</h2><p>vcpkg是一个C++包管理工具，vcpkg-configuration.json 和 vcpkg.json 协同工作。vcpkg.json 列出了项目所需的依赖包，而 vcpkg-configuration.json 则指定了从哪些地方获取这些包。当执行 vcpkg install 命令时，vcpkg 会先依据 vcpkg-configuration.json 配置的注册表，再按照 vcpkg.json 列出的依赖，去下载、编译并集成所需的包到项目中。</p>
+<h2 id="12-sonar-projectproperties">1.2. sonar-project.properties
+</h2><p>代码质量管理相关的文件。</p>
+<h2 id="13-securitymd">1.3. SECURITY.md
+</h2><p>声明安全策略和漏洞管理流程。</p>
+<h2 id="14-reseuetoml">1.4. RESEUE.toml
+</h2><p>统一管理Deskflow项目的版权归属和许可证声明，确保所有文件符合开源合规要求。</p>
+<h2 id="15-license">1.5. LICENSE
+</h2><p>统一管理Deskflow项目的版权归属和许可证声明，确保所有文件符合开源合规要求。</p>
+<h2 id="16-cspelljson">1.6. cspell.json
+</h2><p>拼写检查配置文件，用于定义 Deskflow 项目中允许的特定术语、技术词汇和专有名词，确保拼写检查工具（如 VS Code 的 Code Spell Checker）在扫描代码时 忽略合法词汇，同时标记拼写错误。</p>
+<h2 id="17-目录licenses">1.7. 目录LICENSES
+</h2><p>包含四种开源许可证文件，定义了项目各组件的合法使用、修改和分发规则。</p>
+<h2 id="18-目录src">1.8. 目录src
+</h2><p>包含源代码文件，包括主程序、工具类、配置文件等。</p>
+<h2 id="19-目录deploy">1.9. 目录deploy
+</h2><p>部署脚本,定义了在不同平台上的部署方法.</p>
+<h2 id="110-cmake">1.10. cmake
+</h2><p>cmake模块,定义了cmake的配置文件,负责构建过程中的依赖检查.</p>
+<h2 id="111-doc">1.11. doc
+</h2><p>文档,包括用户指南、开发指南等.</p>
+<h1 id="2-子目录src">2. 子目录src
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">src/
+</span></span><span class="line"><span class="cl">├── apps/
+</span></span><span class="line"><span class="cl">├── CMakeLists.txt
+</span></span><span class="line"><span class="cl">├── lib/
+</span></span><span class="line"><span class="cl">└── test/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>面对一个软件,我们可以将代码分为两部分: <code>架构层代码</code>、<code>业务层代码</code>。 <br>
+<code>apps</code>: 业务层代码，包含了具体的业务逻辑和功能实现。
+<code>lib</code>: 架构层代码，包含了框架、工具类、配置文件等。  <br>
+<code>test</code>: 测试代码，包含了单元测试、集成测试等。</p>
+<h2 id="22-lib">2.2. lib
+</h2><p>先空着。</p>
+<h2 id="21-apps">2.1. apps
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apps/
+</span></span><span class="line"><span class="cl">├── CMakeLists.txt
+</span></span><span class="line"><span class="cl">├── deskflow-client/
+</span></span><span class="line"><span class="cl">├── deskflow-core/
+</span></span><span class="line"><span class="cl">├── deskflow-daemon/
+</span></span><span class="line"><span class="cl">├── deskflow-gui/
+</span></span><span class="line"><span class="cl">├── deskflow-server/
+</span></span><span class="line"><span class="cl">└── res
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>apps目录下就是业务层的代码了，通过第一节，我们知道，DeskFlow这个软件是一个“服务器－客户端”的模式，所以:     <br>
+<code>deskflow-server</code>:<br>
+就是服务端代码，DeskFlow编译成功后有３个可执行文件，其中deskflow-server就是服务端程序，也就运行在实际插入物理键盘鼠标的电脑;  <br>
+<code>deskflow-client</code>: <br>
+就是客户端代码，和服务端相对，DeskFlow编译成功后有３个可执行文件，其中deskflow-client就是客户端程序，;    <br>
+<code>deskflow-core</code>: <br>
+DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-core程序，既是客户端也是服务端，运行是根据传入的命令行参数来判断是运行为服务端还是运行为客户端。    <br>
+<code>deskflow-gui</code>:</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">
+        
+        
+            <div class="article-image">
+                <img src="/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/AAA.e77cf777f4622c9f1cc0a8e54ecfc1d6_hu_2a8a5114f6562681.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy"
+                        alt="Featured image of post Desklow初步认识"
+                        
+                        data-hash="md5-53z3d/RiLJ8cwKjlTs/B1g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Desklow初步认识</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 阿左阿右
+    </section>
+    
+    <section class="powerby">
+        使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建 <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.30.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
