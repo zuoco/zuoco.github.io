@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. vector 模板类，动态数组，维护一块连续的存储空间，容量可动态改变。 size: 当前元素个数。 cap: 当前容量。 buffer: 指向一块连续的存储空间。\n2. 容量 empty、size，capacity方法。 shrink_to_fit()，如果不再需要填充元素了，那就可以调用shrink_to_fit()方法，将容量缩减到size大小。本质就是在申请一块size大小的内存，然后将原来的元素拷贝到新的内存中，然后释放原来的内存。 3. 访问 下标访问，和array一样，可以使用[]访问元素。 支持front、back、data方法。 swap方法，交换两个vector对象，实际是交换指针，所以比array要快(注意是交换两个vector对象，而不是一个vector对象中的两个元素)。 关于swap方法，有一个常用的技巧是结合它来“清空”一个向量并释放其内存: 1 std::vector&lt;int&gt;().swap(vec1); std::vector&lt;int&gt;() 创建了一个临时的、空的 vector 对象，.swap(vec1) 调用了这个临时对象的 swap 方法，将它与 vec1 的内容交换。\n交换后，vec1 变成一个空的 vector（和临时对象交换后的结果），临时对象现在持有原来 vec1 的所有内存资源，当这行语句结束时，临时对象超出作用域并被销毁，它所持有的内存也被一并释放，如果使用clear()，则vec1会被清空，容量没有重置，内存不会被释放。\n">
 <title>vector</title>
 
-<link rel='canonical' href='http://localhost:1313/p/vector/'>
+<link rel='canonical' href='https://zuoco.github.io/p/vector/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="vector">
 <meta property='og:description' content="1. vector 模板类，动态数组，维护一块连续的存储空间，容量可动态改变。 size: 当前元素个数。 cap: 当前容量。 buffer: 指向一块连续的存储空间。\n2. 容量 empty、size，capacity方法。 shrink_to_fit()，如果不再需要填充元素了，那就可以调用shrink_to_fit()方法，将容量缩减到size大小。本质就是在申请一块size大小的内存，然后将原来的元素拷贝到新的内存中，然后释放原来的内存。 3. 访问 下标访问，和array一样，可以使用[]访问元素。 支持front、back、data方法。 swap方法，交换两个vector对象，实际是交换指针，所以比array要快(注意是交换两个vector对象，而不是一个vector对象中的两个元素)。 关于swap方法，有一个常用的技巧是结合它来“清空”一个向量并释放其内存: 1 std::vector&lt;int&gt;().swap(vec1); std::vector&lt;int&gt;() 创建了一个临时的、空的 vector 对象，.swap(vec1) 调用了这个临时对象的 swap 方法，将它与 vec1 的内容交换。\n交换后，vec1 变成一个空的 vector（和临时对象交换后的结果），临时对象现在持有原来 vec1 的所有内存资源，当这行语句结束时，临时对象超出作用域并被销毁，它所持有的内存也被一并释放，如果使用clear()，则vec1会被清空，容量没有重置，内存不会被释放。\n">
-<meta property='og:url' content='http://localhost:1313/p/vector/'>
+<meta property='og:url' content='https://zuoco.github.io/p/vector/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-04T00:03:33&#43;08:00'/><meta property='article:modified_time' content='2025-05-04T00:03:33&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/vector/AAA.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-04T00:03:33&#43;08:00'/><meta property='article:modified_time' content='2025-05-04T00:03:33&#43;08:00'/><meta property='og:image' content='https://zuoco.github.io/p/vector/AAA.jpg' />
 <meta name="twitter:title" content="vector">
 <meta name="twitter:description" content="1. vector 模板类，动态数组，维护一块连续的存储空间，容量可动态改变。 size: 当前元素个数。 cap: 当前容量。 buffer: 指向一块连续的存储空间。\n2. 容量 empty、size，capacity方法。 shrink_to_fit()，如果不再需要填充元素了，那就可以调用shrink_to_fit()方法，将容量缩减到size大小。本质就是在申请一块size大小的内存，然后将原来的元素拷贝到新的内存中，然后释放原来的内存。 3. 访问 下标访问，和array一样，可以使用[]访问元素。 支持front、back、data方法。 swap方法，交换两个vector对象，实际是交换指针，所以比array要快(注意是交换两个vector对象，而不是一个vector对象中的两个元素)。 关于swap方法，有一个常用的技巧是结合它来“清空”一个向量并释放其内存: 1 std::vector&lt;int&gt;().swap(vec1); std::vector&lt;int&gt;() 创建了一个临时的、空的 vector 对象，.swap(vec1) 调用了这个临时对象的 swap 方法，将它与 vec1 的内容交换。\n交换后，vec1 变成一个空的 vector（和临时对象交换后的结果），临时对象现在持有原来 vec1 的所有内存资源，当这行语句结束时，临时对象超出作用域并被销毁，它所持有的内存也被一并释放，如果使用clear()，则vec1会被清空，容量没有重置，内存不会被释放。\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/p/vector/AAA.jpg' />
+    <meta name="twitter:image" content='https://zuoco.github.io/p/vector/AAA.jpg' />
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -194,29 +194,6 @@
         
         <li class="menu-bottom-section">
             <ol class="menu">
-                    
-                        <li id="i18n-switch">  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M4 5h7" />
-  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
-  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
-  <path d="M12 20l4 -9l4 9" />
-  <path d="M19.1 18h-6.2" />
-</svg>
-
-
-
-                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
-                                
-                                    <option value="http://localhost:1313/en/" >English</option>
-                                
-                                    <option value="http://localhost:1313/" selected>简体中文</option>
-                                
-                            </select>
-                        </li>
-                    
-                
 
                 
                     <li id="dark-mode-toggle">
@@ -847,7 +824,7 @@ buffer: 指向一块连续的存储空间。</p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.b6cb3b8eab6b8b5e444db97c6c0421d4f77af0e3ca505f488e0032160201588d.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

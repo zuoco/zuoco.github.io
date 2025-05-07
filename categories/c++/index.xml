@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《C&#43;&#43;20》 on 阿左笔记</title>
-        <link>http://localhost:1313/categories/c&#43;&#43;/</link>
+        <link>https://zuoco.github.io/categories/c&#43;&#43;/</link>
         <description>Recent content in 《C&#43;&#43;20》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/c++/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/c++/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>三路比较运算符</title>
-        <link>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+        <link>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/AAA.jpg" alt="Featured image of post 三路比较运算符" /&gt;&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
+        <guid>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/AAA.jpg" alt="Featured image of post 三路比较运算符" /&gt;&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
 &lt;/h1&gt;&lt;p&gt;&amp;lt;=&amp;gt;目的在于简化自定义类型的比较逻辑，只要实现了&amp;lt;=&amp;gt;和==，编译器就会自动生成其他比较运算逻辑。&lt;br&gt;
 返回值类型为三种比较类别类型：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -96,11 +96,11 @@ std::weak_ordering可以隐式转换为std::partial_ordering。&lt;/p&gt;
         </item>
         <item>
         <title>什么是容器、容器分类</title>
-        <link>http://localhost:1313/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</link>
+        <link>https://zuoco.github.io/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%86%AC%E5%AD%A3%E8%89%BA%E6%9C%AF-%E5%8F%AF%E7%88%B1%E9%9B%AA%E6%99%AF.png" alt="Featured image of post 什么是容器、容器分类" /&gt;&lt;h1 id=&#34;1-什么是容器&#34;&gt;1. 什么是容器
+        <guid>https://zuoco.github.io/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%86%AC%E5%AD%A3%E8%89%BA%E6%9C%AF-%E5%8F%AF%E7%88%B1%E9%9B%AA%E6%99%AF.png" alt="Featured image of post 什么是容器、容器分类" /&gt;&lt;h1 id=&#34;1-什么是容器&#34;&gt;1. 什么是容器
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;类模板&lt;/strong&gt;，用于存储和管理数据，支持对象的添加、删除、索引、遍历等功能。&lt;/p&gt;
 &lt;h1 id=&#34;2-容器分类&#34;&gt;2. 容器分类
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;序列容器&lt;/strong&gt;：容器成员按严格的线性顺序排列，例如：array、vector、list、forward_list、deque、basic_string。  &lt;br&gt;
@@ -154,11 +154,11 @@ std::weak_ordering可以隐式转换为std::partial_ordering。&lt;/p&gt;
         </item>
         <item>
         <title>Array</title>
-        <link>http://localhost:1313/p/array/</link>
+        <link>https://zuoco.github.io/p/array/</link>
         <pubDate>Sun, 04 May 2025 00:03:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/array/</guid>
-        <description>&lt;img src="http://localhost:1313/p/array/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%81%87%E6%97%A5-%E5%81%87%E6%97%A5%E8%83%9C%E5%9C%B0.png" alt="Featured image of post Array" /&gt;&lt;h1 id=&#34;1-array&#34;&gt;1. Array
+        <guid>https://zuoco.github.io/p/array/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/array/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%81%87%E6%97%A5-%E5%81%87%E6%97%A5%E8%83%9C%E5%9C%B0.png" alt="Featured image of post Array" /&gt;&lt;h1 id=&#34;1-array&#34;&gt;1. Array
 &lt;/h1&gt;&lt;p&gt;元素数个数固定，不能动态改变。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -448,13 +448,13 @@ std::weak_ordering可以隐式转换为std::partial_ordering。&lt;/p&gt;
         </item>
         <item>
         <title>vector</title>
-        <link>http://localhost:1313/p/vector/</link>
+        <link>https://zuoco.github.io/p/vector/</link>
         <pubDate>Sun, 04 May 2025 00:03:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vector/</guid>
-        <description>&lt;img src="http://localhost:1313/p/vector/AAA.jpg" alt="Featured image of post vector" /&gt;&lt;h1 id=&#34;1-vector&#34;&gt;1. vector
+        <guid>https://zuoco.github.io/p/vector/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/vector/AAA.jpg" alt="Featured image of post vector" /&gt;&lt;h1 id=&#34;1-vector&#34;&gt;1. vector
 &lt;/h1&gt;&lt;p&gt;模板类，动态数组，维护一块连续的存储空间，容量可动态改变。    &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
 	
 	
 	
@@ -646,20 +646,20 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
         </item>
         <item>
         <title>动态内存管理</title>
-        <link>http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+        <link>https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
         <pubDate>Sun, 04 May 2025 00:01:49 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%A4%9C%E6%99%AF-%E6%98%9F%E7%A9%BA-%E6%9C%88%E4%BA%AE.png" alt="Featured image of post 动态内存管理" /&gt;&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
+        <guid>https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%A4%9C%E6%99%AF-%E6%98%9F%E7%A9%BA-%E6%9C%88%E4%BA%AE.png" alt="Featured image of post 动态内存管理" /&gt;&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>输入输出</title>
-        <link>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
+        <link>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/aaa.jpg" alt="Featured image of post 输入输出" /&gt;&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
+        <guid>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/aaa.jpg" alt="Featured image of post 输入输出" /&gt;&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
 &lt;/h1&gt;&lt;p&gt;非格式化IO不涉及数据表示形式的变化。&lt;/p&gt;
 &lt;p&gt;非格式化输入： get、read、getline、gcount&lt;br&gt;
 格式化输出： put、write&lt;/p&gt;
