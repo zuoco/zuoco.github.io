@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 内核中的Makefile、Kconfig、config Makefile：编译源文件的方法。 Kconfig：内核的配置菜单。 .config：根据配置菜单生成的配置，根据该配置编译内核。 2. Makefile 内核中的Makefile中有三种编译规则：\n">
 <title>Linux内核构建、内核模块构建</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/'>
+<link rel='canonical' href='http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Linux内核构建、内核模块构建">
 <meta property='og:description' content="1. 内核中的Makefile、Kconfig、config Makefile：编译源文件的方法。 Kconfig：内核的配置菜单。 .config：根据配置菜单生成的配置，根据该配置编译内核。 2. Makefile 内核中的Makefile中有三种编译规则：\n">
-<meta property='og:url' content='https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/'>
+<meta property='og:url' content='http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-10T18:06:49&#43;08:00'/><meta property='article:modified_time' content='2025-05-10T18:06:49&#43;08:00'/><meta property='og:image' content='https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-10T18:06:49&#43;08:00'/><meta property='article:modified_time' content='2025-05-10T18:06:49&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.jpg' />
 <meta name="twitter:title" content="Linux内核构建、内核模块构建">
 <meta name="twitter:description" content="1. 内核中的Makefile、Kconfig、config Makefile：编译源文件的方法。 Kconfig：内核的配置菜单。 .config：根据配置菜单生成的配置，根据该配置编译内核。 2. Makefile 内核中的Makefile中有三种编译规则：\n"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.jpg' />
+    <meta name="twitter:image" content='http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.jpg' />
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -671,14 +671,18 @@ N（No）：不编译此驱动。</p>
 </h1><p>使用make menuconfig生成的配置文件。</p>
 <h1 id="5-make-menuconfig">5. make menuconfig
 </h1><p>运行make menuconfig命令，会显示一个配置菜单:<br>
-<img src="/make_menuconfig.png"
-	
-	
-	
+<img src="/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig.png"
+	width="2473"
+	height="1217"
+	srcset="/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_28f37095ba1bb36b.png 480w, /p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_5a66fc4359e47d7d.png 1024w"
 	loading="lazy"
 	
 	
->   <br>
+		class="gallery-image" 
+		data-flex-grow="203"
+		data-flex-basis="487px"
+	
+><br>
 使用“上”“下”方向键选择选项，使用“空格”键选择或取消选择选项，使用“Enter”键进入子菜单。使用“左”“右”保存、后退、加载已有的.config文件。配置完后保存为.config文件，然后运行<strong>make</strong>命令进行开始编译。</p>
 
 </section>
@@ -854,7 +858,7 @@ N（No）：不编译此驱动。</p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.b6cb3b8eab6b8b5e444db97c6c0421d4f77af0e3ca505f488e0032160201588d.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
