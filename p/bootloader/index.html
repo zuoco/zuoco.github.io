@@ -301,7 +301,15 @@
     <h1 id="1-bootloader">1. BootLoader
 </h1><p>Bootloader是操作系统的“引导程序”以及“引导管理程序”，操作系统的启动流程可以简单理解为：<br>
 <strong>[上电]</strong> &ndash;&gt; <strong>[UEFI]</strong> &ndash;&gt; <strong>[bootloader]</strong> &ndash;&gt; <strong>[内核]</strong> 。<br>
-显然，Bootloader的作用就是将内核加载到内存中，然后由于内核来加载操作系统的其他组件/服务，如文件系统，文件管理器，图形界面等。在linux生态中，常见的Bootloader有两种，Grub(用于X86架构)，uBoot(用于ARM架构)。其中<code>引导</code>就是进行一些硬件的检测、初始化的任务，然后将内核加载到内存中来启动内核，<code>引导管理</code>就是当有多个内核时，在屏幕上显示一个菜单让用户选择要启动的哪个内核。</p>
+显然，Bootloader的作用就是将内核加载到内存中，然后由于内核来加载操作系统的其他组件/服务，如文件系统，文件管理器，图形界面等。在linux生态中，常见的Bootloader有两种，Grub(用于X86架构)，U-Boot(用于ARM架构)。其中<code>引导</code>就是进行一些硬件的检测、初始化的任务，然后将内核加载到内存中来启动内核，<code>引导管理</code>就是当有多个内核时，在屏幕上显示一个菜单让用户选择要启动的哪个内核。
+<img src="/p/bootloader/BootLoader.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
 <h1 id="2-grub">2. Grub
 </h1><p><code>grub程序保存在那里？</code><br>
 grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。<br>
@@ -343,8 +351,24 @@ grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。<
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="3-uboot">3. UBoot
-</h1><p>以后再补。</p>
+</div><h1 id="3-u-boot">3. U-Boot
+</h1><ol>
+<li>XIP设备<br>
+非XIP设备中存储的代码需要从存储设备中加载到内存中，然后才能执行，而XIP存储设备中的代码可以直接执行，XIP设备有SRAM、BROM等等，非XIP设备有EMMC、NANDFLASH、SD卡等等。</li>
+<li>ARM-Linux启动流程<br>
+U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行BROM中的程序(由芯片厂写入)，该程序会根据芯片的引脚电平或者寄存器配置确定启动模式(从那个设备启动系统)，例如系统安装在SD卡，BROM中的程序会初始化SD卡，然后拷贝uboot-spl到SRAM中，开始执行uboot-spl中的程序，uboot-spl程序会初始化LDDR内存、pll、gpio等等硬件，然后从SD卡中加载uboot-proper到LDDR中，并跳转到程序的入口地址执行uboot-proper程序。uboot还会初始化一些其他设备，例如网卡等，然后从SD卡中加载内核文件。<br>
+<img src="/p/bootloader/u-boot.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+><br>
+<code>参考</code>:<br>
+<a class="link" href="https://linux-sunxi.org/Bootable_SD_card#SD_Card_Layout"  target="_blank" rel="noopener"
+    >https://linux-sunxi.org/Bootable_SD_card#SD_Card_Layout</a></li>
+</ol>
 
 </section>
 
