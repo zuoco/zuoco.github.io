@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Linux系统引导 on 阿左笔记</title>
+        <link>http://localhost:1313/categories/linux%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC/</link>
+        <description>Recent content in Linux系统引导 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Sat, 10 May 2025 20:46:50 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/linux%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Grub</title>
+        <link>http://localhost:1313/p/grub/</link>
+        <pubDate>Sat, 10 May 2025 20:46:50 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/grub/</guid>
+        <description>&lt;img src="http://localhost:1313/p/grub/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%86%AC%E6%97%A5-%E5%86%AC%E6%97%A5%E9%A3%8E%E6%99%AF-%E6%A1%A5.png" alt="Featured image of post Grub" /&gt;&lt;h1 id=&#34;grub介绍&#34;&gt;Grub介绍
+&lt;/h1&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
