@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Git on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/git/</link>
+        <link>http://localhost:1313/categories/git/</link>
         <description>Recent content in Git on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 07 May 2025 21:48:29 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 May 2025 21:48:29 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/git/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Git</title>
-        <link>https://zuoco.github.io/p/git/</link>
+        <link>http://localhost:1313/p/git/</link>
         <pubDate>Wed, 07 May 2025 21:48:29 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/git/</guid>
-        <description>&lt;img src="https://zuoco.github.io/p/git/git.jpg" alt="Featured image of post Git" /&gt;&lt;h1 id=&#34;基本概念&#34;&gt;基本概念
+        <guid>http://localhost:1313/p/git/</guid>
+        <description>&lt;img src="http://localhost:1313/p/git/git.jpg" alt="Featured image of post Git" /&gt;&lt;h1 id=&#34;基本概念&#34;&gt;基本概念
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;仓库（Repository）&lt;/strong&gt;：一个Git仓库是一个包含所有版本控制文件和历史记录的目录。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;本地仓库（Local Repository）：在你的本地计算机上的仓库。&lt;/li&gt;
