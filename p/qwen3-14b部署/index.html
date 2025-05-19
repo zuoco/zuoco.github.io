@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. AI模型的本地部署 以Qwen32-14B为例。 2. 主机 主机：天钡 GEM12 Pro CPU: AMD Ryzen 7 PRO 8845HS 内存：32GB 3. 系统 发行版：Fedora Linux 41 (Workstation Edition) 内 核：6.1">
 <title>Qwen3-14b部署</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/'>
+<link rel='canonical' href='http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="Qwen3-14b部署">
 <meta property='og:description' content="1. AI模型的本地部署 以Qwen32-14B为例。 2. 主机 主机：天钡 GEM12 Pro CPU: AMD Ryzen 7 PRO 8845HS 内存：32GB 3. 系统 发行版：Fedora Linux 41 (Workstation Edition) 内 核：6.1">
-<meta property='og:url' content='https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/'>
+<meta property='og:url' content='http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-18T23:17:13&#43;08:00'/><meta property='article:modified_time' content='2025-05-18T23:17:13&#43;08:00'/><meta property='og:image' content='https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-18T23:17:13&#43;08:00'/><meta property='article:modified_time' content='2025-05-18T23:17:13&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg' />
 <meta name="twitter:title" content="Qwen3-14b部署">
 <meta name="twitter:description" content="1. AI模型的本地部署 以Qwen32-14B为例。 2. 主机 主机：天钡 GEM12 Pro CPU: AMD Ryzen 7 PRO 8845HS 内存：32GB 3. 系统 发行版：Fedora Linux 41 (Workstation Edition) 内 核：6.1"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg' />
+    <meta name="twitter:image" content='http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg' />
     <link rel="shortcut icon" href="/mylogo.png" />
 
   
@@ -552,7 +552,7 @@
 </span></span><span class="line"><span class="cl">             └─43831 /usr/local/bin/ollama serve
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="ai-模型部署">AI 模型部署
+</div><h1 id="8-ai-模型部署">8. AI 模型部署
 </h1><p>因为Ollama服务已经启动了，所以就不必再次运行<code>ollama serve</code>命令了。直接开run(如果还没有下载就会先下载，等待即可)：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -664,7 +664,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>模型文件位于目录：<code>/usr/share/ollama</code>下。</p>
-<h1 id="前端接入">前端接入
+<h1 id="9-前端接入">9. 前端接入
 </h1><p>Ollama默认是在11434端口提供服务。明白了这个就可以到<code>www.cherry-ai.com</code>下载Cherry Studio了。<br>
 安装好后，选择『设置』，然后在『设置』中选择『Ollama』：<br>
 <img src="/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio.png"
@@ -680,7 +680,7 @@
 	
 ><br>
 点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过<code>ollama list</code>命令获取，注意了，这里的“模型ID”是<code>ollama list</code>命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。</p>
-<h1 id="效果展示">效果展示
+<h1 id="10-效果展示">10. 效果展示
 </h1><p>以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：<br>
 <img src="/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png"
 	width="2002"
@@ -882,7 +882,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.b6beb2d10bd56395acbe1b01dbe2a173f0548851ebc8c19c3620881c6a713fc3.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
