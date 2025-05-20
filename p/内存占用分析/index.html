@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 动态分析 就是我们面对着正在运行的Linux系统，然后通过一些命令，查看正在运行的进程占用内存的情况。 1.1. ps命令查看内存使用量大的进程 1 ps -eo">
 <title>内存占用分析</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="内存占用分析">
 <meta property='og:description' content="1. 动态分析 就是我们面对着正在运行的Linux系统，然后通过一些命令，查看正在运行的进程占用内存的情况。 1.1. ps命令查看内存使用量大的进程 1 ps -eo">
-<meta property='og:url' content='http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/'>
+<meta property='og:url' content='https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-20T00:18:27&#43;08:00'/><meta property='article:modified_time' content='2025-05-20T00:18:27&#43;08:00'/><meta property='og:image' content='http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/AAA.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-20T00:18:27&#43;08:00'/><meta property='article:modified_time' content='2025-05-20T00:18:27&#43;08:00'/><meta property='og:image' content='https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/AAA.jpg' />
 <meta name="twitter:title" content="内存占用分析">
 <meta name="twitter:description" content="1. 动态分析 就是我们面对着正在运行的Linux系统，然后通过一些命令，查看正在运行的进程占用内存的情况。 1.1. ps命令查看内存使用量大的进程 1 ps -eo"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/AAA.jpg' />
+    <meta name="twitter:image" content='https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/AAA.jpg' />
     <link rel="shortcut icon" href="/mylogo.png" />
 
   
@@ -243,6 +243,7 @@
             <nav id="TableOfContents">
   <ol>
     <li><a href="#11-ps命令查看内存使用量大的进程">1.1. ps命令查看内存使用量大的进程</a></li>
+    <li><a href="#12-free命令">1.2. free命令</a></li>
   </ol>
 </nav>
         </div>
@@ -350,9 +351,49 @@
 </span></span><span class="line"><span class="cl">head -n 10：显示前10行。
 </span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="12-free命令">1.2. free命令
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">zcli@fedora:~$ free -h
+</span></span><span class="line"><span class="cl">               total        used        free      shared  buff/cache   available
+</span></span><span class="line"><span class="cl">Mem:            30Gi       5.4Gi        21Gi        79Mi       4.4Gi        25Gi
+</span></span><span class="line"><span class="cl">Swap:          8.0Gi          0B       8.0Gi
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">zcli@fedora:~$ free -m
+</span></span><span class="line"><span class="cl">               total        used        free      shared  buff/cache   available
+</span></span><span class="line"><span class="cl">Mem:           31400        5554       21799          86        4564       25845
+</span></span><span class="line"><span class="cl">Swap:           8191           0        8191
+</span></span></code></pre></td></tr></table>
+</div>
 </div><h1 id="2-内核的oom机制">2. 内核的OOM机制
 </h1><p>OOM（Out of Memory）机制是为了应对系统内存耗尽的情况而设计的一种保护机制。当系统内存资源紧张到无法为新的内存分配请求提供足够的空间时，OOM Killer会被触发，依据一定的规则杀掉一些进程来释放内存。</p>
+<ol>
+<li><code>查询OOM事件： </code></li>
+</ol>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ dmesg <span class="p">|</span> grep -i <span class="s2">&#34;out of memory&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -366,7 +407,7 @@
 </span></span><span class="line"><span class="cl">oom_score_adj
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="太晚了明天再整理">太晚了，明天再整理
+</div><h1 id="3-太晚了明天再整理">3. 太晚了，明天再整理
 </h1><p>oom_score_adj: 这是一个可以调整的参数，范围从-1000到1000，允许用户或管理员通过修改特定进程的oom_score_adj值来影响其oom_score。例如，将某个重要服务的oom_score_adj设置为-1000可以确保它不会被OOM Killer选中。
 oom_adj:
 oom_score: 这是一个只读的参数，表示当前进程的oom_score。这个值是OOM Killer根据进程的内存使用情况计算得到的，它越小，表示越有可能被OOM Killer选中。</p>
@@ -407,7 +448,7 @@ MemFree:         2875924 kB　　　　＃　剩余内存
 Buffers:           40576 kB　　　　＃　
 Cached:           500332 kB
 SwapCached:            0 kB</p>
-<h1 id="3-32位系统">3. 32位系统
+<h1 id="4-32位系统">4. 32位系统
 </h1><p>HighTotal:       3143004 kB　　＃ 加上LowTotal等于MemTotal, 在64位系统中，这一部分主要是为了兼容性保留的概念，在实际应用中意义不大。
 HighFree:        2140940 kB    # 加上LowFree等于MemFree
 LowTotal:         862172 kB    # 标识低端内存区域的总容量为 862,172 KB（约 842 MB）。低端内存可以直接映射到内核地址空间，在32位系统中尤为重要。
@@ -692,7 +733,7 @@ echo 1 &gt; /proc/sys/vm/compact_memory</p>
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.b6beb2d10bd56395acbe1b01dbe2a173f0548851ebc8c19c3620881c6a713fc3.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

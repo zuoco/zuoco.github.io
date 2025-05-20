@@ -2,18 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on 阿左笔记</title>
-        <link>http://localhost:1313/post/</link>
+        <link>https://zuoco.github.io/post/</link>
         <description>Recent content in Posts on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Tue, 20 May 2025 00:18:27 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 20 May 2025 22:20:48 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>MNN</title>
+        <link>https://zuoco.github.io/p/mnn/</link>
+        <pubDate>Tue, 20 May 2025 22:20:48 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/mnn/</guid>
+        <description>&lt;h1 id=&#34;占各位有空去整理&#34;&gt;占各位，有空去整理
+&lt;/h1&gt;&lt;h1 id=&#34;mnn&#34;&gt;MNN
+&lt;/h1&gt;&lt;p&gt;是阿里巴巴开发的一款推理引擎，MNN可以将支流训练框架的产物转换为MNN模型，得到模型后就可以部署到端侧。具有高性能、轻量化、跨平台的，说白了就是给端侧部署搞的，可以在手机、PC、嵌入式系统上运行，前途无量。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>内存占用分析</title>
-        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/</link>
         <pubDate>Tue, 20 May 2025 00:18:27 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/AAA.jpg" alt="Featured image of post 内存占用分析" /&gt;&lt;h1 id=&#34;1-动态分析&#34;&gt;1. 动态分析
+        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E5%88%86%E6%9E%90/AAA.jpg" alt="Featured image of post 内存占用分析" /&gt;&lt;h1 id=&#34;1-动态分析&#34;&gt;1. 动态分析
 &lt;/h1&gt;&lt;p&gt;就是我们面对着正在运行的Linux系统，然后通过一些命令，查看正在运行的进程占用内存的情况。&lt;/p&gt;
 &lt;h2 id=&#34;11-ps命令查看内存使用量大的进程&#34;&gt;1.1. ps命令查看内存使用量大的进程
 &lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -39,9 +50,49 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;head -n 10：显示前10行。
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;12-free命令&#34;&gt;1.2. free命令
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ free -h
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               total        used        free      shared  buff/cache   available
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Mem:            30Gi       5.4Gi        21Gi        79Mi       4.4Gi        25Gi
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Swap:          8.0Gi          0B       8.0Gi
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ free -m
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;               total        used        free      shared  buff/cache   available
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Mem:           31400        5554       21799          86        4564       25845
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Swap:           8191           0        8191
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;2-内核的oom机制&#34;&gt;2. 内核的OOM机制
 &lt;/h1&gt;&lt;p&gt;OOM（Out of Memory）机制是为了应对系统内存耗尽的情况而设计的一种保护机制。当系统内存资源紧张到无法为新的内存分配请求提供足够的空间时，OOM Killer会被触发，依据一定的规则杀掉一些进程来释放内存。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;查询OOM事件： &lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dmesg &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i &lt;span class=&#34;s2&#34;&gt;&amp;#34;out of memory&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -55,7 +106,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;oom_score_adj
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;太晚了明天再整理&#34;&gt;太晚了，明天再整理
+&lt;/div&gt;&lt;h1 id=&#34;3-太晚了明天再整理&#34;&gt;3. 太晚了，明天再整理
 &lt;/h1&gt;&lt;p&gt;oom_score_adj: 这是一个可以调整的参数，范围从-1000到1000，允许用户或管理员通过修改特定进程的oom_score_adj值来影响其oom_score。例如，将某个重要服务的oom_score_adj设置为-1000可以确保它不会被OOM Killer选中。
 oom_adj:
 oom_score: 这是一个只读的参数，表示当前进程的oom_score。这个值是OOM Killer根据进程的内存使用情况计算得到的，它越小，表示越有可能被OOM Killer选中。&lt;/p&gt;
@@ -96,7 +147,7 @@ MemFree:         2875924 kB　　　　＃　剩余内存
 Buffers:           40576 kB　　　　＃　
 Cached:           500332 kB
 SwapCached:            0 kB&lt;/p&gt;
-&lt;h1 id=&#34;3-32位系统&#34;&gt;3. 32位系统
+&lt;h1 id=&#34;4-32位系统&#34;&gt;4. 32位系统
 &lt;/h1&gt;&lt;p&gt;HighTotal:       3143004 kB　　＃ 加上LowTotal等于MemTotal, 在64位系统中，这一部分主要是为了兼容性保留的概念，在实际应用中意义不大。
 HighFree:        2140940 kB    # 加上LowFree等于MemFree
 LowTotal:         862172 kB    # 标识低端内存区域的总容量为 862,172 KB（约 842 MB）。低端内存可以直接映射到内核地址空间，在32位系统中尤为重要。
@@ -116,11 +167,11 @@ echo 1 &amp;gt; /proc/sys/vm/compact_memory&lt;/p&gt;
         </item>
         <item>
         <title>Qwen3-14b部署</title>
-        <link>http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/</link>
+        <link>https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/</link>
         <pubDate>Sun, 18 May 2025 23:17:13 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/</guid>
-        <description>&lt;img src="http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg" alt="Featured image of post Qwen3-14b部署" /&gt;&lt;h1 id=&#34;1-ai模型的本地部署&#34;&gt;1. AI模型的本地部署
+        <guid>https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg" alt="Featured image of post Qwen3-14b部署" /&gt;&lt;h1 id=&#34;1-ai模型的本地部署&#34;&gt;1. AI模型的本地部署
 &lt;/h1&gt;&lt;p&gt;以Qwen32-14B为例。&lt;/p&gt;
 &lt;h1 id=&#34;2-主机&#34;&gt;2. 主机
 &lt;/h1&gt;&lt;ul&gt;
@@ -135,10 +186,10 @@ echo 1 &amp;gt; /proc/sys/vm/compact_memory&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;4-显卡&#34;&gt;4. 显卡
 &lt;/h1&gt;&lt;p&gt;NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1.jpg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1.jpg&#34;
 	width=&#34;4000&#34;
 	height=&#34;1800&#34;
-	srcset=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hucd90eb134b8400ee72551e9a9389e87d_1781264_480x0_resize_q75_box.jpg 480w, http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hucd90eb134b8400ee72551e9a9389e87d_1781264_1024x0_resize_q75_box.jpg 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hucd90eb134b8400ee72551e9a9389e87d_1781264_480x0_resize_q75_box.jpg 480w, https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hucd90eb134b8400ee72551e9a9389e87d_1781264_1024x0_resize_q75_box.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -214,7 +265,7 @@ echo 1 &amp;gt; /proc/sys/vm/compact_memory&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;6-ai部署框架&#34;&gt;6. AI部署框架
 &lt;/h1&gt;&lt;p&gt;模型只是一堆参数，需要通过推理工具来运行，推理工具将模型参数加载到显存中，并依据输入的文字生成输出。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
 	
 	
 	
@@ -498,10 +549,10 @@ echo 1 &amp;gt; /proc/sys/vm/compact_memory&lt;/p&gt;
 &lt;h1 id=&#34;9-前端接入&#34;&gt;9. 前端接入
 &lt;/h1&gt;&lt;p&gt;Ollama默认是在11434端口提供服务。明白了这个就可以到&lt;code&gt;www.cherry-ai.com&lt;/code&gt;下载Cherry Studio了。&lt;br&gt;
 安装好后，选择『设置』，然后在『设置』中选择『Ollama』：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio.png&#34;
 	width=&#34;4096&#34;
 	height=&#34;2304&#34;
-	srcset=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu179709b6168b77b4a0fe09d1eb67436d_377454_480x0_resize_box_3.png 480w, http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu179709b6168b77b4a0fe09d1eb67436d_377454_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu179709b6168b77b4a0fe09d1eb67436d_377454_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu179709b6168b77b4a0fe09d1eb67436d_377454_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -513,10 +564,10 @@ echo 1 &amp;gt; /proc/sys/vm/compact_memory&lt;/p&gt;
 点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过&lt;code&gt;ollama list&lt;/code&gt;命令获取，注意了，这里的“模型ID”是&lt;code&gt;ollama list&lt;/code&gt;命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。&lt;/p&gt;
 &lt;h1 id=&#34;10-效果展示&#34;&gt;10. 效果展示
 &lt;/h1&gt;&lt;p&gt;以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
 	width=&#34;2002&#34;
 	height=&#34;901&#34;
-	srcset=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_huf627d8b6b4ea030fbb2dd9f96056506f_230084_480x0_resize_box_3.png 480w, http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_huf627d8b6b4ea030fbb2dd9f96056506f_230084_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_huf627d8b6b4ea030fbb2dd9f96056506f_230084_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_huf627d8b6b4ea030fbb2dd9f96056506f_230084_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -529,11 +580,11 @@ echo 1 &amp;gt; /proc/sys/vm/compact_memory&lt;/p&gt;
         </item>
         <item>
         <title>EPOLL系统调用</title>
-        <link>http://localhost:1313/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
+        <link>https://zuoco.github.io/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
         <pubDate>Mon, 12 May 2025 20:16:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</guid>
-        <description>&lt;img src="http://localhost:1313/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%A4%9C%E6%99%AF-%E5%A4%9C%E7%A9%BA-%E6%9C%88%E4%BA%AE.png" alt="Featured image of post EPOLL系统调用" /&gt;&lt;h1 id=&#34;1-epoll介绍&#34;&gt;1. EPOLL介绍
+        <guid>https://zuoco.github.io/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%A4%9C%E6%99%AF-%E5%A4%9C%E7%A9%BA-%E6%9C%88%E4%BA%AE.png" alt="Featured image of post EPOLL系统调用" /&gt;&lt;h1 id=&#34;1-epoll介绍&#34;&gt;1. EPOLL介绍
 &lt;/h1&gt;&lt;p&gt;EPOLL是Linux特有的I/O复用函数，它把用户关心的“文件描述符”放在内核里面一个&lt;code&gt;事件表&lt;/code&gt;中，也就是说EPOLL需要一个“文件描述符”来标识内核中的这个事件表。另外EPOLL有两种工作模式：&lt;code&gt;水平触发&lt;/code&gt;(Level Triggered，LT)和&lt;code&gt;边缘触发&lt;/code&gt;(Edge Triggered，ET)，LT模式是EPOLL默认的工作模式，EPOLL和异步，非阻塞结合使用。&lt;/p&gt;
 &lt;h1 id=&#34;2-epoll使用&#34;&gt;2. EPOLL使用
 &lt;/h1&gt;&lt;h2 id=&#34;21-创建epoll对象&#34;&gt;2.1. 创建EPOLL对象
@@ -726,15 +777,15 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>BootLoader</title>
-        <link>http://localhost:1313/p/bootloader/</link>
+        <link>https://zuoco.github.io/p/bootloader/</link>
         <pubDate>Sat, 10 May 2025 20:46:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/bootloader/</guid>
-        <description>&lt;img src="http://localhost:1313/p/bootloader/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%86%AC%E6%97%A5-%E5%86%AC%E6%97%A5%E9%A3%8E%E6%99%AF-%E6%A1%A5.png" alt="Featured image of post BootLoader" /&gt;&lt;h1 id=&#34;1-bootloader&#34;&gt;1. BootLoader
+        <guid>https://zuoco.github.io/p/bootloader/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/bootloader/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%86%AC%E6%97%A5-%E5%86%AC%E6%97%A5%E9%A3%8E%E6%99%AF-%E6%A1%A5.png" alt="Featured image of post BootLoader" /&gt;&lt;h1 id=&#34;1-bootloader&#34;&gt;1. BootLoader
 &lt;/h1&gt;&lt;p&gt;Bootloader是操作系统的“引导程序”以及“引导管理程序”，操作系统的启动流程可以简单理解为：&lt;br&gt;
 &lt;strong&gt;[上电]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[UEFI]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[bootloader]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[内核]&lt;/strong&gt; 。&lt;br&gt;
 显然，Bootloader的作用就是将内核加载到内存中，然后由于内核来加载操作系统的其他组件/服务，如文件系统，文件管理器，图形界面等。在linux生态中，常见的Bootloader有两种，Grub(用于X86架构)，U-Boot(用于ARM架构)。其中&lt;code&gt;引导&lt;/code&gt;就是进行一些硬件的检测、初始化的任务，然后将内核加载到内存中来启动内核，&lt;code&gt;引导管理&lt;/code&gt;就是当有多个内核时，在屏幕上显示一个菜单让用户选择要启动的哪个内核。
-&lt;img src=&#34;http://localhost:1313/p/bootloader/BootLoader.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/BootLoader.svg&#34;
 	
 	
 	
@@ -789,7 +840,7 @@ grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。&
 非XIP设备中存储的代码需要从存储设备中加载到内存中，然后才能执行，而XIP存储设备中的代码可以直接执行，XIP设备有SRAM、BROM等等，非XIP设备有EMMC、NANDFLASH、SD卡等等。&lt;/li&gt;
 &lt;li&gt;ARM-Linux启动流程&lt;br&gt;
 U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行BROM中的程序(由芯片厂写入)，该程序会根据芯片的引脚电平或者寄存器配置确定启动模式(从那个设备启动系统)，例如系统安装在SD卡，BROM中的程序会初始化SD卡，然后拷贝uboot-spl到SRAM中，开始执行uboot-spl中的程序，uboot-spl程序会初始化LDDR内存、pll、gpio等等硬件，然后从SD卡中加载uboot-proper到LDDR中，并跳转到程序的入口地址执行uboot-proper程序。uboot还会初始化一些其他设备，例如网卡等，然后从SD卡中加载内核文件。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/bootloader/u-boot.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/u-boot.svg&#34;
 	
 	
 	
@@ -805,11 +856,11 @@ U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行
         </item>
         <item>
         <title>Linux内核构建、内核模块构建</title>
-        <link>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</link>
+        <link>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</link>
         <pubDate>Sat, 10 May 2025 18:06:49 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</guid>
-        <description>&lt;img src="http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.jpg" alt="Featured image of post Linux内核构建、内核模块构建" /&gt;&lt;h1 id=&#34;1-内核中的makefilekconfigconfig&#34;&gt;1. 内核中的Makefile、Kconfig、config
+        <guid>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.jpg" alt="Featured image of post Linux内核构建、内核模块构建" /&gt;&lt;h1 id=&#34;1-内核中的makefilekconfigconfig&#34;&gt;1. 内核中的Makefile、Kconfig、config
 &lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Makefile&lt;/strong&gt;：编译源文件的方法。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Kconfig&lt;/strong&gt;：内核的配置菜单。&lt;/li&gt;
@@ -1155,10 +1206,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
 &lt;/h1&gt;&lt;p&gt;使用make menuconfig生成的配置文件。&lt;/p&gt;
 &lt;h1 id=&#34;5-make-menuconfig&#34;&gt;5. make menuconfig
 &lt;/h1&gt;&lt;p&gt;运行make menuconfig命令，会显示一个配置菜单:&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig.png&#34;
 	width=&#34;2473&#34;
 	height=&#34;1217&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hue225d65f0da2786c10e6a18ad0231a07_137430_480x0_resize_box_3.png 480w, http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hue225d65f0da2786c10e6a18ad0231a07_137430_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hue225d65f0da2786c10e6a18ad0231a07_137430_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hue225d65f0da2786c10e6a18ad0231a07_137430_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1172,17 +1223,17 @@ N（No）：不编译此驱动。&lt;/p&gt;
         </item>
         <item>
         <title>iBMC服务器管理软件</title>
-        <link>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
+        <link>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
         <pubDate>Thu, 08 May 2025 21:01:19 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/AAA.jpg" alt="Featured image of post iBMC服务器管理软件" /&gt;&lt;h1 id=&#34;ibmc服务器管理软件&#34;&gt;iBMC服务器管理软件
+        <guid>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/AAA.jpg" alt="Featured image of post iBMC服务器管理软件" /&gt;&lt;h1 id=&#34;ibmc服务器管理软件&#34;&gt;iBMC服务器管理软件
 &lt;/h1&gt;&lt;p&gt;iBMC智能管理系统（Intelligent Baseboard Management Controller，以下简称iBMC）是面向服务器全生命周期的服务器嵌入式管理系统。提供硬件状态监控、部署、节能、安全等系列管理工具，标准化接口构建服务器管理更加完善的生态系统。&lt;/p&gt;
 &lt;h2 id=&#34;ibmc登陆界面&#34;&gt;iBMC登陆界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu165c0c324b04346029846a430603da4a_1258070_480x0_resize_box_3.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu165c0c324b04346029846a430603da4a_1258070_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu165c0c324b04346029846a430603da4a_1258070_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu165c0c324b04346029846a430603da4a_1258070_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC登陆界面&#34;
@@ -1194,10 +1245,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;ibmc管理界面&#34;&gt;iBMC管理界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hue168748cd241419d0ab947c701b3087b_310274_480x0_resize_box_3.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hue168748cd241419d0ab947c701b3087b_310274_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hue168748cd241419d0ab947c701b3087b_310274_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hue168748cd241419d0ab947c701b3087b_310274_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC管理界面&#34;
@@ -1218,11 +1269,11 @@ N（No）：不编译此驱动。&lt;/p&gt;
         </item>
         <item>
         <title>Git</title>
-        <link>http://localhost:1313/p/git/</link>
+        <link>https://zuoco.github.io/p/git/</link>
         <pubDate>Wed, 07 May 2025 21:48:29 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/git/</guid>
-        <description>&lt;img src="http://localhost:1313/p/git/git.jpg" alt="Featured image of post Git" /&gt;&lt;h1 id=&#34;基本概念&#34;&gt;基本概念
+        <guid>https://zuoco.github.io/p/git/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/git/git.jpg" alt="Featured image of post Git" /&gt;&lt;h1 id=&#34;基本概念&#34;&gt;基本概念
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;仓库（Repository）&lt;/strong&gt;：一个Git仓库是一个包含所有版本控制文件和历史记录的目录。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;本地仓库（Local Repository）：在你的本地计算机上的仓库。&lt;/li&gt;
@@ -1394,10 +1445,10 @@ Unmodified files: 没有被git跟踪的文件。&lt;/p&gt;
         </item>
         <item>
         <title>DeskFlow工程源码整体认识</title>
-        <link>http://localhost:1313/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</link>
+        <link>https://zuoco.github.io/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</link>
         <pubDate>Tue, 06 May 2025 20:50:21 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</guid>
+        <guid>https://zuoco.github.io/p/deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</guid>
         <description>&lt;h1 id=&#34;1-项目目录结构&#34;&gt;1. 项目目录结构
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1516,17 +1567,17 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
         </item>
         <item>
         <title>Desklow初步认识</title>
-        <link>http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</link>
+        <link>https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</link>
         <pubDate>Tue, 06 May 2025 20:36:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</guid>
+        <guid>https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</guid>
         <description>&lt;h1 id=&#34;1-deskflow介绍&#34;&gt;1. Deskflow介绍
 &lt;/h1&gt;&lt;p&gt;在多台电脑上共享一套键鼠，支持Windows、Linux、MacOS。  &lt;br&gt;
 我们以1.21.2版本为例，介绍一下软件的功能，&lt;a class=&#34;link&#34; href=&#34;https://github.com/deskflow/deskflow&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Deskflow下载&lt;/a&gt;。&lt;/p&gt;
 &lt;h1 id=&#34;2-功能&#34;&gt;2. 功能
 &lt;/h1&gt;&lt;p&gt;首次启动软件时，需要选择当前的电脑模式，是作为服务端还是客户端，界面如下：  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/Deskflow.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/Deskflow.svg&#34;
 	
 	
 	
@@ -1537,10 +1588,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 接入物理键盘鼠标的就是服务端，其他电脑就是客户端。&lt;/p&gt;
 &lt;h1 id=&#34;3-软件配置&#34;&gt;3. 软件配置
 &lt;/h1&gt;&lt;p&gt;【Edit】&amp;ndash;&amp;gt;【Preferences】      &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;1187&#34;
 	height=&#34;808&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hua98699467201f3c6c661db44712ae7ec_65284_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hua98699467201f3c6c661db44712ae7ec_65284_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hua98699467201f3c6c661db44712ae7ec_65284_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hua98699467201f3c6c661db44712ae7ec_65284_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1567,10 +1618,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 &lt;ul&gt;
 &lt;li&gt;启用TSL加密，这是一个安全配置。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;822&#34;
 	height=&#34;808&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu92f6290c6027274890ac36bed2593ffb_29598_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu92f6290c6027274890ac36bed2593ffb_29598_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu92f6290c6027274890ac36bed2593ffb_29598_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu92f6290c6027274890ac36bed2593ffb_29598_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1585,10 +1636,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;服务端和客户端在这一层面的配置界面是一样的。&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;4-服务端&#34;&gt;4. 服务端
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE.png&#34;
 	width=&#34;877&#34;
 	height=&#34;181&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu2abe2be3d169696d82dd81b3c56077d5_12908_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu2abe2be3d169696d82dd81b3c56077d5_12908_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu2abe2be3d169696d82dd81b3c56077d5_12908_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu2abe2be3d169696d82dd81b3c56077d5_12908_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1599,10 +1650,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 &gt;&lt;br&gt;
 (1) 加载已有的配置文件，如果没有现成的配置文件，就点击【Configure Server】。&lt;br&gt;
 (2) 配置服务器信息，界面如下：     &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;1660&#34;
 	height=&#34;770&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hub8f84edf8d7a5f5d6c54648887164f00_43410_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hub8f84edf8d7a5f5d6c54648887164f00_43410_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hub8f84edf8d7a5f5d6c54648887164f00_43410_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hub8f84edf8d7a5f5d6c54648887164f00_43410_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1613,10 +1664,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;【Computers】&lt;/code&gt;&lt;br&gt;
 该项设置配置客户端与服务端的布局，中间的&lt;code&gt;GEM12&lt;/code&gt;是服务器，服务器周围的格子用于放置客户端，通过拖动右上角的电脑图标来创建客户端PC，如下图所示：         &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF.png&#34;
 	width=&#34;1190&#34;
 	height=&#34;769&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu21e7ad5ffa2a65b256a5eea0821468f0_43695_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu21e7ad5ffa2a65b256a5eea0821468f0_43695_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu21e7ad5ffa2a65b256a5eea0821468f0_43695_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu21e7ad5ffa2a65b256a5eea0821468f0_43695_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1626,10 +1677,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 	
 &gt;      &lt;br&gt;
 双击创建的客户端PC，就可以配置客户端的信息了，如下图所示：    &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;552&#34;
 	height=&#34;1002&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hue48030535219f65782bbf5f009a9c28b_40714_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hue48030535219f65782bbf5f009a9c28b_40714_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hue48030535219f65782bbf5f009a9c28b_40714_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hue48030535219f65782bbf5f009a9c28b_40714_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1640,10 +1691,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 &gt;      &lt;br&gt;
 该页面中需要注意的是Fixes，部分按键在一些平台上不可用，可以通过Fixes来修复，例如在Linux系统上Scroll Lock键不可用。&lt;/p&gt;
 &lt;h1 id=&#34;5-键鼠在pc之间的切换逻辑&#34;&gt;5. 键鼠在PC之间的切换逻辑
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91.png&#34;
 	width=&#34;1190&#34;
 	height=&#34;769&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu426b41ffa10fefd5f74ab895189076cc_57590_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu426b41ffa10fefd5f74ab895189076cc_57590_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu426b41ffa10fefd5f74ab895189076cc_57590_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu426b41ffa10fefd5f74ab895189076cc_57590_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1660,10 +1711,10 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
 &lt;h1 id=&#34;6-客户端&#34;&gt;6. 客户端
 &lt;/h1&gt;&lt;p&gt;客户端配置： 【3. 软件配置】&lt;br&gt;
 客户端使用： &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.png&#34;
 	width=&#34;2518&#34;
 	height=&#34;169&#34;
-	srcset=&#34;http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu4a0dce36c2ae7f4ac6fa448dd58d9d8d_16434_480x0_resize_box_3.png 480w, http://localhost:1313/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu4a0dce36c2ae7f4ac6fa448dd58d9d8d_16434_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu4a0dce36c2ae7f4ac6fa448dd58d9d8d_16434_480x0_resize_box_3.png 480w, https://zuoco.github.io/p/desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu4a0dce36c2ae7f4ac6fa448dd58d9d8d_16434_1024x0_resize_box_3.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1677,11 +1728,11 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
         </item>
         <item>
         <title>Qemu介绍</title>
-        <link>http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/</link>
+        <link>https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Mon, 05 May 2025 23:36:36 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/</guid>
-        <description>&lt;img src="http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/AAA.jpg" alt="Featured image of post Qemu介绍" /&gt;&lt;h1 id=&#34;qemu介绍&#34;&gt;Qemu介绍
+        <guid>https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/AAA.jpg" alt="Featured image of post Qemu介绍" /&gt;&lt;h1 id=&#34;qemu介绍&#34;&gt;Qemu介绍
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Qemu（Quick Emulator），一款开源的硬件虚拟化和仿真工具，Qemu本身可以运行在多种平台上（x86、ARM、RISC-V），并且能够模拟多种虚拟机。WMware、VirtualBox等虚拟化虚拟化平台只能运行在x86平台上，也只能模拟X86环境，而Qemu可以运行在多种平台，并且能够模拟多种虚拟机。&lt;/li&gt;
 &lt;li&gt;Qemu的系统模式和用户模式，系统模式就是模拟出一套硬件环境，在这个虚拟的硬件上安装操作系统，用户模式就是直接运行为另一个操作系统开发的程序。&lt;/li&gt;
@@ -2310,11 +2361,11 @@ DeskFlow编译成功后有３个可执行文件，其中deskflow就是deskflow-c
         </item>
         <item>
         <title>三路比较运算符</title>
-        <link>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+        <link>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/AAA.jpg" alt="Featured image of post 三路比较运算符" /&gt;&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
+        <guid>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/AAA.jpg" alt="Featured image of post 三路比较运算符" /&gt;&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
 &lt;/h1&gt;&lt;p&gt;&amp;lt;=&amp;gt;目的在于简化自定义类型的比较逻辑，只要实现了&amp;lt;=&amp;gt;和==，编译器就会自动生成其他比较运算逻辑。&lt;br&gt;
 返回值类型为三种比较类别类型：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2397,11 +2448,11 @@ std::weak_ordering可以隐式转换为std::partial_ordering。&lt;/p&gt;
         </item>
         <item>
         <title>什么是容器、容器分类</title>
-        <link>http://localhost:1313/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</link>
+        <link>https://zuoco.github.io/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%86%AC%E5%AD%A3%E8%89%BA%E6%9C%AF-%E5%8F%AF%E7%88%B1%E9%9B%AA%E6%99%AF.png" alt="Featured image of post 什么是容器、容器分类" /&gt;&lt;h1 id=&#34;1-什么是容器&#34;&gt;1. 什么是容器
+        <guid>https://zuoco.github.io/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%86%AC%E5%AD%A3%E8%89%BA%E6%9C%AF-%E5%8F%AF%E7%88%B1%E9%9B%AA%E6%99%AF.png" alt="Featured image of post 什么是容器、容器分类" /&gt;&lt;h1 id=&#34;1-什么是容器&#34;&gt;1. 什么是容器
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;类模板&lt;/strong&gt;，用于存储和管理数据，支持对象的添加、删除、索引、遍历等功能。&lt;/p&gt;
 &lt;h1 id=&#34;2-容器分类&#34;&gt;2. 容器分类
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;序列容器&lt;/strong&gt;：容器成员按严格的线性顺序排列，例如：array、vector、list、forward_list、deque、basic_string。  &lt;br&gt;
@@ -2455,11 +2506,11 @@ std::weak_ordering可以隐式转换为std::partial_ordering。&lt;/p&gt;
         </item>
         <item>
         <title>Array</title>
-        <link>http://localhost:1313/p/array/</link>
+        <link>https://zuoco.github.io/p/array/</link>
         <pubDate>Sun, 04 May 2025 00:03:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/array/</guid>
-        <description>&lt;img src="http://localhost:1313/p/array/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%81%87%E6%97%A5-%E5%81%87%E6%97%A5%E8%83%9C%E5%9C%B0.png" alt="Featured image of post Array" /&gt;&lt;h1 id=&#34;1-array&#34;&gt;1. Array
+        <guid>https://zuoco.github.io/p/array/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/array/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%81%87%E6%97%A5-%E5%81%87%E6%97%A5%E8%83%9C%E5%9C%B0.png" alt="Featured image of post Array" /&gt;&lt;h1 id=&#34;1-array&#34;&gt;1. Array
 &lt;/h1&gt;&lt;p&gt;元素数个数固定，不能动态改变。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -2749,13 +2800,13 @@ std::weak_ordering可以隐式转换为std::partial_ordering。&lt;/p&gt;
         </item>
         <item>
         <title>vector</title>
-        <link>http://localhost:1313/p/vector/</link>
+        <link>https://zuoco.github.io/p/vector/</link>
         <pubDate>Sun, 04 May 2025 00:03:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vector/</guid>
-        <description>&lt;img src="http://localhost:1313/p/vector/AAA.jpg" alt="Featured image of post vector" /&gt;&lt;h1 id=&#34;1-vector&#34;&gt;1. vector
+        <guid>https://zuoco.github.io/p/vector/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/vector/AAA.jpg" alt="Featured image of post vector" /&gt;&lt;h1 id=&#34;1-vector&#34;&gt;1. vector
 &lt;/h1&gt;&lt;p&gt;模板类，动态数组，维护一块连续的存储空间，容量可动态改变。    &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
 	
 	
 	
@@ -2947,20 +2998,20 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
         </item>
         <item>
         <title>动态内存管理</title>
-        <link>http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+        <link>https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
         <pubDate>Sun, 04 May 2025 00:01:49 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%A4%9C%E6%99%AF-%E6%98%9F%E7%A9%BA-%E6%9C%88%E4%BA%AE.png" alt="Featured image of post 动态内存管理" /&gt;&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
+        <guid>https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%A4%9C%E6%99%AF-%E6%98%9F%E7%A9%BA-%E6%9C%88%E4%BA%AE.png" alt="Featured image of post 动态内存管理" /&gt;&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>输入输出</title>
-        <link>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
+        <link>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/aaa.jpg" alt="Featured image of post 输入输出" /&gt;&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
+        <guid>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/aaa.jpg" alt="Featured image of post 输入输出" /&gt;&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
 &lt;/h1&gt;&lt;p&gt;非格式化IO不涉及数据表示形式的变化。&lt;/p&gt;
 &lt;p&gt;非格式化输入： get、read、getline、gcount&lt;br&gt;
 格式化输出： put、write&lt;/p&gt;
