@@ -248,14 +248,19 @@
 
   <ol>
     <li><a href="#31-buddyinfo文件">3.1. buddyinfo文件</a></li>
-    <li><a href="#procvmstat文件">/proc/vmstat文件</a></li>
-    <li><a href="#procmeminfo">/proc/meminfo</a></li>
-    <li><a href="#procsysvmmin_free_kbytes">/proc/sys/vm/min_free_kbytes</a></li>
+    <li><a href="#32-procvmstat文件">3.2. /proc/vmstat文件</a></li>
+    <li><a href="#33-procmeminfo">3.3. /proc/meminfo</a></li>
+    <li><a href="#34-32位系统的高低内存划分">3.4. 32位系统的高低内存划分</a>
+      <ol>
+        <li><a href="#341-32系统的内存划分">3.4.1. 32系统的内存划分</a></li>
+      </ol>
+    </li>
+    <li><a href="#35-procsysvmmin_free_kbytes">3.5. /proc/sys/vm/min_free_kbytes</a></li>
   </ol>
 
   <ol>
     <li><a href="#heading"></a></li>
-    <li><a href="#53">5.3.</a></li>
+    <li><a href="#52">5.2.</a></li>
   </ol>
 </nav>
         </div>
@@ -290,8 +295,8 @@
                 Linux内核
             </a>
         
-            <a href="/categories/%E5%86%85%E5%AD%98/" style="background-color: #8B4513; color: #FFFFFF;">
-                内存
+            <a href="/categories/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" style="background-color: #8B4513; color: #FFFFFF;">
+                Linux内存管理
             </a>
         
     </header>
@@ -393,7 +398,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="2-内核的oom机制">2. 内核的OOM机制
-</h1><p>OOM（Out of Memory）机制是为了应对系统内存耗尽的情况而设计的一种保护机制。当系统内存资源紧张到无法为新的内存分配请求提供足够的空间时，OOM Killer会被触发，依据一定的规则杀掉一些进程来释放内存。</p>
+</h1><p>(后面会文章单独分析oom机制，这里简单介绍)OOM（Out of Memory）机制是为了应对系统内存耗尽的情况而设计的一种保护机制。当系统内存资源紧张到无法为新的内存分配请求提供足够的空间时，OOM Killer会被触发，依据一定的规则杀掉一些进程来释放内存。</p>
 <ol>
 <li><code>查询OOM事件： </code></li>
 </ol>
@@ -406,7 +411,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
-<li><code>oom_score分数： </code>(后面会文章单独分析oom killer机制)</li>
+<li><code>oom_score分数： </code></li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -422,15 +427,17 @@
 </span></span><span class="line"><span class="cl">-rw-r--r--.   <span class="m">1</span> root root <span class="m">0</span>  5月20日 22:34 oom_score_adj   <span class="c1"># 用户自定义的oom_score_adj值，用于干预oom_score分数的计算。</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="3-检查内存碎片化">3. 检查内存碎片化：
+</div><h1 id="3-检查内存碎片化">3. 检查内存碎片化
 </h1><p>相关信息位于文件中：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/proc/buddyinfo
+</span></span><span class="line"><span class="cl">/proc/vmstat
 </span></span><span class="line"><span class="cl">/proc/meminfo
 </span></span></code></pre></td></tr></table>
 </div>
@@ -481,7 +488,7 @@ zone &lt;zone_name&gt;：内存区域类型，常见类型包括：</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>碎片化判断</code>: <code>低阶空闲块越多，高阶阶空闲块越少</code>代表内存碎片化越严重。</p>
-<h2 id="procvmstat文件">/proc/vmstat文件
+<h2 id="32-procvmstat文件">3.2. /proc/vmstat文件
 </h2><p>部分字段：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -533,7 +540,7 @@ zone &lt;zone_name&gt;：内存区域类型，常见类型包括：</p>
 </span></span><span class="line"><span class="cl">allocstall_device <span class="m">0</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="procmeminfo">/proc/meminfo
+</div><h2 id="33-procmeminfo">3.3. /proc/meminfo
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -556,13 +563,21 @@ zone &lt;zone_name&gt;：内存区域类型，常见类型包括：</p>
 </span></span><span class="line"><span class="cl"># 6. 32位系统
 </span></span><span class="line"><span class="cl">HighTotal:       3143004 kB　　 # 加上LowTotal等于MemTotal, 在64位系统中，这一部分主要是为了兼容性保留的概念，在实际应用中意义不大。
 </span></span><span class="line"><span class="cl">HighFree:        2140940 kB    # 加上LowFree等于MemFree
-</span></span><span class="line"><span class="cl">LowTotal:         862172 kB    # 标识低端内存区域的总容量为 862,172 KB（约 842 MB）。低端内存可以直接映射到内核地址空间，在32位系统中尤为重要。
+</span></span><span class="line"><span class="cl">LowTotal:         862172 kB    # 标识低端内存区域的总容量为 862,172 KB（约 842 MB）。低端内存可以直接映射到内核地址空间。
 </span></span><span class="line"><span class="cl">LowFree:          734984 kB
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>高低内存划分:
-由于32位系统的地址空间限制，通常会将内存划分为“低端内存”（Low Memory）和“高端内存”（High Memory）。这种划分主要是因为32位系统能够直接映射到内核空间的物理内存有限（通常是前1GB或前896MB，具体取决于内核配置）。 在你的32位系统中，总共有约 4GB 的物理内存，其中大约 2.87 GB 是空闲的（MemFree）。系统中有约 3.14 GB 被视为高端内存，剩下的约 862 MB 为低端内存。大部分的空闲内存位于高端内存区域（HighFree 为约 2.14 GB），但也有相当一部分（约 735 MB）是在更易于访问的低端内存区域（LowFree）。缓存和缓冲区占用了约 540 MB 的内存（Buffers 加上 Cached），这有助于加快文件和块设备的访问速度。</p>
-<h2 id="procsysvmmin_free_kbytes">/proc/sys/vm/min_free_kbytes
+</div><h2 id="34-32位系统的高低内存划分">3.4. 32位系统的高低内存划分
+</h2><h3 id="341-32系统的内存划分">3.4.1. 32系统的内存划分
+</h3><p><strong>Low Memory</strong>：约896MB，内核<strong>直接映射</strong>。 <br>
+<strong>High Memory</strong>：剩余约3.1GB，需<strong>动态映射</strong>。</p>
+<p><code>Low Memory</code>：<br>
+内核可以<strong>直接映射</strong>到其虚拟地址空间的物理内存（即内核的直接映射区），这部分物理内存通过线性映射（固定偏移）转换到内核虚拟地址空间，例如，物理地址0x00000000对应内核虚拟地址0xC0000000（3GB处）。这部分内存无需动态映射(内核可直接访问，无需页表切换或临时映射)，最多1GB(与内核空间大小一致)，但实际受内核保留区域（如vmalloc区、固定映射区等）影响，通常约为896MB，用于存放内核关键数据结构（如页表、进程描述符）、代码、DMA缓冲区等必须常驻内存的内容。</p>
+<p><code>High Memory</code>:<br>
+超出内核直接映射区（Low Memory）的物理内存，需通过<strong>动态映射</strong>机制才能被内核访问，当物理内存超过1GB（或实际约896MB）时，额外内存属于High Memory。动态内存映射机制包括，(1)临时映射(kmap)使用kmap()和kunmap()函数将High Memory页临时映射到内核的“固定映射区”，适用于短时间访问。(2).永久映射(pkmap)通过kmap_atomic()在“永久映射区”建立映射，常用于中断上下文等不允许阻塞的场景。(3)vmalloc区，分配非连续的物理内存，映射到虚拟地址空间，用于大块内存请求。High Memory需要动态映射/解除映射，存在性能损耗。主要是用户进程分配物理页（通过页表映射到用户空间），或内核<strong>临时访问</strong>大内存（如文件缓存）用到。</p>
+<p><code>相对于64位系统</code>：<br>
+64位地址空间远大于物理内存需求（如x86_64支持48位虚拟地址，256TB），直接映射所有内存，内核可通过直接映射区（physmap）线性映射全部物理内存，无需High Memory概念。</p>
+<h2 id="35-procsysvmmin_free_kbytes">3.5. /proc/sys/vm/min_free_kbytes
 </h2><p>文件中的值定义了在系统中应始终保持空闲的最小内存量（以KB为单位）。这个参数对于防止内存完全耗尽，确保系统即使在高负载下也能平稳运行至关重要。当可用内存降至 min_free_kbytes 设置的阈值之下时，Linux 内核的内存回收机制会主动尝试释放内存，例如通过回收缓存或交换出不活跃的页面到磁盘。</p>
 <h1 id="4-内存压缩整理">4. 内存压缩（整理）
 </h1><p>如果内存碎片化严重，可以通过调整内存压缩（整理）的方式来解决，。</p>
@@ -631,10 +646,9 @@ zone &lt;zone_name&gt;：内存区域类型，常见类型包括：</p>
 </div><h1 id="5-太晚了明天再整理">5. 太晚了，明天再整理
 </h1><p>内核文件：　/proc/sys/vm/oom_kill_allocating_task，　写入1表示优先杀死导致内存不足的任务，而不是选择评分最高的任务。　　　</p>
 <h2 id="heading">
-</h2><p>使用 sar 或 vmstat 工具监控系统的内存使用变化：
-vmstat 1 10　　　　＃　研究一下命令的输出
-sar -r 1 10　　　　＃　研究一下命令的输出</p>
-<h2 id="53">5.3.
+</h2><p>使用 sar 或 vmstat 工具监控系统的内存使用变化：</p>
+<p>sar -r 1 10　　　　＃　研究一下命令的输出</p>
+<h2 id="52">5.2.
 </h2><p>Slab 分配器：　研究slabtop命令使用。</p>
 
 </section>
@@ -683,6 +697,32 @@ sar -r 1 10　　　　＃　研究一下命令的输出</p>
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-00/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">内存管理 00</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/vmstat/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">vmstat</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
@@ -740,30 +780,6 @@ sar -r 1 10　　　　＃　研究一下命令的输出</p>
 
         <div class="article-details">
             <h2 class="article-title">BootLoader</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="has-image">
-    <a href="/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/">
-        
-        
-            <div class="article-image">
-                <img src="/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.a24a6d9a389f778ae05c8193950f4174_hu095d4060ad0d8a19a47a6db61ee94599_341573_250x150_fill_q75_box_smart1.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post Linux内核构建、内核模块构建"
-                        
-                        data-hash="md5-okptmjifd4rgXIGTlQ9BdA==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux内核构建、内核模块构建</h2>
         </div>
     </a>
 </article>
