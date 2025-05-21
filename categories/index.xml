@@ -7,13 +7,53 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Tue, 20 May 2025 22:20:48 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 May 2025 20:53:24 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux内核</title>
+        <link>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</link>
+        <pubDate>Wed, 21 May 2025 20:53:24 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>内存</title>
+        <link>https://zuoco.github.io/categories/%E5%86%85%E5%AD%98/</link>
+        <pubDate>Wed, 21 May 2025 20:53:24 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E5%86%85%E5%AD%98/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E5%86%85%E5%AD%98/AAA.jpg" alt="Featured image of post 内存" /&gt;</description>
+        </item>
+        <item>
+        <title>C&#43;&#43;20</title>
+        <link>https://zuoco.github.io/categories/c&#43;&#43;20/</link>
+        <pubDate>Wed, 21 May 2025 20:43:36 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/c&#43;&#43;20/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/c&#43;&#43;20/000.jpg" alt="Featured image of post C&#43;&#43;20" /&gt;</description>
+        </item>
+        <item>
+        <title>C&#43;&#43;20关键字</title>
+        <link>https://zuoco.github.io/categories/c&#43;&#43;20%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+        <pubDate>Wed, 21 May 2025 20:43:36 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/c&#43;&#43;20%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>AI大模型</title>
         <link>https://zuoco.github.io/categories/ai%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
-        <pubDate>Tue, 20 May 2025 22:20:48 +0800</pubDate>
+        <pubDate>Wed, 21 May 2025 20:39:47 +0800</pubDate>
         
         <guid>https://zuoco.github.io/categories/ai%E5%A4%A7%E6%A8%A1%E5%9E%8B/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/ai%E5%A4%A7%E6%A8%A1%E5%9E%8B/AAA.jpg" alt="Featured image of post AI大模型" /&gt;</description>
+        </item>
+        <item>
+        <title>Ollama</title>
+        <link>https://zuoco.github.io/categories/ollama/</link>
+        <pubDate>Wed, 21 May 2025 20:39:47 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/ollama/</guid>
+        <description></description>
         </item>
         <item>
         <title>MNN</title>
@@ -22,22 +62,6 @@
         
         <guid>https://zuoco.github.io/categories/mnn/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>Linux内核</title>
-        <link>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</link>
-        <pubDate>Tue, 20 May 2025 00:18:27 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>内存</title>
-        <link>https://zuoco.github.io/categories/%E5%86%85%E5%AD%98/</link>
-        <pubDate>Tue, 20 May 2025 00:18:27 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/%E5%86%85%E5%AD%98/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/%E5%86%85%E5%AD%98/AAA.jpg" alt="Featured image of post 内存" /&gt;</description>
         </item>
         <item>
         <title>EPOLL</title>
@@ -112,12 +136,12 @@
         <description>&lt;img src="https://zuoco.github.io/categories/qemu/AAA.jpg" alt="Featured image of post Qemu" /&gt;</description>
         </item>
         <item>
-        <title>C&#43;&#43;20</title>
+        <title>C&#43;&#43;</title>
         <link>https://zuoco.github.io/categories/c&#43;&#43;/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/categories/c&#43;&#43;/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/c&#43;&#43;/000.jpg" alt="Featured image of post C&#43;&#43;20" /&gt;</description>
+        <description></description>
         </item>
         <item>
         <title>容器</title>

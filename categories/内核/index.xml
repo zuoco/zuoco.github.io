@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>内核 on 阿左笔记</title>
+        <link>http://localhost:1313/categories/%E5%86%85%E6%A0%B8/</link>
+        <description>Recent content in 内核 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Wed, 21 May 2025 20:53:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>内核OOM机制</title>
+        <link>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</link>
+        <pubDate>Wed, 21 May 2025 20:53:24 +0800</pubDate>
+        
+        <guid>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</guid>
+        <description>&lt;h1 id=&#34;占位&#34;&gt;占位
+&lt;/h1&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
