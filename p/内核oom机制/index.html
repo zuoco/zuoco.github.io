@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 什么是OOM 在内存不足时，内存管理系统会回收内核中可以释放的内存，当实在没有内存可用的时候，就会进入OOM（Out of Memory）状态，内">
 <title>内核OOM机制</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/'>
+<link rel='canonical' href='http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/'>
 
 <link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="内核OOM机制">
 <meta property='og:description' content="1. 什么是OOM 在内存不足时，内存管理系统会回收内核中可以释放的内存，当实在没有内存可用的时候，就会进入OOM（Out of Memory）状态，内">
-<meta property='og:url' content='https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/'>
+<meta property='og:url' content='http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-21T20:53:24&#43;08:00'/><meta property='article:modified_time' content='2025-05-21T20:53:24&#43;08:00'/>
 <meta name="twitter:title" content="内核OOM机制">
@@ -219,7 +219,38 @@
     </ol>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#oom-killer代码">oom Killer代码</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="main-article">
@@ -283,7 +314,148 @@
     <h1 id="1-什么是oom">1. 什么是OOM
 </h1><p>在内存不足时，内存管理系统会回收内核中可以释放的内存，当实在没有内存可用的时候，就会进入OOM（Out of Memory）状态，内存管理系统会执行OOM Killer，依据一定的规则杀死一些进程来释放内存，对于个人PC来说，这都不是个事儿，但对于服务器，有可能就会将重要的业务进程给干死了，所以有的服务器会将sysctl的vm.panic_on_omc参数设为1，当发生OOM时强制关闭系统，如果设置为0(默认)，在OOM时就会运行OOM Killer。</p>
 <h1 id="oom-killer机制">OOM Killer机制
-</h1><p>杀死进程的依据&hellip;&hellip;</p>
+</h1><p>OOM Killer机制依靠两个因素选择要杀的进程，oom_score和oom_score_adj，其中oom_score是内核通过进程的内存消耗计算出来的，oom_score_adj（取值-1000 ~ 1000）是用户用来干预oom的（用户权重），内核会向<code>oom_score + oom_score_adj</code>值最高的进程发送关闭信号。</p>
+<h2 id="oom-killer代码">oom Killer代码
+</h2><p>内核代码：linux-6.14.6/mm/oom_kill.c</p>
+<ol>
+<li>OOM杀手算法的评分机制:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">long</span> <span class="nf">oom_badness</span><span class="p">(</span><span class="k">struct</span> <span class="n">task_struct</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">totalpages</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">long</span> <span class="n">points</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">long</span> <span class="n">adj</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 1. 排除不可杀进程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="nf">oom_unkillable_task</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">LONG_MIN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">p</span> <span class="o">=</span> <span class="nf">find_lock_task_mm</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">LONG_MIN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 2. 获取用户权重，并判断该进程是否可杀
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">adj</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">signal</span><span class="o">-&gt;</span><span class="n">oom_score_adj</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">adj</span> <span class="o">==</span> <span class="n">OOM_SCORE_ADJ_MIN</span> <span class="o">||</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">test_bit</span><span class="p">(</span><span class="n">MMF_OOM_SKIP</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">mm</span><span class="o">-&gt;</span><span class="n">flags</span><span class="p">)</span> <span class="o">||</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">in_vfork</span><span class="p">(</span><span class="n">p</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">task_unlock</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">LONG_MIN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 3. 基础评分 = 物理内存 + 交换分区 + 页表内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">points</span> <span class="o">=</span> <span class="nf">get_mm_rss</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">mm</span><span class="p">)</span> <span class="o">+</span> <span class="nf">get_mm_counter</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">mm</span><span class="p">,</span> <span class="n">MM_SWAPENTS</span><span class="p">)</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">mm_pgtables_bytes</span><span class="p">(</span><span class="n">p</span><span class="o">-&gt;</span><span class="n">mm</span><span class="p">)</span> <span class="o">/</span> <span class="n">PAGE_SIZE</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">task_unlock</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// 4. 归一化调整值 = OOM评分调整值 * 总内存/1000
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">adj</span> <span class="o">*=</span> <span class="n">totalpages</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 5. 最终评分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">points</span> <span class="o">+=</span> <span class="n">adj</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">points</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>查找oom最大的进程</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">select_bad_process</span><span class="p">(</span><span class="k">struct</span> <span class="n">oom_control</span> <span class="o">*</span><span class="n">oc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">oc</span><span class="o">-&gt;</span><span class="n">chosen_points</span> <span class="o">=</span> <span class="n">LONG_MIN</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nf">is_memcg_oom</span><span class="p">(</span><span class="n">oc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">mem_cgroup_scan_tasks</span><span class="p">(</span><span class="n">oc</span><span class="o">-&gt;</span><span class="n">memcg</span><span class="p">,</span> <span class="n">oom_evaluate_task</span><span class="p">,</span> <span class="n">oc</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">struct</span> <span class="n">task_struct</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="nf">rcu_read_lock</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 否则遍历系统所有进程，通过oom_evaluate_task评估每个进程，若返回true则立即停止遍历（找到候选进程）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">for_each_process</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="nf">oom_evaluate_task</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">oc</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">rcu_read_unlock</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>杀死进程</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="kt">void</span> <span class="nf">oom_kill_process</span><span class="p">(</span><span class="k">struct</span> <span class="n">task_struct</span> <span class="o">*</span><span class="n">victim</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// 杀死进程，太多了，就不放了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="procsysvmoom_kill_allocating_task">/proc/sys/vm/oom_kill_allocating_task
+</h1><p>写入1表示优先杀死导致内存不足的任务，而不是选择评分最高的任务。</p>
 
 </section>
 
@@ -383,48 +555,26 @@
 
             
                 
-<article class="has-image">
-    <a href="/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/">
+<article class="">
+    <a href="/p/bootloader%E4%B9%8Bdebian%E7%B3%BB%E5%88%97/">
         
-        
-            <div class="article-image">
-                <img src="/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/_hu3b7b61c287197e7115b9863acb56f4a1_1102291_3d907802892e32d40c89fb14a2e9096f.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post EPOLL系统调用"
-                        
-                        data-hash="md5-L1zQm96sX65LzA5/uOODrg==">
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">EPOLL系统调用</h2>
+            <h2 class="article-title">Bootloader之Debian系列</h2>
         </div>
     </a>
 </article>
 
             
                 
-<article class="has-image">
-    <a href="/p/bootloader/">
+<article class="">
+    <a href="/p/bootloader%E4%B9%8Bfedora%E7%B3%BB%E5%88%97/">
         
-        
-            <div class="article-image">
-                <img src="/p/bootloader/_hu1b41f8bba43d19951ffefdf1a50f780d_7688418_4655d0a947c41c82eb6e5649dd63a8da.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy"
-                        alt="Featured image of post BootLoader"
-                        
-                        data-hash="md5-WgNwADQ7iaBg3I1yVy8E2Q==">
-                
-            </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">BootLoader</h2>
+            <h2 class="article-title">Bootloader之Fedora系列</h2>
         </div>
     </a>
 </article>
@@ -579,7 +729,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.b6beb2d10bd56395acbe1b01dbe2a173f0548851ebc8c19c3620881c6a713fc3.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
