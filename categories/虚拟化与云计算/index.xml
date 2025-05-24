@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>虚拟化与云计算 on 阿左笔记</title>
-        <link>http://localhost:1313/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/</link>
+        <link>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/</link>
         <description>Recent content in 虚拟化与云计算 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Thu, 08 May 2025 21:01:19 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 08 May 2025 21:01:19 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>iBMC服务器管理软件</title>
-        <link>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
+        <link>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
         <pubDate>Thu, 08 May 2025 21:01:19 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
-        <description>&lt;img src="http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/AAA.jpg" alt="Featured image of post iBMC服务器管理软件" /&gt;&lt;h1 id=&#34;ibmc服务器管理软件&#34;&gt;iBMC服务器管理软件
+        <guid>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/AAA.jpg" alt="Featured image of post iBMC服务器管理软件" /&gt;&lt;h1 id=&#34;ibmc服务器管理软件&#34;&gt;iBMC服务器管理软件
 &lt;/h1&gt;&lt;p&gt;iBMC智能管理系统（Intelligent Baseboard Management Controller，以下简称iBMC）是面向服务器全生命周期的服务器嵌入式管理系统。提供硬件状态监控、部署、节能、安全等系列管理工具，标准化接口构建服务器管理更加完善的生态系统。&lt;/p&gt;
 &lt;h2 id=&#34;ibmc登陆界面&#34;&gt;iBMC登陆界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu165c0c324b04346029846a430603da4a_1258070_480x0_resize_box_3.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu165c0c324b04346029846a430603da4a_1258070_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_da2fa607b63a6a06.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_496fb0aefcc422cb.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC登陆界面&#34;
@@ -31,10 +31,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;ibmc管理界面&#34;&gt;iBMC管理界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hue168748cd241419d0ab947c701b3087b_310274_480x0_resize_box_3.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hue168748cd241419d0ab947c701b3087b_310274_1024x0_resize_box_3.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_e6a52f82634db2c1.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_893c42a947eaf23e.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC管理界面&#34;
@@ -55,11 +55,11 @@
         </item>
         <item>
         <title>Qemu介绍</title>
-        <link>http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/</link>
+        <link>https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Mon, 05 May 2025 23:36:36 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/</guid>
-        <description>&lt;img src="http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/AAA.jpg" alt="Featured image of post Qemu介绍" /&gt;&lt;h1 id=&#34;qemu介绍&#34;&gt;Qemu介绍
+        <guid>https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/AAA.jpg" alt="Featured image of post Qemu介绍" /&gt;&lt;h1 id=&#34;qemu介绍&#34;&gt;Qemu介绍
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Qemu（Quick Emulator），一款开源的硬件虚拟化和仿真工具，Qemu本身可以运行在多种平台上（x86、ARM、RISC-V），并且能够模拟多种虚拟机。WMware、VirtualBox等虚拟化虚拟化平台只能运行在x86平台上，也只能模拟X86环境，而Qemu可以运行在多种平台，并且能够模拟多种虚拟机。&lt;/li&gt;
 &lt;li&gt;Qemu的系统模式和用户模式，系统模式就是模拟出一套硬件环境，在这个虚拟的硬件上安装操作系统，用户模式就是直接运行为另一个操作系统开发的程序。&lt;/li&gt;
