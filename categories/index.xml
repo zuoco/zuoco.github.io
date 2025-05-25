@@ -7,7 +7,23 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 21 May 2025 23:41:24 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 May 2025 17:04:00 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Git</title>
+        <link>https://zuoco.github.io/categories/git/</link>
+        <pubDate>Sun, 25 May 2025 17:04:00 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/git/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/git/git.jpg" alt="Featured image of post Git" /&gt;</description>
+        </item>
+        <item>
+        <title>资源</title>
+        <link>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</link>
+        <pubDate>Sun, 25 May 2025 14:22:52 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Linux内存管理</title>
         <link>https://zuoco.github.io/categories/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
         <pubDate>Wed, 21 May 2025 23:41:24 +0800</pubDate>
@@ -102,14 +118,6 @@
         
         <guid>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/AAA.jpg" alt="Featured image of post 虚拟化与云计算" /&gt;</description>
-        </item>
-        <item>
-        <title>Git</title>
-        <link>https://zuoco.github.io/categories/git/</link>
-        <pubDate>Wed, 07 May 2025 21:48:29 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/git/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/git/git.jpg" alt="Featured image of post Git" /&gt;</description>
         </item>
         <item>
         <title>DeskFlow</title>
