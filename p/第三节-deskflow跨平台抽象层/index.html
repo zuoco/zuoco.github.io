@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="在本专题，我们借助一些有趣的好玩的开源项目，从工程实践中体会编程技术，例如编程语言、编译构建、面向对象、设计模式、CI/CD、开源协议等等。 对于每一个项目，我们不会马上看代码，而是采用从表象到本质的认知路线，从“安装使用(功能)”到“工程目录结构/模块设计”，再到“各个模块的功能用途”，再到“各个模块的代码实现”，总体上会经历４个阶段。">
-<title>Category: 开源项目赏析 - 阿左笔记</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. Arch 首先，极简的说，DeskFlow的跨平台抽象层如下(先忽略类成员)： 2. Arch类设计 Arch类是单例类，他们这个单例有点问题，但是人家确实是这么设计的。\n">
+<title>第三节 - DeskFlow跨平台抽象层</title>
 
-<link rel='canonical' href='https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Category: 开源项目赏析 - 阿左笔记">
-<meta property='og:description' content="在本专题，我们借助一些有趣的好玩的开源项目，从工程实践中体会编程技术，例如编程语言、编译构建、面向对象、设计模式、CI/CD、开源协议等等。 对于每一个项目，我们不会马上看代码，而是采用从表象到本质的认知路线，从“安装使用(功能)”到“工程目录结构/模块设计”，再到“各个模块的功能用途”，再到“各个模块的代码实现”，总体上会经历４个阶段。">
-<meta property='og:url' content='https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/'>
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="第三节 - DeskFlow跨平台抽象层">
+<meta property='og:description' content="1. Arch 首先，极简的说，DeskFlow的跨平台抽象层如下(先忽略类成员)： 2. Arch类设计 Arch类是单例类，他们这个单例有点问题，但是人家确实是这么设计的。\n">
+<meta property='og:url' content='https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2025-05-25T19:39:48&#43;08:00 '/><meta property='og:image' content='https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/AAA.jpg' />
-<meta name="twitter:title" content="Category: 开源项目赏析 - 阿左笔记">
-<meta name="twitter:description" content="在本专题，我们借助一些有趣的好玩的开源项目，从工程实践中体会编程技术，例如编程语言、编译构建、面向对象、设计模式、CI/CD、开源协议等等。 对于每一个项目，我们不会马上看代码，而是采用从表象到本质的认知路线，从“安装使用(功能)”到“工程目录结构/模块设计”，再到“各个模块的功能用途”，再到“各个模块的代码实现”，总体上会经历４个阶段。"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/AAA.jpg' /><link rel="alternate" type="application/rss&#43;xml" href="https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/index.xml">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-25T19:39:48&#43;08:00'/><meta property='article:modified_time' content='2025-05-25T19:39:48&#43;08:00'/>
+<meta name="twitter:title" content="第三节 - DeskFlow跨平台抽象层">
+<meta name="twitter:description" content="1. Arch 首先，极简的说，DeskFlow的跨平台抽象层如下(先忽略类成员)： 2. Arch类设计 Arch类是单例类，他们这个单例有点问题，但是人家确实是这么设计的。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
-    <body class="">
+    <body class="
+    article-page
+    ">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -314,29 +315,10 @@
     <aside class="sidebar right-sidebar sticky">
         
             
-                <form action="/search/" class="search-form widget" >
-        <p>
-            <label>搜索</label>
-            <input name="keyword" required placeholder="输入关键词..." />
-        
-            <button title="搜索">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="10" cy="10" r="7" />
-  <line x1="21" y1="21" x2="15" y2="15" />
-</svg>
-
-
-
-            </button>
-        </p>
-    </form>
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
   <line x1="5" y1="9" x2="19" y2="9" />
   <line x1="5" y1="15" x2="19" y2="15" />
@@ -346,187 +328,387 @@
 
 
 
-    </div>
-    <h2 class="widget-title section-title">分类</h2>
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#21-arch类声明">2.1. Arch类声明</a></li>
+    <li><a href="#22-arch类实现">2.2. Arch类实现</a></li>
+    <li><a href="#23-单例构造">2.3. 单例构造</a></li>
+    <li><a href="#24-单例初始化">2.4. 单例初始化</a></li>
+    <li><a href="#25-单例访问">2.5. 单例访问</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
 
-    <div class="tagCloud-tags">
-        
-            <a href="/categories/c&#43;&#43;20/" class="font_size_7">
-                C&#43;&#43;20
-            </a>
-        
-            <a href="/categories/linux%E5%86%85%E6%A0%B8/" class="font_size_6">
-                Linux内核
-            </a>
-        
-            <a href="/categories/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="font_size_4">
-                Linux内存管理
-            </a>
-        
-            <a href="/categories/ai%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="font_size_3">
-                AI大模型
-            </a>
-        
-            <a href="/categories/c&#43;&#43;%E5%AE%B9%E5%99%A8/" class="font_size_3">
-                C&#43;&#43;容器
-            </a>
-        
-            <a href="/categories/deskflow/" class="font_size_3">
-                DeskFlow
-            </a>
-        
-            <a href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/" class="font_size_3">
-                开源项目赏析
-            </a>
-        
-            <a href="/categories/git/" class="font_size_2">
-                Git
-            </a>
-        
-            <a href="/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/" class="font_size_2">
-                虚拟化与云计算
-            </a>
-        
-            <a href="/categories/c&#43;&#43;20%E5%85%B3%E9%94%AE%E5%AD%97/" class="font_size_1">
-                C&#43;&#43;20关键字
-            </a>
-        
-            <a href="/categories/c&#43;&#43;%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/" class="font_size_1">
-                C&#43;&#43;内存管理
-            </a>
-        
-            <a href="/categories/c&#43;&#43;%E6%B5%81/" class="font_size_1">
-                C&#43;&#43;流
-            </a>
-        
-            <a href="/categories/linux%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97/" class="font_size_1">
-                Linux内核模块
-            </a>
-        
-            <a href="/categories/mnn/" class="font_size_1">
-                MNN
-            </a>
-        
-            <a href="/categories/ollama/" class="font_size_1">
-                Ollama
-            </a>
-        
-            <a href="/categories/qemu/" class="font_size_1">
-                Qemu
-            </a>
-        
-            <a href="/categories/%E5%8D%83%E9%97%AE%E5%A4%A7%E6%A8%A1%E5%9E%8B/" class="font_size_1">
-                千问大模型
-            </a>
-        
-            <a href="/categories/%E5%BC%82%E6%AD%A5io/" class="font_size_1">
-                异步IO
-            </a>
-        
-            <a href="/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/" class="font_size_1">
-                服务器管理
-            </a>
-        
-            <a href="/categories/%E8%B5%84%E6%BA%90/" class="font_size_1">
-                资源
-            </a>
-        
-            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" class="font_size_1">
-                软件设计
-            </a>
-        
-    </div>
-</section>
-
-            
-        
-            
-                <section class="widget tagCloud">
-    <div class="widget-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
-  <circle cx="9" cy="9" r="2" />
-</svg>
-
-
-
-    </div>
-    <h2 class="widget-title section-title">标签云</h2>
-
-    <div class="tagCloud-tags">
-        
-    </div>
-</section>
             
         
     </aside>
 
 
             <main class="main full-width">
-    <header>
-        <h3 class="section-title">
-            
-                Categories
-            
-        </h3>
+    <article class="main-article">
+    <header class="article-header">
 
-        <div class="section-card">
-            <div class="section-details">
-                <h3 class="section-count">3 个页面</h3>
-                <h1 class="section-term">开源项目赏析</h1>
-                
-                    <h2 class="section-description">在本专题，我们借助一些有趣的好玩的开源项目，从工程实践中体会编程技术，例如编程语言、编译构建、面向对象、设计模式、CI/CD、开源协议等等。 对于每一个项目，我们不会马上看代码，而是采用从表象到本质的认知路线，从“安装使用(功能)”到“工程目录结构/模块设计”，再到“各个模块的功能用途”，再到“各个模块的代码实现”，总体上会经历４个阶段。</h2>
-                
-            </div>
-                <div class="section-image">
-                    <img src="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/AAA_hu_c1639a94b96af9d0.jpg" 
-                            width="120"
-                            height="120" 
-                            loading="lazy">
-                    
-                </div>
-            
-        </div>
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/" style="background-color: #8B4513; color: #FFFFFF;">
+                开源项目赏析
+            </a>
+        
+            <a href="/categories/deskflow/" >
+                DeskFlow
+            </a>
+        
+            <a href="/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/" >
+                软件设计
+            </a>
+        
     </header>
     
-    <section class="article-list--compact">
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/">第三节 - DeskFlow跨平台抽象层</a>
+        </h2>
+    
         
-            <article>
-    <a href="/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/">
-        <div class="article-details">
-            <h2 class="article-title">第三节 - DeskFlow跨平台抽象层</h2>
-            <footer class="article-time">
-                <time datetime='2025-05-25T19:39:48&#43;08:00'>May 25, 2025</time>
-            </footer>
-        </div>
-    </a>
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 25, 2025</time>
+            </div>
+        
+
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="1-arch">1. Arch
+</h1><p>首先，极简的说，DeskFlow的跨平台抽象层如下(先忽略类成员)：
+<img src="/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/arch.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="2-arch类设计">2. Arch类设计
+</h1><p>Arch类是单例类，他们这个单例有点问题，但是人家确实是这么设计的。</p>
+<h2 id="21-arch类声明">2.1. Arch类声明
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// arch.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">Arch</span> <span class="o">:</span> <span class="k">public</span> <span class="n">ARCH_CONSOLE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="k">public</span> <span class="n">ARCH_DAEMON</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="k">public</span> <span class="n">ARCH_LOG</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="k">public</span> <span class="n">ARCH_MULTITHREAD</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="k">public</span> <span class="n">ARCH_NETWORK</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="k">public</span> <span class="n">ARCH_SLEEP</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="k">public</span> <span class="n">ARCH_STRING</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">             <span class="k">public</span> <span class="n">ARCH_TIME</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 构造函数是public的，但是没有问题，后面会分析
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">Arch</span><span class="p">();</span>              
+</span></span><span class="line"><span class="cl">  <span class="n">Arch</span><span class="p">(</span><span class="n">Arch</span> <span class="o">*</span><span class="n">arch</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">virtual</span> <span class="o">~</span><span class="n">Arch</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="n">Arch</span> <span class="o">*</span><span class="nf">getInstance</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="kt">void</span> <span class="nf">setInstance</span><span class="p">(</span><span class="n">Arch</span> <span class="o">*</span><span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s_instance</span> <span class="o">=</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="n">Arch</span> <span class="o">*</span><span class="n">s_instance</span><span class="p">;</span>     <span class="c1">//静态私有单例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="22-arch类实现">2.2. Arch类实现
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">Arch</span> <span class="o">*</span><span class="n">Arch</span><span class="o">::</span><span class="n">s_instance</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>  <span class="c1">// 俄汉模式，初始化静态私有单例
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="23-单例构造">2.3. 单例构造
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">Arch</span><span class="o">::</span><span class="n">Arch</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">assert</span><span class="p">(</span><span class="n">s_instance</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">);</span>   <span class="c1">// 只能创建一个Arch对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">s_instance</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 危险的代理构造，实际并没有使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">Arch</span><span class="o">::</span><span class="n">Arch</span><span class="p">(</span><span class="n">Arch</span> <span class="o">*</span><span class="n">arch</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">s_instance</span> <span class="o">=</span> <span class="n">arch</span><span class="p">;</span>           <span class="c1">// 允许外部接管实例
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Arch</span><span class="o">::~</span><span class="n">Arch</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在DeskFlow软件中，不管是Clinet还是Server，都只在程序启动时创建一个Arch对象，无他，代码也是仅在DeskFlow工程内部使用，所以就是public也不影响。</p>
+<h2 id="24-单例初始化">2.4. 单例初始化
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">void</span> <span class="n">Arch</span><span class="o">::</span><span class="n">init</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ARCH_NETWORK</span><span class="o">::</span><span class="n">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#if SYSAPI_WIN32
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>  <span class="n">ArchMiscWindows</span><span class="o">::</span><span class="n">init</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="25-单例访问">2.5. 单例访问
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">Arch</span> <span class="o">*</span><span class="n">Arch</span><span class="o">::</span><span class="n">getInstance</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">assert</span><span class="p">(</span><span class="n">s_instance</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">s_instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="3-单例使用">3. 单例使用
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">  <span class="n">Arch</span> <span class="n">arch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">arch</span><span class="p">.</span><span class="n">init</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+	const mainArticleElement = document.querySelector(".main-article");
+        renderMathInElement(mainArticleElement, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
+
+    
 </article>
-        
-            <article>
-    <a href="/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">
-        <div class="article-details">
-            <h2 class="article-title">第二节 - DeskFlow工程源码整体认识</h2>
-            <footer class="article-time">
-                <time datetime='2025-05-06T20:36:33&#43;08:00'>May 06, 2025</time>
-            </footer>
-        </div>
-    </a>
-</article>
-        
-            <article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
     <a href="/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/">
+        
+        
+
         <div class="article-details">
             <h2 class="article-title">第一节 - Desklow初步认识</h2>
-            <footer class="article-time">
-                <time datetime='2025-05-06T20:36:33&#43;08:00'>May 06, 2025</time>
-            </footer>
         </div>
     </a>
 </article>
+
+            
+                
+<article class="">
+    <a href="/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">
         
-    </section>
-<footer class="site-footer">
+        
+
+        <div class="article-details">
+            <h2 class="article-title">第二节 - DeskFlow工程源码整体认识</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script>
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (typeof DISQUS == 'object') {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
     <section class="copyright">
         &copy; 
         
@@ -539,6 +721,84 @@
     </section>
 </footer>
 
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
 
             </main>
         </div>

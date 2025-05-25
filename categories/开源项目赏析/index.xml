@@ -8,14 +8,14 @@
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
         <lastBuildDate>Sun, 25 May 2025 19:39:48 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>DeskFlow跨平台抽象层</title>
-        <link>https://zuoco.github.io/p/deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</link>
+        <title>第三节 - DeskFlow跨平台抽象层</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</link>
         <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</guid>
         <description>&lt;h1 id=&#34;1-arch&#34;&gt;1. Arch
 &lt;/h1&gt;&lt;p&gt;首先，极简的说，DeskFlow的跨平台抽象层如下(先忽略类成员)：
-&lt;img src=&#34;https://zuoco.github.io/p/deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/arch.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/arch.svg&#34;
 	
 	
 	
