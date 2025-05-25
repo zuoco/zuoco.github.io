@@ -13,8 +13,7 @@
         <pubDate>Sun, 25 May 2025 17:04:00 +0800</pubDate>
         
         <guid>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</guid>
-        <description>&lt;h1 id=&#34;cherry-pick&#34;&gt;cherry-pick
-&lt;/h1&gt;&lt;h1 id=&#34;分支管理&#34;&gt;分支管理
+        <description>&lt;h1 id=&#34;分支管理&#34;&gt;分支管理
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;master分支&lt;/code&gt;:&lt;br&gt;
 用于生产环境的部署，不允许直接push分支，由release分支或者hotfix分支合并。 &lt;br&gt;
 &lt;code&gt;hotfix分支&lt;/code&gt;:&lt;br&gt;
