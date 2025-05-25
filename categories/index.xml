@@ -7,7 +7,31 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 25 May 2025 17:04:00 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 May 2025 19:39:48 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>DeskFlow</title>
+        <link>https://zuoco.github.io/categories/deskflow/</link>
+        <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/deskflow/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>开源项目赏析</title>
+        <link>https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/</link>
+        <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/AAA.jpg" alt="Featured image of post 开源项目赏析" /&gt;</description>
+        </item>
+        <item>
+        <title>软件设计</title>
+        <link>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Git</title>
         <link>https://zuoco.github.io/categories/git/</link>
         <pubDate>Sun, 25 May 2025 17:04:00 +0800</pubDate>
@@ -118,22 +142,6 @@
         
         <guid>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91%E8%AE%A1%E7%AE%97/AAA.jpg" alt="Featured image of post 虚拟化与云计算" /&gt;</description>
-        </item>
-        <item>
-        <title>DeskFlow</title>
-        <link>https://zuoco.github.io/categories/deskflow/</link>
-        <pubDate>Tue, 06 May 2025 20:50:21 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/deskflow/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>开源项目赏析</title>
-        <link>https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/</link>
-        <pubDate>Tue, 06 May 2025 20:50:21 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/AAA.jpg" alt="Featured image of post 开源项目赏析" /&gt;</description>
         </item>
         <item>
         <title>Qemu</title>

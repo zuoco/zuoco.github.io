@@ -23,7 +23,7 @@
 &lt;code&gt;dev分支&lt;/code&gt;:&lt;br&gt;
 开发分支，最新版本迭代代码，包括bug修复后的代码。 &lt;br&gt;
 &lt;code&gt;feature分支&lt;/code&gt;:&lt;br&gt;
-基于dev分支在本地创建，每个开发人员的本地分支，针对各自的功能进行开发，开发完成合并到dev分支，并删除该fearure分支，feature是每个开发人员的本地分支，不可推送到远程，只能先合并到dev分支，然后推送dev分支。&lt;/p&gt;
+基于dev分支在本地创建，每个开发人员的本地分支，针对各自的功能进行开发，开发完成合并到dev分支，并删除该fearure分支，feature是每个开发人员的本地分支，不可推送到远程，只能在本地合并到dev分支，然后推送dev分支。&lt;/p&gt;
 </description>
         </item>
         <item>
