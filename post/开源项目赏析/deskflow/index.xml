@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>DeskFlow on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/deskflow/</link>
+        <link>http://localhost:1313/post/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/deskflow/</link>
         <description>Recent content in DeskFlow on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 25 May 2025 19:39:48 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/deskflow/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 25 May 2025 19:39:48 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E8%B5%8F%E6%9E%90/deskflow/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>第三节 - DeskFlow跨平台抽象层</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</link>
+        <link>http://localhost:1313/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</link>
         <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</guid>
+        <guid>http://localhost:1313/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</guid>
         <description>&lt;h1 id=&#34;1-arch&#34;&gt;1. Arch
 &lt;/h1&gt;&lt;p&gt;首先，极简的说，DeskFlow的跨平台抽象层如下(先忽略类成员)：
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/arch.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/arch.svg&#34;
 	
 	
 	
@@ -188,12 +188,12 @@
         </item>
         <item>
         <title>第二节 - DeskFlow工程源码整体认识</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</link>
+        <link>http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</link>
         <pubDate>Tue, 06 May 2025 20:36:33 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</guid>
+        <guid>http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</guid>
         <description>&lt;h1 id=&#34;1-项目构建系统&#34;&gt;1. 项目构建系统
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/Deskflow%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/Deskflow%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F.svg&#34;
 	
 	
 	
@@ -320,16 +320,16 @@ GUI代码，基于Qt。&lt;/p&gt;
         </item>
         <item>
         <title>第一节 - Desklow初步认识</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</link>
+        <link>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</link>
         <pubDate>Tue, 06 May 2025 20:36:33 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</guid>
+        <guid>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/</guid>
         <description>&lt;h1 id=&#34;1-deskflow介绍&#34;&gt;1. Deskflow介绍
 &lt;/h1&gt;&lt;p&gt;在多台电脑上共享一套键鼠，支持Windows、Linux、MacOS，功能类似于一个基于软件的KVM切换器，在不同机器之间无缝切换。 本专题中，我们以1.21.2版本为例，介绍一下软件的功能，项目地址&lt;a class=&#34;link&#34; href=&#34;https://github.com/deskflow/deskflow&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Deskflow&lt;/a&gt;。&lt;/p&gt;
 &lt;h1 id=&#34;2-功能&#34;&gt;2. 功能
 &lt;/h1&gt;&lt;p&gt;首次启动软件时，需要选择当前的电脑模式，是作为服务端还是客户端，界面如下：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/Deskflow.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/Deskflow.svg&#34;
 	
 	
 	
@@ -340,10 +340,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 接入物理键盘鼠标的就是服务端，其他电脑就是客户端。&lt;/p&gt;
 &lt;h1 id=&#34;3-软件配置&#34;&gt;3. 软件配置
 &lt;/h1&gt;&lt;p&gt;【Edit】&amp;ndash;&amp;gt;【Preferences】      &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;1187&#34;
 	height=&#34;808&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_60a4915809f77f8c.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_5694d8caf994959c.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_60a4915809f77f8c.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_5694d8caf994959c.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -370,10 +370,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;启用TSL加密，这是一个安全配置。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;822&#34;
 	height=&#34;808&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_8658b74575688fc3.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_a83714c8cb9d441d.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_8658b74575688fc3.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_a83714c8cb9d441d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -388,10 +388,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;服务端和客户端在这一层面的配置界面是一样的。&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;4-服务端&#34;&gt;4. 服务端
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE.png&#34;
 	width=&#34;877&#34;
 	height=&#34;181&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_f4dba8eabacbebd9.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_d935cc4207768b33.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_f4dba8eabacbebd9.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_d935cc4207768b33.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -402,10 +402,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &gt;&lt;br&gt;
 (1) 加载已有的配置文件，如果没有现成的配置文件，就点击【Configure Server】。&lt;br&gt;
 (2) 配置服务器信息，界面如下：     &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;1660&#34;
 	height=&#34;770&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_ddd00c6ee2eb057f.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_38b6a1b87ae19ee4.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_ddd00c6ee2eb057f.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_38b6a1b87ae19ee4.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -416,10 +416,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;【Computers】&lt;/code&gt;&lt;br&gt;
 该项设置配置客户端与服务端的布局，中间的&lt;code&gt;GEM12&lt;/code&gt;是服务器，服务器周围的格子用于放置客户端，通过拖动右上角的电脑图标来创建客户端PC，如下图所示：         &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF.png&#34;
 	width=&#34;1190&#34;
 	height=&#34;769&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c2e1266062c326c8.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c9f30fc9bd734eb.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c2e1266062c326c8.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c9f30fc9bd734eb.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -429,10 +429,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 	
 &gt;      &lt;br&gt;
 双击创建的客户端PC，就可以配置客户端的信息了，如下图所示：    &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;552&#34;
 	height=&#34;1002&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_70e2c580e58fbf3.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_a77dccc9b536a425.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_70e2c580e58fbf3.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_a77dccc9b536a425.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -443,10 +443,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &gt;      &lt;br&gt;
 该页面中需要注意的是Fixes，部分按键在一些平台上不可用，可以通过Fixes来修复，例如在Linux系统上Scroll Lock键不可用。&lt;/p&gt;
 &lt;h1 id=&#34;5-键鼠在pc之间的切换逻辑&#34;&gt;5. 键鼠在PC之间的切换逻辑
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91.png&#34;
 	width=&#34;1190&#34;
 	height=&#34;769&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_c8bffa386e7992a6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_50a2895437ebc6d5.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_c8bffa386e7992a6.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_50a2895437ebc6d5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -463,10 +463,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &lt;h1 id=&#34;6-客户端&#34;&gt;6. 客户端
 &lt;/h1&gt;&lt;p&gt;客户端配置： 【3. 软件配置】&lt;br&gt;
 客户端使用： &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.png&#34;
 	width=&#34;2518&#34;
 	height=&#34;169&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_168ef1d87e3601ae.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_45fb5c0da03fc994.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_168ef1d87e3601ae.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E5%88%9D%E6%AD%A5%E8%AE%A4%E8%AF%86/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_45fb5c0da03fc994.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
