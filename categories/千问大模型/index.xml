@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>千问大模型 on 阿左笔记</title>
-        <link>http://localhost:1313/categories/%E5%8D%83%E9%97%AE%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
+        <link>https://zuoco.github.io/categories/%E5%8D%83%E9%97%AE%E5%A4%A7%E6%A8%A1%E5%9E%8B/</link>
         <description>Recent content in 千问大模型 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 18 May 2025 23:17:13 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E5%8D%83%E9%97%AE%E5%A4%A7%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 18 May 2025 23:17:13 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E5%8D%83%E9%97%AE%E5%A4%A7%E6%A8%A1%E5%9E%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Qwen3-14b部署</title>
-        <link>http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/</link>
+        <link>https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/</link>
         <pubDate>Sun, 18 May 2025 23:17:13 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/</guid>
-        <description>&lt;img src="http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg" alt="Featured image of post Qwen3-14b部署" /&gt;&lt;h1 id=&#34;1-ai模型的本地部署&#34;&gt;1. AI模型的本地部署
+        <guid>https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/AAA.jpg" alt="Featured image of post Qwen3-14b部署" /&gt;&lt;h1 id=&#34;1-ai模型的本地部署&#34;&gt;1. AI模型的本地部署
 &lt;/h1&gt;&lt;p&gt;以Qwen32-14B为例。&lt;/p&gt;
 &lt;h1 id=&#34;2-主机&#34;&gt;2. 主机
 &lt;/h1&gt;&lt;ul&gt;
@@ -28,10 +28,10 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;4-显卡&#34;&gt;4. 显卡
 &lt;/h1&gt;&lt;p&gt;NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1.jpg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1.jpg&#34;
 	width=&#34;4000&#34;
 	height=&#34;1800&#34;
-	srcset=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hu_b253c635c49ed7d.jpg 480w, http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hu_27e3b3150c6538c8.jpg 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hu_b253c635c49ed7d.jpg 480w, https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%98%BE%E5%8D%A1_hu_27e3b3150c6538c8.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -107,7 +107,7 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;6-ai部署框架&#34;&gt;6. AI部署框架
 &lt;/h1&gt;&lt;p&gt;模型只是一堆参数，需要通过推理工具来运行，推理工具将模型参数加载到显存中，并依据输入的文字生成输出。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
 	
 	
 	
@@ -391,10 +391,10 @@
 &lt;h1 id=&#34;9-前端接入&#34;&gt;9. 前端接入
 &lt;/h1&gt;&lt;p&gt;Ollama默认是在11434端口提供服务。明白了这个就可以到&lt;code&gt;www.cherry-ai.com&lt;/code&gt;下载Cherry Studio了。&lt;br&gt;
 安装好后，选择『设置』，然后在『设置』中选择『Ollama』：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio.png&#34;
 	width=&#34;4096&#34;
 	height=&#34;2304&#34;
-	srcset=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu_8f86a418231ff65.png 480w, http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu_8f86a418231ff65.png 480w, https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -406,10 +406,10 @@
 点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过&lt;code&gt;ollama list&lt;/code&gt;命令获取，注意了，这里的“模型ID”是&lt;code&gt;ollama list&lt;/code&gt;命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。&lt;/p&gt;
 &lt;h1 id=&#34;10-效果展示&#34;&gt;10. 效果展示
 &lt;/h1&gt;&lt;p&gt;以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
 	width=&#34;2002&#34;
 	height=&#34;901&#34;
-	srcset=&#34;http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, http://localhost:1313/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, https://zuoco.github.io/p/qwen3-14b%E9%83%A8%E7%BD%B2/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

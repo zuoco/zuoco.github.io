@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>专题一 《内存管理》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/linux%E5%86%85%E6%A0%B8%E6%A0%88/%E4%B8%93%E9%A2%98%E4%B8%80-%E5%86%85%E5%AD%98/</link>
+        <link>https://zuoco.github.io/post/linux%E5%86%85%E6%A0%B8%E6%A0%88/%E4%B8%93%E9%A2%98%E4%B8%80-%E5%86%85%E5%AD%98/</link>
         <description>Recent content in 专题一 《内存管理》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 21 May 2025 23:41:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/linux%E5%86%85%E6%A0%B8%E6%A0%88/%E4%B8%93%E9%A2%98%E4%B8%80-%E5%86%85%E5%AD%98/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 May 2025 23:41:24 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/linux%E5%86%85%E6%A0%B8%E6%A0%88/%E4%B8%93%E9%A2%98%E4%B8%80-%E5%86%85%E5%AD%98/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>内存管理 第1节</title>
-        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</link>
         <pubDate>Wed, 21 May 2025 23:41:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</guid>
         <description>&lt;h1 id=&#34;&#34;&gt;
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>vmstat</title>
-        <link>http://localhost:1313/p/vmstat/</link>
+        <link>https://zuoco.github.io/p/vmstat/</link>
         <pubDate>Wed, 21 May 2025 22:01:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vmstat/</guid>
+        <guid>https://zuoco.github.io/p/vmstat/</guid>
         <description>&lt;h1 id=&#34;安装vmstat&#34;&gt;安装vmstat
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -100,10 +100,10 @@
         </item>
         <item>
         <title>内核OOM机制</title>
-        <link>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</link>
         <pubDate>Wed, 21 May 2025 20:53:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</guid>
         <description>&lt;h1 id=&#34;1-什么是oom&#34;&gt;1. 什么是OOM
 &lt;/h1&gt;&lt;p&gt;在内存不足时，内存管理系统会回收内核中可以释放的内存，当实在没有内存可用的时候，就会进入OOM（Out of Memory）状态，内存管理系统会执行OOM Killer，依据一定的规则杀死一些进程来释放内存，对于个人PC来说，这都不是个事儿，但对于服务器，有可能就会将重要的业务进程给干死了，所以有的服务器会将sysctl的vm.panic_on_omc参数设为1，当发生OOM时强制关闭系统，如果设置为0(默认)，在OOM时就会运行OOM Killer。&lt;/p&gt;
 &lt;h1 id=&#34;oom-killer机制&#34;&gt;OOM Killer机制
@@ -253,10 +253,10 @@
         </item>
         <item>
         <title>内存分析常用工具、内存相关内核日志</title>
-        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</link>
         <pubDate>Tue, 20 May 2025 00:18:27 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</guid>
         <description>&lt;h1 id=&#34;1-动态分析&#34;&gt;1. 动态分析
 &lt;/h1&gt;&lt;p&gt;就是我们面对着正在运行的Linux系统，然后通过一些命令，查看正在运行的进程占用内存的情况。&lt;/p&gt;
 &lt;h2 id=&#34;11-ps命令查看内存使用量大的进程&#34;&gt;1.1. ps命令查看内存使用量大的进程

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>第二章 - 流IO on 阿左笔记</title>
-        <link>http://localhost:1313/post/c&#43;&#43;/c&#43;&#43;%E5%9F%BA%E7%A1%80/%E6%B5%81/</link>
-        <description>Recent content in 第二章 - 流IO on 阿左笔记</description>
+        <title>第二章 - 《流IO》 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/c&#43;&#43;/c&#43;&#43;%E5%9F%BA%E7%A1%80/%E6%B5%81/</link>
+        <description>Recent content in 第二章 - 《流IO》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/c++/c++%E5%9F%BA%E7%A1%80/%E6%B5%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/c++/c++%E5%9F%BA%E7%A1%80/%E6%B5%81/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>输入输出</title>
-        <link>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
+        <link>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
-        <description>&lt;img src="http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/aaa.jpg" alt="Featured image of post 输入输出" /&gt;&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
+        <guid>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/aaa.jpg" alt="Featured image of post 输入输出" /&gt;&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
 &lt;/h1&gt;&lt;p&gt;非格式化IO不涉及数据表示形式的变化。&lt;/p&gt;
 &lt;p&gt;非格式化输入： get、read、getline、gcount&lt;br&gt;
 格式化输出： put、write&lt;/p&gt;
