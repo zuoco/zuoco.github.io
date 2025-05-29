@@ -13,7 +13,7 @@
         <pubDate>Mon, 05 May 2025 23:36:36 +0800</pubDate>
         
         <guid>https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/</guid>
-        <description>&lt;img src="https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/AAA.jpg" alt="Featured image of post Qemu介绍" /&gt;&lt;h1 id=&#34;qemu介绍&#34;&gt;Qemu介绍
+        <description>&lt;h1 id=&#34;qemu介绍&#34;&gt;Qemu介绍
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Qemu（Quick Emulator），一款开源的硬件虚拟化和仿真工具，Qemu本身可以运行在多种平台上（x86、ARM、RISC-V），并且能够模拟多种虚拟机。WMware、VirtualBox等虚拟化虚拟化平台只能运行在x86平台上，也只能模拟X86环境，而Qemu可以运行在多种平台，并且能够模拟多种虚拟机。&lt;/li&gt;
 &lt;li&gt;Qemu的系统模式和用户模式，系统模式就是模拟出一套硬件环境，在这个虚拟的硬件上安装操作系统，用户模式就是直接运行为另一个操作系统开发的程序。&lt;/li&gt;
