@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Tue, 27 May 2025 22:46:37 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 29 May 2025 22:28:03 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>C&#43;&#43;20</title>
+        <link>https://zuoco.github.io/categories/c&#43;&#43;20/</link>
+        <pubDate>Thu, 29 May 2025 22:28:03 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/c&#43;&#43;20/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/c&#43;&#43;20/000.jpg" alt="Featured image of post C&#43;&#43;20" /&gt;</description>
+        </item>
+        <item>
         <title>Proxmox VE</title>
         <link>https://zuoco.github.io/categories/proxmox-ve/</link>
         <pubDate>Tue, 27 May 2025 22:46:37 +0800</pubDate>
@@ -22,14 +30,6 @@
         
         <guid>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/AAA.jpg" alt="Featured image of post 虚拟化" /&gt;</description>
-        </item>
-        <item>
-        <title>C&#43;&#43;20</title>
-        <link>https://zuoco.github.io/categories/c&#43;&#43;20/</link>
-        <pubDate>Mon, 26 May 2025 21:55:17 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/c&#43;&#43;20/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/c&#43;&#43;20/000.jpg" alt="Featured image of post C&#43;&#43;20" /&gt;</description>
         </item>
         <item>
         <title>C&#43;&#43;容器</title>
