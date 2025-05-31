@@ -880,7 +880,7 @@ U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行
         <pubDate>Sat, 10 May 2025 18:06:49 +0800</pubDate>
         
         <guid>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</guid>
-        <description>&lt;img src="https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/AAA.jpg" alt="Featured image of post Linux内核构建、内核模块构建" /&gt;&lt;h1 id=&#34;1-内核中的makefilekconfigconfig&#34;&gt;1. 内核中的Makefile、Kconfig、config
+        <description>&lt;h1 id=&#34;1-内核中的makefilekconfigconfig&#34;&gt;1. 内核中的Makefile、Kconfig、config
 &lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Makefile&lt;/strong&gt;：编译源文件的方法。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Kconfig&lt;/strong&gt;：内核的配置菜单。&lt;/li&gt;

@@ -580,7 +580,7 @@ unordered_set/unordered_map/unordered_multiset/unordered_multimap底层使用哈
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
-        <description>&lt;img src="https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/AAA.jpg" alt="Featured image of post 三路比较运算符" /&gt;&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
+        <description>&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
 &lt;/h1&gt;&lt;p&gt;&amp;lt;=&amp;gt;目的在于简化自定义类型的比较逻辑，只要实现了&amp;lt;=&amp;gt;和==，编译器就会自动生成其他比较运算逻辑。&lt;br&gt;
 返回值类型为三种比较类别类型：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1159,7 +1159,7 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
         <pubDate>Sun, 04 May 2025 00:01:49 +0800</pubDate>
         
         <guid>https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
-        <description>&lt;img src="https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/%E3%80%90%E5%93%B2%E9%A3%8E%E5%A3%81%E7%BA%B8%E3%80%91%E5%A4%9C%E6%99%AF-%E6%98%9F%E7%A9%BA-%E6%9C%88%E4%BA%AE.png" alt="Featured image of post 动态内存管理" /&gt;&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
+        <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;</description>
         </item>
         <item>
@@ -1168,7 +1168,7 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
-        <description>&lt;img src="https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/aaa.jpg" alt="Featured image of post 输入输出" /&gt;&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
+        <description>&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
 &lt;/h1&gt;&lt;p&gt;非格式化IO不涉及数据表示形式的变化。&lt;/p&gt;
 &lt;p&gt;非格式化输入： get、read、getline、gcount&lt;br&gt;
 格式化输出： put、write&lt;/p&gt;
