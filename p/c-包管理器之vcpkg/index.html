@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行。 核心的 C++ 工具，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到/opt/目录下：\n1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接：\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg 1.2. 使用 1.2.1. 使用依赖清单安装依赖 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
 <title>C&#43;&#43;包管理器之vcpkg</title>
 
 <link rel='canonical' href='https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="C++包管理器之vcpkg">
-<meta property='og:description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行。 核心的 C++ 工具，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到/opt/目录下：\n1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接：\n">
+<meta property='og:description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg 1.2. 使用 1.2.1. 使用依赖清单安装依赖 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
 <meta property='og:url' content='https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-31T21:58:34&#43;08:00'/><meta property='article:modified_time' content='2025-05-31T21:58:34&#43;08:00'/>
 <meta name="twitter:title" content="C++包管理器之vcpkg">
-<meta name="twitter:description" content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行。 核心的 C++ 工具，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到/opt/目录下：\n1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接：\n">
+<meta name="twitter:description" content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg 1.2. 使用 1.2.1. 使用依赖清单安装依赖 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -370,9 +370,11 @@
     
     
     <h1 id="1-vcpkg">1. vcpkg
-</h1><p>Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行。 核心的 C++ 工具，使用 C++ 和 CMake 脚本编写。</p>
+</h1><p>Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。</p>
 <h2 id="11-安装">1.1. 安装
-</h2><p>我这里就安装到/opt/目录下：</p>
+</h2><ol>
+<li>我这里就安装到~/.APP/目录下：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -393,17 +395,22 @@
 </span></span><span class="line"><span class="cl">./bootstrap-vcpkg.sh
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>设置软连接：</p>
+</div><ol start="2">
+<li>设置软连接：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ln -s  /opt/vcpkg/vcpkg /usr/local/bin/vcpkg
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="12-使用">1.2. 使用
-</h2><p>在项目根目录下：</p>
+</h2><h3 id="121-使用依赖清单安装依赖">1.2.1. 使用依赖清单安装依赖
+</h3><ol>
+<li>在项目根目录下：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -412,7 +419,9 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg new --application
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>生成两个文件：</p>
+</div><ol start="2">
+<li>生成两个文件：</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -420,11 +429,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg-configuration.json
-</span></span><span class="line"><span class="cl">vcpkg.json
+</span></span><span class="line"><span class="cl">vcpkg.json    <span class="c1"># 依赖清单</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="13-vcpkg目录">1.3. vcpkg目录
-</h2><div class="highlight"><div class="chroma">
+</div><p>vcpkg-configuration.json文件如下：</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -440,39 +449,79 @@
 </span><span class="lnt">12
 </span><span class="lnt">13
 </span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">zcli@fedora:~/vcpkg$ tree -L <span class="m">1</span>
-</span></span><span class="line"><span class="cl">.
-</span></span><span class="line"><span class="cl">├── bootstrap-vcpkg.bat  <span class="c1"># Windows 平台下的初始化脚本, 运行此脚本会生成 vcpkg.exe 可执行文件（仅限 Windows）。</span>
-</span></span><span class="line"><span class="cl">├── bootstrap-vcpkg.sh   <span class="c1"># Linux/macOS 平台下的初始化脚本, 运行此脚本会生成 vcpkg 可执行文件（当前目录下的 vcpkg）。</span>
-</span></span><span class="line"><span class="cl">├── CONTRIBUTING.md
-</span></span><span class="line"><span class="cl">├── CONTRIBUTING_pt.md
-</span></span><span class="line"><span class="cl">├── CONTRIBUTING_zh.md
-</span></span><span class="line"><span class="cl">├── docs
-</span></span><span class="line"><span class="cl">├── LICENSE.txt  <span class="c1"># vcpkg 的开源许可证文件（MIT License）。</span>
-</span></span><span class="line"><span class="cl">├── NOTICE_pt.txt
-</span></span><span class="line"><span class="cl">├── NOTICE.txt
-</span></span><span class="line"><span class="cl">├── ports/  <span class="c1"># vcpkg 支持的第三方库的配置目录，每个子目录对应一个库（如 zlib/、fmt/）。</span>
-</span></span><span class="line"><span class="cl">├── README.md
-</span></span><span class="line"><span class="cl">├── scripts/   <span class="c1"># cpkg 使用的辅助脚本目录</span>
-</span></span><span class="line"><span class="cl">├── SECURITY.md
-</span></span><span class="line"><span class="cl">├── shell.nix
-</span></span><span class="line"><span class="cl">├── toolsrc/  <span class="c1"># cpkg 工具链的 C++ 源代码目录，vcpkg 的核心逻辑代码（如包管理、构建系统），开发者可在此修改 vcpkg 的行为（需重新编译）。</span>
-</span></span><span class="line"><span class="cl">├── triplets  <span class="c1"># 三元组（Triplet）配置文件目录。</span>
-</span></span><span class="line"><span class="cl">├── vcpkg  <span class="c1"># vcpkg程序</span>
-</span></span><span class="line"><span class="cl">└── versions
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;default-registry&#34;</span>: <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;kind&#34;</span>: <span class="s2">&#34;git&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;baseline&#34;</span>: <span class="s2">&#34;89dc8be6dbcf18482a5a1bf86a2f4615c939b0fb&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;repository&#34;</span>: <span class="s2">&#34;https://github.com/microsoft/vcpkg&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">}</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;registries&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">    <span class="o">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;kind&#34;</span>: <span class="s2">&#34;artifact&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;location&#34;</span>: <span class="s2">&#34;https://github.com/microsoft/vcpkg-ce-catalog/archive/refs/heads/main.zip&#34;</span>,
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;name&#34;</span>: <span class="s2">&#34;microsoft&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">  <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="14-使用">1.4. 使用
-</h2><h3 id="141-安装软件包">1.4.1. 安装软件包
-</h3><div class="highlight"><div class="chroma">
+</div><p>vcpkg.json文件如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>添加依赖</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg add port opencv
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加结果如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;dependencies&#34;</span>: <span class="o">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;opencv&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也可以指定具体的版本。</p>
+<ol start="4">
+<li>在准备好清单文件后：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg install  <span class="c1"># 自动读取当前目录的 vcpkg.json 文件</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下载的二进制文件位于当前目录下的：vcpkg_installed目录。</p>
+<h3 id="122-手动安装每个依赖">1.2.2. 手动安装每个依赖
+</h3><ol>
+<li>安装软件包</li>
+</ol>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
@@ -480,31 +529,44 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg install zlib <span class="c1"># 安装zlib</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="142-卸载软件包">1.4.2. 卸载软件包
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg remove zlib
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="143-查找可用包">1.4.3. 查找可用包
-</h3><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg remove zlib
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="15-使用vcpkg列表文件">1.5. 使用vcpkg列表文件
-</h2><p>在项目根目录编写列表文件：</p>
+</div><ol start="2">
+<li>卸载软件包</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code></code></pre></td>
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg remove zlib
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>查找可用包</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg remove zlib
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="13-cmake构建">1.3. CMake构建
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cmake -B build -S . <span class="se">\ </span>
+</span></span><span class="line"><span class="cl">  -DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>/home/zcli/.APP/vcpkg/scripts/buildsystems/vcpkg.cmake <span class="se">\ </span>
+</span></span><span class="line"><span class="cl">  -DVCPKG_TARGET_TRIPLET<span class="o">=</span>x64-linux <span class="se">\ </span>
+</span></span><span class="line"><span class="cl">  -DCMAKE_BUILD_TYPE<span class="o">=</span>Release <span class="se">\ </span>
+</span></span><span class="line"><span class="cl">  -DCMAKE_INSTALL_PREFIX<span class="o">=</span>/usr/local
+</span></span></code></pre></td></tr></table>
 </div>
 </div>
 </section>
