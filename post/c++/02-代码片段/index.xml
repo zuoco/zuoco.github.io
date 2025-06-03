@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>专题二 《代码片段》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/c&#43;&#43;/02-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</link>
+        <link>http://localhost:1313/post/c&#43;&#43;/02-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</link>
         <description>Recent content in 专题二 《代码片段》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Thu, 29 May 2025 22:28:03 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/c++/02-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 29 May 2025 22:28:03 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/c++/02-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>时间戳</title>
-        <link>https://zuoco.github.io/p/%E6%97%B6%E9%97%B4%E6%88%B3/</link>
+        <link>http://localhost:1313/p/%E6%97%B6%E9%97%B4%E6%88%B3/</link>
         <pubDate>Thu, 29 May 2025 22:28:03 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%97%B6%E9%97%B4%E6%88%B3/</guid>
+        <guid>http://localhost:1313/p/%E6%97%B6%E9%97%B4%E6%88%B3/</guid>
         <description>&lt;h1 id=&#34;1-stdchrono&#34;&gt;1. std::chrono
 &lt;/h1&gt;&lt;p&gt;chrono是C++11引入的标准库组件，用于处理时间和时间间隔。chrono命名空间位于std命名空间下，它提供了类型安全、高精度的时间操作，避免了传统 C 时间函数（如 time_t）的类型错误和精度限制。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
