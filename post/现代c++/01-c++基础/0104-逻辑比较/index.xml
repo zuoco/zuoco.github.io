@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>第三章 - 《逻辑运算》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/%E7%8E%B0%E4%BB%A3c&#43;&#43;/01-c&#43;&#43;%E5%9F%BA%E7%A1%80/0104-%E9%80%BB%E8%BE%91%E6%AF%94%E8%BE%83/</link>
+        <link>http://localhost:1313/post/%E7%8E%B0%E4%BB%A3c&#43;&#43;/01-c&#43;&#43;%E5%9F%BA%E7%A1%80/0104-%E9%80%BB%E8%BE%91%E6%AF%94%E8%BE%83/</link>
         <description>Recent content in 第三章 - 《逻辑运算》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/%E7%8E%B0%E4%BB%A3c++/01-c++%E5%9F%BA%E7%A1%80/0104-%E9%80%BB%E8%BE%91%E6%AF%94%E8%BE%83/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 04 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/%E7%8E%B0%E4%BB%A3c++/01-c++%E5%9F%BA%E7%A1%80/0104-%E9%80%BB%E8%BE%91%E6%AF%94%E8%BE%83/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>三路比较运算符</title>
-        <link>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+        <link>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+        <guid>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
         <description>&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
 &lt;/h1&gt;&lt;p&gt;&amp;lt;=&amp;gt;目的在于简化自定义类型的比较逻辑，只要实现了&amp;lt;=&amp;gt;和==，编译器就会自动生成其他比较运算逻辑。&lt;br&gt;
 返回值类型为三种比较类别类型：&lt;/p&gt;

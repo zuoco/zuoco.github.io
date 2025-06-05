@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>专题二 《包管理器》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/%E7%8E%B0%E4%BB%A3c&#43;&#43;/03-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+        <link>http://localhost:1313/post/%E7%8E%B0%E4%BB%A3c&#43;&#43;/03-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
         <description>Recent content in 专题二 《包管理器》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 31 May 2025 21:58:34 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/%E7%8E%B0%E4%BB%A3c++/03-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 31 May 2025 21:58:34 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/%E7%8E%B0%E4%BB%A3c++/03-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>C&#43;&#43;包管理器之vcpkg</title>
-        <link>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
+        <link>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
         <pubDate>Sat, 31 May 2025 21:58:34 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
+        <guid>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
         <description>&lt;h1 id=&#34;1-vcpkg&#34;&gt;1. vcpkg
 &lt;/h1&gt;&lt;p&gt;Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。&lt;/p&gt;
 &lt;h2 id=&#34;11-安装&#34;&gt;1.1. 安装
