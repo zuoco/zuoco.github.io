@@ -2,20 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>阿左笔记</title>
-        <link>http://localhost:1313/</link>
+        <link>https://zuoco.github.io/</link>
         <description>Recent content on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Jun 2025 18:55:53 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>第3节 - Linux VLAN 虚拟局域网</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-linux-vlan-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</link>
+        <pubDate>Sat, 07 Jun 2025 18:55:53 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-linux-vlan-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</guid>
+        <description>&lt;h1 id=&#34;linux-vlan&#34;&gt;Linux VLAN
+&lt;/h1&gt;&lt;p&gt;将网络划分为多个逻辑网络，使得不同的VLAN可以在同一物理网段上实现隔离通信，是一种基于&lt;code&gt;网络层&lt;/code&gt;的虚拟局域网技术，是通过内核的网络子系统实现的，当一个VLAN数据包进入系统时，内核会根据数据包中的VLAN标记信息，将数据包转发到相应的VLAN接口或者物理接口上。linux中有两种方法实现VLAN：&lt;code&gt;内核模块&lt;/code&gt;、&lt;code&gt;VLAN交换机&lt;/code&gt;，内核模块方式更加灵活，需要更多配置工作，VLAN更易于配置和管理，但是会带来硬件成本。&lt;/p&gt;
+&lt;h2 id=&#34;linux中vlan的实现方式&#34;&gt;linux中VLAN的实现方式
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;内核模块方式&lt;/code&gt;&lt;br&gt;
+在内核中加载VLAN模块来实现，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VLAN交换机&lt;/code&gt;
+通过软件模拟交换机。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>第2节 - Linux Bond 网卡绑定</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-linux-bond-%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</link>
+        <pubDate>Sat, 07 Jun 2025 18:55:39 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-linux-bond-%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</guid>
+        <description>&lt;h1 id=&#34;linux-bond&#34;&gt;Linux Bond
+&lt;/h1&gt;&lt;p&gt;将多个物理网卡绑定为一个逻辑网卡，这样可以实现带宽倍增，提高吞吐量。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>第1节 - Linux Bridge 桥接网络</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/</link>
+        <pubDate>Sat, 07 Jun 2025 18:55:30 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/</guid>
+        <description>&lt;h1 id=&#34;linux-bridge&#34;&gt;Linux Bridge
+&lt;/h1&gt;&lt;p&gt;Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要&lt;code&gt;转发&lt;/code&gt;与&lt;code&gt;丢弃&lt;/code&gt;，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是&lt;code&gt;转发&lt;/code&gt;，&lt;code&gt;丢弃&lt;/code&gt;，&lt;code&gt;接收&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;Linux内核通过虚拟的网桥设备实现桥接，这个“网桥”可以连接若干个以太网接口设备。在虚拟化平台上，我门当然要先创建“网桥”，然后连接一个物理网卡，在我们将创建虚拟机的时候，将虚拟机的网口连接到这个网桥上，就像是将多个PC设备连接到交换机，从而将它们桥接起来。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>第7节 - 无序关联容器介绍</title>
-        <link>http://localhost:1313/p/%E7%AC%AC7%E8%8A%82-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%BB%8B%E7%BB%8D/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC7%E8%8A%82-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC7%E8%8A%82-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%BB%8B%E7%BB%8D/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC7%E8%8A%82-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%BB%8B%E7%BB%8D/</guid>
         <description>&lt;h1 id=&#34;1-无序关联容器hash容器&#34;&gt;1. 无序关联容器（Hash容器）
 &lt;/h1&gt;&lt;p&gt;无序关联容器，内部存储使用vector和hash结构，插入元素时通过Hash映射存储到vector数组中，hash容器实现了“[]”运算符，所以可以使用随机访问的形式访问元素：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC7%E8%8A%82-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%BB%8B%E7%BB%8D/unordered.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC7%E8%8A%82-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%BB%8B%E7%BB%8D/unordered.svg&#34;
 	
 	
 	
@@ -48,10 +84,10 @@ unordered_multimap;   允许对个键相同的键值对；&lt;/p&gt;
         </item>
         <item>
         <title>第6节 - multiset与multimap</title>
-        <link>http://localhost:1313/p/%E7%AC%AC6%E8%8A%82-multiset%E4%B8%8Emultimap/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC6%E8%8A%82-multiset%E4%B8%8Emultimap/</link>
         <pubDate>Tue, 03 Jun 2025 21:30:14 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC6%E8%8A%82-multiset%E4%B8%8Emultimap/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC6%E8%8A%82-multiset%E4%B8%8Emultimap/</guid>
         <description>&lt;p&gt;与set/map类似，但是允许重复键。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -174,10 +210,10 @@ unordered_multimap;   允许对个键相同的键值对；&lt;/p&gt;
         </item>
         <item>
         <title>C&#43;&#43;包管理器之vcpkg</title>
-        <link>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
+        <link>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
         <pubDate>Sat, 31 May 2025 21:58:34 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
+        <guid>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
         <description>&lt;h1 id=&#34;1-vcpkg&#34;&gt;1. vcpkg
 &lt;/h1&gt;&lt;p&gt;Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。&lt;/p&gt;
 &lt;h2 id=&#34;11-安装&#34;&gt;1.1. 安装
@@ -381,10 +417,10 @@ unordered_multimap;   允许对个键相同的键值对；&lt;/p&gt;
         </item>
         <item>
         <title>时间戳</title>
-        <link>http://localhost:1313/p/%E6%97%B6%E9%97%B4%E6%88%B3/</link>
+        <link>https://zuoco.github.io/p/%E6%97%B6%E9%97%B4%E6%88%B3/</link>
         <pubDate>Thu, 29 May 2025 22:28:03 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%97%B6%E9%97%B4%E6%88%B3/</guid>
+        <guid>https://zuoco.github.io/p/%E6%97%B6%E9%97%B4%E6%88%B3/</guid>
         <description>&lt;h1 id=&#34;1-stdchrono&#34;&gt;1. std::chrono
 &lt;/h1&gt;&lt;p&gt;chrono是C++11引入的标准库组件，用于处理时间和时间间隔。chrono命名空间位于std命名空间下，它提供了类型安全、高精度的时间操作，避免了传统 C 时间函数（如 time_t）的类型错误和精度限制。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -542,10 +578,10 @@ unordered_multimap;   允许对个键相同的键值对；&lt;/p&gt;
         </item>
         <item>
         <title>第5节 - 关联容器之Map</title>
-        <link>http://localhost:1313/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/</link>
         <pubDate>Wed, 28 May 2025 22:55:30 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/</guid>
         <description>&lt;h1 id=&#34;1-stdpair类模板&#34;&gt;1. std::pair类模板
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -572,7 +608,7 @@ unordered_multimap;   允许对个键相同的键值对；&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;在map中树的每一个节点都是一个std::pair，由于map底层时红黑树，所以&lt;code&gt;pair.first&lt;/code&gt;的类型必须支持“&amp;lt;”运算，或者自定义比较函数。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/map.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/map.svg&#34;
 	
 	
 	
@@ -764,16 +800,16 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
         </item>
         <item>
         <title>第二节 Pve节点部署</title>
-        <link>http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/</link>
         <pubDate>Tue, 27 May 2025 22:46:37 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/</guid>
         <description>&lt;h1 id=&#34;单节点部署&#34;&gt;单节点部署
 &lt;/h1&gt;&lt;p&gt;一个节点就是一台物理设备，实际安装过程和安装一个操作系统基本一样，安装后：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve.png&#34;
 	width=&#34;1910&#34;
 	height=&#34;982&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve_hu_3149e5959cb7beaf.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve_hu_2e27c1a9a255c00b.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve_hu_3149e5959cb7beaf.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve_hu_2e27c1a9a255c00b.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -782,10 +818,10 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
 		data-flex-basis=&#34;466px&#34;
 	
 &gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve2.png&#34;
 	width=&#34;1916&#34;
 	height=&#34;981&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve2_hu_d0c233822bfca853.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve2_hu_e1d8e53320b47de9.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve2_hu_d0c233822bfca853.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-pve%E8%8A%82%E7%82%B9%E9%83%A8%E7%BD%B2/pve2_hu_e1d8e53320b47de9.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -800,10 +836,10 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
         </item>
         <item>
         <title>第一节 PVE介绍</title>
-        <link>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-pve%E4%BB%8B%E7%BB%8D/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-pve%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Tue, 27 May 2025 21:55:22 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-pve%E4%BB%8B%E7%BB%8D/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-pve%E4%BB%8B%E7%BB%8D/</guid>
         <description>&lt;h1 id=&#34;1-基本介绍&#34;&gt;1. 基本介绍
 &lt;/h1&gt;&lt;p&gt;Proxmox VE（Proxmox Virtual Environment），奥地利企业“Proxmox Server Solutions GnbH”开发的虚拟化产品，基于Debian，于2008年发布第一个版本稳定版Proxmox VE 1.0。&lt;/p&gt;
 &lt;h1 id=&#34;2-功能特性&#34;&gt;2. 功能特性
@@ -852,10 +888,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>第4节 - 关联容器之Set</title>
-        <link>http://localhost:1313/p/%E7%AC%AC4%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bset/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC4%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bset/</link>
         <pubDate>Mon, 26 May 2025 21:55:17 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC4%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bset/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC4%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bset/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%88%9d%e6%ad%a5%e8%ae%a4%e8%af%86&#34; &gt;1. 初步认识&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%af%94%e8%be%83%e5%87%bd%e6%95%b0&#34; &gt;2. 自定义比较函数&lt;/a&gt;&lt;/li&gt;
@@ -1185,13 +1221,13 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>第三节 - DeskFlow跨平台抽象层</title>
-        <link>http://localhost:1313/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</link>
         <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</guid>
         <description>&lt;h1 id=&#34;1-arch&#34;&gt;1. Arch
 &lt;/h1&gt;&lt;p&gt;首先，极简的说，DeskFlow的跨平台抽象层如下(先忽略类成员)：
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/arch.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/arch.svg&#34;
 	
 	
 	
@@ -1364,10 +1400,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>软件开发版本管理</title>
-        <link>http://localhost:1313/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</link>
+        <link>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</link>
         <pubDate>Sun, 25 May 2025 17:04:00 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</guid>
+        <guid>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</guid>
         <description>&lt;h1 id=&#34;分支管理&#34;&gt;分支管理
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;master分支&lt;/code&gt;:&lt;br&gt;
 用于生产环境的部署，不允许直接push分支，由release分支或者hotfix分支合并。 &lt;br&gt;
@@ -1383,10 +1419,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>资源</title>
-        <link>http://localhost:1313/p/%E8%B5%84%E6%BA%90/</link>
+        <link>https://zuoco.github.io/p/%E8%B5%84%E6%BA%90/</link>
         <pubDate>Sun, 25 May 2025 14:22:52 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%B5%84%E6%BA%90/</guid>
+        <guid>https://zuoco.github.io/p/%E8%B5%84%E6%BA%90/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://hellogithub.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Hello-GitHub&lt;/a&gt;&lt;/li&gt;
@@ -1404,10 +1440,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>第1节 - FreeCAD介绍与安装</title>
-        <link>http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
         <pubDate>Sun, 25 May 2025 13:53:51 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
         <description>&lt;h1 id=&#34;freecad---101&#34;&gt;FreeCAD - 1.0.1
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/FreeCAD/FreeCAD&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;https://github.com/FreeCAD/FreeCAD&lt;/a&gt;&lt;br&gt;
@@ -1444,10 +1480,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 &lt;/div&gt;&lt;h1 id=&#34;安装&#34;&gt;安装
 &lt;/h1&gt;&lt;p&gt;以Windows平台为例： &lt;br&gt;
 下载FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z，解压后，FreeCAD_1.0.1\bin\freecad.exe就是可执行文件。 &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad.png&#34;
 	width=&#34;2560&#34;
 	height=&#34;1380&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad_hu_36d6ecdce4d9703a.png 480w, http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad_hu_b87bc81d59c36f48.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad_hu_36d6ecdce4d9703a.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad_hu_b87bc81d59c36f48.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -1460,19 +1496,19 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>内存管理 第1节</title>
-        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</link>
         <pubDate>Wed, 21 May 2025 23:41:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</guid>
         <description>&lt;h1 id=&#34;&#34;&gt;
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>vmstat</title>
-        <link>http://localhost:1313/p/vmstat/</link>
+        <link>https://zuoco.github.io/p/vmstat/</link>
         <pubDate>Wed, 21 May 2025 22:01:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/vmstat/</guid>
+        <guid>https://zuoco.github.io/p/vmstat/</guid>
         <description>&lt;h1 id=&#34;安装vmstat&#34;&gt;安装vmstat
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1551,10 +1587,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>内核OOM机制</title>
-        <link>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</link>
         <pubDate>Wed, 21 May 2025 20:53:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</guid>
         <description>&lt;h1 id=&#34;1-什么是oom&#34;&gt;1. 什么是OOM
 &lt;/h1&gt;&lt;p&gt;在内存不足时，内存管理系统会回收内核中可以释放的内存，当实在没有内存可用的时候，就会进入OOM（Out of Memory）状态，内存管理系统会执行OOM Killer，依据一定的规则杀死一些进程来释放内存，对于个人PC来说，这都不是个事儿，但对于服务器，有可能就会将重要的业务进程给干死了，所以有的服务器会将sysctl的vm.panic_on_omc参数设为1，当发生OOM时强制关闭系统，如果设置为0(默认)，在OOM时就会运行OOM Killer。&lt;/p&gt;
 &lt;h1 id=&#34;oom-killer机制&#34;&gt;OOM Killer机制
@@ -1704,38 +1740,38 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>C&#43;&#43;20关键字</title>
-        <link>http://localhost:1313/p/c-20%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+        <link>https://zuoco.github.io/p/c-20%E5%85%B3%E9%94%AE%E5%AD%97/</link>
         <pubDate>Wed, 21 May 2025 20:43:36 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/c-20%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+        <guid>https://zuoco.github.io/p/c-20%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
         <description>&lt;h1 id=&#34;占位&#34;&gt;占位
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>Ollama基础</title>
-        <link>http://localhost:1313/p/ollama%E5%9F%BA%E7%A1%80/</link>
+        <link>https://zuoco.github.io/p/ollama%E5%9F%BA%E7%A1%80/</link>
         <pubDate>Wed, 21 May 2025 20:39:47 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/ollama%E5%9F%BA%E7%A1%80/</guid>
+        <guid>https://zuoco.github.io/p/ollama%E5%9F%BA%E7%A1%80/</guid>
         <description>&lt;h1 id=&#34;占位坑&#34;&gt;占位坑
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>MNN</title>
-        <link>http://localhost:1313/p/mnn/</link>
+        <link>https://zuoco.github.io/p/mnn/</link>
         <pubDate>Tue, 20 May 2025 22:20:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/mnn/</guid>
+        <guid>https://zuoco.github.io/p/mnn/</guid>
         <description>&lt;h1 id=&#34;mnn&#34;&gt;MNN
 &lt;/h1&gt;&lt;p&gt;是阿里巴巴开发的一款推理引擎，MNN可以将主流训练框架的产物转换为MNN模型，得到模型后就可以部署到端侧。高性能、轻量化、跨平台，说白了就是给端侧部署搞的，可以在手机、PC、嵌入式系统上运行，前途无量。&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>内存分析常用工具、内存相关内核日志</title>
-        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</link>
         <pubDate>Tue, 20 May 2025 00:18:27 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E5%86%85%E5%AD%98%E7%9B%B8%E5%85%B3%E5%86%85%E6%A0%B8%E6%97%A5%E5%BF%97/</guid>
         <description>&lt;h1 id=&#34;1-动态分析&#34;&gt;1. 动态分析
 &lt;/h1&gt;&lt;p&gt;就是我们面对着正在运行的Linux系统，然后通过一些命令，查看正在运行的进程占用内存的情况。&lt;/p&gt;
 &lt;h2 id=&#34;11-ps命令查看内存使用量大的进程&#34;&gt;1.1. ps命令查看内存使用量大的进程
@@ -2044,10 +2080,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>使用Ollama本地部署Qwen3-14b</title>
-        <link>http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</link>
+        <link>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</link>
         <pubDate>Sun, 18 May 2025 23:17:13 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</guid>
+        <guid>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</guid>
         <description>&lt;h1 id=&#34;1-ai模型的本地部署&#34;&gt;1. AI模型的本地部署
 &lt;/h1&gt;&lt;p&gt;以Qwen32-14B为例。&lt;/p&gt;
 &lt;h1 id=&#34;2-主机&#34;&gt;2. 主机
@@ -2063,10 +2099,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 &lt;/ul&gt;
 &lt;h1 id=&#34;4-显卡&#34;&gt;4. 显卡
 &lt;/h1&gt;&lt;p&gt;NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1.jpg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1.jpg&#34;
 	width=&#34;4000&#34;
 	height=&#34;1800&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_b253c635c49ed7d.jpg 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_27e3b3150c6538c8.jpg 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_b253c635c49ed7d.jpg 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_27e3b3150c6538c8.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2078,10 +2114,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 &lt;h1 id=&#34;5-显卡驱动安装&#34;&gt;5. 显卡驱动安装
 &lt;/h1&gt;&lt;p&gt;登陆&lt;a class=&#34;link&#34; href=&#34;https://developer.nvidia.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;nvidia developer官网&lt;/a&gt;:&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia.jpg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia.jpg&#34;
 	width=&#34;2100&#34;
 	height=&#34;1184&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia_hu_2feb0ca0adb8789d.jpg 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia_hu_2b743e3478d4d0a9.jpg 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia_hu_2feb0ca0adb8789d.jpg 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia_hu_2b743e3478d4d0a9.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2090,10 +2126,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 		data-flex-basis=&#34;425px&#34;
 	
 &gt; &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia1.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia1.png&#34;
 	width=&#34;4096&#34;
 	height=&#34;2226&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia1_hu_a93d9fcc096a8203.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia1_hu_316e84a52444ab56.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia1_hu_a93d9fcc096a8203.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia1_hu_316e84a52444ab56.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2103,10 +2139,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 	
 &gt; &lt;br&gt;
 &lt;code&gt;选择需要的版本：&lt;/code&gt; &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia2.png&#34;
 	width=&#34;4096&#34;
 	height=&#34;1690&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia2_hu_633633ad1ac49655.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia2_hu_a9487dd546071734.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia2_hu_633633ad1ac49655.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia2_hu_a9487dd546071734.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2115,10 +2151,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 		data-flex-basis=&#34;581px&#34;
 	
 &gt;&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia3.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia3.png&#34;
 	width=&#34;4096&#34;
 	height=&#34;1694&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia3_hu_577695a9816cf550.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia3_hu_6fa126e0c18ad876.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia3_hu_577695a9816cf550.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/nvidia3_hu_6fa126e0c18ad876.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2190,7 +2226,7 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;6-ai部署框架&#34;&gt;6. AI部署框架
 &lt;/h1&gt;&lt;p&gt;模型只是一堆参数，需要通过推理工具来运行，推理工具将模型参数加载到显存中，并依据输入的文字生成输出。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
 	
 	
 	
@@ -2475,10 +2511,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 &lt;h1 id=&#34;9-前端接入&#34;&gt;9. 前端接入
 &lt;/h1&gt;&lt;p&gt;Ollama默认是在11434端口提供服务。明白了这个就可以到&lt;code&gt;www.cherry-ai.com&lt;/code&gt;下载Cherry Studio了。 &lt;br&gt;
 安装好后，选择『设置』，然后在『设置』中选择『Ollama』：  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio.png&#34;
 	width=&#34;4096&#34;
 	height=&#34;2304&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_8f86a418231ff65.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_8f86a418231ff65.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2490,10 +2526,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
 点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过&lt;code&gt;ollama list&lt;/code&gt;命令获取，注意了，这里的“模型ID”是&lt;code&gt;ollama list&lt;/code&gt;命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。&lt;/p&gt;
 &lt;h1 id=&#34;10-效果展示&#34;&gt;10. 效果展示
 &lt;/h1&gt;&lt;p&gt;以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
 	width=&#34;2002&#34;
 	height=&#34;901&#34;
-	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -2506,10 +2542,10 @@ Proxomx Backup Server与集成的备份与还原功能相比更强大。&lt;/p&g
         </item>
         <item>
         <title>EPOLL系统调用用法</title>
-        <link>http://localhost:1313/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E7%94%A8%E6%B3%95/</link>
+        <link>https://zuoco.github.io/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E7%94%A8%E6%B3%95/</link>
         <pubDate>Mon, 12 May 2025 20:16:48 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
+        <guid>https://zuoco.github.io/p/epoll%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E7%94%A8%E6%B3%95/</guid>
         <description>&lt;h1 id=&#34;1-epoll介绍&#34;&gt;1. EPOLL介绍
 &lt;/h1&gt;&lt;p&gt;EPOLL是Linux特有的I/O复用函数，它把用户关心的“文件描述符”放在内核里面一个&lt;code&gt;事件表&lt;/code&gt;中，也就是说EPOLL需要一个“文件描述符”来标识内核中的这个事件表。另外EPOLL有两种工作模式：&lt;code&gt;水平触发&lt;/code&gt;(Level Triggered，LT)和&lt;code&gt;边缘触发&lt;/code&gt;(Edge Triggered，ET)，LT模式是EPOLL默认的工作模式，EPOLL和异步，非阻塞结合使用。&lt;/p&gt;
 &lt;h1 id=&#34;2-epoll使用&#34;&gt;2. EPOLL使用
@@ -2703,15 +2739,15 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>BootLoader</title>
-        <link>http://localhost:1313/p/bootloader/</link>
+        <link>https://zuoco.github.io/p/bootloader/</link>
         <pubDate>Sat, 10 May 2025 20:46:50 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/bootloader/</guid>
+        <guid>https://zuoco.github.io/p/bootloader/</guid>
         <description>&lt;h1 id=&#34;1-bootloader&#34;&gt;1. BootLoader
 &lt;/h1&gt;&lt;p&gt;Bootloader是操作系统的“引导程序”以及“引导管理程序”，操作系统的启动流程可以简单理解为：&lt;br&gt;
 &lt;strong&gt;[上电]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[UEFI]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[bootloader]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[内核]&lt;/strong&gt; 。&lt;br&gt;
 显然，Bootloader的作用就是将内核加载到内存中，然后由于内核来加载操作系统的其他组件/服务，如文件系统，文件管理器，图形界面等。在linux生态中，常见的Bootloader有两种，Grub(用于X86架构)，U-Boot(用于ARM架构)。其中&lt;code&gt;引导&lt;/code&gt;就是进行一些硬件的检测、初始化的任务，然后将内核加载到内存中来启动内核，&lt;code&gt;引导管理&lt;/code&gt;就是当有多个内核时，在屏幕上显示一个菜单让用户选择要启动的哪个内核。
-&lt;img src=&#34;http://localhost:1313/p/bootloader/BootLoader.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/BootLoader.svg&#34;
 	
 	
 	
@@ -2757,7 +2793,7 @@ grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。&
 非XIP设备中存储的代码需要从存储设备中加载到内存中，然后才能执行，而XIP存储设备中的代码可以直接执行，XIP设备有SRAM、BROM等等，非XIP设备有EMMC、NANDFLASH、SD卡等等。&lt;/li&gt;
 &lt;li&gt;ARM-Linux启动流程&lt;br&gt;
 U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行BROM中的程序(由芯片厂写入)，该程序会根据芯片的引脚电平或者寄存器配置确定启动模式(从那个设备启动系统)，例如系统安装在SD卡，BROM中的程序会初始化SD卡，然后拷贝uboot-spl到SRAM中，开始执行uboot-spl中的程序，uboot-spl程序会初始化LDDR内存、pll、gpio等等硬件，然后从SD卡中加载uboot-proper到LDDR中，并跳转到程序的入口地址执行uboot-proper程序。uboot还会初始化一些其他设备，例如网卡等，然后从SD卡中加载内核文件。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/bootloader/u-boot.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/u-boot.svg&#34;
 	
 	
 	
@@ -2817,10 +2853,10 @@ U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行
         </item>
         <item>
         <title>Linux内核构建、内核模块构建</title>
-        <link>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</link>
+        <link>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</link>
         <pubDate>Sat, 10 May 2025 18:06:49 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</guid>
+        <guid>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</guid>
         <description>&lt;h1 id=&#34;1-内核中的makefilekconfigconfig&#34;&gt;1. 内核中的Makefile、Kconfig、config
 &lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Makefile&lt;/strong&gt;：编译源文件的方法。&lt;/li&gt;
@@ -3167,10 +3203,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
 &lt;/h1&gt;&lt;p&gt;使用make menuconfig生成的配置文件。&lt;/p&gt;
 &lt;h1 id=&#34;5-make-menuconfig&#34;&gt;5. make menuconfig
 &lt;/h1&gt;&lt;p&gt;运行make menuconfig命令，会显示一个配置菜单:&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig.png&#34;
 	width=&#34;2473&#34;
 	height=&#34;1217&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_28f37095ba1bb36b.png 480w, http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_5a66fc4359e47d7d.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_28f37095ba1bb36b.png 480w, https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_5a66fc4359e47d7d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3184,17 +3220,17 @@ N（No）：不编译此驱动。&lt;/p&gt;
         </item>
         <item>
         <title>iBMC服务器管理软件</title>
-        <link>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
+        <link>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
         <pubDate>Thu, 08 May 2025 21:01:19 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
+        <guid>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
         <description>&lt;h1 id=&#34;ibmc服务器管理软件&#34;&gt;iBMC服务器管理软件
 &lt;/h1&gt;&lt;p&gt;iBMC智能管理系统（Intelligent Baseboard Management Controller，以下简称iBMC）是面向服务器全生命周期的服务器嵌入式管理系统。提供硬件状态监控、部署、节能、安全等系列管理工具，标准化接口构建服务器管理更加完善的生态系统。&lt;/p&gt;
 &lt;h2 id=&#34;ibmc登陆界面&#34;&gt;iBMC登陆界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_da2fa607b63a6a06.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_496fb0aefcc422cb.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_da2fa607b63a6a06.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_496fb0aefcc422cb.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC登陆界面&#34;
@@ -3206,10 +3242,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;ibmc管理界面&#34;&gt;iBMC管理界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_e6a52f82634db2c1.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_893c42a947eaf23e.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_e6a52f82634db2c1.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_893c42a947eaf23e.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC管理界面&#34;
@@ -3230,10 +3266,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
         </item>
         <item>
         <title>Git基本使用</title>
-        <link>http://localhost:1313/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+        <link>https://zuoco.github.io/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Wed, 07 May 2025 21:48:29 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+        <guid>https://zuoco.github.io/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
         <description>&lt;h1 id=&#34;1-基本概念&#34;&gt;1. 基本概念
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;仓库（Repository）&lt;/strong&gt;：一个Git仓库是一个包含所有版本控制文件和历史记录的目录。&lt;/p&gt;
 &lt;ul&gt;
@@ -3738,12 +3774,12 @@ Automatic merge failed; fix conflicts and then commit the result.&lt;/p&gt;
         </item>
         <item>
         <title>第二节 - DeskFlow工程源码整体认识</title>
-        <link>http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</link>
         <pubDate>Tue, 06 May 2025 20:36:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/</guid>
         <description>&lt;h1 id=&#34;1-项目构建系统&#34;&gt;1. 项目构建系统
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/Deskflow%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/Deskflow%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F.svg&#34;
 	
 	
 	
@@ -3870,16 +3906,16 @@ GUI代码，基于Qt。&lt;/p&gt;
         </item>
         <item>
         <title>第一节 - Desklow介绍与安装</title>
-        <link>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
         <pubDate>Tue, 06 May 2025 20:36:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
         <description>&lt;h1 id=&#34;1-deskflow介绍&#34;&gt;1. Deskflow介绍
 &lt;/h1&gt;&lt;p&gt;在多台电脑上共享一套键鼠，支持Windows、Linux、MacOS，功能类似于一个基于软件的KVM切换器，在不同机器之间无缝切换。 本专题中，我们以1.21.2版本为例，介绍一下软件的功能，项目地址&lt;a class=&#34;link&#34; href=&#34;https://github.com/deskflow/deskflow&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Deskflow&lt;/a&gt;。&lt;/p&gt;
 &lt;h1 id=&#34;2-功能&#34;&gt;2. 功能
 &lt;/h1&gt;&lt;p&gt;首次启动软件时，需要选择当前的电脑模式，是作为服务端还是客户端，界面如下：  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/Deskflow.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/Deskflow.svg&#34;
 	
 	
 	
@@ -3890,10 +3926,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 接入物理键盘鼠标的就是服务端，其他电脑就是客户端。&lt;/p&gt;
 &lt;h1 id=&#34;3-软件配置&#34;&gt;3. 软件配置
 &lt;/h1&gt;&lt;p&gt;【Edit】&amp;ndash;&amp;gt;【Preferences】      &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;1187&#34;
 	height=&#34;808&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_60a4915809f77f8c.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_5694d8caf994959c.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_60a4915809f77f8c.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE_hu_5694d8caf994959c.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3920,10 +3956,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;启用TSL加密，这是一个安全配置。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;822&#34;
 	height=&#34;808&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_8658b74575688fc3.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_a83714c8cb9d441d.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_8658b74575688fc3.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E9%85%8D%E7%BD%AE_hu_a83714c8cb9d441d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3938,10 +3974,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;code&gt;服务端和客户端在这一层面的配置界面是一样的。&lt;/code&gt;&lt;/p&gt;
 &lt;h1 id=&#34;4-服务端&#34;&gt;4. 服务端
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE.png&#34;
 	width=&#34;877&#34;
 	height=&#34;181&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_f4dba8eabacbebd9.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_d935cc4207768b33.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_f4dba8eabacbebd9.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE_hu_d935cc4207768b33.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3952,10 +3988,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &gt;&lt;br&gt;
 (1) 加载已有的配置文件，如果没有现成的配置文件，就点击【Configure Server】。&lt;br&gt;
 (2) 配置服务器信息，界面如下：     &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;1660&#34;
 	height=&#34;770&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_ddd00c6ee2eb057f.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_38b6a1b87ae19ee4.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_ddd00c6ee2eb057f.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2_hu_38b6a1b87ae19ee4.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3966,10 +4002,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;【Computers】&lt;/code&gt;&lt;br&gt;
 该项设置配置客户端与服务端的布局，中间的&lt;code&gt;GEM12&lt;/code&gt;是服务器，服务器周围的格子用于放置客户端，通过拖动右上角的电脑图标来创建客户端PC，如下图所示：         &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF.png&#34;
 	width=&#34;1190&#34;
 	height=&#34;769&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c2e1266062c326c8.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c9f30fc9bd734eb.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c2e1266062c326c8.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%88%9B%E5%BB%BA%E5%AE%A2%E6%88%B7%E7%AB%AF_hu_c9f30fc9bd734eb.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3979,10 +4015,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 	
 &gt;      &lt;br&gt;
 双击创建的客户端PC，就可以配置客户端的信息了，如下图所示：    &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE.png&#34;
 	width=&#34;552&#34;
 	height=&#34;1002&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_70e2c580e58fbf3.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_a77dccc9b536a425.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_70e2c580e58fbf3.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AFPC%E9%85%8D%E7%BD%AE_hu_a77dccc9b536a425.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3993,10 +4029,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &gt;      &lt;br&gt;
 该页面中需要注意的是Fixes，部分按键在一些平台上不可用，可以通过Fixes来修复，例如在Linux系统上Scroll Lock键不可用。&lt;/p&gt;
 &lt;h1 id=&#34;5-键鼠在pc之间的切换逻辑&#34;&gt;5. 键鼠在PC之间的切换逻辑
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91.png&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91.png&#34;
 	width=&#34;1190&#34;
 	height=&#34;769&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_c8bffa386e7992a6.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_50a2895437ebc6d5.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_c8bffa386e7992a6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/PC%E4%B9%8B%E9%97%B4%E5%88%87%E6%8D%A2%E9%80%BB%E8%BE%91_hu_50a2895437ebc6d5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -4013,10 +4049,10 @@ GUI代码，基于Qt。&lt;/p&gt;
 &lt;h1 id=&#34;6-客户端&#34;&gt;6. 客户端
 &lt;/h1&gt;&lt;p&gt;客户端配置： 【3. 软件配置】&lt;br&gt;
 客户端使用： &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8.png&#34;
 	width=&#34;2518&#34;
 	height=&#34;169&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_168ef1d87e3601ae.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_45fb5c0da03fc994.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_168ef1d87e3601ae.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%BD%BF%E7%94%A8_hu_45fb5c0da03fc994.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -4030,10 +4066,10 @@ GUI代码，基于Qt。&lt;/p&gt;
         </item>
         <item>
         <title>Qemu介绍</title>
-        <link>http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/</link>
+        <link>https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Mon, 05 May 2025 23:36:36 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/qemu%E4%BB%8B%E7%BB%8D/</guid>
+        <guid>https://zuoco.github.io/p/qemu%E4%BB%8B%E7%BB%8D/</guid>
         <description>&lt;h1 id=&#34;qemu介绍&#34;&gt;Qemu介绍
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;Qemu（Quick Emulator），一款开源的硬件虚拟化和仿真工具，Qemu本身可以运行在多种平台上（x86、ARM、RISC-V），并且能够模拟多种虚拟机。WMware、VirtualBox等虚拟化虚拟化平台只能运行在x86平台上，也只能模拟X86环境，而Qemu可以运行在多种平台，并且能够模拟多种虚拟机。&lt;/li&gt;
@@ -4663,10 +4699,10 @@ GUI代码，基于Qt。&lt;/p&gt;
         </item>
         <item>
         <title>第1节 - 什么是容器、容器分类</title>
-        <link>http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E4%BB%80%E4%B9%88%E6%98%AF%E5%AE%B9%E5%99%A8%E5%AE%B9%E5%99%A8%E5%88%86%E7%B1%BB/</guid>
         <description>&lt;h1 id=&#34;1-什么是容器&#34;&gt;1. 什么是容器
 &lt;/h1&gt;&lt;p&gt;就是一些标准库中设计好数据结构，使用&lt;strong&gt;类模板&lt;/strong&gt;实现，用于存储和管理数据，支持对象的添加、删除、索引、遍历等功能。&lt;/p&gt;
 &lt;h1 id=&#34;2-容器分类&#34;&gt;2. 容器分类
@@ -4727,10 +4763,10 @@ unordered_set/unordered_map/unordered_multiset/unordered_multimap底层使用哈
         </item>
         <item>
         <title>三路比较运算符</title>
-        <link>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
+        <link>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</link>
         <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
+        <guid>https://zuoco.github.io/p/%E4%B8%89%E8%B7%AF%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6/</guid>
         <description>&lt;h1 id=&#34;1-operator&#34;&gt;1. operator&amp;lt;=&amp;gt;
 &lt;/h1&gt;&lt;p&gt;&amp;lt;=&amp;gt;目的在于简化自定义类型的比较逻辑，只要实现了&amp;lt;=&amp;gt;和==，编译器就会自动生成其他比较运算逻辑。&lt;br&gt;
 返回值类型为三种比较类别类型：&lt;/p&gt;
@@ -4814,13 +4850,13 @@ std::weak_ordering可以隐式转换为std::partial_ordering。&lt;/p&gt;
         </item>
         <item>
         <title>第2节 - 序列容器之vector</title>
-        <link>http://localhost:1313/p/%E7%AC%AC2%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Bvector/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Bvector/</link>
         <pubDate>Sun, 04 May 2025 00:03:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC2%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Bvector/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Bvector/</guid>
         <description>&lt;h1 id=&#34;1-vector&#34;&gt;1. vector
 &lt;/h1&gt;&lt;p&gt;模板类，动态数组，维护一块连续的存储空间，容量可动态改变。    &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC2%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Bvector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Bvector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
 	
 	
 	
@@ -5012,10 +5048,10 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
         </item>
         <item>
         <title>第3节 - 序列容器之Array</title>
-        <link>http://localhost:1313/p/%E7%AC%AC3%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Barray/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Barray/</link>
         <pubDate>Sun, 04 May 2025 00:03:33 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC3%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Barray/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Barray/</guid>
         <description>&lt;h1 id=&#34;1-array&#34;&gt;1. Array
 &lt;/h1&gt;&lt;p&gt;元素数个数固定，不能动态改变。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -5306,19 +5342,19 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
         </item>
         <item>
         <title>动态内存管理</title>
-        <link>http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+        <link>https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
         <pubDate>Sun, 04 May 2025 00:01:49 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+        <guid>https://zuoco.github.io/p/%E5%8A%A8%E6%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
         <description>&lt;h1 id=&#34;1-概述&#34;&gt;1. 概述
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>输入输出</title>
-        <link>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
+        <link>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
+        <guid>https://zuoco.github.io/p/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</guid>
         <description>&lt;h1 id=&#34;1-非格式化io&#34;&gt;1. 非格式化IO
 &lt;/h1&gt;&lt;p&gt;非格式化IO不涉及数据表示形式的变化。&lt;/p&gt;
 &lt;p&gt;非格式化输入： get、read、getline、gcount&lt;br&gt;
@@ -5433,18 +5469,18 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
         </item>
         <item>
         <title>Search</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://zuoco.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://zuoco.github.io/search/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://zuoco.github.io/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://zuoco.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;p&gt;好好学习，天天向上。&lt;/p&gt;
 </description>
         </item>

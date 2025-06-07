@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. std::pair类模板 1 2 3 4 template&lt; class T1, class T2 &gt; struct pair; 该类模板用于创建“键值对”对象，T1，T2可以内置类型，也可以是自定义类型。\n2. map 1 #include &lt;map&gt; 在map中树的每一个节点都是一个std::pair，由于map底层时红黑树，所以pair.first的类型必须支持“&lt;”运算，或者自定义比较函数。\nmap的迭代器所指向的对象的“Key”是const的，“Key”本身是不能修改的，这样避免红黑树的平衡结构被改变，当前“value”是可以改变的。\n">
 <title>第5节 - 关联容器之Map</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="第5节 - 关联容器之Map">
 <meta property='og:description' content="1. std::pair类模板 1 2 3 4 template&lt; class T1, class T2 &gt; struct pair; 该类模板用于创建“键值对”对象，T1，T2可以内置类型，也可以是自定义类型。\n2. map 1 #include &lt;map&gt; 在map中树的每一个节点都是一个std::pair，由于map底层时红黑树，所以pair.first的类型必须支持“&lt;”运算，或者自定义比较函数。\nmap的迭代器所指向的对象的“Key”是const的，“Key”本身是不能修改的，这样避免红黑树的平衡结构被改变，当前“value”是可以改变的。\n">
-<meta property='og:url' content='http://localhost:1313/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/'>
+<meta property='og:url' content='https://zuoco.github.io/p/%E7%AC%AC5%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bmap/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-28T22:55:30&#43;08:00'/><meta property='article:modified_time' content='2025-05-28T22:55:30&#43;08:00'/>
 <meta name="twitter:title" content="第5节 - 关联容器之Map">
@@ -857,7 +857,7 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.10e4759b9a9b112eb594b39514b1dd43bc01f931284010194cbebc23c4e83100.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

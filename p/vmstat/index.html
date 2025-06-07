@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="安装vmstat 1 sudo dnf install sysstat # Fedora 启用sysstat服务 1 2 sudo systemctl start sysstat sudo systemctl enable sysstat 查看内存信息 1 sar -r 1 10 1 2 3 4 5 6 7 zcli@fedora:~/myBlog/notebooks$ sar -r 1 2 Linux 6.14.6-200.fc41.x86_64 (fedora) 2025年05月21日 _x86_64_\t(16 CPU) 22时27分50秒 kbmemfree kbavail kbmemused %memused kbbuffers kbcached kbcommit %commit kbactive kbinact kbdirty 22时27分51秒 21377908 26044624 5275184 16.41 5844 5071508 24039676 59.29 6736456 2538556 800 22时27分52秒 21379140 26045856 5273952 16.40 5844 5071508 24039692 59.29 6736584 2538556 808 平均时间: 21378524 26045240 5274568 16.40 5844 5071508 24039684 59.29 6736520 2538556 804 字段含义：\nkbmemfree（空闲物理内存）\n系统当前未被使用的物理内存，直接可分配。\nkbavail（可用内存）\n包含空闲内存和可回收的缓存/缓冲（如文件缓存），反映实际可分配给进程的内存。\nkbmemused（已用内存）\n内核和进程已占用的物理内存（不包含缓存/缓冲）。\n%memused（内存使用率） 物理内存使用率较低，系统内存压力小。\nkbbuffers（缓冲区内存） 内核缓冲区用于临时存储磁盘块数据（如文件系统元数据）。\nkbcached（缓存内存） 文件缓存，加速文件访问，可被快速回收供进程使用。\nkbcommit（提交内存总量）\n当前系统所有进程申请的内存总和（包括物理内存和交换空间）。\n%commit（提交内存占比） 提交内存占总物理内存+交换空间的59%，无内存耗尽风险。\nkbactive（活跃内存）\n近期被频繁访问的内存页（如进程代码、数据）。\nkbinact（非活跃内存）\n长时间未使用的内存页，可被回收（如缓存旧文件）。\nkbdirty（脏页）\n需写回磁盘的修改过的内存页，数值低说明I/O压力小。\n">
 <title>vmstat</title>
 
-<link rel='canonical' href='http://localhost:1313/p/vmstat/'>
+<link rel='canonical' href='https://zuoco.github.io/p/vmstat/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="vmstat">
 <meta property='og:description' content="安装vmstat 1 sudo dnf install sysstat # Fedora 启用sysstat服务 1 2 sudo systemctl start sysstat sudo systemctl enable sysstat 查看内存信息 1 sar -r 1 10 1 2 3 4 5 6 7 zcli@fedora:~/myBlog/notebooks$ sar -r 1 2 Linux 6.14.6-200.fc41.x86_64 (fedora) 2025年05月21日 _x86_64_\t(16 CPU) 22时27分50秒 kbmemfree kbavail kbmemused %memused kbbuffers kbcached kbcommit %commit kbactive kbinact kbdirty 22时27分51秒 21377908 26044624 5275184 16.41 5844 5071508 24039676 59.29 6736456 2538556 800 22时27分52秒 21379140 26045856 5273952 16.40 5844 5071508 24039692 59.29 6736584 2538556 808 平均时间: 21378524 26045240 5274568 16.40 5844 5071508 24039684 59.29 6736520 2538556 804 字段含义：\nkbmemfree（空闲物理内存）\n系统当前未被使用的物理内存，直接可分配。\nkbavail（可用内存）\n包含空闲内存和可回收的缓存/缓冲（如文件缓存），反映实际可分配给进程的内存。\nkbmemused（已用内存）\n内核和进程已占用的物理内存（不包含缓存/缓冲）。\n%memused（内存使用率） 物理内存使用率较低，系统内存压力小。\nkbbuffers（缓冲区内存） 内核缓冲区用于临时存储磁盘块数据（如文件系统元数据）。\nkbcached（缓存内存） 文件缓存，加速文件访问，可被快速回收供进程使用。\nkbcommit（提交内存总量）\n当前系统所有进程申请的内存总和（包括物理内存和交换空间）。\n%commit（提交内存占比） 提交内存占总物理内存+交换空间的59%，无内存耗尽风险。\nkbactive（活跃内存）\n近期被频繁访问的内存页（如进程代码、数据）。\nkbinact（非活跃内存）\n长时间未使用的内存页，可被回收（如缓存旧文件）。\nkbdirty（脏页）\n需写回磁盘的修改过的内存页，数值低说明I/O压力小。\n">
-<meta property='og:url' content='http://localhost:1313/p/vmstat/'>
+<meta property='og:url' content='https://zuoco.github.io/p/vmstat/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-21T22:01:50&#43;08:00'/><meta property='article:modified_time' content='2025-05-21T22:01:50&#43;08:00'/>
 <meta name="twitter:title" content="vmstat">
@@ -717,7 +717,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.10e4759b9a9b112eb594b39514b1dd43bc01f931284010194cbebc23c4e83100.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
