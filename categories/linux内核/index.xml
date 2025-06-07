@@ -7,7 +7,248 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 21 May 2025 23:41:24 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 07 Jun 2025 23:43:14 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>第1节 - ip命令</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Sat, 07 Jun 2025 23:43:14 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;h1 id=&#34;ip命令&#34;&gt;ip命令
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;1. 查看网卡状态&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;命令输出：&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
+	width=&#34;1853&#34;
+	height=&#34;638&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;290&#34;
+		data-flex-basis=&#34;697px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;2. 启用网卡&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; dev wlan0 up  &lt;span class=&#34;c1&#34;&gt;# 将 &amp;#34;wlan0&amp;#34; 替换为实际的无线接口名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>第2节 - Network Manager</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/</link>
+        <pubDate>Sat, 07 Jun 2025 23:18:57 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/</guid>
+        <description>&lt;h1 id=&#34;1-network-manager网络管理工具&#34;&gt;1. Network-Manager网络管理工具
+&lt;/h1&gt;&lt;p&gt;在Debian系统中，NetworkManager（NM） 是一个功能强大的网络管理工具，支持有线、无线、VPN、代理等多种网络连接方式。&lt;/p&gt;
+&lt;h2 id=&#34;11-安装networkmanager&#34;&gt;1.1. 安装NetworkManager
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install network-manager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;12-启动并启用-networkmanager-服务&#34;&gt;1.2. 启动并启用 NetworkManager 服务
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start NetworkManager
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; NetworkManager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;检查服务运行状态：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl status NetworkManager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;13-配置networkmanager&#34;&gt;1.3. 配置NetworkManager
+&lt;/h2&gt;&lt;p&gt;默认情况下，NetworkManager 可能不会管理某些接口（如以太网或无线接口）。需要修改配置文件以确保接口由 NetworkManager 管理。&lt;br&gt;
+&lt;code&gt;修改 /etc/NetworkManager/NetworkManager.conf&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[main]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;plugins=ifupdown,keyfile
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;[ifupdown]
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;managed=true
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;managed=true 表示 NetworkManager 会接管所有接口的配置。&lt;br&gt;
+managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;修改完成后，重启 NetworkManager 服务&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart NetworkManager
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;14-使用-nmcli-命令行工具管理网络&#34;&gt;1.4. 使用 nmcli 命令行工具管理网络
+&lt;/h2&gt;&lt;p&gt;nmcli 是 NetworkManager 的命令行工具，用于管理网络连接。   &lt;br&gt;
+&lt;code&gt;(1) 查看网络设备状态&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli device status
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;命令输出(CONNECTION 列显示当前使用的连接配置)：&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/device-status.bmp&#34;
+	width=&#34;1173&#34;
+	height=&#34;287&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/device-status_hu_3b808834d5e87588.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/device-status_hu_8b72dd48c2d5d385.bmp 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;408&#34;
+		data-flex-basis=&#34;980px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(2) 扫描并列出可用的 WiFi 网络&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli device wifi list   
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;命令输出(IN-USE 标记 * 表示当前已连接的网络)：&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-list.bmp&#34;
+	width=&#34;1541&#34;
+	height=&#34;410&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-list_hu_495371c566f7012e.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-list_hu_8348cb87ebec241e.bmp 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;375&#34;
+		data-flex-basis=&#34;902px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(3) 连接 WiFi 网络&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli device wifi connect &lt;span class=&#34;s2&#34;&gt;&amp;#34;SSID名称&amp;#34;&lt;/span&gt; password &lt;span class=&#34;s2&#34;&gt;&amp;#34;WiFi密码&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;(4) 查看已保存的连接&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli connection show
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-status.bmp&#34;
+	width=&#34;1382&#34;
+	height=&#34;362&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-status_hu_61b3a888cc80a559.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-status_hu_8cefa13ea190d44f.bmp 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;381&#34;
+		data-flex-basis=&#34;916px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;(5) 修改密码&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli connection modify &lt;span class=&#34;s2&#34;&gt;&amp;#34;MyWiFi&amp;#34;&lt;/span&gt; wifi-sec.psk &lt;span class=&#34;s2&#34;&gt;&amp;#34;新密码&amp;#34;&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;(6) 删除连接&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli connection delete &lt;span class=&#34;s2&#34;&gt;&amp;#34;MyWiFi&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;15-nmcli其他用法&#34;&gt;1.5. nmcli其他用法
+&lt;/h2&gt;&lt;p&gt;nmcli还可以用于配置静态IP、配置代理服务器、配置多网卡（同时使用两个网卡，分别连接不同网络）等等，用到的时候再记录。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>第3节 - Linux VLAN 虚拟局域网</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-linux-vlan-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</link>
+        <pubDate>Sat, 07 Jun 2025 18:55:53 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-linux-vlan-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</guid>
+        <description>&lt;h1 id=&#34;linux-vlan&#34;&gt;Linux VLAN
+&lt;/h1&gt;&lt;p&gt;将网络划分为多个逻辑网络，使得不同的VLAN可以在同一物理网段上实现隔离通信，是一种基于&lt;code&gt;网络层&lt;/code&gt;的虚拟局域网技术，是通过内核的网络子系统实现的，当一个VLAN数据包进入系统时，内核会根据数据包中的VLAN标记信息，将数据包转发到相应的VLAN接口或者物理接口上。linux中有两种方法实现VLAN：&lt;code&gt;内核模块&lt;/code&gt;、&lt;code&gt;VLAN交换机&lt;/code&gt;，内核模块方式更加灵活，需要更多配置工作，VLAN更易于配置和管理，但是会带来硬件成本。&lt;/p&gt;
+&lt;h2 id=&#34;linux中vlan的实现方式&#34;&gt;linux中VLAN的实现方式
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;内核模块方式&lt;/code&gt;&lt;br&gt;
+在内核中加载VLAN模块来实现，&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VLAN交换机&lt;/code&gt;
+通过软件模拟交换机。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>第2节 - Linux Bond 网卡绑定</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-linux-bond-%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</link>
+        <pubDate>Sat, 07 Jun 2025 18:55:39 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-linux-bond-%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</guid>
+        <description>&lt;h1 id=&#34;linux-bond&#34;&gt;Linux Bond
+&lt;/h1&gt;&lt;p&gt;将多个物理网卡绑定为一个逻辑网卡，这样可以实现带宽倍增，提高吞吐量。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>第1节 - Linux Bridge 桥接网络</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/</link>
+        <pubDate>Sat, 07 Jun 2025 18:55:30 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/</guid>
+        <description>&lt;h1 id=&#34;linux-bridge&#34;&gt;Linux Bridge
+&lt;/h1&gt;&lt;p&gt;Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要&lt;code&gt;转发&lt;/code&gt;与&lt;code&gt;丢弃&lt;/code&gt;，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是&lt;code&gt;转发&lt;/code&gt;，&lt;code&gt;丢弃&lt;/code&gt;，&lt;code&gt;接收&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;Linux内核通过虚拟的网桥设备实现桥接，这个“网桥”可以连接若干个以太网接口设备。在虚拟化平台上，我门当然要先创建“网桥”，然后连接一个物理网卡，在我们将创建虚拟机的时候，将虚拟机的网口连接到这个网桥上，就像是将多个PC设备连接到交换机，从而将它们桥接起来。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>内存管理 第1节</title>
         <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-%E7%AC%AC1%E8%8A%82/</link>
         <pubDate>Wed, 21 May 2025 23:41:24 +0800</pubDate>

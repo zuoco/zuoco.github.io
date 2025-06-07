@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Barray/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="第3节 - 序列容器之Array">
+<link rel="stylesheet" href="/scss/style.min.663803bebe609202d5b39d848f2d7c2dc8b598a2d879efa079fa88893d29c49c.css"><meta property='og:title' content="第3节 - 序列容器之Array">
 <meta property='og:description' content="1. Array 元素数个数固定，不能动态改变。\n1 2 3 4 template&lt; class T, std::size_t N &gt; struct array; 2. 用法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 #include &lt;array&gt; int main() { // 1. 声明一个包含5个整数的数组 std::array&lt;int, 5&gt; arr = {1, 2, 3, 4, 5}; // std::array&lt;int, 5&gt; arr = {1}; 其同元素初始化为0 // 2. 访问数组元素 std::cout &lt;&lt; &#34;First element: &#34; &lt;&lt; arr[0] &lt;&lt; std::endl; std::cout &lt;&lt; &#34;Second element: &#34; &lt;&lt; arr[1] &lt;&lt; std::endl; std::cout &lt;&lt; &#34;arr.at(10) = &#34; &lt;&lt; arr.at(10) &lt;&lt; &#39;\\n&#39;; // 越界访问会崩溃 // 3. 遍历数组 std::ranges::sort(arr); // 使用 C++20 的 std::ranges::sort 对 std::array 排序 for (const auto&amp; elem : arr) { std::cout &lt;&lt; elem &lt;&lt; &#39; &#39;; } std::cout &lt;&lt; &#34;\\n&#34;; // 4. 访问数组的第一个和最后一个元素 std::cout &lt;&lt; &#34;First element: &#34; &lt;&lt; arr.front() &lt;&lt; std::endl; std::cout &lt;&lt; &#34;Last element: &#34; &lt;&lt; arr.back() &lt;&lt; std::endl; } 2.1. 原始数组 返回一个指向数组第一个元素的指针，也就是类似于C语言中的数组用法，用在和C语言交互的场景中。\n">
 <meta property='og:url' content='https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8Barray/'>
 <meta property='og:site_name' content='阿左笔记'>
