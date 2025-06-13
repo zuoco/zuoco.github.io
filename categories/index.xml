@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on 阿左笔记</title>
+        <link>https://zuoco.github.io/categories/</link>
+        <description>Recent content in Categories on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Fri, 13 Jun 2025 15:05:09 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux内核</title>
+        <link>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</link>
+        <pubDate>Fri, 13 Jun 2025 15:05:09 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/AAA.jpg" alt="Featured image of post Linux内核" /&gt;</description>
+        </item>
+        <item>
+        <title>虚拟化</title>
+        <link>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+        <pubDate>Wed, 11 Jun 2025 21:53:20 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/AAA.jpg" alt="Featured image of post 虚拟化" /&gt;</description>
+        </item>
+        <item>
+        <title>现代C&#43;&#43;</title>
+        <link>https://zuoco.github.io/categories/%E7%8E%B0%E4%BB%A3c&#43;&#43;/</link>
+        <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E7%8E%B0%E4%BB%A3c&#43;&#43;/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E7%8E%B0%E4%BB%A3c&#43;&#43;/000.jpg" alt="Featured image of post 现代C&#43;&#43;" /&gt;</description>
+        </item>
+        <item>
+        <title>软件设计</title>
+        <link>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/AAA.jpeg" alt="Featured image of post 软件设计" /&gt;</description>
+        </item>
+        <item>
+        <title>Git</title>
+        <link>https://zuoco.github.io/categories/git/</link>
+        <pubDate>Sun, 25 May 2025 17:04:00 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/git/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/git/git.jpg" alt="Featured image of post Git" /&gt;</description>
+        </item>
+        <item>
+        <title>资源收集</title>
+        <link>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</link>
+        <pubDate>Sun, 25 May 2025 14:22:52 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/AAA.jpeg" alt="Featured image of post 资源收集" /&gt;</description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>https://zuoco.github.io/categories/ai/</link>
+        <pubDate>Wed, 21 May 2025 20:39:47 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/ai/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/ai/AAA.jpg" alt="Featured image of post AI" /&gt;</description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://zuoco.github.io/categories/python/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/python/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/python/AAA.jpeg" alt="Featured image of post Python" /&gt;</description>
+        </item>
+        <item>
+        <title>Rust</title>
+        <link>https://zuoco.github.io/categories/rust/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/rust/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/rust/AAA.jpg" alt="Featured image of post Rust" /&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
