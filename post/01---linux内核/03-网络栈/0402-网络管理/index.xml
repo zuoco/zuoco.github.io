@@ -7,27 +7,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 07 Jun 2025 23:43:14 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/01---linux%E5%86%85%E6%A0%B8/03-%E7%BD%91%E7%BB%9C%E6%A0%88/0402-%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>第1节 - ip命令</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/</link>
+        <lastBuildDate>Sat, 14 Jun 2025 15:58:02 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/01---linux%E5%86%85%E6%A0%B8/03-%E7%BD%91%E7%BB%9C%E6%A0%88/0402-%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>03 Tcpdump</title>
+        <link>https://zuoco.github.io/p/03-tcpdump/</link>
+        <pubDate>Sat, 14 Jun 2025 15:58:02 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/03-tcpdump/</guid>
+        <description>&lt;h1 id=&#34;1-tcpdump&#34;&gt;1. tcpdump
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>常用网络命令</title>
+        <link>https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Sat, 07 Jun 2025 23:43:14 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/</guid>
-        <description>&lt;h1 id=&#34;ip命令&#34;&gt;ip命令
-&lt;/h1&gt;&lt;p&gt;&lt;code&gt;1. 查看网卡状态&lt;/code&gt;&lt;/p&gt;
+        <guid>https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</guid>
+        <description>&lt;h1 id=&#34;1-iproute2&#34;&gt;1. iproute2
+&lt;/h1&gt;&lt;p&gt;ip命令全称iproute2，&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; &lt;code&gt;查看所有网卡的状态&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip a  &lt;span class=&#34;c1&#34;&gt;# ip addr show 的简写&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
 	width=&#34;1853&#34;
 	height=&#34;638&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-ip%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -36,16 +46,227 @@
 		data-flex-basis=&#34;697px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;2. 启用网卡&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;图中有三张网卡： lo（本地回环）、wlp3s0（无线网卡）、wlxc83a35e25ecc（usb有线网卡）。&lt;/li&gt;
+&lt;li&gt;state UP: 表示网卡已启用。&lt;/li&gt;
+&lt;li&gt;link/ether: 网卡的MAC地址。&lt;/li&gt;
+&lt;li&gt;inet 192.168.0.7/24: 网卡的ipv4-IP地址和子网掩码。&lt;/li&gt;
+&lt;li&gt;brd 192.168.0.255: 网卡的广播地址。&lt;/li&gt;
+&lt;li&gt;inet6 fe80::fac7::f96d::9e05::3cda/64: 网卡的ipv6-IP地址和子网掩码。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;&lt;code&gt;显示指定接口的信息&lt;/code&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; dev wlan0 up  &lt;span class=&#34;c1&#34;&gt;# 将 &amp;#34;wlan0&amp;#34; 替换为实际的无线接口名称&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip addr show eth0    &lt;span class=&#34;c1&#34;&gt;# ip a s eht0&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;显示接口的统计信息&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip -s link show eth0
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0.png&#34;
+	width=&#34;2508&#34;
+	height=&#34;375&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_8177b3380af5e02d.png 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_3fea5a7a16891152.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;668&#34;
+		data-flex-basis=&#34;1605px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4.&lt;/strong&gt;&lt;code&gt;启用网卡&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; eth0 up    &lt;span class=&#34;c1&#34;&gt;# 启用接口， 将 &amp;#34;eth0&amp;#34; 替换为实际的网络接口名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip link &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; eth0 down  &lt;span class=&#34;c1&#34;&gt;# 禁用接口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;5.&lt;/strong&gt;&lt;code&gt;添加/删除 IP 地址&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip addr add 192.168.1.100/24 dev eth0  &lt;span class=&#34;c1&#34;&gt;# 为 eth0 接口添加 IPv4 地址， 重启后失效&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo ip addr del 192.168.1.100/24 dev eth0  &lt;span class=&#34;c1&#34;&gt;# 删除 eth0 接口的指定 IP 地址&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;6.&lt;/strong&gt;&lt;code&gt;还是路由表、ARP表、VLAN相关功能&lt;/code&gt;
+略&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;h1 id=&#34;2-netstat&#34;&gt;2. netstat
+&lt;/h1&gt;&lt;p&gt;查看网络连接状态, 先看一下命令的默认输出：&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2.png&#34;
+	width=&#34;1882&#34;
+	height=&#34;1083&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_765006fe5511afed.png 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_a6a5131b5399f4c5.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;173&#34;
+		data-flex-basis=&#34;417px&#34;
+	
+&gt; &lt;br&gt;
+默认情况下，对于一些有别名的 ip 地址和端口号 netstat 会显示别名，例如127.0.0.1显示localhost，80端口会显示成http，如果我们想要的是原始IP地址，可以使用-n参数。&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3.png&#34;
+	width=&#34;1882&#34;
+	height=&#34;754&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_8d182fdfe505ecdf.png 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_edd16a229ed3221d.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;249&#34;
+		data-flex-basis=&#34;599px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;其他选项&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-a (all)显示所有选项，netstat 默认不显示 LISTEN 相关。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-t (tcp)仅显示 tcp 相关选项
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-u (udp)仅显示 udp 相关选项
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-n 不显示别名，能显示数字的全部转化成数字
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-l 仅列出有在 Listen (监听) 的服務状态
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-p 显示建立相关链接的程序名
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-r 显示路由信息，路由表
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-e 显示扩展信息，例如uid等
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-s 按各个协议进行统计 (重要)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-c 每隔一个固定时间，执行该 netstat 命令。
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;3-lsof&#34;&gt;3. lsof
+&lt;/h1&gt;&lt;p&gt;list opened filedesciptor，在Linux系统中，所有的与资源句柄相关的东西都可以统一抽象成文件描述符。&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1.png&#34;
+	width=&#34;1701&#34;
+	height=&#34;271&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_905002137cfdaf85.png 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_c08405377156592a.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;627&#34;
+		data-flex-basis=&#34;1506px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-p : 指定进程ID。&lt;/li&gt;
+&lt;li&gt;lsof 命令第一栏进程名在显示的时候，默认显示前 n 个字符, 可以使用 &lt;code&gt;+c 20&lt;/code&gt;来指定显示的字符数。&lt;/li&gt;
+&lt;li&gt;如果需要仅显示系统的网络连接信息，可以&lt;code&gt;-Pni&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;4-nc&#34;&gt;4. nc
+&lt;/h1&gt;&lt;p&gt;netcat命令，常见的用法是模拟一个服务器程序被其他客户端连接，或者模拟一个客户端连接其他服务器，连接之后就可以进行数据收发。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt;&lt;code&gt;模拟一个服务器程序&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nc -v -l 192.168.0.5 &lt;span class=&#34;m&#34;&gt;6060&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这样就在 6060 端口开启了一个服务器，我们可以通过192.168.0.5:6060来连接这个服务器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;&lt;code&gt;模拟一个客户端程序&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nc -v www.baidu.com &lt;span class=&#34;m&#34;&gt;80&lt;/span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nc -v -p &lt;span class=&#34;m&#34;&gt;6050&lt;/span&gt; www.baidu.com &lt;span class=&#34;m&#34;&gt;80&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 指定客户端使用6050端口连接服务器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;发送数据&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;服务端： &lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1.png&#34;
+	width=&#34;841&#34;
+	height=&#34;187&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_bce24a1c70ac2a48.png 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_8c37ccf6f7e9215a.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;449&#34;
+		data-flex-basis=&#34;1079px&#34;
+	
+&gt; &lt;br&gt;
+&lt;code&gt;客户端： &lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2.png&#34;
+	width=&#34;980&#34;
+	height=&#34;187&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_1c0fd1c15c21f4ec.png 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_929749709fafec5d.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;524&#34;
+		data-flex-basis=&#34;1257px&#34;
+	
+&gt; &lt;br&gt;
+&lt;code&gt;发送数据: &lt;/code&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3.png&#34;
+	width=&#34;1750&#34;
+	height=&#34;633&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_23b43c3f949ed182.png 480w, https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_802d9632d6b30e62.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;276&#34;
+		data-flex-basis=&#34;663px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;curl&#34;&gt;curl
+&lt;/h1&gt;&lt;p&gt;curl用于发送http请求。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt;&lt;code&gt;保存网页&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl http://www.baidu.com &amp;gt; index.html
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;&lt;code&gt;下载文件&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl --fail --show-error --location --progress-bar &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://ollama.com/download/ollama-linux-&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.tgz&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VER_PARAM&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;GET和POST请求&lt;/code&gt;&lt;br&gt;
+没用过。&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>第2节 - Network Manager</title>
