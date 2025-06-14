@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Linux Bridge Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要转发与丢弃，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是转发，丢弃，接收。\n">
-<title>第1节 - Linux Bridge 桥接网络</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="一个Linux终端下的抓包工具">
+<title>tcpdump</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/'>
+<link rel='canonical' href='https://zuoco.github.io/p/tcpdump/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="第1节 - Linux Bridge 桥接网络">
-<meta property='og:description' content="Linux Bridge Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要转发与丢弃，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是转发，丢弃，接收。\n">
-<meta property='og:url' content='https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/'>
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="tcpdump">
+<meta property='og:description' content="一个Linux终端下的抓包工具">
+<meta property='og:url' content='https://zuoco.github.io/p/tcpdump/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-06-07T18:55:30&#43;08:00'/><meta property='article:modified_time' content='2025-06-07T18:55:30&#43;08:00'/>
-<meta name="twitter:title" content="第1节 - Linux Bridge 桥接网络">
-<meta name="twitter:description" content="Linux Bridge Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要转发与丢弃，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是转发，丢弃，接收。\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-06-14T15:58:02&#43;08:00'/><meta property='article:modified_time' content='2025-06-14T15:58:02&#43;08:00'/>
+<meta name="twitter:title" content="tcpdump">
+<meta name="twitter:description" content="一个Linux终端下的抓包工具">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -315,9 +315,13 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/">第1节 - Linux Bridge 桥接网络</a>
+            <a href="/p/tcpdump/">tcpdump</a>
         </h2>
     
+        
+        <h3 class="article-subtitle">
+            一个Linux终端下的抓包工具
+        </h3>
         
     </div>
 
@@ -337,7 +341,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 07, 2025</time>
+                <time class="article-time--published">Jun 14, 2025</time>
             </div>
         
 
@@ -353,10 +357,70 @@
     <section class="article-content">
     
     
-    <h1 id="linux-bridge">Linux Bridge
-</h1><p>Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要<code>转发</code>与<code>丢弃</code>，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是<code>转发</code>，<code>丢弃</code>，<code>接收</code>。</p>
-<p>Linux内核通过虚拟的网桥设备实现桥接，这个“网桥”可以连接若干个以太网接口设备。在虚拟化平台上，我门当然要先创建“网桥”，然后连接一个物理网卡，在我们将创建虚拟机的时候，将虚拟机的网口连接到这个网桥上，就像是将多个PC设备连接到交换机，从而将它们桥接起来。</p>
-
+    <h1 id="1-基本命令选项">1. 基本命令选项
+</h1><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>命令选项</th>
+          <th>用途</th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>-i</td>
+          <td>指定网络接口</td>
+          <td><code>tcpdump   -i   eth0</code></td>
+      </tr>
+      <tr>
+          <td>-X</td>
+          <td>（大写X）以 ASCII 和十六进制的形式输出捕获的数据包内容，减去链路层的包头信息</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>-XX</td>
+          <td>（大写X）以 ASCII 和十六进制的形式输出捕获的数据包内容，包括链路层的包头信息</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>-n</td>
+          <td>ip 不以别名的形式显示</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>-nn</td>
+          <td>ip 和端口不以别名的形式显示</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>-S</td>
+          <td>（大写S）以绝对值显示包的 ISN 号（包序列号），默认以上一包的偏移量显示</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>-vv</td>
+          <td>抓包的信息详细地显示</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>-vvv</td>
+          <td>抓包的信息更详细地显示</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>-w</td>
+          <td>抓包信息写入文件，后面跟文件名</td>
+          <td>tcpdump -w test.pcap</td>
+      </tr>
+      <tr>
+          <td>-r</td>
+          <td>读取文件（就是-w保存的文件）</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table></div>
+<h1 id="2-过滤器">2. 过滤器
+</h1>
 </section>
 
 
@@ -406,19 +470,6 @@
             
                 
 <article class="">
-    <a href="/p/tcpdump/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">tcpdump</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/%E5%86%85%E5%AD%98%E7%A2%8E%E7%89%87%E5%8C%96/">
         
         
@@ -464,6 +515,19 @@
 
         <div class="article-details">
             <h2 class="article-title">free命令</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">常用网络命令</h2>
         </div>
     </a>
 </article>

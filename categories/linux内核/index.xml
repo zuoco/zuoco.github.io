@@ -8,12 +8,74 @@
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
         <lastBuildDate>Sat, 14 Jun 2025 15:58:02 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>03 Tcpdump</title>
-        <link>https://zuoco.github.io/p/03-tcpdump/</link>
+        <title>tcpdump</title>
+        <link>https://zuoco.github.io/p/tcpdump/</link>
         <pubDate>Sat, 14 Jun 2025 15:58:02 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/03-tcpdump/</guid>
-        <description>&lt;h1 id=&#34;1-tcpdump&#34;&gt;1. tcpdump
+        <guid>https://zuoco.github.io/p/tcpdump/</guid>
+        <description>&lt;h1 id=&#34;1-基本命令选项&#34;&gt;1. 基本命令选项
+&lt;/h1&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;命令选项&lt;/th&gt;
+          &lt;th&gt;用途&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-i&lt;/td&gt;
+          &lt;td&gt;指定网络接口&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;tcpdump   -i   eth0&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-X&lt;/td&gt;
+          &lt;td&gt;（大写X）以 ASCII 和十六进制的形式输出捕获的数据包内容，减去链路层的包头信息&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-XX&lt;/td&gt;
+          &lt;td&gt;（大写X）以 ASCII 和十六进制的形式输出捕获的数据包内容，包括链路层的包头信息&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-n&lt;/td&gt;
+          &lt;td&gt;ip 不以别名的形式显示&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-nn&lt;/td&gt;
+          &lt;td&gt;ip 和端口不以别名的形式显示&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-S&lt;/td&gt;
+          &lt;td&gt;（大写S）以绝对值显示包的 ISN 号（包序列号），默认以上一包的偏移量显示&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-vv&lt;/td&gt;
+          &lt;td&gt;抓包的信息详细地显示&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-vvv&lt;/td&gt;
+          &lt;td&gt;抓包的信息更详细地显示&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-w&lt;/td&gt;
+          &lt;td&gt;抓包信息写入文件，后面跟文件名&lt;/td&gt;
+          &lt;td&gt;tcpdump -w test.pcap&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;-r&lt;/td&gt;
+          &lt;td&gt;读取文件（就是-w保存的文件）&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;2-过滤器&#34;&gt;2. 过滤器
 &lt;/h1&gt;</description>
         </item>
         <item>
