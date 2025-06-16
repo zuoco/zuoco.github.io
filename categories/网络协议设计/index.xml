@@ -40,7 +40,14 @@
         <pubDate>Mon, 16 Jun 2025 18:50:53 +0800</pubDate>
         
         <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC1%E8%8A%82/</guid>
-        <description>&lt;h1 id=&#34;1-流式协议&#34;&gt;1. 流式协议
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b5%81%e5%bc%8f%e5%8d%8f%e8%ae%ae&#34; &gt;1. 流式协议&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%a6%82%e4%bd%95%e8%a7%a3%e5%86%b3%e8%be%b9%e7%95%8c&#34; &gt;2. 如何解决边界&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e8%a7%a3%e5%8c%85%e4%b8%8e%e5%8c%85%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86&#34; &gt;3. 解包与包数据处理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4&#34; &gt;4.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5&#34; &gt;5.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-流式协议&#34;&gt;1. 流式协议
 &lt;/h1&gt;&lt;p&gt;  TCP提供一种可靠传输方式。通过序列号和包重传确认机制保证数据包的有序，不会丢包或包乱序，并且数据一定被正确发到目的地。如果我们使用UDP协议，但是不能接受少量丢包，那就要在UDP的基础去现类似TCP的有序和可靠传输机制了（例如 RTP、RUDP）。但是TCP作为&lt;code&gt;流式协议&lt;/code&gt;，或者是类似协议，它证数据有序送达，但是数据流从那里开始，从那里结束，这就不是人家的本职工作了，也就是说，我们从传输层拿到数据后，要自行处理数据的&lt;code&gt;边界&lt;/code&gt;。&lt;/p&gt;
 &lt;h1 id=&#34;2-如何解决边界&#34;&gt;2. 如何解决边界
 &lt;/h1&gt;&lt;p&gt;关于边界问题，有两种情况：&lt;code&gt;粘包&lt;/code&gt;、&lt;code&gt;半包&lt;/code&gt;。&lt;/p&gt;

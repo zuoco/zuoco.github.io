@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. TCP报文结构 TCP头部由固定头部（20字节）、头部选项（最长40字节）组成。\n1.2. 固定头部 字段 功能 32位序列号 一次TCP传输活动中，一个传输方向上，字节流中的每一个字节的编号。 32位确认号 用于响应对方，告诉对方收到了数据，等于序列号+1 4位头部长度 记录了TCP头部的长度有几个32Bit 6个标志位 16位窗口大小 接收通告窗口（RWND），于流量控制，拥塞控制中会用到 16位校验和 发送端填充，接收端进行校验 16位紧急指针 16位标志位\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="TCP协议报文结构与协议特性">
 <title>TCP协议与报文结构</title>
 
 <link rel='canonical' href='https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="TCP协议与报文结构">
-<meta property='og:description' content="1. TCP报文结构 TCP头部由固定头部（20字节）、头部选项（最长40字节）组成。\n1.2. 固定头部 字段 功能 32位序列号 一次TCP传输活动中，一个传输方向上，字节流中的每一个字节的编号。 32位确认号 用于响应对方，告诉对方收到了数据，等于序列号+1 4位头部长度 记录了TCP头部的长度有几个32Bit 6个标志位 16位窗口大小 接收通告窗口（RWND），于流量控制，拥塞控制中会用到 16位校验和 发送端填充，接收端进行校验 16位紧急指针 16位标志位\n">
+<meta property='og:description' content="TCP协议报文结构与协议特性">
 <meta property='og:url' content='https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-06-16T15:39:41&#43;08:00'/><meta property='article:modified_time' content='2025-06-16T15:39:41&#43;08:00'/>
 <meta name="twitter:title" content="TCP协议与报文结构">
-<meta name="twitter:description" content="1. TCP报文结构 TCP头部由固定头部（20字节）、头部选项（最长40字节）组成。\n1.2. 固定头部 字段 功能 32位序列号 一次TCP传输活动中，一个传输方向上，字节流中的每一个字节的编号。 32位确认号 用于响应对方，告诉对方收到了数据，等于序列号+1 4位头部长度 记录了TCP头部的长度有几个32Bit 6个标志位 16位窗口大小 接收通告窗口（RWND），于流量控制，拥塞控制中会用到 16位校验和 发送端填充，接收端进行校验 16位紧急指针 16位标志位\n">
+<meta name="twitter:description" content="TCP协议报文结构与协议特性">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -319,6 +319,10 @@
         </h2>
     
         
+        <h3 class="article-subtitle">
+            TCP协议报文结构与协议特性
+        </h3>
+        
     </div>
 
     
@@ -353,7 +357,16 @@
     <section class="article-content">
     
     
-    <h1 id="1-tcp报文结构">1. TCP报文结构
+    <ul>
+<li><a class="link" href="#1-tcp%e6%8a%a5%e6%96%87%e7%bb%93%e6%9e%84" >1. TCP报文结构</a>
+<ul>
+<li><a class="link" href="#11-%e5%9b%ba%e5%ae%9a%e5%a4%b4%e9%83%a8" >1.1. 固定头部</a></li>
+<li><a class="link" href="#12-%e5%a4%b4%e9%83%a8%e9%80%89%e9%a1%b9" >1.2. 头部选项</a></li>
+</ul>
+</li>
+<li><a class="link" href="#2-%e5%8d%8f%e8%ae%ae%e7%89%b9%e6%80%a7" >2. 协议特性</a></li>
+</ul>
+<h1 id="1-tcp报文结构">1. TCP报文结构
 </h1><p>TCP头部由<code>固定头部</code>（20字节）、<code>头部选项</code>（最长40字节）组成。</p>
 <p><img src="/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/ip0.png"
 	width="2205"
@@ -367,7 +380,7 @@
 		data-flex-basis="700px"
 	
 ></p>
-<h2 id="12-固定头部">1.2. 固定头部
+<h2 id="11-固定头部">1.1. 固定头部
 </h2><div class="table-wrapper"><table>
   <thead>
       <tr>
@@ -441,7 +454,7 @@
       </tr>
   </tbody>
 </table></div>
-<h2 id="13-头部选项">1.3. 头部选项
+<h2 id="12-头部选项">1.2. 头部选项
 </h2><p>头部选项长度可变，最长40个字节，主要是用于在建立连接时，协商一些参数，确定开启那些功能。头部选项结构如下（3部分）：</p>
 <div class="table-wrapper"><table>
   <thead>
@@ -474,6 +487,14 @@
   这个是SACK实际工作选项，也就是丢包时会用到，这个选项会发送丢包信息（info），发送方通过这些信息查找丢失的报文。</p>
 <p><code>kind=8, length=10, info占用8个Byte</code><br>
   这个是时间戳选项，计算RTT时间，主要服务于流控。</p>
+<h1 id="2-协议特性">2. 协议特性
+</h1><p>  传输层协议有两个，TCP和UDP，我们都知道UDP是数据报协议，用于广播/多播场景， 而TCP协议<code>面向连接</code>、<code>字节流</code>、<code>可靠传输</code>、<code>流量控制</code>，这三个特性理解如下：</p>
+<ul>
+<li><strong>面向连接</strong>： 每一次的通讯都需要建立<code>一对一</code>的连接，然后才能进行数据传输，数据传输完成后结束连接。</li>
+<li><strong>字节流</strong>：  在发送端，应用层通过N次写操作，将数据放到TCP发送缓存区后，TCP模块会将发送缓存区中的数据封装成M个TCP报文发送出去，但是这个N和M没有联系，再说接收端接收到数据后，TCP模块会按照报文的序号将数据依次放入TCP的接收缓存区中，并通知应用程序读取数据，应用程序是一次性读取完成还是分为K次读取，完全是应用程序的设计需求，和N、M没有关系。也就是说，发送端写的次数和接收端读取的次数没有瓜葛，可以理解为TCP协议在传输数据时是没有边界的，这就是“字节流”的概念。</li>
+<li><strong>可靠传输</strong>： 为了保证可靠性，TCP做了3件事，采用<code>发送应答机制</code>、<code>报文重传</code>、<code>报文重排</code>。后面会有专门的篇章讲解这些特性。</li>
+<li><strong>流量控制</strong>： 高效使用网络带宽也是TCP模块的重要职责之一，也就是<code>TCP拥塞控制</code>设计，这个特性后面也会使用单独的篇章来介绍。</li>
+</ul>
 
 </section>
 
@@ -537,25 +558,12 @@
             
                 
 <article class="">
-    <a href="/p/tcp%E8%B6%85%E6%97%B6%E9%87%8D%E4%BC%A0/">
+    <a href="/p/tcp%E6%8A%A5%E6%96%87%E9%87%8D%E4%BC%A0/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">TCP超时重传</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/tcp%E5%8D%8F%E8%AE%AE%E6%A0%88%E5%86%85%E6%A0%B8%E5%AE%9E%E7%8E%B0/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">TCP协议栈内核实现</h2>
+            <h2 class="article-title">TCP报文重传</h2>
         </div>
     </a>
 </article>
