@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://zuoco.github.io/</loc>
-    <lastmod>2025-06-16T22:32:23+08:00</lastmod>
+    <lastmod>2025-06-16T23:15:57+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/categories/</loc>
-    <lastmod>2025-06-16T22:32:23+08:00</lastmod>
+    <lastmod>2025-06-16T23:15:57+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/</loc>
-    <lastmod>2025-06-16T22:32:23+08:00</lastmod>
+    <lastmod>2025-06-16T23:15:57+08:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/02-qemu/</loc>
+    <lastmod>2025-06-16T23:15:57+08:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/qemu%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8Bqom/</loc>
+    <lastmod>2025-06-16T23:15:57+08:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-06-16T23:15:57+08:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-06-16T23:15:57+08:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/qemu%E9%93%BE%E8%A1%A8%E8%AE%BE%E8%AE%A1/</loc>
+    <lastmod>2025-06-16T23:08:01+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/03-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2025-06-16T22:32:23+08:00</lastmod>
@@ -197,12 +212,6 @@
     <loc>https://zuoco.github.io/p/%E7%AC%AC4%E8%8A%82-%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8Bset/</loc>
     <lastmod>2025-05-26T21:55:17+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2025-05-25T19:39:48+08:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/</loc>
-    <lastmod>2025-05-25T19:39:48+08:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</loc>
     <lastmod>2025-05-25T19:39:48+08:00</lastmod>
   </url><url>
@@ -224,16 +233,16 @@
     <loc>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</loc>
     <lastmod>2025-05-25T14:22:52+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/02-freecad/</loc>
+    <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/03-freecad/</loc>
     <lastmod>2025-05-25T13:53:51+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2025-05-25T13:53:51+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/03-open3d/</loc>
+    <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/04-open3d/</loc>
     <lastmod>2025-05-25T13:19:03+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-open3d%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</loc>
+    <loc>https://zuoco.github.io/p/open3d%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2025-05-25T13:19:03+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</loc>
@@ -325,6 +334,8 @@
     <loc>https://zuoco.github.io/search/</loc>
   </url><url>
     <loc>https://zuoco.github.io/tags/</loc>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</loc>
   </url><url>
     <loc>https://zuoco.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url><url>
