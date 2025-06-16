@@ -7,13 +7,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 14 Jun 2025 15:58:02 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 16 Jun 2025 22:32:23 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>网络协议设计</title>
+        <link>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Mon, 16 Jun 2025 22:32:23 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/AAA.jpg" alt="Featured image of post 网络协议设计" /&gt;</description>
+        </item>
+        <item>
+        <title>TCP</title>
+        <link>https://zuoco.github.io/categories/tcp/</link>
+        <pubDate>Mon, 16 Jun 2025 15:39:41 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/tcp/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/tcp/AAA.png" alt="Featured image of post TCP" /&gt;</description>
+        </item>
+        <item>
         <title>Linux内核</title>
         <link>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</link>
         <pubDate>Sat, 14 Jun 2025 15:58:02 +0800</pubDate>
         
         <guid>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/AAA.jpg" alt="Featured image of post Linux内核" /&gt;</description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>https://zuoco.github.io/categories/ai/</link>
+        <pubDate>Fri, 13 Jun 2025 22:25:01 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/ai/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/ai/AAA.jpg" alt="Featured image of post AI" /&gt;</description>
         </item>
         <item>
         <title>虚拟化</title>
@@ -32,12 +56,12 @@
         <description>&lt;img src="https://zuoco.github.io/categories/%E7%8E%B0%E4%BB%A3c&#43;&#43;/000.jpg" alt="Featured image of post 现代C&#43;&#43;" /&gt;</description>
         </item>
         <item>
-        <title>软件设计</title>
+        <title>代码设计</title>
         <link>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
         
         <guid>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/AAA.jpeg" alt="Featured image of post 软件设计" /&gt;</description>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/AAA.jpeg" alt="Featured image of post 代码设计" /&gt;</description>
         </item>
         <item>
         <title>Git</title>
@@ -54,14 +78,6 @@
         
         <guid>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/AAA.jpeg" alt="Featured image of post 资源收集" /&gt;</description>
-        </item>
-        <item>
-        <title>AI</title>
-        <link>https://zuoco.github.io/categories/ai/</link>
-        <pubDate>Wed, 21 May 2025 20:39:47 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/ai/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/ai/AAA.jpg" alt="Featured image of post AI" /&gt;</description>
         </item>
         <item>
         <title>Python</title>

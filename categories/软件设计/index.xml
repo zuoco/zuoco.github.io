@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>软件设计 on 阿左笔记</title>
+        <title>代码设计 on 阿左笔记</title>
         <link>https://zuoco.github.io/categories/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1/</link>
-        <description>Recent content in 软件设计 on 阿左笔记</description>
+        <description>Recent content in 代码设计 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
@@ -241,6 +241,14 @@
 	
 &gt;&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>第1节 - Open3D介绍与安装</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-open3d%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Sun, 25 May 2025 13:19:03 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-open3d%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
+        <description></description>
         </item>
         <item>
         <title>第二节 - DeskFlow工程源码整体认识</title>

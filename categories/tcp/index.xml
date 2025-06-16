@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>TCP on 阿左笔记</title>
+        <link>https://zuoco.github.io/categories/tcp/</link>
+        <description>Recent content in TCP on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Mon, 16 Jun 2025 15:39:41 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/tcp/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>TCP协议与报文结构</title>
+        <link>https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/</link>
+        <pubDate>Mon, 16 Jun 2025 15:39:41 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/</guid>
+        <description>&lt;h1 id=&#34;1-tcp报文结构&#34;&gt;1. TCP报文结构
+&lt;/h1&gt;&lt;p&gt;TCP头部由&lt;code&gt;固定头部&lt;/code&gt;（20字节）、&lt;code&gt;头部选项&lt;/code&gt;（最长40字节）组成。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/ip0.png&#34;
+	width=&#34;2205&#34;
+	height=&#34;755&#34;
+	srcset=&#34;https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/ip0_hu_e3b2b96c58f03b84.png 480w, https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E4%B8%8E%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84/ip0_hu_58baa746c7708356.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;292&#34;
+		data-flex-basis=&#34;700px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;12-固定头部&#34;&gt;1.2. 固定头部
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;字段&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;32位序列号&lt;/td&gt;
+          &lt;td&gt;一次TCP传输活动中，一个传输方向上，字节流中的每一个字节的编号。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;32位确认号&lt;/td&gt;
+          &lt;td&gt;用于响应对方，告诉对方收到了数据，等于序列号+1&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;4位头部长度&lt;/td&gt;
+          &lt;td&gt;记录了TCP头部的长度有几个&lt;code&gt;32Bit&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;6个标志位&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;16位窗口大小&lt;/td&gt;
+          &lt;td&gt;接收通告窗口（RWND），于流量控制，拥塞控制中会用到&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;16位校验和&lt;/td&gt;
+          &lt;td&gt;发送端填充，接收端进行校验&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;16位紧急指针&lt;/td&gt;
+          &lt;td&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;16位标志位&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;标志位&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;URG&lt;/td&gt;
+          &lt;td&gt;紧急指针是否有效&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;ACK&lt;/td&gt;
+          &lt;td&gt;确认号是否有效&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;PSH&lt;/td&gt;
+          &lt;td&gt;接收方应该尽快将这个报文交给应用层，这是一个数据报文&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;RST&lt;/td&gt;
+          &lt;td&gt;连接复位请求&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SYN&lt;/td&gt;
+          &lt;td&gt;同步序号，用于建立连接，这是一个连接请求报文&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;FIN&lt;/td&gt;
+          &lt;td&gt;这是一个close报文&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;13-头部选项&#34;&gt;1.3. 头部选项
+&lt;/h2&gt;&lt;p&gt;头部选项长度可变，最长40个字节，主要是用于在建立连接时，协商一些参数，确定开启那些功能。头部选项结构如下（3部分）：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;一个Byte&lt;/th&gt;
+          &lt;th&gt;一个Byte&lt;/th&gt;
+          &lt;th&gt;n个Byte&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;kind&lt;/td&gt;
+          &lt;td&gt;length&lt;/td&gt;
+          &lt;td&gt;info&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;选项类型&lt;/td&gt;
+          &lt;td&gt;头部选项的长度（包括kind和length）&lt;/td&gt;
+          &lt;td&gt;选项的具体信息&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;kind=2, length=4, info占用2个Byte&lt;/code&gt; &lt;br&gt;
+  用于指定最大报文段长度，此时，TCP连接初始化时，双方以此协商最大报文段长度（MSS），一般这个MSS=MTU-40，这个“40”包含20字节的tcp头部和20字节的ip头部。这样一来，报文就不超过MTU的长度，也就是减少了ip分片。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kind=3, length=3，info占用1个Byte&lt;/code&gt;&lt;br&gt;
+  窗口扩大因子，info记录移位数，用于设置RWND，例如，固定头部中的16位窗口大小是S，头部选项给的窗口扩大因子是T，那么这一次TCP连接的实际RWND大小就是:  $S \times 2^T，T \in [0,14]$，也就是S左移T位。但是有一个问题，人家RWND最大才16bBit(65536)，这样一搞，不就超了吗？实际上内核是允许的，并可以通过修改 &lt;strong&gt;/proc/sys/net/ipv4/tcp_window_scaling&lt;/strong&gt; 的值来启用或者关闭窗口扩大因子选项。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kind=4, length=2, 无info&lt;/code&gt;&lt;br&gt;
+  启用SACK选项，用于支持selective ACK 功能，TCP协议有丢包重传的功能，假如现在发送方发送了A、B、C、D、E、F，6个报文，结果B丢了，此时TCP模块会重传A之后的所有报文，开启SACK功能后，TCP模块只重传丢失的报文。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kind=5, ..., ...&lt;/code&gt;&lt;br&gt;
+  这个是SACK实际工作选项，也就是丢包时会用到，这个选项会发送丢包信息（info），发送方通过这些信息查找丢失的报文。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;kind=8, length=10, info占用8个Byte&lt;/code&gt;&lt;br&gt;
+  这个是时间戳选项，计算RTT时间，主要服务于流控。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>TCP拥塞控制</title>
+        <link>https://zuoco.github.io/p/tcp%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6/</link>
+        <pubDate>Mon, 16 Jun 2025 15:24:13 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/tcp%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>TCP超时重传</title>
+        <link>https://zuoco.github.io/p/tcp%E8%B6%85%E6%97%B6%E9%87%8D%E4%BC%A0/</link>
+        <pubDate>Mon, 16 Jun 2025 15:21:50 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/tcp%E8%B6%85%E6%97%B6%E9%87%8D%E4%BC%A0/</guid>
+        <description>&lt;h1 id=&#34;tcp超时重传&#34;&gt;TCP超时重传
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>TCP协议栈内核实现</title>
+        <link>https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E6%A0%88%E5%86%85%E6%A0%B8%E5%AE%9E%E7%8E%B0/</link>
+        <pubDate>Mon, 16 Jun 2025 15:01:00 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/tcp%E5%8D%8F%E8%AE%AE%E6%A0%88%E5%86%85%E6%A0%B8%E5%AE%9E%E7%8E%B0/</guid>
+        <description>&lt;h1 id=&#34;&#34;&gt;
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>TCP的“三次握手”与“四次挥手”</title>
+        <link>https://zuoco.github.io/p/tcp%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</link>
+        <pubDate>Mon, 16 Jun 2025 10:25:47 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/tcp%E7%9A%84%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E4%B8%8E%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B/</guid>
+        <description>&lt;h1 id=&#34;1-tcpdump-抓取tcp报文&#34;&gt;1. tcpdump 抓取Tcp报文
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; &lt;code&gt;现在有一对tcp程序&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;服务端地址：192.168.52.39：8080。&lt;/li&gt;
+&lt;li&gt;客户端地址：192.168.52.67。&lt;/li&gt;
+&lt;li&gt;连接建立后客户端发送数据： ABCDEF。&lt;/li&gt;
+&lt;li&gt;服务器收到数据后，发送数据：ABCDEFGH。&lt;/li&gt;
+&lt;li&gt;客户端断开连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; &lt;code&gt;tcpdump抓取Tcp报文&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tcpdump -i any &lt;span class=&#34;s1&#34;&gt;&amp;#39;tcp and host 192.168.52.39 and host 192.168.52.67&amp;#39;&lt;/span&gt; -vvn
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; &lt;code&gt;抓取结果&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump: data link &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; LINUX_SLL2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump: listening on any, link-type LINUX_SLL2 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Linux cooked v2&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, snapshot length &lt;span class=&#34;m&#34;&gt;262144&lt;/span&gt; bytes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.569020 wlp4s0 In  IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 57345, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 60&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;S&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0x3356 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 3666571938, win 64240, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;mss 1460,sackOK,TS val &lt;span class=&#34;m&#34;&gt;1128528921&lt;/span&gt; ecr 0,nop,wscale 7&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.569049 wlp4s0 Out IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 0, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 60&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;S.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e9 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0x92ef&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 394631164, ack 3666571939, win 65160, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;mss 1460,sackOK,TS val &lt;span class=&#34;m&#34;&gt;4121163671&lt;/span&gt; ecr 1128528921,nop,wscale 7&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.571512 wlp4s0 In  IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 57346, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xbe4a &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1, ack 1, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128528925&lt;/span&gt; ecr 4121163671&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.571513 wlp4s0 In  IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 57347, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 58&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;P.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xfa78 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1:7, ack 1, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128528925&lt;/span&gt; ecr 4121163671&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length 6: HTTP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.571554 wlp4s0 Out IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 45420, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0xbe39&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1, ack 7, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121163674&lt;/span&gt; ecr 1128528925&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.571658 wlp4s0 Out IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 45421, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 60&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;P.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e9 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0xb520&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1:9, ack 7, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121163674&lt;/span&gt; ecr 1128528925&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length 8: HTTP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.577532 wlp4s0 In  IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 57348, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xbe35 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 7, ack 9, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128528929&lt;/span&gt; ecr 4121163674&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:30.578167 wlp4s0 In  IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 57349, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;F.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xaaab &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 7, ack 9, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128533930&lt;/span&gt; ecr 4121163674&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:30.618353 wlp4s0 Out IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 45422, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0x96ec&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 9, ack 8, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121168721&lt;/span&gt; ecr 1128533930&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:35.571866 wlp4s0 Out IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 45423, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;F.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0x8392&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 9, ack 8, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121173674&lt;/span&gt; ecr 1128533930&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:35.576375 wlp4s0 In  IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 0, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0x7014 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 8, ack 10, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128538928&lt;/span&gt; ecr 4121173674&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;^C
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; packets captured
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; packets received by filter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; packets dropped by kernel
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;2-分析抓包结果&#34;&gt;2. 分析抓包结果
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; packets captured
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; packets received by filter
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; packets dropped by kernel
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;三次握手、四次挥手、一个数据报文，一个数据报文的ACK，算起来9个报文，下面分析一下抓取的报文。&lt;/p&gt;
+&lt;h2 id=&#34;21-三次握手&#34;&gt;2.1. 三次握手
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;S&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0x3356 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 3666571938, win 64240, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;mss 1460,sackOK,TS val &lt;span class=&#34;m&#34;&gt;1128528921&lt;/span&gt; ecr 0,nop,wscale 7&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;S.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e9 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0x92ef&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 394631164, ack 3666571939, win 65160, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;mss 1460,sackOK,TS val &lt;span class=&#34;m&#34;&gt;4121163671&lt;/span&gt; ecr 1128528921,nop,wscale 7&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xbe4a &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1, ack 1, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128528925&lt;/span&gt; ecr 4121163671&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;简单分析一下：&lt;br&gt;
+&lt;code&gt;192.168.52.67.33762 &amp;gt; 192.168.52.39.8080&lt;/code&gt;： 报文的源地址 &amp;gt; 目标地址 &lt;br&gt;
+&lt;code&gt;Flags [S]&lt;/code&gt;:   同步报文段，由客户端发送，表示请求建立一个连接。&lt;br&gt;
+&lt;code&gt;Flags [S.]&lt;/code&gt;:  同步+确认报文段，由服务端发送，做了两件事： 1.同步,表示同意客户端的连接请求。2.响应客户端的SYN报文。 &lt;br&gt;
+&lt;code&gt;Flags [.]&lt;/code&gt;:   确认报文。&lt;br&gt;
+&lt;code&gt;seq 3666571938&lt;/code&gt;:   客户端ISN值，就是报文序号的初始值。&lt;br&gt;
+&lt;code&gt;seq 394631164&lt;/code&gt;:    服务端ISN值，两个传输方向分别有各自的ISN值。 &lt;br&gt;
+&lt;code&gt;ack 3666571939&lt;/code&gt;:   确认序号，表示服务端已经收到客户端的报文,确认序号就是接收到的报文的seq+1。 &lt;br&gt;
+&lt;code&gt;options [mss 1460,sackOK,TS val 1128528921 ecr 0,nop,wscale 7]&lt;/code&gt;:   TCP头部结构中的头部选项。&lt;br&gt;
+&lt;code&gt;length 0&lt;/code&gt;:  报文的数据长度，SYN 包不携带数据，所以为0。&lt;/p&gt;
+&lt;p&gt;以上就是“三次握手”。&lt;/p&gt;
+&lt;h2 id=&#34;22-数据发送与响应&#34;&gt;2.2. 数据发送与响应
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 客户端发送数据包，6个字节&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;P.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xfa78 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1:7, ack 1, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128528925&lt;/span&gt; ecr 4121163671&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length 6: HTTP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 服务器收到数据包，发送确认消息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0xbe39&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1, ack 7, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121163674&lt;/span&gt; ecr 1128528925&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 服务器发送数据包，8个字节&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;P.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e9 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0xb520&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 1:9, ack 7, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121163674&lt;/span&gt; ecr 1128528925&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length 8: HTTP
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 客户端接收数据包，发送确认消息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xbe35 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 7, ack 9, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128528929&lt;/span&gt; ecr 4121163674&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;seq 1:7&lt;/code&gt;:         数据报文的起始序列号为1（方向： 客户端-&amp;gt;服务器），写成seq 1:7这种形式非常别扭。  &lt;br&gt;
+&lt;code&gt;length 6: HTTP&lt;/code&gt;:  报文携带的数据长度为6字节，识别为HTTP报文是因为使用了8080端口。 &lt;br&gt;
+&lt;code&gt;seq 1:9&lt;/code&gt;:         数据报文的起始序列号为1（方向： 服务器-&amp;gt;客户端）。 &lt;br&gt;
+&lt;code&gt;ack 7&lt;/code&gt;:           确认序号为7，就是对于来自客户端的数据报文进行响应，表示收到了这个报文，ack=seq+length+1，也就是下一个报文的起始序列号。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;br&gt;
+tcp虽然也是一个一个报文发送的，但是tcp是流式协议，序列号用于表示一次网络通信过程中，所传输数据的每一个&lt;code&gt;字节&lt;/code&gt;的编号，注意了是字节的编号，在一次通信活动中，数据字节的编号是连续的。因为是流式协议，对于应用层协议来说，tcp数据流是没有边界的，会发生所谓的&lt;code&gt;粘包&lt;/code&gt;问题，这需要应用层去解决，毕竟tcp只负责数据的可靠传输，而不管数据从哪里开始，从到哪里结束。&lt;/p&gt;
+&lt;h2 id=&#34;23-四次挥手&#34;&gt;2.3. 四次挥手
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;F.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xaaab &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 7, ack 9, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128533930&lt;/span&gt; ecr 4121163674&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0x96ec&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 9, ack 8, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121168721&lt;/span&gt; ecr 1128533930&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;F.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0xe9e1 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;incorrect -&amp;gt; 0x8392&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 9, ack 8, win 510, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;4121173674&lt;/span&gt; ecr 1128533930&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;.&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, cksum 0x7014 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;correct&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, seq 8, ack 10, win 502, options &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;nop,nop,TS val &lt;span class=&#34;m&#34;&gt;1128538928&lt;/span&gt; ecr 4121173674&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, length &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags [F.]&lt;/code&gt;:   客户端发送了关闭连接的请求。&lt;br&gt;
+&lt;code&gt;192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags [.]&lt;/code&gt;:    服务器收到客户端请求后，发送了确认包。  &lt;br&gt;
+&lt;code&gt;192.168.52.39.8080 &amp;gt; 192.168.52.67.33762: Flags [F.]&lt;/code&gt;:   服务器发送了关闭连接的请求。 &lt;br&gt;
+&lt;code&gt;192.168.52.67.33762 &amp;gt; 192.168.52.39.8080: Flags [.]&lt;/code&gt;:    客户端收到服务器的关闭请求后，发送了确认包。&lt;/p&gt;
+&lt;p&gt;双方都要发送关闭连接请求，保证双方都没有数据要发送。有些机器挥手只有3个报文，因为中间的两个报文合并在一起了。&lt;/p&gt;
+&lt;h1 id=&#34;3-其他&#34;&gt;3. 其他
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 时间戳            网络接口     数据方向     IP报文相关信息                                                  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.571513    wlp4s0      In         IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 57347, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 58&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;13:29:25.571554    wlp4s0      Out        IP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;tos 0x0, ttl 64, id 45420, offset 0, flags &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;DF&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;, proto TCP &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;6&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;, length 52&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

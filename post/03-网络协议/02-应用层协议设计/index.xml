@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>网络协议设计 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/03-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
+        <description>Recent content in 网络协议设计 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Mon, 16 Jun 2025 22:32:23 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/03-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>网络协议设计 第4节</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC4%E8%8A%82/</link>
+        <pubDate>Mon, 16 Jun 2025 22:32:23 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC4%E8%8A%82/</guid>
+        <description>&lt;h1 id=&#34;&#34;&gt;
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>网络协议设计 第3节</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC3%E8%8A%82/</link>
+        <pubDate>Mon, 16 Jun 2025 22:25:46 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC3%E8%8A%82/</guid>
+        <description>&lt;h1 id=&#34;&#34;&gt;
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>网络协议设计 第2节</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC2%E8%8A%82/</link>
+        <pubDate>Mon, 16 Jun 2025 22:25:40 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC2%E8%8A%82/</guid>
+        <description>&lt;h1 id=&#34;&#34;&gt;
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>网络协议设计 第1节</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC1%E8%8A%82/</link>
+        <pubDate>Mon, 16 Jun 2025 18:50:53 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-%E7%AC%AC1%E8%8A%82/</guid>
+        <description>&lt;h1 id=&#34;1-流式协议&#34;&gt;1. 流式协议
+&lt;/h1&gt;&lt;p&gt;  TCP提供一种可靠传输方式。通过序列号和包重传确认机制保证数据包的有序，不会丢包或包乱序，并且数据一定被正确发到目的地。如果我们使用UDP协议，但是不能接受少量丢包，那就要在UDP的基础去现类似TCP的有序和可靠传输机制了（例如 RTP、RUDP）。但是TCP作为&lt;code&gt;流式协议&lt;/code&gt;，或者是类似协议，它证数据有序送达，但是数据流从那里开始，从那里结束，这就不是人家的本职工作了，也就是说，我们从传输层拿到数据后，要自行处理数据的&lt;code&gt;边界&lt;/code&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;2-如何解决边界&#34;&gt;2. 如何解决边界
+&lt;/h1&gt;&lt;p&gt;关于边界问题，有两种情况：&lt;code&gt;粘包&lt;/code&gt;、&lt;code&gt;半包&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;粘包： 多个包裹连接在一起，也可能不是整数个包。&lt;/li&gt;
+&lt;li&gt;半包： 只收到一个包的一部分。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;无论是半包还是粘包问题，问题都出在“流式”上，常用的解决办法有3种：&lt;code&gt;固定包长度&lt;/code&gt;、&lt;code&gt;指定包结束标志&lt;/code&gt;、&lt;code&gt;封装一套协议（协议头+数据）&lt;/code&gt;。&lt;br&gt;
+&lt;strong&gt;1.&lt;/strong&gt; &lt;code&gt;固定包长度&lt;/code&gt;&lt;br&gt;
+  数据包固定大小，这样虽然灵活性差，但是简单，它的缺点就是，当数据长度小于包长度时，需要使用特定字符填充，例如“\0”，必须和正常数据区分开。当数据报长度大于包长度时，需要分包，发送端需要分包，接收端需要组包。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt;&lt;code&gt;指定包结束标志&lt;/code&gt;&lt;br&gt;
+  就是指定特定的符号或者符号组合作为包结束标志，例如FTP、SMTP协议，使用“\r\n”表示结束，接受端处理包时，遇到“\r\n”就认为获取到了一个包。如果传输一些命令之类的数据，可以使用这种方式，他的缺点就是，但数据内容需要使用包结束标志时，就需要额外作转义处理了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;封装一套协议（协议头+数据）&lt;/code&gt;&lt;br&gt;
+  这种最正式了，照葫芦画瓢设计一个结构体来表示协议头，这个结构体要包含表明数据类型，数据长度，等等。&lt;/p&gt;
+&lt;h1 id=&#34;3-解包与包数据处理&#34;&gt;3. 解包与包数据处理
+&lt;/h1&gt;&lt;p&gt;这里我们简单的理解以下，接收数据并处理的流程：&lt;/p&gt;
+&lt;p&gt;图片
+&lt;a class=&#34;link&#34; href=&#34;https://cpp1024.com/protocol/7-3-%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%A4%84%E7%90%86.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://cpp1024.com/protocol/7-3-%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%A4%84%E7%90%86.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;4&#34;&gt;4.
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cpp1024.com/protocol/7-4-%E4%BB%8E-struct-%E5%88%B0-TLV%E2%80%94%E2%80%94%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%BC%94%E5%8C%96%E5%8E%86%E5%8F%B2.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://cpp1024.com/protocol/7-4-%E4%BB%8E-struct-%E5%88%B0-TLV%E2%80%94%E2%80%94%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%BC%94%E5%8C%96%E5%8E%86%E5%8F%B2.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;5&#34;&gt;5.
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cpp1024.com/protocol/7-5-%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://cpp1024.com/protocol/7-5-%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

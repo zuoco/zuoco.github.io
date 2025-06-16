@@ -26,7 +26,7 @@
       &lt;tr&gt;
           &lt;td&gt;-i&lt;/td&gt;
           &lt;td&gt;指定网络接口&lt;/td&gt;
-          &lt;td&gt;&lt;code&gt;tcpdump   -i   eth0&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;tcpdump   -i   eth0&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;-X&lt;/td&gt;
@@ -65,18 +65,101 @@
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;-w&lt;/td&gt;
-          &lt;td&gt;抓包信息写入文件，后面跟文件名&lt;/td&gt;
+          &lt;td&gt;抓包信息写入文件pcap，后面跟文件名&lt;/td&gt;
           &lt;td&gt;tcpdump -w test.pcap&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;-r&lt;/td&gt;
-          &lt;td&gt;读取文件（就是-w保存的文件）&lt;/td&gt;
+          &lt;td&gt;读取文件pcap（就是-w保存的文件）&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h1 id=&#34;2-过滤器&#34;&gt;2. 过滤器
-&lt;/h1&gt;</description>
+&lt;/h1&gt;&lt;h2 id=&#34;21-指定协议类型&#34;&gt;2.1. 指定协议类型
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump tcp                    &lt;span class=&#34;c1&#34;&gt;# 仅 TCP 流量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump udp                    &lt;span class=&#34;c1&#34;&gt;# 仅 UDP 流量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump icmp                   &lt;span class=&#34;c1&#34;&gt;# 仅 ICMP 流量（如 ping）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;22-指定ip地址&#34;&gt;2.2. 指定IP地址
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump host 192.168.1.100                                &lt;span class=&#34;c1&#34;&gt;# 抓取IP为 192.168.1.100 的数据包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump src  192.168.1.100                                &lt;span class=&#34;c1&#34;&gt;# 源 IP 为 192.168.1.100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump dst  192.168.1.100                                &lt;span class=&#34;c1&#34;&gt;# 目标 IP 为 192.168.1.100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;23-指定端口&#34;&gt;2.3. 指定端口
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump port &lt;span class=&#34;m&#34;&gt;80&lt;/span&gt;                &lt;span class=&#34;c1&#34;&gt;# HTTP 流量（端口 80）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump portrange 8000-8080    &lt;span class=&#34;c1&#34;&gt;# 端口范围 8000 到 8080&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump src port &lt;span class=&#34;m&#34;&gt;22&lt;/span&gt;            &lt;span class=&#34;c1&#34;&gt;# 源端口为 22（SSH）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump dst port &lt;span class=&#34;m&#34;&gt;443&lt;/span&gt;           &lt;span class=&#34;c1&#34;&gt;# 目标端口为 443（HTTPS）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;24-使用and组合过滤器&#34;&gt;2.4. 使用and组合过滤器
+&lt;/h2&gt;&lt;p&gt;当有多个过滤条件时，推荐使用单因号。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump &lt;span class=&#34;s1&#34;&gt;&amp;#39;src 192.168.1.100 and dst 192.168.1.200&amp;#39;&lt;/span&gt;                      &lt;span class=&#34;c1&#34;&gt;# IP组合&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump &lt;span class=&#34;s1&#34;&gt;&amp;#39;host 192.168.1.100 or host 192.168.1.200&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump &lt;span class=&#34;s1&#34;&gt;&amp;#39;host 192.168.1.100 and port 80&amp;#39;&lt;/span&gt;                               &lt;span class=&#34;c1&#34;&gt;# IP-Port组合&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump &lt;span class=&#34;s1&#34;&gt;&amp;#39;host 192.168.1.100 and not port 22&amp;#39;&lt;/span&gt;                           &lt;span class=&#34;c1&#34;&gt;# 排除 SSH 流量&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump &lt;span class=&#34;s1&#34;&gt;&amp;#39;src 192.168.1.100 and (dst port 80 or dst port 443)&amp;#39;&lt;/span&gt;          &lt;span class=&#34;c1&#34;&gt;# 嵌套过滤器，源 IP 为 192.168.1.100，目标端口为 80 或 443&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;25-示例组合&#34;&gt;2.5. 示例组合
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump -i wlp4s0 &lt;span class=&#34;s1&#34;&gt;&amp;#39;tcp and src 192.168.1.100 and (dst port 80 or dst port 443)&amp;#39;&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;tcpdump -i wlp4s0 &lt;span class=&#34;s1&#34;&gt;&amp;#39;src 192.168.1.100 and (dst port 80 or dst port 443) and (tcp or udp)&amp;#39;&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;3-其他&#34;&gt;3. 其他
+&lt;/h1&gt;&lt;p&gt;tcpdump也可以过滤数据包的数据部分，例如过滤http的GET、POST请求等等。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>大页内存</title>
+        <link>https://zuoco.github.io/p/%E5%A4%A7%E9%A1%B5%E5%86%85%E5%AD%98/</link>
+        <pubDate>Fri, 13 Jun 2025 17:35:58 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E5%A4%A7%E9%A1%B5%E5%86%85%E5%AD%98/</guid>
+        <description>&lt;h1 id=&#34;&#34;&gt;
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://bbs.huaweicloud.com/blogs/291868&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://bbs.huaweicloud.com/blogs/291868&lt;/a&gt;&lt;/p&gt;
+</description>
         </item>
         <item>
         <title>内存碎片化</title>

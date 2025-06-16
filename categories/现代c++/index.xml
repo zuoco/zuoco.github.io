@@ -1744,7 +1744,7 @@ buffer: 指向一块连续的存储空间。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;x和y的类型不同，所以不能比较。&lt;/p&gt;
 &lt;h3 id=&#34;262-operator&#34;&gt;2.6.2. operator&amp;lt;=&amp;gt;
-&lt;/h3&gt;&lt;p&gt;用法见《逻辑比较》。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;用法见逻辑比较。&lt;/p&gt;
 </description>
         </item>
         <item>
