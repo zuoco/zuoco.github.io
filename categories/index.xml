@@ -40,14 +40,6 @@
         <description>&lt;img src="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/AAA.jpg" alt="Featured image of post Linux内核" /&gt;</description>
         </item>
         <item>
-        <title>AI</title>
-        <link>https://zuoco.github.io/categories/ai/</link>
-        <pubDate>Fri, 13 Jun 2025 22:25:01 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/ai/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/ai/AAA.jpg" alt="Featured image of post AI" /&gt;</description>
-        </item>
-        <item>
         <title>虚拟化</title>
         <link>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
         <pubDate>Wed, 11 Jun 2025 21:53:20 +0800</pubDate>
@@ -78,6 +70,14 @@
         
         <guid>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/AAA.jpeg" alt="Featured image of post 资源收集" /&gt;</description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>https://zuoco.github.io/categories/ai/</link>
+        <pubDate>Wed, 21 May 2025 20:39:47 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/ai/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/ai/AAA.jpg" alt="Featured image of post AI" /&gt;</description>
         </item>
         <item>
         <title>Python</title>

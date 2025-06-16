@@ -80,22 +80,13 @@
     <loc>https://zuoco.github.io/post/01-linux%E5%86%85%E6%A0%B8/03-%E7%BD%91%E7%BB%9C%E6%A0%88/</loc>
     <lastmod>2025-06-14T15:58:02+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/categories/ai/</loc>
-    <lastmod>2025-06-13T22:25:01+08:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/post/04-ai/</loc>
-    <lastmod>2025-06-13T22:25:01+08:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2025-06-13T22:25:01+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/04-ai/01-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8E%9F%E7%90%86/</loc>
     <lastmod>2025-06-13T22:25:01+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/01-linux%E5%86%85%E6%A0%B8/02-%E5%86%85%E5%AD%98/02-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%BA%E5%88%B6/</loc>
-    <lastmod>2025-06-13T17:35:58+08:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/%E5%A4%A7%E9%A1%B5%E5%86%85%E5%AD%98/</loc>
     <lastmod>2025-06-13T17:35:58+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/01-linux%E5%86%85%E6%A0%B8/02-%E5%86%85%E5%AD%98/</loc>
@@ -125,9 +116,6 @@
     <loc>https://zuoco.github.io/post/06-%E8%99%9A%E6%8B%9F%E5%8C%96/01-qemu%E4%B8%8Ekvm/</loc>
     <lastmod>2025-06-11T21:53:20+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D/</loc>
-    <lastmod>2025-06-11T19:09:58+08:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/p/free%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2025-06-08T11:32:58+08:00</lastmod>
   </url><url>
@@ -155,9 +143,6 @@
     <loc>https://zuoco.github.io/post/06-%E8%99%9A%E6%8B%9F%E5%8C%96/02-proxmox-ve/</loc>
     <lastmod>2025-06-07T00:01:17+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/0310-unordered_multimap%E4%B8%8Eunordered_multiset/</loc>
-    <lastmod>2025-06-05T22:48:06+08:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/post/90-%E8%AF%AD%E8%A8%80/06---%E7%8E%B0%E4%BB%A3c&#43;&#43;/01-c&#43;&#43;%E5%9F%BA%E7%A1%80/0103-%E5%AE%B9%E5%99%A8/</loc>
     <lastmod>2025-06-05T22:48:06+08:00</lastmod>
   </url><url>
@@ -169,12 +154,6 @@
   </url><url>
     <loc>https://zuoco.github.io/post/90-%E8%AF%AD%E8%A8%80/06---%E7%8E%B0%E4%BB%A3c&#43;&#43;/01-c&#43;&#43;%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2025-06-05T22:48:06+08:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/0309-unordered_set/</loc>
-    <lastmod>2025-06-05T22:47:36+08:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/0308-unordered_map/</loc>
-    <lastmod>2025-06-05T22:47:27+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/%E7%AC%AC7%E8%8A%82-%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%BB%8B%E7%BB%8D/</loc>
     <lastmod>2025-06-04T00:00:00+00:00</lastmod>
@@ -239,9 +218,6 @@
     <loc>https://zuoco.github.io/post/02-%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/04-open3d/</loc>
     <lastmod>2025-05-25T13:19:03+08:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/open3d%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</loc>
-    <lastmod>2025-05-25T13:19:03+08:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</loc>
     <lastmod>2025-05-21T20:53:24+08:00</lastmod>
   </url><url>
@@ -250,6 +226,9 @@
   </url><url>
     <loc>https://zuoco.github.io/post/90-%E8%AF%AD%E8%A8%80/06---%E7%8E%B0%E4%BB%A3c&#43;&#43;/01-c&#43;&#43;%E5%9F%BA%E7%A1%80/0105-c&#43;&#43;20%E5%85%B3%E9%94%AE%E5%AD%97/</loc>
     <lastmod>2025-05-21T20:43:36+08:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/ai/</loc>
+    <lastmod>2025-05-21T20:39:47+08:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
     <lastmod>2025-05-21T20:39:47+08:00</lastmod>
