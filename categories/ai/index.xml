@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>AI on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/ai/</link>
+        <link>http://localhost:1313/categories/ai/</link>
         <description>Recent content in AI on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 21 May 2025 20:39:47 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 May 2025 20:39:47 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Ollama基础操作</title>
-        <link>https://zuoco.github.io/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</link>
+        <link>http://localhost:1313/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Wed, 21 May 2025 20:39:47 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</guid>
+        <guid>http://localhost:1313/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</guid>
         <description>&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -73,10 +73,10 @@
         </item>
         <item>
         <title>使用Ollama本地部署Qwen3-14b</title>
-        <link>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</link>
+        <link>http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</link>
         <pubDate>Sun, 18 May 2025 23:17:13 +0800</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</guid>
+        <guid>http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</guid>
         <description>&lt;h1 id=&#34;1-本地环境&#34;&gt;1. 本地环境
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1. 主机&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -91,10 +91,10 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;3. 显卡&lt;/strong&gt;
 NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1.jpg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1.jpg&#34;
 	width=&#34;4000&#34;
 	height=&#34;1800&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_b253c635c49ed7d.jpg 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_27e3b3150c6538c8.jpg 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_b253c635c49ed7d.jpg 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_27e3b3150c6538c8.jpg 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -168,7 +168,7 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;3-ai部署框架&#34;&gt;3. AI部署框架
 &lt;/h1&gt;&lt;p&gt;模型只是一堆参数，需要通过推理工具来运行，推理工具将模型参数加载到显存中，并依据输入的文字生成输出。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
 	
 	
 	
@@ -442,10 +442,10 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;h1 id=&#34;6-前端接入&#34;&gt;6. 前端接入
 &lt;/h1&gt;&lt;p&gt;Ollama默认是在11434端口提供服务。明白了这个就可以到&lt;code&gt;www.cherry-ai.com&lt;/code&gt;下载Cherry Studio了。 &lt;br&gt;
 安装好后，选择『设置』，然后在『设置』中选择『Ollama』：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio.png&#34;
 	width=&#34;4096&#34;
 	height=&#34;2304&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_8f86a418231ff65.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_8f86a418231ff65.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -457,10 +457,10 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过&lt;code&gt;ollama list&lt;/code&gt;命令获取，注意了，这里的“模型ID”是&lt;code&gt;ollama list&lt;/code&gt;命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。&lt;/p&gt;
 &lt;h1 id=&#34;7-效果展示&#34;&gt;7. 效果展示
 &lt;/h1&gt;&lt;p&gt;以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
 	width=&#34;2002&#34;
 	height=&#34;901&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, http://localhost:1313/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
