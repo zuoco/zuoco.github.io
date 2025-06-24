@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. Qemu链表链表设计 QTAILQ 是 QEMU 实现的一种尾队列（Tail Queue）数据结构，代码位于include/qemu/queue.h\n1.1. 第一部分: 节点定义 1 2 3 4 5 // include/qemu/queue.h typedef struct QTailQLink { void *tql_next; struct QTailQLink *tql_prev; } QTailQLink; 这段代码定义了一个通用的双向链表节点结构，通过 tql_next 和 tql_prev 可以向前或向后遍历链表。\n">
-<title>Qemu尾队列</title>
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 链表定义 1.1. 优化 2. 链表操作 2.1. 访问链表 2.2. 链表初始化 2.3. 插入操作 2.3.1. 链表头部插入新节点 2.3.2. 指定节点后插入节点 2.3.3. 指定节点前插入节点 2.4. 判断节点是否在链表中 2.5. 移除节点 2.5.1. 移除指定节点 2.5.2. 移除指定节点（安全版本） 2.6. 遍历链表 交换两个链表的全部节点 3. 使用示例 3.1. 节点结构 3.2. 链表头结构 qemu-8.2.2/include/qemu/queue.h是QEMU中实现的通用数据结构库，源自FreeBSD的queue.h。\n">
+<title>Qemu - List 一种高效单链表</title>
 
-<link rel='canonical' href='http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97/'>
+<link rel='canonical' href='https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Qemu尾队列">
-<meta property='og:description' content="1. Qemu链表链表设计 QTAILQ 是 QEMU 实现的一种尾队列（Tail Queue）数据结构，代码位于include/qemu/queue.h\n1.1. 第一部分: 节点定义 1 2 3 4 5 // include/qemu/queue.h typedef struct QTailQLink { void *tql_next; struct QTailQLink *tql_prev; } QTailQLink; 这段代码定义了一个通用的双向链表节点结构，通过 tql_next 和 tql_prev 可以向前或向后遍历链表。\n">
-<meta property='og:url' content='http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97/'>
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Qemu - List 一种高效单链表">
+<meta property='og:description' content=" 1. 链表定义 1.1. 优化 2. 链表操作 2.1. 访问链表 2.2. 链表初始化 2.3. 插入操作 2.3.1. 链表头部插入新节点 2.3.2. 指定节点后插入节点 2.3.3. 指定节点前插入节点 2.4. 判断节点是否在链表中 2.5. 移除节点 2.5.1. 移除指定节点 2.5.2. 移除指定节点（安全版本） 2.6. 遍历链表 交换两个链表的全部节点 3. 使用示例 3.1. 节点结构 3.2. 链表头结构 qemu-8.2.2/include/qemu/queue.h是QEMU中实现的通用数据结构库，源自FreeBSD的queue.h。\n">
+<meta property='og:url' content='https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-23T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="Qemu尾队列">
-<meta name="twitter:description" content="1. Qemu链表链表设计 QTAILQ 是 QEMU 实现的一种尾队列（Tail Queue）数据结构，代码位于include/qemu/queue.h\n1.1. 第一部分: 节点定义 1 2 3 4 5 // include/qemu/queue.h typedef struct QTailQLink { void *tql_next; struct QTailQLink *tql_prev; } QTailQLink; 这段代码定义了一个通用的双向链表节点结构，通过 tql_next 和 tql_prev 可以向前或向后遍历链表。\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-27T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Qemu - List 一种高效单链表">
+<meta name="twitter:description" content=" 1. 链表定义 1.1. 优化 2. 链表操作 2.1. 访问链表 2.2. 链表初始化 2.3. 插入操作 2.3.1. 链表头部插入新节点 2.3.2. 指定节点后插入节点 2.3.3. 指定节点前插入节点 2.4. 判断节点是否在链表中 2.5. 移除节点 2.5.1. 移除指定节点 2.5.2. 移除指定节点（安全版本） 2.6. 遍历链表 交换两个链表的全部节点 3. 使用示例 3.1. 节点结构 3.2. 链表头结构 qemu-8.2.2/include/qemu/queue.h是QEMU中实现的通用数据结构库，源自FreeBSD的queue.h。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -294,6 +294,10 @@
     
     <header class="article-category">
         
+            <a href="/categories/qemu/" >
+                Qemu
+            </a>
+        
             <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="background-color: #32CD32; color: #FFFFFF;">
                 数据结构
             </a>
@@ -303,7 +307,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97/">Qemu尾队列</a>
+            <a href="/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/">Qemu - List 一种高效单链表</a>
         </h2>
     
         
@@ -325,7 +329,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Nov 23, 2024</time>
+                <time class="article-time--published">Oct 27, 2024</time>
             </div>
         
 
@@ -341,28 +345,181 @@
     <section class="article-content">
     
     
-    <h1 id="1-qemu链表链表设计">1. Qemu链表链表设计
-</h1><p>QTAILQ 是 QEMU 实现的一种尾队列（Tail Queue）数据结构，代码位于include/qemu/queue.h</p>
-<h2 id="11-第一部分-节点定义">1.1. 第一部分: 节点定义
-</h2><div class="highlight"><div class="chroma">
+    <ul>
+<li><a class="link" href="#1-%e9%93%be%e8%a1%a8%e5%ae%9a%e4%b9%89" >1. 链表定义</a>
+<ul>
+<li><a class="link" href="#11-%e4%bc%98%e5%8c%96" >1.1. 优化</a></li>
+</ul>
+</li>
+<li><a class="link" href="#2-%e9%93%be%e8%a1%a8%e6%93%8d%e4%bd%9c" >2. 链表操作</a>
+<ul>
+<li><a class="link" href="#21-%e8%ae%bf%e9%97%ae%e9%93%be%e8%a1%a8" >2.1. 访问链表</a></li>
+<li><a class="link" href="#22-%e9%93%be%e8%a1%a8%e5%88%9d%e5%a7%8b%e5%8c%96" >2.2. 链表初始化</a></li>
+<li><a class="link" href="#23-%e6%8f%92%e5%85%a5%e6%93%8d%e4%bd%9c" >2.3. 插入操作</a>
+<ul>
+<li><a class="link" href="#231-%e9%93%be%e8%a1%a8%e5%a4%b4%e9%83%a8%e6%8f%92%e5%85%a5%e6%96%b0%e8%8a%82%e7%82%b9" >2.3.1. 链表头部插入新节点</a></li>
+<li><a class="link" href="#232-%e6%8c%87%e5%ae%9a%e8%8a%82%e7%82%b9%e5%90%8e%e6%8f%92%e5%85%a5%e8%8a%82%e7%82%b9" >2.3.2. 指定节点后插入节点</a></li>
+<li><a class="link" href="#233-%e6%8c%87%e5%ae%9a%e8%8a%82%e7%82%b9%e5%89%8d%e6%8f%92%e5%85%a5%e8%8a%82%e7%82%b9" >2.3.3. 指定节点前插入节点</a></li>
+</ul>
+</li>
+<li><a class="link" href="#24-%e5%88%a4%e6%96%ad%e8%8a%82%e7%82%b9%e6%98%af%e5%90%a6%e5%9c%a8%e9%93%be%e8%a1%a8%e4%b8%ad" >2.4. 判断节点是否在链表中</a></li>
+<li><a class="link" href="#25-%e7%a7%bb%e9%99%a4%e8%8a%82%e7%82%b9" >2.5. 移除节点</a>
+<ul>
+<li><a class="link" href="#251-%e7%a7%bb%e9%99%a4%e6%8c%87%e5%ae%9a%e8%8a%82%e7%82%b9" >2.5.1. 移除指定节点</a></li>
+<li><a class="link" href="#252-%e7%a7%bb%e9%99%a4%e6%8c%87%e5%ae%9a%e8%8a%82%e7%82%b9%e5%ae%89%e5%85%a8%e7%89%88%e6%9c%ac" >2.5.2. 移除指定节点（安全版本）</a></li>
+</ul>
+</li>
+<li><a class="link" href="#26-%e9%81%8d%e5%8e%86%e9%93%be%e8%a1%a8" >2.6. 遍历链表</a></li>
+<li><a class="link" href="#%e4%ba%a4%e6%8d%a2%e4%b8%a4%e4%b8%aa%e9%93%be%e8%a1%a8%e7%9a%84%e5%85%a8%e9%83%a8%e8%8a%82%e7%82%b9" >交换两个链表的全部节点</a></li>
+</ul>
+</li>
+<li><a class="link" href="#3-%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b" >3. 使用示例</a>
+<ul>
+<li><a class="link" href="#31-%e8%8a%82%e7%82%b9%e7%bb%93%e6%9e%84" >3.1. 节点结构</a></li>
+<li><a class="link" href="#32-%e9%93%be%e8%a1%a8%e5%a4%b4%e7%bb%93%e6%9e%84" >3.2. 链表头结构</a></li>
+</ul>
+</li>
+</ul>
+<p>qemu-8.2.2/include/qemu/queue.h是QEMU中实现的通用数据结构库，源自FreeBSD的queue.h。</p>
+<h1 id="1-链表定义">1. 链表定义
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 链表头： 包含一个指向首元节点的指针
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define QLIST_HEAD(name, type)                                          \
+</span></span></span><span class="line"><span class="cl"><span class="cp">struct name {                                                           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        struct type *lh_first;  </span><span class="cm">/* first element */</span><span class="cp">                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">}
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 链表初始化。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 首元节点指针初始化为NULL。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define QLIST_HEAD_INITIALIZER(head)                                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        { NULL }
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 链表节点的连接域。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 节点类型的结构体中包含此结构体，用于连接链表。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define QLIST_ENTRY(type)                                                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">struct {                                                                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        struct type *le_next;   </span><span class="cm">/* 指向下一个节点 */</span><span class="cp">                           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        struct type **le_prev;  </span><span class="cm">/* 指向前驱节点的le_next字段，这是一个效率设计 */</span><span class="cp">  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">}
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="11-优化">1.1. 优化
+</h2><p>  Qemu-List带来的优化就是<code>**le_prev</code>，一般情况下，单链表是没有prev相关的字段，而双链表的prev字段是指向前驱节点的，但是Qemu-List不属于这两种情况。假如现在有一个这样的链表：A-&gt;B-&gt;C，C的le_prev指向B的le_next，而B的le_next又指向C，所以C的le_prev实际指向C自己，相对于一般的链表设计，这样设计的好处是，删除节点的效率高一点。对于非操作系统级别的程序可能少见这种设计，但是对于内核或者驱动来说，性能是非常敏感的，能优化一点是一点。那么，这种设计是如何优化删除效率的：</p>
+<ul>
+<li>一般但链表设计中，要删除节点B，需要访问节点A，以便在移除B后建立A和C的连接：A-&gt;C。</li>
+<li>Qemu-List中，B的le_prev指向B自己，这样删除B时，不需要访问A，基于节点B就可以实现：A-&gt;C，基本思路如下所示:</li>
+</ul>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// include/qemu/queue.h
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">QTailQLink</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="o">*</span><span class="n">tql_next</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">QTailQLink</span> <span class="o">*</span><span class="n">tql_prev</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">QTailQLink</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nf">QLIST_REMOVE</span><span class="p">(</span><span class="n">B</span><span class="p">,</span> <span class="n">entry</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 步骤1：更新后继节点C的前驱指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="n">le_next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>               <span class="c1">// C存在
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">C</span><span class="p">.</span><span class="n">le_prev</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">le_prev</span><span class="p">;</span>           <span class="c1">// 即 C.le_prev = &amp;A.le_next，也就是让C的le_prev指向A的le_next(原本指向B的le_prev)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 步骤2：通过前驱指针修改A的le_next
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">*</span><span class="n">B</span><span class="p">.</span><span class="n">le_prev</span> <span class="o">=</span> <span class="n">B</span><span class="p">.</span><span class="n">le_next</span><span class="p">;</span>              <span class="c1">// 相当于 A.le_next = C的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这段代码定义了一个通用的双向链表节点结构，通过 tql_next 和 tql_prev 可以向前或向后遍历链表。</p>
-<h2 id="12-第二部分-链表定义">1.2. 第二部分: 链表定义
-</h2><h3 id="121-链表头结构设计">1.2.1. 链表头结构设计
+</div><p>  从上面代码可以看到，删除节点B时，整个过程不需要访问A。 <br>
+  下面再看一点代码，以便对于该链表的使用有一个初步了解：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/* qemu-8.2.2/block.c */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="nf">QLIST_HEAD</span><span class="p">(,</span> <span class="n">BlockDriver</span><span class="p">)</span> <span class="n">bdrv_drivers</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">QLIST_HEAD_INITIALIZER</span><span class="p">(</span><span class="n">bdrv_drivers</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>  上面是一个块设备驱动相关的链表，使用QLIST_HEAD宏函数创建，宏替换后如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">static</span> <span class="k">struct</span> <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">struct</span> <span class="n">BlockDriver</span> <span class="o">*</span><span class="n">lh_first</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">bdrv_drivers</span> <span class="o">=</span> <span class="p">{</span> <span class="nb">NULL</span> <span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="2-链表操作">2. 链表操作
+</h1><h2 id="21-访问链表">2.1. 访问链表
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_EMPTY(head)                ((head)-&gt;lh_first == NULL)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define QLIST_FIRST(head)                ((head)-&gt;lh_first)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define QLIST_NEXT(elm, field)           ((elm)-&gt;field.le_next)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="22-链表初始化">2.2. 链表初始化
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_INIT(head) do {                                           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (head)-&gt;lh_first = NULL;                                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">} while (</span><span class="cm">/*CONSTCOND*/</span><span class="cp">0)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="23-插入操作">2.3. 插入操作
+</h2><h3 id="231-链表头部插入新节点">2.3.1. 链表头部插入新节点
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -370,47 +527,50 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QTAILQ_HEAD(name, type)                                         \
-</span></span></span><span class="line"><span class="cl"><span class="cp">union name {                                                            \
-</span></span></span><span class="line"><span class="cl"><span class="cp">        struct type *tqh_first;       </span><span class="cm">/* first element */</span><span class="cp">               \
-</span></span></span><span class="line"><span class="cl"><span class="cp">        QTailQLink tqh_circ;          </span><span class="cm">/* link for circular backwards list */</span><span class="cp"> \
-</span></span></span><span class="line"><span class="cl"><span class="cp">}
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_INSERT_HEAD(head, elm, field) do {                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        if (((elm)-&gt;field.le_next = (head)-&gt;lh_first) != NULL)          \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (head)-&gt;lh_first-&gt;field.le_prev = &amp;(elm)-&gt;field.le_next;\
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (head)-&gt;lh_first = (elm);                                       \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (elm)-&gt;field.le_prev = &amp;(head)-&gt;lh_first;                       \
+</span></span></span><span class="line"><span class="cl"><span class="cp">} while (</span><span class="cm">/*CONSTCOND*/</span><span class="cp">0)
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>tqh_circ 是指向链表尾部的指针，用于实现 O(1) 时间复杂度的尾插操作。</li>
+</div><p><strong>解释：</strong></p>
+<ul>
+<li>field:  就是使用宏<code>QLIST_ENTRY(type)</code>创建的链表节点连接结构，是节点中的连接域字段，通过该字段访问后继节点。</li>
+<li>elm: 要插入的节点。</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QTAILQ_HEAD_INITIALIZER(head)                                   \
-</span></span></span><span class="line"><span class="cl"><span class="cp">        { .tqh_circ = { NULL, &amp;(head).tqh_circ } }
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QTAILQ_ENTRY(type)                                              \
-</span></span></span><span class="line"><span class="cl"><span class="cp">union {                                                                 \
-</span></span></span><span class="line"><span class="cl"><span class="cp">        struct type *tqe_next;        </span><span class="cm">/* next element */</span><span class="cp">                \
-</span></span></span><span class="line"><span class="cl"><span class="cp">        QTailQLink tqe_circ;          </span><span class="cm">/* link for circular backwards list */</span><span class="cp"> \
-</span></span></span><span class="line"><span class="cl"><span class="cp">}
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>在链表节点中同时支持普通链表和循环链表操作。</p>
-<h1 id="2-链表使用">2. 链表使用
-</h1><div class="highlight"><div class="chroma">
+<p><strong>代码逐行解释：</strong><br>
+<code>if (((elm)-&gt;field.le_next = (head)-&gt;lh_first) != NULL)</code></p>
+<ol>
+<li>使elm的le_next字段指向原首元节点。</li>
+<li>判断链表是否为空。</li>
+</ol>
+<p><code>(head)-&gt;lh_first-&gt;field.le_prev = &amp;(elm)-&gt;field.le_next;</code></p>
+<ol>
+<li>如果链表非空，使原首元节点的le_prev字段指向新节点的le_next字段。</li>
+</ol>
+<p><code>(head)-&gt;lh_first = (elm);</code></p>
+<ol>
+<li>使链表头指向新节点。</li>
+</ol>
+<p><code>(elm)-&gt;field.le_prev = &amp;(head)-&gt;lh_first;</code></p>
+<ol>
+<li>使新节点的le_prev字段指向链表头的lh_first字段，也就是指向自己，这就是首元节点。</li>
+</ol>
+<p><img src="/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="232-指定节点后插入节点">2.3.2. 指定节点后插入节点
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -421,16 +581,125 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// util/module.c
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">ModuleEntry</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">init</span><span class="p">)(</span><span class="kt">void</span><span class="p">);</span>     <span class="c1">// 类型注册函数，就是type_init(&lt;class_name&gt;_register_types);中的&lt;class_name&gt;_register_types
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">QTAILQ_ENTRY</span><span class="p">(</span><span class="n">ModuleEntry</span><span class="p">)</span> <span class="n">node</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">module_init_type</span> <span class="n">type</span><span class="p">;</span>  <span class="c1">// 所属模块类型，类型系统就是MODULE_INIT_QOM
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">ModuleEntry</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_INSERT_AFTER(listelm, elm, field) do {                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        if (((elm)-&gt;field.le_next = (listelm)-&gt;field.le_next) != NULL)  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (listelm)-&gt;field.le_next-&gt;field.le_prev =               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                    &amp;(elm)-&gt;field.le_next;                              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (listelm)-&gt;field.le_next = (elm);                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (elm)-&gt;field.le_prev = &amp;(listelm)-&gt;field.le_next;               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">} while (</span><span class="cm">/*CONSTCOND*/</span><span class="cp">0)
+</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p>重点需要理解的就是<code>QTAILQ_ENTRY(ModuleEntry) node;</code>，将宏函数展开就是:</p>
+</div><ul>
+<li>elm： 要插入的节点</li>
+<li>listelm： 插入到该节点后。</li>
+</ul>
+<p><img src="/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E5%89%8D%E6%8F%92%E5%85%A5.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="233-指定节点前插入节点">2.3.3. 指定节点前插入节点
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_INSERT_BEFORE(listelm, elm, field) do {                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (elm)-&gt;field.le_prev = (listelm)-&gt;field.le_prev;                \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (elm)-&gt;field.le_next = (listelm);                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        *(listelm)-&gt;field.le_prev = (elm);                              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (listelm)-&gt;field.le_prev = &amp;(elm)-&gt;field.le_next;               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">} while (</span><span class="cm">/*CONSTCOND*/</span><span class="cp">0)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>  和QLIST_INSERT_AFTER差不多。</p>
+<h2 id="24-判断节点是否在链表中">2.4. 判断节点是否在链表中
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_IS_INSERTED(elm, field) ((elm)-&gt;field.le_prev != NULL)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="25-移除节点">2.5. 移除节点
+</h2><h3 id="251-移除指定节点">2.5.1. 移除指定节点
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_REMOVE(elm, field) do {                                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        if ((elm)-&gt;field.le_next != NULL)                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (elm)-&gt;field.le_next-&gt;field.le_prev =                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                    (elm)-&gt;field.le_prev;                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        *(elm)-&gt;field.le_prev = (elm)-&gt;field.le_next;                   \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (elm)-&gt;field.le_next = NULL;                                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (elm)-&gt;field.le_prev = NULL;                                    \
+</span></span></span><span class="line"><span class="cl"><span class="cp">} while (</span><span class="cm">/*CONSTCOND*/</span><span class="cp">0)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>elm: 要移除的节点。</li>
+<li>field: 节点连接域。<br>
+<img src="/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></li>
+</ul>
+<h3 id="252-移除指定节点安全版本">2.5.2. 移除指定节点（安全版本）
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_SAFE_REMOVE(elm, field) do {                              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        if ((elm)-&gt;field.le_prev != NULL) {                             \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                if ((elm)-&gt;field.le_next != NULL)                       \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                        (elm)-&gt;field.le_next-&gt;field.le_prev =           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                            (elm)-&gt;field.le_prev;                       \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                *(elm)-&gt;field.le_prev = (elm)-&gt;field.le_next;           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (elm)-&gt;field.le_next = NULL;                            \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (elm)-&gt;field.le_prev = NULL;                            \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        }                                                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">} while (</span><span class="cm">/*CONSTCOND*/</span><span class="cp">0)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>安全性考虑： 先判断elm节点是否存在，再进行删除。</li>
+<li>删除节点： 和QLIST_REMOVE() 一样。</li>
+</ul>
+<h2 id="26-遍历链表">2.6. 遍历链表
+</h2><p><strong>1. 一般遍历</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -439,10 +708,293 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">union</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">struct</span> <span class="n">type</span> <span class="o">*</span><span class="n">tqe_next</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">QTailQLink</span> <span class="n">tqe_circ</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">node</span><span class="p">;</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_FOREACH(var, head, field)                                 \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        for ((var) = ((head)-&gt;lh_first);                                \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (var);                                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (var) = ((var)-&gt;field.le_next))
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>不需要删除节点时使用。
+<strong>2. 安全遍历</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_FOREACH_SAFE(var, head, field, next_var)                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        for ((var) = ((head)-&gt;lh_first);                                \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (var) &amp;&amp; ((next_var) = ((var)-&gt;field.le_next), 1);      \
+</span></span></span><span class="line"><span class="cl"><span class="cp">                (var) = (next_var))
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>安全性改进:  它支持在遍历过程中安全删除当前节点，在进入循环体之前，next_var 已保存下一个节点的指针，即使循环体内删除或修改了当前节点 var，next_var 仍指向下一个有效节点（不受 var 操作的影响），步进时直接使用 next_var，避免访问已释放的内存。</li>
+</ul>
+<p><strong>3. 使用宏遍历</strong><br>
+遍历宏只是实现了for循环的for(;;;)部分：<br>
+QLIST_FOREACH：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 遍历所有注册的块设备驱动程序，找出最适合处理指定设备文件（如 /dev/cdrom）的驱动程序。   
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">static</span> <span class="n">BlockDriver</span> <span class="o">*</span><span class="nf">find_hdev_driver</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">score_max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">score</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">BlockDriver</span> <span class="o">*</span><span class="n">drv</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">*</span><span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">GLOBAL_STATE_CODE</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">QLIST_FOREACH</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bdrv_drivers</span><span class="p">,</span> <span class="n">list</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">-&gt;</span><span class="n">bdrv_probe_device</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">score</span> <span class="o">=</span> <span class="n">d</span><span class="o">-&gt;</span><span class="nf">bdrv_probe_device</span><span class="p">(</span><span class="n">filename</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">score</span> <span class="o">&gt;</span> <span class="n">score_max</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">score_max</span> <span class="o">=</span> <span class="n">score</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">drv</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">drv</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>QLIST_FOREACH_SAFE：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 从指定块设备状态（BlockDriverState）的操作阻塞列表中移除特定原因的阻塞项。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">bdrv_op_unblock</span><span class="p">(</span><span class="n">BlockDriverState</span> <span class="o">*</span><span class="n">bs</span><span class="p">,</span> <span class="n">BlockOpType</span> <span class="n">op</span><span class="p">,</span> <span class="n">Error</span> <span class="o">*</span><span class="n">reason</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">BdrvOpBlocker</span> <span class="o">*</span><span class="n">blocker</span><span class="p">,</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">GLOBAL_STATE_CODE</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">assert</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span> <span class="n">op</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">op</span> <span class="o">&lt;</span> <span class="n">BLOCK_OP_TYPE_MAX</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">QLIST_FOREACH_SAFE</span><span class="p">(</span><span class="n">blocker</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">bs</span><span class="o">-&gt;</span><span class="n">op_blockers</span><span class="p">[</span><span class="n">op</span><span class="p">],</span> <span class="n">list</span><span class="p">,</span> <span class="n">next</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">blocker</span><span class="o">-&gt;</span><span class="n">reason</span> <span class="o">==</span> <span class="n">reason</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">QLIST_REMOVE</span><span class="p">(</span><span class="n">blocker</span><span class="p">,</span> <span class="n">list</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">g_free</span><span class="p">(</span><span class="n">blocker</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="交换两个链表的全部节点">交换两个链表的全部节点
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define QLIST_SWAP(dstlist, srclist, field) do {                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        void *tmplist;                                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        tmplist = (srclist)-&gt;lh_first;                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (srclist)-&gt;lh_first = (dstlist)-&gt;lh_first;                      \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        if ((srclist)-&gt;lh_first != NULL) {                              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">            (srclist)-&gt;lh_first-&gt;field.le_prev = &amp;(srclist)-&gt;lh_first;  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        }                                                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        (dstlist)-&gt;lh_first = tmplist;                                  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        if ((dstlist)-&gt;lh_first != NULL) {                              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">            (dstlist)-&gt;lh_first-&gt;field.le_prev = &amp;(dstlist)-&gt;lh_first;  \
+</span></span></span><span class="line"><span class="cl"><span class="cp">        }                                                               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">} while (</span><span class="cm">/*CONSTCOND*/</span><span class="cp">0)
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>我们以为两个非空链表为例： <br>
+<img src="/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="3-使用示例">3. 使用示例
+</h1><h2 id="31-节点结构">3.1. 节点结构
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// thread-pool.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">ThreadPoolElement</span> <span class="n">ThreadPoolElement</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// thread-pool.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="n">ThreadPoolElement</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">BlockAIOCB</span> <span class="n">common</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadPool</span> <span class="o">*</span><span class="n">pool</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadPoolFunc</span> <span class="o">*</span><span class="n">func</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">enum</span> <span class="n">ThreadState</span> <span class="n">state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">ret</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">QTAILQ_ENTRY</span><span class="p">(</span><span class="n">ThreadPoolElement</span><span class="p">)</span> <span class="n">reqs</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 节点的连接区域，每个节点通过该域连接前后相邻节点。
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">QLIST_ENTRY</span><span class="p">(</span><span class="n">ThreadPoolElement</span><span class="p">)</span> <span class="n">all</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="32-链表头结构">3.2. 链表头结构
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">BlockAIOCB</span> <span class="o">*</span><span class="nf">thread_pool_submit_aio</span><span class="p">(</span><span class="n">ThreadPoolFunc</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                   <span class="n">BlockCompletionFunc</span> <span class="o">*</span><span class="n">cb</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">opaque</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadPoolElement</span> <span class="o">*</span><span class="n">req</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ......
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 省略一堆代码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 链表头部保存在pool实例中。 
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadPool</span> <span class="o">*</span><span class="n">pool</span> <span class="o">=</span> <span class="nf">aio_get_thread_pool</span><span class="p">(</span><span class="n">ctx</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// .....
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">QLIST_INSERT_HEAD</span><span class="p">(</span><span class="o">&amp;</span><span class="n">pool</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">all</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ......
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>下面我们来看这个<code>ThreadPool *pool</code>是如何保存头部的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// thread-pool.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">ThreadPool</span> <span class="n">ThreadPool</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// thread-pool.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="n">ThreadPool</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">AioContext</span> <span class="o">*</span><span class="n">ctx</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">QEMUBH</span> <span class="o">*</span><span class="n">completion_bh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">QemuMutex</span> <span class="n">lock</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">QemuCond</span> <span class="n">worker_stopped</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">QemuCond</span> <span class="n">request_cond</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">QEMUBH</span> <span class="o">*</span><span class="n">new_thread_bh</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">     * 使用QLIST_HEAD宏创建一个链表，链表节点中所保存的元素类型为ThreadPoolElement。
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">QLIST_HEAD</span><span class="p">(,</span> <span class="n">ThreadPoolElement</span><span class="p">)</span> <span class="n">head</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">QTAILQ_HEAD</span><span class="p">(,</span> <span class="n">ThreadPoolElement</span><span class="p">)</span> <span class="n">request_list</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">cur_threads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">idle_threads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">new_threads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">pending_threads</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">min_threads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max_threads</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -495,12 +1047,12 @@
             
                 
 <article class="">
-    <a href="/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97/">
+    <a href="/p/qemu-singly-linked-list-%E5%8D%95%E9%93%BE%E8%A1%A8/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Qemu简单队列</h2>
+            <h2 class="article-title">Qemu - Singly-linked List 单链表</h2>
         </div>
     </a>
 </article>
@@ -508,12 +1060,12 @@
             
                 
 <article class="">
-    <a href="/p/qemu%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/">
+    <a href="/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Qemu双向链表</h2>
+            <h2 class="article-title">Qemu尾队列 Tail Queue</h2>
         </div>
     </a>
 </article>
@@ -521,12 +1073,25 @@
             
                 
 <article class="">
-    <a href="/p/qemu%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8/">
+    <a href="/p/qemu%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8Bqom/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Qemu单向链表</h2>
+            <h2 class="article-title">Qemu对象模型（QOM）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Qemu简单队列 Simple Queue</h2>
         </div>
     </a>
 </article>
@@ -681,7 +1246,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.bf3198480a0303df03104b790647a2d905c90402cc9a3ee09c67a5e3ab42fd89.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

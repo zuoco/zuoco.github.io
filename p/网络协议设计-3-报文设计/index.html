@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 报文结构 1.1. 报文头部 1.2. 类型头部 1.3. 状态 1. 报文结构 1.1. 报文头部 所有的报文都以特定的头部开始，例如：\n1 2 3 4 5 struct header { uint32_t type; // 报文类型，决定了类型头部的结构。 uint32_t length; // 类型头部长度 + 数据长度。 uint64_t id; // 报文编号，用于通信双方标识报文。 } 不一定完全就是上面这些字段，根据实际需求设计。\n">
 <title>网络协议设计 — 3 — 报文设计</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="网络协议设计 — 3 — 报文设计">
 <meta property='og:description' content=" 1. 报文结构 1.1. 报文头部 1.2. 类型头部 1.3. 状态 1. 报文结构 1.1. 报文头部 所有的报文都以特定的头部开始，例如：\n1 2 3 4 5 struct header { uint32_t type; // 报文类型，决定了类型头部的结构。 uint32_t length; // 类型头部长度 + 数据长度。 uint64_t id; // 报文编号，用于通信双方标识报文。 } 不一定完全就是上面这些字段，根据实际需求设计。\n">
-<meta property='og:url' content='http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/'>
+<meta property='og:url' content='https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-10T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="网络协议设计 — 3 — 报文设计">
@@ -714,7 +714,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.bf3198480a0303df03104b790647a2d905c90402cc9a3ee09c67a5e3ab42fd89.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

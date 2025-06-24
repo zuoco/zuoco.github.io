@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg 1.2. 使用 1.2.1. 使用依赖清单安装依赖 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n2. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 cd ~/.app # clone vcpkg git clone https://github.com/microsoft/vcpkg.git # 初始化vcpkg cd vcpkg &amp;&amp; ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.app/vcpkg/vcpkg /usr/local/bin/vcpkg 3. 使用 3.1. 安装软件包 1 2 3 4 vcpkg install fmt vcpkg install fmt:x64-linux # 指定平台 vcpkg install fmt:x64-windows-static # 静态库 vcpkg install fmt:x64-windows # 动态库 3.2. 查看软件包信息 1 2 3 4 5 6 vcpkg list # 查找已经安装的软件包 vcpkg search # 查看所有软件包 vcpkg search opencv # 查看包含“opencv”关键词的软件包 vcpkg info opencv # 查看软件包信息 pvckg help triplet # 查看支持的平台 vcpkg search opencv --triplet x64-linux # 查找特定平台的包\t4. 使用清单 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
 <title>C&#43;&#43;包管理器之vcpkg</title>
 
-<link rel='canonical' href='http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/'>
+<link rel='canonical' href='https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="C++包管理器之vcpkg">
-<meta property='og:description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg 1.2. 使用 1.2.1. 使用依赖清单安装依赖 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
-<meta property='og:url' content='http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/'>
+<meta property='og:description' content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n2. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 cd ~/.app # clone vcpkg git clone https://github.com/microsoft/vcpkg.git # 初始化vcpkg cd vcpkg &amp;&amp; ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.app/vcpkg/vcpkg /usr/local/bin/vcpkg 3. 使用 3.1. 安装软件包 1 2 3 4 vcpkg install fmt vcpkg install fmt:x64-linux # 指定平台 vcpkg install fmt:x64-windows-static # 静态库 vcpkg install fmt:x64-windows # 动态库 3.2. 查看软件包信息 1 2 3 4 5 6 vcpkg list # 查找已经安装的软件包 vcpkg search # 查看所有软件包 vcpkg search opencv # 查看包含“opencv”关键词的软件包 vcpkg info opencv # 查看软件包信息 pvckg help triplet # 查看支持的平台 vcpkg search opencv --triplet x64-linux # 查找特定平台的包\t4. 使用清单 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
+<meta property='og:url' content='https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-31T21:58:34&#43;08:00'/><meta property='article:modified_time' content='2025-05-31T21:58:34&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-07-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-07-31T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="C++包管理器之vcpkg">
-<meta name="twitter:description" content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n1.1. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 6 7 cd /opt # git clone https://github.com/microsoft/vcpkg.git # cd vcpkg # ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg 1.2. 使用 1.2.1. 使用依赖清单安装依赖 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
+<meta name="twitter:description" content="1. vcpkg Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。\n2. 安装 我这里就安装到~/.APP/目录下： 1 2 3 4 5 cd ~/.app # clone vcpkg git clone https://github.com/microsoft/vcpkg.git # 初始化vcpkg cd vcpkg &amp;&amp; ./bootstrap-vcpkg.sh 设置软连接： 1 sudo ln -s /home/zcli/.app/vcpkg/vcpkg /usr/local/bin/vcpkg 3. 使用 3.1. 安装软件包 1 2 3 4 vcpkg install fmt vcpkg install fmt:x64-linux # 指定平台 vcpkg install fmt:x64-windows-static # 静态库 vcpkg install fmt:x64-windows # 动态库 3.2. 查看软件包信息 1 2 3 4 5 6 vcpkg list # 查找已经安装的软件包 vcpkg search # 查看所有软件包 vcpkg search opencv # 查看包含“opencv”关键词的软件包 vcpkg info opencv # 查看软件包信息 pvckg help triplet # 查看支持的平台 vcpkg search opencv --triplet x64-linux # 查找特定平台的包\t4. 使用清单 在项目根目录下： 1 vcpkg new --application 生成两个文件： 1 2 vcpkg-configuration.json vcpkg.json # 依赖清单 vcpkg-configuration.json文件如下：\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -298,6 +298,10 @@
                 现代C&#43;&#43;
             </a>
         
+            <a href="/categories/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/" >
+                包管理器
+            </a>
+        
     </header>
     
 
@@ -325,7 +329,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">May 31, 2025</time>
+                <time class="article-time--published">Jul 31, 2024</time>
             </div>
         
 
@@ -343,8 +347,8 @@
     
     <h1 id="1-vcpkg">1. vcpkg
 </h1><p>Vcpkg 由 Microsoft 和 C++ 社区维护，可在 Windows、macOS 和 Linux 上运行，使用 C++ 和 CMake 脚本编写。</p>
-<h2 id="11-安装">1.1. 安装
-</h2><ol>
+<h1 id="2-安装">2. 安装
+</h1><ol>
 <li>我这里就安装到~/.APP/目录下：</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -354,17 +358,13 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /opt   
-</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~/.app   
+</span></span><span class="line"><span class="cl"><span class="c1"># clone vcpkg</span>
 </span></span><span class="line"><span class="cl">git clone https://github.com/microsoft/vcpkg.git   
-</span></span><span class="line"><span class="cl"><span class="c1">#   </span>
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> vcpkg
-</span></span><span class="line"><span class="cl"><span class="c1">#     </span>
-</span></span><span class="line"><span class="cl">./bootstrap-vcpkg.sh
+</span></span><span class="line"><span class="cl"><span class="c1"># 初始化vcpkg  </span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> vcpkg <span class="o">&amp;&amp;</span> ./bootstrap-vcpkg.sh
 </span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
@@ -375,12 +375,46 @@
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ln -s /home/zcli/.APP/vcpkg/vcpkg /usr/local/bin/vcpkg
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo ln -s /home/zcli/.app/vcpkg/vcpkg /usr/local/bin/vcpkg
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="12-使用">1.2. 使用
-</h2><h3 id="121-使用依赖清单安装依赖">1.2.1. 使用依赖清单安装依赖
-</h3><ol>
+</div><h1 id="3-使用">3. 使用
+</h1><h2 id="31-安装软件包">3.1. 安装软件包
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg install fmt
+</span></span><span class="line"><span class="cl">vcpkg install fmt:x64-linux           <span class="c1"># 指定平台</span>
+</span></span><span class="line"><span class="cl">vcpkg install fmt:x64-windows-static  <span class="c1"># 静态库</span>
+</span></span><span class="line"><span class="cl">vcpkg install fmt:x64-windows         <span class="c1"># 动态库</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="32-查看软件包信息">3.2. 查看软件包信息
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg list                               <span class="c1"># 查找已经安装的软件包</span>
+</span></span><span class="line"><span class="cl">vcpkg search                             <span class="c1"># 查看所有软件包</span>
+</span></span><span class="line"><span class="cl">vcpkg search opencv                      <span class="c1"># 查看包含“opencv”关键词的软件包</span>
+</span></span><span class="line"><span class="cl">vcpkg info   opencv                      <span class="c1"># 查看软件包信息</span>
+</span></span><span class="line"><span class="cl">pvckg <span class="nb">help</span>   triplet                     <span class="c1"># 查看支持的平台</span>
+</span></span><span class="line"><span class="cl">vcpkg search opencv --triplet x64-linux  <span class="c1"># 查找特定平台的包	</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="4-使用清单">4. 使用清单
+</h1><ol>
 <li>在项目根目录下：</li>
 </ol>
 <div class="highlight"><div class="chroma">
@@ -489,7 +523,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>下载的二进制文件位于当前目录下的：vcpkg_installed目录。</p>
-<h3 id="122-手动安装每个依赖">1.2.2. 手动安装每个依赖
+<h3 id="401-手动安装每个依赖">4.0.1. 手动安装每个依赖
 </h3><ol>
 <li>安装软件包</li>
 </ol>
@@ -523,7 +557,7 @@
 <pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vcpkg remove zlib
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="13-cmake构建">1.3. CMake构建
+</div><h2 id="41-cmake构建">4.1. CMake构建
 </h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -802,7 +836,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.bf3198480a0303df03104b790647a2d905c90402cc9a3ee09c67a5e3ab42fd89.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

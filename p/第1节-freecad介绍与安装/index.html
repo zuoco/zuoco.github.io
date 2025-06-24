@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="FreeCAD - 1.0.1 https://github.com/FreeCAD/FreeCAD\n下面是freecad的多个realease版本介绍: Windows平台：\n1 2 3 4 FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe-SHA256.txt FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z # 便携式 FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z-SHA256.txt 其中conda表示该版本基于 Conda 包管理器构建，py311表示依赖Python-3.11。\n">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 编译安装 1.1. FreeCAD依赖 FreeCAD依赖比较多，单独安装每个依赖会遇到很多冲突问题，所以这里采取一种投机取巧的方式：\n安装freecad-daily源。 1 2 sudo add-apt-repository ppa:freecad-maintainers/freecad-daily sudo apt update 安装FreeCAD 1 sudo apt install freecad-daily 如此，需要的依赖就全部安装好了。\n">
 <title>第1节 - FreeCAD介绍与安装</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="第1节 - FreeCAD介绍与安装">
-<meta property='og:description' content="FreeCAD - 1.0.1 https://github.com/FreeCAD/FreeCAD\n下面是freecad的多个realease版本介绍: Windows平台：\n1 2 3 4 FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe-SHA256.txt FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z # 便携式 FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z-SHA256.txt 其中conda表示该版本基于 Conda 包管理器构建，py311表示依赖Python-3.11。\n">
-<meta property='og:url' content='http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/'>
+<meta property='og:description' content="1. 编译安装 1.1. FreeCAD依赖 FreeCAD依赖比较多，单独安装每个依赖会遇到很多冲突问题，所以这里采取一种投机取巧的方式：\n安装freecad-daily源。 1 2 sudo add-apt-repository ppa:freecad-maintainers/freecad-daily sudo apt update 安装FreeCAD 1 sudo apt install freecad-daily 如此，需要的依赖就全部安装好了。\n">
+<meta property='og:url' content='https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-25T13:53:51&#43;08:00'/><meta property='article:modified_time' content='2025-05-25T13:53:51&#43;08:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-05-25T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="第1节 - FreeCAD介绍与安装">
-<meta name="twitter:description" content="FreeCAD - 1.0.1 https://github.com/FreeCAD/FreeCAD\n下面是freecad的多个realease版本介绍: Windows平台：\n1 2 3 4 FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe-SHA256.txt FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z # 便携式 FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z-SHA256.txt 其中conda表示该版本基于 Conda 包管理器构建，py311表示依赖Python-3.11。\n">
+<meta name="twitter:description" content="1. 编译安装 1.1. FreeCAD依赖 FreeCAD依赖比较多，单独安装每个依赖会遇到很多冲突问题，所以这里采取一种投机取巧的方式：\n安装freecad-daily源。 1 2 sudo add-apt-repository ppa:freecad-maintainers/freecad-daily sudo apt update 安装FreeCAD 1 sudo apt install freecad-daily 如此，需要的依赖就全部安装好了。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -298,6 +298,10 @@
                 代码设计
             </a>
         
+            <a href="/categories/freecad/" >
+                FreeCAD
+            </a>
+        
     </header>
     
 
@@ -341,12 +345,93 @@
     <section class="article-content">
     
     
-    <h1 id="freecad---101">FreeCAD - 1.0.1
-</h1><p><a class="link" href="https://github.com/FreeCAD/FreeCAD"  target="_blank" rel="noopener"
-    >https://github.com/FreeCAD/FreeCAD</a><br>
-下面是freecad的多个realease版本介绍:   <br>
-<strong>Windows平台</strong>：</p>
+    <h1 id="1-编译安装">1. 编译安装
+</h1><h2 id="11-freecad依赖">1.1. FreeCAD依赖
+</h2><p>FreeCAD依赖比较多，单独安装每个依赖会遇到很多冲突问题，所以这里采取一种投机取巧的方式：</p>
+<ol>
+<li>安装freecad-daily源。</li>
+</ol>
 <div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo add-apt-repository ppa:freecad-maintainers/freecad-daily
+</span></span><span class="line"><span class="cl">sudo apt update
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>安装FreeCAD</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install freecad-daily
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如此，需要的依赖就全部安装好了。</p>
+<h2 id="12-编译">1.2. 编译
+</h2><h3 id="121-工程源码">1.2.1. 工程源码
+</h3><p>下载FreeCAD源码，这里以FreeCAD-1.0.1为例，FreeCAD的有一些子模块在子Git仓库中，所以都要下载下来。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">zci@GEM:~/test/FreeCAD-1.0.1$ tree -L <span class="m">1</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── cMake/
+</span></span><span class="line"><span class="cl">├── CMakeLists.txt
+</span></span><span class="line"><span class="cl">├── CMakePresets.json
+</span></span><span class="line"><span class="cl">├── CODE_OF_CONDUCT.md
+</span></span><span class="line"><span class="cl">├── conda/
+</span></span><span class="line"><span class="cl">├── contrib/
+</span></span><span class="line"><span class="cl">├── CONTRIBUTING.md
+</span></span><span class="line"><span class="cl">├── data/
+</span></span><span class="line"><span class="cl">├── LICENSE
+</span></span><span class="line"><span class="cl">├── package/
+</span></span><span class="line"><span class="cl">├── pixi.lock
+</span></span><span class="line"><span class="cl">├── pixi.toml
+</span></span><span class="line"><span class="cl">├── PRIVACY_POLICY.md
+</span></span><span class="line"><span class="cl">├── README.md
+</span></span><span class="line"><span class="cl">├── requirements.txt
+</span></span><span class="line"><span class="cl">├── rpkg.macros
+</span></span><span class="line"><span class="cl">├── SECURITY.md
+</span></span><span class="line"><span class="cl">├── src/
+</span></span><span class="line"><span class="cl">├── tests/
+</span></span><span class="line"><span class="cl">└── tools/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">10</span> directories, <span class="m">12</span> files
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="122-编译">1.2.2. 编译
+</h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -354,39 +439,42 @@
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe
-</span></span><span class="line"><span class="cl">FreeCAD_1.0.1-conda-Windows-x86_64-installer-1.exe-SHA256.txt
-</span></span><span class="line"><span class="cl">FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z                           <span class="c1"># 便携式</span>
-</span></span><span class="line"><span class="cl">FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z-SHA256.txt
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir build
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> build  
+</span></span><span class="line"><span class="cl">cmake ..
+</span></span><span class="line"><span class="cl">make -j16
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>其中conda表示该版本基于 Conda 包管理器构建，py311表示依赖Python-3.11。</p>
-<p><strong>Linux平台</strong>：</p>
+</div><p>编译结果：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">FreeCAD_1.0.1-conda-Linux-x86_64-py311.AppImage
-</span></span><span class="line"><span class="cl">FreeCAD_1.0.1-conda-Linux-x86_64-py311.AppImage-SHA256.txt
-</span></span><span class="line"><span class="cl">FreeCAD_1.0.1-conda-Linux-x86_64-py311.AppImage.zsync
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">zci@GEM:~/test/FreeCAD-1.0.1/build/bin$ tree 
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── FreeCAD
+</span></span><span class="line"><span class="cl">└── FreeCADCmd
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">1</span> directory, <span class="m">2</span> files
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="安装">安装
-</h1><p>以Windows平台为例： <br>
-下载FreeCAD_1.0.1-conda-Windows-x86_64-py311.7z，解压后，FreeCAD_1.0.1\bin\freecad.exe就是可执行文件。 <br>
-<img src="/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad.png"
-	width="2560"
-	height="1380"
-	srcset="/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad_hu_36d6ecdce4d9703a.png 480w, /p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/freecad_hu_b87bc81d59c36f48.png 1024w"
+</div><p>运行：<br>
+<img src="/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image.png"
+	width="2562"
+	height="1400"
+	srcset="/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image_hu_cf5a46a14855fd74.png 480w, /p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image_hu_63bb6e0583e93345.png 1024w"
 	loading="lazy"
 	
 	
 		class="gallery-image" 
-		data-flex-grow="185"
-		data-flex-basis="445px"
+		data-flex-grow="183"
+		data-flex-basis="439px"
 	
 ></p>
 
@@ -436,6 +524,19 @@
     <h2 class="section-title">相关文章</h2>
     <div class="related-content">
         <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/p/%E7%AC%AC2%E8%8A%82-freecad%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">第2节 - FreeCAD基本使用</h2>
+        </div>
+    </a>
+</article>
+
             
                 
 <article class="">
@@ -625,7 +726,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.bf3198480a0303df03104b790647a2d905c90402cc9a3ee09c67a5e3ab42fd89.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
