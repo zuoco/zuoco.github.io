@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>【Linux直接渲染管理-DRM】 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/linux%E5%86%85%E6%A0%B8/07-linux-drm/</link>
+        <description>Recent content in 【Linux直接渲染管理-DRM】 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Fri, 13 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/linux%E5%86%85%E6%A0%B8/07-linux-drm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Linux直接渲染管理-DRM</title>
+        <link>https://zuoco.github.io/p/linux%E7%9B%B4%E6%8E%A5%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%90%86-drm/</link>
+        <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/linux%E7%9B%B4%E6%8E%A5%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%90%86-drm/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-drm&#34; &gt;1. DRM&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-drm%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5&#34; &gt;2. DRM核心概念&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e5%86%85%e5%ad%98%e7%ae%a1%e7%90%86%e5%92%8c%e6%98%be%e5%ad%98&#34; &gt;2.1. 内存管理和显存&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e5%91%bd%e4%bb%a4%e9%98%9f%e5%88%97%e5%92%8cgpu%e4%bb%bb%e5%8a%a1%e8%b0%83%e5%ba%a6&#34; &gt;2.2. 命令队列和GPU任务调度&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#23-%e5%90%8c%e6%ad%a5%e6%9c%ba%e5%88%b6&#34; &gt;2.3. 同步机制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#24-drm%e5%92%8c%e7%94%a8%e6%88%b7%e6%8e%a7%e4%bb%b6%e4%ba%a4%e4%ba%92&#34; &gt;2.4. DRM和用户控件交互&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-drm&#34;&gt;1. DRM
+&lt;/h1&gt;&lt;p&gt;  在Linux系统上，图形栈包括从应用层序、窗口系统（XWindows、Wayland）、DRM到最终的硬件多个层次，每一层都有其特定职能。其中DRM内核子系统负责管理图形硬件资源，提供用户空间程序与GPU之间的接口
+。&lt;/p&gt;
+&lt;p&gt;  DRM(Direct Rendering Manager)是Linux内核中的图形设备管理模块，用于管理图形设备，如显卡、显示器、鼠标、键盘等。DRM模块提供了一种机制，使得应用程序可以安全地访问和控制图形设备，而不需要直接访问设备寄存器。&lt;/p&gt;
+&lt;h1 id=&#34;2-drm核心概念&#34;&gt;2. DRM核心概念
+&lt;/h1&gt;&lt;h2 id=&#34;21-内存管理和显存&#34;&gt;2.1. 内存管理和显存
+&lt;/h2&gt;&lt;h2 id=&#34;22-命令队列和gpu任务调度&#34;&gt;2.2. 命令队列和GPU任务调度
+&lt;/h2&gt;&lt;h2 id=&#34;23-同步机制&#34;&gt;2.3. 同步机制
+&lt;/h2&gt;&lt;h2 id=&#34;24-drm和用户控件交互&#34;&gt;2.4. DRM和用户控件交互
+&lt;/h2&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
