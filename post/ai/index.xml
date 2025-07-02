@@ -7,13 +7,259 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 19 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Kimi-Dev</title>
+        <link>https://zuoco.github.io/p/kimi-dev/</link>
+        <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/kimi-dev/</guid>
+        <description>&lt;p&gt;  6月17号，Kimi发布了一款新编程模型——Kimi-Dev，在SWE-bench Verified上，以60.4的成绩获得了开源Sota，仅次于Gemini 2.5 Pro和Claude了，模型仅有72B参数，该模型的设计中包含了两个对抗角色： BugFixer和TesWriter，其中BugFixer职业解决Bug， TesWriter专门编写测试用例，用于测试。这两个模块都是基于共同的最小框架，包含两个阶段，File Localization和Code Edits，就是先定位要修改的文件，然后修改代码中的Bug，kimi团队收集了Github上的大量Issue和Pull Request，基于这些内容学习推理与解决额问题。&lt;br&gt;
+  看起来这款新模型是一种“Agent”的思路，在底层模型不占优势的情况下，通过Agent的思路来提升模型的使用性能，这应该是Kimi团队在产品路线上的调整。自从Depseek R1发布之后， 国内AI圈子的流量都在DeepSeek和千问上，Kimi一直沉寂，实际上大模型基础建设只适合资本大户来做，对于中小企业更适合在模型之上提供服务，对于模型进行优化，提供特定场景下的创新与性能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/kimi-dev/kimi-dev.jpg&#34;
+	width=&#34;3200&#34;
+	height=&#34;3973&#34;
+	srcset=&#34;https://zuoco.github.io/p/kimi-dev/kimi-dev_hu_5ab646d0146c6536.jpg 480w, https://zuoco.github.io/p/kimi-dev/kimi-dev_hu_f996bf5858a227cd.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;kimi-dev&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;80&#34;
+		data-flex-basis=&#34;193px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Qwen3模型微调</title>
+        <link>https://zuoco.github.io/p/qwen3%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link>
+        <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/qwen3%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%be%ae%e8%b0%83%e7%a1%ac%e4%bb%b6%e8%a6%81%e6%b1%82&#34; &gt;1. 微调硬件要求&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2&#34; &gt;2.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-微调硬件要求&#34;&gt;1. 微调硬件要求
+&lt;/h1&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;模型名称&lt;/th&gt;
+          &lt;th&gt;参数量&lt;/th&gt;
+          &lt;th&gt;FP16 微调显存占用&lt;/th&gt;
+          &lt;th&gt;4bit量化 微调显存占用&lt;/th&gt;
+          &lt;th&gt;硬件&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen3-0.6B&lt;/td&gt;
+          &lt;td&gt;0.6B&lt;/td&gt;
+          &lt;td&gt;1.2GB&lt;/td&gt;
+          &lt;td&gt;0.5GB&lt;/td&gt;
+          &lt;td&gt;低端GPU或者GPU&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen3-1.7B&lt;/td&gt;
+          &lt;td&gt;1.7B&lt;/td&gt;
+          &lt;td&gt;3.5GB&lt;/td&gt;
+          &lt;td&gt;1.5GB&lt;/td&gt;
+          &lt;td&gt;入门级&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen3-4B&lt;/td&gt;
+          &lt;td&gt;4B&lt;/td&gt;
+          &lt;td&gt;8.0GB&lt;/td&gt;
+          &lt;td&gt;3.5GB&lt;/td&gt;
+          &lt;td&gt;中端&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen3-8B&lt;/td&gt;
+          &lt;td&gt;8B&lt;/td&gt;
+          &lt;td&gt;16BG&lt;/td&gt;
+          &lt;td&gt;7.0GB&lt;/td&gt;
+          &lt;td&gt;高端消费级GPU&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Qwen3-14B&lt;/td&gt;
+          &lt;td&gt;14B&lt;/td&gt;
+          &lt;td&gt;28GB&lt;/td&gt;
+          &lt;td&gt;12GB&lt;/td&gt;
+          &lt;td&gt;高端消费级级GPU，大显存&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;2&#34;&gt;2.
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>LoRA微调</title>
+        <link>https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/</link>
+        <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%85%a8%e9%87%8f%e5%be%ae%e8%b0%83%e4%b8%8e%e9%ab%98%e6%95%88%e5%be%ae%e8%b0%83&#34; &gt;1. 全量微调与高效微调&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a8%a1%e5%9e%8b%e5%be%ae%e8%b0%83%e7%9a%84%e4%bc%98%e5%8a%a3%e5%8a%bf%e5%88%86%e6%9e%90&#34; &gt;2. 模型微调的优劣势分析&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e9%ab%98%e6%95%88%e5%be%ae%e8%b0%83%e4%b8%8eloraqlora&#34; &gt;3. 高效微调与LoRA、QLoRA&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-lora-%e4%b8%8e-qlora-%e4%ba%8c%e8%80%85%e5%af%b9%e6%af%94%e5%a6%82%e4%b8%8b&#34; &gt;3.1. LoRA 与 QLoRA 二者对比如下&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#32-%e9%ab%98%e6%95%88%e5%be%ae%e8%b0%83%e7%9a%84%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af&#34; &gt;3.2. 高效微调的应用场景&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e4%b8%bb%e6%b5%81%e5%be%ae%e8%b0%83%e5%b7%a5%e5%85%b7&#34; &gt;4. 主流微调工具&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-unsloth&#34; &gt;4.1. unsloth&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-ms-swift&#34; &gt;4.2. ms-SWIFT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#43-%e6%a8%a1%e5%9e%8b%e6%80%a7%e8%83%bd%e8%af%84%e4%bc%b0%e6%a1%86%e6%9e%b6evalscope&#34; &gt;4.3. 模型性能评估框架EvalScope&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;  所谓大模型微调，指的在已有的大规模预训练模型基础上，使用特定的数据集进行训练，进一步优化模型的表现，以适应特定任务或场景的需求。不同于RAG或者Agent技术，通过搭建工作流，关联外部工具等等来优化模型表现，微调是通过修改模型参数来优化模型能力，是一种能够让模型“永久”掌握某种能力的方法。&lt;/p&gt;
+&lt;h1 id=&#34;1-全量微调与高效微调&#34;&gt;1. 全量微调与高效微调
+&lt;/h1&gt;&lt;p&gt;  从方法的大类上来划分，微调又可以划分为&lt;code&gt;全量微调&lt;/code&gt;和&lt;code&gt;高效微调&lt;/code&gt;，全量微调就是带入全部数据进行微调，一般是由大模型研发团队完成，例如DepSeek研发团队，千问研发团队。高效微调是只带入部分数据进行微调，适合用户拿到模型后，使用特定数据集进行微调，以改善模型在特定场景下的表现。&lt;/p&gt;
+&lt;h1 id=&#34;2-模型微调的优劣势分析&#34;&gt;2. 模型微调的优劣势分析
+&lt;/h1&gt;&lt;p&gt;  尽管模型微调能够通过修改模型参数的方式，永久的修改模型的能力，但这其实是一把双刃剑，如果处理不当，很可能造成模型原始能力的灾难性遗忘、即会导致模型原始能力丢失，对于复杂模型尤其如此。而为了能够满足微调最初目标，我们必须小心谨慎的设计模型微调数据集和微调训练流程，并经过反复多次训练验证，得到一个最佳模型。&lt;/p&gt;
+&lt;h1 id=&#34;3-高效微调与loraqlora&#34;&gt;3. 高效微调与LoRA、QLoRA
+&lt;/h1&gt;&lt;p&gt;  尽管全量微调可以对模型的能力进行深度改造，但要带入模型全部参数进行训练，需要消耗大量的算力，且有一定的技术门槛。相比之下，在绝大多数场景中，如果我们只想提升模型某个具体领域的能力，那高效微调会更加合适。尽管在2020年前后，深度学习领域诞生了很多高效微调的方法，但现在适用于大模型的最主流的高效微调方法只有一种——LoRA。&lt;/p&gt;
+&lt;p&gt;  LoRA（Low-Rank Adaptation）微调是一种参数高效的微调方法，旨在通过引入低秩矩阵来减少微调时需要调整的参数数量，从而显著降低显存和计算资源的消耗。具体来说，LoRA 微调并不直接调整原始模型的所有参数，而是&lt;code&gt;通过在某些层中插入低秩的适配器（Adapter）层来进行训练&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LoRA的原理：&lt;/strong&gt;　　&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在标准微调中，我们会修改模型的所有权重，而在 LoRA 中，只有某些低秩矩阵（适配器）被训练和调整。这意味着原始模型的参数保持不变，只是通过少量的新参数来调整模型的输出。&lt;/li&gt;
+&lt;li&gt;低秩矩阵的引入可以在显存和计算能力有限的情况下，依然有效地对大型预训练模型进行微调，从而让 LoRA 成为显存较小的设备上的理想选择。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;LoRA的优势：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;显存优化： 只需要调整少量的参数（适配器），显著减少了显存需求，适合显存有限的GPU。　　&lt;/li&gt;
+&lt;li&gt;计算效率： 微调过程中的计算负担也更轻，因为减少了需要调整的参数量。　　　&lt;/li&gt;
+&lt;li&gt;灵活性： 可以与现有的预训练模型轻松结合使用，适用于多种任务，如文本生成、分类、问答等。　　　&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  而QLoRA（Quantized Low-Rank Adaptation） 则是 LoRA 的一个扩展版本，它结合了 LoRA 的低秩适配器和量化技术。QLoRA 进一步优化了计算效率和存储需求，特别是在极端显存受限的环境下。与 LoRA 不同的是，QLoRA 会将插入的低秩适配器层的部分权重进行量化（通常是量化为 INT4 或INT8），在保持性能的同时显著降低模型的存储和计算需求。　　　　　&lt;/p&gt;
+&lt;p&gt;－　&lt;strong&gt;核心思想&lt;/strong&gt;： 在 LoRA 的基础上加入量化技术，减少权重表示的位数，从而降低显存和计算需求。QLoRA 结合了低秩适配器和量化的优点，能够在显存有限的设备上进行更高效的微调。 &lt;br&gt;
+－　&lt;strong&gt;量化&lt;/strong&gt;： 通过将模型权重量化为低精度（如 INT4），减少内存占用，并提高推理和训练速度。 &lt;br&gt;
+－　&lt;strong&gt;优势&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在显存非常有限的情况下仍能进行微调。&lt;/li&gt;
+&lt;li&gt;可以处理更大规模的模型。&lt;/li&gt;
+&lt;li&gt;适合用于边缘设备和需要低延迟推理的场景。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;31-lora-与-qlora-二者对比如下&#34;&gt;3.1. LoRA 与 QLoRA 二者对比如下
+&lt;/h2&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;特性&lt;/th&gt;
+          &lt;th&gt;Lora&lt;/th&gt;
+          &lt;th&gt;QLoRA&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;核心技术&lt;/td&gt;
+          &lt;td&gt;低秩适配器&lt;/td&gt;
+          &lt;td&gt;低秩适配器 + 量化技术&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;适用场景&lt;/td&gt;
+          &lt;td&gt;显存有限，但是设备性能好&lt;/td&gt;
+          &lt;td&gt;显存极限受限或需要快速推理&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;计算效率&lt;/td&gt;
+          &lt;td&gt;较高&lt;/td&gt;
+          &lt;td&gt;更高&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;量化技术&lt;/td&gt;
+          &lt;td&gt;无量化&lt;/td&gt;
+          &lt;td&gt;将权重量化为低精度(int4或int8)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;内存消耗&lt;/td&gt;
+          &lt;td&gt;较低&lt;/td&gt;
+          &lt;td&gt;更低&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;训练复杂度&lt;/td&gt;
+          &lt;td&gt;较简单&lt;/td&gt;
+          &lt;td&gt;较复杂，需要量化与适配&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;32-高效微调的应用场景&#34;&gt;3.2. 高效微调的应用场景
+&lt;/h2&gt;&lt;p&gt;  在实际大模型应用场景中，高效微调主要用于以下四个方面：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;对话风格微调&lt;/strong&gt;*：高效微调可以用于根据特定需求调整模型的对话风格。例如，针对客服系统、虚拟助理等场景，模型可以通过微调来适应不同的 语气、礼貌程度 或 回答方式，从而在与用户互动时提供更符合要求的对话体验。通过微调少量的参数（例如对话生成的策略、情感表达等），可以使模型表现出更具针对性和个性化的风格。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;知识灌注&lt;/strong&gt;：知识灌注是指将外部知识或领域特定的信息快速集成到已有的预训练模型中。通过高效微调，模型可以更好地学习新领域的专有知识，而无需重新从头开始训练。例如，对于法律、医疗等专业领域，可以使用少量的标注数据对预训练模型进行微调，帮助模型理解特定行业的术语、规则和知识，进而提升专业领域的问答能力。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;推理能力提升&lt;/strong&gt;：高效微调还可以用于提升大模型的推理能力，尤其是在处理更复杂推理任务时。通过微调，模型能够更加高效地理解长文本、推理隐含信息，或者从数据中提取逻辑关系，进而在多轮推理任务中提供更准确的答案。这种微调方式可以帮助模型在解答复杂问题时，提高推理准确性并减少错误。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Agent能力（Function calling能力、或者MCP能力）提升&lt;/strong&gt;：在多任务协作或功能调用场景中，高效微调能够显著提升模型的Agent能力，使得模型能够有效地与其他系统进行交互、调用外部API或执行特定任务。通过针对性微调，模型可以学会更精准的功能调用策略、参数解析和操作指令，从而在自动化服务、智能助手或机器人控制等领域表现得更加高效和智能。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;4-主流微调工具&#34;&gt;4. 主流微调工具
+&lt;/h1&gt;&lt;p&gt;  unsloth、Llama、Factory、ms-SWIFT和ColossalAI。除此之外，也可以借助更加底层的库，如peft、LoRA、transformer等实现高效微调。对于初学者来说，首先使用现成工具来进行微调，四种工具基本说明如下。&lt;/p&gt;
+&lt;h2 id=&#34;41-unsloth&#34;&gt;4.1. unsloth
+&lt;/h2&gt;&lt;p&gt;  unsloth 是一个专为大型语言模型（LLM）设计的动态量化与微调框架，unsloth 与 HuggingFace 生态兼容，可以很容易地transformers、peft、trl 等库结合，以实现模型的监督微调（SFT）和直接偏好优化（DPO）。
+&lt;img src=&#34;https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/unsloth.png&#34;
+	width=&#34;1924&#34;
+	height=&#34;963&#34;
+	srcset=&#34;https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/unsloth_hu_c457b32d0a7a4a61.png 480w, https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/unsloth_hu_d856aed204e9b772.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;199&#34;
+		data-flex-basis=&#34;479px&#34;
+	
+&gt; &lt;br&gt;
+  Unsloth 的动态量化方法，最新的 Dynamic 2.0 版本，旨在在尽量减少性能损失的同时显著压缩大型语言模型（LLMs）的体积。对于 Qwen3 模型，尤其是 4-bit 动态量化版本，现有的评测显
+示其性能下降非常有限，甚至在某些任务上与原始模型相当。
+&lt;img src=&#34;https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/unsloth-dynamic.png&#34;
+	width=&#34;1907&#34;
+	height=&#34;976&#34;
+	srcset=&#34;https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/unsloth-dynamic_hu_ee034a2bc42c4bef.png 480w, https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/unsloth-dynamic_hu_355ab7524662dc15.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;195&#34;
+		data-flex-basis=&#34;468px&#34;
+	
+&gt;&lt;br&gt;
+  动态量化由利也有弊，其好处在于可以极大程度压缩模型运行所需占用的显存大小，同时几乎不损失性能，但问题在于动态量化的模型，无论是推理还是微调，只能单卡运行，这就使得其吞吐量有限，无法在一台物理机上实现多GPU并行从而扩大吞吐量。&lt;/p&gt;
+&lt;h2 id=&#34;42-ms-swift&#34;&gt;4.2. ms-SWIFT
+&lt;/h2&gt;&lt;p&gt;  ms-swift是由魔搭社区（ModelScope）开发的高效微调和部署框架，旨在为研究人员和开发者提供一站式的大模型与多模态大模型的训练、推理、评测、量化和部署解决方案。支持超过 450 种大型模型（LLMs）和 150多种多模态大模型（MLLMs）的训练和部署。&lt;/p&gt;
+&lt;h2 id=&#34;43-模型性能评估框架evalscope&#34;&gt;4.3. 模型性能评估框架EvalScope
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/modelscope/evalscope&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;EvalScope&lt;/a&gt;是由阿里巴巴魔搭社区（ModelScope）推出的一款开源模型评估框架，旨在为大语言模型（LLM）和多模态模型提供统一、系统化的性能评估方案。该框架具备高度的自动化和可扩展性，适用于研究机构、工业界以及模型开发者在模型验证与性能对比场景中的广泛需求。&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/eva.png&#34;
+	width=&#34;1920&#34;
+	height=&#34;1080&#34;
+	srcset=&#34;https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/eva_hu_305e6a48186371d7.png 480w, https://zuoco.github.io/p/lora%E5%BE%AE%E8%B0%83/eva_hu_7a76ff69e19612dc.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>使用Ollama本地部署Qwen3-14b</title>
         <link>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</link>
         <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</guid>
-        <description>&lt;h1 id=&#34;1-本地环境&#34;&gt;1. 本地环境
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%9c%ac%e5%9c%b0%e7%8e%af%e5%a2%83&#34; &gt;1. 本地环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-cuda%e5%ae%89%e8%a3%85&#34; &gt;2. CUDA安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-ai%e9%83%a8%e7%bd%b2%e6%a1%86%e6%9e%b6&#34; &gt;3. AI部署框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%ae%89%e8%a3%85ollama&#34; &gt;4. 安装ollama&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-ai-%e6%a8%a1%e5%9e%8b%e9%83%a8%e7%bd%b2&#34; &gt;5. AI 模型部署&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e5%89%8d%e7%ab%af%e6%8e%a5%e5%85%a5&#34; &gt;6. 前端接入&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#7-%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba&#34; &gt;7. 效果展示&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-本地环境&#34;&gt;1. 本地环境
 &lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1. 主机&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;主机：天钡 GEM12 Pro&lt;/li&gt;
@@ -39,7 +285,7 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 		data-flex-basis=&#34;533px&#34;
 	
 &gt;&lt;/p&gt;
-&lt;h1 id=&#34;2-显卡驱动安装&#34;&gt;2. 显卡驱动安装
+&lt;h1 id=&#34;2-cuda安装&#34;&gt;2. CUDA安装
 &lt;/h1&gt;&lt;p&gt;登陆&lt;a class=&#34;link&#34; href=&#34;https://developer.nvidia.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;nvidia developer官网&lt;/a&gt;，进入CUDA Toolkit，并选择需要的版本。根据下面网页的提示选择系统版本后，页面下方会给出对应的安装过程，根据指示安装即可，安装完成后可以在终端查看显卡信息：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -119,6 +365,161 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;li&gt;前端接入，以CherryStudio为例；&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;4-安装ollama&#34;&gt;4. 安装ollama
+&lt;/h1&gt;&lt;p&gt;参考【Ollama部署】篇。&lt;/p&gt;
+&lt;h1 id=&#34;5-ai-模型部署&#34;&gt;5. AI 模型部署
+&lt;/h1&gt;&lt;p&gt;因为Ollama服务已经启动了，所以就不必再次运行&lt;code&gt;ollama serve&lt;/code&gt;命令了。直接开run： &lt;br&gt;
+&lt;code&gt;提示：&lt;/code&gt; &lt;code&gt;ollama run qwen3:14b&lt;/code&gt;会从Ollama服务器拉取模型，国内网络可能不太行，可以使用&lt;code&gt;ollama run modelscope.cn/Qwen/Qwen3-14B-GGUF&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ollama run qwen3:14b  &lt;span class=&#34;c1&#34;&gt;# 如果模型还没有下载就会先下载模型，等待即可&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling manifest 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling a8cc1361f314: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏ 9.3 GB                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling eb4402837c78: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏ 1.5 KB                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling d18a5cc71b84: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; KB                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling cff3f395ef37: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;120&lt;/span&gt; B                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling 78b3b822087d: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;488&lt;/span&gt; B                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;verifying sha256 digest 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;writing manifest 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;success 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Send a message &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/? &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;好了，可以开始提问了，按照惯例先Hello Word:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; 你好呀！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;好的，用户发来“你好呀！”，我需要友好回应。首先，要保持亲切，用表情符号增加温度。然后，可以询问用户是否需要帮助，但不要显得太正式。可能用户只是打招呼，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;所以简单回应即可，留出空间让用户继续交流。注意用词口语化，避免复杂句子。检查有没有拼写错误，确保回复自然。最后，保持开放态度，让用户知道我随时准备帮助他
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;们。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你好呀！😊 很高兴见到你！今天过得怎么样呀？需要我帮忙做点什么吗？
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Send a message &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/? &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此时的显存占用：&lt;code&gt;11490MiB /  16311MiB&lt;/code&gt;，看来，16G显存部署一个14B刚刚好。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--verbose参数： 显示推理过程的耗时情况&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ollama run qwen3:14b --verbose
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; 西红柿怎么吃？
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;嗯，用户问的是“西红柿怎么吃？”，这个问题看起来挺简单的，但其实可能需要更深入的思考。首先，我得考虑用户可能的背景。他们可能是刚开始接触西红柿，或者想找
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;一些新的吃法。也可能他们之前吃过，但想尝试更多不同的做法。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......    &lt;span class=&#34;c1&#34;&gt;# 这个就略了吧&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;西红柿（番茄）是一种非常百搭的食材，既可以直接生吃，也可以通过多种烹饪方式制作成美味佳肴。以下是常见的吃法和一些创意做法，供你参考：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......   &lt;span class=&#34;c1&#34;&gt;# 这个也略吧&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;根据你的口味和需求，可以灵活选择以上吃法！如果需要具体菜谱或步骤，也可以告诉我哦 😊   
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 下面的输出是重点&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;total duration:       33.622874783s      &lt;span class=&#34;c1&#34;&gt;# 总耗时33.6秒&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;load duration:        9.67421ms          &lt;span class=&#34;c1&#34;&gt;# 模型加载耗时9.67ms&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; count:    &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt; token&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;# 输入提示（prompt）的 token 数量，输入提示词被分词为 12 个 token。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; duration: 25.738437ms        &lt;span class=&#34;c1&#34;&gt;# 处理这 12 个 token 的提示词用了约 25.7 毫秒。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; rate:     466.23 tokens/s    &lt;span class=&#34;c1&#34;&gt;# 处理输入提示的速度（token/s），默认启用 enable_thinking=True（思考模式）。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; count:           &lt;span class=&#34;m&#34;&gt;1278&lt;/span&gt; token&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;      &lt;span class=&#34;c1&#34;&gt;# 模型生成输出的 token 总数。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; duration:        33.587006893s      &lt;span class=&#34;c1&#34;&gt;# 生成输出的总耗时，占总耗时的 99.9%（total duration 的 33.62 秒）。说明生成阶段是性能瓶颈。。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; rate:            38.05 tokens/s     &lt;span class=&#34;c1&#34;&gt;# 生成输出的速度（token/s），生成速度较慢（38 tokens/s），这与 14B 参数量的 Dense 模型特性一致，&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                         &lt;span class=&#34;c1&#34;&gt;# Qwen3 的 MoE 模型（如 Qwen3-30B-A3B）通过激活部分参数（30B 总参数，仅激活 3B）实现更高的生成速度。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;模型文件位于目录：&lt;code&gt;/usr/share/ollama&lt;/code&gt;下。&lt;/p&gt;
+&lt;h1 id=&#34;6-前端接入&#34;&gt;6. 前端接入
+&lt;/h1&gt;&lt;p&gt;Ollama默认是在11434端口提供服务。明白了这个就可以到&lt;code&gt;www.cherry-ai.com&lt;/code&gt;下载Cherry Studio了。 &lt;br&gt;
+安装好后，选择『设置』，然后在『设置』中选择『Ollama』：  &lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio.png&#34;
+	width=&#34;4096&#34;
+	height=&#34;2304&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_8f86a418231ff65.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;  &lt;br&gt;
+点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过&lt;code&gt;ollama list&lt;/code&gt;命令获取，注意了，这里的“模型ID”是&lt;code&gt;ollama list&lt;/code&gt;命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。&lt;/p&gt;
+&lt;h1 id=&#34;7-效果展示&#34;&gt;7. 效果展示
+&lt;/h1&gt;&lt;p&gt;以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：  &lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
+	width=&#34;2002&#34;
+	height=&#34;901&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;533px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Ollama部署</title>
+        <link>https://zuoco.github.io/p/ollama%E9%83%A8%E7%BD%B2/</link>
+        <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/ollama%E9%83%A8%E7%BD%B2/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-ollama%e5%ae%89%e8%a3%85&#34; &gt;1. Ollama安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-ollama%e5%9f%ba%e7%a1%80%e5%91%bd%e4%bb%a4&#34; &gt;2. Ollama基础命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-ollama安装&#34;&gt;1. Ollama安装
 &lt;/h1&gt;&lt;p&gt;登陆ollama官网，官网直接给出了一行命令，该命令可以自动下载并安装ollama：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -264,169 +665,35 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             └─43831 /usr/local/bin/ollama serve
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;5-ai-模型部署&#34;&gt;5. AI 模型部署
-&lt;/h1&gt;&lt;p&gt;因为Ollama服务已经启动了，所以就不必再次运行&lt;code&gt;ollama serve&lt;/code&gt;命令了。直接开run： &lt;br&gt;
-&lt;code&gt;提示：&lt;/code&gt; &lt;code&gt;ollama run qwen3:14b&lt;/code&gt;会从Ollama服务器拉取模型，国内网络可能不太行，可以使用&lt;code&gt;ollama run modelscope.cn/Qwen/Qwen3-14B-GGUF&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;&lt;h1 id=&#34;2-ollama基础命令&#34;&gt;2. Ollama基础命令
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;下载模型&lt;/li&gt;
+&lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ollama run qwen3:14b  &lt;span class=&#34;c1&#34;&gt;# 如果模型还没有下载就会先下载模型，等待即可&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling manifest 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling a8cc1361f314: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏ 9.3 GB                         
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling eb4402837c78: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏ 1.5 KB                         
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling d18a5cc71b84: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; KB                         
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling cff3f395ef37: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;120&lt;/span&gt; B                         
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling 78b3b822087d: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;488&lt;/span&gt; B                         
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;verifying sha256 digest 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;writing manifest 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;success 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Send a message &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/? &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;好了，可以开始提问了，按照惯例先Hello Word:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; 你好呀！
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;好的，用户发来“你好呀！”，我需要友好回应。首先，要保持亲切，用表情符号增加温度。然后，可以询问用户是否需要帮助，但不要显得太正式。可能用户只是打招呼，
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;所以简单回应即可，留出空间让用户继续交流。注意用词口语化，避免复杂句子。检查有没有拼写错误，确保回复自然。最后，保持开放态度，让用户知道我随时准备帮助他
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;们。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你好呀！😊 很高兴见到你！今天过得怎么样呀？需要我帮忙做点什么吗？
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Send a message &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/? &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;此时的显存占用：&lt;code&gt;11490MiB /  16311MiB&lt;/code&gt;，看来，16G显存部署一个14B刚刚好。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;--verbose参数： 显示推理过程的耗时情况&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ollama run qwen3:14b --verbose
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; 西红柿怎么吃？
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;嗯，用户问的是“西红柿怎么吃？”，这个问题看起来挺简单的，但其实可能需要更深入的思考。首先，我得考虑用户可能的背景。他们可能是刚开始接触西红柿，或者想找
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;一些新的吃法。也可能他们之前吃过，但想尝试更多不同的做法。
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......    &lt;span class=&#34;c1&#34;&gt;# 这个就略了吧&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;西红柿（番茄）是一种非常百搭的食材，既可以直接生吃，也可以通过多种烹饪方式制作成美味佳肴。以下是常见的吃法和一些创意做法，供你参考：
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......   &lt;span class=&#34;c1&#34;&gt;# 这个也略吧&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;根据你的口味和需求，可以灵活选择以上吃法！如果需要具体菜谱或步骤，也可以告诉我哦 😊   
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 下面的输出是重点&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;total duration:       33.622874783s      &lt;span class=&#34;c1&#34;&gt;# 总耗时33.6秒&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;load duration:        9.67421ms          &lt;span class=&#34;c1&#34;&gt;# 模型加载耗时9.67ms&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; count:    &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt; token&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;# 输入提示（prompt）的 token 数量，输入提示词被分词为 12 个 token。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; duration: 25.738437ms        &lt;span class=&#34;c1&#34;&gt;# 处理这 12 个 token 的提示词用了约 25.7 毫秒。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; rate:     466.23 tokens/s    &lt;span class=&#34;c1&#34;&gt;# 处理输入提示的速度（token/s），默认启用 enable_thinking=True（思考模式）。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; count:           &lt;span class=&#34;m&#34;&gt;1278&lt;/span&gt; token&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;      &lt;span class=&#34;c1&#34;&gt;# 模型生成输出的 token 总数。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; duration:        33.587006893s      &lt;span class=&#34;c1&#34;&gt;# 生成输出的总耗时，占总耗时的 99.9%（total duration 的 33.62 秒）。说明生成阶段是性能瓶颈。。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; rate:            38.05 tokens/s     &lt;span class=&#34;c1&#34;&gt;# 生成输出的速度（token/s），生成速度较慢（38 tokens/s），这与 14B 参数量的 Dense 模型特性一致，&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                         &lt;span class=&#34;c1&#34;&gt;# Qwen3 的 MoE 模型（如 Qwen3-30B-A3B）通过激活部分参数（30B 总参数，仅激活 3B）实现更高的生成速度。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;模型文件位于目录：&lt;code&gt;/usr/share/ollama&lt;/code&gt;下。&lt;/p&gt;
-&lt;h1 id=&#34;6-前端接入&#34;&gt;6. 前端接入
-&lt;/h1&gt;&lt;p&gt;Ollama默认是在11434端口提供服务。明白了这个就可以到&lt;code&gt;www.cherry-ai.com&lt;/code&gt;下载Cherry Studio了。 &lt;br&gt;
-安装好后，选择『设置』，然后在『设置』中选择『Ollama』：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio.png&#34;
-	width=&#34;4096&#34;
-	height=&#34;2304&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_8f86a418231ff65.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;177&#34;
-		data-flex-basis=&#34;426px&#34;
-	
-&gt;  &lt;br&gt;
-点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过&lt;code&gt;ollama list&lt;/code&gt;命令获取，注意了，这里的“模型ID”是&lt;code&gt;ollama list&lt;/code&gt;命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。&lt;/p&gt;
-&lt;h1 id=&#34;7-效果展示&#34;&gt;7. 效果展示
-&lt;/h1&gt;&lt;p&gt;以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
-	width=&#34;2002&#34;
-	height=&#34;901&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;222&#34;
-		data-flex-basis=&#34;533px&#34;
-	
-&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Ollama基础操作</title>
-        <link>https://zuoco.github.io/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</link>
-        <pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</guid>
-        <description>&lt;h1 id=&#34;ollama基础命令&#34;&gt;Ollama基础命令
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 但是ollama默认下载的可能是量化版本，且国内访问会很慢，可以从modelscope下载  &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run &amp;lt;模型名&amp;gt;:&amp;lt;版本号&amp;gt;  &lt;span class=&#34;c1&#34;&gt;# 运行模型（含下载）。&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run &amp;lt;模型名称&amp;gt;:&amp;lt;版本号&amp;gt;  modelscope.cn/Qwen/&amp;lt;模型名称&amp;gt;:&amp;lt;版本号&amp;gt; &lt;span class=&#34;c1&#34;&gt;# 国内下载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama pull &amp;lt;模型名&amp;gt;:&amp;lt;版本号&amp;gt; modelscope.cn/Qwen/&amp;lt;模型名称&amp;gt;:&amp;lt;版本号&amp;gt; &lt;span class=&#34;c1&#34;&gt;# 国内下载&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;运行模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run &amp;lt;模型名称&amp;gt;:&amp;lt;版本号&amp;gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;查看推理过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
@@ -434,48 +701,82 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run &amp;lt;模型名&amp;gt; --verbose   &lt;span class=&#34;c1&#34;&gt;# 显示推理过程的耗时情况&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;列出所有模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama list  &lt;span class=&#34;c1&#34;&gt;# 列出所有模型 &lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama list  
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;查看模型参数信息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama show &amp;lt;模型名称&amp;gt;   &lt;span class=&#34;c1&#34;&gt;# 显示模型参数信息&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama show &amp;lt;模型名称&amp;gt;   
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;删除模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama rm &amp;lt;模型名称&amp;gt;     &lt;span class=&#34;c1&#34;&gt;# 删除模型&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama rm &amp;lt;模型名称&amp;gt;   
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;查看正在运行的模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama ps   &lt;span class=&#34;c1&#34;&gt;# 显示正在运行的模型&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama ps   
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;停止运行中的模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama stop &amp;lt;模型名称&amp;gt;   &lt;span class=&#34;c1&#34;&gt;# 停止运行中的模型&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama stop &amp;lt;模型名称&amp;gt;   
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;&#34;&gt;
-&lt;/h1&gt;</description>
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Qwen3开源</title>
+        <link>https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/</link>
+        <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/qwen3.png&#34;
+	width=&#34;1080&#34;
+	height=&#34;2937&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/qwen3_hu_be931c0351d8b0d9.png 480w, https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/qwen3_hu_3b73eabb2858223.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;36&#34;
+		data-flex-basis=&#34;88px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
         </item>
         
     </channel>

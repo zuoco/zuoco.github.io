@@ -251,7 +251,7 @@
                 
                     <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1751170257246" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5161" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M836.8 358.805333l-78.997333 48.021334c-26.112 20.309333-46.165333 11.946667-50.282667-20.885334l-21.888-89.941333a21.333333 21.333333 0 0 0-21.162667-18.666667h-47.658666a21.290667 21.290667 0 0 0-21.162667 18.645334l-21.909333 89.92c-4.096 32.832-24.192 41.152-50.325334 20.842666l-79.232-48.256a21.525333 21.525333 0 0 0-28.330666 1.6l-33.706667 33.706667c-7.616 7.616-8.213333 19.84-1.6 28.330667l48.170667 79.168c20.309333 26.112 12.032 46.250667-20.8 50.368l-90.24 21.930666a21.589333 21.589333 0 0 0-19.008 21.162667v47.68c0 10.752 8.341333 19.84 19.008 21.162667l90.112 21.909333c32.832 4.096 41.237333 24.192 20.928 50.325333l-48.256 79.274667a21.546667 21.546667 0 0 0 1.6 28.373333l33.706666 33.706667c7.616 7.616 19.882667 8.170667 28.373334 1.578667l79.189333-48.192c26.112-20.309333 46.272-12.032 50.368 20.8l21.930667 89.941333c1.344 10.666667 10.410667 18.709333 21.184 18.709333h47.68a21.333333 21.333333 0 0 0 21.162666-18.730666l21.909334-89.962667c4.096-32.832 24.192-41.173333 50.325333-20.864l78.954667 47.957333a21.162667 21.162667 0 0 0 28.032-1.898666l33.706666-33.706667a21.12 21.12 0 0 0 1.898667-28.032l-48.042667-79.018667c-20.309333-26.112-11.968-46.186667 20.885334-50.282666l89.642666-21.888a21.077333 21.077333 0 0 0 18.368-21.162667V594.773333c0-10.752-7.68-19.84-18.368-21.162666l-89.770666-21.909334c-32.832-4.096-41.088-24.192-20.757334-50.325333l47.957334-78.912a21.12 21.12 0 0 0-1.92-28.010667l-33.706667-33.706666a21.056 21.056 0 0 0-27.968-1.941334z m-105.642667 350.293334a128 128 0 1 1-181.013333-181.013334 128 128 0 0 1 181.013333 181.013334z" fill="#386CC6" p-id="5162"></path><path d="M554.666667 341.333333V106.666667H64v789.333333h192V597.333333h128v-149.333333h-128v-106.666667z" fill="#FF500A" p-id="5163"></path></svg>
                 
-                <span>freecad</span>
+                <span>FreeCAD</span>
             </a>
         </li>
         
@@ -381,7 +381,16 @@
     <section class="article-content">
     
     
-    <h1 id="1-本地环境">1. 本地环境
+    <ul>
+<li><a class="link" href="#1-%e6%9c%ac%e5%9c%b0%e7%8e%af%e5%a2%83" >1. 本地环境</a></li>
+<li><a class="link" href="#2-cuda%e5%ae%89%e8%a3%85" >2. CUDA安装</a></li>
+<li><a class="link" href="#3-ai%e9%83%a8%e7%bd%b2%e6%a1%86%e6%9e%b6" >3. AI部署框架</a></li>
+<li><a class="link" href="#4-%e5%ae%89%e8%a3%85ollama" >4. 安装ollama</a></li>
+<li><a class="link" href="#5-ai-%e6%a8%a1%e5%9e%8b%e9%83%a8%e7%bd%b2" >5. AI 模型部署</a></li>
+<li><a class="link" href="#6-%e5%89%8d%e7%ab%af%e6%8e%a5%e5%85%a5" >6. 前端接入</a></li>
+<li><a class="link" href="#7-%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba" >7. 效果展示</a></li>
+</ul>
+<h1 id="1-本地环境">1. 本地环境
 </h1><p><strong>1. 主机</strong></p>
 <ul>
 <li>主机：天钡 GEM12 Pro</li>
@@ -407,7 +416,7 @@ NVIDIA GTX 5060 Ti 16GB<br>
 		data-flex-basis="533px"
 	
 ></p>
-<h1 id="2-显卡驱动安装">2. 显卡驱动安装
+<h1 id="2-cuda安装">2. CUDA安装
 </h1><p>登陆<a class="link" href="https://developer.nvidia.com/"  target="_blank" rel="noopener"
     >nvidia developer官网</a>，进入CUDA Toolkit，并选择需要的版本。根据下面网页的提示选择系统版本后，页面下方会给出对应的安装过程，根据指示安装即可，安装完成后可以在终端查看显卡信息：</p>
 <div class="highlight"><div class="chroma">
@@ -487,152 +496,8 @@ NVIDIA GTX 5060 Ti 16GB<br>
 <li>前端接入，以CherryStudio为例；</li>
 </ol>
 <h1 id="4-安装ollama">4. 安装ollama
-</h1><p>登陆ollama官网，官网直接给出了一行命令，该命令可以自动下载并安装ollama：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -fsSL https://ollama.com/install.sh <span class="p">|</span> sh
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>该命令会下载一个脚本，该脚本使用curl命令下载ollama安装程序，并执行安装程序，但是这个curl始终不能连接网络，所以只能手动下载安装文件：</p>
-<p><strong>1. 第一步</strong>： 下载安装脚本</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">curl -fsSL https://ollama.com/install.sh -o ollama_install.sh <span class="c1"># 下载安装脚本</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>2. 第二步</strong>： 在这个安装脚本中查找“下载链接” <br>
-打开下载下来的脚本，搜索<code>https://ollama.com/download/ollama-linux-</code>，找到类似如下代码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">status <span class="s2">&#34;Downloading Linux </span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2"> bundle&#34;</span>
-</span></span><span class="line"><span class="cl">curl --fail --show-error --location --progress-bar <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;https://ollama.com/download/ollama-linux-</span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2">.tgz</span><span class="si">${</span><span class="nv">VER_PARAM</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">$SUDO</span> tar -xzf - -C <span class="s2">&#34;</span><span class="nv">$OLLAMA_INSTALL_DIR</span><span class="s2">&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这段代码的功能就是下载ollama安装文件，从代码来看，安装文件会被解压到<code>$OLLAMA_INSTALL_DIR</code>目录下，其实就是<code>usr/local/</code>目录，我门先不管这些，在这段脚本前添加<code>echo &quot;https://ollama.com/download/ollama-linux-${ARCH}.tgz${VER_PARAM}&quot;</code>命令，然后运行脚本，打印出来的链接就是了。</p>
-<p><strong>3. 下载安装文件</strong>    <br>
-复制前面打印出来的链接，直接到浏览器中下载，并将下载好的压缩包保存到和安装脚本相同目录下。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">zcli@fedora:~$ ls -lh <span class="p">|</span> grep ollama
-</span></span><span class="line"><span class="cl">-rwxrwxrwx. <span class="m">1</span> zcli zcli  13K  5月18日 21:11 ollama_install.sh      <span class="c1"># 安装脚本</span>
-</span></span><span class="line"><span class="cl">-rw-r--r--. <span class="m">1</span> zcli zcli 1.6G  5月18日 21:04 ollama-linux-amd64.tgz <span class="c1"># 安装文件</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>4. 修改安装脚本</strong>  <br>
-定位到第二步中给出的代码：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">status <span class="s2">&#34;Downloading Linux </span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2"> bundle&#34;</span>
-</span></span><span class="line"><span class="cl">curl --fail --show-error --location --progress-bar <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="s2">&#34;https://ollama.com/download/ollama-linux-</span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2">.tgz</span><span class="si">${</span><span class="nv">VER_PARAM</span><span class="si">}</span><span class="s2">&#34;</span> <span class="p">|</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    <span class="nv">$SUDO</span> tar -xzf - -C <span class="s2">&#34;</span><span class="nv">$OLLAMA_INSTALL_DIR</span><span class="s2">&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>修改为：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 也就是不curl了，直接将已经下载好的安装文件解压到指定目录。</span>
-</span></span><span class="line"><span class="cl">status <span class="s2">&#34;Downloading Linux </span><span class="si">${</span><span class="nv">ARCH</span><span class="si">}</span><span class="s2"> bundle&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nv">$SUDO</span> tar -xzf ollama-linux-amd64.tgz -C <span class="s2">&#34;</span><span class="nv">$OLLAMA_INSTALL_DIR</span><span class="s2">&#34;</span> <span class="c1"># 解压到指定目录</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><strong>5. 执行安装脚本</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">zcli@fedora:~$ ./ollama_install.sh 
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Cleaning up old version at /usr/local/lib/ollama
-</span></span><span class="line"><span class="cl"><span class="o">[</span>sudo<span class="o">]</span> zcli 的密码：
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Installing ollama to /usr/local
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Downloading Linux amd64 bundle 
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Creating ollama user...
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Adding ollama user to render group...
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Adding ollama user to video group...
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Adding current user to ollama group...
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Creating ollama systemd service...
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; Enabling and starting ollama service...
-</span></span><span class="line"><span class="cl">Created symlink <span class="s1">&#39;/etc/systemd/system/default.target.wants/ollama.service&#39;</span> → <span class="s1">&#39;/etc/systemd/system/ollama.service&#39;</span>.
-</span></span><span class="line"><span class="cl">&gt;&gt;&gt; NVIDIA GPU installed.
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>OK，安装好了，在Linux上，这个ollama安装为一个Linux服务，并且安装后就自动运行起来了，如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">zcli@fedora:~$ sudo systemctl status ollama.service 
-</span></span><span class="line"><span class="cl">● ollama.service - Ollama Service
-</span></span><span class="line"><span class="cl">     Loaded: loaded <span class="o">(</span>/etc/systemd/system/ollama.service<span class="p">;</span> enabled<span class="p">;</span> preset: disabled<span class="o">)</span>
-</span></span><span class="line"><span class="cl">    Drop-In: /usr/lib/systemd/system/service.d
-</span></span><span class="line"><span class="cl">             └─10-timeout-abort.conf, 50-keep-warm.conf
-</span></span><span class="line"><span class="cl">     Active: active <span class="o">(</span>running<span class="o">)</span> since Sun 2025-05-18 23:03:56 CST<span class="p">;</span> 1min 31s ago
-</span></span><span class="line"><span class="cl"> Invocation: 2dbc0a03db1c4a08a17829fa4039bf63
-</span></span><span class="line"><span class="cl">   Main PID: <span class="m">43831</span> <span class="o">(</span>ollama<span class="o">)</span>
-</span></span><span class="line"><span class="cl">      Tasks: <span class="m">13</span> <span class="o">(</span>limit: 37474<span class="o">)</span>
-</span></span><span class="line"><span class="cl">     Memory: 24.5M <span class="o">(</span>peak: 40.9M<span class="o">)</span>
-</span></span><span class="line"><span class="cl">        CPU: 248ms
-</span></span><span class="line"><span class="cl">     CGroup: /system.slice/ollama.service
-</span></span><span class="line"><span class="cl">             └─43831 /usr/local/bin/ollama serve
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="5-ai-模型部署">5. AI 模型部署
+</h1><p>参考【Ollama部署】篇。</p>
+<h1 id="5-ai-模型部署">5. AI 模型部署
 </h1><p>因为Ollama服务已经启动了，所以就不必再次运行<code>ollama serve</code>命令了。直接开run： <br>
 <code>提示：</code> <code>ollama run qwen3:14b</code>会从Ollama服务器拉取模型，国内网络可能不太行，可以使用<code>ollama run modelscope.cn/Qwen/Qwen3-14B-GGUF</code>。</p>
 <div class="highlight"><div class="chroma">
@@ -823,12 +688,64 @@ NVIDIA GTX 5060 Ti 16GB<br>
             
                 
 <article class="">
-    <a href="/p/ollama%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">
+    <a href="/p/kimi-dev/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">Ollama基础操作</h2>
+            <h2 class="article-title">Kimi-Dev</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/qwen3%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Qwen3模型微调</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/lora%E5%BE%AE%E8%B0%83/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LoRA微调</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/ollama%E9%83%A8%E7%BD%B2/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Ollama部署</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/qwen3%E5%BC%80%E6%BA%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Qwen3开源</h2>
         </div>
     </a>
 </article>
