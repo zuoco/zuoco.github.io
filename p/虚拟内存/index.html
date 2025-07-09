@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 虚拟内存 2. 页 2.1. 页表 2.2. 多级页表 2.3. 页表项 3. 映射关系 4. TLB 1. 虚拟内存 进程不会直接访问物理内存，进程能够看到的地址空间是虚拟地址空间，虚拟地址通过一定的规则关联到物理地址，简单理解为下图：\n">
 <title>虚拟内存</title>
 
 <link rel='canonical' href='https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="虚拟内存">
-<meta property='og:description' content="">
+<meta property='og:description' content=" 1. 虚拟内存 2. 页 2.1. 页表 2.2. 多级页表 2.3. 页表项 3. 映射关系 4. TLB 1. 虚拟内存 进程不会直接访问物理内存，进程能够看到的地址空间是虚拟地址空间，虚拟地址通过一定的规则关联到物理地址，简单理解为下图：\n">
 <meta property='og:url' content='https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-07-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-07-10T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="虚拟内存">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content=" 1. 虚拟内存 2. 页 2.1. 页表 2.2. 多级页表 2.3. 页表项 3. 映射关系 4. TLB 1. 虚拟内存 进程不会直接访问物理内存，进程能够看到的地址空间是虚拟地址空间，虚拟地址通过一定的规则关联到物理地址，简单理解为下图：\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -377,7 +377,53 @@
     <section class="article-content">
     
     
-    
+    <ol>
+<li><a class="link" href="#1-%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98" >1. 虚拟内存</a></li>
+<li><a class="link" href="#2-%e9%a1%b5" >2. 页</a>
+<ol>
+<li><a class="link" href="#21-%e9%a1%b5%e8%a1%a8" >2.1. 页表</a></li>
+<li><a class="link" href="#22-%e5%a4%9a%e7%ba%a7%e9%a1%b5%e8%a1%a8" >2.2. 多级页表</a></li>
+<li><a class="link" href="#23-%e9%a1%b5%e8%a1%a8%e9%a1%b9" >2.3. 页表项</a></li>
+</ol>
+</li>
+<li><a class="link" href="#3-%e6%98%a0%e5%b0%84%e5%85%b3%e7%b3%bb" >3. 映射关系</a></li>
+<li><a class="link" href="#4-tlb" >4. TLB</a></li>
+</ol>
+<h1 id="1-虚拟内存">1. 虚拟内存
+</h1><p>  进程不会直接访问物理内存，进程能够看到的地址空间是<code>虚拟地址空间</code>，虚拟地址通过一定的规则关联到物理地址，简单理解为下图：<br>
+<img src="/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.svg"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="2-页">2. 页
+</h1><p>  在虚拟内存中，内存以<code>页</code>为单位进行划分，以便于管理，地址转换也是以页为单位进行的，对于X86_64系统，页的大小为4KB。计算机物理内存也被划分为同样大小的块，称为<code>物理页帧</code>。</p>
+<h2 id="21-页表">2.1. 页表
+</h2><p>  操作系统以及MMU使用<code>页表</code>管理页，页表中存储着<code>页表项</code>，页表项记录着虚拟地址到物理地址的映射关系。每个进程都有自己独立的页表，这确保了进程地址空间的隔离性。当 CPU 切换到某个进程执行时，CR3 寄存器（在 x86 架构下）会被加载指向该进程的顶级页表的物理地址。</p>
+<h2 id="22-多级页表">2.2. 多级页表
+</h2><p>  现代系统地址空间巨大（如 64 位系统），不会使用一个巨大的单级页表来存储所有映射。因此，页表通常是多级的，实际工作中，MMU会根据当前进程的顶级页表基址，一层一层得遍历，在最后一级页表中找到目标虚拟页对应的页表项。</p>
+<h2 id="23-页表项">2.3. 页表项
+</h2><p><strong>页表的内容：</strong></p>
+<ul>
+<li><strong>物理页帧号：</strong> 指示该虚拟页当前映射到的物理页帧的起始地址。</li>
+<li><strong>存在位：</strong> 表示该虚拟页当前是否在物理内存中。如果为 0，访问该页会触发<strong>缺页中断</strong>，进而终止程序。</li>
+<li><strong>读/写权限位：</strong> 控制该页是可读、可写还是只读。</li>
+<li><strong>用户/超级用户权限位：</strong> 控制用户态进程是否可以访问该页（内核页通常只能在内核态访问）。</li>
+<li><strong>访问位：</strong> 被硬件置位，表示该页最近被访问过（用于页面置换算法如 LRU）。</li>
+<li><strong>修改位：</strong> 被硬件置位，表示该页的内容被修改过（需要写回磁盘后才能释放其物理页帧）。</li>
+<li><strong>其他标志位：</strong> 如全局页、禁用缓存、NX（不可执行）位等。</li>
+</ul>
+<p>  当 CPU 执行指令访问一个虚拟地址时，MMU 自动查阅当前进程的页表，将该虚拟地址翻译成对应的物理地址。而且不同进程的页表项可以指向同一个物理页帧，用于共享，例如动态链接库。</p>
+<h1 id="3-映射关系">3. 映射关系
+</h1><p>   虚拟页不一定时刻都有物理页帧与之对应，也不一定连续地映射到物理内存上。一个虚拟页可以映射到一个物理页帧，也可以映射到磁盘上的交换空间，或者暂时没有映射（未分配）。</p>
+<h1 id="4-tlb">4. TLB
+</h1><p>   现代系统使用多级页表（如 x86_64 的 4 级页表）。每次地址转换需多次访问内存（遍历每一级页表），可能需 <strong>4~5 次内存访问</strong>才能完成一次转换。内存访问速度远低于 CPU 速度，直接导致性能严重下降。考虑到程序的局部性原理，程序在短时间内倾向于集中访问少量内存页（如循环代码、连续数据），这些页的地址转换结果（映射关系）可被缓存复用。<br>
+   <code>TLB</code> 是一个<strong>硬件缓存</strong>（通常由 SRAM 实现），存储最近使用过的<strong>虚拟页号 → 物理页帧号</strong>的映射关系。每个条目相当于一个<strong>页表项的副本</strong>（含物理页号 + 权限位）。现代 CPU 通常包含多级 TLB（如 L1 TLB、L2 TLB），容量逐级增大但速度略慢。
+   如果我们把页表看作一本厚重的“电话簿”，TLB 就是手机“常用联系人列表”——你不需要每次都翻电话簿查号码，最近联系过的人名和号码会被快速缓存。</p>
+
 </section>
 
 
@@ -427,19 +473,6 @@
             
                 
 <article class="">
-    <a href="/p/tcpdump/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">tcpdump</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/%E5%86%85%E5%AD%98%E7%A2%8E%E7%89%87%E5%8C%96/">
         
         
@@ -485,6 +518,19 @@
 
         <div class="article-details">
             <h2 class="article-title">free命令</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">内核OOM机制</h2>
         </div>
     </a>
 </article>
