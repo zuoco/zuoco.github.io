@@ -1726,6 +1726,59 @@ N（No）：不编译此驱动。&lt;/p&gt;
 使用“上”“下”方向键选择选项，使用“空格”键选择或取消选择选项，使用“Enter”键进入子菜单。使用“左”“右”保存、后退、加载已有的.config文件。配置完后保存为.config文件，然后运行&lt;strong&gt;make&lt;/strong&gt;命令进行开始编译。&lt;/p&gt;
 </description>
         </item>
+        <item>
+        <title>虚拟内存</title>
+        <link>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</link>
+        <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>二进制文件的内存映像</title>
+        <link>https://zuoco.github.io/p/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F/</link>
+        <pubDate>Tue, 09 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E7%9A%84%E5%86%85%E5%AD%98%E6%98%A0%E5%83%8F/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>进程中使用的内存</title>
+        <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98/</link>
+        <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%86%85%e5%ad%98%e5%88%86%e9%85%8d%e5%9c%ba%e6%99%af&#34; &gt;1. 内存分配场景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%9b%e5%bb%ba%e8%bf%9b%e7%a8%8b%e6%97%b6%e7%9a%84%e5%86%85%e5%ad%98%e5%88%86%e9%85%8d&#34; &gt;2. 创建进程时的内存分配&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e5%a4%9a%e8%bf%9b%e7%a8%8b&#34; &gt;2.1. 多进程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e5%90%af%e5%8a%a8%e4%b8%80%e4%b8%aa%e7%a8%8b%e5%ba%8f&#34; &gt;2.2. 启动一个程序&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e8%bf%9b%e7%a8%8b%e7%94%b3%e8%af%b7%e5%8a%a8%e6%80%81%e5%86%85%e5%ad%98&#34; &gt;3. 进程申请动态内存&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;1-内存分配场景&#34;&gt;1. 内存分配场景
+&lt;/h1&gt;&lt;p&gt;内核为进程分配内存，有两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;创建进程时。&lt;/li&gt;
+&lt;li&gt;进程申请动态内存。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;2-创建进程时的内存分配&#34;&gt;2. 创建进程时的内存分配
+&lt;/h1&gt;&lt;p&gt;在Linux系统中，创建进程有两种场景：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一个程序使用&lt;code&gt;多进程&lt;/code&gt;结构并行处理业务。&lt;/li&gt;
+&lt;li&gt;启动一个程序。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;21-多进程&#34;&gt;2.1. 多进程
+&lt;/h2&gt;&lt;p&gt;  想要将一个程序分成多个进程进行处理，需要使用&lt;code&gt;fork()&lt;/code&gt;函数。fork函数基于当前进程（父进程）创建一个完全一样的新进程（子进程）。两个进程一起从fork函数返回，从此开始执行不同的代码。但是需要注意，在父进程中，fork返回子进程的ID，而子进程中的fork返回0。 &lt;br&gt;
+  fork创建新进程的速度还是很快的，因为这个fork并不会复制父进程的内存空间，而是和父进程共享一个&lt;code&gt;写时复制&lt;/code&gt;的内存空间，两个进程可以同时自由的读取内存，但是任意一个进程需要修改内存时，就会复制一份给修改方单独使用。&lt;/p&gt;
+&lt;h2 id=&#34;22-启动一个程序&#34;&gt;2.2. 启动一个程序
+&lt;/h2&gt;&lt;p&gt;  在fork后，我们可以在新进程中使用&lt;code&gt;exec()&lt;/code&gt;族函数来拉取一个新的二进制文件，也就是使用新的内存映像替换当前的映像，并从入口开始执行。&lt;/p&gt;
+&lt;h1 id=&#34;3-进程申请动态内存&#34;&gt;3. 进程申请动态内存
+&lt;/h1&gt;&lt;p&gt;  进程开始运行后，如果需要申请更多内存，就会向内核发出内存申请请求。然后内核在可用内存中分出一块相应大小的内存块，并将起始地址返回给进程。&lt;/p&gt;
+</description>
+        </item>
         
     </channel>
 </rss>

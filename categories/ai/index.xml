@@ -32,6 +32,448 @@
 </description>
         </item>
         <item>
+        <title>01 —— Qwen3系列模型的微调数据集构建方法</title>
+        <link>https://zuoco.github.io/p/01-qwen3%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95/</link>
+        <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/01-qwen3%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>00 —— 认识微调数据集</title>
+        <link>https://zuoco.github.io/p/00-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/</link>
+        <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/00-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%a4%e8%af%86%e6%a8%a1%e5%9e%8b%e7%9a%84%e8%be%93%e5%85%a5%e8%be%93%e5%87%ba&#34; &gt;1. 认识模型的输入输出&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%be%ae%e8%b0%83%e6%95%b0%e6%8d%ae%e9%9b%86&#34; &gt;2. 微调数据集&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e4%b8%80%e8%88%ac%e6%95%b0%e6%8d%ae%e9%9b%86&#34; &gt;2.1. 一般数据集&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e8%ae%ad%e7%bb%83function-calling%e8%83%bd%e5%8a%9b%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&#34; &gt;3. 训练Function calling能力的数据集&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-tool-schema-%e6%95%b0%e6%8d%ae%e9%9b%86%e7%9a%84%e6%a0%b8%e5%bf%83%e4%bd%9c%e7%94%a8&#34; &gt;3.1. Tool Schema 数据集的核心作用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#32-tool-schema-%e6%95%b0%e6%8d%ae%e9%9b%86%e6%a0%bc%e5%bc%8f&#34; &gt;3.2. Tool Schema 数据集格式&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%b8%a6%e6%9c%89%e6%80%9d%e8%80%83%e8%bf%87%e7%a8%8b%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&#34; &gt;4. 带有思考过程的数据集&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e5%b8%a6%e6%9c%89%e6%80%9d%e8%80%83%e8%bf%87%e7%a8%8bfunction-calling%e7%9a%84%e6%95%b0%e6%8d%ae%e9%9b%86&#34; &gt;5. 带有思考过程、Function calling的数据集&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;1-认识模型的输入输出&#34;&gt;1. 认识模型的输入输出
+&lt;/h1&gt;&lt;p&gt;  从模型底层原理看，大模型会使用一些特殊字符来标记用户的不同类型输入、系统提示词、以及工具调用或者多模态输入等。以Qwen3为例，在一次实际的对话过程中，模型的真实输入和输出如下所示：
+&lt;img src=&#34;https://zuoco.github.io/p/00-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+  上图中 &amp;lt;|im_start|&amp;gt; 代表文本开始，而 user 则代表消息身份，用于构建多轮对话，而 &amp;lt;|im_end|&amp;gt; 则代表文本结束，即用户输入结束，而 &amp;lt;|im_start|&amp;gt; 代表新一段文本开始， assistant 代表接下来由模型创建消息，而 &amp;lt;|im_end|&amp;gt; 同样代表模型创建消息的结束。模型就是通过这样一组特殊字符标记来规范自己的行为，判断当前消息类型，以及通过输出特殊标记来确定停止时间。对于绝大多数模型，我们可以在模型的 tokenizer_config.json 中看到完整的特殊标记符（以及系统提示词模板）：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;add_bos_token&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;add_prefix_space&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;added_tokens_decoder&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;151643&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;|endoftext|&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;lstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;normalized&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;rstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;single_word&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;special&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;151644&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;|im_start|&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;lstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;normalized&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;rstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;single_word&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;special&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;151645&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;|im_end|&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;lstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;normalized&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;rstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;single_word&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;special&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;151646&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;|object_ref_start|&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;lstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;normalized&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;rstrip&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;single_word&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;nt&#34;&gt;&amp;#34;special&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;err&#34;&gt;#&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;2-微调数据集&#34;&gt;2. 微调数据集
+&lt;/h1&gt;&lt;p&gt;  微调属于有监督的训练，所以需要&lt;strong&gt;输入输出对&lt;/strong&gt;形式的数据集。&lt;/p&gt;
+&lt;h2 id=&#34;21-一般数据集&#34;&gt;2.1. 一般数据集
+&lt;/h2&gt;&lt;p&gt;以&lt;a class=&#34;link&#34; href=&#34;https://www.modelscope.cn/datasets/xiaofengalg/Chinese-medical-dialogue&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;huggingface&lt;/a&gt;上提供的一个医疗数据集为例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;instruction&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;小儿肥胖超重该如何治疗&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;input&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;女宝宝，刚7岁，这一年，察觉到，我家孩子身上肉很多，而且，食量非常的大，平时都不喜欢吃去玩，请问：小儿肥胖超重该如何治疗。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;output&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;孩子出现肥胖症的情况。家长要通过孩子运功和健康的饮食来缓解他的症状，可以先让他做一些有氧运动，比如慢跑，爬坡，游泳等，并且饮食上孩子多吃黄瓜，胡萝卜，菠菜等，禁止孩子吃一些油炸食品和干果类食物，这些都是干热量高脂肪的食物，而且不要让孩子总是吃完就躺在床上不动，家长在治疗小儿肥胖期间如果孩子情况严重就要及时去医院在医生的指导下给孩子治疗。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;history&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;instruction&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;小儿肥胖超重该怎样医治&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;input&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;男孩子，刚4岁，最近，发现，我家孩子体重要比别的孩子重很多，而且，最近越来越能吃了，还特别的懒，请问：小儿肥胖超重该怎样医治。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;output&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;孩子一旦患上肥胖症家长要先通过运动和饮食来改变孩子的情况，要让孩子做一些他这个年龄段能做的运动，如游泳，慢跑等，要给孩子多吃一些像苹果，猕猴桃，胡萝卜等食物，禁止孩子吃高热量，高脂肪的食物，像蛋糕，干果，曲奇饼干等，严格的控制孩子的饮食，不要让他暴饮暴食，多运动对改变孩子肥胖都是有好处的，在治疗小儿肥胖期间如果情况严重，建议家长先带孩子去医院检查一下孩子肥胖症的原因在针对性的治疗。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;history&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;instruction&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;小儿肥胖能吃该如何治疗&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;input&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;男宝，已经5岁，今年，察觉到，孩子身上越来越肉乎了，同时，吃的饭也比一般孩子多，平时都不喜欢吃去玩，请问：小儿肥胖能吃该如何治疗。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;output&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;当孩子患上肥胖症的时候家长可以增加孩子的运动量和控制他的饮食来改变症状，像游泳，爬坡这类游泳运动对肥胖的症状都很好的效果，像冬瓜，西红柿这样高纤维的蔬菜要多吃一些，孩子不可以吃像蛋糕，夏威夷果这些高热量的食物，而且不要让孩子总是吃完就躺在床上不动，家长在治疗小儿肥胖期间如果孩子情况严重就要及时去医院在医生的指导下给孩子治疗。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nt&#34;&gt;&amp;#34;history&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;null&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;每一个”{}“中都有input和output，微调程序需要将数据集转化为如下格式， 才能训练模型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;system
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;小儿肥胖超重该怎样医治&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;user&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;男孩子，刚4岁，最近，发现，我家孩子体重要比别的孩子重很多，而且，最近越来越能吃了，还特别的懒，请问：小儿肥胖超重该怎样医治。&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;assistant&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;孩子一旦患上肥胖症家长要先通过运动和饮食来改变孩子的情况，要让孩子做一些他这个年龄段能做的运动，如游泳，慢跑等，要给孩子多吃一些像苹果，猕猴桃，胡萝卜等食物，禁止孩子吃高热量，高脂肪的食物，像蛋糕，干果，曲奇饼干等，严格的控制孩子的饮食，不要让他暴饮暴食，多运动对改变孩子肥胖都是有好处的，在治疗小儿肥胖期间如果情况严重，建议家长先带孩子去医院检查一下孩子肥胖症的原因在针对性的治疗。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;上面的数据是给程序看的，我们整理一下，如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;system
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;小儿肥胖超重该怎样医治
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;男孩子，刚4岁，最近，发现，我家孩子体重要比别的孩子重很多，而且，最近越来越能吃了，还特别的懒，请问：小儿肥胖超重该怎样医治。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;assistant
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;孩子一旦患上肥胖症家长要先通过运动和饮食来改变孩子的情况，要让孩子做一些他这个年龄段能做的运动，如游泳，慢跑等，要给孩子多吃一些像苹果，猕猴桃，胡萝卜等食物，禁止孩子吃高热量，高脂肪的食物，像蛋糕，干果，曲奇饼干等，严格的控制孩子的饮食，不要让他暴饮暴食，多运动对改变孩子肥胖都是有好处的，在治疗小儿肥胖期间如果情况严重，建议家长先带孩子去医院检查一下孩子肥胖症的原因在针对性的治疗。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;在训练过程中，通过&lt;code&gt;&amp;lt;|im_start|&amp;gt;system...&amp;lt;|im_end|&amp;gt;&lt;/code&gt; 来标记系统提示词。实际进行微调时，模型会根据&lt;code&gt;assistant&lt;/code&gt;为界，学习assistant之前的文本输入情况下应该如何输出。上面展示的是带有&lt;code&gt;系统提示词&lt;/code&gt;的微调数据集格式，也有些微调数据集是没有系统提示词的。&lt;/p&gt;
+&lt;h1 id=&#34;3-训练function-calling能力的数据集&#34;&gt;3. 训练Function calling能力的数据集
+&lt;/h1&gt;&lt;p&gt;  微调只能优化模型的Function calling能力，并不能从无到有让模型学会Function calling，所以微调只反对本身具备外部工具调用能力的模型。而且数据集中需要包含`tool schema·信息，如果对话过程中带入了Function calling，此时模型会读取tool schema，这个tool schema又是啥子？在对话系统中引入 Function Calling（函数调用）时，模型需要依赖 Tool Schema（工具架构）来理解可用的工具及其参数。Tool Schema 是对工具（如 API、数据库操作、外部服务等）的结构化定义，它明确告诉模型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;工具的功能是什么？&lt;/li&gt;
+&lt;li&gt;工具的输入参数有哪些？&lt;/li&gt;
+&lt;li&gt;参数的类型和约束条件是什么？&lt;/li&gt;
+&lt;li&gt;工具的输出格式是什么？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;31-tool-schema-数据集的核心作用&#34;&gt;3.1. Tool Schema 数据集的核心作用
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;定义工具的接口：&lt;/strong&gt;   &lt;br&gt;
+Tool Schema 是模型与外部工具之间的“契约”，确保模型生成的调用符合工具的实际需求。例如，调用天气查询 API 时，必须指定 location 参数，且类型为字符串。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;参数验证：&lt;/strong&gt; &lt;br&gt;
+模型生成的调用参数需符合 Tool Schema 的格式要求（如字段名、类型、必填项），避免无效调用。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;生成结构化输出：&lt;/strong&gt;&lt;br&gt;
+模型会根据 Tool Schema 的描述，生成符合要求的 JSON 或其他结构化数据作为调用参数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;32-tool-schema-数据集格式&#34;&gt;3.2. Tool Schema 数据集格式
+&lt;/h2&gt;&lt;p&gt;Tool Schema有多种定义方式，&lt;code&gt;Python 函数 + 类型注解&lt;/code&gt;、&lt;code&gt;Pydantic 模型&lt;/code&gt;、&lt;code&gt;JSON Schema&lt;/code&gt;，MCP会自动创建tool schema。&lt;br&gt;
+Tool Schema Json 的大概形式如下:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;tool_schema&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;get_weather&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;查询指定城市的天气信息&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;parameters&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;nt&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;nt&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;nt&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             &lt;span class=&#34;nt&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             &lt;span class=&#34;nt&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;要查询天气的城市名称&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;          &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;       &lt;span class=&#34;nt&#34;&gt;&amp;#34;required&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此时，如果我们进行如下对话：&lt;br&gt;
+&lt;strong&gt;系统提示词（instruction）&lt;/strong&gt;  ：你是一名助人为乐的助手。当用户查询天气的时候，请调用get_weather函数进行天气信息查询。&lt;br&gt;
+&lt;strong&gt;用户输入（input）&lt;/strong&gt;          ： 你好，请帮我查询下北京天气。 &lt;br&gt;
+&lt;strong&gt;助手回复（output）&lt;/strong&gt;        ：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;get_weather&amp;rdquo;, &amp;ldquo;arguments&amp;rdquo;: {&amp;ldquo;location&amp;rdquo;: &amp;ldquo;北京&amp;rdquo;}}&lt;br&gt;
+这个”&lt;strong&gt;助手回复（output）&lt;/strong&gt;“就是一条&lt;code&gt;Function call message&lt;/code&gt;， 根据这条信息来进行外部工具调用。此时模型真实的输入和输出内容如下：&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/00-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma.png&#34;
+	width=&#34;2245&#34;
+	height=&#34;856&#34;
+	srcset=&#34;https://zuoco.github.io/p/00-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma_hu_9f4c6a0a24f0b1a6.png 480w, https://zuoco.github.io/p/00-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma_hu_49d06980ae3a845e.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;262&#34;
+		data-flex-basis=&#34;629px&#34;
+	
+&gt;&lt;br&gt;
+  接下来在进行训练时，模型同样是根据assistant前的内容，学习assistant后面的输出内容。&lt;/p&gt;
+&lt;h1 id=&#34;4-带有思考过程的数据集&#34;&gt;4. 带有思考过程的数据集
+&lt;/h1&gt;&lt;p&gt;如果是带有思考链，则数据集大概形式如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;system&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;你是一名助人为乐的助手。当用户查询天气的时候，请调用get_weather函数进行天气信息查询。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;conversations&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;role&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;你好，好久不见！&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;role&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;assistant&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;contant&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;是的呀，好久不见，最近有什么事情要分享给我吗？&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;reasoning_content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;好的, 用户发来“你好，好久不见！”,我需要回应。首先，用户可能希望得到亲切的回应，所以应该用友好的语气。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此时对应的模型真实的内部输入和输出结果如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;system
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你是一名助人为乐的助手。&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你好，好久不见。&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;assistant
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;好的，用户发来“你好，好久不见！”，我需要回应。首先，用户可能希望得到亲切的回应，所以应该用友好的语气。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;是的呀，好久不见，最近有什么有趣的事情要和我分享么？&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;&amp;lt;think&amp;gt;&lt;/code&gt;与&lt;code&gt;&amp;lt;/think&amp;gt;&lt;/code&gt;之间的就是思考过程，后面紧跟着就是模型回答。&lt;/p&gt;
+&lt;h1 id=&#34;5-带有思考过程function-calling的数据集&#34;&gt;5. 带有思考过程、Function calling的数据集
+&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;system&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;你是一名助人为乐的助手。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nt&#34;&gt;&amp;#34;conversations&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;role&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;user&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;你好，好久不见！&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;role&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;assistant&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;contant&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34; &amp;lt;tool_call&amp;gt;/n{\&amp;#34;name\&amp;#34;: \&amp;#34;get_weather\&amp;#34;, \&amp;#34;arguments\&amp;#34;: \&amp;#34;location\&amp;#34;: \&amp;#34;北京\&amp;#34;}/n&amp;lt;/tool_call&amp;gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;nt&#34;&gt;&amp;#34;reasoning_content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;好的，用户问北京今天的天气，我应该尝试调用工具 get_weather，并将参数设置为北京。&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;      
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;训练模型时读取到的格式：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;system
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你是一名助人为乐的助手。当用户查询天气的时候，请调用get_weather函数进行天气信息查询。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Tools&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;You may call one or more functions to assist with the user query.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;You are provided with &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; signatures within &amp;lt;tools&amp;gt;&amp;lt;/tools&amp;gt; XML tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;tools&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;get_weather&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;查询指定城市的天气信息&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;parameters&amp;#34;&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;object&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;properties&amp;#34;&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;type&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;string&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;description&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;要查询天气的城市名称&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;required&amp;#34;&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;]}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/tools&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;For each &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; call, &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; a json object with &lt;span class=&#34;k&#34;&gt;function&lt;/span&gt; name and arguments 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;within &amp;lt;tool_call&amp;gt;&amp;lt;/tool_call&amp;gt; XML tags:
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;tool_call&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &amp;lt;&lt;span class=&#34;k&#34;&gt;function&lt;/span&gt;-name&amp;gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;arguments&amp;#34;&lt;/span&gt;: &amp;lt;args-json-object&amp;gt;&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/tool_call&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;user
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你好，请帮我查询下北京天气。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_start&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;assistant
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;好的，用户问北京今天的天气，我应该尝试调用工具 get_weather，并将参数设置为北京。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;tool_call&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;get_weather&amp;#34;&lt;/span&gt;, &lt;span class=&#34;s2&#34;&gt;&amp;#34;arguments&amp;#34;&lt;/span&gt;: &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;: &lt;span class=&#34;s2&#34;&gt;&amp;#34;北京&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/tool_call&amp;gt;&amp;lt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;im_end&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;同时拥有Function calling、混合推理等功能，属于功能非常复杂的模型了。在实际微调过程中，稍有不慎就会令其丧失原有能力。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Qwen3模型微调</title>
         <link>https://zuoco.github.io/p/qwen3%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link>
         <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
@@ -759,15 +1201,15 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Qwen3开源</title>
-        <link>https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/</link>
+        <title>Qwen3发布并开源</title>
+        <link>https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/</link>
         <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/qwen3.png&#34;
+        <guid>https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3.png&#34;
 	width=&#34;1080&#34;
 	height=&#34;2937&#34;
-	srcset=&#34;https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/qwen3_hu_be931c0351d8b0d9.png 480w, https://zuoco.github.io/p/qwen3%E5%BC%80%E6%BA%90/qwen3_hu_3b73eabb2858223.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3_hu_be931c0351d8b0d9.png 480w, https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3_hu_3b73eabb2858223.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -776,6 +1218,219 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 		data-flex-basis=&#34;88px&#34;
 	
 &gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>MNN</title>
+        <link>https://zuoco.github.io/p/mnn/</link>
+        <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/mnn/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/mnn/image.png" alt="Featured image of post MNN" /&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%a1%b9%e7%9b%ae%e6%a6%82%e8%bf%b0&#34; &gt;1. 项目概述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd%e7%89%b9%e6%80%a7&#34; &gt;2. 核心功能特性&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e8%bd%bb%e9%87%8f%e5%8c%96%e4%b8%8e%e9%ab%98%e6%95%88%e6%80%a7&#34; &gt;2.1. 轻量化与高效性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e9%80%9a%e7%94%a8%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;2.2. 通用模型支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#23-%e9%ab%98%e6%80%a7%e8%83%bd%e8%ae%a1%e7%ae%97&#34; &gt;2.3. 高性能计算&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e4%b8%93%e7%94%a8%e5%bc%95%e6%93%8e%e4%b8%8e%e8%83%bd%e5%8a%9b&#34; &gt;3. 专用引擎与能力&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-%e5%a4%a7%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;3.1. 大语言模型支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#32-%e5%a4%9a%e6%a8%a1%e6%80%81%e8%83%bd%e5%8a%9b&#34; &gt;3.2. 多模态能力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#33-%e8%a7%86%e8%a7%89%e5%a4%84%e7%90%86%e8%83%bd%e5%8a%9b&#34; &gt;3.3. 视觉处理能力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#34-%e9%9f%b3%e9%a2%91%e5%a4%84%e7%90%86%e8%83%bd%e5%8a%9b&#34; &gt;3.4. 音频处理能力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#35-%e6%89%a9%e6%95%a3%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;3.5. 扩散模型支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e4%b8%bb%e8%a6%81%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af&#34; &gt;4. 主要使用场景&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-%e4%bc%81%e4%b8%9a%e7%ba%a7%e7%94%9f%e4%ba%a7%e5%ba%94%e7%94%a8&#34; &gt;4.1. 企业级生产应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-%e7%a7%bb%e5%8a%a8%e7%ab%afllm%e5%ba%94%e7%94%a8&#34; &gt;4.2. 移动端LLM应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#43-android-llm%e8%81%8a%e5%a4%a9%e5%ba%94%e7%94%a8&#34; &gt;4.3. Android LLM聊天应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#44-3d%e8%99%9a%e6%8b%9f%e4%ba%ba%e5%ba%94%e7%94%a8&#34; &gt;4.4. 3D虚拟人应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#45-mnn-3d-avatar%e5%ba%94%e7%94%a8&#34; &gt;4.5. MNN 3D Avatar应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#46-%e8%be%b9%e7%bc%98%e8%ae%a1%e7%ae%97%e5%9c%ba%e6%99%af&#34; &gt;4.6. 边缘计算场景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#47-%e5%b5%8c%e5%85%a5%e5%bc%8f%e8%ae%be%e5%a4%87&#34; &gt;4.7. 嵌入式设备&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#48-%e5%ae%9e%e6%97%b6%e5%ba%94%e7%94%a8&#34; &gt;4.8. 实时应用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7%e4%b8%8e%e7%94%9f%e6%80%81&#34; &gt;5. 开发工具与生态&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#51-%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e5%b7%a5%e5%85%b7&#34; &gt;5.1. 模型转换工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#52-python%e9%9b%86%e6%88%90&#34; &gt;5.2. Python集成&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#53-%e8%b7%a8%e5%b9%b3%e5%8f%b0%e6%9e%84%e5%bb%ba&#34; &gt;5.3. 跨平台构建&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e7%a1%ac%e4%bb%b6%e6%94%af%e6%8c%81%e7%9f%a9%e9%98%b5&#34; &gt;6. 硬件支持矩阵&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-项目概述&#34;&gt;1. 项目概述
+&lt;/h1&gt;&lt;p&gt;MNN（Mobile Neural Network）是阿里巴巴开发的高性能、轻量级深度学习框架，专为移动设备、嵌入式系统和边缘计算平台的推理和训练而设计。该框架目前为阿里巴巴超过30个生产应用提供推理引擎支持，包括淘宝、天猫、优酷和钉钉等，覆盖70多个使用场景，从直播到搜索推荐和安全风控。&lt;/p&gt;
+&lt;h1 id=&#34;2-核心功能特性&#34;&gt;2. 核心功能特性
+&lt;/h1&gt;&lt;h2 id=&#34;21-轻量化与高效性&#34;&gt;2.1. 轻量化与高效性
+&lt;/h2&gt;&lt;p&gt;MNN具有以下轻量化特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;最小依赖&lt;/strong&gt;：核心功能无外部依赖，部署简单&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;紧凑尺寸&lt;/strong&gt;：iOS静态库约12MB（armv7+arm64），Android核心库约800KB（armv7a）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型压缩&lt;/strong&gt;：支持FP16/Int8量化，模型大小减少50-70%&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内存优化&lt;/strong&gt;：先进的内存管理和可配置内存池&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;22-通用模型支持&#34;&gt;2.2. 通用模型支持
+&lt;/h2&gt;&lt;p&gt;MNN支持多种模型格式和丰富的算子：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多种格式&lt;/strong&gt;：支持TensorFlow、Caffe、ONNX和TorchScript模型格式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全面算子&lt;/strong&gt;：178个TensorFlow算子、52个Caffe算子、163个TorchScript算子、158个ONNX算子&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态输入&lt;/strong&gt;：处理可变输入尺寸和控制流模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跨平台&lt;/strong&gt;：支持iOS 8.0+、Android 4.3+和POSIX兼容的嵌入式设备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;23-高性能计算&#34;&gt;2.3. 高性能计算
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;硬件优化&lt;/strong&gt;：针对ARM/x64 CPU的SIMD汇编代码，GPU加速通过Metal/OpenCL/Vulkan/CUDA实现&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;先进算法&lt;/strong&gt;：Winograd卷积优化，ARM v8.2 FP16支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;量化推理&lt;/strong&gt;：支持Int8/FP16/BF16精度以提升性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;3-专用引擎与能力&#34;&gt;3. 专用引擎与能力
+&lt;/h1&gt;&lt;h2 id=&#34;31-大语言模型支持&#34;&gt;3.1. 大语言模型支持
+&lt;/h2&gt;&lt;p&gt;MNN包含专门的LLM引擎，支持现代大语言模型的高效推理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LLM运行时&lt;/strong&gt;：针对Qwen、百川、LLAMA系列等大语言模型的优化推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;量化技术&lt;/strong&gt;：先进的量化技术实现内存高效部署&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;32-多模态能力&#34;&gt;3.2. 多模态能力
+&lt;/h2&gt;&lt;p&gt;MNN提供完整的多模态AI能力，扩展了基础LLM引擎以支持视觉和音频输入：&lt;/p&gt;
+&lt;h2 id=&#34;33-视觉处理能力&#34;&gt;3.3. 视觉处理能力
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;图像预处理&lt;/strong&gt;：专门的预处理管道和视觉嵌入集成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多种模型支持&lt;/strong&gt;：支持Qwen2Vision、SmolVLM等视觉-语言模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活配置&lt;/strong&gt;：可配置的图像尺寸、标准化参数和特殊标记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;34-音频处理能力&#34;&gt;3.4. 音频处理能力
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;语音理解&lt;/strong&gt;：自动语音识别（ASR）能力&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;音频生成&lt;/strong&gt;：文本转语音（TTS）功能&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时处理&lt;/strong&gt;：通过回调机制支持实时音频输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;35-扩散模型支持&#34;&gt;3.5. 扩散模型支持
+&lt;/h2&gt;&lt;p&gt;框架支持扩散模型，为图像生成和其他生成式AI应用提供基础。&lt;/p&gt;
+&lt;h1 id=&#34;4-主要使用场景&#34;&gt;4. 主要使用场景
+&lt;/h1&gt;&lt;h2 id=&#34;41-企业级生产应用&#34;&gt;4.1. 企业级生产应用
+&lt;/h2&gt;&lt;h2 id=&#34;42-移动端llm应用&#34;&gt;4.2. 移动端LLM应用
+&lt;/h2&gt;&lt;h2 id=&#34;43-android-llm聊天应用&#34;&gt;4.3. Android LLM聊天应用
+&lt;/h2&gt;&lt;p&gt;MNN提供完整的Android LLM对话应用，支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多模态交互&lt;/strong&gt;：文本、视觉和音频交互&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本地推理&lt;/strong&gt;：设备端大语言模型推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时响应&lt;/strong&gt;：优化的推理速度和用户体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;44-3d虚拟人应用&#34;&gt;4.4. 3D虚拟人应用
+&lt;/h2&gt;&lt;h2 id=&#34;45-mnn-3d-avatar应用&#34;&gt;4.5. MNN 3D Avatar应用
+&lt;/h2&gt;&lt;p&gt;这是一个展示多模态AI能力的综合应用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;语音交互&lt;/strong&gt;：语音识别和语音合成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;视觉理解&lt;/strong&gt;：图像理解和上下文感知&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时渲染&lt;/strong&gt;：3D头像的神经渲染&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行为动画&lt;/strong&gt;：基于对话内容的面部动画生成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;该应用整合了多个AI模型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ASR模型&lt;/strong&gt;：语音转文本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLM模型&lt;/strong&gt;：Qwen2.5-1.5B用于对话理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TTS模型&lt;/strong&gt;：bert-vits2-MNN用于语音合成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A2BS模型&lt;/strong&gt;：UniTalker-MNN用于行为生成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NNR模型&lt;/strong&gt;：TaoAvatar-NNR-MNN用于神经渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;46-边缘计算场景&#34;&gt;4.6. 边缘计算场景
+&lt;/h2&gt;&lt;h2 id=&#34;47-嵌入式设备&#34;&gt;4.7. 嵌入式设备
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IoT设备&lt;/strong&gt;：物联网设备上的AI推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能摄像头&lt;/strong&gt;：实时视频分析和目标识别&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;移动机器人&lt;/strong&gt;：路径规划和环境感知&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;48-实时应用&#34;&gt;4.8. 实时应用
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;直播场景&lt;/strong&gt;：实时内容审核和推荐&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全监控&lt;/strong&gt;：实时风险检测和预警&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工业检测&lt;/strong&gt;：产品质量检测和异常发现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;5-开发工具与生态&#34;&gt;5. 开发工具与生态
+&lt;/h1&gt;&lt;h2 id=&#34;51-模型转换工具&#34;&gt;5.1. 模型转换工具
+&lt;/h2&gt;&lt;p&gt;MNN提供完整的模型转换工具链，支持从主流框架转换模型到MNN格式。&lt;/p&gt;
+&lt;h2 id=&#34;52-python集成&#34;&gt;5.2. Python集成
+&lt;/h2&gt;&lt;p&gt;完整的Python绑定（PyMNN）支持研究和开发工作。&lt;/p&gt;
+&lt;h2 id=&#34;53-跨平台构建&#34;&gt;5.3. 跨平台构建
+&lt;/h2&gt;&lt;p&gt;基于CMake的构建系统支持多平台和多架构编译。&lt;/p&gt;
+&lt;h1 id=&#34;6-硬件支持矩阵&#34;&gt;6. 硬件支持矩阵
+&lt;/h1&gt;&lt;p&gt;MNN支持广泛的硬件平台：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;平台&lt;/th&gt;
+          &lt;th&gt;架构&lt;/th&gt;
+          &lt;th&gt;普通精度&lt;/th&gt;
+          &lt;th&gt;FP16&lt;/th&gt;
+          &lt;th&gt;BF16&lt;/th&gt;
+          &lt;th&gt;Int8&lt;/th&gt;
+          &lt;th&gt;状态&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;CPU&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;x86/x64-AVX512&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;⚠️&lt;/td&gt;
+          &lt;td&gt;⚠️&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;推荐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;ARMv8&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;推荐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;GPU&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;OpenCL&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Metal&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;CUDA&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;NPU&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;CoreML&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 </description>
         </item>
         

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>网络协议设计 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/1-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
+        <description>Recent content in 网络协议设计 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/1-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>网络协议设计 — 4 — 解析器设计</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-4-%E8%A7%A3%E6%9E%90%E5%99%A8%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-4-%E8%A7%A3%E6%9E%90%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
+        <description>&lt;h1 id=&#34;&#34;&gt;
+&lt;/h1&gt;</description>
+        </item>
+        <item>
+        <title>网络协议设计 — 3 — 报文设计</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%8a%a5%e6%96%87%e7%bb%93%e6%9e%84&#34; &gt;1. 报文结构&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#11-%e6%8a%a5%e6%96%87%e5%a4%b4%e9%83%a8&#34; &gt;1.1. 报文头部&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#12-%e7%b1%bb%e5%9e%8b%e5%a4%b4%e9%83%a8&#34; &gt;1.2. 类型头部&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#13-%e7%8a%b6%e6%80%81&#34; &gt;1.3. 状态&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-报文结构&#34;&gt;1. 报文结构
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;11-报文头部&#34;&gt;1.1. 报文头部
+&lt;/h2&gt;&lt;p&gt;  所有的报文都以特定的头部开始，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// 报文类型，决定了类型头部的结构。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;length&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;// 类型头部长度 + 数据长度。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;uint64_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;// 报文编号，用于通信双方标识报文。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  不一定完全就是上面这些字段，根据实际需求设计。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;12-类型头部&#34;&gt;1.2. 类型头部
+&lt;/h2&gt;&lt;p&gt;  类型头部的样式就会多一点了，解析器就是通过类型头部识别报文的类型，以此将数据部分交给对应的处理程序。一般使用一个枚举声明所有的报文类型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cm&#34;&gt;/* 控制报文 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;XXX_HELLO&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 控制类型2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// ......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cm&#34;&gt;/* 数据报文 */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 数据类型1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 数据类型2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// ......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  声明了报文类型后，就要声明每个类型的类型头部结构体了，但是具体有那些类型，就是要结合业务了，这里只作一个演示。不过一般要有一个&lt;code&gt;Hello&lt;/code&gt;报文，用于在建立连接时沟通双方的版本信息等等。尤其是协议已经更新了多个版本时，要确保通信双方的版本能够兼容。&lt;br&gt;
+  下面就以Hello报文为例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define ATTR_PACKED __attribute__ ((__packed__))
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;hello_header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;     &lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// 版本信息等等。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;capabilities&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// 变长数组，每一个数组成员就是一个bitmask，表示协议当前版本支持的功能特性。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ATTR_PACKED&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  对于Hello报文，它没有数据部分，所以拿到整个报文后，除了报文头部和类型头部的versoin字段，剩下的都是capabilities字段。&lt;br&gt;
+  对于一些特定业务可能需要connect、disconnect等操作，例如连接远程的控制设备，所以要定基于实际业务义声明对应的类型头部：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;connect_header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;// ... ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ATTR_PACKED&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;disconnect_header&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;// ... ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ATTR_PACKED&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  可以粗浅的理解为： &lt;code&gt;Hello&lt;/code&gt; -&amp;gt; &lt;code&gt;connect&lt;/code&gt; -&amp;gt; &lt;code&gt;控制报文/数据报文&lt;/code&gt; -&amp;gt; &lt;code&gt;disconnect&lt;/code&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;13-状态&#34;&gt;1.3. 状态
+&lt;/h2&gt;&lt;p&gt;所有的响应报文都要包含&lt;code&gt;状态&lt;/code&gt;字段，所以也要协议声明的重要部分：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;enum&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;xxx_success&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;xxx_inval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;xxx_timeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// ......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 根据实际的业务场景，定义状态，以反映业务请求的执行状态。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// ......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>网络协议设计 — 2 — 整体思路</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-2-%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF/</link>
+        <pubDate>Sat, 09 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-2-%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF/</guid>
+        <description>&lt;h1 id=&#34;协议设计思路&#34;&gt;协议设计思路
+&lt;/h1&gt;&lt;p&gt;协议设计的5大任务：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;读取报文&lt;/code&gt; -&amp;gt; &lt;code&gt;解析报文&lt;/code&gt; -&amp;gt; &lt;code&gt;处理数据&lt;/code&gt; -&amp;gt; &lt;code&gt;响应报文&lt;/code&gt; -&amp;gt; &lt;code&gt;发送响应报文&lt;/code&gt;;&lt;br&gt;
+该篇章梳理协议设计过程中的关键接口，但是不深入讲解代码实现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;  我们一般采用异步操作，在检测到Socket有数据可以读取时，此时解析器读取并解析报文。从读写的角度看，协议设计过程中有两套读写函数，当有网络数据可以读取时，要触发一次&lt;code&gt;解析任务&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;parser_do_read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;// 触发一次解析任务
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  在一次解析任务中，解析器需要&lt;code&gt;读取数据 -&amp;gt; 解析 -&amp;gt; 读取数据 -&amp;gt; 解析 -&amp;gt; 读取数据 -&amp;gt; 解析&lt;/code&gt;，如此多个回合，尤其是协议头的长度不固定时。此时又涉及到了“读取操作”，这个读取是真的读取数据，但是&lt;code&gt;解析报文&lt;/code&gt;和&lt;code&gt;读取数据&lt;/code&gt;，这两件事的代码不能直接干到一起的，所以解析器在设计的时候就要提供数据的&lt;strong&gt;读取&lt;/strong&gt;与&lt;strong&gt;发送&lt;/strong&gt;的回调接口，在创建解析器时传入用户定义的读写函数，在用户回调函数中完成实际的读写逻辑，阻塞还是非阻塞，直接从网络读取，还是从指定的缓存区中读取。 &lt;br&gt;
+  根据协议头记录的报文长度，读取到整个报文后，就进入数据处理环节，说白了，就是根据报文的类型将报文携带的数据交给对应的处理程序。此说来，对于上面给出的函数，它的代码就应该是：“通过多次读回调获取数据，直到获取到整个报文，然后调用对应的处理程序进行处理”，至于数据是如何处理的那就是另外的业务了，和协议没有关系了。&lt;br&gt;
+  数据处理完成后会有一个结果，我们要将结果（可能是一个状态字段，也可能携带数据）响应给对方。此时需要将处理结果打包并发送给对方，如果有多种类型的报文，不同类型的报文的头部字段以及头部长度可能有所不同，这样打包时传入的参数的类型以及数量有所不同，所以一般设计多个打包函数，但是这些打包函数不会直接发送报文，而是将打包好的报文写入到一个&lt;code&gt;发送队列&lt;/code&gt;中：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;parser_queue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt;         &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parser_pub&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                         &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt;               &lt;span class=&#34;n&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                         &lt;span class=&#34;kt&#34;&gt;uint64_t&lt;/span&gt;               &lt;span class=&#34;n&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                         &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;                  &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type_header_in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                         &lt;span class=&#34;kt&#34;&gt;uint8_t&lt;/span&gt;               &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data_in&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                         &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;                    &lt;span class=&#34;n&#34;&gt;data_len&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;；&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  通过调用上面的函数，报文就保存到了发送队列的中。那么，什么时候发送呢？每一次调用&lt;code&gt;parser_do_read()&lt;/code&gt;并成功返回后，或者数据处理完成后，就要调用发送函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;parser_do_write&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;parser&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 触发一次发送任务
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;  该函数内部要做的事情就是遍历队列，从队列中读取报文并发送。每一次调用该函数都会将队列中的报文全部发送，并修改队列为空。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>网络协议设计 — 1 — 一些基本概念</title>
+        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b5%81%e5%bc%8f%e5%8d%8f%e8%ae%ae&#34; &gt;1. 流式协议&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%a6%82%e4%bd%95%e8%a7%a3%e5%86%b3%e8%be%b9%e7%95%8c&#34; &gt;2. 如何解决边界&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e5%9b%ba%e5%ae%9a%e5%8c%85%e9%95%bf%e5%ba%a6&#34; &gt;2.1. 固定包长度&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e6%8c%87%e5%ae%9a%e5%8c%85%e7%bb%93%e6%9d%9f%e6%a0%87%e5%bf%97&#34; &gt;2.2. 指定包结束标志&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#23-%e5%b0%81%e8%a3%85%e4%b8%80%e5%a5%97%e5%8d%8f%e8%ae%ae%e5%8d%8f%e8%ae%ae%e5%a4%b4%e6%95%b0%e6%8d%ae&#34; &gt;2.3. 封装一套协议（协议头+数据）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e8%a7%a3%e5%8c%85%e4%b8%8e%e5%8c%85%e6%95%b0%e6%8d%ae%e5%a4%84%e7%90%86&#34; &gt;3. 解包与包数据处理&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4&#34; &gt;4.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5&#34; &gt;5.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-流式协议&#34;&gt;1. 流式协议
+&lt;/h1&gt;&lt;p&gt;  TCP提供一种可靠传输方式。通过序列号和包重传确认机制保证数据包的有序，不会丢包或包乱序，并且数据一定被正确发到目的地。如果我们使用UDP协议，但是不能接受少量丢包，那就要在UDP的基础去现类似TCP的有序和可靠传输机制了（例如 RTP、RUDP）。但是TCP作为&lt;code&gt;流式协议&lt;/code&gt;，或者是类似协议，它证数据有序送达，但是数据流从那里开始，从那里结束，这就不是人家的本职工作了，也就是说，我们从传输层拿到数据后，要自行处理数据的&lt;code&gt;边界&lt;/code&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;2-如何解决边界&#34;&gt;2. 如何解决边界
+&lt;/h1&gt;&lt;p&gt;关于边界问题，有两种情况：&lt;code&gt;粘包&lt;/code&gt;、&lt;code&gt;半包&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;粘包： 多个包裹连接在一起，也可能不是整数个包。&lt;/li&gt;
+&lt;li&gt;半包： 只收到一个包的一部分。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;无论是半包还是粘包问题，问题都出在&lt;code&gt;流的边界&lt;/code&gt;上，常用的解决办法有3种：&lt;code&gt;固定包长度&lt;/code&gt;、&lt;code&gt;指定包结束标志&lt;/code&gt;、&lt;code&gt;封装一套协议（协议头+数据）&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;21-固定包长度&#34;&gt;2.1. 固定包长度
+&lt;/h2&gt;&lt;p&gt;  数据包固定大小，这样虽然灵活性差，但是简单，它的缺点就是，当数据长度小于包长度时，需要使用特定字符填充，例如“\0”，必须和正常数据区分开。当数据报长度大于包长度时，需要分包，发送端需要分包，接收端需要组包。&lt;/p&gt;
+&lt;h2 id=&#34;22-指定包结束标志&#34;&gt;2.2. 指定包结束标志
+&lt;/h2&gt;&lt;p&gt;  就是指定特定的符号或者符号组合作为包结束标志，例如FTP、SMTP协议，使用“\r\n”表示结束，接受端处理包时，遇到“\r\n”就认为获取到了一个包。如果传输一些命令之类的数据，可以使用这种方式，他的缺点就是，但数据内容需要使用包结束标志时，就需要额外作转义处理了。&lt;/p&gt;
+&lt;h2 id=&#34;23-封装一套协议协议头数据&#34;&gt;2.3. 封装一套协议（协议头+数据）
+&lt;/h2&gt;&lt;p&gt;  这种最正式了，照葫芦画瓢设计一个结构体来表示协议头，这个结构体要包含表明数据类型，数据长度，等等。后面章节会以这种方式讲解代码设计。&lt;/p&gt;
+&lt;h1 id=&#34;3-解包与包数据处理&#34;&gt;3. 解包与包数据处理
+&lt;/h1&gt;&lt;p&gt;这里我们简单的理解以下，接收数据并处理的流程：&lt;/p&gt;
+&lt;p&gt;图片
+&lt;a class=&#34;link&#34; href=&#34;https://cpp1024.com/protocol/7-3-%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%A4%84%E7%90%86.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://cpp1024.com/protocol/7-3-%E8%A7%A3%E5%8C%85%E4%B8%8E%E5%A4%84%E7%90%86.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;4&#34;&gt;4.
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cpp1024.com/protocol/7-4-%E4%BB%8E-struct-%E5%88%B0-TLV%E2%80%94%E2%80%94%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%BC%94%E5%8C%96%E5%8E%86%E5%8F%B2.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://cpp1024.com/protocol/7-4-%E4%BB%8E-struct-%E5%88%B0-TLV%E2%80%94%E2%80%94%E5%8D%8F%E8%AE%AE%E7%9A%84%E6%BC%94%E5%8C%96%E5%8E%86%E5%8F%B2.html&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;5&#34;&gt;5.
+&lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cpp1024.com/protocol/7-5-%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://cpp1024.com/protocol/7-5-%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

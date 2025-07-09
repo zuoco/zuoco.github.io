@@ -1,0 +1,783 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>使用AI大模型 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/4-ai/</link>
+        <description>Recent content in 使用AI大模型 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Thu, 19 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/4-ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Kimi-Dev</title>
+        <link>https://zuoco.github.io/p/kimi-dev/</link>
+        <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/kimi-dev/</guid>
+        <description>&lt;p&gt;  6月17号，Kimi发布了一款新编程模型——Kimi-Dev，在SWE-bench Verified上，以60.4的成绩获得了开源Sota，仅次于Gemini 2.5 Pro和Claude了，模型仅有72B参数，该模型的设计中包含了两个对抗角色： BugFixer和TesWriter，其中BugFixer职业解决Bug， TesWriter专门编写测试用例，用于测试。这两个模块都是基于共同的最小框架，包含两个阶段，File Localization和Code Edits，就是先定位要修改的文件，然后修改代码中的Bug，kimi团队收集了Github上的大量Issue和Pull Request，基于这些内容学习推理与解决额问题。&lt;br&gt;
+  看起来这款新模型是一种“Agent”的思路，在底层模型不占优势的情况下，通过Agent的思路来提升模型的使用性能，这应该是Kimi团队在产品路线上的调整。自从Depseek R1发布之后， 国内AI圈子的流量都在DeepSeek和千问上，Kimi一直沉寂，实际上大模型基础建设只适合资本大户来做，对于中小企业更适合在模型之上提供服务，对于模型进行优化，提供特定场景下的创新与性能。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/kimi-dev/kimi-dev.jpg&#34;
+	width=&#34;3200&#34;
+	height=&#34;3973&#34;
+	srcset=&#34;https://zuoco.github.io/p/kimi-dev/kimi-dev_hu_5ab646d0146c6536.jpg 480w, https://zuoco.github.io/p/kimi-dev/kimi-dev_hu_f996bf5858a227cd.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;kimi-dev&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;80&#34;
+		data-flex-basis=&#34;193px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>使用Ollama本地部署Qwen3-14b</title>
+        <link>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</link>
+        <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%9c%ac%e5%9c%b0%e7%8e%af%e5%a2%83&#34; &gt;1. 本地环境&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-cuda%e5%ae%89%e8%a3%85&#34; &gt;2. CUDA安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-ai%e9%83%a8%e7%bd%b2%e6%a1%86%e6%9e%b6&#34; &gt;3. AI部署框架&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%ae%89%e8%a3%85ollama&#34; &gt;4. 安装ollama&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-ai-%e6%a8%a1%e5%9e%8b%e9%83%a8%e7%bd%b2&#34; &gt;5. AI 模型部署&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e5%89%8d%e7%ab%af%e6%8e%a5%e5%85%a5&#34; &gt;6. 前端接入&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#7-%e6%95%88%e6%9e%9c%e5%b1%95%e7%a4%ba&#34; &gt;7. 效果展示&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-本地环境&#34;&gt;1. 本地环境
+&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;1. 主机&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;主机：天钡 GEM12 Pro&lt;/li&gt;
+&lt;li&gt;CPU: AMD Ryzen 7 PRO 8845HS&lt;/li&gt;
+&lt;li&gt;内存：32GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. 系统&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;发行版：Fedora Linux 41 (Workstation Edition)&lt;/li&gt;
+&lt;li&gt;内 核：6.14.6-200.fc41.x86_64&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;3. 显卡&lt;/strong&gt;
+NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1.jpg&#34;
+	width=&#34;4000&#34;
+	height=&#34;1800&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_b253c635c49ed7d.jpg 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%98%BE%E5%8D%A1_hu_27e3b3150c6538c8.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;533px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;2-cuda安装&#34;&gt;2. CUDA安装
+&lt;/h1&gt;&lt;p&gt;登陆&lt;a class=&#34;link&#34; href=&#34;https://developer.nvidia.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nvidia developer官网&lt;/a&gt;，进入CUDA Toolkit，并选择需要的版本。根据下面网页的提示选择系统版本后，页面下方会给出对应的安装过程，根据指示安装即可，安装完成后可以在终端查看显卡信息：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ nvidia-smi 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Sun May &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; 22:05:08 &lt;span class=&#34;m&#34;&gt;2025&lt;/span&gt;       
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+-----------------------------------------------------------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; NVIDIA-SMI 575.51.03              Driver Version: 575.51.03      CUDA Version: 12.9     &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;-----------------------------------------+------------------------+----------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; GPU  Name                 Persistence-M &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Bus-Id          Disp.A &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Volatile Uncorr. ECC &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 第一行标题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Fan  Temp   Perf          Pwr:Usage/Cap &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;           Memory-Usage &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; GPU-Util  Compute M. &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 第二行标题，其中Perf表示当前性能状态（P0 ~ P15，P0 是最高性能，P12/P15 是节能模式）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;                                         &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;                        &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;               MIG M. &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 第三行标题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=========================================&lt;/span&gt;+&lt;span class=&#34;o&#34;&gt;========================&lt;/span&gt;+&lt;span class=&#34;o&#34;&gt;======================&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;  NVIDIA Graphics Device         On  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;   00000000:01:00.0  On &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;                  N/A &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 第一行数据，对应第一行标题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  0%   47C    P5             10W /  180W &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    1346MiB /  16311MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;      0%      Default &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 第二行数据，对应第二行标题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;                                         &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;                        &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;                  N/A &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 第三行数据，对应第三行标题&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+-----------------------------------------+------------------------+----------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                                                                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+-----------------------------------------------------------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; Processes:                                                                              &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  GPU   GI   CI              PID   Type   Process name                        GPU Memory &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 进程列表&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;        ID   ID                                                               Usage      &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=========================================================================================&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   N/A  N/A           &lt;span class=&#34;m&#34;&gt;36667&lt;/span&gt;      G   /usr/bin/gnome-shell                    393MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 几个使用GPU进程的进程以及使用的显存&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   N/A  N/A           &lt;span class=&#34;m&#34;&gt;37509&lt;/span&gt;    C+G   /usr/bin/ptyxis                          73MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   N/A  N/A           &lt;span class=&#34;m&#34;&gt;37546&lt;/span&gt;      G   /usr/bin/Xwayland                        38MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   N/A  N/A           &lt;span class=&#34;m&#34;&gt;37828&lt;/span&gt;      G   ...ess --variations-seed-version        207MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   N/A  N/A           &lt;span class=&#34;m&#34;&gt;38479&lt;/span&gt;    C+G   /opt/microsoft/msedge/msedge              6MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   N/A  N/A           &lt;span class=&#34;m&#34;&gt;38542&lt;/span&gt;      G   ...per --variations-seed-version        415MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;    &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;   N/A  N/A           &lt;span class=&#34;m&#34;&gt;38747&lt;/span&gt;      G   /usr/bin/clash-verge                      2MiB &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;+-----------------------------------------------------------------------------------------+
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;3-ai部署框架&#34;&gt;3. AI部署框架
+&lt;/h1&gt;&lt;p&gt;模型只是一堆参数，需要通过推理工具来运行，推理工具将模型参数加载到显存中，并依据输入的文字生成输出。&lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2AI%E6%A8%A1%E5%9E%8B%E6%A1%86%E6%9E%B6.svg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;br&gt;
+我们接下来要完成:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;大模型框架部署(推理工具)，以Ollama为例；&lt;/li&gt;
+&lt;li&gt;模型部署，以Qwen32-14B为例；&lt;/li&gt;
+&lt;li&gt;前端接入，以CherryStudio为例；&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;4-安装ollama&#34;&gt;4. 安装ollama
+&lt;/h1&gt;&lt;p&gt;参考【Ollama部署】篇。&lt;/p&gt;
+&lt;h1 id=&#34;5-ai-模型部署&#34;&gt;5. AI 模型部署
+&lt;/h1&gt;&lt;p&gt;因为Ollama服务已经启动了，所以就不必再次运行&lt;code&gt;ollama serve&lt;/code&gt;命令了。直接开run： &lt;br&gt;
+&lt;code&gt;提示：&lt;/code&gt; &lt;code&gt;ollama run qwen3:14b&lt;/code&gt;会从Ollama服务器拉取模型，国内网络可能不太行，可以使用&lt;code&gt;ollama run modelscope.cn/Qwen/Qwen3-14B-GGUF&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ollama run qwen3:14b  &lt;span class=&#34;c1&#34;&gt;# 如果模型还没有下载就会先下载模型，等待即可&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling manifest 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling a8cc1361f314: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏ 9.3 GB                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling eb4402837c78: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏ 1.5 KB                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling d18a5cc71b84: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;11&lt;/span&gt; KB                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling cff3f395ef37: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;120&lt;/span&gt; B                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pulling 78b3b822087d: 100% ▕██████████████████████████████████████████████████████████████████████████████████████████████▏  &lt;span class=&#34;m&#34;&gt;488&lt;/span&gt; B                         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;verifying sha256 digest 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;writing manifest 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;success 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Send a message &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/? &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;好了，可以开始提问了，按照惯例先Hello Word:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; 你好呀！
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;好的，用户发来“你好呀！”，我需要友好回应。首先，要保持亲切，用表情符号增加温度。然后，可以询问用户是否需要帮助，但不要显得太正式。可能用户只是打招呼，
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;所以简单回应即可，留出空间让用户继续交流。注意用词口语化，避免复杂句子。检查有没有拼写错误，确保回复自然。最后，保持开放态度，让用户知道我随时准备帮助他
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;们。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;你好呀！😊 很高兴见到你！今天过得怎么样呀？需要我帮忙做点什么吗？
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Send a message &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/? &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;help&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;此时的显存占用：&lt;code&gt;11490MiB /  16311MiB&lt;/code&gt;，看来，16G显存部署一个14B刚刚好。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--verbose参数： 显示推理过程的耗时情况&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ollama run qwen3:14b --verbose
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; 西红柿怎么吃？
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;嗯，用户问的是“西红柿怎么吃？”，这个问题看起来挺简单的，但其实可能需要更深入的思考。首先，我得考虑用户可能的背景。他们可能是刚开始接触西红柿，或者想找
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;一些新的吃法。也可能他们之前吃过，但想尝试更多不同的做法。
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......    &lt;span class=&#34;c1&#34;&gt;# 这个就略了吧&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;/think&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;西红柿（番茄）是一种非常百搭的食材，既可以直接生吃，也可以通过多种烹饪方式制作成美味佳肴。以下是常见的吃法和一些创意做法，供你参考：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;......   &lt;span class=&#34;c1&#34;&gt;# 这个也略吧&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;根据你的口味和需求，可以灵活选择以上吃法！如果需要具体菜谱或步骤，也可以告诉我哦 😊   
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 下面的输出是重点&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;total duration:       33.622874783s      &lt;span class=&#34;c1&#34;&gt;# 总耗时33.6秒&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;load duration:        9.67421ms          &lt;span class=&#34;c1&#34;&gt;# 模型加载耗时9.67ms&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; count:    &lt;span class=&#34;m&#34;&gt;12&lt;/span&gt; token&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;# 输入提示（prompt）的 token 数量，输入提示词被分词为 12 个 token。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; duration: 25.738437ms        &lt;span class=&#34;c1&#34;&gt;# 处理这 12 个 token 的提示词用了约 25.7 毫秒。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;prompt &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; rate:     466.23 tokens/s    &lt;span class=&#34;c1&#34;&gt;# 处理输入提示的速度（token/s），默认启用 enable_thinking=True（思考模式）。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; count:           &lt;span class=&#34;m&#34;&gt;1278&lt;/span&gt; token&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;s&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;      &lt;span class=&#34;c1&#34;&gt;# 模型生成输出的 token 总数。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; duration:        33.587006893s      &lt;span class=&#34;c1&#34;&gt;# 生成输出的总耗时，占总耗时的 99.9%（total duration 的 33.62 秒）。说明生成阶段是性能瓶颈。。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt; rate:            38.05 tokens/s     &lt;span class=&#34;c1&#34;&gt;# 生成输出的速度（token/s），生成速度较慢（38 tokens/s），这与 14B 参数量的 Dense 模型特性一致，&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                                         &lt;span class=&#34;c1&#34;&gt;# Qwen3 的 MoE 模型（如 Qwen3-30B-A3B）通过激活部分参数（30B 总参数，仅激活 3B）实现更高的生成速度。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;模型文件位于目录：&lt;code&gt;/usr/share/ollama&lt;/code&gt;下。&lt;/p&gt;
+&lt;h1 id=&#34;6-前端接入&#34;&gt;6. 前端接入
+&lt;/h1&gt;&lt;p&gt;Ollama默认是在11434端口提供服务。明白了这个就可以到&lt;code&gt;www.cherry-ai.com&lt;/code&gt;下载Cherry Studio了。 &lt;br&gt;
+安装好后，选择『设置』，然后在『设置』中选择『Ollama』：  &lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio.png&#34;
+	width=&#34;4096&#34;
+	height=&#34;2304&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_8f86a418231ff65.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/CherryStudio_hu_d02eb01fa3071a82.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;177&#34;
+		data-flex-basis=&#34;426px&#34;
+	
+&gt;  &lt;br&gt;
+点击『添加』，然后填写“模型ID”，“模型名称”，“分组名称”，这些信息通过&lt;code&gt;ollama list&lt;/code&gt;命令获取，注意了，这里的“模型ID”是&lt;code&gt;ollama list&lt;/code&gt;命令输出的“NAME”，而不是ID,然后点击右上角的“检测”，提示“连接成功”就OK了，至于API密钥，随便填个什么就行，最后将默认助手的模型设置为我们刚刚添加的模型就可以使用了。&lt;/p&gt;
+&lt;h1 id=&#34;7-效果展示&#34;&gt;7. 效果展示
+&lt;/h1&gt;&lt;p&gt;以上文提到的西红柿问题为例，我们让qwen3-14b自己评价自己性能表现：  &lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C.png&#34;
+	width=&#34;2002&#34;
+	height=&#34;901&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_6363b4e055c9dcf5.png 480w, https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8ollama%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2qwen3-14b/%E6%8E%A8%E7%90%86%E7%BB%93%E6%9E%9C_hu_d700ce9187156f99.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;222&#34;
+		data-flex-basis=&#34;533px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Ollama部署</title>
+        <link>https://zuoco.github.io/p/ollama%E9%83%A8%E7%BD%B2/</link>
+        <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/ollama%E9%83%A8%E7%BD%B2/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-ollama%e5%ae%89%e8%a3%85&#34; &gt;1. Ollama安装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-ollama%e5%9f%ba%e7%a1%80%e5%91%bd%e4%bb%a4&#34; &gt;2. Ollama基础命令&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-ollama安装&#34;&gt;1. Ollama安装
+&lt;/h1&gt;&lt;p&gt;登陆ollama官网，官网直接给出了一行命令，该命令可以自动下载并安装ollama：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -fsSL https://ollama.com/install.sh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;该命令会下载一个脚本，该脚本使用curl命令下载ollama安装程序，并执行安装程序，但是这个curl始终不能连接网络，所以只能手动下载安装文件：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 第一步&lt;/strong&gt;： 下载安装脚本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl -fsSL https://ollama.com/install.sh -o ollama_install.sh &lt;span class=&#34;c1&#34;&gt;# 下载安装脚本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2. 第二步&lt;/strong&gt;： 在这个安装脚本中查找“下载链接” &lt;br&gt;
+打开下载下来的脚本，搜索&lt;code&gt;https://ollama.com/download/ollama-linux-&lt;/code&gt;，找到类似如下代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;status &lt;span class=&#34;s2&#34;&gt;&amp;#34;Downloading Linux &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; bundle&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl --fail --show-error --location --progress-bar &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://ollama.com/download/ollama-linux-&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.tgz&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VER_PARAM&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$SUDO&lt;/span&gt; tar -xzf - -C &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$OLLAMA_INSTALL_DIR&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这段代码的功能就是下载ollama安装文件，从代码来看，安装文件会被解压到&lt;code&gt;$OLLAMA_INSTALL_DIR&lt;/code&gt;目录下，其实就是&lt;code&gt;usr/local/&lt;/code&gt;目录，我门先不管这些，在这段脚本前添加&lt;code&gt;echo &amp;quot;https://ollama.com/download/ollama-linux-${ARCH}.tgz${VER_PARAM}&amp;quot;&lt;/code&gt;命令，然后运行脚本，打印出来的链接就是了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. 下载安装文件&lt;/strong&gt;    &lt;br&gt;
+复制前面打印出来的链接，直接到浏览器中下载，并将下载好的压缩包保存到和安装脚本相同目录下。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ls -lh &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep ollama
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-rwxrwxrwx. &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; zcli zcli  13K  5月18日 21:11 ollama_install.sh      &lt;span class=&#34;c1&#34;&gt;# 安装脚本&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;-rw-r--r--. &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; zcli zcli 1.6G  5月18日 21:04 ollama-linux-amd64.tgz &lt;span class=&#34;c1&#34;&gt;# 安装文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;4. 修改安装脚本&lt;/strong&gt;  &lt;br&gt;
+定位到第二步中给出的代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;status &lt;span class=&#34;s2&#34;&gt;&amp;#34;Downloading Linux &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; bundle&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;curl --fail --show-error --location --progress-bar &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://ollama.com/download/ollama-linux-&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;.tgz&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;VER_PARAM&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nv&#34;&gt;$SUDO&lt;/span&gt; tar -xzf - -C &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$OLLAMA_INSTALL_DIR&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;修改为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 也就是不curl了，直接将已经下载好的安装文件解压到指定目录。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;status &lt;span class=&#34;s2&#34;&gt;&amp;#34;Downloading Linux &lt;/span&gt;&lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;ARCH&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt; bundle&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;$SUDO&lt;/span&gt; tar -xzf ollama-linux-amd64.tgz -C &lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$OLLAMA_INSTALL_DIR&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 解压到指定目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;5. 执行安装脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ ./ollama_install.sh 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Cleaning up old version at /usr/local/lib/ollama
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;sudo&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; zcli 的密码：
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Installing ollama to /usr/local
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Downloading Linux amd64 bundle 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Creating ollama user...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Adding ollama user to render group...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Adding ollama user to video group...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Adding current user to ollama group...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Creating ollama systemd service...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; Enabling and starting ollama service...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Created symlink &lt;span class=&#34;s1&#34;&gt;&amp;#39;/etc/systemd/system/default.target.wants/ollama.service&amp;#39;&lt;/span&gt; → &lt;span class=&#34;s1&#34;&gt;&amp;#39;/etc/systemd/system/ollama.service&amp;#39;&lt;/span&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; NVIDIA GPU installed.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;OK，安装好了，在Linux上，这个ollama安装为一个Linux服务，并且安装后就自动运行起来了，如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;zcli@fedora:~$ sudo systemctl status ollama.service 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;● ollama.service - Ollama Service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Loaded: loaded &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;/etc/systemd/system/ollama.service&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; enabled&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; preset: disabled&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    Drop-In: /usr/lib/systemd/system/service.d
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             └─10-timeout-abort.conf, 50-keep-warm.conf
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Active: active &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;running&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; since Sun 2025-05-18 23:03:56 CST&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 1min 31s ago
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; Invocation: 2dbc0a03db1c4a08a17829fa4039bf63
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   Main PID: &lt;span class=&#34;m&#34;&gt;43831&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;ollama&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      Tasks: &lt;span class=&#34;m&#34;&gt;13&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;limit: 37474&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     Memory: 24.5M &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;peak: 40.9M&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        CPU: 248ms
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     CGroup: /system.slice/ollama.service
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;             └─43831 /usr/local/bin/ollama serve
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;2-ollama基础命令&#34;&gt;2. Ollama基础命令
+&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;下载模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 但是ollama默认下载的可能是量化版本，且国内访问会很慢，可以从modelscope下载  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama pull &amp;lt;模型名&amp;gt;:&amp;lt;版本号&amp;gt; modelscope.cn/Qwen/&amp;lt;模型名称&amp;gt;:&amp;lt;版本号&amp;gt; &lt;span class=&#34;c1&#34;&gt;# 国内下载&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;运行模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run &amp;lt;模型名称&amp;gt;:&amp;lt;版本号&amp;gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;查看推理过程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama run &amp;lt;模型名&amp;gt; --verbose   &lt;span class=&#34;c1&#34;&gt;# 显示推理过程的耗时情况&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;列出所有模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama list  
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;查看模型参数信息&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama show &amp;lt;模型名称&amp;gt;   
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;删除模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama rm &amp;lt;模型名称&amp;gt;   
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;查看正在运行的模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama ps   
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;停止运行中的模型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ollama stop &amp;lt;模型名称&amp;gt;   
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>Qwen3发布并开源</title>
+        <link>https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/</link>
+        <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3.png&#34;
+	width=&#34;1080&#34;
+	height=&#34;2937&#34;
+	srcset=&#34;https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3_hu_be931c0351d8b0d9.png 480w, https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3_hu_3b73eabb2858223.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;36&#34;
+		data-flex-basis=&#34;88px&#34;
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>MNN</title>
+        <link>https://zuoco.github.io/p/mnn/</link>
+        <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/mnn/</guid>
+        <description>&lt;img src="https://zuoco.github.io/p/mnn/image.png" alt="Featured image of post MNN" /&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%a1%b9%e7%9b%ae%e6%a6%82%e8%bf%b0&#34; &gt;1. 项目概述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd%e7%89%b9%e6%80%a7&#34; &gt;2. 核心功能特性&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e8%bd%bb%e9%87%8f%e5%8c%96%e4%b8%8e%e9%ab%98%e6%95%88%e6%80%a7&#34; &gt;2.1. 轻量化与高效性&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e9%80%9a%e7%94%a8%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;2.2. 通用模型支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#23-%e9%ab%98%e6%80%a7%e8%83%bd%e8%ae%a1%e7%ae%97&#34; &gt;2.3. 高性能计算&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e4%b8%93%e7%94%a8%e5%bc%95%e6%93%8e%e4%b8%8e%e8%83%bd%e5%8a%9b&#34; &gt;3. 专用引擎与能力&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-%e5%a4%a7%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;3.1. 大语言模型支持&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#32-%e5%a4%9a%e6%a8%a1%e6%80%81%e8%83%bd%e5%8a%9b&#34; &gt;3.2. 多模态能力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#33-%e8%a7%86%e8%a7%89%e5%a4%84%e7%90%86%e8%83%bd%e5%8a%9b&#34; &gt;3.3. 视觉处理能力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#34-%e9%9f%b3%e9%a2%91%e5%a4%84%e7%90%86%e8%83%bd%e5%8a%9b&#34; &gt;3.4. 音频处理能力&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#35-%e6%89%a9%e6%95%a3%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;3.5. 扩散模型支持&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e4%b8%bb%e8%a6%81%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af&#34; &gt;4. 主要使用场景&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-%e4%bc%81%e4%b8%9a%e7%ba%a7%e7%94%9f%e4%ba%a7%e5%ba%94%e7%94%a8&#34; &gt;4.1. 企业级生产应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-%e7%a7%bb%e5%8a%a8%e7%ab%afllm%e5%ba%94%e7%94%a8&#34; &gt;4.2. 移动端LLM应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#43-android-llm%e8%81%8a%e5%a4%a9%e5%ba%94%e7%94%a8&#34; &gt;4.3. Android LLM聊天应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#44-3d%e8%99%9a%e6%8b%9f%e4%ba%ba%e5%ba%94%e7%94%a8&#34; &gt;4.4. 3D虚拟人应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#45-mnn-3d-avatar%e5%ba%94%e7%94%a8&#34; &gt;4.5. MNN 3D Avatar应用&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#46-%e8%be%b9%e7%bc%98%e8%ae%a1%e7%ae%97%e5%9c%ba%e6%99%af&#34; &gt;4.6. 边缘计算场景&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#47-%e5%b5%8c%e5%85%a5%e5%bc%8f%e8%ae%be%e5%a4%87&#34; &gt;4.7. 嵌入式设备&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#48-%e5%ae%9e%e6%97%b6%e5%ba%94%e7%94%a8&#34; &gt;4.8. 实时应用&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7%e4%b8%8e%e7%94%9f%e6%80%81&#34; &gt;5. 开发工具与生态&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#51-%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e5%b7%a5%e5%85%b7&#34; &gt;5.1. 模型转换工具&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#52-python%e9%9b%86%e6%88%90&#34; &gt;5.2. Python集成&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#53-%e8%b7%a8%e5%b9%b3%e5%8f%b0%e6%9e%84%e5%bb%ba&#34; &gt;5.3. 跨平台构建&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e7%a1%ac%e4%bb%b6%e6%94%af%e6%8c%81%e7%9f%a9%e9%98%b5&#34; &gt;6. 硬件支持矩阵&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-项目概述&#34;&gt;1. 项目概述
+&lt;/h1&gt;&lt;p&gt;MNN（Mobile Neural Network）是阿里巴巴开发的高性能、轻量级深度学习框架，专为移动设备、嵌入式系统和边缘计算平台的推理和训练而设计。该框架目前为阿里巴巴超过30个生产应用提供推理引擎支持，包括淘宝、天猫、优酷和钉钉等，覆盖70多个使用场景，从直播到搜索推荐和安全风控。&lt;/p&gt;
+&lt;h1 id=&#34;2-核心功能特性&#34;&gt;2. 核心功能特性
+&lt;/h1&gt;&lt;h2 id=&#34;21-轻量化与高效性&#34;&gt;2.1. 轻量化与高效性
+&lt;/h2&gt;&lt;p&gt;MNN具有以下轻量化特点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;最小依赖&lt;/strong&gt;：核心功能无外部依赖，部署简单&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;紧凑尺寸&lt;/strong&gt;：iOS静态库约12MB（armv7+arm64），Android核心库约800KB（armv7a）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型压缩&lt;/strong&gt;：支持FP16/Int8量化，模型大小减少50-70%&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;内存优化&lt;/strong&gt;：先进的内存管理和可配置内存池&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;22-通用模型支持&#34;&gt;2.2. 通用模型支持
+&lt;/h2&gt;&lt;p&gt;MNN支持多种模型格式和丰富的算子：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多种格式&lt;/strong&gt;：支持TensorFlow、Caffe、ONNX和TorchScript模型格式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;全面算子&lt;/strong&gt;：178个TensorFlow算子、52个Caffe算子、163个TorchScript算子、158个ONNX算子&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;动态输入&lt;/strong&gt;：处理可变输入尺寸和控制流模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跨平台&lt;/strong&gt;：支持iOS 8.0+、Android 4.3+和POSIX兼容的嵌入式设备&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;23-高性能计算&#34;&gt;2.3. 高性能计算
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;硬件优化&lt;/strong&gt;：针对ARM/x64 CPU的SIMD汇编代码，GPU加速通过Metal/OpenCL/Vulkan/CUDA实现&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;先进算法&lt;/strong&gt;：Winograd卷积优化，ARM v8.2 FP16支持&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;量化推理&lt;/strong&gt;：支持Int8/FP16/BF16精度以提升性能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;3-专用引擎与能力&#34;&gt;3. 专用引擎与能力
+&lt;/h1&gt;&lt;h2 id=&#34;31-大语言模型支持&#34;&gt;3.1. 大语言模型支持
+&lt;/h2&gt;&lt;p&gt;MNN包含专门的LLM引擎，支持现代大语言模型的高效推理：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;LLM运行时&lt;/strong&gt;：针对Qwen、百川、LLAMA系列等大语言模型的优化推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;量化技术&lt;/strong&gt;：先进的量化技术实现内存高效部署&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;32-多模态能力&#34;&gt;3.2. 多模态能力
+&lt;/h2&gt;&lt;p&gt;MNN提供完整的多模态AI能力，扩展了基础LLM引擎以支持视觉和音频输入：&lt;/p&gt;
+&lt;h2 id=&#34;33-视觉处理能力&#34;&gt;3.3. 视觉处理能力
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;图像预处理&lt;/strong&gt;：专门的预处理管道和视觉嵌入集成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;多种模型支持&lt;/strong&gt;：支持Qwen2Vision、SmolVLM等视觉-语言模型&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活配置&lt;/strong&gt;：可配置的图像尺寸、标准化参数和特殊标记&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;34-音频处理能力&#34;&gt;3.4. 音频处理能力
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;语音理解&lt;/strong&gt;：自动语音识别（ASR）能力&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;音频生成&lt;/strong&gt;：文本转语音（TTS）功能&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时处理&lt;/strong&gt;：通过回调机制支持实时音频输出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;35-扩散模型支持&#34;&gt;3.5. 扩散模型支持
+&lt;/h2&gt;&lt;p&gt;框架支持扩散模型，为图像生成和其他生成式AI应用提供基础。&lt;/p&gt;
+&lt;h1 id=&#34;4-主要使用场景&#34;&gt;4. 主要使用场景
+&lt;/h1&gt;&lt;h2 id=&#34;41-企业级生产应用&#34;&gt;4.1. 企业级生产应用
+&lt;/h2&gt;&lt;h2 id=&#34;42-移动端llm应用&#34;&gt;4.2. 移动端LLM应用
+&lt;/h2&gt;&lt;h2 id=&#34;43-android-llm聊天应用&#34;&gt;4.3. Android LLM聊天应用
+&lt;/h2&gt;&lt;p&gt;MNN提供完整的Android LLM对话应用，支持：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多模态交互&lt;/strong&gt;：文本、视觉和音频交互&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;本地推理&lt;/strong&gt;：设备端大语言模型推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时响应&lt;/strong&gt;：优化的推理速度和用户体验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;44-3d虚拟人应用&#34;&gt;4.4. 3D虚拟人应用
+&lt;/h2&gt;&lt;h2 id=&#34;45-mnn-3d-avatar应用&#34;&gt;4.5. MNN 3D Avatar应用
+&lt;/h2&gt;&lt;p&gt;这是一个展示多模态AI能力的综合应用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;语音交互&lt;/strong&gt;：语音识别和语音合成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;视觉理解&lt;/strong&gt;：图像理解和上下文感知&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;实时渲染&lt;/strong&gt;：3D头像的神经渲染&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;行为动画&lt;/strong&gt;：基于对话内容的面部动画生成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;该应用整合了多个AI模型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ASR模型&lt;/strong&gt;：语音转文本&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLM模型&lt;/strong&gt;：Qwen2.5-1.5B用于对话理解&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TTS模型&lt;/strong&gt;：bert-vits2-MNN用于语音合成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;A2BS模型&lt;/strong&gt;：UniTalker-MNN用于行为生成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NNR模型&lt;/strong&gt;：TaoAvatar-NNR-MNN用于神经渲染&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;46-边缘计算场景&#34;&gt;4.6. 边缘计算场景
+&lt;/h2&gt;&lt;h2 id=&#34;47-嵌入式设备&#34;&gt;4.7. 嵌入式设备
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;IoT设备&lt;/strong&gt;：物联网设备上的AI推理&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;智能摄像头&lt;/strong&gt;：实时视频分析和目标识别&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;移动机器人&lt;/strong&gt;：路径规划和环境感知&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;48-实时应用&#34;&gt;4.8. 实时应用
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;直播场景&lt;/strong&gt;：实时内容审核和推荐&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全监控&lt;/strong&gt;：实时风险检测和预警&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;工业检测&lt;/strong&gt;：产品质量检测和异常发现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;5-开发工具与生态&#34;&gt;5. 开发工具与生态
+&lt;/h1&gt;&lt;h2 id=&#34;51-模型转换工具&#34;&gt;5.1. 模型转换工具
+&lt;/h2&gt;&lt;p&gt;MNN提供完整的模型转换工具链，支持从主流框架转换模型到MNN格式。&lt;/p&gt;
+&lt;h2 id=&#34;52-python集成&#34;&gt;5.2. Python集成
+&lt;/h2&gt;&lt;p&gt;完整的Python绑定（PyMNN）支持研究和开发工作。&lt;/p&gt;
+&lt;h2 id=&#34;53-跨平台构建&#34;&gt;5.3. 跨平台构建
+&lt;/h2&gt;&lt;p&gt;基于CMake的构建系统支持多平台和多架构编译。&lt;/p&gt;
+&lt;h1 id=&#34;6-硬件支持矩阵&#34;&gt;6. 硬件支持矩阵
+&lt;/h1&gt;&lt;p&gt;MNN支持广泛的硬件平台：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;平台&lt;/th&gt;
+          &lt;th&gt;架构&lt;/th&gt;
+          &lt;th&gt;普通精度&lt;/th&gt;
+          &lt;th&gt;FP16&lt;/th&gt;
+          &lt;th&gt;BF16&lt;/th&gt;
+          &lt;th&gt;Int8&lt;/th&gt;
+          &lt;th&gt;状态&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;CPU&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;x86/x64-AVX512&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;⚠️&lt;/td&gt;
+          &lt;td&gt;⚠️&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;推荐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;ARMv8&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;推荐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;GPU&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;OpenCL&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;Metal&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;/td&gt;
+          &lt;td&gt;CUDA&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;NPU&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;CoreML&lt;/td&gt;
+          &lt;td&gt;✅&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;❌&lt;/td&gt;
+          &lt;td&gt;支持&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
