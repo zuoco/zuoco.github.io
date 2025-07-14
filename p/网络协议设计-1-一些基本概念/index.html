@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 流式协议 2. 如何解决边界 2.1. 固定包长度 2.2. 指定包结束标志 2.3. 封装一套协议（协议头+数据） 3. 解包与包数据处理 4. 5. 1. 流式协议 TCP提供一种可靠传输方式。通过序列号和包重传确认机制保证数据包的有序，不会丢包或包乱序，并且数据一定被正确发到目的地。如果我们使用UDP协议，但是不能接受少量丢包，那就要在UDP的基础去现类似TCP的有序和可靠传输机制了（例如 RTP、RUDP）。但是TCP作为流式协议，或者是类似协议，它证数据有序送达，但是数据流从那里开始，从那里结束，这就不是人家的本职工作了，也就是说，我们从传输层拿到数据后，要自行处理数据的边界。\n">
 <title>网络协议设计 — 1 — 一些基本概念</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/'>
+<link rel='canonical' href='http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/'>
 
 <link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="网络协议设计 — 1 — 一些基本概念">
 <meta property='og:description' content=" 1. 流式协议 2. 如何解决边界 2.1. 固定包长度 2.2. 指定包结束标志 2.3. 封装一套协议（协议头+数据） 3. 解包与包数据处理 4. 5. 1. 流式协议 TCP提供一种可靠传输方式。通过序列号和包重传确认机制保证数据包的有序，不会丢包或包乱序，并且数据一定被正确发到目的地。如果我们使用UDP协议，但是不能接受少量丢包，那就要在UDP的基础去现类似TCP的有序和可靠传输机制了（例如 RTP、RUDP）。但是TCP作为流式协议，或者是类似协议，它证数据有序送达，但是数据流从那里开始，从那里结束，这就不是人家的本职工作了，也就是说，我们从传输层拿到数据后，要自行处理数据的边界。\n">
-<meta property='og:url' content='https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/'>
+<meta property='og:url' content='http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="网络协议设计 — 1 — 一些基本概念">
@@ -642,7 +642,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.bf3198480a0303df03104b790647a2d905c90402cc9a3ee09c67a5e3ab42fd89.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

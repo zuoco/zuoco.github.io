@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>C&#43;&#43; STL on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/c&#43;&#43;-stl/</link>
+        <link>http://localhost:1313/categories/c&#43;&#43;-stl/</link>
         <description>Recent content in C&#43;&#43; STL on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 12 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/c++-stl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 12 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/c++-stl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>容器适配器之 queue</title>
-        <link>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</link>
+        <link>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</link>
         <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</guid>
+        <guid>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</guid>
         <description></description>
         </item>
         <item>
         <title>容器适配器之 stack</title>
-        <link>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</link>
+        <link>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</link>
         <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</guid>
+        <guid>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</guid>
         <description></description>
         </item>
         <item>
         <title>顺序容器之 —— deque</title>
-        <link>https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</link>
+        <link>http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</link>
         <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</guid>
+        <guid>http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-deque&#34; &gt;1. deque&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%bf%ad%e4%bb%a3%e5%99%a8&#34; &gt;2. 迭代器&lt;/a&gt;&lt;/li&gt;
@@ -70,7 +70,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以看到，deque容器底层使用分块存储，由多个相等大小的内存块组成，单是内存块之间不一定是连续的，可以位于在内存的不同区域。使用一个映射表（可能是vector）来保存各个块的起始地址。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E5%86%85%E5%AD%98%E5%9D%97.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E5%86%85%E5%AD%98%E5%9D%97.svg&#34;
 	
 	
 	
@@ -110,7 +110,7 @@
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;例如插入元素：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0.svg&#34;
 	
 	
 	
@@ -167,10 +167,10 @@
         </item>
         <item>
         <title>无序关联容器（哈希容器）</title>
-        <link>https://zuoco.github.io/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</link>
+        <link>http://localhost:1313/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</link>
         <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</guid>
+        <guid>http://localhost:1313/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%93%88%e5%b8%8c%e5%ae%b9%e5%99%a8&#34; &gt;1. 哈希容器&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%ba%95%e5%b1%82%e5%ae%9e%e7%8e%b0&#34; &gt;2. 底层实现&lt;/a&gt;&lt;/li&gt;
@@ -188,7 +188,7 @@
 &lt;p&gt;和关联式容器相比，无序容器擅长通过指定键查找对应的值（平均时间复杂度为 O(1)）；但是当使用迭代器遍历容器中存储的元素时，执行效率就不如关联式容器了。&lt;/p&gt;
 &lt;h1 id=&#34;2-底层实现&#34;&gt;2. 底层实现
 &lt;/h1&gt;&lt;p&gt;首先，我们要有一个vector数组，但是这个数组不是用来存储元素的，而是用来存储链表头指针的，这些链表被称为“&lt;code&gt;桶（bucket）&lt;/code&gt;”，哈希值相同的元素/key被放在同一个桶中，这就是所谓的链地址法。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/hash%E5%AE%B9%E5%99%A8.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/hash%E5%AE%B9%E5%99%A8.svg&#34;
 	
 	
 	
@@ -257,10 +257,10 @@
         </item>
         <item>
         <title>序列容器之 list 和 forward_list</title>
-        <link>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</link>
+        <link>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</link>
         <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</guid>
+        <guid>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</guid>
         <description>&lt;h1 id=&#34;1-stdlist&#34;&gt;1. std::list
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.cppreference.com/w/cpp/container/list.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;std::list&lt;/a&gt;，底层是双向链表形式的。&lt;/p&gt;
@@ -362,10 +362,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>有序关联容器之 multimap和multiset</title>
-        <link>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</link>
+        <link>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</link>
         <pubDate>Sat, 12 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</guid>
+        <guid>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-map%e5%92%8cmultimap%e7%9a%84%e5%8c%ba%e5%88%ab&#34; &gt;1. map和multimap的区别&lt;/a&gt;
 &lt;ul&gt;
@@ -422,10 +422,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>标准库基本组成</title>
-        <link>https://zuoco.github.io/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</link>
+        <link>http://localhost:1313/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</link>
         <pubDate>Sat, 10 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</guid>
+        <guid>http://localhost:1313/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%9f%ba%e6%9c%ac%e7%bb%84%e6%88%90&#34; &gt;1. 基本组成&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%a4%b4%e6%96%87%e4%bb%b6&#34; &gt;2. 头文件&lt;/a&gt;&lt;/li&gt;
@@ -503,10 +503,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>可调用对象之 bind</title>
-        <link>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</link>
+        <link>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</link>
         <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</guid>
+        <guid>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%8f%af%e8%b0%83%e7%94%a8%e5%af%b9%e8%b1%a1&#34; &gt;1. 可调用对象&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-bind&#34; &gt;2. bind&lt;/a&gt;
@@ -780,10 +780,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>可调用对象之 Lambda</title>
-        <link>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</link>
+        <link>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</link>
         <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</guid>
+        <guid>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</guid>
         <description>&lt;p&gt;参考书籍： 《C++ Lambda Story》&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-lambdab%e8%a1%a8%e8%be%be%e5%bc%8f%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86&#34; &gt;1. lambdab表达式组成部分&lt;/a&gt;&lt;/li&gt;
@@ -1974,10 +1974,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>泛型算法</title>
-        <link>https://zuoco.github.io/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</link>
+        <link>http://localhost:1313/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</link>
         <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</guid>
+        <guid>http://localhost:1313/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b3%9b%e5%9e%8b%e7%ae%97%e6%b3%95&#34; &gt;1. 泛型算法&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%85%b8%e5%9e%8b%e6%b3%9b%e5%9e%8b%e7%ae%97%e6%b3%95&#34; &gt;2. 典型泛型算法&lt;/a&gt;&lt;/li&gt;
@@ -2436,10 +2436,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>STL 容器 —— 总结</title>
-        <link>https://zuoco.github.io/p/stl-%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</link>
+        <link>http://localhost:1313/p/stl-%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</link>
         <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/stl-%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</guid>
+        <guid>http://localhost:1313/p/stl-%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%bb%80%e4%b9%88%e6%98%af%e5%ae%b9%e5%99%a8&#34; &gt;1. 什么是容器&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%ae%b9%e5%99%a8%e5%88%86%e7%b1%bb&#34; &gt;2. 容器分类&lt;/a&gt;
@@ -2626,10 +2626,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>迭代器</title>
-        <link>https://zuoco.github.io/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
+        <link>http://localhost:1313/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
         <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
+        <guid>http://localhost:1313/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%bf%ad%e4%bb%a3%e5%99%a8%e5%88%86%e7%b1%bb&#34; &gt;1. 迭代器分类&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%b8%b8%e8%a7%84%e8%bf%ad%e4%bb%a3%e5%99%a8&#34; &gt;2. 常规迭代器&lt;/a&gt;
@@ -3299,7 +3299,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;33-反向迭代器&#34;&gt;3.3. 反向迭代器
 &lt;/h2&gt;&lt;p&gt;  就是rbegin和rend。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/%E8%BF%AD%E4%BB%A3%E5%99%A8.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/%E8%BF%AD%E4%BB%A3%E5%99%A8.svg&#34;
 	
 	
 	
@@ -3446,10 +3446,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>有序关联容器之 map</title>
-        <link>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</link>
+        <link>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</link>
         <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</guid>
+        <guid>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-stdpair&#34; &gt;1. std::pair&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-map&#34; &gt;2. map&lt;/a&gt;&lt;/li&gt;
@@ -3499,7 +3499,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.cppreference.com/w/cpp/container/map.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;std:map&lt;/a&gt;，基于红黑树，树的每一个节点都是一个std::pair，节点的&lt;code&gt;pair.first&lt;/code&gt;的类型必须支持“&amp;lt;”运算，或者自定义比较的比较逻辑，这和vector类似。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/map.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/map.svg&#34;
 	
 	
 	
@@ -3696,10 +3696,10 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
         </item>
         <item>
         <title>有序关联容器之 Set</title>
-        <link>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</link>
+        <link>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</link>
         <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</guid>
+        <guid>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%88%9d%e6%ad%a5%e8%ae%a4%e8%af%86&#34; &gt;1. 初步认识&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%af%94%e8%be%83%e5%87%bd%e6%95%b0&#34; &gt;2. 自定义比较函数&lt;/a&gt;&lt;/li&gt;
@@ -4069,10 +4069,10 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
         </item>
         <item>
         <title>序列容器之  vector</title>
-        <link>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</link>
+        <link>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</link>
         <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</guid>
+        <guid>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-vector&#34; &gt;1. vector&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%bd%bf%e7%94%a8&#34; &gt;2. 使用&lt;/a&gt;
@@ -4096,7 +4096,7 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
 &lt;h1 id=&#34;1-vector&#34;&gt;1. vector
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.cppreference.com/w/cpp/container/vector.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;std::vector&lt;/a&gt;，动态数组，维护一块连续的存储空间，容量可动态改变。    &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
 	
 	
 	
@@ -4275,10 +4275,10 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
         </item>
         <item>
         <title>序列容器之 Array</title>
-        <link>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</link>
+        <link>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</link>
         <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</guid>
+        <guid>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-array&#34; &gt;1. Array&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e7%94%a8%e6%b3%95&#34; &gt;2. 用法&lt;/a&gt;

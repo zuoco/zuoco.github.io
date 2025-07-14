@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/</link>
+        <link>http://localhost:1313/post/</link>
         <description>Recent content in Posts on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>CAM</title>
-        <link>https://zuoco.github.io/p/cam/</link>
+        <link>http://localhost:1313/p/cam/</link>
         <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/cam/</guid>
+        <guid>http://localhost:1313/p/cam/</guid>
         <description>&lt;p&gt;  在机械工程领域，CAM（Computer Aided Manufacturing，计算机辅助制造） 指利用计算机技术对制造过程进行规划、管理和控制的系统化方法。是 CAD（计算机辅助设计）的自然延伸。它接收 CAD 软件生成的零件或产品的几何模型（通常是 3D 模型）作为输入。&lt;br&gt;
 但是这个概念太大了，我们接触更的是&lt;code&gt;数控加工系统&lt;/code&gt;，。&lt;/p&gt;
 </description>

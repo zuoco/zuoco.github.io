@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>网络协议设计 on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
         <description>Recent content in 网络协议设计 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>网络协议设计 — 4 — 解析器设计</title>
-        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-4-%E8%A7%A3%E6%9E%90%E5%99%A8%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-4-%E8%A7%A3%E6%9E%90%E5%99%A8%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-4-%E8%A7%A3%E6%9E%90%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-4-%E8%A7%A3%E6%9E%90%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;h1 id=&#34;&#34;&gt;
 &lt;/h1&gt;</description>
         </item>
         <item>
         <title>网络协议设计 — 3 — 报文设计</title>
-        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%8a%a5%e6%96%87%e7%bb%93%e6%9e%84&#34; &gt;1. 报文结构&lt;/a&gt;
 &lt;ul&gt;
@@ -32,7 +32,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-报文结构&#34;&gt;1. 报文结构
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.svg&#34;
 	
 	
 	
@@ -163,10 +163,10 @@
         </item>
         <item>
         <title>网络协议设计 — 2 — 整体思路</title>
-        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-2-%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF/</link>
+        <link>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-2-%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF/</link>
         <pubDate>Sat, 09 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-2-%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF/</guid>
+        <guid>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-2-%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF/</guid>
         <description>&lt;h1 id=&#34;协议设计思路&#34;&gt;协议设计思路
 &lt;/h1&gt;&lt;p&gt;协议设计的5大任务：&lt;/p&gt;
 &lt;ul&gt;
@@ -218,10 +218,10 @@
         </item>
         <item>
         <title>网络协议设计 — 1 — 一些基本概念</title>
-        <link>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
+        <link>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</link>
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
+        <guid>http://localhost:1313/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-1-%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b5%81%e5%bc%8f%e5%8d%8f%e8%ae%ae&#34; &gt;1. 流式协议&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%a6%82%e4%bd%95%e8%a7%a3%e5%86%b3%e8%be%b9%e7%95%8c&#34; &gt;2. 如何解决边界&lt;/a&gt;
