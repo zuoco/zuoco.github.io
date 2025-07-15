@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 项目构建系统 2. 项目目录结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 deskflow-1.21.2/ ├── cmake/ ├── CMakeLists.txt ├── cspell.json ├── deploy/ ├── doc/ ├── src/ ├── LICENSE ├── LICENSES/ ├── README.md ├── REUSE.toml ├── SECURITY.md ├── sonar-project.properties ├── vcpkg-configuration.json └── vcpkg.json 下面大概介绍一下主要文件的用途：\n">
-<title>第二节 - DeskFlow工程源码整体认识</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 抽象基类 2. 平台实现 1. 抽象基类 需要对计算机网络有一点了解，实际就是封装了常用的网络接口而已。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 class IArchNetwork : public IInterface { public: // 地址族，需要在创建Socket时指定 enum EAddressFamily { kUNKNOWN, kINET, // IPV4 kINET6, // IPV6 }; // 协议类型 enum ESocketType { kDGRAM, // UDP kSTREAM // TCP }; // 异步I/O —— poll事件 enum { kPOLLIN = 1, // Socket 接收缓存区有数据可读。 kPOLLOUT = 2, // Socket 发送缓存区为空，可以发送数据。 kPOLLERR = 4, // 错误状态 kPOLLNVAL = 8 // 无效socket }; // 异步I/O ——\u3000用于套接字事件轮询，监控多个套接字的状态变化。 class PollEntry { public: ArchSocket m_socket; // 要监听的套接字 unsigned short m_events; // 要监听的事件 unsigned short m_revents; // 实际监听到的事件 }; // 下面都是socket操作 virtual ArchSocket newSocket(EAddressFamily, ESocketType) = 0; // 创建socket virtual ArchSocket copySocket(ArchSocket s) = 0; virtual void closeSocket(ArchSocket s) = 0; // 关闭sokcet virtual void closeSocketForRead(ArchSocket s) = 0; // 关闭读通道 virtual void closeSocketForWrite(ArchSocket s) = 0; // 关闭写通道 // 连接网络 virtual void bindSocket(ArchSocket s, ArchNetAddress addr) = 0; // 绑定地址，服务端 virtual void listenOnSocket(ArchSocket s) = 0; // 监听客户端连接，服务端 virtual ArchSocket acceptSocket(ArchSocket s, ArchNetAddress *addr) = 0; // 接收客户端连接，服务端 virtual bool connectSocket(ArchSocket s, ArchNetAddress addr) = 0; // 向服务端发起连接，客户端 // 异步I/O virtual int pollSocket(PollEntry[], int num, double timeout) = 0; // 使用poll轮训socket virtual void unblockPollSocket(ArchThread thread) = 0; // 解除轮询阻塞 virtual size_t readSocket(ArchSocket s, void *buf, size_t len) = 0; // 读socket virtual size_t writeSocket(ArchSocket s, const void *buf, size_t len) = 0; // 写socket virtual void throwErrorOnSocket(ArchSocket s) = 0; virtual bool setNoDelayOnSocket(ArchSocket, bool noDelay) = 0; // 启用/禁用Nagle算法 virtual bool setReuseAddrOnSocket(ArchSocket, bool reuse) = 0; // 地址重用选项 virtual std::string getHostName() = 0; virtual ArchNetAddress newAnyAddr(EAddressFamily) = 0; // 创建通配地址 virtual ArchNetAddress copyAddr(ArchNetAddress) = 0; virtual std::vector&lt;ArchNetAddress&gt; nameToAddr(const std::string &amp;) = 0; // 域名解析 virtual void closeAddr(ArchNetAddress) = 0; virtual std::string addrToName(ArchNetAddress) = 0; virtual std::string addrToString(ArchNetAddress) = 0; virtual EAddressFamily getAddrFamily(ArchNetAddress) = 0; virtual void setAddrPort(ArchNetAddress, int port) = 0; // 设置端口 virtual int getAddrPort(ArchNetAddress) = 0; virtual bool isEqualAddr(ArchNetAddress, ArchNetAddress) = 0; // 地址比较 virtual bool isAnyAddr(ArchNetAddress addr) = 0; virtual void init() = 0; }; 2. 平台实现 提供了Unix和Windows平台上的实现，但是这里就不讲了，就是将平台的系统调用封装了一下。\nWindows\n">
+<title>02 跨平台抽象层之 —— 网络模块</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/'>
+<link rel='canonical' href='https://zuoco.github.io/p/02-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="第二节 - DeskFlow工程源码整体认识">
-<meta property='og:description' content="1. 项目构建系统 2. 项目目录结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 deskflow-1.21.2/ ├── cmake/ ├── CMakeLists.txt ├── cspell.json ├── deploy/ ├── doc/ ├── src/ ├── LICENSE ├── LICENSES/ ├── README.md ├── REUSE.toml ├── SECURITY.md ├── sonar-project.properties ├── vcpkg-configuration.json └── vcpkg.json 下面大概介绍一下主要文件的用途：\n">
-<meta property='og:url' content='https://zuoco.github.io/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/'>
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="02 跨平台抽象层之 —— 网络模块">
+<meta property='og:description' content=" 1. 抽象基类 2. 平台实现 1. 抽象基类 需要对计算机网络有一点了解，实际就是封装了常用的网络接口而已。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 class IArchNetwork : public IInterface { public: // 地址族，需要在创建Socket时指定 enum EAddressFamily { kUNKNOWN, kINET, // IPV4 kINET6, // IPV6 }; // 协议类型 enum ESocketType { kDGRAM, // UDP kSTREAM // TCP }; // 异步I/O —— poll事件 enum { kPOLLIN = 1, // Socket 接收缓存区有数据可读。 kPOLLOUT = 2, // Socket 发送缓存区为空，可以发送数据。 kPOLLERR = 4, // 错误状态 kPOLLNVAL = 8 // 无效socket }; // 异步I/O ——\u3000用于套接字事件轮询，监控多个套接字的状态变化。 class PollEntry { public: ArchSocket m_socket; // 要监听的套接字 unsigned short m_events; // 要监听的事件 unsigned short m_revents; // 实际监听到的事件 }; // 下面都是socket操作 virtual ArchSocket newSocket(EAddressFamily, ESocketType) = 0; // 创建socket virtual ArchSocket copySocket(ArchSocket s) = 0; virtual void closeSocket(ArchSocket s) = 0; // 关闭sokcet virtual void closeSocketForRead(ArchSocket s) = 0; // 关闭读通道 virtual void closeSocketForWrite(ArchSocket s) = 0; // 关闭写通道 // 连接网络 virtual void bindSocket(ArchSocket s, ArchNetAddress addr) = 0; // 绑定地址，服务端 virtual void listenOnSocket(ArchSocket s) = 0; // 监听客户端连接，服务端 virtual ArchSocket acceptSocket(ArchSocket s, ArchNetAddress *addr) = 0; // 接收客户端连接，服务端 virtual bool connectSocket(ArchSocket s, ArchNetAddress addr) = 0; // 向服务端发起连接，客户端 // 异步I/O virtual int pollSocket(PollEntry[], int num, double timeout) = 0; // 使用poll轮训socket virtual void unblockPollSocket(ArchThread thread) = 0; // 解除轮询阻塞 virtual size_t readSocket(ArchSocket s, void *buf, size_t len) = 0; // 读socket virtual size_t writeSocket(ArchSocket s, const void *buf, size_t len) = 0; // 写socket virtual void throwErrorOnSocket(ArchSocket s) = 0; virtual bool setNoDelayOnSocket(ArchSocket, bool noDelay) = 0; // 启用/禁用Nagle算法 virtual bool setReuseAddrOnSocket(ArchSocket, bool reuse) = 0; // 地址重用选项 virtual std::string getHostName() = 0; virtual ArchNetAddress newAnyAddr(EAddressFamily) = 0; // 创建通配地址 virtual ArchNetAddress copyAddr(ArchNetAddress) = 0; virtual std::vector&lt;ArchNetAddress&gt; nameToAddr(const std::string &amp;) = 0; // 域名解析 virtual void closeAddr(ArchNetAddress) = 0; virtual std::string addrToName(ArchNetAddress) = 0; virtual std::string addrToString(ArchNetAddress) = 0; virtual EAddressFamily getAddrFamily(ArchNetAddress) = 0; virtual void setAddrPort(ArchNetAddress, int port) = 0; // 设置端口 virtual int getAddrPort(ArchNetAddress) = 0; virtual bool isEqualAddr(ArchNetAddress, ArchNetAddress) = 0; // 地址比较 virtual bool isAnyAddr(ArchNetAddress addr) = 0; virtual void init() = 0; }; 2. 平台实现 提供了Unix和Windows平台上的实现，但是这里就不讲了，就是将平台的系统调用封装了一下。\nWindows\n">
+<meta property='og:url' content='https://zuoco.github.io/p/02-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-06T20:36:33&#43;08:00'/><meta property='article:modified_time' content='2025-05-06T20:36:33&#43;08:00'/>
-<meta name="twitter:title" content="第二节 - DeskFlow工程源码整体认识">
-<meta name="twitter:description" content="1. 项目构建系统 2. 项目目录结构 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 deskflow-1.21.2/ ├── cmake/ ├── CMakeLists.txt ├── cspell.json ├── deploy/ ├── doc/ ├── src/ ├── LICENSE ├── LICENSES/ ├── README.md ├── REUSE.toml ├── SECURITY.md ├── sonar-project.properties ├── vcpkg-configuration.json └── vcpkg.json 下面大概介绍一下主要文件的用途：\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-15T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-15T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="02 跨平台抽象层之 —— 网络模块">
+<meta name="twitter:description" content=" 1. 抽象基类 2. 平台实现 1. 抽象基类 需要对计算机网络有一点了解，实际就是封装了常用的网络接口而已。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 class IArchNetwork : public IInterface { public: // 地址族，需要在创建Socket时指定 enum EAddressFamily { kUNKNOWN, kINET, // IPV4 kINET6, // IPV6 }; // 协议类型 enum ESocketType { kDGRAM, // UDP kSTREAM // TCP }; // 异步I/O —— poll事件 enum { kPOLLIN = 1, // Socket 接收缓存区有数据可读。 kPOLLOUT = 2, // Socket 发送缓存区为空，可以发送数据。 kPOLLERR = 4, // 错误状态 kPOLLNVAL = 8 // 无效socket }; // 异步I/O ——\u3000用于套接字事件轮询，监控多个套接字的状态变化。 class PollEntry { public: ArchSocket m_socket; // 要监听的套接字 unsigned short m_events; // 要监听的事件 unsigned short m_revents; // 实际监听到的事件 }; // 下面都是socket操作 virtual ArchSocket newSocket(EAddressFamily, ESocketType) = 0; // 创建socket virtual ArchSocket copySocket(ArchSocket s) = 0; virtual void closeSocket(ArchSocket s) = 0; // 关闭sokcet virtual void closeSocketForRead(ArchSocket s) = 0; // 关闭读通道 virtual void closeSocketForWrite(ArchSocket s) = 0; // 关闭写通道 // 连接网络 virtual void bindSocket(ArchSocket s, ArchNetAddress addr) = 0; // 绑定地址，服务端 virtual void listenOnSocket(ArchSocket s) = 0; // 监听客户端连接，服务端 virtual ArchSocket acceptSocket(ArchSocket s, ArchNetAddress *addr) = 0; // 接收客户端连接，服务端 virtual bool connectSocket(ArchSocket s, ArchNetAddress addr) = 0; // 向服务端发起连接，客户端 // 异步I/O virtual int pollSocket(PollEntry[], int num, double timeout) = 0; // 使用poll轮训socket virtual void unblockPollSocket(ArchThread thread) = 0; // 解除轮询阻塞 virtual size_t readSocket(ArchSocket s, void *buf, size_t len) = 0; // 读socket virtual size_t writeSocket(ArchSocket s, const void *buf, size_t len) = 0; // 写socket virtual void throwErrorOnSocket(ArchSocket s) = 0; virtual bool setNoDelayOnSocket(ArchSocket, bool noDelay) = 0; // 启用/禁用Nagle算法 virtual bool setReuseAddrOnSocket(ArchSocket, bool reuse) = 0; // 地址重用选项 virtual std::string getHostName() = 0; virtual ArchNetAddress newAnyAddr(EAddressFamily) = 0; // 创建通配地址 virtual ArchNetAddress copyAddr(ArchNetAddress) = 0; virtual std::vector&lt;ArchNetAddress&gt; nameToAddr(const std::string &amp;) = 0; // 域名解析 virtual void closeAddr(ArchNetAddress) = 0; virtual std::string addrToName(ArchNetAddress) = 0; virtual std::string addrToString(ArchNetAddress) = 0; virtual EAddressFamily getAddrFamily(ArchNetAddress) = 0; virtual void setAddrPort(ArchNetAddress, int port) = 0; // 设置端口 virtual int getAddrPort(ArchNetAddress) = 0; virtual bool isEqualAddr(ArchNetAddress, ArchNetAddress) = 0; // 地址比较 virtual bool isAnyAddr(ArchNetAddress addr) = 0; virtual void init() = 0; }; 2. 平台实现 提供了Unix和Windows平台上的实现，但是这里就不讲了，就是将平台的系统调用封装了一下。\nWindows\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -261,7 +261,7 @@
                 
                 
                 
-                    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1752561437695" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13663" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M568.87296 510.29504h-14.208v-28.46208H512V168.96h184.87296v312.87296h-85.32992v28.46208h-14.208V552.96h-28.46208v-42.66496z m142.25408 312.87296H312.87808v28.45696H0v-56.87296h1024v56.87296h-312.87296v-28.45696z m270.208-483.54304v71.12704h28.45696v-99.584h-170.66496v99.584h28.416V339.62496h113.792z m-227.54304 312.87808V282.752H1024v483.54304H0v-113.792h753.792zM0 296.96h412.45696v327.12704H0V296.96z m128 71.12704c-47.1296 0-85.33504 38.20544-85.33504 85.32992v28.416c0 47.1296 38.20544 85.33504 85.33504 85.33504h128c47.1296 0 85.33504-38.20544 85.33504-85.33504v-28.416c0-47.12448-38.20544-85.32992-85.33504-85.32992H128z m241.792 14.208V552.96H384V382.29504h-14.208z m469.32992 199.12192v42.67008h71.08608v-42.67008H839.1168z m0-170.66496v156.416h170.67008v-156.416H839.1168z m-398.24896 170.66496h284.45696v42.67008H440.87296v-42.67008z m184.91904-170.66496v42.66496h42.66496v-42.66496h-42.66496z m0-42.66496v28.416h42.66496v-28.416h-42.66496z m355.53792-128h28.46208v28.416h-28.46208v-28.416z m0-28.46208h28.46208v14.208h-28.46208v-14.208z m0-42.66496h28.46208v28.45696h-28.46208V168.96z" fill="#13227a" p-id="13664"></path></svg>
+                    <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1752560463948" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11051" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M208 992a16 16 0 0 1-16-16v-640a16 16 0 0 1 32 0v640a16 16 0 0 1-16 16zM304 992a16 16 0 0 1-16-16v-576a16 16 0 0 1 32 0v576a16 16 0 0 1-16 16z" fill="#455A64" p-id="11052"></path><path d="M848 224a16 16 0 0 1-14.304-23.168l32-64a16 16 0 0 1 28.64 14.304l-32 64A16.064 16.064 0 0 1 848 224zM752 224a16 16 0 0 1-14.304-23.168l32-64a16 16 0 0 1 28.64 14.304l-32 64A16.064 16.064 0 0 1 752 224zM656 224a16 16 0 0 1-14.304-23.168l32-64a16 16 0 0 1 28.64 14.304l-32 64A16.064 16.064 0 0 1 656 224zM560 224a16 16 0 0 1-14.304-23.168l32-64a16 16 0 0 1 28.64 14.304l-32 64A16.064 16.064 0 0 1 560 224zM128 224a16 16 0 0 1-14.304-23.168l32-64a16 16 0 0 1 28.64 14.336l-32 64A16.064 16.064 0 0 1 128 224zM464 224a16 16 0 0 1-14.304-23.168l32-64a16 16 0 0 1 28.64 14.304l-32 64A16.064 16.064 0 0 1 464 224zM400 224a16 16 0 0 1-8.864-2.688l-96-64a16 16 0 1 1 17.728-26.624l96 64A16 16 0 0 1 400 224z" fill="#455A64" p-id="11053"></path><path d="M208 224a16 16 0 0 1-8.864-29.312l96-64a16 16 0 1 1 17.728 26.624l-96 64A15.808 15.808 0 0 1 208 224z" fill="#455A64" p-id="11054"></path><path d="M208 224h-160a16 16 0 0 1-14.304-23.136l32-64A16 16 0 0 1 80 128h128a16 16 0 1 1 0 32H89.888l-16 32H208a16 16 0 0 1 0 32zM976 224H384a16 16 0 0 1 0-32h553.376l-32-32H400a16 16 0 0 1 0-32h512c4.256 0 8.32 1.696 11.328 4.672l64 64A15.968 15.968 0 0 1 976 224z" fill="#455A64" p-id="11055"></path><path d="M304 960a16 16 0 0 1-8.864-2.688l-96-64a16 16 0 1 1 17.728-26.624l96 64A16 16 0 0 1 304 960zM304 864a16 16 0 0 1-8.864-2.688l-96-64a16 16 0 1 1 17.728-26.624l96 64A16 16 0 0 1 304 864zM304 768a16 16 0 0 1-8.864-2.688l-96-64a16 16 0 1 1 17.728-26.624l96 64A16 16 0 0 1 304 768zM304 672a16 16 0 0 1-8.864-2.688l-96-64a16 16 0 1 1 17.728-26.624l96 64A16 16 0 0 1 304 672zM304 576a16 16 0 0 1-8.864-2.688l-96-64a16 16 0 1 1 17.728-26.624l96 64A16 16 0 0 1 304 576zM304 480a16 16 0 0 1-8.864-2.688l-96-64a16 16 0 1 1 17.728-26.624l96 64A16 16 0 0 1 304 480z" fill="#455A64" p-id="11056"></path><path d="M208 144h192v192h-192z" fill="#FFF176" p-id="11057"></path><path d="M400 352h-192a16 16 0 0 1-16-16v-192a16 16 0 0 1 16-16h192a16 16 0 0 1 16 16v192a16 16 0 0 1-16 16zM224 320h160V160H224v160z" fill="#455A64" p-id="11058"></path><path d="M272 208h64v64h-64z" fill="#FFFFFF" p-id="11059"></path><path d="M336 288h-64a16 16 0 0 1-16-16v-64a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v64a16 16 0 0 1-16 16zM288 256h32V224H288v32z" fill="#455A64" p-id="11060"></path><path d="M304 160a16 16 0 0 1-16-16V91.52l-64-21.312V144a16 16 0 0 1-32 0v-96a15.968 15.968 0 0 1 21.088-15.168l96 32A16 16 0 0 1 320 80v64a16 16 0 0 1-16 16zM496 992H211.2a16 16 0 0 1 0-32h284.8a16 16 0 0 1 0 32z" fill="#455A64" p-id="11061"></path><path d="M560 976m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#455A64" p-id="11062"></path><path d="M672 912c-134.624 0-254.72-90.24-292.064-219.424a16 16 0 1 1 30.752-8.864C444.064 799.264 551.552 880 672 880a16 16 0 0 1 0 32zM948.704 543.872a16 16 0 0 1-15.36-11.552C899.936 416.736 792.448 336 672 336a16 16 0 0 1 0-32c134.624 0 254.72 90.24 292.064 219.424a16 16 0 0 1-15.36 20.448z" fill="#455A64" p-id="11063"></path><path d="M880 634.72v-53.44l-49.056-10.72a163.296 163.296 0 0 0-20.096-48.48l27.104-42.272-37.76-37.76-42.336 27.072c-14.752-9.12-31.04-16-48.416-20.096l-10.752-49.024h-53.44l-10.72 49.024a163.296 163.296 0 0 0-48.416 20.096l-42.304-27.104-37.76 37.792 27.072 42.272c-9.152 14.784-16 31.04-20.064 48.416l-49.056 10.784v53.44l49.024 10.72c4.064 17.376 10.944 33.696 20.064 48.416l-27.072 42.304 37.76 37.792 42.304-27.136c14.72 9.184 31.008 16.032 48.416 20.128l10.72 49.024h53.44l10.72-49.024a163.2 163.2 0 0 0 48.416-20.064l42.336 27.136 37.76-37.856-27.104-42.272c9.152-14.752 16-31.072 20.064-48.448l49.152-10.72zM671.968 688a80 80 0 1 1 0-160 80 80 0 0 1 0 160z" fill="#80D8FF" p-id="11064"></path><path d="M698.688 831.968h-53.44a16 16 0 0 1-15.616-12.576l-8.672-39.488a175.68 175.68 0 0 1-34.464-14.336l-34.048 21.856a16 16 0 0 1-19.968-2.144l-37.76-37.792a16 16 0 0 1-2.176-19.936l21.824-34.08a178.016 178.016 0 0 1-14.304-34.464l-39.488-8.64a16.064 16.064 0 0 1-12.576-15.648v-53.44c0-7.52 5.216-14.016 12.576-15.616l39.488-8.672c3.52-11.904 8.32-23.424 14.304-34.464l-21.792-34.048a16 16 0 0 1 2.144-19.936l37.76-37.792a15.904 15.904 0 0 1 19.936-2.144l34.08 21.824a178.88 178.88 0 0 1 34.464-14.304l8.672-39.488a16 16 0 0 1 15.616-12.64h53.44a16 16 0 0 1 15.616 12.576l8.672 39.488c11.936 3.552 23.456 8.352 34.464 14.304l34.112-21.824a16.064 16.064 0 0 1 19.936 2.176l37.76 37.76a16 16 0 0 1 2.144 19.936l-21.824 34.08c6.016 11.008 10.784 22.56 14.336 34.496l39.52 8.64a16.064 16.064 0 0 1 12.576 15.648v53.44a16 16 0 0 1-12.608 15.616l-39.52 8.64c-3.52 11.936-8.32 23.488-14.304 34.496l21.824 34.048a16 16 0 0 1-2.144 19.936l-37.76 37.856a16 16 0 0 1-19.968 2.176l-34.112-21.856a179.648 179.648 0 0 1-34.432 14.272l-8.672 39.488a16 16 0 0 1-15.616 12.576z m-40.576-32h27.712l8-36.448a16.064 16.064 0 0 1 11.968-12.16 147.744 147.744 0 0 0 43.648-18.08 16 16 0 0 1 17.056 0.128l31.456 20.16 19.552-19.616-20.16-31.456a16 16 0 0 1-0.128-17.056c8.416-13.568 14.496-28.256 18.08-43.648a16.064 16.064 0 0 1 12.16-12L864 621.824v-27.68l-36.48-7.968a16 16 0 0 1-12.16-11.968 147.488 147.488 0 0 0-18.144-43.712 16 16 0 0 1 0.128-17.056l20.128-31.456-19.552-19.552-31.488 20.128a16.16 16.16 0 0 1-17.056 0.128 145.984 145.984 0 0 0-43.648-18.112 16 16 0 0 1-11.968-12.16L685.824 416h-27.712l-8 36.448a16.064 16.064 0 0 1-11.968 12.16c-15.392 3.616-30.08 9.728-43.648 18.112a16.064 16.064 0 0 1-17.056-0.128l-31.456-20.128-19.552 19.552 20.128 31.456a16 16 0 0 1 0.128 17.056 145.888 145.888 0 0 0-18.112 43.616 16 16 0 0 1-12.128 12l-36.448 8v27.712l36.448 7.968a16 16 0 0 1 12.16 12c3.616 15.392 9.696 30.08 18.08 43.616a16 16 0 0 1-0.096 17.056l-20.128 31.456 19.552 19.584 31.456-20.16a16.128 16.128 0 0 1 17.12-0.096c13.44 8.384 28.096 14.496 43.616 18.112a16 16 0 0 1 11.968 12.16l7.936 36.416zM671.968 704c-52.928 0-96-43.072-96-96s43.072-96 96-96 96 43.072 96 96a16 16 0 0 1-32 0c0-35.296-28.704-64-64-64s-64 28.704-64 64 28.704 64 64 64a16 16 0 0 1 0 32z" fill="#455A64" p-id="11065"></path><path d="M729.6 665.6m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#455A64" p-id="11066"></path><path d="M976 592m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#455A64" p-id="11067"></path><path d="M368 592m-16 0a16 16 0 1 0 32 0 16 16 0 1 0-32 0Z" fill="#455A64" p-id="11068"></path></svg>
                 
                 <span>&lt;CAX&gt;</span>
             </a>
@@ -318,8 +318,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/" >
-                代码设计
+            <a href="/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82-c&#43;&#43;/" style="background-color: #1E90FF; color: #FFFFFF;">
+                跨平台抽象层-C&#43;&#43;
             </a>
         
     </header>
@@ -327,7 +327,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">第二节 - DeskFlow工程源码整体认识</a>
+            <a href="/p/02-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/">02 跨平台抽象层之 —— 网络模块</a>
         </h2>
     
         
@@ -349,7 +349,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025年05月06日</time>
+                <time class="article-time--published">2025年07月15日</time>
             </div>
         
 
@@ -365,17 +365,13 @@
     <section class="article-content">
     
     
-    <h1 id="1-项目构建系统">1. 项目构建系统
-</h1><p><img src="/p/%E7%AC%AC%E4%BA%8C%E8%8A%82-deskflow%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/Deskflow%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E7%B3%BB%E7%BB%9F.svg"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
-<h1 id="2-项目目录结构">2. 项目目录结构
-</h1><div class="highlight"><div class="chroma">
+    <ul>
+<li><a class="link" href="#1-%e6%8a%bd%e8%b1%a1%e5%9f%ba%e7%b1%bb" >1. 抽象基类</a></li>
+<li><a class="link" href="#2-%e5%b9%b3%e5%8f%b0%e5%ae%9e%e7%8e%b0" >2. 平台实现</a></li>
+</ul>
+<h1 id="1-抽象基类">1. 抽象基类
+</h1><p>需要对计算机网络有一点了解，实际就是封装了常用的网络接口而已。</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -392,71 +388,155 @@
 </span><span class="lnt">13
 </span><span class="lnt">14
 </span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">deskflow-1.21.2/
-</span></span><span class="line"><span class="cl">├── cmake/
-</span></span><span class="line"><span class="cl">├── CMakeLists.txt
-</span></span><span class="line"><span class="cl">├── cspell.json
-</span></span><span class="line"><span class="cl">├── deploy/
-</span></span><span class="line"><span class="cl">├── doc/
-</span></span><span class="line"><span class="cl">├── src/
-</span></span><span class="line"><span class="cl">├── LICENSE
-</span></span><span class="line"><span class="cl">├── LICENSES/
-</span></span><span class="line"><span class="cl">├── README.md
-</span></span><span class="line"><span class="cl">├── REUSE.toml
-</span></span><span class="line"><span class="cl">├── SECURITY.md
-</span></span><span class="line"><span class="cl">├── sonar-project.properties
-</span></span><span class="line"><span class="cl">├── vcpkg-configuration.json
-</span></span><span class="line"><span class="cl">└── vcpkg.json
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">IArchNetwork</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IInterface</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 地址族，需要在创建Socket时指定
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">enum</span> <span class="nc">EAddressFamily</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kUNKNOWN</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kINET</span><span class="p">,</span>     <span class="c1">// IPV4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">kINET6</span><span class="p">,</span>    <span class="c1">// IPV6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 协议类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">enum</span> <span class="nc">ESocketType</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kDGRAM</span><span class="p">,</span>   <span class="c1">// UDP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">kSTREAM</span>   <span class="c1">// TCP
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 异步I/O —— poll事件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">enum</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">kPOLLIN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>         <span class="c1">// Socket 接收缓存区有数据可读。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">kPOLLOUT</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>        <span class="c1">// Socket 发送缓存区为空，可以发送数据。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">kPOLLERR</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>        <span class="c1">// 错误状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">kPOLLNVAL</span> <span class="o">=</span> <span class="mi">8</span>        <span class="c1">// 无效socket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 异步I/O ——　用于套接字事件轮询，监控多个套接字的状态变化。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">class</span> <span class="nc">PollEntry</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ArchSocket</span> <span class="n">m_socket</span><span class="p">;</span>       <span class="c1">// 要监听的套接字
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">m_events</span><span class="p">;</span>   <span class="c1">// 要监听的事件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">m_revents</span><span class="p">;</span>  <span class="c1">// 实际监听到的事件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 下面都是socket操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="n">ArchSocket</span> <span class="nf">newSocket</span><span class="p">(</span><span class="n">EAddressFamily</span><span class="p">,</span> <span class="n">ESocketType</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 创建socket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="n">ArchSocket</span> <span class="nf">copySocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>               
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">closeSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    <span class="c1">// 关闭sokcet
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">closeSocketForRead</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>             <span class="c1">// 关闭读通道
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">closeSocketForWrite</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>            <span class="c1">// 关闭写通道
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 连接网络
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">bindSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">,</span> <span class="n">ArchNetAddress</span> <span class="n">addr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>           <span class="c1">// 绑定地址，服务端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">listenOnSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                            <span class="c1">// 监听客户端连接，服务端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="n">ArchSocket</span> <span class="nf">acceptSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">,</span> <span class="n">ArchNetAddress</span> <span class="o">*</span><span class="n">addr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// 接收客户端连接，服务端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">connectSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">,</span> <span class="n">ArchNetAddress</span> <span class="n">addr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        <span class="c1">// 向服务端发起连接，客户端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 异步I/O
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">pollSocket</span><span class="p">(</span><span class="n">PollEntry</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">double</span> <span class="n">timeout</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// 使用poll轮训socket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">unblockPollSocket</span><span class="p">(</span><span class="n">ArchThread</span> <span class="kr">thread</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                    <span class="c1">// 解除轮询阻塞 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">size_t</span> <span class="nf">readSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">len</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        <span class="c1">// 读socket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="n">size_t</span> <span class="nf">writeSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">len</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 写socket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">throwErrorOnSocket</span><span class="p">(</span><span class="n">ArchSocket</span> <span class="n">s</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">setNoDelayOnSocket</span><span class="p">(</span><span class="n">ArchSocket</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">noDelay</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>             <span class="c1">// 启用/禁用Nagle算法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">setReuseAddrOnSocket</span><span class="p">(</span><span class="n">ArchSocket</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">reuse</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>             <span class="c1">// 地址重用选项
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getHostName</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">ArchNetAddress</span> <span class="nf">newAnyAddr</span><span class="p">(</span><span class="n">EAddressFamily</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                     <span class="c1">// 创建通配地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="n">ArchNetAddress</span> <span class="nf">copyAddr</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                  
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">ArchNetAddress</span><span class="o">&gt;</span> <span class="n">nameToAddr</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>   <span class="c1">// 域名解析
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">closeAddr</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                                
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">addrToName</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">addrToString</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">EAddressFamily</span> <span class="nf">getAddrFamily</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">setAddrPort</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">,</span> <span class="kt">int</span> <span class="n">port</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>            <span class="c1">// 设置端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">int</span> <span class="nf">getAddrPort</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">isEqualAddr</span><span class="p">(</span><span class="n">ArchNetAddress</span><span class="p">,</span> <span class="n">ArchNetAddress</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>      <span class="c1">// 地址比较
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">virtual</span> <span class="kt">bool</span> <span class="nf">isAnyAddr</span><span class="p">(</span><span class="n">ArchNetAddress</span> <span class="n">addr</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">init</span><span class="p">()</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>下面大概介绍一下主要文件的用途：</p>
-<h2 id="21-vcpkgjson和vcpkg-configurationjson">2.1. vcpkg.json和vcpkg-configuration.json
-</h2><p>vcpkg是一个C++包管理工具，vcpkg-configuration.json 和 vcpkg.json 协同工作。vcpkg.json 列出了项目所需的依赖包，而 vcpkg-configuration.json 则指定了从哪些地方获取这些包。当执行 vcpkg install 命令时，vcpkg 会先依据 vcpkg-configuration.json 配置的注册表，再按照 vcpkg.json 列出的依赖，去下载、编译并集成所需的包到项目中。</p>
-<h2 id="22-sonar-projectproperties">2.2. sonar-project.properties
-</h2><p>代码质量管理相关的文件。</p>
-<h2 id="23-securitymd">2.3. SECURITY.md
-</h2><p>声明安全策略和漏洞管理流程。</p>
-<h2 id="24-reseuetoml">2.4. RESEUE.toml
-</h2><p>统一管理Deskflow项目的版权归属和许可证声明，确保所有文件符合开源合规要求。</p>
-<h2 id="25-license">2.5. LICENSE
-</h2><p>统一管理Deskflow项目的版权归属和许可证声明，确保所有文件符合开源合规要求。</p>
-<h2 id="26-cspelljson">2.6. cspell.json
-</h2><p>拼写检查配置文件，用于定义 Deskflow 项目中允许的特定术语、技术词汇和专有名词，确保拼写检查工具（如 VS Code 的 Code Spell Checker）在扫描代码时 忽略合法词汇，同时标记拼写错误。</p>
-<h2 id="27-目录licenses">2.7. 目录LICENSES
-</h2><p>包含四种开源许可证文件，定义了项目各组件的合法使用、修改和分发规则。</p>
-<h2 id="28-目录src">2.8. 目录src
-</h2><p>包含源代码文件，包括主程序、工具类、配置文件等。</p>
-<h2 id="29-目录deploy">2.9. 目录deploy
-</h2><p>部署脚本,定义了在不同平台上的部署方法.</p>
-<h2 id="210-cmake">2.10. cmake
-</h2><p>cmake模块,定义了cmake的配置文件,负责构建过程中的依赖检查.</p>
-<h2 id="211-doc">2.11. doc
-</h2><p>文档,包括用户指南、开发指南等.</p>
-<h1 id="3-子目录src">3. 子目录src
-</h1><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">src/
-</span></span><span class="line"><span class="cl">├── apps/
-</span></span><span class="line"><span class="cl">├── CMakeLists.txt
-</span></span><span class="line"><span class="cl">├── lib/
-</span></span><span class="line"><span class="cl">└── test/
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>面对一个软件,我们可以将代码分为两部分: <code>架构层代码</code>、<code>业务层代码</code>。 <br>
-<code>apps</code>: 业务层代码，包含了具体的业务逻辑和功能实现。
-<code>lib</code>: 架构层代码，包含了框架、工具类、配置文件等。  <br>
-<code>test</code>: 测试代码，包含了单元测试、集成测试等。</p>
-<h2 id="32-apps">3.2. apps
-</h2><div class="highlight"><div class="chroma">
+</div><h1 id="2-平台实现">2. 平台实现
+</h1><p>提供了Unix和Windows平台上的实现，但是这里就不讲了，就是将平台的系统调用封装了一下。<br>
+<strong>Windows</strong></p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -464,32 +544,36 @@
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">apps/
-</span></span><span class="line"><span class="cl">├── CMakeLists.txt
-</span></span><span class="line"><span class="cl">├── deskflow-client/
-</span></span><span class="line"><span class="cl">├── deskflow-core/
-</span></span><span class="line"><span class="cl">├── deskflow-daemon/
-</span></span><span class="line"><span class="cl">├── deskflow-gui/
-</span></span><span class="line"><span class="cl">├── deskflow-server/
-</span></span><span class="line"><span class="cl">└── res
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define ARCH_NETWORK ArchNetworkWinsock
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArchNetworkWinsock</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IArchNetwork</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// override 父类的纯虚函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>apps目录下就是业务层的代码了，通过第一节，我们知道，DeskFlow这个软件是一个“服务器－客户端”的模式，DeskFlow编译成功后有３个可执行文件: deskflow、deskflow-server、deskflow-client。    <br>
-<code>deskflow-server</code>:<br>
-就是服务端代码，也就运行在实际插入物理键盘鼠标的电脑上;  <br>
-<code>deskflow-client</code>: <br>
-就是客户端代码，和服务端相对;    <br>
-<code>deskflow-core</code>: <br>
-deskflow就是deskflow-core程序，既是客户端也是服务端，运行是根据传入的命令行参数来判断是运行为服务端还是运行为客户端。    <br>
-<code>deskflow-gui</code>: <br>
-GUI代码，基于Qt。</p>
-<h2 id="31-lib">3.1. lib
-</h2><p>DeskFlow的底层逻辑，比如跨平台抽象层。</p>
-
+</div><p><strong>Unix</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define ARCH_NETWORK ArchNetworkBSD
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArchNetworkBSD</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IArchNetwork</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// override 父类的纯虚函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 
 
@@ -539,12 +623,12 @@ GUI代码，基于Qt。</p>
             
                 
 <article class="">
-    <a href="/p/%E7%AC%AC%E4%B8%89%E8%8A%82-deskflow%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/">
+    <a href="/p/00-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">第三节 - DeskFlow跨平台抽象层</h2>
+            <h2 class="article-title">00 - 跨平台抽象层之 - 整体设计</h2>
         </div>
     </a>
 </article>
@@ -552,25 +636,12 @@ GUI代码，基于Qt。</p>
             
                 
 <article class="">
-    <a href="/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/">
+    <a href="/p/03-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">第1节 - FreeCAD介绍与安装</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E7%AC%AC%E4%B8%80%E8%8A%82-desklow%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">第一节 - Desklow介绍与安装</h2>
+            <h2 class="article-title">03 跨平台抽象层之 —— 线程模块</h2>
         </div>
     </a>
 </article>

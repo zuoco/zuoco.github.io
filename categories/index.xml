@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 15 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>跨平台抽象层-C&#43;&#43;</title>
+        <link>https://zuoco.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82-c&#43;&#43;/</link>
+        <pubDate>Tue, 15 Jul 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82-c&#43;&#43;/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82-c&#43;&#43;/AAA.jpg" alt="Featured image of post 跨平台抽象层-C&#43;&#43;" /&gt;</description>
+        </item>
+        <item>
         <title>Linkers &amp; Loaders</title>
         <link>https://zuoco.github.io/categories/linkers--loaders/</link>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
@@ -40,19 +48,19 @@
         <description>&lt;img src="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/AAA.jpg" alt="Featured image of post 虚拟化" /&gt;</description>
         </item>
         <item>
-        <title>代码设计</title>
-        <link>https://zuoco.github.io/categories/%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/</link>
-        <pubDate>Sun, 25 May 2025 19:39:48 +0800</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/</guid>
-        <description></description>
-        </item>
-        <item>
         <title>FreeCAD</title>
         <link>https://zuoco.github.io/categories/freecad/</link>
         <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/categories/freecad/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>代码设计</title>
+        <link>https://zuoco.github.io/categories/%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E4%BB%A3%E7%A0%81%E8%AE%BE%E8%AE%A1/</guid>
         <description></description>
         </item>
         <item>
