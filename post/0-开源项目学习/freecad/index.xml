@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>【FreeCAD】 on 阿左笔记</title>
-        <link>http://localhost:1313/post/0-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/freecad/</link>
+        <link>https://zuoco.github.io/post/0-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/freecad/</link>
         <description>Recent content in 【FreeCAD】 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/0-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/freecad/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/0-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/freecad/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>第1节 - FreeCAD介绍与安装</title>
-        <link>http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
         <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
         <description>&lt;h1 id=&#34;1-编译安装&#34;&gt;1. 编译安装
 &lt;/h1&gt;&lt;h2 id=&#34;11-freecad依赖&#34;&gt;1.1. FreeCAD依赖
 &lt;/h2&gt;&lt;p&gt;FreeCAD依赖比较多，单独安装每个依赖会遇到很多冲突问题，所以这里采取一种投机取巧的方式：&lt;/p&gt;
@@ -133,10 +133,10 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image.png&#34;
 	width=&#34;2562&#34;
 	height=&#34;1400&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image_hu_cf5a46a14855fd74.png 480w, http://localhost:1313/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image_hu_63bb6e0583e93345.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image_hu_cf5a46a14855fd74.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-freecad%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/image_hu_63bb6e0583e93345.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

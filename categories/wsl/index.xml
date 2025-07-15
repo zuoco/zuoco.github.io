@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>WSL on 阿左笔记</title>
-        <link>http://localhost:1313/categories/wsl/</link>
+        <link>https://zuoco.github.io/categories/wsl/</link>
         <description>Recent content in WSL on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/wsl/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/wsl/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>WSL</title>
-        <link>http://localhost:1313/p/wsl/</link>
+        <link>https://zuoco.github.io/p/wsl/</link>
         <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/wsl/</guid>
+        <guid>https://zuoco.github.io/p/wsl/</guid>
         <description></description>
         </item>
         

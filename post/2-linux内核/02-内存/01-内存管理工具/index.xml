@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>【内存分析工具】 on 阿左笔记</title>
-        <link>http://localhost:1313/post/2-linux%E5%86%85%E6%A0%B8/02-%E5%86%85%E5%AD%98/01-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
+        <link>https://zuoco.github.io/post/2-linux%E5%86%85%E6%A0%B8/02-%E5%86%85%E5%AD%98/01-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</link>
         <description>Recent content in 【内存分析工具】 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Fri, 13 Jun 2025 15:05:09 +0800</lastBuildDate><atom:link href="http://localhost:1313/post/2-linux%E5%86%85%E6%A0%B8/02-%E5%86%85%E5%AD%98/01-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 13 Jun 2025 15:05:09 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/post/2-linux%E5%86%85%E6%A0%B8/02-%E5%86%85%E5%AD%98/01-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>ps命令</title>
-        <link>http://localhost:1313/p/ps%E5%91%BD%E4%BB%A4/</link>
+        <link>https://zuoco.github.io/p/ps%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 13 Jun 2025 15:05:09 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/ps%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/ps%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;1-用法&#34;&gt;1. 用法
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -35,10 +35,10 @@
         </item>
         <item>
         <title>sar -r命令与sar -S命令</title>
-        <link>http://localhost:1313/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</link>
+        <link>https://zuoco.github.io/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 13 Jun 2025 14:29:51 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;1-sar--r命令&#34;&gt;1. sar -r命令
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -104,10 +104,10 @@
         </item>
         <item>
         <title>free命令</title>
-        <link>http://localhost:1313/p/free%E5%91%BD%E4%BB%A4/</link>
+        <link>https://zuoco.github.io/p/free%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Sun, 08 Jun 2025 11:32:58 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/free%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/free%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;free命令&#34;&gt;free命令
 &lt;/h1&gt;&lt;p&gt;命令结果如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
