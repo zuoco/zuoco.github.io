@@ -7,17 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>CAM</title>
-        <link>https://zuoco.github.io/p/cam/</link>
-        <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/cam/</guid>
-        <description>&lt;p&gt;  在机械工程领域，CAM（Computer Aided Manufacturing，计算机辅助制造） 指利用计算机技术对制造过程进行规划、管理和控制的系统化方法。是 CAD（计算机辅助设计）的自然延伸。它接收 CAD 软件生成的零件或产品的几何模型（通常是 3D 模型）作为输入。&lt;br&gt;
-但是这个概念太大了，我们接触更的是&lt;code&gt;数控加工系统&lt;/code&gt;，。&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>进程的虚拟地址空间</title>
         <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</link>
         <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
