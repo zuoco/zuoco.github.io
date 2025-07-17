@@ -7662,7 +7662,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;此时，枚举项暂用char大小的空间，这个枚举的成员的取值范围也限定了。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;此时，枚举项占用char大小的空间，这个枚举的成员的取值范围也限定了。&lt;/p&gt;
 </description>
         </item>
         
