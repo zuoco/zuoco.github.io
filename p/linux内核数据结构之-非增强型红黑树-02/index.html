@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Linux系统启动引导">
-<title>BootLoader</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1. 增强型与非增强型 Linux 内核中的红黑树（Red-Black Tree）提供了两种实现方式：\n非增强型（Non-augmented）：仅维护基本的树结构。 增强型（Augmented）：在节点中维护额外信息（如子树大小、区间范围等），支持更复杂操作。 为了统一接口并减少代码冗余，rb_insert_color() 和 rb_erase() 使用通用的增强型实现，但在非增强场景中通过 虚拟回调函数（dummy callbacks） 和 编译器优化 来避免性能开销。\n">
+<title>Linux内核数据结构之 - 非增强型红黑树 02</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/bootloader/'>
+<link rel='canonical' href='https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91-02/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="BootLoader">
-<meta property='og:description' content="Linux系统启动引导">
-<meta property='og:url' content='https://zuoco.github.io/p/bootloader/'>
+<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Linux内核数据结构之 - 非增强型红黑树 02">
+<meta property='og:description' content="1. 增强型与非增强型 Linux 内核中的红黑树（Red-Black Tree）提供了两种实现方式：\n非增强型（Non-augmented）：仅维护基本的树结构。 增强型（Augmented）：在节点中维护额外信息（如子树大小、区间范围等），支持更复杂操作。 为了统一接口并减少代码冗余，rb_insert_color() 和 rb_erase() 使用通用的增强型实现，但在非增强场景中通过 虚拟回调函数（dummy callbacks） 和 编译器优化 来避免性能开销。\n">
+<meta property='og:url' content='https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91-02/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-05-10T20:46:50&#43;08:00'/><meta property='article:modified_time' content='2025-05-10T20:46:50&#43;08:00'/>
-<meta name="twitter:title" content="BootLoader">
-<meta name="twitter:description" content="Linux系统启动引导">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-07-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-07-19T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Linux内核数据结构之 - 非增强型红黑树 02">
+<meta name="twitter:description" content="1. 增强型与非增强型 Linux 内核中的红黑树（Red-Black Tree）提供了两种实现方式：\n非增强型（Non-augmented）：仅维护基本的树结构。 增强型（Augmented）：在节点中维护额外信息（如子树大小、区间范围等），支持更复杂操作。 为了统一接口并减少代码冗余，rb_insert_color() 和 rb_erase() 使用通用的增强型实现，但在非增强场景中通过 虚拟回调函数（dummy callbacks） 和 编译器优化 来避免性能开销。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -282,6 +282,10 @@
     
     <header class="article-category">
         
+            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="background-color: #32CD32; color: #FFFFFF;">
+                数据结构
+            </a>
+        
             <a href="/categories/linux%E5%86%85%E6%A0%B8/" style="background-color: #000000; color: #FFFFFF;">
                 Linux内核
             </a>
@@ -291,13 +295,9 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/bootloader/">BootLoader</a>
+            <a href="/p/linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91-02/">Linux内核数据结构之 - 非增强型红黑树 02</a>
         </h2>
     
-        
-        <h3 class="article-subtitle">
-            Linux系统启动引导
-        </h3>
         
     </div>
 
@@ -317,7 +317,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2025年05月10日</time>
+                <time class="article-time--published">2025年07月19日</time>
             </div>
         
 
@@ -333,26 +333,13 @@
     <section class="article-content">
     
     
-    <h1 id="1-bootloader">1. BootLoader
-</h1><p>Bootloader是操作系统的“引导程序”以及“引导管理程序”，操作系统的启动流程可以简单理解为：<br>
-<strong>[上电]</strong> &ndash;&gt; <strong>[UEFI]</strong> &ndash;&gt; <strong>[bootloader]</strong> &ndash;&gt; <strong>[内核]</strong> 。<br>
-显然，Bootloader的作用就是将内核加载到内存中，然后由于内核来加载操作系统的其他组件/服务，如文件系统，文件管理器，图形界面等。在linux生态中，常见的Bootloader有两种，Grub(用于X86架构)，U-Boot(用于ARM架构)。其中<code>引导</code>就是进行一些硬件的检测、初始化的任务，然后将内核加载到内存中来启动内核，<code>引导管理</code>就是当有多个内核时，在屏幕上显示一个菜单让用户选择要启动的哪个内核。
-<img src="/p/bootloader/BootLoader.svg"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
-<h1 id="2-grub">2. Grub
-</h1><p><code>grub程序保存在那里？</code><br>
-grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。<br>
-<code>grub配置文件保存在那里？</code></p>
-<ol>
-<li>/boot/grub/grub.cfg文件，定义了grub是如何引导内核的。</li>
-<li>/etc/default/grub文件，定义grub全局行为和启动参数，然后生成/boot/grub/grub.cfg文件，下面讲解以下该配置文件的内容：</li>
-</ol>
+    <h1 id="1-增强型与非增强型">1. <strong>增强型与非增强型</strong>
+</h1><p>Linux 内核中的红黑树（Red-Black Tree）提供了两种实现方式：</p>
+<ul>
+<li>非增强型（Non-augmented）：仅维护基本的树结构。</li>
+<li>增强型（Augmented）：在节点中维护额外信息（如子树大小、区间范围等），支持更复杂操作。</li>
+</ul>
+<p>为了统一接口并减少代码冗余，rb_insert_color() 和 rb_erase() 使用通用的增强型实现，但在非增强场景中通过 虚拟回调函数（dummy callbacks） 和 编译器优化 来避免性能开销。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -361,85 +348,336 @@ grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。<
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">GRUB_TIMEOUT</span><span class="o">=</span><span class="m">5</span>                <span class="c1"># 启动菜单的超时时间，超时后启动默认内核,-1表示无限等待。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_TIMEOUT_STYLE</span><span class="o">=</span>menu        <span class="c1"># 启动菜单的样式，menu表示菜单样式，hidden表示隐藏菜单。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DISTRIBUTOR</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>sed <span class="s1">&#39;s, release .*$,,g&#39;</span> /etc/system-release<span class="k">)</span><span class="s2">&#34;</span>   <span class="c1"># 动态提取发行版名称</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DEFAULT</span><span class="o">=</span>saved             <span class="c1"># 默认启动项由上一次保存的选择决定</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DISABLE_SUBMENU</span><span class="o">=</span><span class="nb">true</span>       <span class="c1"># 禁用子菜单，所有内核和启动项直接显示在主菜单中。若设为 false，旧内核会折叠到“Advanced options”子菜单下。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_TERMINAL_OUTPUT</span><span class="o">=</span><span class="s2">&#34;console&#34;</span>   <span class="c1"># 强制GRUB仅使用文本控制台输出，禁用图形化终端（如gfxterm）。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">&#34;rhgb quiet&#34;</span>  <span class="c1"># rhgb：启用Plymouth图形启动动画（常见于RHEL/CentOS/Fedora）。quiet：隐藏内核启动日志，仅显示简要信息。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_DISABLE_RECOVERY</span><span class="o">=</span><span class="s2">&#34;true&#34;</span>   <span class="c1"># 禁止恢复模式（Recovery Mode）的启动项。</span>
-</span></span><span class="line"><span class="cl"><span class="nv">GRUB_ENABLE_BLSCFG</span><span class="o">=</span><span class="nb">true</span>      <span class="c1"># 启用 Boot Loader Specification (BLS) 配置，取代传统的grub.cfg生成方式。</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * 所有函数声明为 static inline，且函数体为空，用于在非增强场景中作为增强回调函数的占位符。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dummy_propagate</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">stop</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dummy_copy</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">old</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">new</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dummy_rotate</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">old</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">new</span><span class="p">)</span> <span class="p">{}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="3-u-boot">3. U-Boot
-</h1><ol>
-<li>XIP设备<br>
-非XIP设备中存储的代码需要从存储设备中加载到内存中，然后才能执行，而XIP存储设备中的代码可以直接执行，XIP设备有SRAM、BROM等等，非XIP设备有EMMC、NANDFLASH、SD卡等等。</li>
-<li>ARM-Linux启动流程<br>
-U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行BROM中的程序(由芯片厂写入)，该程序会根据芯片的引脚电平或者寄存器配置确定启动模式(从那个设备启动系统)，例如系统安装在SD卡，BROM中的程序会初始化SD卡，然后拷贝uboot-spl到SRAM中，开始执行uboot-spl中的程序，uboot-spl程序会初始化LDDR内存、pll、gpio等等硬件，然后从SD卡中加载uboot-proper到LDDR中，并跳转到程序的入口地址执行uboot-proper程序。uboot还会初始化一些其他设备，例如网卡等，然后从SD卡中加载内核文件。<br>
-<img src="/p/bootloader/u-boot.svg"
-	
-	
-	
-	loading="lazy"
-	
-	
-><br>
-<code>参考</code>:<br>
-<a class="link" href="https://linux-sunxi.org/Bootable_SD_card#SD_Card_Layout"  target="_blank" rel="noopener"
-    >https://linux-sunxi.org/Bootable_SD_card#SD_Card_Layout</a></li>
-</ol>
-<h1 id="4-修改grub配置">4. 修改Grub配置
-</h1><p>GRUB配置文件： <code>/boot/grub2/grub.cfg</code>，但是该配置文件是生成的，不可直接手动修改，我们通过修改<code>/etc/default/grub</code>文件和<code>/etc/grub.d/</code>目录下的配置文件生成的。</p>
-<h2 id="41-fedora系统">4.1. Fedora系统
-</h2><p>修改<code>/etc/default/grub</code>文件，然后执行<code>sudo grub2-mkconfig -o /boot/grub2/grub.cfg</code>命令来生成新的<code>/boot/grub2/grub.cfg</code>文件。</p>
-<h2 id="42-debian系统">4.2. Debian系统
-</h2><p>修改<code>/etc/default/grub</code>文件，然后执行<code>sudo update-grub</code>命令来生成新的<code>/boot/grub/grub.cfg</code>文件。</p>
-<h1 id="5-查看grub配置信息">5. 查看Grub配置信息
-</h1><h2 id="51-fedora系统">5.1. Fedora系统
-</h2><h3 id="511-grubby命令">5.1.1. grubby命令
-</h3><ol>
-<li>查看默认引导项</li>
-</ol>
+</div><p>本片只记录非增强型。</p>
+<h1 id="2-平衡修复">2. <strong>平衡修复</strong>
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 插入/删除节点后调用
+</span></span></span><span class="line"><span class="cl"><span class="c1">// include/linux/rbtree.h
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span> <span class="kt">void</span> <span class="nf">rb_insert_color</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>&ndash;</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo grubby --info<span class="o">=</span>DEFAULT
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// tools/lib/rbtree.c
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">rb_insert_color</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="n">root</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">__rb_insert</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">dummy_rotate</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>列出所有引导项</li>
-</ol>
+</div><p>&ndash;</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo grubby --info<span class="o">=</span>ALL
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/**	
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *  最后一个参数（augment_rotate）是给增强型红黑树用的，在非增强型红黑树中只是传入一个占位符。
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="n">__always_inline</span> <span class="kt">void</span>
+</span></span><span class="line"><span class="cl"><span class="nf">__rb_insert</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="n">root</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	    <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">augment_rotate</span><span class="p">)(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">old</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">new</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">parent</span> <span class="o">=</span> <span class="nf">rb_red_parent</span><span class="p">(</span><span class="n">node</span><span class="p">),</span> <span class="o">*</span><span class="n">gparent</span><span class="p">,</span> <span class="o">*</span><span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * Loop invariant: node is red.
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 */</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">unlikely</span><span class="p">(</span><span class="o">!</span><span class="n">parent</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 * The inserted node is root. Either this is the
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 * first node, or we recursed at Case 1 below and
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 * are no longer violating 4).
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 */</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * If there is a black parent, we are done.
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * Otherwise, take some corrective action as,
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * per 4), we don&#39;t want a red root or two
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 * consecutive red nodes.
+</span></span></span><span class="line"><span class="cl"><span class="cm">		 */</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="nf">rb_is_black</span><span class="p">(</span><span class="n">parent</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">gparent</span> <span class="o">=</span> <span class="nf">rb_red_parent</span><span class="p">(</span><span class="n">parent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="n">tmp</span> <span class="o">=</span> <span class="n">gparent</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">parent</span> <span class="o">!=</span> <span class="n">tmp</span><span class="p">)</span> <span class="p">{</span>	<span class="cm">/* parent == gparent-&gt;rb_left */</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&amp;&amp;</span> <span class="nf">rb_is_red</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * Case 1 - node&#39;s uncle is red (color flips).
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *       G            g
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *      / \          / \
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *     p   u  --&gt;   P   U
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *    /            /
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *   n            n
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * However, since g&#39;s parent might be red, and
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * 4) does not allow this, we need to recurse
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * at g.
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 */</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">gparent</span><span class="p">,</span> <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">gparent</span><span class="p">,</span> <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="n">node</span> <span class="o">=</span> <span class="n">gparent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">parent</span> <span class="o">=</span> <span class="nf">rb_parent</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">RB_RED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="n">tmp</span> <span class="o">=</span> <span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="n">tmp</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * Case 2 - node&#39;s uncle is black and node is
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * the parent&#39;s right child (left rotate at parent).
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *      G             G
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *     / \           / \
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *    p   U  --&gt;    n   U
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *     \           /
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *      n         p
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * This still leaves us in violation of 4), the
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 * continuation into Case 3 will fix that.
+</span></span></span><span class="line"><span class="cl"><span class="cm">				 */</span>
+</span></span><span class="line"><span class="cl">				<span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">,</span> <span class="n">parent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">					<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">							    <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">RB_RED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">augment_rotate</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="n">parent</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 * Case 3 - node&#39;s uncle is black and node is
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 * the parent&#39;s left child (right rotate at gparent).
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 *
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 *        G           P
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 *       / \         / \
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 *      p   U  --&gt;  n   g
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 *     /                 \
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 *    n                   U
+</span></span></span><span class="line"><span class="cl"><span class="cm">			 */</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">gparent</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span> <span class="cm">/* == parent-&gt;rb_right */</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">,</span> <span class="n">gparent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">gparent</span><span class="p">,</span> <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">__rb_rotate_set_parents</span><span class="p">(</span><span class="n">gparent</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">RB_RED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">augment_rotate</span><span class="p">(</span><span class="n">gparent</span><span class="p">,</span> <span class="n">parent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tmp</span> <span class="o">=</span> <span class="n">gparent</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&amp;&amp;</span> <span class="nf">rb_is_red</span><span class="p">(</span><span class="n">tmp</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="cm">/* Case 1 - color flips */</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">gparent</span><span class="p">,</span> <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">gparent</span><span class="p">,</span> <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="n">node</span> <span class="o">=</span> <span class="n">gparent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">parent</span> <span class="o">=</span> <span class="nf">rb_parent</span><span class="p">(</span><span class="n">node</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">RB_RED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="n">tmp</span> <span class="o">=</span> <span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">node</span> <span class="o">==</span> <span class="n">tmp</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="cm">/* Case 2 - right rotate at parent */</span>
+</span></span><span class="line"><span class="cl">				<span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">,</span> <span class="n">parent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span> <span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">					<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">							    <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">RB_RED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">augment_rotate</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">				<span class="n">parent</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="cm">/* Case 3 - left rotate at gparent */</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">gparent</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">,</span> <span class="n">tmp</span><span class="p">);</span> <span class="cm">/* == parent-&gt;rb_left */</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">WRITE_ONCE</span><span class="p">(</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">,</span> <span class="n">gparent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="nf">rb_set_parent_color</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">gparent</span><span class="p">,</span> <span class="n">RB_BLACK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">__rb_rotate_set_parents</span><span class="p">(</span><span class="n">gparent</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">RB_RED</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nf">augment_rotate</span><span class="p">(</span><span class="n">gparent</span><span class="p">,</span> <span class="n">parent</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="3">
-<li>列出所有引导项的索引</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo grubby --info<span class="o">=</span><span class="m">0</span>  <span class="c1"># 0是引导项的索引，使用sudo grubby --info=ALL命令查看</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="52-debian系统">5.2. Debian系统
-</h2><p>使用grep命令查看即可。</p>
-
+</div><h1 id="3">3.
+</h1>
 </section>
 
 
@@ -489,19 +727,6 @@ U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行
             
                 
 <article class="">
-    <a href="/p/linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91-02/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">Linux内核数据结构之 - 非增强型红黑树 02</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
     <a href="/p/linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91-01/">
         
         
@@ -547,6 +772,19 @@ U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行
 
         <div class="article-details">
             <h2 class="article-title">ps命令</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">sar -r命令与sar -S命令</h2>
         </div>
     </a>
 </article>
