@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/08-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E6%97%B6%E9%97%B4/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="08 跨平台抽象层之 —— 时间">
+<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="08 跨平台抽象层之 —— 时间">
 <meta property='og:description' content=" 1. 抽象类 2. 实现类 1. 抽象类 跨平台高精度时间获取接口，提供统一、高精度的时间基准，用于性能分析、超时控制等场景。\n1 2 3 4 5 class IArchTime : public IInterface { public: virtual double time() = 0; }; 2. 实现类 Windows\n">
 <meta property='og:url' content='https://zuoco.github.io/p/08-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E6%97%B6%E9%97%B4/'>
 <meta property='og:site_name' content='阿左笔记'>
@@ -282,8 +282,12 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82-c&#43;&#43;/" style="background-color: #1E90FF; color: #FFFFFF;">
-                跨平台抽象层-C&#43;&#43;
+            <a href="/categories/deskflow/" >
+                DeskFlow
+            </a>
+        
+            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" >
+                设计模式
             </a>
         
     </header>
@@ -330,10 +334,10 @@
     
     
     <ul>
-<li><a class="link" href="#1-%e6%8a%bd%e8%b1%a1%e7%b1%bb" >1. 抽象类</a></li>
-<li><a class="link" href="#2-%e5%ae%9e%e7%8e%b0%e7%b1%bb" >2. 实现类</a></li>
+<li><a class="link" href="#1-%e6%8a%bd%e8%b1%a1%e7%b1%bb" >1. <strong>抽象类</strong></a></li>
+<li><a class="link" href="#2-%e5%ae%9e%e7%8e%b0%e7%b1%bb" >2. <strong>实现类</strong></a></li>
 </ul>
-<h1 id="1-抽象类">1. 抽象类
+<h1 id="1-抽象类">1. <strong>抽象类</strong>
 </h1><p>跨平台高精度时间获取接口，提供统一、高精度的时间基准，用于性能分析、超时控制等场景。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -351,7 +355,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="2-实现类">2. 实现类
+</div><h1 id="2-实现类">2. <strong>实现类</strong>
 </h1><p><strong>Windows</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -452,6 +456,45 @@
             
                 
 <article class="">
+    <a href="/p/deskflow-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E4%BB%BB%E5%8A%A1%E8%AE%BE%E8%AE%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DeskFlow — 多路复用器、多路复用器任务设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/deskflow-%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E6%8A%BD%E8%B1%A1%E8%AE%BE%E8%AE%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DeskFlow — 线程的异步任务抽象设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DeskFlow — 跨平台线程对象管理类</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/01-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/">
         
         
@@ -471,45 +514,6 @@
 
         <div class="article-details">
             <h2 class="article-title">02 跨平台抽象层之 —— Arch单例类型</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/03-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">03 跨平台抽象层之 —— 网络模块</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/04-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">04 跨平台抽象层之 —— 线程模块</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/05-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">05 跨平台抽象层之 —— 守护进程</h2>
         </div>
     </a>
 </article>

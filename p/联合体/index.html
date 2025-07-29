@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/%E8%81%94%E5%90%88%E4%BD%93/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="联合体">
+<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="联合体">
 <meta property='og:description' content=" 1. 联合体 2. 匿名联合体 3. 联合中包含非内建类型 1. 联合体 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 #include &lt;iostream&gt; // 联合体占用的空间等于最大成员的大小，成员共享（复用）这块空间。 union U { int x; double y; }; int main() { std::cout &lt;&lt; sizeof(U) &lt;&lt; std::endl; U u; // 1. 可以使用int 或者 double 类型的值来初始化 u。 u.x = 66; u.y = 99.33; // 覆盖之前的值。 // 2. 可以使用int 或者 double 类型来读取 u。 std::cout &lt;&lt; u.x &lt;&lt; std::endl; // 以int的存储格式（定点数）来读取这块内存，注意了！ 这里不是类型转换！！！。 std::cout &lt;&lt; u.y &lt;&lt; std::endl; // 以浮点数的存储格式读取这块内存。 return 0; } 输出：\n">
 <meta property='og:url' content='https://zuoco.github.io/p/%E8%81%94%E5%90%88%E4%BD%93/'>
 <meta property='og:site_name' content='阿左笔记'>
@@ -482,6 +482,19 @@
             
                 
 <article class="">
+    <a href="/p/stdthread/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">std::thread</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/">
         
         
@@ -501,19 +514,6 @@
 
         <div class="article-details">
             <h2 class="article-title">shared_ptr、unique_ptr、weake_ptr</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">可调用对象之 bind</h2>
         </div>
     </a>
 </article>

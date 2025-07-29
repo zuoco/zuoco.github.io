@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 抽象类型 IArchMultithread 2. 实现类 1. 抽象类型 IArchMultithread IArchMultithread 是一个跨平台多线程抽象接口，继承自 IInterface，定义了线程、互斥锁和条件变量等核心操作。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 class IArchMultithread : public IInterface { public: // 线程任务函数的类型 using ThreadFunc = void *(*)(void *); // 线程 ID using ThreadID = unsigned int; // 信号类型 enum ESignal { kINTERRUPT, // Ctrl+C kTERMINATE, // Ctrl+Break kHANGUP, // SIGHUP kUSER, // SIGUSR2 kNUM_SIGNALS }; // 信号处理函数的类型 using SignalFunc = void (*)(ESignal, void *userData); // 条件变量 virtual ArchCond newCondVar() = 0; // 创建条件变量 virtual void closeCondVar(ArchCond) = 0; // 销毁条件变量 virtual void signalCondVar(ArchCond) = 0; // 唤醒单个等待线程 virtual void broadcastCondVar(ArchCond) = 0; // 唤醒单个等待线程 virtual bool waitCondVar(ArchCond, ArchMutex, double timeout) = 0; // 带超时的条件等待 (取消点) // 互斥锁 virtual ArchMutex newMutex() = 0; // 创建互斥锁 virtual void closeMutex(ArchMutex) = 0; // 销毁互斥锁 virtual void lockMutex(ArchMutex) = 0; // 加锁 virtual void unlockMutex(ArchMutex) = 0; // 解锁 // 线程对象操作 virtual ArchThread newThread(ThreadFunc func, void *userData) = 0; // 创建新线程 virtual ArchThread newCurrentThread() = 0; // 返回一个表示当前（即调用）线程的对象的引用 virtual ArchThread copyThread(ArchThread thread) = 0; // 复制线程对象 virtual void closeThread(ArchThread) = 0; // 释放线程引用 virtual void cancelThread(ArchThread thread) = 0; // 请求线程取消 virtual void setPriorityOfThread(ArchThread, int n) = 0; // 设置线程优先级 virtual void testCancelThread() = 0; // 显式取消点，应该是用于测试的 virtual bool wait(ArchThread thread, double timeout) = 0; // 等待线程结束 (取消点) virtual bool isSameThread(ArchThread, ArchThread) = 0; // 线程对象比较 virtual bool isExitedThread(ArchThread thread) = 0; // 检查线程是否退出 virtual void *getResultOfThread(ArchThread thread) = 0; // 获取线程退出码 (取消点) virtual ThreadID getIDOfThread(ArchThread thread) = 0; // 获取线程ID（日志用） // 信号处理 virtual void setSignalHandler(ESignal, SignalFunc func, void *userData) = 0; // 设置信号处理函数 virtual void raiseSignal(ESignal signal) = 0; // 触发信号处理 }; 2. 实现类 Windows:\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 抽象基类 IArchMultithread 2. 派生类型 2.1. Windows: 2.2. Unix 1. 抽象基类 IArchMultithread IArchMultithread 是一个跨平台多线程抽象接口，继承自 IInterface，定义了线程、互斥锁和条件变量等核心操作。\n">
 <title>04 跨平台抽象层之 —— 线程模块</title>
 
 <link rel='canonical' href='https://zuoco.github.io/p/04-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="04 跨平台抽象层之 —— 线程模块">
-<meta property='og:description' content=" 1. 抽象类型 IArchMultithread 2. 实现类 1. 抽象类型 IArchMultithread IArchMultithread 是一个跨平台多线程抽象接口，继承自 IInterface，定义了线程、互斥锁和条件变量等核心操作。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 class IArchMultithread : public IInterface { public: // 线程任务函数的类型 using ThreadFunc = void *(*)(void *); // 线程 ID using ThreadID = unsigned int; // 信号类型 enum ESignal { kINTERRUPT, // Ctrl+C kTERMINATE, // Ctrl+Break kHANGUP, // SIGHUP kUSER, // SIGUSR2 kNUM_SIGNALS }; // 信号处理函数的类型 using SignalFunc = void (*)(ESignal, void *userData); // 条件变量 virtual ArchCond newCondVar() = 0; // 创建条件变量 virtual void closeCondVar(ArchCond) = 0; // 销毁条件变量 virtual void signalCondVar(ArchCond) = 0; // 唤醒单个等待线程 virtual void broadcastCondVar(ArchCond) = 0; // 唤醒单个等待线程 virtual bool waitCondVar(ArchCond, ArchMutex, double timeout) = 0; // 带超时的条件等待 (取消点) // 互斥锁 virtual ArchMutex newMutex() = 0; // 创建互斥锁 virtual void closeMutex(ArchMutex) = 0; // 销毁互斥锁 virtual void lockMutex(ArchMutex) = 0; // 加锁 virtual void unlockMutex(ArchMutex) = 0; // 解锁 // 线程对象操作 virtual ArchThread newThread(ThreadFunc func, void *userData) = 0; // 创建新线程 virtual ArchThread newCurrentThread() = 0; // 返回一个表示当前（即调用）线程的对象的引用 virtual ArchThread copyThread(ArchThread thread) = 0; // 复制线程对象 virtual void closeThread(ArchThread) = 0; // 释放线程引用 virtual void cancelThread(ArchThread thread) = 0; // 请求线程取消 virtual void setPriorityOfThread(ArchThread, int n) = 0; // 设置线程优先级 virtual void testCancelThread() = 0; // 显式取消点，应该是用于测试的 virtual bool wait(ArchThread thread, double timeout) = 0; // 等待线程结束 (取消点) virtual bool isSameThread(ArchThread, ArchThread) = 0; // 线程对象比较 virtual bool isExitedThread(ArchThread thread) = 0; // 检查线程是否退出 virtual void *getResultOfThread(ArchThread thread) = 0; // 获取线程退出码 (取消点) virtual ThreadID getIDOfThread(ArchThread thread) = 0; // 获取线程ID（日志用） // 信号处理 virtual void setSignalHandler(ESignal, SignalFunc func, void *userData) = 0; // 设置信号处理函数 virtual void raiseSignal(ESignal signal) = 0; // 触发信号处理 }; 2. 实现类 Windows:\n">
+<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="04 跨平台抽象层之 —— 线程模块">
+<meta property='og:description' content=" 1. 抽象基类 IArchMultithread 2. 派生类型 2.1. Windows: 2.2. Unix 1. 抽象基类 IArchMultithread IArchMultithread 是一个跨平台多线程抽象接口，继承自 IInterface，定义了线程、互斥锁和条件变量等核心操作。\n">
 <meta property='og:url' content='https://zuoco.github.io/p/04-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-09-27T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-09-27T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="04 跨平台抽象层之 —— 线程模块">
-<meta name="twitter:description" content=" 1. 抽象类型 IArchMultithread 2. 实现类 1. 抽象类型 IArchMultithread IArchMultithread 是一个跨平台多线程抽象接口，继承自 IInterface，定义了线程、互斥锁和条件变量等核心操作。\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 class IArchMultithread : public IInterface { public: // 线程任务函数的类型 using ThreadFunc = void *(*)(void *); // 线程 ID using ThreadID = unsigned int; // 信号类型 enum ESignal { kINTERRUPT, // Ctrl+C kTERMINATE, // Ctrl+Break kHANGUP, // SIGHUP kUSER, // SIGUSR2 kNUM_SIGNALS }; // 信号处理函数的类型 using SignalFunc = void (*)(ESignal, void *userData); // 条件变量 virtual ArchCond newCondVar() = 0; // 创建条件变量 virtual void closeCondVar(ArchCond) = 0; // 销毁条件变量 virtual void signalCondVar(ArchCond) = 0; // 唤醒单个等待线程 virtual void broadcastCondVar(ArchCond) = 0; // 唤醒单个等待线程 virtual bool waitCondVar(ArchCond, ArchMutex, double timeout) = 0; // 带超时的条件等待 (取消点) // 互斥锁 virtual ArchMutex newMutex() = 0; // 创建互斥锁 virtual void closeMutex(ArchMutex) = 0; // 销毁互斥锁 virtual void lockMutex(ArchMutex) = 0; // 加锁 virtual void unlockMutex(ArchMutex) = 0; // 解锁 // 线程对象操作 virtual ArchThread newThread(ThreadFunc func, void *userData) = 0; // 创建新线程 virtual ArchThread newCurrentThread() = 0; // 返回一个表示当前（即调用）线程的对象的引用 virtual ArchThread copyThread(ArchThread thread) = 0; // 复制线程对象 virtual void closeThread(ArchThread) = 0; // 释放线程引用 virtual void cancelThread(ArchThread thread) = 0; // 请求线程取消 virtual void setPriorityOfThread(ArchThread, int n) = 0; // 设置线程优先级 virtual void testCancelThread() = 0; // 显式取消点，应该是用于测试的 virtual bool wait(ArchThread thread, double timeout) = 0; // 等待线程结束 (取消点) virtual bool isSameThread(ArchThread, ArchThread) = 0; // 线程对象比较 virtual bool isExitedThread(ArchThread thread) = 0; // 检查线程是否退出 virtual void *getResultOfThread(ArchThread thread) = 0; // 获取线程退出码 (取消点) virtual ThreadID getIDOfThread(ArchThread thread) = 0; // 获取线程ID（日志用） // 信号处理 virtual void setSignalHandler(ESignal, SignalFunc func, void *userData) = 0; // 设置信号处理函数 virtual void raiseSignal(ESignal signal) = 0; // 触发信号处理 }; 2. 实现类 Windows:\n">
+<meta name="twitter:description" content=" 1. 抽象基类 IArchMultithread 2. 派生类型 2.1. Windows: 2.2. Unix 1. 抽象基类 IArchMultithread IArchMultithread 是一个跨平台多线程抽象接口，继承自 IInterface，定义了线程、互斥锁和条件变量等核心操作。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -282,8 +282,12 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82-c&#43;&#43;/" style="background-color: #1E90FF; color: #FFFFFF;">
-                跨平台抽象层-C&#43;&#43;
+            <a href="/categories/deskflow/" >
+                DeskFlow
+            </a>
+        
+            <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" >
+                设计模式
             </a>
         
     </header>
@@ -330,10 +334,15 @@
     
     
     <ul>
-<li><a class="link" href="#1-%e6%8a%bd%e8%b1%a1%e7%b1%bb%e5%9e%8b-iarchmultithread" >1. 抽象类型 IArchMultithread</a></li>
-<li><a class="link" href="#2-%e5%ae%9e%e7%8e%b0%e7%b1%bb" >2. 实现类</a></li>
+<li><a class="link" href="#1-%e6%8a%bd%e8%b1%a1%e5%9f%ba%e7%b1%bb-iarchmultithread" >1. <strong>抽象基类 IArchMultithread</strong></a></li>
+<li><a class="link" href="#2-%e6%b4%be%e7%94%9f%e7%b1%bb%e5%9e%8b" >2. <strong>派生类型</strong></a>
+<ul>
+<li><a class="link" href="#21-windows" >2.1. <strong>Windows:</strong></a></li>
+<li><a class="link" href="#22-unix" >2.2. <strong>Unix</strong></a></li>
 </ul>
-<h1 id="1-抽象类型-iarchmultithread">1. 抽象类型 IArchMultithread
+</li>
+</ul>
+<h1 id="1-抽象基类-iarchmultithread">1. <strong>抽象基类 IArchMultithread</strong>
 </h1><p>IArchMultithread 是一个跨平台多线程抽象接口，继承自 IInterface，定义了线程、互斥锁和条件变量等核心操作。<br>
 <img src="/p/04-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/multi-thread.svg"
 	
@@ -343,6 +352,34 @@
 	
 	
 ></p>
+<p>需要了解 4 个类型：</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>类型</th>
+          <th>功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>ArchThreadImpl</td>
+          <td><code>线程实体</code>的封装，平台强相关： 句柄、线程上下文、取消、退出等等</td>
+      </tr>
+      <tr>
+          <td>IArchMultithread</td>
+          <td>封装对于<code>线程实体</code>的操作</td>
+      </tr>
+      <tr>
+          <td>ArchMultithreadWindows</td>
+          <td>IArchMultithread的Win平台实现</td>
+      </tr>
+      <tr>
+          <td>ArchMultithreadPosix</td>
+          <td>IArchMultithread的Posix标准实现</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><strong>IArchMultithread类设计如下：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -395,14 +432,24 @@
 </span><span class="lnt">48
 </span><span class="lnt">49
 </span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">IArchMultithread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IInterface</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/* 1. 线程实体 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ArchThread</span> <span class="o">=</span> <span class="n">ArchThreadImpl</span> <span class="o">*</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 2. 操作线程实体的接口，通过操作ArchThreadImpl对象来实现线程功能 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">IArchMultithread</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IInterface</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 线程任务函数的类型
+</span></span><span class="line"><span class="cl">    <span class="c1">// 线程任务函数类型
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">using</span> <span class="n">ThreadFunc</span> <span class="o">=</span> <span class="kt">void</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 线程 ID
+</span></span><span class="line"><span class="cl">    <span class="c1">// 线程 ID 类型
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">using</span> <span class="n">ThreadID</span> <span class="o">=</span> <span class="kt">unsigned</span> <span class="kt">int</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// 信号类型
@@ -449,44 +496,308 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="2-实现类">2. 实现类
-</h1><p><strong>Windows:</strong></p>
-<div class="highlight"><div class="chroma">
+</div><h1 id="2-派生类型">2. <strong>派生类型</strong>
+</h1><h2 id="21-windows">2.1. <strong>Windows:</strong>
+</h2><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define ARCH_MULTITHREAD ArchMultithreadWindows
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArchMultithreadWindows</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IArchMultithread</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="c1">// override 纯虚函数，就是封装Win的系统调用。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">using</span> <span class="n">ThreadList</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">ArchThread</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">static</span> <span class="n">ArchMultithreadWindows</span> <span class="o">*</span><span class="n">s_instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">ArchMutex</span> <span class="n">m_threadMutex</span><span class="p">;</span>    <span class="c1">// 线程队列的互斥锁
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="n">ThreadList</span> <span class="n">m_threadList</span><span class="p">;</span>    <span class="c1">// 线程队列
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">ArchThread</span> <span class="n">m_mainThread</span><span class="p">;</span>    <span class="c1">// 主线程
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>Unix</strong></p>
+</div><p><strong>实现：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/* 1. 线程实体 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArchThreadImpl</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ArchThreadImpl</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="o">~</span><span class="n">ArchThreadImpl</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">m_refCount</span><span class="p">;</span>    <span class="c1">// 引用计数管理，防止线程对象在使用过程中被意外销毁。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">HANDLE</span> <span class="n">m_thread</span><span class="p">;</span>   <span class="c1">// Win平台的线程句柄，表示线程的内核对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">DWORD</span> <span class="n">m_id</span><span class="p">;</span>        <span class="c1">// 线程标识符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">IArchMultithread</span><span class="o">::</span><span class="n">ThreadFunc</span> <span class="n">m_func</span><span class="p">;</span>  <span class="c1">// 线程任务
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">m_userData</span><span class="p">;</span>  <span class="c1">// 用户参数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="n">HANDLE</span> <span class="n">m_cancel</span><span class="p">;</span>   <span class="c1">// 线程取消事件，线程被取消时触发
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">bool</span> <span class="n">m_cancelling</span><span class="p">;</span> <span class="c1">// 线程是否正在取消
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">HANDLE</span> <span class="n">m_exit</span><span class="p">;</span>     <span class="c1">// exit事件，线程退出时触发
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="o">*</span><span class="n">m_result</span><span class="p">;</span>          <span class="c1">// 存储线程执行结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="kt">void</span> <span class="o">*</span><span class="n">m_networkData</span><span class="p">;</span>     <span class="c1">// 异步任务中的网络数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ArchThreadImpl实现代码
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 2. 线程实体操作实现 */</span>
+</span></span><span class="line"><span class="cl"><span class="n">ArchMultithreadPosix</span> <span class="o">*</span><span class="n">ArchMultithreadPosix</span><span class="o">::</span><span class="n">s_instance</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>  
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ArchMultithreadWindows</span><span class="o">::</span><span class="n">ArchMultithreadWindows</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 单例初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">s_instance</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s_instance</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">m_threadMutex</span> <span class="o">=</span> <span class="n">newMutex</span><span class="p">();</span>  <span class="c1">// 线程队列互斥锁
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">m_mainThread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArchThreadImpl</span><span class="p">;</span>  <span class="c1">// 创建主线程
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">m_mainThread</span><span class="o">-&gt;</span><span class="n">m_thread</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>   
+</span></span><span class="line"><span class="cl">    <span class="n">m_mainThread</span><span class="o">-&gt;</span><span class="n">m_id</span> <span class="o">=</span> <span class="n">GetCurrentThreadId</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">insert</span><span class="p">(</span><span class="n">m_mainThread</span><span class="p">);</span>              <span class="c1">// 将主线程插入到线程队列（m_threadList）中进行管理
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ArchMultithreadWindows的其他成员函数实现
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="22-unix">2.2. <strong>Unix</strong>
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define ARCH_MULTITHREAD ArchMultithreadPosix
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArchMultithreadPosix</span> <span class="o">:</span> <span class="k">public</span> <span class="n">IArchMultithread</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// override 纯虚函数，就是封装Posix标准线程接口。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>  
+</span></span><span class="line"><span class="cl">    <span class="n">ArchMultithreadPosix</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ArchMultithreadPosix</span><span class="p">(</span><span class="n">ArchMultithreadPosix</span> <span class="k">const</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ArchMultithreadPosix</span><span class="p">(</span><span class="n">ArchMultithreadPosix</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">ArchMultithreadPosix</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">ArchMultithreadPosix</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">ArchMultithreadPosix</span> <span class="k">const</span> <span class="o">&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ArchMultithreadPosix</span> <span class="o">&amp;</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">ArchMultithreadPosix</span> <span class="o">&amp;&amp;</span><span class="p">)</span> <span class="o">=</span> <span class="k">delete</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// override IArchMultithread的纯虚函数。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="n">ThreadList</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">list</span><span class="o">&lt;</span><span class="n">ArchThread</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">static</span> <span class="n">ArchMultithreadPosix</span> <span class="o">*</span><span class="n">s_instance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">m_newThreadCalled</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">ArchMutex</span> <span class="n">m_threadMutex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ArchThread</span> <span class="n">m_mainThread</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadList</span> <span class="n">m_threadList</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadID</span> <span class="n">m_nextID</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">pthread_t</span> <span class="n">m_signalThread</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>实现：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/* 1. Unix平台线程实体，和Win的差不多 */</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ArchThreadImpl</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">ArchThreadImpl</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">m_refCount</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">IArchMultithread</span><span class="o">::</span><span class="n">ThreadID</span> <span class="n">m_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pthread_t</span> <span class="n">m_thread</span><span class="p">;</span>                              <span class="c1">// Posix标准下的线程句柄
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="n">IArchMultithread</span><span class="o">::</span><span class="n">ThreadFunc</span> <span class="n">m_func</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="o">*</span><span class="n">m_userData</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">m_cancel</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">m_cancelling</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">bool</span> <span class="n">m_exited</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="o">*</span><span class="n">m_result</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">void</span> <span class="o">*</span><span class="n">m_networkData</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/* 2. ArchMultithreadPosix定义 */</span>
+</span></span><span class="line"><span class="cl"><span class="n">ArchMultithreadPosix</span> <span class="o">*</span><span class="n">ArchMultithreadPosix</span><span class="o">::</span><span class="n">s_instance</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 和Win平台差不多
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ArchMultithreadPosix</span><span class="o">::</span><span class="n">ArchMultithreadPosix</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">assert</span><span class="p">(</span><span class="n">s_instance</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s_instance</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="n">m_threadMutex</span> <span class="o">=</span> <span class="n">newMutex</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">m_mainThread</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArchThreadImpl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m_mainThread</span><span class="o">-&gt;</span><span class="n">m_thread</span> <span class="o">=</span> <span class="n">pthread_self</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">insert</span><span class="p">(</span><span class="n">m_mainThread</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ArchMultithreadPosix的其他成员函数实现
+</span></span></span><span class="line"><span class="cl"><span class="c1">// ...
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div>
 </section>
@@ -538,6 +849,45 @@
             
                 
 <article class="">
+    <a href="/p/deskflow-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E4%BB%BB%E5%8A%A1%E8%AE%BE%E8%AE%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DeskFlow — 多路复用器、多路复用器任务设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/deskflow-%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E6%8A%BD%E8%B1%A1%E8%AE%BE%E8%AE%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DeskFlow — 线程的异步任务抽象设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DeskFlow — 跨平台线程对象管理类</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/01-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/">
         
         
@@ -557,45 +907,6 @@
 
         <div class="article-details">
             <h2 class="article-title">02 跨平台抽象层之 —— Arch单例类型</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/03-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">03 跨平台抽象层之 —— 网络模块</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/05-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">05 跨平台抽象层之 —— 守护进程</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/06-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E6%97%A5%E5%BF%97/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">06 跨平台抽象层之 —— 日志</h2>
         </div>
     </a>
 </article>

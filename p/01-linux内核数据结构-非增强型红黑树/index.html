@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点结构 2.2. 树结构 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点 2.2. 树 2.3. 红黑树操作 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
 <title>01 — Linux内核数据结构 — 非增强型红黑树</title>
 
 <link rel='canonical' href='https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="01 — Linux内核数据结构 — 非增强型红黑树">
-<meta property='og:description' content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点结构 2.2. 树结构 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
+<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="01 — Linux内核数据结构 — 非增强型红黑树">
+<meta property='og:description' content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点 2.2. 树 2.3. 红黑树操作 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
 <meta property='og:url' content='https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-05T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="01 — Linux内核数据结构 — 非增强型红黑树">
-<meta name="twitter:description" content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点结构 2.2. 树结构 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
+<meta name="twitter:description" content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点 2.2. 树 2.3. 红黑树操作 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -337,8 +337,9 @@
 <li><a class="link" href="#1-%e4%bb%80%e4%b9%88%e6%98%af%e7%ba%a2%e9%bb%91%e6%a0%91" >1. <strong>什么是红黑树</strong></a></li>
 <li><a class="link" href="#2-linux%e5%86%85%e6%a0%b8%e7%ba%a2%e9%bb%91%e6%a0%91%e6%ba%90%e7%a0%81" >2. <strong>Linux内核红黑树源码</strong></a>
 <ul>
-<li><a class="link" href="#21-%e8%8a%82%e7%82%b9%e7%bb%93%e6%9e%84" >2.1. <strong>节点结构</strong></a></li>
-<li><a class="link" href="#22-%e6%a0%91%e7%bb%93%e6%9e%84" >2.2. <strong>树结构</strong></a></li>
+<li><a class="link" href="#21-%e8%8a%82%e7%82%b9" >2.1. <strong>节点</strong></a></li>
+<li><a class="link" href="#22-%e6%a0%91" >2.2. <strong>树</strong></a></li>
+<li><a class="link" href="#23-%e7%ba%a2%e9%bb%91%e6%a0%91%e6%93%8d%e4%bd%9c" >2.3. <strong>红黑树操作</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -359,10 +360,8 @@
 <li><code>树高</code>:  红黑树的颜色规定，实际上是约束树的高度，尤其是<strong>特征2</strong>，任意一个节点，可能有多条路径到达叶子节点，由于黑色节点的数量必须相同，所以多条路径之间的高度相差不会不大(2倍)，最短路径就是没有红节点，最长路径就是红节点最多，但是由于红节不能连续，所以只能红黑相间，也就是数量一样多。</li>
 </ol>
 <h1 id="2-linux内核红黑树源码">2. <strong>Linux内核红黑树源码</strong>
-</h1><h2 id="21-节点结构">2.1. <strong>节点结构</strong>
-</h2><ul>
-<li>源文件： /include/linux/rbtree_types.h</li>
-</ul>
+</h1><h2 id="21-节点">2.1. <strong>节点</strong>
+</h2><p>源文件： /include/linux/rbtree_types.h</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -380,7 +379,7 @@
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 节点结构
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="n">rb_node</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">long</span>  <span class="n">__rb_parent_color</span><span class="p">;</span>   <span class="c1">// 通常用最低位来表示本节点的颜色（0 表示红色，1 表示黑色），而其余高位用于存储父节点的地址。
+</span></span><span class="line"><span class="cl">	<span class="kt">unsigned</span> <span class="kt">long</span>  <span class="n">__rb_parent_color</span><span class="p">;</span>   <span class="c1">// 用最低位来表示本节点的颜色（0 表示红色，1 表示黑色），而其余高位用于存储父节点的地址。
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">rb_right</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">rb_left</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="nf">__attribute__</span><span class="p">((</span><span class="nf">aligned</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span><span class="p">))));</span>
@@ -393,29 +392,21 @@
 </div>
 </div><ul>
 <li>节点定义的是树的链接关系，不包含用户数据。实际使用中需要定义一个用户结构（user_data），用户结构中包含节点(node)和用户数据(data)。</li>
-<li>同样，树结构中也是只有节点，树结构本身不管理用户数据，当我们遍历树并访问用户数据(data)时，就需要先通过node地址找到user_data的地址，然后使用<code>.</code>/<code>-&gt;</code>来访问data成员。</li>
+<li>同样，树结构中也是只有节点，树结构本身不管理用户数据，当我们遍历树并访问用户数据(data)时，就需要先找到树中的节点node，然后根据node地址找到user_data的地址，然后使用<code>.</code>/<code>-&gt;</code>来访问用户结构中的data成员。</li>
 </ul>
-<h2 id="22-树结构">2.2. <strong>树结构</strong>
-</h2><ul>
-<li>源文件: /include/linux/rbtree_types.h</li>
-</ul>
-<ol>
-<li><strong>创建一个空树</strong></li>
-</ol>
+<h2 id="22-树">2.2. <strong>树</strong>
+</h2><p>源文件: /include/linux/rbtree_types.h</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define RB_ROOT (struct rb_root) { NULL, }
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define RB_ROOT (struct rb_root) { NULL, } </span><span class="c1">// 创建一个空树
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>源文件： /include/linux/rbtree.h</li>
-</ul>
-<ol start="2">
-<li><strong>提取出父节点的地址</strong>（去除颜色信息），参考节点结构：   比较麻烦的是Case2-2和Case4-2-2，Case2-2就是删除一个黑色节点，导致经过该节点的路径中黑色节点少了一个，这违反了红黑树的平衡特性。而Case4-2-2需要使用后继节点替补被删除的节点，相当强将后继节点从它原本的位置删除，结果还是转换为删除黑色节点的问题了。</li>
-</ol>
+</div><h2 id="23-红黑树操作">2.3. <strong>红黑树操作</strong>
+</h2><p><strong>提取出父节点的地址</strong>（去除颜色信息），父节点地址和当前节点的颜色保存在一个unsigned long成员中：</p>
+<p>源文件： /include/linux/rbtree.h</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -432,9 +423,8 @@
 </span></span><span class="line"><span class="cl"><span class="cp">#define rb_parent(r)   ((struct rb_node *)((r)-&gt;__rb_parent_color &amp; ~3))
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li><strong>从树节点指针获取包含它的用户结构体指针</strong>：通过树节点地址获取用户节点地址：</li>
-</ol>
+</div><hr>
+<p><strong>从树节点指针获取包含它的用户结构体指针</strong>： 通过树的节点地址获取用户节点地址：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -461,13 +451,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="cp">	})
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>用于遍历、查找、安全删除等操作；</li>
-<li>参考节点定义，节点是用户类型的成员，先找到用户结构体的入口地址，然后通过用户类型的<code>.</code>/<code>-&gt;</code>方法访问它的节点成员/数据成员。</li>
-</ul>
-<ol start="3">
-<li><strong>判断树是否为空</strong>：</li>
-</ol>
+</div><p>因为树的节点是用户节点的成员，所以知道树节点地址就可以使用container_of找到用户节点的地址，然后使用<code>.</code>/<code>-&gt;</code>方法访问用户节点的成员。</p>
+<hr>
+<p><strong>判断树是否为空</strong>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -482,9 +468,8 @@
 </span></span><span class="line"><span class="cl"><span class="cp">#define RB_EMPTY_ROOT(root)  (READ_ONCE((root)-&gt;rb_node) == NULL)
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="4">
-<li><strong>判断给定节点是否已经插入树中</strong>：</li>
-</ol>
+</div><hr>
+<p><strong>判断给定节点是否已经插入树中</strong>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -501,9 +486,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="cp">	((node)-&gt;__rb_parent_color == (unsigned long)(node))
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="5">
-<li><strong>将节点标记为空节点</strong>： 移除节点后使用：</li>
-</ol>
+</div><hr>
+<p><strong>将节点标记为空节点</strong>： 移除节点后使用：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -520,115 +504,22 @@
 </span></span></span><span class="line"><span class="cl"><span class="cp">	((node)-&gt;__rb_parent_color = (unsigned long)(node))
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="6">
-<li><strong>插入新节点</strong>：</li>
-</ol>
+</div><hr>
+<p><strong>插入新节点</strong>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// less: 用户节点的排序逻辑
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">static</span> <span class="n">__always_inline</span> <span class="kt">void</span>
-</span></span><span class="line"><span class="cl"><span class="nf">rb_add</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">       <span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">less</span><span class="p">)(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rb_node</span> <span class="o">**</span><span class="n">link</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">rb_node</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">parent</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="c1">// 如果 node 小于 parent，向左子树移动；否则向右子树移动，直到 *link 为 NULL，就是要插入的位置。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">link</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="n">parent</span> <span class="o">=</span> <span class="o">*</span><span class="n">link</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="nf">less</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">parent</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">			<span class="n">link</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_left</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">		<span class="k">else</span>
-</span></span><span class="line"><span class="cl">			<span class="n">link</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">parent</span><span class="o">-&gt;</span><span class="n">rb_right</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nf">rb_link_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">link</span><span class="p">);</span>  	<span class="c1">// 将节点连接到树中
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">rb_insert_color</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">tree</span><span class="p">);</span>	    <span class="c1">// 修复平衡
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// less: 用户节点的排序逻辑，
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 将node插入到树中，并修复平衡。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">rb_add</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="kt">bool</span> <span class="p">(</span><span class="o">*</span><span class="n">less</span><span class="p">)(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">));</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>&mdash;&mdash;&mdash;插入节点中用到的函数&mdash;&mdash;&mdash;&ndash;</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/**	
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  将新节点链接到红黑树中，将新节点 node 链接到红黑树中，作为 parent 的子节点，并更新 rb_link 指向新节点。
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl"><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">rb_link_node</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">parent</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">**</span><span class="n">rb_link</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="n">node</span><span class="o">-&gt;</span><span class="n">__rb_parent_color</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">parent</span><span class="p">;</span>   <span class="c1">// 保存父节点信息
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_left</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_right</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>             <span class="c1">// 初始化新节点
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">	<span class="o">*</span><span class="n">rb_link</span> <span class="o">=</span> <span class="n">node</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 在 RCU（Read-Copy-Update）同步模型下，将新节点 node 链接到红黑树中。
-</span></span></span><span class="line"><span class="cl"><span class="c1">// 用于需要 RCU 保护的红黑树插入操作，如并发读写场景。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">rb_link_node_rcu</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">node</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="n">parent</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_node</span> <span class="o">**</span><span class="n">rb_link</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="n">node</span><span class="o">-&gt;</span><span class="n">__rb_parent_color</span> <span class="o">=</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span><span class="n">parent</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_left</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">rb_right</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nf">rcu_assign_pointer</span><span class="p">(</span><span class="o">*</span><span class="n">rb_link</span><span class="p">,</span> <span class="n">node</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="cm">/** 
-</span></span></span><span class="line"><span class="cl"><span class="cm"> *  插入新节点后修复红黑树的平衡性。
-</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="kt">void</span> <span class="nf">rb_insert_color</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="p">);</span> <span class="c1">// 这个函数比较长，后面单独章节介绍实现
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ol start="7">
-<li><strong>移除节点</strong>：</li>
-</ol>
+</div><hr>
+<p><strong>移除节点</strong>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -640,12 +531,11 @@
 <pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/** 
 </span></span></span><span class="line"><span class="cl"><span class="cm"> * 从红黑树中删除指定节点，并修复树的平衡性。
 </span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
-</span></span><span class="line"><span class="cl"><span class="k">extern</span> <span class="kt">void</span> <span class="nf">rb_erase</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="p">);</span>   <span class="c1">// 这个函数比较长，后面单独章节介绍实现
-</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">rb_erase</span><span class="p">(</span><span class="k">struct</span> <span class="n">rb_node</span> <span class="o">*</span><span class="p">,</span> <span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="p">);</span>  
+</span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="8">
-<li><strong>树遍历</strong>：</li>
-</ol>
+</div><hr>
+<p><strong>树遍历</strong>：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -691,9 +581,8 @@
 <li>中序遍历用于有序访问（如最小值到最大值）。</li>
 <li>{ n = rb_entry_safe(rb_next_postorder(&amp;pos-&gt;field), typeof(*pos), field); 1; }，使用了GCC的扩展语法 —— 复合语句表达式：<code>{expression; 1;};</code>,始终返回1。</li>
 </ul>
-<ol start="10">
-<li><strong>替换节点</strong>： 直接替换节点，无需重新平衡树：</li>
-</ol>
+<hr>
+<p><strong>替换节点</strong>： 直接替换节点，无需重新平衡树：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -732,9 +621,8 @@
 </span></span><span class="line"><span class="cl">				<span class="k">struct</span> <span class="n">rb_root</span> <span class="o">*</span><span class="n">root</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="11">
-<li><strong>查找节点</strong></li>
-</ol>
+</div><hr>
+<p><strong>查找节点</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -801,9 +689,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="12">
-<li><strong>仅查找</strong></li>
-</ol>
+</div><hr>
+<p><strong>仅查找</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -854,9 +741,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="13">
-<li><strong>遍历红黑树中所有与 key 等价的节点，按中序顺序依次访问</strong></li>
-</ol>
+</div><hr>
+<p><strong>查找红黑树中所有与 key 等价的节点，按中序顺序依次访问</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -869,9 +755,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="cp">	     (node); (node) = rb_next_match((key), (node), (cmp)))
 </span></span></span></code></pre></td></tr></table>
 </div>
-</div><ol start="14">
-<li><strong>查找与 key 等价的 最左边的节点</strong>:</li>
-</ol>
+</div><hr>
+<p><strong>查找与 key 等价的 最左边的节点</strong>:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -931,9 +816,8 @@
 </div><ul>
 <li>处理重复键，与 rb_next_match 配合使用，实现完整的匹配项遍历。</li>
 </ul>
-<ol start="15">
-<li><strong>从当前节点 node 开始，查找与 key 等价的 下一个节点</strong></li>
-</ol>
+<hr>
+<p><strong>从当前节点 node 开始，查找与 key 等价的 下一个节点</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1

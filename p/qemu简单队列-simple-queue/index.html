@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="Qemu简单队列 Simple Queue">
+<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="Qemu简单队列 Simple Queue">
 <meta property='og:description' content=" 1. 队列定义 1.1. 使用案例 2. 队列操做 2.1. 基本访问方法 2.2. 队列初始化 2.3. 插入节点 2.3.1. 插入到头部 2.3.2. 插入到尾部 2.3.3. 插入到中间 3. 移除节点 3.1. 移除头部节点 3.2. 移除指定节点 3.3. 遍历 3.3.1. 遍历队列 3.3.2. 遍历队列（安全） 3.4. 尾节点快速定位 3.5. 队列合并 3.5.1. 合并到尾部 3.5.2. 合并到头部 3.6. 分割队列 4. 完整代码 1. 队列定义 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 队列头 #define QSIMPLEQ_HEAD(name, type) \\ struct name { \\ struct type *sqh_first; /* first element */ \\ struct type **sqh_last; /* addr of last next element */ \\ } // 初始化一个队列 #define QSIMPLEQ_HEAD_INITIALIZER(head) \\ { NULL, &amp;(head).sqh_first } // 节点中的连接域，指向下一个节点 #define QSIMPLEQ_ENTRY(type) \\ struct { \\ struct type *sqe_next; /* next element */ \\ } 1.1. 使用案例 qemu-8.2.2/qemu-img.c\n">
 <meta property='og:url' content='https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
 <meta property='og:site_name' content='阿左笔记'>
@@ -1355,6 +1355,19 @@
             
                 
 <article class="">
+    <a href="/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Qemu尾队列 Tail Queue</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/">
         
         
@@ -1400,19 +1413,6 @@
 
         <div class="article-details">
             <h2 class="article-title">04 — Linux内核数据结构 — 红黑树 — 插入节点与平衡（原理）</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">03 — Linux内核数据结构 — 红黑树 — 移除节点（代码）</h2>
         </div>
     </a>
 </article>

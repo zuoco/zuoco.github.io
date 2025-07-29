@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/'>
 
-<link rel="stylesheet" href="/scss/style.min.946cca6c6259ef94ac55abfae7c7bf3291ea3ed5eea17ef77500b257217c6710.css"><meta property='og:title' content="容器适配器之 stack">
+<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="容器适配器之 stack">
 <meta property='og:description' content=" 1. std::stack 2. 创建Stack容器对象 3. 成员函数 1. std::stack 底层可以使用vector、deque或者list。\n1 2 3 4 5 // Defined in header &lt;stack&gt; template&lt; class T, class Container = std::deque&lt;T&gt; // 底层容器默认是deque &gt; class stack; 2. 创建Stack容器对象 1 2 // 一个空的stack std::stack&lt;int&gt; st; 1 2 // 指定底层容器为list std::stack&lt;int, std::list&lt;int&gt;&gt; st; 1 2 3 4 // 使用已有的基础容器实例初始化栈对象。 // 但要求基础容器类型和当前栈的底层类型相同。 std::list&lt;int&gt; lst = {4, 5, 6}; std::stack&lt;int, std::list&lt;int&gt;&gt; stack_list(lst); // 拷贝lst的内存 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 拷贝构造 // 要求基础栈数据类型和栈的底层类型相同。 #include &lt;iostream&gt; #include &lt;stack&gt; int main() { std::stack&lt;int&gt; original; original.push(10); original.push(20); original.push(30); std::stack&lt;int&gt; copied(original); while (!copied.empty()) { std::cout &lt;&lt; copied.top() &lt;&lt; &#34; &#34;; copied.pop(); } return 0; } 3. 成员函数 成员函数 功能 empty() 栈为空时返回true。 size() 返回 stack 栈中存储元素的个数。 top() 返回一个栈顶元素的引用，类型为 T&amp;。如果栈为空，程序会报错。 push(const T&amp; val) 先复制 val，再将 val 副本压入栈顶。这是通过调用底层容器的 push_back() 函数完成的。 push(T&amp;&amp; obj) 以移动元素的方式将其压入栈顶。这是通过调用底层容器的有右值引用参数的 push_back() 函数完成的。 pop() 弹出栈顶元素。 emplace(arg&hellip;) 在栈顶位置原地构造一个元素。 swap(stack &amp; other_stack) 将两个stack中的元素进行交换，2 个 stack 中的元素类型以及底层采用的基础容器类型都必须相同。 ">
 <meta property='og:url' content='https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/'>
 <meta property='og:site_name' content='阿左笔记'>
@@ -533,6 +533,19 @@
             
                 
 <article class="">
+    <a href="/p/stdthread/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">std::thread</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/">
         
         
@@ -578,19 +591,6 @@
 
         <div class="article-details">
             <h2 class="article-title">可调用对象之 Lambda</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">泛型算法</h2>
         </div>
     </a>
 </article>
