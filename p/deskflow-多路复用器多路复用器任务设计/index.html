@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/deskflow-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E4%BB%BB%E5%8A%A1%E8%AE%BE%E8%AE%A1/'>
 
-<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="DeskFlow — 多路复用器、多路复用器任务设计">
+<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="DeskFlow — 多路复用器、多路复用器任务设计">
 <meta property='og:description' content=" 1. 多路复用器 2. 多路复用器任务 对于多路复用，DeskFlow设计了两个类型 —\u2003SocketMultiplexer、ISocketMultiplexerJob：\n">
 <meta property='og:url' content='https://zuoco.github.io/p/deskflow-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E4%BB%BB%E5%8A%A1%E8%AE%BE%E8%AE%A1/'>
 <meta property='og:site_name' content='阿左笔记'>
@@ -339,10 +339,10 @@
 </ul>
 <p>对于多路复用，DeskFlow设计了两个类型  —  <code>SocketMultiplexer</code>、<code>ISocketMultiplexerJob</code>：</p>
 <ul>
-<li>SocketMultiplexer是套接字多路复用器的核心实现，管理多个网络套接字（ISocket）的I/O。</li>
+<li>SocketMultiplexer是套接字多路复用器的核心实现，借助poll来管理多个网络套接字（ISocket）的I/O。</li>
 <li>ISocketMultiplexerJob是一个抽象类型，是套接字I/O任务的核心实现。</li>
 </ul>
-<p>DeskFlow的多路复用使用事件驱动的设计模式，当套接字状态发生变化时（可读、可写、出错），多路复用器就会调用 run() 方法处理这些事件，。</p>
+<p>DeskFlow的多路复用使用事件驱动的设计模式，多路复用器主线程的任务循环中检测套接字的状态，当状态发生变化时（可读、可写、出错），多路复用器就会调用套接字任务处理这些事件，而套接字的I/O事件封装为“多路复用器事件”。</p>
 <h1 id="1-多路复用器设计">1. <strong>多路复用器设计</strong>
 </h1><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -404,6 +404,14 @@
 </span><span class="lnt">56
 </span><span class="lnt">57
 </span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">SocketMultiplexer</span>
@@ -431,19 +439,27 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="na">[[noreturn]]</span> <span class="kt">void</span> <span class="n">serviceThread</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">);</span>                <span class="c1">// 轮询所有注册的 socket，检测事件并调用回调（ISocketMultiplexerJob）
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 迭代器锚点，用于防止迭代器失效的问题 */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">JobCursor</span> <span class="nf">newCursor</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="n">JobCursor</span> <span class="nf">nextCursor</span><span class="p">(</span><span class="n">JobCursor</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">deleteCursor</span><span class="p">(</span><span class="n">JobCursor</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/*  
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  任务列表的迭代器游标，用于防止多线程并发时的迭代器失效的问题。  
+</span></span></span><span class="line"><span class="cl"><span class="cm">     *  不再使用使用begin和end迭代器遍历列表，而是使用newCursor()和nextCursor()返回的迭代器来遍历。  
+</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">JobCursor</span> <span class="nf">newCursor</span><span class="p">();</span>                <span class="c1">// 将游标（m_cursorMark）插入列表开头，作为遍历的起点。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">JobCursor</span> <span class="nf">nextCursor</span><span class="p">(</span><span class="n">JobCursor</span><span class="p">);</span>      <span class="c1">// 在列表中找到一个有效的job，并返回。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">deleteCursor</span><span class="p">(</span><span class="n">JobCursor</span><span class="p">);</span>         <span class="c1">// 移除游标。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 读写共享资源时，先调用lockJobListLock()，再调用lockJobList()，然后开始读写共享资源 */</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">lockJobListLock</span><span class="p">();</span>    <span class="c1">// 获取 m_jobListLockLocked
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">lockJobList</span><span class="p">();</span>        <span class="c1">// 获取 m_jobListLock，获取成功后会释放m_jobListLockLocked
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">unlockJobList</span><span class="p">();</span>      <span class="c1">// 释放 m_jobListLock
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Mutex</span> <span class="o">*</span><span class="n">m_mutex</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>                      <span class="c1">// 保护共享资源m_socketJobs、m_socketJobMap等
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Thread</span> <span class="o">*</span><span class="n">m_thread</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Mutex</span> <span class="o">*</span><span class="n">m_mutex</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>  <span class="c1">// 保护共享资源m_socketJobs、m_socketJobMap等
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 多路复用器主线程，构造函数中启动 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Thread</span> <span class="o">*</span><span class="n">m_thread</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 任务列表更新标志 */</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">m_update</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 通知服务线程有新 job 需要处理，由unlockJobList()更新 */</span>
@@ -466,7 +482,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>成员函数实现：</p>
+</div><p>主线程实现：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -498,7 +514,6 @@
 </span><span class="lnt">27
 </span><span class="lnt">28
 </span><span class="lnt">29
-</span><span class="lnt">30
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="na">[[noreturn]]</span> <span class="kt">void</span> <span class="n">SocketMultiplexer</span><span class="o">::</span><span class="n">serviceThread</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span>
@@ -521,12 +536,11 @@
 </span></span><span class="line"><span class="cl">        <span class="c1">// 有任务了，先上锁
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">lockJobListLock</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="n">lockJobList</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">m_update</span><span class="p">)</span> 
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// 这里就是poll的逻辑代码，监控一组ISocket，有事件就执行对应的任务。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">        <span class="c1">// 解锁
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">unlockJobList</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
@@ -581,7 +595,6 @@
 </span><span class="lnt">42
 </span><span class="lnt">43
 </span><span class="lnt">44
-</span><span class="lnt">45
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cm">/* 
@@ -618,16 +631,15 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">ISocketMultiplexerJob</span> <span class="o">*</span><span class="nf">run</span><span class="p">(</span><span class="kt">bool</span> <span class="n">readable</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">writable</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">error</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="n">ArchSocket</span> <span class="nf">getSocket</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="nf">isReadable</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="nf">isWritable</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">T</span> <span class="o">*</span><span class="n">m_object</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Method</span> <span class="n">m_method</span><span class="p">;</span>       <span class="c1">// 多路复用器任务
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ArchSocket</span> <span class="n">m_socket</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">m_readable</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="nf">isReadable</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>  <span class="c1">// m_readable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">bool</span> <span class="nf">isWritable</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>  <span class="c1">// m_writable
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">T</span> <span class="o">*</span><span class="n">m_object</span><span class="p">;</span>           <span class="c1">// 任务的来源，事件驱动框架中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">Method</span> <span class="n">m_method</span><span class="p">;</span>       <span class="c1">// 多路复用器任务函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ArchSocket</span> <span class="n">m_socket</span><span class="p">;</span>   <span class="c1">// 任务对应的Socket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">bool</span> <span class="n">m_readable</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">m_writable</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="o">*</span><span class="n">m_arg</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="o">*</span><span class="n">m_arg</span><span class="p">;</span>           
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
@@ -716,6 +728,19 @@
             
                 
 <article class="">
+    <a href="/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">DeskFlow — 事件框架设计</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/deskflow-%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E6%8A%BD%E8%B1%A1%E8%AE%BE%E8%AE%A1/">
         
         
@@ -729,12 +754,12 @@
             
                 
 <article class="">
-    <a href="/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86%E7%B1%BB/">
+    <a href="/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%BA%BF%E7%A8%8B%E7%B1%BB/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">DeskFlow — 跨平台线程对象管理类</h2>
+            <h2 class="article-title">DeskFlow — 跨平台线程类</h2>
         </div>
     </a>
 </article>
@@ -742,12 +767,12 @@
             
                 
 <article class="">
-    <a href="/p/01-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/">
+    <a href="/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">01 - 跨平台抽象层之 —— 整体设计</h2>
+            <h2 class="article-title">DeskFlow — 事件框架的代码解释</h2>
         </div>
     </a>
 </article>
@@ -755,25 +780,12 @@
             
                 
 <article class="">
-    <a href="/p/02-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-arch%E5%8D%95%E4%BE%8B%E7%B1%BB%E5%9E%8B/">
+    <a href="/p/deskflow-%E5%AD%97%E8%8A%82%E6%B5%81/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">02 跨平台抽象层之 —— Arch单例类型</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/03-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">03 跨平台抽象层之 —— 网络模块</h2>
+            <h2 class="article-title">DeskFlow — 字节流</h2>
         </div>
     </a>
 </article>

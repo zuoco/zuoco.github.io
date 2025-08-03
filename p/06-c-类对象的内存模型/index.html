@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/06-c-%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/'>
 
-<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="06 — C++类对象的内存模型">
+<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="06 — C++类对象的内存模型">
 <meta property='og:description' content=" 1. 数据成员和函数成员 2. 数据成员的内存布局 3. 有成员变量遮蔽时的内存分布 4. 多继承时的内存模型 5. 虚继承时的内存分布 1. 数据成员和函数成员 类是创建对象的模板，不存在于编译后的可执行文件中，而对象是实实在在的数据，需要内存来存储。在创建对象时要为对象分配内存，不同对象的成员变量值不同，所以需要单独分配内存，但成员函数的代码是相同的，所有对象共享同一段函数代码。成员变量在堆区或栈区分配内存，成员函数放在代码区。\n很显然，对象的大小只受成员变量的影响，和成员函数没有关系。和结构体非常类似，对象的成员变量也会有内存对齐的问题。\n">
 <meta property='og:url' content='https://zuoco.github.io/p/06-c-%E7%B1%BB%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/'>
 <meta property='og:site_name' content='阿左笔记'>

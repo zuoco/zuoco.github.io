@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/03-c-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/'>
 
-<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="03 — C++运算符重载">
+<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="03 — C++运算符重载">
 <meta property='og:description' content=" 1. 赋值运算符“operator=” 1.1. 拷贝赋值 1.2. 移动赋值 1. 赋值运算符“operator=” 1 2 3 4 5 6 int main() { MyClass a; MyClass b; a = b; // 调用赋值运算符, b.operator=(a) } 1.1. 拷贝赋值 1 2 3 4 5 struct MyClass { int a; std::string b; // std::string 已支持深拷贝 MyClass&amp; operator=(const MyClass&amp;) = default; // 默认生成赋值运算符 }; 需要深拷贝时要自行实现赋值运算符\n">
 <meta property='og:url' content='https://zuoco.github.io/p/03-c-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/'>
 <meta property='og:site_name' content='阿左笔记'>

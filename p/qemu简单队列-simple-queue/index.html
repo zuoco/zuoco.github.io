@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
 
-<link rel="stylesheet" href="/scss/style.min.ba085030b336094599649c505d2bf9e6648e9f39f470b9cd5cbac8556492277f.css"><meta property='og:title' content="Qemu简单队列 Simple Queue">
+<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="Qemu简单队列 Simple Queue">
 <meta property='og:description' content=" 1. 队列定义 1.1. 使用案例 2. 队列操做 2.1. 基本访问方法 2.2. 队列初始化 2.3. 插入节点 2.3.1. 插入到头部 2.3.2. 插入到尾部 2.3.3. 插入到中间 3. 移除节点 3.1. 移除头部节点 3.2. 移除指定节点 3.3. 遍历 3.3.1. 遍历队列 3.3.2. 遍历队列（安全） 3.4. 尾节点快速定位 3.5. 队列合并 3.5.1. 合并到尾部 3.5.2. 合并到头部 3.6. 分割队列 4. 完整代码 1. 队列定义 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 队列头 #define QSIMPLEQ_HEAD(name, type) \\ struct name { \\ struct type *sqh_first; /* first element */ \\ struct type **sqh_last; /* addr of last next element */ \\ } // 初始化一个队列 #define QSIMPLEQ_HEAD_INITIALIZER(head) \\ { NULL, &amp;(head).sqh_first } // 节点中的连接域，指向下一个节点 #define QSIMPLEQ_ENTRY(type) \\ struct { \\ struct type *sqe_next; /* next element */ \\ } 1.1. 使用案例 qemu-8.2.2/qemu-img.c\n">
 <meta property='og:url' content='https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
 <meta property='og:site_name' content='阿左笔记'>
