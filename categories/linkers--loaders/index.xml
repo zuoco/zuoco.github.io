@@ -7,10 +7,20 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 09 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/linkers--loaders/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/linkers--loaders/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>进程的装载</title>
+        <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</link>
+        <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</guid>
+        <description>&lt;h1 id=&#34;2-将程序装载到内存中&#34;&gt;2. 将程序装载到内存中
+&lt;/h1&gt;&lt;p&gt;   程序执行时所需要的指令和数据必须在内存中才能够正常运行，最简单的办法就是将程序运行所需要的指令和数据全都装入内存中，这样程序就可以顺利运行。程序装载有两种方式：&lt;code&gt;静态装载&lt;/code&gt;、&lt;code&gt;动态装载&lt;/code&gt;，静态装载占用内存较大，甚至大于物理内存的数量，所以现代操作系统都采用动态装载。程序运行时是有&lt;code&gt;局部性&lt;/code&gt;原理的，所以我们可以将程序最常用的部分驻留在内存中，而将一些不太常用的数据存放在磁盘里面，这就是动态装入的基本原理。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>进程的虚拟地址空间</title>
         <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</link>
-        <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</guid>
         <description>&lt;p&gt;  可执行文件只有装载到内存以后才能被CPU执行。早期的程序装载十分简陋，装载的基本过程就是把程序从外部存储器中读取到内存中的某个位置。随着硬件MMU的诞生，多进程、多用户、虚拟存储的操作系统出现以后，可执行文件的装载过程变得非常复杂。&lt;/p&gt;
@@ -34,19 +44,9 @@
 </description>
         </item>
         <item>
-        <title>进程的装载</title>
-        <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</link>
-        <pubDate>Wed, 09 Jul 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</guid>
-        <description>&lt;h1 id=&#34;2-将程序装载到内存中&#34;&gt;2. 将程序装载到内存中
-&lt;/h1&gt;&lt;p&gt;   程序执行时所需要的指令和数据必须在内存中才能够正常运行，最简单的办法就是将程序运行所需要的指令和数据全都装入内存中，这样程序就可以顺利运行。程序装载有两种方式：&lt;code&gt;静态装载&lt;/code&gt;、&lt;code&gt;动态装载&lt;/code&gt;，静态装载占用内存较大，甚至大于物理内存的数量，所以现代操作系统都采用动态装载。程序运行时是有&lt;code&gt;局部性&lt;/code&gt;原理的，所以我们可以将程序最常用的部分驻留在内存中，而将一些不太常用的数据存放在磁盘里面，这就是动态装入的基本原理。&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>目标文件是什么样子的</title>
         <link>https://zuoco.github.io/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/</link>
-        <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+        <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/</guid>
         <description>&lt;ol&gt;
