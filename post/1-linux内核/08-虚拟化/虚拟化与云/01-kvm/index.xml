@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《KVM》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-kvm/</link>
+        <link>http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-kvm/</link>
         <description>Recent content in 《KVM》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Fri, 03 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-kvm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 03 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-kvm/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>虚拟硬件模型</title>
-        <link>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</link>
+        <link>http://localhost:1313/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</link>
         <pubDate>Fri, 03 May 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</guid>
+        <guid>http://localhost:1313/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</guid>
         <description>&lt;h1 id=&#34;1-虚拟硬件模型&#34;&gt;1. 虚拟硬件模型
 &lt;/h1&gt;&lt;p&gt;  简单的讲“虚拟化”就是使用软件模拟硬件，一个硬件设备，例如QXl（一种虚拟显卡），或者一套硬件，例如虚拟机（可以运行操作系统）。&lt;code&gt;虚拟硬件模型&lt;/code&gt;虚拟的就是一个完整的主板环境，如QEMU中的q35或i440fx。那么这个主板环境有那些东西呢？&lt;/p&gt;
 &lt;ul&gt;

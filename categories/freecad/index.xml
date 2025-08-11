@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>FreeCAD on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/freecad/</link>
+        <link>http://localhost:1313/categories/freecad/</link>
         <description>Recent content in FreeCAD on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/freecad/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/freecad/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>FreeCAD（04） — 异常类型</title>
-        <link>https://zuoco.github.io/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</link>
+        <link>http://localhost:1313/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</guid>
+        <guid>http://localhost:1313/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%bc%82%e5%b8%b8%e7%b1%bb%e5%9e%8b%e5%9f%ba%e7%b1%bb&#34; &gt;1. &lt;strong&gt;异常类型基类&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%8a%9b%e5%87%ba%e5%bc%82%e5%b8%b8&#34; &gt;2. &lt;strong&gt;抛出异常&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -207,10 +207,10 @@
         </item>
         <item>
         <title>FreeCAD（03） — 类型系统与根类型（Base模块）</title>
-        <link>https://zuoco.github.io/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</link>
+        <link>http://localhost:1313/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</link>
         <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</guid>
+        <guid>http://localhost:1313/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%b1%bb%e5%9e%8b%e7%b3%bb%e7%bb%9f&#34; &gt;1. &lt;strong&gt;类型系统&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b9%e7%b1%bb%e5%9e%8b--baseclass&#34; &gt;2. &lt;strong&gt;根类型 — BaseClass&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -526,10 +526,10 @@
         </item>
         <item>
         <title>FreeCAD（02） — 代码结构</title>
-        <link>https://zuoco.github.io/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</link>
+        <link>http://localhost:1313/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</link>
         <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</guid>
+        <guid>http://localhost:1313/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</guid>
         <description>&lt;h1 id=&#34;代码目录结构&#34;&gt;代码目录结构
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -648,10 +648,10 @@ Main目录下就是不同模式的main函数了。&lt;/p&gt;
         </item>
         <item>
         <title>FreeCAD（01） — 介绍以及编译</title>
-        <link>https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</link>
+        <link>http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</link>
         <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</guid>
+        <guid>http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d&#34; &gt;1. 简单介绍&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-windows&#34; &gt;2. Windows&lt;/a&gt;
@@ -817,10 +817,10 @@ Main目录下就是不同模式的main函数了。&lt;/p&gt;
 &lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;strong&gt;运行&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image.png&#34;
 	width=&#34;2562&#34;
 	height=&#34;1400&#34;
-	srcset=&#34;https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_cf5a46a14855fd74.png 480w, https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_63bb6e0583e93345.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_cf5a46a14855fd74.png 480w, http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_63bb6e0583e93345.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

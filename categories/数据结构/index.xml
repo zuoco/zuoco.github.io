@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>数据结构 on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+        <link>http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
         <description>Recent content in 数据结构 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 24 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>06 — Linux内核数据结构 — 红黑树 — 遍历（代码）</title>
-        <link>https://zuoco.github.io/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</link>
+        <link>http://localhost:1313/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</guid>
+        <guid>http://localhost:1313/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%b8%ad%e5%ba%8f%e9%81%8d%e5%8e%86&#34; &gt;1. &lt;strong&gt;中序遍历&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%90%8e%e5%ba%8f%e9%81%8d%e5%8e%86&#34; &gt;2. &lt;strong&gt;后序遍历&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -307,10 +307,10 @@
         </item>
         <item>
         <title>05 — Linux内核数据结构 — 红黑树 — 插入节点（代码）</title>
-        <link>https://zuoco.github.io/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
+        <link>http://localhost:1313/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
+        <guid>http://localhost:1313/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
         <description>&lt;h1 id=&#34;1-插入节点的用户接口&#34;&gt;1. &lt;strong&gt;插入节点的用户接口&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;红黑树第一篇讲到调用插入函数&lt;code&gt;rb_add&lt;/code&gt;插入节点时会调用两个重要函数，&lt;code&gt;rb_link_node&lt;/code&gt;，&lt;code&gt;rb_insert_color&lt;/code&gt;。其中rb_link_node用来将新节点链接到树中，而rb_insert_color用来在插入后修复平衡。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -678,10 +678,10 @@
         </item>
         <item>
         <title>04 — Linux内核数据结构 — 红黑树 — 插入节点与平衡（原理）</title>
-        <link>https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
+        <link>http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
         <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
+        <guid>http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%a2%9e%e5%bc%ba%e5%9e%8b%e4%b8%8e%e9%9d%9e%e5%a2%9e%e5%bc%ba%e5%9e%8b&#34; &gt;1. &lt;strong&gt;增强型与非增强型&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%8f%92%e5%85%a5%e8%8a%82%e7%82%b9&#34; &gt;2. &lt;strong&gt;插入节点&lt;/strong&gt;&lt;/a&gt;
@@ -754,7 +754,7 @@
 &lt;h3 id=&#34;231-父节点是祖父节点的左子节点&#34;&gt;2.3.1. &lt;strong&gt;父节点是祖父节点的左子节点&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Case3-1-1  叔叔节点是红色的&lt;/strong&gt;    &lt;br&gt;
 只需变色操作，每次修复后，cur_node都要更新到爷爷节点，并再次判断平衡是否有破坏，也就是将之前的祖父节点作为cur_node，同样parent，gparent也要更新。
-&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-1.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-1.svg&#34;
 	
 	
 	
@@ -766,7 +766,7 @@
 此时有分为两种情况 ： 新节点是父节点的左孩子、新节点是父节点的右还是。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;新节点是父节点的右孩子 :  左旋 + 右旋 + 变色   &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-1.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-1.svg&#34;
 	
 	
 	
@@ -778,7 +778,7 @@
 &lt;hr&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;新节点是父节点的左孩子 :  右旋 + 变色    &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-2.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-2.svg&#34;
 	
 	
 	
@@ -790,7 +790,7 @@
 &lt;h3 id=&#34;232-父节点是祖父节点的右子节点&#34;&gt;2.3.2. &lt;strong&gt;父节点是祖父节点的右子节点&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Case3-2-1  叔叔节点是红色的&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;只需变色操作，每次修复后，cur_node都要更新到爷爷节点，并再次判断平衡是否有破坏，也就是将之前的祖父节点作为cur_node，同样parent，gparent也要更新。
-&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-1.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-1.svg&#34;
 	
 	
 	
@@ -801,7 +801,7 @@
 &lt;p&gt;&lt;strong&gt;Case3-2-2  叔叔节点是黑色的&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;新节点是父节点的右孩子 : 左旋 + 变色
-&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-1.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-1.svg&#34;
 	
 	
 	
@@ -813,7 +813,7 @@
 &lt;hr&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;新节点是父节点的左孩子
-&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-2.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-2.svg&#34;
 	
 	
 	
@@ -826,10 +826,10 @@
         </item>
         <item>
         <title>03 — Linux内核数据结构 — 红黑树 — 移除节点（代码）</title>
-        <link>https://zuoco.github.io/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
+        <link>http://localhost:1313/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
+        <guid>http://localhost:1313/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%a7%bb%e9%99%a4%e8%8a%82%e7%82%b9%e7%9a%84%e7%94%a8%e6%88%b7%e6%8e%a5%e5%8f%a3&#34; &gt;1. 移除节点的用户接口&lt;/a&gt;
 &lt;ul&gt;
@@ -1201,10 +1201,10 @@
         </item>
         <item>
         <title>02 — Linux内核数据结构 — 红黑树 — 移除节点与平衡（原理）</title>
-        <link>https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
+        <link>http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
         <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
+        <guid>http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%88%a0%e9%99%a4%e8%8a%82%e7%82%b9%e7%9a%84%e5%b9%b6%e5%b9%b3%e8%a1%a1%e7%9a%84%e6%95%b4%e4%bd%93%e6%80%9d%e8%b7%af&#34; &gt;1. &lt;strong&gt;删除节点的并平衡的整体思路&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%a0%e9%99%a4%e9%bb%91%e8%89%b2%e8%8a%82%e7%82%b9&#34; &gt;2. &lt;strong&gt;删除黑色节点&lt;/strong&gt;&lt;/a&gt;
@@ -1217,7 +1217,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-删除节点的并平衡的整体思路&#34;&gt;1. &lt;strong&gt;删除节点的并平衡的整体思路&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;移除节点分为集中情况，如下图所示：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1.svg&#34;
 	
 	
 	
@@ -1232,7 +1232,7 @@
 &lt;/h1&gt;&lt;p&gt;删除后会破坏特征2，也就所说经过该节点的路径都少一个黑节点，此时要根据兄弟节点的颜色分为2种情况讨论： 兄弟是黑的、兄弟是红的。&lt;/p&gt;
 &lt;h2 id=&#34;21-兄弟是黑色&#34;&gt;2.1. &lt;strong&gt;兄弟是黑色&lt;/strong&gt;
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;兄弟节点至少一个红孩子&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LL.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LL.svg&#34;
 	
 	
 	
@@ -1240,7 +1240,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RR.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RR.svg&#34;
 	
 	
 	
@@ -1248,7 +1248,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RL.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RL.svg&#34;
 	
 	
 	
@@ -1256,7 +1256,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LR.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LR.svg&#34;
 	
 	
 	
@@ -1266,7 +1266,7 @@
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;兄弟节点两个孩子都是黑孩&lt;/strong&gt;：
-&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E9%BB%91RR.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E9%BB%91RR.svg&#34;
 	
 	
 	
@@ -1276,7 +1276,7 @@
 &gt;&lt;br&gt;
 其他类型和前面的类似。 &lt;br&gt;
 前面展示的情形中，被删除节点的父节点都是黑色的，如果是红色的只需要变色即可，如下所示：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E7%9A%84%E7%88%B6%E8%8A%82%E7%82%B9%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E7%9A%84%E7%88%B6%E8%8A%82%E7%82%B9%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
 	
 	
 	
@@ -1286,7 +1286,7 @@
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;22-兄弟是红的&#34;&gt;2.2. &lt;strong&gt;兄弟是红的&lt;/strong&gt;
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%85%84%E5%BC%9F%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%85%84%E5%BC%9F%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
 	
 	
 	
@@ -1301,10 +1301,10 @@
         </item>
         <item>
         <title>01 — Linux内核数据结构 — 非增强型红黑树</title>
-        <link>https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</link>
+        <link>http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</link>
         <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</guid>
+        <guid>http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%bb%80%e4%b9%88%e6%98%af%e7%ba%a2%e9%bb%91%e6%a0%91&#34; &gt;1. &lt;strong&gt;什么是红黑树&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-linux%e5%86%85%e6%a0%b8%e7%ba%a2%e9%bb%91%e6%a0%91%e6%ba%90%e7%a0%81&#34; &gt;2. &lt;strong&gt;Linux内核红黑树源码&lt;/strong&gt;&lt;/a&gt;
@@ -1317,7 +1317,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-什么是红黑树&#34;&gt;1. &lt;strong&gt;什么是红黑树&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;红黑树的基本形态如下：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/rbtree.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/rbtree.svg&#34;
 	
 	
 	
@@ -1829,10 +1829,10 @@
         </item>
         <item>
         <title>Qemu尾队列 Tail Queue</title>
-        <link>https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</link>
+        <link>http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</link>
         <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</guid>
+        <guid>http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%98%9f%e5%88%97%e5%ae%9a%e4%b9%89&#34; &gt;1. &lt;strong&gt;队列定义&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e9%98%9f%e5%88%97%e6%93%8d%e4%bd%9c%e5%ae%8f&#34; &gt;2. &lt;strong&gt;队列操作宏&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1999,7 +1999,7 @@
 &lt;li&gt;field： 用户节点中的节点连接域。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;将给定节点（elm）插入到头部，if处理非空队列，else处理空队列。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
 	
 	
 	
@@ -2027,7 +2027,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;将给定节点插入到尾部，头部维护了一个指向尾部的指针。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%B0%BE%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%B0%BE%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
 	
 	
 	
@@ -2110,10 +2110,10 @@
         </item>
         <item>
         <title>Qemu简单队列 Simple Queue</title>
-        <link>https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</link>
+        <link>http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</link>
         <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</guid>
+        <guid>http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%98%9f%e5%88%97%e5%ae%9a%e4%b9%89&#34; &gt;1. 队列定义&lt;/a&gt;
 &lt;ul&gt;
@@ -2397,7 +2397,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;} while (&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*CONSTCOND*/&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;0)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97.svg&#34;
 	
 	
 	
@@ -2429,7 +2429,7 @@
 &lt;li&gt;head: 队列的头。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;1. 空队列插入节点&lt;/strong&gt;  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -2438,7 +2438,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. 非空队列插入节点&lt;/strong&gt;  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%9D%9E%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%9D%9E%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -2463,7 +2463,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;} while (&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*CONSTCOND*/&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;0)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E5%B0%BE%E9%83%A8.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E5%B0%BE%E9%83%A8.svg&#34;
 	
 	
 	
@@ -2496,7 +2496,7 @@
 &lt;ol&gt;
 &lt;li&gt;listelm是尾节点，和QSIMPLEQ_INSERT_TAIL差不多。&lt;/li&gt;
 &lt;li&gt;listelm不是尾节点，插入过程如下：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E4%B8%AD%E9%97%B4.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E4%B8%AD%E9%97%B4.svg&#34;
 	
 	
 	
@@ -2528,7 +2528,7 @@
 &lt;/div&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;队列中的有两个及以上节点：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B901.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B901.svg&#34;
 	
 	
 	
@@ -2539,7 +2539,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;队列中只有一个节点：   &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B902.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B902.svg&#34;
 	
 	
 	
@@ -2591,7 +2591,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;如果elm是中间节点：     &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B901.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B901.svg&#34;
 	
 	
 	
@@ -2602,7 +2602,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;如果elm是最后一个节点：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B902.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B902.svg&#34;
 	
 	
 	
@@ -2765,7 +2765,7 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;将 head2 队列的所有元素插入到 head1 队列的尾部。&lt;/li&gt;
 &lt;li&gt;只有当 head2 队列非空时才执行操作，空队列合并是无效操作，直接跳过。
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%B0%BE%E9%83%A8.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%B0%BE%E9%83%A8.svg&#34;
 	
 	
 	
@@ -2798,7 +2798,7 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;将 head2 队列的所有元素插入到 head1 队列的头部。&lt;/li&gt;
 &lt;li&gt;只有当 head2 队列非空时才执行操作，空队列合并是无效操作，直接跳过。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%A4%B4%E9%83%A8.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%A4%B4%E9%83%A8.svg&#34;
 	
 	
 	
@@ -2840,7 +2840,7 @@
 &lt;li&gt;elm:  从elm开始分割队列，将eml（包括）之前的节点划分给removed。&lt;/li&gt;
 &lt;li&gt;removed:  指向移除的队列。&lt;/li&gt;
 &lt;li&gt;以elm为非末尾节为例： &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%88%86%E5%89%B2.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%88%86%E5%89%B2.svg&#34;
 	
 	
 	
@@ -3090,10 +3090,10 @@
         </item>
         <item>
         <title>Qemu - List 一种高效单链表</title>
-        <link>https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</link>
+        <link>http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</link>
         <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</guid>
+        <guid>http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%93%be%e8%a1%a8%e5%ae%9a%e4%b9%89&#34; &gt;1. 链表定义&lt;/a&gt;
 &lt;ul&gt;
@@ -3310,7 +3310,7 @@
 &lt;ol&gt;
 &lt;li&gt;使新节点的le_prev字段指向链表头的lh_first字段，也就是指向自己，这就是首元节点。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -3343,7 +3343,7 @@
 &lt;li&gt;elm： 要插入的节点&lt;/li&gt;
 &lt;li&gt;listelm： 插入到该节点后。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E5%89%8D%E6%8F%92%E5%85%A5.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E5%89%8D%E6%8F%92%E5%85%A5.svg&#34;
 	
 	
 	
@@ -3407,7 +3407,7 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;elm: 要移除的节点。&lt;/li&gt;
 &lt;li&gt;field: 节点连接域。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -3596,7 +3596,7 @@ QLIST_FOREACH：&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们以为两个非空链表为例： &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
