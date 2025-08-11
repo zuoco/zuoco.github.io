@@ -5,11 +5,14 @@
     <loc>https://zuoco.github.io/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/3-freecad/</loc>
+    <loc>https://zuoco.github.io/post/8-python/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/</loc>
     <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/post/3-freecad/</loc>
+    <lastmod>2025-08-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
@@ -20,8 +23,14 @@
     <loc>https://zuoco.github.io/categories/freecad/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/freecad-python%E6%A8%A1%E5%9D%97%E5%88%9D%E5%A7%8B%E5%8C%96/</loc>
+    <loc>https://zuoco.github.io/p/freecad07-%E9%9B%B6%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B7%A5%E4%BD%9C%E5%8F%B0/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/freecad06-%E5%B7%A5%E4%BD%9C%E5%8F%B0%E5%9F%BA%E7%B1%BB/</loc>
+    <lastmod>2025-08-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/freecad05-python%E6%A8%A1%E5%9D%97%E5%88%9D%E5%A7%8B%E5%8C%96/</loc>
+    <lastmod>2025-08-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/5-ai/</loc>
     <lastmod>2025-06-19T00:00:00+00:00</lastmod>
@@ -89,7 +98,7 @@
     <loc>https://zuoco.github.io/p/function-calling-%E4%B8%8E-mcp%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/</loc>
+    <loc>https://zuoco.github.io/post/9-deskflow/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/categories/deskflow/</loc>
@@ -209,22 +218,22 @@
     <loc>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8207-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2024-09-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/01-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</loc>
+    <loc>https://zuoco.github.io/post/9-deskflow/01-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82/</loc>
     <lastmod>2024-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/02-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B0%81%E8%A3%85/</loc>
+    <loc>https://zuoco.github.io/post/9-deskflow/02-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B0%81%E8%A3%85/</loc>
     <lastmod>2024-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/03-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6/</loc>
+    <loc>https://zuoco.github.io/post/9-deskflow/03-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2024-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/04-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%8E%82/</loc>
+    <loc>https://zuoco.github.io/post/9-deskflow/04-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%8E%82/</loc>
     <lastmod>2024-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/05-%E4%B8%9A%E5%8A%A1%E5%B1%82%E6%A1%86%E6%9E%B6/</loc>
+    <loc>https://zuoco.github.io/post/9-deskflow/05-%E4%B8%9A%E5%8A%A1%E5%B1%82%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2024-09-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/99-%E5%85%B6%E4%BB%96/</loc>
+    <loc>https://zuoco.github.io/post/9-deskflow/99-%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2024-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8206-%E6%97%A5%E5%BF%97/</loc>
@@ -334,6 +343,12 @@
   </url><url>
     <loc>https://zuoco.github.io/p/bootloader/</loc>
     <lastmod>2023-12-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/python/</loc>
+    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/00-bootloader/</loc>
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
@@ -533,8 +548,6 @@
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/99-%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</loc>
   </url><url>
     <loc>https://zuoco.github.io/page/</loc>
-  </url><url>
-    <loc>https://zuoco.github.io/categories/python/</loc>
   </url><url>
     <loc>https://zuoco.github.io/search/</loc>
   </url><url>

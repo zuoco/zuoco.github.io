@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>《Python》 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/8-python/</link>
+        <description>Recent content in 《Python》 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/8-python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Python虚拟环境</title>
+        <link>https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+        <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+        <description>&lt;p&gt;直接使用 pip 在全局环境中安装 Python 包，会干扰系统的包管理器（如 apt）。从Python 3.11 开始引入的一项安全措施 —— 虚拟环境，旨在防止用户意外地破坏系统Python的环境。    &lt;br&gt;
+使用方法:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt install python3.11-venv
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python3 -m venv myenv  &lt;span class=&#34;c1&#34;&gt;# myenv是虚拟环境的目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 激活虚拟环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; myenv/bin/activate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;运行source myenv/bin/activate命令后就进入了python虚拟环境中：   &lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png&#34;
+	width=&#34;1209&#34;
+	height=&#34;55&#34;
+	srcset=&#34;https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83_hu_c54a79f5b2c08434.png 480w, https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83_hu_a5cd596b8e59ba80.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;2198&#34;
+		data-flex-basis=&#34;5275px&#34;
+	
+&gt;&lt;br&gt;
+在虚拟环境下可以正常使用pip命令，下载的软件包位于虚拟环境中。使用完毕后执行&lt;code&gt;deactivate&lt;/code&gt;命令推出虚拟环境。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
