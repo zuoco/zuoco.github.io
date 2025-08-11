@@ -428,9 +428,9 @@ shared_ptr就是通过<code>引用计数</code>来管理对象的生命周期，
 </div><h2 id="11-基本方法">1.1. 基本方法
 </h2><ol>
 <li>重载了<code>*</code>，所以可以用<code>*x</code>来获取x指向的元素。</li>
-<li>get方法，返回原始指针，，但是要注意这个操作不会增加引用计数，所以不要用它来初始化另一个shared_ptr, 或者delete它，因为shared_ptr并不知道你干了什么，所以会导致多次delete。</li>
-<li>reset()方法，先将引用计数减1，然后判断是否为0，如果为0，就则释放管理的原始内存。</li>
-<li><code>template&lt; class Y &gt; void reset( Y* ptr );</code>，先将引用计数减1，然后判断是否为0，如果为0，就释放管理的原始内存，并将ptr赋值给内部的指针。如果不为0，那就什么也不做。</li>
+<li>提供了get()方法获取原始指针，但是要注意这个操作不会增加引用计数，所以不要用它来初始化另一个shared_ptr, 或者delete它，因为shared_ptr并不知道你干了什么，所以会导致多次delete。</li>
+<li>提供了reset()方法，先将引用计数减1，然后判断是否为0，如果为0，就则释放管理的原始内存。</li>
+<li><code>template&lt; class Y &gt; void reset( Y* ptr );</code>，该方法先将引用计数减1，然后判断是否为0，如果为0，就释放管理的原始内存，并将ptr赋值给内部的指针。如果不为0，那就什么也不做。</li>
 </ol>
 <h2 id="12-自定义删除器">1.2. 自定义删除器
 </h2><div class="highlight"><div class="chroma">
@@ -467,11 +467,14 @@ shared_ptr就是通过<code>引用计数</code>来管理对象的生命周期，
 </span><span class="lnt">17
 </span><span class="lnt">18
 </span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp">
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 自定义删除器仿函数
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">struct</span> <span class="nc">FileDeleter</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">operator</span><span class="p">()(</span><span class="n">FILE</span><span class="o">*</span> <span class="n">file</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
@@ -479,6 +482,7 @@ shared_ptr就是通过<code>引用计数</code>来管理对象的生命周期，
 </span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;File closed via functor.&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="c1">// 创建 shared_ptr，绑定文件句柄和仿函数
