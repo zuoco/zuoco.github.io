@@ -385,7 +385,7 @@
 </li>
 </ul>
 <h1 id="1-shared_ptr">1. shared_ptr
-</h1><p>共享智能指针，内部维护一块内存，允许多个shared_ptr共享这块内存。</p>
+</h1><p>共享智能指针，内部维护一块内存，允许多个shared_ptr对象共享这块内存。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
@@ -396,29 +396,33 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span> <span class="k">class</span> <span class="nc">T</span> <span class="o">&gt;</span> <span class="k">class</span> <span class="nc">shared_ptr</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>shared_ptr内部通过<code>引用计数</code>来管理对象的生命周期，当引用计数为0时，对象会被自动销毁。</p>
+</div><p>shared_ptr对象内部包含两个指针： <code>指向资源的指针</code>、<code>指向控制块的指针</code>，而控制块包含： <code>引用计数</code>、<code>弱引用计数</code>（用于统计weak_ptr）、自定义删除器等等。<br>
+shared_ptr就是通过<code>引用计数</code>来管理对象的生命周期，引用计数的操作是原子的，当引用计数为0时，对象会被自动销毁。<br>
+使用 std::make_shared 时，资源与控制块会分配在同一块内存，减少内存碎片并提升缓存效率。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// int* x = new int(10);
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>          <span class="c1">// 申请一块内存来初始化x，引用计数为 1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">x</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">10</span><span class="p">));</span>    <span class="c1">// 申请一块内存来初始化x，引用计数为 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 输出1
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>               <span class="c1">// 这块内存的引用计数 +1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 2
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>         <span class="c1">// 这块内存的引用计数 +1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 输出2
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// 离开y的作用域，y被销毁，引用计数-1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">.</span><span class="n">use_count</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 输出1
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="11-基本方法">1.1. 基本方法
@@ -521,28 +525,15 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Defined in header &lt;memory&gt;   
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">T</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">Deleter</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">default_delete</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">unique_ptr</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>　　　　　　　</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">T</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="k">class</span> <span class="nc">Deleter</span>
-</span></span><span class="line"><span class="cl"><span class="o">&gt;</span> <span class="k">class</span> <span class="nc">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="p">[],</span> <span class="n">Deleter</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Deleter</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">default_delete</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">unique_ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">　　　　　　　
+</span></span><span class="line"><span class="cl"><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">Deleter</span><span class="o">&gt;</span> 
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">unique_ptr</span><span class="o">&lt;</span><span class="n">T</span><span class="p">[],</span> <span class="n">Deleter</span><span class="o">&gt;</span><span class="p">;</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>代码示例：</p>
