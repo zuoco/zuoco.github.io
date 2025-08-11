@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>【模型微调】 on 阿左笔记</title>
-        <link>http://localhost:1313/post/5-ai/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link>
+        <link>https://zuoco.github.io/post/5-ai/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/</link>
         <description>Recent content in 【模型微调】 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/5-ai/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/5-ai/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%83/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>模型微调（2） — 认识微调数据集</title>
-        <link>http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/</link>
+        <link>https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/</link>
         <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/</guid>
+        <guid>https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%a4%e8%af%86%e6%a8%a1%e5%9e%8b%e7%9a%84%e8%be%93%e5%85%a5%e8%be%93%e5%87%ba&#34; &gt;1. 认识模型的输入输出&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%be%ae%e8%b0%83%e6%95%b0%e6%8d%ae%e9%9b%86&#34; &gt;2. 微调数据集&lt;/a&gt;
@@ -31,7 +31,7 @@
 &lt;/ol&gt;
 &lt;h1 id=&#34;1-认识模型的输入输出&#34;&gt;1. 认识模型的输入输出
 &lt;/h1&gt;&lt;p&gt;  从模型底层原理看，大模型会使用一些特殊字符来标记用户的不同类型输入、系统提示词、以及工具调用或者多模态输入等。以Qwen3为例，在一次实际的对话过程中，模型的真实输入和输出如下所示：
-&lt;img src=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F.svg&#34;
 	
 	
 	
@@ -273,10 +273,10 @@ Tool Schema Json 的大概形式如下:&lt;/p&gt;
 &lt;strong&gt;用户输入（input）&lt;/strong&gt;          ： 你好，请帮我查询下北京天气。 &lt;br&gt;
 &lt;strong&gt;助手回复（output）&lt;/strong&gt;        ：{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;get_weather&amp;rdquo;, &amp;ldquo;arguments&amp;rdquo;: {&amp;ldquo;location&amp;rdquo;: &amp;ldquo;北京&amp;rdquo;}}&lt;br&gt;
 这个”&lt;strong&gt;助手回复（output）&lt;/strong&gt;“就是一条&lt;code&gt;Function call message&lt;/code&gt;， 根据这条信息来进行外部工具调用。此时模型真实的输入和输出内容如下：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma.png&#34;
 	width=&#34;2245&#34;
 	height=&#34;856&#34;
-	srcset=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma_hu_9f4c6a0a24f0b1a6.png 480w, http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma_hu_49d06980ae3a845e.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma_hu_9f4c6a0a24f0b1a6.png 480w, https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/tool-shecma_hu_49d06980ae3a845e.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -443,10 +443,10 @@ Tool Schema Json 的大概形式如下:&lt;/p&gt;
         </item>
         <item>
         <title>模型微调（1） — LoRA微调</title>
-        <link>http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/</link>
+        <link>https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/</link>
         <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/</guid>
+        <guid>https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%85%a8%e9%87%8f%e5%be%ae%e8%b0%83%e4%b8%8e%e9%ab%98%e6%95%88%e5%be%ae%e8%b0%83&#34; &gt;1. 全量微调与高效微调&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a8%a1%e5%9e%8b%e5%be%ae%e8%b0%83%e7%9a%84%e4%bc%98%e5%8a%a3%e5%8a%bf%e5%88%86%e6%9e%90&#34; &gt;2. 模型微调的优劣势分析&lt;/a&gt;&lt;/li&gt;
@@ -546,10 +546,10 @@ Tool Schema Json 的大概形式如下:&lt;/p&gt;
 &lt;/h1&gt;&lt;p&gt;  unsloth、Llama、Factory、ms-SWIFT和ColossalAI。除此之外，也可以借助更加底层的库，如peft、LoRA、transformer等实现高效微调。对于初学者来说，首先使用现成工具来进行微调，四种工具基本说明如下。&lt;/p&gt;
 &lt;h2 id=&#34;41-unsloth&#34;&gt;4.1. unsloth
 &lt;/h2&gt;&lt;p&gt;  unsloth 是一个专为大型语言模型（LLM）设计的动态量化与微调框架，unsloth 与 HuggingFace 生态兼容，可以很容易地transformers、peft、trl 等库结合，以实现模型的监督微调（SFT）和直接偏好优化（DPO）。
-&lt;img src=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth.png&#34;
 	width=&#34;1924&#34;
 	height=&#34;963&#34;
-	srcset=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth_hu_c457b32d0a7a4a61.png 480w, http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth_hu_d856aed204e9b772.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth_hu_c457b32d0a7a4a61.png 480w, https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth_hu_d856aed204e9b772.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -560,10 +560,10 @@ Tool Schema Json 的大概形式如下:&lt;/p&gt;
 &gt; &lt;br&gt;
   Unsloth 的动态量化方法，最新的 Dynamic 2.0 版本，旨在在尽量减少性能损失的同时显著压缩大型语言模型（LLMs）的体积。对于 Qwen3 模型，尤其是 4-bit 动态量化版本，现有的评测显
 示其性能下降非常有限，甚至在某些任务上与原始模型相当。
-&lt;img src=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth-dynamic.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth-dynamic.png&#34;
 	width=&#34;1907&#34;
 	height=&#34;976&#34;
-	srcset=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth-dynamic_hu_ee034a2bc42c4bef.png 480w, http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth-dynamic_hu_355ab7524662dc15.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth-dynamic_hu_ee034a2bc42c4bef.png 480w, https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/unsloth-dynamic_hu_355ab7524662dc15.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -578,10 +578,10 @@ Tool Schema Json 的大概形式如下:&lt;/p&gt;
 &lt;h2 id=&#34;43-模型性能评估框架evalscope&#34;&gt;4.3. 模型性能评估框架EvalScope
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/modelscope/evalscope&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;EvalScope&lt;/a&gt;是由阿里巴巴魔搭社区（ModelScope）推出的一款开源模型评估框架，旨在为大语言模型（LLM）和多模态模型提供统一、系统化的性能评估方案。该框架具备高度的自动化和可扩展性，适用于研究机构、工业界以及模型开发者在模型验证与性能对比场景中的广泛需求。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/eva.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/eva.png&#34;
 	width=&#34;1920&#34;
 	height=&#34;1080&#34;
-	srcset=&#34;http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/eva_hu_305e6a48186371d7.png 480w, http://localhost:1313/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/eva_hu_7a76ff69e19612dc.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/eva_hu_305e6a48186371d7.png 480w, https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%831-lora%E5%BE%AE%E8%B0%83/eva_hu_7a76ff69e19612dc.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

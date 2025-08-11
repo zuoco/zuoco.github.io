@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《 Linkers &amp; Loaders 》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/7-%E9%93%BE%E6%8E%A5%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%93/</link>
+        <link>https://zuoco.github.io/post/7-%E9%93%BE%E6%8E%A5%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%93/</link>
         <description>Recent content in 《 Linkers &amp; Loaders 》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/7-%E9%93%BE%E6%8E%A5%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%93/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/7-%E9%93%BE%E6%8E%A5%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%BA%93/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>进程的装载</title>
-        <link>http://localhost:1313/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</link>
+        <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</link>
         <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</guid>
+        <guid>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%A3%85%E8%BD%BD/</guid>
         <description>&lt;h1 id=&#34;2-将程序装载到内存中&#34;&gt;2. 将程序装载到内存中
 &lt;/h1&gt;&lt;p&gt;   程序执行时所需要的指令和数据必须在内存中才能够正常运行，最简单的办法就是将程序运行所需要的指令和数据全都装入内存中，这样程序就可以顺利运行。程序装载有两种方式：&lt;code&gt;静态装载&lt;/code&gt;、&lt;code&gt;动态装载&lt;/code&gt;，静态装载占用内存较大，甚至大于物理内存的数量，所以现代操作系统都采用动态装载。程序运行时是有&lt;code&gt;局部性&lt;/code&gt;原理的，所以我们可以将程序最常用的部分驻留在内存中，而将一些不太常用的数据存放在磁盘里面，这就是动态装入的基本原理。&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>进程的虚拟地址空间</title>
-        <link>http://localhost:1313/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</link>
+        <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</link>
         <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</guid>
+        <guid>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/</guid>
         <description>&lt;p&gt;  可执行文件只有装载到内存以后才能被CPU执行。早期的程序装载十分简陋，装载的基本过程就是把程序从外部存储器中读取到内存中的某个位置。随着硬件MMU的诞生，多进程、多用户、虚拟存储的操作系统出现以后，可执行文件的装载过程变得非常复杂。&lt;/p&gt;
 &lt;h1 id=&#34;1-进程的虚拟地址空间&#34;&gt;1. 进程的虚拟地址空间
 &lt;/h1&gt;&lt;p&gt;  每个程序被运行起来以后，它将拥有自己独立的虚拟地址空间（Virtual Address Space），这个虚拟地址空间的大小由计算机的硬件平台决定，具体地说是由CPU的位数决定的。硬件决定了地址空间的最大理论上限，即硬件的寻址空间大小，比如32位的硬件平台决定了虚拟地址空间的地址为0 ~ $2^{32-1}$，即0x00000000~0xFFFFFFFF，也就是我们常说的4GB 虚拟空间大小；而64位的硬件平台具有64位寻址能力，它的虚拟地址空间高达0 ~ $2^{64}$。&lt;/p&gt;
 &lt;p&gt;   我们以32位Linux操作系统为例，32位平台下有4GB的虚拟空间，而进程只能使用那些操作系统分配给进程的地址，如果访问未经允许的空间，那么操作系统就会捕获到这些访问，将进程的这种访问当作非法操作，强制结束进程。Windows系统上的&lt;code&gt;进程因非法操作需要关闭&lt;/code&gt;以及Linux下的&lt;code&gt;Segmentation fault&lt;/code&gt;很多时候就是因为进程访问了未经允许的地址。那么到底这4GB的进程虚拟地址空间是怎样的分配状态呢？默认情况下，Linux操作系统将进程的虚拟地址空间做了如下图所示的分配: &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/address-space.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E7%9A%84%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4/address-space.svg&#34;
 	
 	
 	
@@ -45,10 +45,10 @@
         </item>
         <item>
         <title>目标文件是什么样子的</title>
-        <link>http://localhost:1313/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/</link>
+        <link>https://zuoco.github.io/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/</link>
         <pubDate>Tue, 09 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/</guid>
+        <guid>https://zuoco.github.io/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%9b%ae%e6%a0%87%e6%96%87%e4%bb%b6%e6%a0%bc%e5%bc%8f&#34; &gt;1. 目标文件格式&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e7%9b%ae%e6%a0%87%e6%96%87%e4%bb%b6%e7%bb%93%e6%9e%84&#34; &gt;2. 目标文件结构&lt;/a&gt;&lt;/li&gt;
@@ -89,7 +89,7 @@
 &lt;p&gt;  实际上这两货都是COFF格式的变种，在Linux系统上可以使用file命令查看文件类型。COFF引入了&lt;code&gt;段&lt;/code&gt;的概念，不同的目标文件，段的数量，类型不同。&lt;/p&gt;
 &lt;h1 id=&#34;2-目标文件结构&#34;&gt;2. 目标文件结构
 &lt;/h1&gt;&lt;p&gt;  一个目标文件包含了多种信息，例如指令、数据等等，不同类型的数据放在不同的&lt;code&gt;段&lt;/code&gt;中，具有不同的权限。以ELF文件为例： &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/object-file-structure.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E5%AD%90%E7%9A%84/object-file-structure.svg&#34;
 	
 	
 	
