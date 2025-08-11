@@ -11,15 +11,6 @@
     <loc>https://zuoco.github.io/post/</loc>
     <lastmod>2025-08-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/categories/ai/</loc>
-    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/categories/</loc>
-    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/kimi-dev/</loc>
-    <lastmod>2025-06-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/post/5-ai/</loc>
     <lastmod>2025-06-19T00:00:00+00:00</lastmod>
   </url><url>
@@ -27,6 +18,9 @@
     <lastmod>2025-06-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/3-freecad/</loc>
+    <lastmod>2025-06-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/</loc>
     <lastmod>2025-06-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/categories/freecad/</loc>
@@ -56,13 +50,7 @@
     <loc>https://zuoco.github.io/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/</loc>
-    <lastmod>2025-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/02-proxmox-ve/</loc>
+    <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/02-proxmox-ve/</loc>
     <lastmod>2025-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</loc>
@@ -73,6 +61,9 @@
   </url><url>
     <loc>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</loc>
     <lastmod>2025-05-21T20:53:24+08:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/ai/</loc>
+    <lastmod>2025-05-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/%E6%A8%A1%E5%9E%8B%E5%BE%AE%E8%B0%832-%E8%AE%A4%E8%AF%86%E5%BE%AE%E8%B0%83%E6%95%B0%E6%8D%AE%E9%9B%86/</loc>
     <lastmod>2025-05-17T00:00:00+00:00</lastmod>
@@ -89,8 +80,8 @@
     <loc>https://zuoco.github.io/p/ollama%E9%83%A8%E7%BD%B2/</loc>
     <lastmod>2025-05-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2025-04-29T00:00:00+00:00</lastmod>
+    <loc>https://zuoco.github.io/p/function-calling-%E4%B8%8E-mcp%E5%8D%8F%E8%AE%AE/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/deskflow/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
@@ -102,9 +93,6 @@
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</loc>
-    <lastmod>2025-02-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/mnn/</loc>
     <lastmod>2025-02-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
@@ -128,6 +116,9 @@
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/04-%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2025-01-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2024-12-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/qemu/</loc>
     <lastmod>2024-11-23T00:00:00+00:00</lastmod>
   </url><url>
@@ -137,7 +128,7 @@
     <loc>https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</loc>
     <lastmod>2024-11-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/qemu/</loc>
+    <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/qemu/</loc>
     <lastmod>2024-11-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/qemu%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8Bqom/</loc>
@@ -185,22 +176,16 @@
     <loc>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</loc>
     <lastmod>2024-10-19T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/</loc>
+    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</loc>
     <lastmod>2024-10-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/03-%E7%BD%91%E7%BB%9C%E6%A0%88/02-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2024-10-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</loc>
     <lastmod>2024-10-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-linux-vlan-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</loc>
-    <lastmod>2024-10-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-linux-bond-%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</loc>
-    <lastmod>2024-10-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://zuoco.github.io/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2024-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</loc>
@@ -257,13 +242,7 @@
     <loc>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8201-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2024-09-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/categories/wsl/</loc>
-    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/wsl/</loc>
-    <lastmod>2024-09-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</loc>
+    <loc>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</loc>
     <lastmod>2024-08-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/categories/c&#43;&#43;/</loc>
@@ -284,13 +263,10 @@
     <loc>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</loc>
     <lastmod>2024-07-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/03-%E7%BD%91%E7%BB%9C%E6%A0%88/01-%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2024-07-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/05-%E5%BC%82%E6%AD%A5io/</loc>
     <lastmod>2024-07-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-tcpdump/</loc>
+    <loc>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</loc>
     <lastmod>2024-07-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/02-%E5%86%85%E5%AD%98/01-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/</loc>
@@ -302,19 +278,19 @@
     <loc>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2024-06-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/</loc>
+    <loc>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/04-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2024-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2024-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</loc>
-    <lastmod>2024-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/04-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2024-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</loc>
@@ -329,7 +305,7 @@
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/03-%E7%BD%91%E7%BB%9C%E6%A0%88/</loc>
     <lastmod>2024-05-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-qemu%E4%B8%8Ekvm/</loc>
+    <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-kvm/</loc>
     <lastmod>2024-05-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</loc>
@@ -355,6 +331,9 @@
   </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/00-bootloader/</loc>
     <lastmod>2023-11-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</loc>
+    <lastmod>2023-09-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/99-%E5%85%B6%E4%BB%96/</loc>
     <lastmod>2023-09-07T00:00:00+00:00</lastmod>

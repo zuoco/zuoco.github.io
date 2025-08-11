@@ -7,31 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Thu, 19 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>Kimi-Dev</title>
-        <link>https://zuoco.github.io/p/kimi-dev/</link>
-        <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/kimi-dev/</guid>
-        <description>&lt;p&gt;  6月17号，Kimi发布了一款新编程模型——Kimi-Dev，在SWE-bench Verified上，以60.4的成绩获得了开源Sota，仅次于Gemini 2.5 Pro和Claude了，模型仅有72B参数，该模型的设计中包含了两个对抗角色： BugFixer和TesWriter，其中BugFixer职业解决Bug， TesWriter专门编写测试用例，用于测试。这两个模块都是基于共同的最小框架，包含两个阶段，File Localization和Code Edits，就是先定位要修改的文件，然后修改代码中的Bug，kimi团队收集了Github上的大量Issue和Pull Request，基于这些内容学习推理与解决额问题。&lt;br&gt;
-  看起来这款新模型是一种“Agent”的思路，在底层模型不占优势的情况下，通过Agent的思路来提升模型的使用性能，这应该是Kimi团队在产品路线上的调整。自从Depseek R1发布之后， 国内AI圈子的流量都在DeepSeek和千问上，Kimi一直沉寂，实际上大模型基础建设只适合资本大户来做，对于中小企业更适合在模型之上提供服务，对于模型进行优化，提供特定场景下的创新与性能。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/kimi-dev/kimi-dev.jpg&#34;
-	width=&#34;3200&#34;
-	height=&#34;3973&#34;
-	srcset=&#34;https://zuoco.github.io/p/kimi-dev/kimi-dev_hu_5ab646d0146c6536.jpg 480w, https://zuoco.github.io/p/kimi-dev/kimi-dev_hu_f996bf5858a227cd.jpg 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;kimi-dev&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;80&#34;
-		data-flex-basis=&#34;193px&#34;
-	
-&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
+        <lastBuildDate>Sat, 14 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>FreeCAD（04） — 异常类型</title>
         <link>https://zuoco.github.io/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
@@ -244,23 +220,10 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd&#34; &gt;3. 核心功能&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f&#34; &gt;4. 应用程序&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-open3d-viewer&#34; &gt;4.1. Open3D Viewer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e6%9e%84%e5%bb%ba%e7%b3%bb%e7%bb%9f&#34; &gt;4.2. 应用程序构建系统&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e6%8a%80%e6%9c%af%e7%89%b9%e6%80%a7&#34; &gt;5. 技术特性&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#51-%e5%8f%8c%e9%87%8d%e5%ae%9e%e7%8e%b0%e6%9e%b6%e6%9e%84&#34; &gt;5.1. 双重实现架构&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#52-api%e6%96%87%e6%a1%a3%e7%bb%93%e6%9e%84&#34; &gt;5.2. API文档结构&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#53-%e6%9e%84%e5%bb%ba%e9%80%89%e9%a1%b9&#34; &gt;5.3. 构建选项&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#7-%e6%80%bb%e7%bb%93&#34; &gt;7. 总结&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%8f%8c%e9%87%8d%e5%ae%9e%e7%8e%b0%e6%9e%b6%e6%9e%84&#34; &gt;4. 双重实现架构&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-项目概述&#34;&gt;1. 项目概述
-&lt;/h1&gt;&lt;p&gt;Open3D是一个用于3D数据处理的现代开源库，Open3D前端公开了一组精心选择的数据结构和算法，支持C++和Python两种接口。后端经过高度优化，并设置了并行化支持。&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;Open3D是一个用于3D数据处理的现代开源库，Open3D前端公开了一组精心选择的数据结构和算法，支持C++和Python两种接口。后端经过高度优化，并设置了并行化支持。Open3D还提供了一个独立的3D查看器应用程序，可在Debian(Ubuntu)、macOS和Windows上运行。&lt;/p&gt;
 &lt;h1 id=&#34;2-项目组成&#34;&gt;2. 项目组成
 &lt;/h1&gt;&lt;h2 id=&#34;21-核心模块架构&#34;&gt;2.1. 核心模块架构
 &lt;/h2&gt;&lt;p&gt;Open3D项目主要由以下核心模块组成：&lt;/p&gt;
@@ -302,46 +265,32 @@
 &lt;li&gt;&lt;strong&gt;GPU加速&lt;/strong&gt; - 为核心3D操作提供GPU加速&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;跨语言支持&lt;/strong&gt; - 提供C++和Python接口&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;4-应用程序&#34;&gt;4. 应用程序
-&lt;/h1&gt;&lt;h2 id=&#34;41-open3d-viewer&#34;&gt;4.1. Open3D Viewer
-&lt;/h2&gt;&lt;p&gt;Open3D包含一个独立的3D查看器应用程序，可在Debian(Ubuntu)、macOS和Windows上运行。&lt;/p&gt;
-&lt;h2 id=&#34;42-应用程序构建系统&#34;&gt;4.2. 应用程序构建系统
-&lt;/h2&gt;&lt;p&gt;项目提供了完整的应用程序构建系统，支持GUI应用程序的跨平台构建：&lt;/p&gt;
-&lt;h1 id=&#34;5-技术特性&#34;&gt;5. 技术特性
-&lt;/h1&gt;&lt;h2 id=&#34;51-双重实现架构&#34;&gt;5.1. 双重实现架构
-&lt;/h2&gt;&lt;p&gt;Open3D采用双重实现架构，提供传统实现和张量实现：&lt;/p&gt;
+&lt;h1 id=&#34;4-双重实现架构&#34;&gt;4. 双重实现架构
+&lt;/h1&gt;&lt;p&gt;Open3D采用双重实现架构，提供传统实现和张量实现：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;传统实现：geometry、io、pipelines&lt;/li&gt;
 &lt;li&gt;张量实现：t/geometry、t/io、t/pipelines&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;52-api文档结构&#34;&gt;5.2. API文档结构
-&lt;/h2&gt;&lt;p&gt;项目提供了完整的API文档结构，涵盖：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Python API文档&lt;/li&gt;
-&lt;li&gt;C++ API文档&lt;/li&gt;
-&lt;li&gt;教程和示例&lt;/li&gt;
-&lt;li&gt;贡献指南&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;53-构建选项&#34;&gt;5.3. 构建选项
-&lt;/h2&gt;&lt;p&gt;项目支持多种构建选项：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;共享库构建&lt;/li&gt;
-&lt;li&gt;示例程序构建&lt;/li&gt;
-&lt;li&gt;单元测试构建&lt;/li&gt;
-&lt;li&gt;Python模块构建&lt;/li&gt;
-&lt;li&gt;CUDA模块构建&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;7-总结&#34;&gt;7. 总结
-&lt;/h1&gt;&lt;p&gt;Open3D是一个功能全面的3D数据处理库，具有以下特点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;模块化设计&lt;/strong&gt; - 清晰的模块划分，便于维护和扩展&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;双重架构&lt;/strong&gt; - 传统实现和张量实现并存，满足不同需求&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;跨平台支持&lt;/strong&gt; - 支持主流操作系统&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;多语言接口&lt;/strong&gt; - 提供C++和Python接口&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;GPU加速&lt;/strong&gt; -  支持CUDA加速计算&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;丰富的应用&lt;/strong&gt; - 包含查看器等实用应用程序&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+&lt;h1 id=&#34;安装&#34;&gt;安装
+&lt;/h1&gt;&lt;p&gt;从pipy源安安装：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install open3d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下载安装：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open3d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.19.0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cp312&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cp312&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;manylinux_2_31_x86_64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;whl&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>FreeCAD（03） — 类型系统与根类型（Base模块）</title>
@@ -2373,23 +2322,93 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>Qwen3发布并开源</title>
-        <link>https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/</link>
-        <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
+        <title>Function Calling 与 MCP协议</title>
+        <link>https://zuoco.github.io/p/function-calling-%E4%B8%8E-mcp%E5%8D%8F%E8%AE%AE/</link>
+        <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/</guid>
-        <description>&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3.png&#34;
-	width=&#34;1080&#34;
-	height=&#34;2937&#34;
-	srcset=&#34;https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3_hu_be931c0351d8b0d9.png 480w, https://zuoco.github.io/p/qwen3%E5%8F%91%E5%B8%83%E5%B9%B6%E5%BC%80%E6%BA%90/qwen3_hu_3b73eabb2858223.png 1024w&#34;
-	loading=&#34;lazy&#34;
-	
-	
-		class=&#34;gallery-image&#34; 
-		data-flex-grow=&#34;36&#34;
-		data-flex-basis=&#34;88px&#34;
-	
-&gt;&lt;/p&gt;
+        <guid>https://zuoco.github.io/p/function-calling-%E4%B8%8E-mcp%E5%8D%8F%E8%AE%AE/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-function-calling&#34; &gt;1. Function Calling&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#11-%e6%a0%b8%e5%bf%83%e6%b5%81%e7%a8%8b&#34; &gt;1.1. 核心流程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#12-%e9%97%ae%e9%a2%98&#34; &gt;1.2. 问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-mcp&#34; &gt;2. MCP&lt;/a&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e6%a0%b8%e5%bf%83%e7%bb%84%e4%bb%b6%e4%b8%8e%e6%9e%b6%e6%9e%84&#34; &gt;2.1. 核心组件与架构&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-mcp%e4%b8%8efunctional-calling%e7%9a%84%e5%85%b3%e7%b3%bb&#34; &gt;3. MCP与Functional Calling的关系&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;1-function-calling&#34;&gt;1. Function Calling
+&lt;/h1&gt;&lt;p&gt;  大模型的 Function Calling（函数调用） 是一种让大语言模型与外部工具或 API 交互的核心技术。它使模型能够根据用户请求，智能地生成&lt;code&gt;结构化&lt;/code&gt;调用指令（如 JSON 格式），触发开发者预定义的函数，从而突破纯文本生成的限制，执行实际任务（如查天气、发邮件、查数据库等）。&lt;/p&gt;
+&lt;h2 id=&#34;11-核心流程&#34;&gt;1.1. 核心流程
+&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;1. &lt;code&gt;用户提问&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+用户提出需要外部能力的请求，例如： “今天北京的温度是多少？”&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. &lt;code&gt;模型决策&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+模型分析请求，判断是否需要调用函数（例如天气查询 API），并选择匹配的函数（如 get_current_weather）。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3. &lt;code&gt;生成结构化请求&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+模型输出标准化的函数调用参数（非自然语言），例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;function&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;get_current_weather&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;arguments&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;location&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;北京&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;&amp;#34;unit&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;celsius&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;4. &lt;code&gt;开发者代码执行函数&lt;/code&gt;&lt;/strong&gt; &lt;br&gt;
+开发者代码解析该请求，调用真实 API 获取数据：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;weather_data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;get_current_weather&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;北京&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;celsius&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 返回：{&amp;#34;temp&amp;#34;: 25, &amp;#34;condition&amp;#34;: &amp;#34;晴&amp;#34;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;5. &lt;code&gt;将结果返回给模型&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+将 API 返回的数据重新传给模型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;&amp;#34;temp&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;25&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nt&#34;&gt;&amp;#34;condition&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;晴&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;6. &lt;code&gt;生成最终回答&lt;/code&gt;&lt;/strong&gt;&lt;br&gt;
+模型将原始数据转化为自然语言回复：  “北京今天气温 25 摄氏度，天气晴朗。”&lt;/p&gt;
+&lt;h2 id=&#34;12-问题&#34;&gt;1.2. 问题
+&lt;/h2&gt;&lt;p&gt;  业务（用户提问）和平台接口调用是一体的，客户端直连平台API，需要管理函数的声明，参数传递，结果分析。而且每一次提问，就会进行一次Function Calling。不同的Calling之间是隔离的。&lt;/p&gt;
+&lt;h1 id=&#34;2-mcp&#34;&gt;2. MCP
+&lt;/h1&gt;&lt;p&gt;  MCP（Model Context Protocol）是由 Anthropic 推出的开源协议，旨在实现大语言模型（LLM）与外部数据源和工具的高效集成。这是一种通用接口协议，类似于 OpenAPI，但专为 AI 模型设计。它通过标准化通信协议、数据格式和规则，让 LLM 能够安全、灵活地连接本地和远程资源（如数据库、API、文件系统等）。&lt;/p&gt;
+&lt;h2 id=&#34;21-核心组件与架构&#34;&gt;2.1. 核心组件与架构
+&lt;/h2&gt;&lt;p&gt;MCP 采用 &lt;strong&gt;&lt;code&gt;客户端&lt;/code&gt;&lt;/strong&gt; - &lt;strong&gt;&lt;code&gt;服务器&lt;/code&gt;&lt;/strong&gt; 架构，主要组件包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;MCP Hosts&lt;/strong&gt;&lt;br&gt;
+角色：受控本地资源的入口层，发起上下文请求。&lt;br&gt;
+示例：Claude Desktop、AI 开发 IDE。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MCP Clients&lt;/strong&gt;&lt;br&gt;
+角色：协议转换层，维护与服务端的持久连接。
+示例：语言模型接口适配器。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MCP Servers&lt;/strong&gt;&lt;br&gt;
+角色：封装数据/工具能力，提供标准化接口。&lt;br&gt;
+示例：文档解析服务、API 网关服务。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Local Data&lt;/strong&gt;&lt;br&gt;
+角色：受控本地资源（如企业知识库、私有数据库）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Remote Services&lt;/strong&gt;
+角色：云端扩展能力（如搜索引擎、支付接口）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;3-mcp与functional-calling的关系&#34;&gt;3. MCP与Functional Calling的关系
+&lt;/h1&gt;&lt;p&gt;  可以简单理解为，MCP是对于Functional Programming的封装，业务层不在需要直接Function Calling，这些都由MCP Servers完成。业务层只需要对接标准的MCP协议接口即可，而且以此业务请求也可以触发多次Function Calling，并将Calling结果整合输出给用户。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -2846,219 +2865,6 @@ NVIDIA GTX 5060 Ti 16GB&lt;br&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;内核中没有用搜到后序遍历的使用，等以后需要的时候再去研究。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>MNN</title>
-        <link>https://zuoco.github.io/p/mnn/</link>
-        <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/mnn/</guid>
-        <description>&lt;img src="https://zuoco.github.io/p/mnn/image.png" alt="Featured image of post MNN" /&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%a1%b9%e7%9b%ae%e6%a6%82%e8%bf%b0&#34; &gt;1. 项目概述&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd%e7%89%b9%e6%80%a7&#34; &gt;2. 核心功能特性&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e8%bd%bb%e9%87%8f%e5%8c%96%e4%b8%8e%e9%ab%98%e6%95%88%e6%80%a7&#34; &gt;2.1. 轻量化与高效性&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e9%80%9a%e7%94%a8%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;2.2. 通用模型支持&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#23-%e9%ab%98%e6%80%a7%e8%83%bd%e8%ae%a1%e7%ae%97&#34; &gt;2.3. 高性能计算&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e4%b8%93%e7%94%a8%e5%bc%95%e6%93%8e%e4%b8%8e%e8%83%bd%e5%8a%9b&#34; &gt;3. 专用引擎与能力&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-%e5%a4%a7%e8%af%ad%e8%a8%80%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;3.1. 大语言模型支持&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#32-%e5%a4%9a%e6%a8%a1%e6%80%81%e8%83%bd%e5%8a%9b&#34; &gt;3.2. 多模态能力&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#33-%e8%a7%86%e8%a7%89%e5%a4%84%e7%90%86%e8%83%bd%e5%8a%9b&#34; &gt;3.3. 视觉处理能力&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#34-%e9%9f%b3%e9%a2%91%e5%a4%84%e7%90%86%e8%83%bd%e5%8a%9b&#34; &gt;3.4. 音频处理能力&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#35-%e6%89%a9%e6%95%a3%e6%a8%a1%e5%9e%8b%e6%94%af%e6%8c%81&#34; &gt;3.5. 扩散模型支持&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e4%b8%bb%e8%a6%81%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af&#34; &gt;4. 主要使用场景&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-%e4%bc%81%e4%b8%9a%e7%ba%a7%e7%94%9f%e4%ba%a7%e5%ba%94%e7%94%a8&#34; &gt;4.1. 企业级生产应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-%e7%a7%bb%e5%8a%a8%e7%ab%afllm%e5%ba%94%e7%94%a8&#34; &gt;4.2. 移动端LLM应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#43-android-llm%e8%81%8a%e5%a4%a9%e5%ba%94%e7%94%a8&#34; &gt;4.3. Android LLM聊天应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#44-3d%e8%99%9a%e6%8b%9f%e4%ba%ba%e5%ba%94%e7%94%a8&#34; &gt;4.4. 3D虚拟人应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#45-mnn-3d-avatar%e5%ba%94%e7%94%a8&#34; &gt;4.5. MNN 3D Avatar应用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#46-%e8%be%b9%e7%bc%98%e8%ae%a1%e7%ae%97%e5%9c%ba%e6%99%af&#34; &gt;4.6. 边缘计算场景&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#47-%e5%b5%8c%e5%85%a5%e5%bc%8f%e8%ae%be%e5%a4%87&#34; &gt;4.7. 嵌入式设备&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#48-%e5%ae%9e%e6%97%b6%e5%ba%94%e7%94%a8&#34; &gt;4.8. 实时应用&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e5%bc%80%e5%8f%91%e5%b7%a5%e5%85%b7%e4%b8%8e%e7%94%9f%e6%80%81&#34; &gt;5. 开发工具与生态&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#51-%e6%a8%a1%e5%9e%8b%e8%bd%ac%e6%8d%a2%e5%b7%a5%e5%85%b7&#34; &gt;5.1. 模型转换工具&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#52-python%e9%9b%86%e6%88%90&#34; &gt;5.2. Python集成&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#53-%e8%b7%a8%e5%b9%b3%e5%8f%b0%e6%9e%84%e5%bb%ba&#34; &gt;5.3. 跨平台构建&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e7%a1%ac%e4%bb%b6%e6%94%af%e6%8c%81%e7%9f%a9%e9%98%b5&#34; &gt;6. 硬件支持矩阵&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;1-项目概述&#34;&gt;1. 项目概述
-&lt;/h1&gt;&lt;p&gt;MNN（Mobile Neural Network）是阿里巴巴开发的高性能、轻量级深度学习框架，专为移动设备、嵌入式系统和边缘计算平台的推理和训练而设计。该框架目前为阿里巴巴超过30个生产应用提供推理引擎支持，包括淘宝、天猫、优酷和钉钉等，覆盖70多个使用场景，从直播到搜索推荐和安全风控。&lt;/p&gt;
-&lt;h1 id=&#34;2-核心功能特性&#34;&gt;2. 核心功能特性
-&lt;/h1&gt;&lt;h2 id=&#34;21-轻量化与高效性&#34;&gt;2.1. 轻量化与高效性
-&lt;/h2&gt;&lt;p&gt;MNN具有以下轻量化特点：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;最小依赖&lt;/strong&gt;：核心功能无外部依赖，部署简单&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;紧凑尺寸&lt;/strong&gt;：iOS静态库约12MB（armv7+arm64），Android核心库约800KB（armv7a）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;模型压缩&lt;/strong&gt;：支持FP16/Int8量化，模型大小减少50-70%&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;内存优化&lt;/strong&gt;：先进的内存管理和可配置内存池&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;22-通用模型支持&#34;&gt;2.2. 通用模型支持
-&lt;/h2&gt;&lt;p&gt;MNN支持多种模型格式和丰富的算子：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;多种格式&lt;/strong&gt;：支持TensorFlow、Caffe、ONNX和TorchScript模型格式&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;全面算子&lt;/strong&gt;：178个TensorFlow算子、52个Caffe算子、163个TorchScript算子、158个ONNX算子&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;动态输入&lt;/strong&gt;：处理可变输入尺寸和控制流模型&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;跨平台&lt;/strong&gt;：支持iOS 8.0+、Android 4.3+和POSIX兼容的嵌入式设备&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;23-高性能计算&#34;&gt;2.3. 高性能计算
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;硬件优化&lt;/strong&gt;：针对ARM/x64 CPU的SIMD汇编代码，GPU加速通过Metal/OpenCL/Vulkan/CUDA实现&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;先进算法&lt;/strong&gt;：Winograd卷积优化，ARM v8.2 FP16支持&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;量化推理&lt;/strong&gt;：支持Int8/FP16/BF16精度以提升性能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;3-专用引擎与能力&#34;&gt;3. 专用引擎与能力
-&lt;/h1&gt;&lt;h2 id=&#34;31-大语言模型支持&#34;&gt;3.1. 大语言模型支持
-&lt;/h2&gt;&lt;p&gt;MNN包含专门的LLM引擎，支持现代大语言模型的高效推理：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;LLM运行时&lt;/strong&gt;：针对Qwen、百川、LLAMA系列等大语言模型的优化推理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;量化技术&lt;/strong&gt;：先进的量化技术实现内存高效部署&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;32-多模态能力&#34;&gt;3.2. 多模态能力
-&lt;/h2&gt;&lt;p&gt;MNN提供完整的多模态AI能力，扩展了基础LLM引擎以支持视觉和音频输入：&lt;/p&gt;
-&lt;h2 id=&#34;33-视觉处理能力&#34;&gt;3.3. 视觉处理能力
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;图像预处理&lt;/strong&gt;：专门的预处理管道和视觉嵌入集成&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;多种模型支持&lt;/strong&gt;：支持Qwen2Vision、SmolVLM等视觉-语言模型&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;灵活配置&lt;/strong&gt;：可配置的图像尺寸、标准化参数和特殊标记&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;34-音频处理能力&#34;&gt;3.4. 音频处理能力
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;语音理解&lt;/strong&gt;：自动语音识别（ASR）能力&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;音频生成&lt;/strong&gt;：文本转语音（TTS）功能&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;实时处理&lt;/strong&gt;：通过回调机制支持实时音频输出&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;35-扩散模型支持&#34;&gt;3.5. 扩散模型支持
-&lt;/h2&gt;&lt;p&gt;框架支持扩散模型，为图像生成和其他生成式AI应用提供基础。&lt;/p&gt;
-&lt;h1 id=&#34;4-主要使用场景&#34;&gt;4. 主要使用场景
-&lt;/h1&gt;&lt;h2 id=&#34;41-企业级生产应用&#34;&gt;4.1. 企业级生产应用
-&lt;/h2&gt;&lt;h2 id=&#34;42-移动端llm应用&#34;&gt;4.2. 移动端LLM应用
-&lt;/h2&gt;&lt;h2 id=&#34;43-android-llm聊天应用&#34;&gt;4.3. Android LLM聊天应用
-&lt;/h2&gt;&lt;p&gt;MNN提供完整的Android LLM对话应用，支持：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;多模态交互&lt;/strong&gt;：文本、视觉和音频交互&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;本地推理&lt;/strong&gt;：设备端大语言模型推理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;实时响应&lt;/strong&gt;：优化的推理速度和用户体验&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;44-3d虚拟人应用&#34;&gt;4.4. 3D虚拟人应用
-&lt;/h2&gt;&lt;h2 id=&#34;45-mnn-3d-avatar应用&#34;&gt;4.5. MNN 3D Avatar应用
-&lt;/h2&gt;&lt;p&gt;这是一个展示多模态AI能力的综合应用：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;语音交互&lt;/strong&gt;：语音识别和语音合成&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;视觉理解&lt;/strong&gt;：图像理解和上下文感知&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;实时渲染&lt;/strong&gt;：3D头像的神经渲染&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;行为动画&lt;/strong&gt;：基于对话内容的面部动画生成&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;该应用整合了多个AI模型：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ASR模型&lt;/strong&gt;：语音转文本&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LLM模型&lt;/strong&gt;：Qwen2.5-1.5B用于对话理解&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;TTS模型&lt;/strong&gt;：bert-vits2-MNN用于语音合成&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;A2BS模型&lt;/strong&gt;：UniTalker-MNN用于行为生成&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NNR模型&lt;/strong&gt;：TaoAvatar-NNR-MNN用于神经渲染&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;46-边缘计算场景&#34;&gt;4.6. 边缘计算场景
-&lt;/h2&gt;&lt;h2 id=&#34;47-嵌入式设备&#34;&gt;4.7. 嵌入式设备
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;IoT设备&lt;/strong&gt;：物联网设备上的AI推理&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;智能摄像头&lt;/strong&gt;：实时视频分析和目标识别&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;移动机器人&lt;/strong&gt;：路径规划和环境感知&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;48-实时应用&#34;&gt;4.8. 实时应用
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;直播场景&lt;/strong&gt;：实时内容审核和推荐&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;安全监控&lt;/strong&gt;：实时风险检测和预警&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;工业检测&lt;/strong&gt;：产品质量检测和异常发现&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;5-开发工具与生态&#34;&gt;5. 开发工具与生态
-&lt;/h1&gt;&lt;h2 id=&#34;51-模型转换工具&#34;&gt;5.1. 模型转换工具
-&lt;/h2&gt;&lt;p&gt;MNN提供完整的模型转换工具链，支持从主流框架转换模型到MNN格式。&lt;/p&gt;
-&lt;h2 id=&#34;52-python集成&#34;&gt;5.2. Python集成
-&lt;/h2&gt;&lt;p&gt;完整的Python绑定（PyMNN）支持研究和开发工作。&lt;/p&gt;
-&lt;h2 id=&#34;53-跨平台构建&#34;&gt;5.3. 跨平台构建
-&lt;/h2&gt;&lt;p&gt;基于CMake的构建系统支持多平台和多架构编译。&lt;/p&gt;
-&lt;h1 id=&#34;6-硬件支持矩阵&#34;&gt;6. 硬件支持矩阵
-&lt;/h1&gt;&lt;p&gt;MNN支持广泛的硬件平台：&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;平台&lt;/th&gt;
-          &lt;th&gt;架构&lt;/th&gt;
-          &lt;th&gt;普通精度&lt;/th&gt;
-          &lt;th&gt;FP16&lt;/th&gt;
-          &lt;th&gt;BF16&lt;/th&gt;
-          &lt;th&gt;Int8&lt;/th&gt;
-          &lt;th&gt;状态&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;CPU&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;x86/x64-AVX512&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;⚠️&lt;/td&gt;
-          &lt;td&gt;⚠️&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;推荐&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;ARMv8&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;推荐&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;GPU&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;OpenCL&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;❌&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;Metal&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;❌&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;CUDA&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;❌&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;支持&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;strong&gt;NPU&lt;/strong&gt;&lt;/td&gt;
-          &lt;td&gt;CoreML&lt;/td&gt;
-          &lt;td&gt;✅&lt;/td&gt;
-          &lt;td&gt;❌&lt;/td&gt;
-          &lt;td&gt;❌&lt;/td&gt;
-          &lt;td&gt;❌&lt;/td&gt;
-          &lt;td&gt;支持&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
 </description>
         </item>
         <item>
@@ -8898,39 +8704,32 @@ QLIST_FOREACH：&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>第3节 - Linux VLAN 虚拟局域网</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-linux-vlan-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</link>
-        <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
+        <title>Linux 虚拟网络</title>
+        <link>https://zuoco.github.io/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</link>
+        <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-linux-vlan-%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/</guid>
-        <description>&lt;h1 id=&#34;linux-vlan&#34;&gt;Linux VLAN
+        <guid>https://zuoco.github.io/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-linux-bridge&#34; &gt;1. Linux Bridge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-linux-bond&#34; &gt;2. Linux Bond&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-linux-vlan&#34; &gt;3. Linux VLAN&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-linux%e4%b8%advlan%e7%9a%84%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f&#34; &gt;3.1. linux中VLAN的实现方式&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-linux-bridge&#34;&gt;1. Linux Bridge
+&lt;/h1&gt;&lt;p&gt;Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要&lt;code&gt;转发&lt;/code&gt;与&lt;code&gt;丢弃&lt;/code&gt;，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是&lt;code&gt;转发&lt;/code&gt;，&lt;code&gt;丢弃&lt;/code&gt;，&lt;code&gt;接收&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;Linux内核通过虚拟的网桥设备实现桥接，这个“网桥”可以连接若干个以太网接口设备。在虚拟化平台上，我门当然要先创建“网桥”，然后连接一个物理网卡，在我们将创建虚拟机的时候，将虚拟机的网口连接到这个网桥上，就像是将多个PC设备连接到交换机，从而将它们桥接起来。&lt;/p&gt;
+&lt;h1 id=&#34;2-linux-bond&#34;&gt;2. Linux Bond
+&lt;/h1&gt;&lt;p&gt;将多个物理网卡绑定为一个逻辑网卡，这样可以实现带宽倍增，提高吞吐量。&lt;/p&gt;
+&lt;h1 id=&#34;3-linux-vlan&#34;&gt;3. Linux VLAN
 &lt;/h1&gt;&lt;p&gt;将网络划分为多个逻辑网络，使得不同的VLAN可以在同一物理网段上实现隔离通信，是一种基于&lt;code&gt;网络层&lt;/code&gt;的虚拟局域网技术，是通过内核的网络子系统实现的，当一个VLAN数据包进入系统时，内核会根据数据包中的VLAN标记信息，将数据包转发到相应的VLAN接口或者物理接口上。linux中有两种方法实现VLAN：&lt;code&gt;内核模块&lt;/code&gt;、&lt;code&gt;VLAN交换机&lt;/code&gt;，内核模块方式更加灵活，需要更多配置工作，VLAN更易于配置和管理，但是会带来硬件成本。&lt;/p&gt;
-&lt;h2 id=&#34;linux中vlan的实现方式&#34;&gt;linux中VLAN的实现方式
+&lt;h2 id=&#34;31-linux中vlan的实现方式&#34;&gt;3.1. linux中VLAN的实现方式
 &lt;/h2&gt;&lt;p&gt;&lt;code&gt;内核模块方式&lt;/code&gt;&lt;br&gt;
 在内核中加载VLAN模块来实现，&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;VLAN交换机&lt;/code&gt;
 通过软件模拟交换机。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>第2节 - Linux Bond 网卡绑定</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-linux-bond-%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</link>
-        <pubDate>Wed, 09 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-linux-bond-%E7%BD%91%E5%8D%A1%E7%BB%91%E5%AE%9A/</guid>
-        <description>&lt;h1 id=&#34;linux-bond&#34;&gt;Linux Bond
-&lt;/h1&gt;&lt;p&gt;将多个物理网卡绑定为一个逻辑网卡，这样可以实现带宽倍增，提高吞吐量。&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>第1节 - Linux Bridge 桥接网络</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/</link>
-        <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-linux-bridge-%E6%A1%A5%E6%8E%A5%E7%BD%91%E7%BB%9C/</guid>
-        <description>&lt;h1 id=&#34;linux-bridge&#34;&gt;Linux Bridge
-&lt;/h1&gt;&lt;p&gt;Bridge，就是桥接，是一种连接网络设备的方式，把一台机器上的若干网络接口“连接”起来，当其中一个网口收到报文，会被复制到其他网口并发送出去，这样网口之间的报文就能够相互转发。看起来像是“交换机”，但是有所不同，例如linux内核就支持网口的桥接，交换机只会也只需要&lt;code&gt;转发&lt;/code&gt;与&lt;code&gt;丢弃&lt;/code&gt;，而Linux内核本身就是一台机器，它也是要接收网络报文的，也就是&lt;code&gt;转发&lt;/code&gt;，&lt;code&gt;丢弃&lt;/code&gt;，&lt;code&gt;接收&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;Linux内核通过虚拟的网桥设备实现桥接，这个“网桥”可以连接若干个以太网接口设备。在虚拟化平台上，我门当然要先创建“网桥”，然后连接一个物理网卡，在我们将创建虚拟机的时候，将虚拟机的网口连接到这个网桥上，就像是将多个PC设备连接到交换机，从而将它们桥接起来。&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -12193,126 +11992,13 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>WSL</title>
-        <link>https://zuoco.github.io/p/wsl/</link>
-        <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/wsl/</guid>
-        <description></description>
-        </item>
-        <item>
-        <title>Linux进程间通信（01） — 信号</title>
-        <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</link>
+        <title>Linux进程间通信（02） — Unix-Socket</title>
+        <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</guid>
-        <description>&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b3%a8%e5%86%8c%e4%bf%a1%e5%8f%b7%e5%a4%84%e7%90%86%e5%99%a8&#34; &gt;1. &lt;strong&gt;注册信号处理器&lt;/strong&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#11-signal&#34; &gt;1.1. &lt;strong&gt;signal&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#12-sigaction&#34; &gt;1.2. &lt;strong&gt;sigaction&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8f%91%e9%80%81%e4%bf%a1%e5%8f%b7&#34; &gt;2. &lt;strong&gt;发送信号&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e4%bd%bf%e7%94%a8&#34; &gt;3. &lt;strong&gt;使用&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Linux信号机制是一种&lt;code&gt;异步通知机制&lt;/code&gt;，用于通知进程某个事件的发生。常被看做是一种软中断，类似于硬中断，但作用对象是进程而非 CPU，这是Glib提供的功能，所以源码需要到Glib代码库中查看。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGHUP		 1
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGINT		 2
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGQUIT		 3
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGILL		 4
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGTRAP		 5
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGABRT		 6
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGIOT		 6
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// ......
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;常见的有SIGINT、SIGKILL、SIGUSR1、SIGUSR2、SIGTERM等等，使用&lt;code&gt;kill -l&lt;/code&gt;命令可以查看系统中的所有信号。&lt;/p&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;&lt;/th&gt;
-          &lt;th&gt;&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;SIGINT&lt;/td&gt;
-          &lt;td&gt;中断信号，用户按下 Ctrl+C 触发，用于终止前台进程&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;SIGKILL&lt;/td&gt;
-          &lt;td&gt;强制终止进程，无法被忽略或捕获&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;SIGTERM&lt;/td&gt;
-          &lt;td&gt;优雅终止信号，默认由 kill 命令发送，允许进程清理资源&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;SIGUSR1 &lt;br&gt; SIGUSR2&lt;/td&gt;
-          &lt;td&gt;用户自定义信号 2，可由程序自定义用途&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h1 id=&#34;1-注册信号处理器&#34;&gt;1. &lt;strong&gt;注册信号处理器&lt;/strong&gt;
-&lt;/h1&gt;&lt;h2 id=&#34;11-signal&#34;&gt;1.1. &lt;strong&gt;signal&lt;/strong&gt;
-&lt;/h2&gt;&lt;p&gt;指定进程收到某个信号后要去做的事情。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 若设置失败，返回 SIG_ERR，并设置 errno 表示错误原因。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;signal&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__THROW&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;其中 __sighandler_t：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;所以__sighandler_t是一个函数指针类型。&lt;/p&gt;
-&lt;h2 id=&#34;12-sigaction&#34;&gt;1.2. &lt;strong&gt;sigaction&lt;/strong&gt;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __act:  内部包含了信号处理回调函数。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __oact: 对于原来的信号处理回调函数的备份，一般为NULL，不备份。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__restrict&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__restrict&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__oact&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__THROW&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;struct sigaction的原型：&lt;/p&gt;
+        <guid>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</guid>
+        <description>&lt;p&gt;Unix Socket（Unix域套接字）是一种用于 本地进程间通信的机制。它与网络 Socket 不同，不需要通过网络协议栈，而是通过文件系统实现进程间的通信。和网络Socket一样，也提供&lt;code&gt;流式套接字&lt;/code&gt;和&lt;code&gt;数据报套接字&lt;/code&gt;。API接口的网络套接字是一样的，&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 服务器&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -12336,46 +12022,60 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#if defined __USE_POSIX199309 || defined __USE_XOPEN_EXTENDED
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;union&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                        &lt;span class=&#34;c1&#34;&gt;// 普通信号处理函数。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_sigaction&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;siginfo_t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 带有额外数据的信号处理函数，需要将sa_flags成员设置为SA_SIGINFO。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sigaction_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# define sa_handler	    __sigaction_handler.sa_handler
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# define sa_sigaction	__sigaction_handler.sa_sigaction
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/un.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# else
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#endif
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;__sigset_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_mask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// 信号处理期间阻塞的信号集，当前处理的信号会自动被阻塞（防止递归触发）。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_flags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;// 标志位，控制信号行为
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_restorer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 已弃用，保留历史兼容性
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SOCKET_PATH &amp;#34;/tmp/mysocket&amp;#34;  &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// socket绑定到文件系统
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;server_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;client_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sockaddr_un&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// Unix-Socket地址
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;socklen_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 1. 创建 Socket
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;server_fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;socket&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AF_UNIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SOCK_STREAM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// AF_UNIX 或 PF_UNIX，表示使用本地文件系统作为通信地址
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server_fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;perror&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;socket&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 2. 绑定地址
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sun_family&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;AF_UNIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;strncpy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sun_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SOCKET_PATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sun_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;unlink&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SOCKET_PATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 如果文件已存在，删除它
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;bind&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sockaddr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;perror&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;bind&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;server_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 后面和网络套接字一样了。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;unlink&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SOCKET_PATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 删除 Socket 文件
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;对于sa_mask：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// sa是struct sigaction类型变量
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;sigemptyset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_mask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;// 清空信号集
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;sigaddset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_mask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SIGINT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 添加 SIGINT 到阻塞列表
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;对于&lt;code&gt;siginfo_t&lt;/code&gt;:&lt;br&gt;
-siginfo_t 是 POSIX 信号处理中用于传递 信号详细信息 的结构体，通常与 SA_SIGINFO 标志一起使用。它提供了比传统 signal() 函数更丰富的上下文信息。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;2. 客户端&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -12390,113 +12090,68 @@ siginfo_t 是 POSIX 信号处理中用于传递 信号详细信息 的结构体�
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_signo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// 信号编号。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_errno&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// 错误码，如果非零，表示与信号相关的系统错误码。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_code&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// 指示信号产生的具体原因，分为系统生成（SI_KERNEL）和用户生成（SI_USER），需要的时候在进一步查询。 
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__pid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_pid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;		 &lt;span class=&#34;c1&#34;&gt;// 发送信号的进程 ID。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__uid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_uid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	     &lt;span class=&#34;c1&#34;&gt;// 发送信号的用户 ID。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;si_addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;// 指向引发信号的内存地址（如段错误时的无效地址）。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_status&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;// 传递子进程的退出状态或信号值。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_band&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 与 SIGPOLL 或 SIGIO 信号一起使用，表示文件描述符的带事件（如 I/O 就绪）。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__sigval_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 通过 sigqueue() 发送的自定义信号值（sigval）。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;siginfo_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;2-发送信号&#34;&gt;2. &lt;strong&gt;发送信号&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;发送信号有两个函数： kill、sigqueue，其中sigqueue可以携带额外的数据。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __pid: 目标进程ID。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __sig: 要发送的信号。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;kill&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__pid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__pid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/socket.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/un.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;unistd.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;stdio.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;string.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SOCKET_PATH &amp;#34;/tmp/mysocket&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;client_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sockaddr_un&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __val: 携带的额外数据。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sigqueue&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__pid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__pid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigval&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;union sigval的结构如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigval&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sival_int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sival_ptr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;3-使用&#34;&gt;3. &lt;strong&gt;使用&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;以带数据的信号为例：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;信号接收方：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 信号处理函数
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;siginfo_t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;info&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;old&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 检查信号，sig。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 从info中读取信号上下文。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 1. 创建 Socket
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;client_fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;socket&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AF_UNIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SOCK_STREAM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;client_fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;perror&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;socket&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_sigaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_flags&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SA_SIGINFO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;sigaction&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SIGUSR1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;信号发送方：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;signal&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sigval_int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;sigqueue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;getpid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SIGUSR1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 2. 连接服务器
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sun_family&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;AF_UNIX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;strncpy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sun_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SOCKET_PATH&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sun_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;connect&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;client_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sockaddr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;perror&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;connect&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;nf&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;client_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 3. 读写数据
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// ......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 4. 关闭 Socket
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;nf&#34;&gt;close&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;client_fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
@@ -12877,11 +12532,11 @@ siginfo_t 是 POSIX 信号处理中用于传递 信号详细信息 的结构体�
 </description>
         </item>
         <item>
-        <title>第3节 - tcpdump</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-tcpdump/</link>
+        <title>Linux网络管理（03） — tcpdump抓包</title>
+        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</link>
         <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC3%E8%8A%82-tcpdump/</guid>
+        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</guid>
         <description>&lt;h1 id=&#34;1-基本命令选项&#34;&gt;1. 基本命令选项
 &lt;/h1&gt;&lt;table&gt;
   &lt;thead&gt;
@@ -13286,11 +12941,11 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>第2节 - Network Manager</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/</link>
+        <title>Linux网络管理（02） — Network Manager</title>
+        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</link>
         <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/</guid>
+        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</guid>
         <description>&lt;h1 id=&#34;1-network-manager网络管理工具&#34;&gt;1. Network-Manager网络管理工具
 &lt;/h1&gt;&lt;p&gt;在Debian系统中，NetworkManager（NM） 是一个功能强大的网络管理工具，支持有线、无线、VPN、代理等多种网络连接方式。&lt;/p&gt;
 &lt;h2 id=&#34;11-安装networkmanager&#34;&gt;1.1. 安装NetworkManager
@@ -13364,10 +13019,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出(CONNECTION 列显示当前使用的连接配置)：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/device-status.bmp&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status.bmp&#34;
 	width=&#34;1173&#34;
 	height=&#34;287&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/device-status_hu_3b808834d5e87588.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/device-status_hu_8b72dd48c2d5d385.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_3b808834d5e87588.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_8b72dd48c2d5d385.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13386,10 +13041,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出(IN-USE 标记 * 表示当前已连接的网络)：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-list.bmp&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list.bmp&#34;
 	width=&#34;1541&#34;
 	height=&#34;410&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-list_hu_495371c566f7012e.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-list_hu_8348cb87ebec241e.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_495371c566f7012e.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_8348cb87ebec241e.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13416,10 +13071,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli connection show
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-status.bmp&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status.bmp&#34;
 	width=&#34;1382&#34;
 	height=&#34;362&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-status_hu_61b3a888cc80a559.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC2%E8%8A%82-network-manager/wifi-status_hu_8cefa13ea190d44f.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_61b3a888cc80a559.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_8cefa13ea190d44f.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13451,11 +13106,11 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 </description>
         </item>
         <item>
-        <title>第1节 - 常用网络命令</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</link>
+        <title>Linux网络管理（01） — 常用网络命令</title>
+        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;1-iproute2&#34;&gt;1. iproute2
 &lt;/h1&gt;&lt;p&gt;ip命令全称iproute2，&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; &lt;code&gt;查看所有网卡的状态&lt;/code&gt;&lt;/p&gt;
@@ -13468,10 +13123,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
 	width=&#34;1853&#34;
 	height=&#34;638&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13506,10 +13161,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip -s link show eth0
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0.png&#34;
 	width=&#34;2508&#34;
 	height=&#34;375&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_8177b3380af5e02d.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_3fea5a7a16891152.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_8177b3380af5e02d.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_3fea5a7a16891152.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13544,10 +13199,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 略&amp;hellip;&amp;hellip;&lt;/p&gt;
 &lt;h1 id=&#34;2-netstat&#34;&gt;2. netstat
 &lt;/h1&gt;&lt;p&gt;查看网络连接状态, 先看一下命令的默认输出：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2.png&#34;
 	width=&#34;1882&#34;
 	height=&#34;1083&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_765006fe5511afed.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_a6a5131b5399f4c5.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_765006fe5511afed.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_a6a5131b5399f4c5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13557,10 +13212,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 默认情况下，对于一些有别名的 ip 地址和端口号 netstat 会显示别名，例如127.0.0.1显示localhost，80端口会显示成http，如果我们想要的是原始IP地址，可以使用-n参数。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3.png&#34;
 	width=&#34;1882&#34;
 	height=&#34;754&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_8d182fdfe505ecdf.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_edd16a229ed3221d.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_8d182fdfe505ecdf.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_edd16a229ed3221d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13598,10 +13253,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;3-lsof&#34;&gt;3. lsof
 &lt;/h1&gt;&lt;p&gt;list opened filedesciptor，在Linux系统中，所有的与资源句柄相关的东西都可以统一抽象成文件描述符。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1.png&#34;
 	width=&#34;1701&#34;
 	height=&#34;271&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_905002137cfdaf85.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_c08405377156592a.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_905002137cfdaf85.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_c08405377156592a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13640,10 +13295,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;发送数据&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;服务端： &lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1.png&#34;
 	width=&#34;841&#34;
 	height=&#34;187&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_bce24a1c70ac2a48.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_8c37ccf6f7e9215a.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_bce24a1c70ac2a48.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_8c37ccf6f7e9215a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13653,10 +13308,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 &lt;code&gt;客户端： &lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2.png&#34;
 	width=&#34;980&#34;
 	height=&#34;187&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_1c0fd1c15c21f4ec.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_929749709fafec5d.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_1c0fd1c15c21f4ec.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_929749709fafec5d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -13666,10 +13321,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 &lt;code&gt;发送数据: &lt;/code&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3.png&#34;
 	width=&#34;1750&#34;
 	height=&#34;633&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_23b43c3f949ed182.png 480w, https://zuoco.github.io/p/%E7%AC%AC1%E8%8A%82-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_802d9632d6b30e62.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_23b43c3f949ed182.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_802d9632d6b30e62.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -15379,6 +15034,307 @@ U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行
 &lt;/div&gt;&lt;h2 id=&#34;52-debian系统&#34;&gt;5.2. Debian系统
 &lt;/h2&gt;&lt;p&gt;使用grep命令查看即可。&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>Linux进程间通信（01） — 信号</title>
+        <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</link>
+        <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b3%a8%e5%86%8c%e4%bf%a1%e5%8f%b7%e5%a4%84%e7%90%86%e5%99%a8&#34; &gt;1. &lt;strong&gt;注册信号处理器&lt;/strong&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#11-signal&#34; &gt;1.1. &lt;strong&gt;signal&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#12-sigaction&#34; &gt;1.2. &lt;strong&gt;sigaction&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8f%91%e9%80%81%e4%bf%a1%e5%8f%b7&#34; &gt;2. &lt;strong&gt;发送信号&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e4%bd%bf%e7%94%a8&#34; &gt;3. &lt;strong&gt;使用&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Linux信号机制是一种&lt;code&gt;异步通知机制&lt;/code&gt;，用于通知进程某个事件的发生。常被看做是一种软中断，类似于硬中断，但作用对象是进程而非 CPU，这是Glib提供的功能，所以源码需要到Glib代码库中查看。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGHUP		 1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGINT		 2
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGQUIT		 3
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGILL		 4
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGTRAP		 5
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGABRT		 6
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#define SIGIOT		 6
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;// ......
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;常见的有SIGINT、SIGKILL、SIGUSR1、SIGUSR2、SIGTERM等等，使用&lt;code&gt;kill -l&lt;/code&gt;命令可以查看系统中的所有信号。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SIGINT&lt;/td&gt;
+          &lt;td&gt;中断信号，用户按下 Ctrl+C 触发，用于终止前台进程&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SIGKILL&lt;/td&gt;
+          &lt;td&gt;强制终止进程，无法被忽略或捕获&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SIGTERM&lt;/td&gt;
+          &lt;td&gt;优雅终止信号，默认由 kill 命令发送，允许进程清理资源&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;SIGUSR1 &lt;br&gt; SIGUSR2&lt;/td&gt;
+          &lt;td&gt;用户自定义信号 2，可由程序自定义用途&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;1-注册信号处理器&#34;&gt;1. &lt;strong&gt;注册信号处理器&lt;/strong&gt;
+&lt;/h1&gt;&lt;h2 id=&#34;11-signal&#34;&gt;1.1. &lt;strong&gt;signal&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;指定进程收到某个信号后要去做的事情。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 若设置失败，返回 SIG_ERR，并设置 errno 表示错误原因。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;signal&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__THROW&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其中 __sighandler_t：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;所以__sighandler_t是一个函数指针类型。&lt;/p&gt;
+&lt;h2 id=&#34;12-sigaction&#34;&gt;1.2. &lt;strong&gt;sigaction&lt;/strong&gt;
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __act:  内部包含了信号处理回调函数。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __oact: 对于原来的信号处理回调函数的备份，一般为NULL，不备份。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__restrict&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;                      &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__restrict&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__oact&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__THROW&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;struct sigaction的原型：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#if defined __USE_POSIX199309 || defined __USE_XOPEN_EXTENDED
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;union&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                        &lt;span class=&#34;c1&#34;&gt;// 普通信号处理函数。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_sigaction&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;siginfo_t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 带有额外数据的信号处理函数，需要将sa_flags成员设置为SA_SIGINFO。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sigaction_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# define sa_handler	    __sigaction_handler.sa_handler
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# define sa_sigaction	__sigaction_handler.sa_sigaction
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;# else
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__sighandler_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#endif
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;__sigset_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_mask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// 信号处理期间阻塞的信号集，当前处理的信号会自动被阻塞（防止递归触发）。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sa_flags&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;// 标志位，控制信号行为
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_restorer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 已弃用，保留历史兼容性
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;对于sa_mask：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// sa是struct sigaction类型变量
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;sigemptyset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_mask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;// 清空信号集
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;sigaddset&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_mask&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SIGINT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 添加 SIGINT 到阻塞列表
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;对于&lt;code&gt;siginfo_t&lt;/code&gt;:&lt;br&gt;
+siginfo_t 是 POSIX 信号处理中用于传递 信号详细信息 的结构体，通常与 SA_SIGINFO 标志一起使用。它提供了比传统 signal() 函数更丰富的上下文信息。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_signo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// 信号编号。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_errno&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// 错误码，如果非零，表示与信号相关的系统错误码。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_code&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// 指示信号产生的具体原因，分为系统生成（SI_KERNEL）和用户生成（SI_USER），需要的时候在进一步查询。 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__pid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_pid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;		 &lt;span class=&#34;c1&#34;&gt;// 发送信号的进程 ID。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__uid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_uid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	     &lt;span class=&#34;c1&#34;&gt;// 发送信号的用户 ID。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;si_addr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;// 指向引发信号的内存地址（如段错误时的无效地址）。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_status&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;       &lt;span class=&#34;c1&#34;&gt;// 传递子进程的退出状态或信号值。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_band&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 与 SIGPOLL 或 SIGIO 信号一起使用，表示文件描述符的带事件（如 I/O 就绪）。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__sigval_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;si_value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 通过 sigqueue() 发送的自定义信号值（sigval）。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;siginfo_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;2-发送信号&#34;&gt;2. &lt;strong&gt;发送信号&lt;/strong&gt;
+&lt;/h1&gt;&lt;p&gt;发送信号有两个函数： kill、sigqueue，其中sigqueue可以携带额外的数据。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __pid: 目标进程ID。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __sig: 要发送的信号。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;kill&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__pid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__pid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; *  __val: 携带的额外数据。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cm&#34;&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;extern&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;sigqueue&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;__pid_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__pid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigval&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;union sigval的结构如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigval&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sival_int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sival_ptr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;3-使用&#34;&gt;3. &lt;strong&gt;使用&lt;/strong&gt;
+&lt;/h1&gt;&lt;p&gt;以带数据的信号为例：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;信号接收方：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 信号处理函数
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sig&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;siginfo_t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;info&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;old&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 检查信号，sig。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 从info中读取信号上下文。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sigaction&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_sigaction&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;handler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sa_flags&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SA_SIGINFO&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;sigaction&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SIGUSR1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;act&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;信号发送方：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;signal&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sigval_int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;99&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;sigqueue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;getpid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SIGUSR1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>进程的装载</title>
@@ -25166,8 +25122,7 @@ Unmodified files: 没有被git跟踪的文件。&lt;/p&gt;
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;林花谢了春红，太匆匆，无奈潮来寒雨晚来风。&lt;br&gt;
-胭脂泪，相留醉，几时重，自是人生长恨水长东。&lt;/p&gt;
+        <description>&lt;p&gt;&amp;hellip;&lt;/p&gt;
 </description>
         </item>
         
