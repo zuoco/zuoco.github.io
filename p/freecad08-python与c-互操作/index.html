@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 报文结构 1.1. 报文头部 1.2. 类型头部 1.3. 状态 1. 报文结构 1.1. 报文头部 所有的报文都以特定的头部开始，例如：\n1 2 3 4 5 struct header { uint32_t type; // 报文类型，决定了类型头部的结构。 uint32_t length; // 类型头部长度 + 数据长度。 uint64_t id; // 报文编号，用于通信双方标识报文。 } 不一定完全就是上面这些字段，根据实际需求设计。\n">
-<title>网络协议设计 — 3 — 报文设计</title>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="">
+<title>FreeCAD（08）— Python与C&#43;&#43;互操作</title>
 
-<link rel='canonical' href='https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/'>
+<link rel='canonical' href='http://localhost:1313/p/freecad08-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/'>
 
-<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="网络协议设计 — 3 — 报文设计">
-<meta property='og:description' content=" 1. 报文结构 1.1. 报文头部 1.2. 类型头部 1.3. 状态 1. 报文结构 1.1. 报文头部 所有的报文都以特定的头部开始，例如：\n1 2 3 4 5 struct header { uint32_t type; // 报文类型，决定了类型头部的结构。 uint32_t length; // 类型头部长度 + 数据长度。 uint64_t id; // 报文编号，用于通信双方标识报文。 } 不一定完全就是上面这些字段，根据实际需求设计。\n">
-<meta property='og:url' content='https://zuoco.github.io/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/'>
+<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="FreeCAD（08）— Python与C++互操作">
+<meta property='og:description' content="">
+<meta property='og:url' content='http://localhost:1313/p/freecad08-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/'>
 <meta property='og:site_name' content='阿左笔记'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-10T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="网络协议设计 — 3 — 报文设计">
-<meta name="twitter:description" content=" 1. 报文结构 1.1. 报文头部 1.2. 类型头部 1.3. 状态 1. 报文结构 1.1. 报文头部 所有的报文都以特定的头部开始，例如：\n1 2 3 4 5 struct header { uint32_t type; // 报文类型，决定了类型头部的结构。 uint32_t length; // 类型头部长度 + 数据长度。 uint64_t id; // 报文编号，用于通信双方标识报文。 } 不一定完全就是上面这些字段，根据实际需求设计。\n">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-08-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-12T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="FreeCAD（08）— Python与C++互操作">
+<meta name="twitter:description" content="">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -196,7 +196,7 @@
         </li>
         
         
-        <li  class='current' >
+        <li >
             <a href='/post/4-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/' >
                 
                 
@@ -208,7 +208,7 @@
         </li>
         
         
-        <li >
+        <li  class='current' >
             <a href='/post/3-freecad/' >
                 
                 
@@ -330,8 +330,8 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/" >
-                网络协议设计
+            <a href="/categories/freecad/" style="background-color: #DAA520; color: #FFFFFF;">
+                FreeCAD
             </a>
         
     </header>
@@ -339,7 +339,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/">网络协议设计 — 3 — 报文设计</a>
+            <a href="/p/freecad08-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/">FreeCAD（08）— Python与C&#43;&#43;互操作</a>
         </h2>
     
         
@@ -361,7 +361,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">2024年11月10日</time>
+                <time class="article-time--published">2025年08月12日</time>
             </div>
         
 
@@ -377,144 +377,7 @@
     <section class="article-content">
     
     
-    <ul>
-<li><a class="link" href="#1-%e6%8a%a5%e6%96%87%e7%bb%93%e6%9e%84" >1. 报文结构</a>
-<ul>
-<li><a class="link" href="#11-%e6%8a%a5%e6%96%87%e5%a4%b4%e9%83%a8" >1.1. 报文头部</a></li>
-<li><a class="link" href="#12-%e7%b1%bb%e5%9e%8b%e5%a4%b4%e9%83%a8" >1.2. 类型头部</a></li>
-<li><a class="link" href="#13-%e7%8a%b6%e6%80%81" >1.3. 状态</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="1-报文结构">1. 报文结构
-</h1><p><img src="/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-3-%E6%8A%A5%E6%96%87%E8%AE%BE%E8%AE%A1/%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.svg"
-	
-	
-	
-	loading="lazy"
-	
-	
-></p>
-<hr>
-<h2 id="11-报文头部">1.1. 报文头部
-</h2><p>  所有的报文都以特定的头部开始，例如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">header</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">uint32_t</span> <span class="n">type</span><span class="p">;</span>     <span class="c1">// 报文类型，决定了类型头部的结构。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">uint32_t</span> <span class="n">length</span><span class="p">;</span>   <span class="c1">// 类型头部长度 + 数据长度。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">uint64_t</span> <span class="n">id</span><span class="p">;</span>       <span class="c1">// 报文编号，用于通信双方标识报文。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>  不一定完全就是上面这些字段，根据实际需求设计。</p>
-<hr>
-<h2 id="12-类型头部">1.2. 类型头部
-</h2><p>  类型头部的样式就会多一点了，解析器就是通过类型头部识别报文的类型，以此将数据部分交给对应的处理程序。一般使用一个枚举声明所有的报文类型：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">enum</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 控制报文 */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">XXX_HELLO</span><span class="err">；</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 控制类型2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 数据报文 */</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 数据类型1
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 数据类型2
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>  声明了报文类型后，就要声明每个类型的类型头部结构体了，但是具体有那些类型，就是要结合业务了，这里只作一个演示。不过一般要有一个<code>Hello</code>报文，用于在建立连接时沟通双方的版本信息等等。尤其是协议已经更新了多个版本时，要确保通信双方的版本能够兼容。<br>
-  下面就以Hello报文为例：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define ATTR_PACKED __attribute__ ((__packed__))
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">hello_header</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">char</span>     <span class="n">version</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>         <span class="c1">// 版本信息等等。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">uint32_t</span> <span class="n">capabilities</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>     <span class="c1">// 变长数组，每一个数组成员就是一个bitmask，表示协议当前版本支持的功能特性。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">ATTR_PACKED</span><span class="err">；</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>  对于Hello报文，它没有数据部分，所以拿到整个报文后，除了报文头部和类型头部的versoin字段，剩下的都是capabilities字段。<br>
-  对于一些特定业务可能需要connect、disconnect等操作，例如连接远程的控制设备，所以要定基于实际业务义声明对应的类型头部：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">connect_header</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// ... ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">ATTR_PACKED</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="n">disconnect_header</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="c1">// ... ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">ATTR_PACKED</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>  可以粗浅的理解为： <code>Hello</code> -&gt; <code>connect</code> -&gt; <code>控制报文/数据报文</code> -&gt; <code>disconnect</code>。</p>
-<hr>
-<h2 id="13-状态">1.3. 状态
-</h2><p>所有的响应报文都要包含<code>状态</code>字段，所以也要协议声明的重要部分：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">enum</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">xxx_success</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">xxx_inval</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">xxx_timeout</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 根据实际的业务场景，定义状态，以反映业务请求的执行状态。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// ......
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>
+    
 </section>
 
 
@@ -564,12 +427,12 @@
             
                 
 <article class="">
-    <a href="/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-4-%E8%A7%A3%E6%9E%90%E5%99%A8%E8%AE%BE%E8%AE%A1/">
+    <a href="/p/freecad05-python%E6%A8%A1%E5%9D%97%E5%88%9D%E5%A7%8B%E5%8C%96/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">网络协议设计 — 4 — 解析器设计</h2>
+            <h2 class="article-title">FreeCAD（05） — Python模块初始化</h2>
         </div>
     </a>
 </article>
@@ -577,12 +440,12 @@
             
                 
 <article class="">
-    <a href="/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1-2-%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF/">
+    <a href="/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">网络协议设计 — 2 — 整体思路</h2>
+            <h2 class="article-title">FreeCAD（04） — 异常类型</h2>
         </div>
     </a>
 </article>
@@ -590,12 +453,38 @@
             
                 
 <article class="">
-    <a href="/p/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A101-%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF/">
+    <a href="/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">网络协议设计（01） — 协议设计的基本思路</h2>
+            <h2 class="article-title">FreeCAD（03） — 类型系统与根类型（Base模块）</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">FreeCAD（02） — 代码结构</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">FreeCAD（01） — 介绍以及编译</h2>
         </div>
     </a>
 </article>
@@ -752,7 +641,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.bf3198480a0303df03104b790647a2d905c90402cc9a3ee09c67a5e3ab42fd89.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

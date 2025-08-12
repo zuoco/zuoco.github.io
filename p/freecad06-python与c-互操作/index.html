@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Workbench是FreeCAD模块提供的工作台实现，工作台就是一组功能的集合，例如“零件建模工作台”、“CAM工作台”、“装配体工作台”。它定义了哪些GUI元素（如工具栏、菜单）会被添加到主窗口中，以及哪些会被移除或隐藏。当一个workbench对象首次被激活时，它所代表的模块会被加载到RAM中。\n">
-<title>FreeCAD（06）— 工作台基类设计</title>
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="PyObjectBase 类型 FreeCAD的Python绑定系统基于PyObjectBase基类，这是所有需要导出到Python命名空间的C++类的基础类。该类提供了Python对象的标准接口，包括属性访问、方法调用和生命周期管理。FreeCAD 中几乎所有关键类都需要在 Python 中可见，以便用于宏录制（macro recording）和自动化（automation）目的。\nPython绑定系统的基础代码位于PyObjectBase.h文件中，这篇文章就主要讲解该文件中的内容。\n">
+<title>FreeCAD（06）— Python与C&#43;&#43;互操作</title>
 
-<link rel='canonical' href='http://localhost:1313/p/freecad06-%E5%B7%A5%E4%BD%9C%E5%8F%B0%E5%9F%BA%E7%B1%BB%E8%AE%BE%E8%AE%A1/'>
+<link rel='canonical' href='https://zuoco.github.io/p/freecad06-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/'>
 
-<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="FreeCAD（06）— 工作台基类设计">
-<meta property='og:description' content="Workbench是FreeCAD模块提供的工作台实现，工作台就是一组功能的集合，例如“零件建模工作台”、“CAM工作台”、“装配体工作台”。它定义了哪些GUI元素（如工具栏、菜单）会被添加到主窗口中，以及哪些会被移除或隐藏。当一个workbench对象首次被激活时，它所代表的模块会被加载到RAM中。\n">
-<meta property='og:url' content='http://localhost:1313/p/freecad06-%E5%B7%A5%E4%BD%9C%E5%8F%B0%E5%9F%BA%E7%B1%BB%E8%AE%BE%E8%AE%A1/'>
+<link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="FreeCAD（06）— Python与C++互操作">
+<meta property='og:description' content="PyObjectBase 类型 FreeCAD的Python绑定系统基于PyObjectBase基类，这是所有需要导出到Python命名空间的C++类的基础类。该类提供了Python对象的标准接口，包括属性访问、方法调用和生命周期管理。FreeCAD 中几乎所有关键类都需要在 Python 中可见，以便用于宏录制（macro recording）和自动化（automation）目的。\nPython绑定系统的基础代码位于PyObjectBase.h文件中，这篇文章就主要讲解该文件中的内容。\n">
+<meta property='og:url' content='https://zuoco.github.io/p/freecad06-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-08-10T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-10T00:00:00&#43;00:00'/>
-<meta name="twitter:title" content="FreeCAD（06）— 工作台基类设计">
-<meta name="twitter:description" content="Workbench是FreeCAD模块提供的工作台实现，工作台就是一组功能的集合，例如“零件建模工作台”、“CAM工作台”、“装配体工作台”。它定义了哪些GUI元素（如工具栏、菜单）会被添加到主窗口中，以及哪些会被移除或隐藏。当一个workbench对象首次被激活时，它所代表的模块会被加载到RAM中。\n">
+<meta name="twitter:title" content="FreeCAD（06）— Python与C++互操作">
+<meta name="twitter:description" content="PyObjectBase 类型 FreeCAD的Python绑定系统基于PyObjectBase基类，这是所有需要导出到Python命名空间的C++类的基础类。该类提供了Python对象的标准接口，包括属性访问、方法调用和生命周期管理。FreeCAD 中几乎所有关键类都需要在 Python 中可见，以便用于宏录制（macro recording）和自动化（automation）目的。\nPython绑定系统的基础代码位于PyObjectBase.h文件中，这篇文章就主要讲解该文件中的内容。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -339,7 +339,7 @@
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/p/freecad06-%E5%B7%A5%E4%BD%9C%E5%8F%B0%E5%9F%BA%E7%B1%BB%E8%AE%BE%E8%AE%A1/">FreeCAD（06）— 工作台基类设计</a>
+            <a href="/p/freecad06-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/">FreeCAD（06）— Python与C&#43;&#43;互操作</a>
         </h2>
     
         
@@ -377,204 +377,57 @@
     <section class="article-content">
     
     
-    <p>Workbench是FreeCAD模块提供的工作台实现，工作台就是一组功能的集合，例如“零件建模工作台”、“CAM工作台”、“装配体工作台”。它定义了哪些GUI元素（如工具栏、菜单）会被添加到主窗口中，以及哪些会被移除或隐藏。当一个workbench对象首次被激活时，它所代表的模块会被加载到RAM中。</p>
-<h1 id="1-工作台基础类型">1. 工作台基础类型
-</h1><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">namespace</span> <span class="n">Gui</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// GUI元素体系，支持4类界面元素，实际上还有一个命令栏（CommandBars）
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">MenuItem</span><span class="p">;</span>        <span class="c1">// 菜单栏
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">ToolBarItem</span><span class="p">;</span>     <span class="c1">// 工具栏
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">class</span> <span class="nc">DockWindowItems</span><span class="p">;</span> <span class="c1">// 停靠窗口
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">WorkbenchManager</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">GuiExport</span> <span class="nl">Workbench</span> <span class="p">:</span> <span class="k">public</span> <span class="n">Base</span><span class="o">::</span><span class="n">BaseClass</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// 核心生命周期管理
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/**
-</span></span></span><span class="line"><span class="cl"><span class="cm">     * Activates the workbench and adds/removes GUI elements.
-</span></span></span><span class="line"><span class="cl"><span class="cm">     */</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="nf">activate</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/** Run some actions when the workbench gets activated. */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">activated</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/** Run some actions when the workbench gets deactivated. */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">deactivated</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// Python绑定支持
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">PyObject</span><span class="o">*</span> <span class="nf">getPyObject</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="c1">// ...
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 设置各种小窗口
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** Returns a MenuItem tree structure of menus for this workbench. */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">MenuItem</span><span class="o">*</span> <span class="n">setupMenuBar</span><span class="p">()</span> <span class="k">const</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>                                        <span class="c1">// 设置菜单栏
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** Returns a ToolBarItem tree structure of toolbars for this workbench. */</span>      
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">ToolBarItem</span><span class="o">*</span> <span class="nf">setupToolBars</span><span class="p">()</span> <span class="k">const</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>                                    <span class="c1">// 设置工具栏
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** Returns a ToolBarItem tree structure of command bars for this workbench. */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">ToolBarItem</span><span class="o">*</span> <span class="nf">setupCommandBars</span><span class="p">()</span> <span class="k">const</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>                                 <span class="c1">// 设置命令栏
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** Returns a DockWindowItems structure of dock windows this workbench. */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">virtual</span> <span class="n">DockWindowItems</span><span class="o">*</span> <span class="nf">setupDockWindows</span><span class="p">()</span> <span class="k">const</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>                             <span class="c1">// 设置停靠窗口
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// ... 
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>管理不同模块的GUI元素展示与激活逻辑。以下是关键分析：</p>
-<h1 id="2-工作台类型">2. 工作台类型
-</h1><p>FreeCAD提供了几种不同类型的workbench基类，最终的工作台继承自这些基类：</p>
-<div class="table-wrapper"><table>
-  <thead>
-      <tr>
-          <th>基类型</th>
-          <th>功能</th>
-          <th>派生类型</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>StdWorkbench</td>
-          <td>标准工作台类，定义了标准的菜单、工具栏等元素</td>
-          <td>NoneWorkbench 精简版的工作台</td>
-      </tr>
-      <tr>
-          <td>BlankWorkbench</td>
-          <td>完全空白的工作台</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td>PythonBaseWorkbench</td>
-          <td>支持Python操作的工作台</td>
-          <td>PythonBlankWorkbench <br> PythonWorkbench</td>
-      </tr>
-      <tr>
-          <td>其他</td>
-          <td>&hellip;</td>
-          <td>&hellip;</td>
-      </tr>
-  </tbody>
-</table></div>
-<p>以StdWorkbench为例，看看都重写了什么：</p>
+    <h1 id="pyobjectbase-类型">PyObjectBase 类型
+</h1><p>FreeCAD的Python绑定系统基于<code>PyObjectBase</code>基类，这是所有需要导出到Python命名空间的C++类的基础类。该类提供了Python对象的标准接口，包括属性访问、方法调用和生命周期管理。FreeCAD 中几乎所有关键类都需要在 Python 中可见，以便用于宏录制（macro recording）和自动化（automation）目的。<br>
+Python绑定系统的基础代码位于PyObjectBase.h文件中，这篇文章就主要讲解该文件中的内容。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">GuiExport</span> <span class="nl">StdWorkbench</span> <span class="p">:</span> <span class="k">public</span> <span class="n">Workbench</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">TYPESYSTEM_HEADER_WITH_OVERRIDE</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">StdWorkbench</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="o">~</span><span class="n">StdWorkbench</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 上下文菜单，可能是右键菜单
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** Defines the standard context menu. */</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="n">setupContextMenu</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">recipient</span><span class="p">,</span> <span class="n">MenuItem</span><span class="o">*</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">createMainWindowPopupMenu</span><span class="p">(</span><span class="n">MenuItem</span><span class="o">*</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">protected</span><span class="o">:</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 设置工作台的各个组件
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/** Defines the standard menus. */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">MenuItem</span><span class="o">*</span> <span class="n">setupMenuBar</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/** Defines the standard toolbars. */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ToolBarItem</span><span class="o">*</span> <span class="nf">setupToolBars</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/** Defines the standard command bars. */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">ToolBarItem</span><span class="o">*</span> <span class="nf">setupCommandBars</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/** Returns a DockWindowItems structure of dock windows this workbench. */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">DockWindowItems</span><span class="o">*</span> <span class="nf">setupDockWindows</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">friend</span> <span class="k">class</span> <span class="nc">PythonWorkbench</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BaseExport</span> <span class="nl">PyObjectBase</span> <span class="p">:</span> <span class="k">public</span> <span class="n">PyObject</span> <span class="c1">//NOLINT
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Py_Header</span>  <span class="c1">// 注入 Python 类型元信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// ... 其他成员 ...
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">};</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h1 id="3-工作台管理类">3. 工作台管理类
-</h1><h1 id="4-实际的工作台实现">4. 实际的工作台实现
-</h1>
+</div><p>PyObject实际上是struct _object，可以理解为所有Python对象的根类型。      <br>
+Py_Header宏：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#define Py_Header                                           \
+</span></span></span><span class="line"><span class="cl"><span class="cp">public:                                                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    static PyTypeObject   Type;                             \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    static PyMethodDef    Methods[];                        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    virtual PyTypeObject *GetType(void) {return &amp;Type;}
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过宏展开注入 Type 类型对象和 Methods 方法表使 PyObjectBase 子类在 Python 中表现为完整类型。</p>
+<ul>
+<li><code>Type</code> 是 Python 类型对象，使 C++ 类能在 Python 中表现为完整类型。</li>
+<li><code>Methods</code> 是 Python 方法表，通过 PyMethodDef 数组声明所有可导出方法。</li>
+</ul>
+<p>为了简化从PyObjectBase类继承并定义导出到 Python 的新方法，FreeCAD还提供了一些便捷的宏（macro）：</p>
+<ul>
+<li><code>PYFUNCDEF_D</code> 定义一个新的导出方法。</li>
+<li><code>PYFUNCIMP_D</code> 定义这个新导出方法的具体实现。在实现的时候，可以使用 Py_Return、Py_Error、Py_Try 和 Py_Assert 等宏。</li>
+<li><code>PYMETHODEDEF</code> 宏用于在 Python 方法表中创建对应的条目。</li>
+</ul>
+
 </section>
 
 
@@ -624,12 +477,25 @@
             
                 
 <article class="">
-    <a href="/p/freecad07-%E9%9B%B6%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B7%A5%E4%BD%9C%E5%8F%B0%E8%AE%BE%E8%AE%A1/">
+    <a href="/p/freecad07-%E9%9B%B6%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B7%A5%E4%BD%9C%E5%8F%B0-partdesign/">
         
         
 
         <div class="article-details">
-            <h2 class="article-title">FreeCAD（07）— 零件设计工作台设计</h2>
+            <h2 class="article-title">FreeCAD（07）— 零件设计工作台-PartDesign</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/p/freecad06-%E5%B7%A5%E4%BD%9C%E5%8F%B0%E5%9F%BA%E7%B1%BB/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">FreeCAD（06）— 工作台基类</h2>
         </div>
     </a>
 </article>
@@ -669,19 +535,6 @@
 
         <div class="article-details">
             <h2 class="article-title">FreeCAD（03） — 类型系统与根类型（Base模块）</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">FreeCAD（02） — 代码结构</h2>
         </div>
     </a>
 </article>
@@ -838,7 +691,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.bf3198480a0303df03104b790647a2d905c90402cc9a3ee09c67a5e3ab42fd89.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');
