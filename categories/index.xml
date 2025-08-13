@@ -7,10 +7,10 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>FreeCAD</title>
         <link>https://zuoco.github.io/categories/freecad/</link>
-        <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/categories/freecad/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/freecad/AAA.jpg" alt="Featured image of post FreeCAD" /&gt;</description>
@@ -64,11 +64,11 @@
         <description></description>
         </item>
         <item>
-        <title>网络协议设计</title>
-        <link>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
+        <title>网络协议原理与设计</title>
+        <link>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/</guid>
         <description></description>
         </item>
         <item>
@@ -138,7 +138,7 @@
         <item>
         <title>TCP</title>
         <link>https://zuoco.github.io/categories/tcp/</link>
-        <pubDate>Fri, 16 Jun 2023 00:00:00 +0000</pubDate>
+        <pubDate>Mon, 19 Jun 2023 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/categories/tcp/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/tcp/AAA.png" alt="Featured image of post TCP" /&gt;</description>
