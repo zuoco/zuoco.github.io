@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>《 Open3D 》 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/open3d/</link>
+        <description>Recent content in 《 Open3D 》 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Sat, 07 Jun 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/open3d/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Open3D介绍与安装</title>
+        <link>https://zuoco.github.io/p/open3d%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</link>
+        <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/open3d%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%a1%b9%e7%9b%ae%e6%a6%82%e8%bf%b0&#34; &gt;1. 项目概述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e9%a1%b9%e7%9b%ae%e7%bb%84%e6%88%90&#34; &gt;2. 项目组成&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e6%a0%b8%e5%bf%83%e6%a8%a1%e5%9d%97%e6%9e%b6%e6%9e%84&#34; &gt;2.1. 核心模块架构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e9%a1%b9%e7%9b%ae%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84&#34; &gt;2.2. 项目目录结构&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e6%a0%b8%e5%bf%83%e5%8a%9f%e8%83%bd&#34; &gt;3. 核心功能&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%8f%8c%e9%87%8d%e5%ae%9e%e7%8e%b0%e6%9e%b6%e6%9e%84&#34; &gt;4. 双重实现架构&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-项目概述&#34;&gt;1. 项目概述
+&lt;/h1&gt;&lt;p&gt;Open3D是一个用于3D数据处理的现代开源库，Open3D前端公开了一组精心选择的数据结构和算法，支持C++和Python两种接口。后端经过高度优化，并设置了并行化支持。Open3D还提供了一个独立的3D查看器应用程序，可在Debian(Ubuntu)、macOS和Windows上运行。&lt;/p&gt;
+&lt;h1 id=&#34;2-项目组成&#34;&gt;2. 项目组成
+&lt;/h1&gt;&lt;h2 id=&#34;21-核心模块架构&#34;&gt;2.1. 核心模块架构
+&lt;/h2&gt;&lt;p&gt;Open3D项目主要由以下核心模块组成：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;camera&lt;/strong&gt; - 相机相关功能&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;core&lt;/strong&gt; - 核心功能模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;data&lt;/strong&gt; - 数据处理模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;geometry&lt;/strong&gt; - 几何处理模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;io&lt;/strong&gt; - 输入输出模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ml&lt;/strong&gt; - 机器学习模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;pipelines&lt;/strong&gt; - 算法管道模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;t/geometry&lt;/strong&gt; - 张量几何模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;t/io&lt;/strong&gt; - 张量输入输出模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;t/pipelines&lt;/strong&gt; - 张量管道模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;utility&lt;/strong&gt; - 实用工具模块&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;visualization&lt;/strong&gt; - 可视化模块&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;22-项目目录结构&#34;&gt;2.2. 项目目录结构
+&lt;/h2&gt;&lt;p&gt;项目的主要目录结构包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;cpp/&lt;/strong&gt; - C++核心实现&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;python/&lt;/strong&gt; - Python接口实现&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;docs/&lt;/strong&gt; - 项目文档&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3rdparty/&lt;/strong&gt; - 第三方依赖库&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;cmake/&lt;/strong&gt; - CMake构建配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;docker/&lt;/strong&gt; - Docker配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;util/&lt;/strong&gt; - 实用工具脚本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;3-核心功能&#34;&gt;3. 核心功能
+&lt;/h1&gt;&lt;p&gt;Open3D的核心功能包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3D数据结构&lt;/strong&gt; - 支持各种3D数据格式&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3D数据处理算法&lt;/strong&gt; - 提供完整的3D数据处理工具链&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;场景重建&lt;/strong&gt; - 支持3D场景重建功能&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;表面对齐&lt;/strong&gt; - 实现表面配准算法&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3D可视化&lt;/strong&gt; - 强大的3D可视化功能&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;物理渲染(PBR)&lt;/strong&gt; - 支持基于物理的渲染&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;机器学习支持&lt;/strong&gt; - 集成PyTorch和TensorFlow&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GPU加速&lt;/strong&gt; - 为核心3D操作提供GPU加速&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;跨语言支持&lt;/strong&gt; - 提供C++和Python接口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;4-双重实现架构&#34;&gt;4. 双重实现架构
+&lt;/h1&gt;&lt;p&gt;Open3D采用双重实现架构，提供传统实现和张量实现：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;传统实现：geometry、io、pipelines&lt;/li&gt;
+&lt;li&gt;张量实现：t/geometry、t/io、t/pipelines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;安装&#34;&gt;安装
+&lt;/h1&gt;&lt;p&gt;从pipy源安安装：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install open3d
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;下载安装：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;pip&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open3d&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.19.0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cp312&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cp312&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;manylinux_2_31_x86_64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;whl&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

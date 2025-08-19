@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>《KVM》 on 阿左笔记</title>
+        <link>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-kvm/</link>
+        <description>Recent content in 《KVM》 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Fri, 03 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/01-kvm/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>虚拟硬件模型</title>
+        <link>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</link>
+        <pubDate>Fri, 03 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</guid>
+        <description>&lt;h1 id=&#34;1-虚拟硬件模型&#34;&gt;1. 虚拟硬件模型
+&lt;/h1&gt;&lt;p&gt;  简单的讲“虚拟化”就是使用软件模拟硬件，一个硬件设备，例如QXl（一种虚拟显卡），或者一套硬件，例如虚拟机（可以运行操作系统）。&lt;code&gt;虚拟硬件模型&lt;/code&gt;虚拟的就是一个完整的主板环境，如QEMU中的q35或i440fx。那么这个主板环境有那些东西呢？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;芯片组（Chipset）：如北桥、南桥（或现代的MCH/ICH），负责协调CPU、内存、I/O设备等的通信。&lt;/li&gt;
+&lt;li&gt;内存控制器：管理内存的访问和分配。&lt;/li&gt;
+&lt;li&gt;PCI/PCIe总线：支持外设的连接和数据传输。&lt;/li&gt;
+&lt;li&gt;存储控制器：如SATA、NVMe接口。&lt;/li&gt;
+&lt;li&gt;其他硬件特性：如UEFI固件、IOMMU（用于设备直通）、电源管理等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-q35与i440fx&#34;&gt;2. q35与i440fx
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;i440FX&lt;/code&gt;&lt;br&gt;
+这个比较老了，是QEMU最早支持的虚拟硬件模型之一，基于1996年发布的Intel 82443FX（i440FX）芯片组。&lt;br&gt;
+&lt;code&gt;q35&lt;/code&gt;&lt;br&gt;
+这是QEMU中较新的虚拟硬件模型，基于Intel 82801（ICH9）芯片组。相比于i440FX，它提供了更多的现代硬件特性支持，适合更高要求的应用场景支持很多现代硬件特性，如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;IOMMU支持：通过vIOMMU（虚拟IOMMU），可以实现设备直通（如GPU、网卡等），这对于高性能计算和图形处理非常重要。&lt;/li&gt;
+&lt;li&gt;UEFI支持：通过OVMF（Open Virtual Machine Firmware），可以支持UEFI启动，这在现代操作系统中越来越普遍。&lt;/li&gt;
+&lt;li&gt;PCIe支持：相比i440FX，q35提供了更好的PCI Express（PCIe）支持，允许更高的带宽和更低的延迟。&lt;/li&gt;
+&lt;li&gt;电源管理：支持S3（挂起到RAM）和S4（挂起到磁盘）等高级电源状态，这些功能在现代PC中很常见。&lt;/li&gt;
+&lt;li&gt;VirtIO支持：推荐使用VirtIO SCSI或VirtIO Block控制器以获得更好的性能和维护性。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
