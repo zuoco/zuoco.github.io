@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 4.3. 对于成员函数 4.4. this指针 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
 <title>C&#43;&#43;面向对象（06） — 动态多态与虚函数</title>
 
 <link rel='canonical' href='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="C++面向对象（06） — 动态多态与虚函数">
-<meta property='og:description' content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 4.3. 对于成员函数 4.4. this指针 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
+<meta property='og:description' content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
 <meta property='og:url' content='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-03-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-03-26T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="C++面向对象（06） — 动态多态与虚函数">
-<meta name="twitter:description" content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 4.3. 对于成员函数 4.4. this指针 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
+<meta name="twitter:description" content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
     <link rel="shortcut icon" href="/mylogo.png" />
 
     </head>
@@ -78,30 +78,17 @@
             
                 <li>
                     <a 
-                        href='https://space.bilibili.com/267707178?spm_id_from=333.934.0.0'
+                        href=''
                         target="_blank"
-                        title="bilibili"
+                        
                         rel="me"
                     >
                         
                         
-                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-bilibili"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 10a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v6a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4v-6z" /><path d="M8 3l2 3" /><path d="M16 3l-2 3" /><path d="M9 13v-2" /><path d="M15 11v2" /></svg>
-                        
-                    </a>
-                </li>
-            
-                <li>
-                    <a 
-                        href='https://github.com/zuoco'
-                        target="_blank"
-                        title="GitHub"
-                        rel="me"
-                    >
-                        
-                        
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
 </svg>
 
 
@@ -273,7 +260,36 @@
                 
                 
                 
-                    <svg id="SvgjsSvg1006" width="98.79999542236328" height="96.99568750000009" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"><defs id="SvgjsDefs1007"><pattern patternUnits="userSpaceOnUse" id="pattern_mark_0" width="300" height="300"><text x="150" y="100" fill="rgba(229,229,229,0.8)" font-size="18" transform="rotate(-45, 150, 150)" style="dominant-baseline: middle; text-anchor: middle;"></text></pattern><pattern patternUnits="userSpaceOnUse" id="pattern_mark_1" width="300" height="300"><text x="150" y="200" fill="rgba(229,229,229,0.8)" font-size="18" transform="rotate(-45, 150, 150)" style="dominant-baseline: middle; text-anchor: middle;"></text></pattern></defs><rect id="svgbackgroundid" width="98.79999542236328" height="96.99568750000009" fill="transparent"></rect><rect id="SvgjsRect1009" width="98.79999542236328" height="96.99568750000009" fill="url(#pattern_mark_0)"></rect><rect id="SvgjsRect1010" width="98.79999542236328" height="96.99568750000009" fill="url(#pattern_mark_1)"></rect><g id="SvgjsG1011"><path id="SvgjsPath1012" d="M25 35.94615279341161C 51.79642605781555 4.810429292151923 45.47856950759888 51.51401454404146 72.27499556541443 35.94615279341161" stroke="#95da69" stroke-width="7" fill="none"></path></g><g id="SvgjsG1013"><path id="SvgjsPath1014" d="M26.524999856948853 51.51401454404146C 53.321425914764404 20.37829104278177 47.00356936454773 67.0818762946713 73.79999542236328 51.51401454404146" stroke="#70d5d7" stroke-width="7" fill="none"></path></g><g id="SvgjsG1015"><path id="SvgjsPath1016" d="M25.87142848968506 68.72059858421136C 52.66785454750061 37.58487508295161 46.349997997283936 84.28846033484115 73.14642405509949 68.72059858421136" stroke="#4669ea" stroke-width="7" fill="none"></path></g><g id="SvgjsG1017"></g></svg>
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="128.00002"
+   height="127.99999"
+   viewBox="0 0 33.866671 33.866665"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><g
+     id="layer1"
+     transform="translate(-32.279167,-138.64166)"><g
+       style="fill:#e8eaed"
+       id="g1"
+       transform="matrix(0.00196863,0,0,0.00196863,33.463433,141.71593)"><g
+         id="g312"
+         transform="matrix(1.002973,0,0,0.93013448,-23.783992,460.24941)"><path
+           style="fill:#3366cc;fill-opacity:1;stroke-width:22.0314"
+           d="m 10822.775,14277.69 c -1195.5832,-143.508 -2220.2063,-841.148 -3268.3667,-1379.127 -718.8533,-355.301 -1431.1297,-838.976 -2251.4363,-896.085 -491.0057,-34.634 -993.9142,16.701 -1419.8658,282.946 -632.9097,323.689 -1041.4867,924.538 -1556.5718,1387.702 -543.283,324.938 -1024.416,-324.503 -999.9439,-831.854 -66.7515,-706.46 526.7775,-1215.106 971.4799,-1675.328 796.7042,-788.985 1908.9735,-1339.2985 3051.7899,-1198.3588 1348.2477,151.6528 2490.0786,954.1998 3671.9639,1551.7868 812.8473,430.368 1732.2728,937.309 2680.6698,656.999 865.182,-240.211 1345.317,-1049.536 1918.072,-1669.709 419.319,-369.53 999.56,99.027 1037.303,575.62 144.849,591.439 -228.81,1099.793 -584.858,1527.872 -674.991,878.758 -1646.404,1612.499 -2788.132,1678.492 -153.996,19.794 -308.698,6.257 -462.104,-10.956 z"
+           id="path3393" /><path
+           style="fill:#33b2cc;fill-opacity:1;stroke-width:26.9658"
+           d="M 10691.975,9232.2954 C 9345.1884,8998.8534 8209.7623,8175.6727 7013.3992,7567.553 6317.9006,7189.0731 5542.8247,6853.4818 4732.6528,6969.3648 3791.0852,7073.1473 3096.3863,7808.0894 2511.2819,8487.0616 2153.4997,8962.5979 1492.1857,8662.9151 1369.9995,8151.7319 1161.0166,7603.1278 1417.243,7018.9363 1804.1792,6620.924 2646.9373,5624.9864 3867.0135,4790.8306 5227.0245,4902.123 c 1538.2424,122.1926 2802.7979,1096.8978 4150.0464,1747.2218 689.4831,373.3537 1480.8271,695.5213 2275.6811,498.2159 843.443,-225.4675 1355.155,-986.6873 1874.463,-1625.928 303.839,-429.2412 935.004,-202.6984 1073.134,247.0946 229.503,525.6439 50.159,1127.049 -311.918,1545.1618 -731.881,1031.1947 -1847.889,1971.3437 -3180.435,1938.7364 -138.853,1.6775 -278.273,-1.5834 -416.021,-20.3301 z"
+           id="path1767" /><path
+           style="fill:#33cc99;fill-opacity:1;stroke-width:26.9658"
+           d="M 10576.744,4172.4544 C 8874.8637,3865.0547 7544.5841,2635.7395 5940.4635,2069.4233 5180.2383,1837.8115 4305.6379,1885.6382 3648.4341,2367.3105 c -522.046,315.7633 -870.3773,828.5536 -1307.695,1235.7633 -408.0241,287.6051 -882.8065,-100.3925 -976.5864,-516.0856 -207.011,-566.4578 84.2445,-1166.9024 491.559,-1564.2835 824.1797,-978.84256 2034.8379,-1776.07292 3363.7164,-1666.23087 1553.6459,128.553637 2838.511,1104.93638 4193.6746,1778.01277 748.5153,409.2855 1666.3233,736.8711 2500.3373,374.9559 742.862,-301.9425 1184.93,-1003.6082 1669.344,-1599.36398 390.513,-404.4477409 1011.637,22.50986 1078.781,494.20116 143.129,510.48212 -76.578,1022.79062 -407.346,1408.75032 -715.856,1002.3301 -1795.1,1907.7734 -3088.381,1906.4911 -197.264,2.2737 -394.6,-14.3348 -589.094,-47.0667 z"
+           id="path970" /></g></g></g></svg>
+
                 
                 <span>&lt;DeskFLow&gt;</span>
             </a>
@@ -405,8 +421,6 @@
 <li><a class="link" href="#422-%e8%ae%bf%e9%97%ae%e6%88%90%e5%91%98%e5%8f%98%e9%87%8f" >4.2.2. <strong>访问成员变量</strong></a></li>
 </ul>
 </li>
-<li><a class="link" href="#43-%e5%af%b9%e4%ba%8e%e6%88%90%e5%91%98%e5%87%bd%e6%95%b0" >4.3. <strong>对于成员函数</strong></a></li>
-<li><a class="link" href="#44-this%e6%8c%87%e9%92%88" >4.4. <strong>this指针</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -551,8 +565,8 @@
 </div>
 </div><h1 id="3-虚函数表">3. <strong>虚函数表</strong>
 </h1><h2 id="31-什么是虚函数表">3.1. <strong>什么是虚函数表</strong>
-</h2><p>  如果一个类包含了虚函数，那么在创建该类的对象时就会额外地增加一个数组（<code>虚函数表vtable</code>），数组中保存了虚函数的入口地址。不过虚函数表和对象是分开存储的，为了将对象和数组关联起来，<code>编译器在对象内存的开始位置安插一个指针（虚函数表指针vfptr）</code>，指向vtable的起始位置。<br>
-  基类的虚函数在vtable中的索引（下标）是固定的，不会随着继承层次的增加而改变，派生类新增（基类没有的）的虚函数放在后面。如果派生类继承并重写了基类虚函数，那么就使用派生类的实现的虚函数替换基类的虚函数，位置是不变的。这样具有遮蔽关系的虚函数在vtable中只会出现一次。在单继承情况下，当通过对象指针p调用虚函数时，编译器内部会发生类似下面的转换：</p>
+</h2><p>  是编译器在<code>编译期</code>为每个有虚函数的类自动生成虚函数的函数指针数组（<code>虚函数表vtable</code>），只读数据段，在程序加载到内存时已存在。在<code>运行期</code>，通过构造函数设置对象的隐藏指针（vptr）指向虚函数表来实现多态调用（这个 vptr 通常位于对象内存的最前面）。 在继承链中，构造函数的调用顺序决定了 vptr 的初始化过程。<br>
+  在vtable中，基类的虚函数的索引（下标）是固定的，不会随着继承层次的增加而改变，派生类新增（基类没有的）的虚函数放在后面。如果派生类继承并重写了基类虚函数，那么就使用派生类的实现的虚函数替换基类的虚函数，位置是不变的。这样具有遮蔽关系的虚函数在vtable中只会出现一次。在单继承情况下，当通过对象指针p调用虚函数时，编译器内部会发生类似下面的转换：</p>
 <div style="width: 80%; margin: 0 auto; background-color:#f5f9ff; padding:1em; border-radius:10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
 <code style="color:#333; font-family:monospace; font-size:1.2em; white-space: pre;">
 <mark style="background-color:#ffeb3b; padding:0.2em 0.4em; border-radius:4px;">*(p+vbi)</mark>               //虚函数表的地址
@@ -667,7 +681,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 输出88
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>      <span class="c1">// 输出100，参考《c++对象内存模型》篇章
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="err">静态多态在编译时就绑定</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div>
@@ -720,6 +734,19 @@
             
                 
 <article class="">
+    <a href="/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">内存对齐</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
     <a href="/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/">
         
         
@@ -765,19 +792,6 @@
 
         <div class="article-details">
             <h2 class="article-title">lock_guard、unique_lock、scoped_lock</h2>
-        </div>
-    </a>
-</article>
-
-            
-                
-<article class="">
-    <a href="/p/shared_ptrunique_ptrweake_ptr/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">shared_ptr、unique_ptr、weake_ptr</h2>
         </div>
     </a>
 </article>

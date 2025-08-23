@@ -3637,9 +3637,9 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;array&lt;/code&gt;&lt;/strong&gt;：基于数组，大小固定。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;22-关联容器&#34;&gt;2.2. 关联容器
-&lt;/h2&gt;&lt;p&gt;  按键排序/哈希存储。&lt;/p&gt;
+&lt;/h2&gt;&lt;p&gt;  分为有序和无序两种，分配基于红黑树和哈希表实现。&lt;/p&gt;
 &lt;h3 id=&#34;221-有序关联容器&#34;&gt;2.2.1. 有序关联容器
-&lt;/h3&gt;&lt;p&gt;  底层为红黑树，排序容器中的元素默认是由小到大排序好的（默认按&lt;code&gt;键&lt;/code&gt;的升序排列），即便是插入元素，元素也会插入到适当位置。所以有序关联容器在&lt;code&gt;查找&lt;/code&gt;时具有非常好的性能。&lt;/p&gt;
+&lt;/h3&gt;&lt;p&gt;  底层为红黑树，，排序容器中的元素是按序插入的（默认按&lt;code&gt;键&lt;/code&gt;的升序排列），所以有序关联容器在&lt;code&gt;查找&lt;/code&gt;时具有非常好的性能。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;set&lt;/code&gt;&lt;/strong&gt;：唯一键集合&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;code&gt;map&lt;/code&gt;&lt;/strong&gt;：键值对映射&lt;/li&gt;
@@ -5130,7 +5130,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.cppreference.com/w/cpp/container/map.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;std:map&lt;/a&gt;，基于红黑树，树的每一个节点都是一个std::pair，节点的&lt;code&gt;pair.first&lt;/code&gt;的类型必须支持“&amp;lt;”运算，或者自定义比较的比较逻辑，这和vector类似。&lt;br&gt;
+    &gt;std:map&lt;/a&gt;，基于红黑树，树的每一个节点都是一个std::pair，节点的&lt;code&gt;pair.first&lt;/code&gt;的类型必须支持“&amp;lt;”运算，或者自定义比较逻辑，相对于set，map才是真正关联容器。 &lt;br&gt;
 &lt;img src=&#34;https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/map.svg&#34;
 	
 	
@@ -5352,7 +5352,8 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#7-%e4%bf%ae%e6%94%b9%e5%85%83%e7%b4%a0&#34; &gt;7. 修改元素&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-初步认识&#34;&gt;1. 初步认识
-&lt;/h1&gt;&lt;p&gt;set底层是红黑树，因此set中的元素必须支持比较大小，对于自定义类型需要重载“&amp;lt;”，或者自定义一个比较函数并在创建set对象时指定。&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;set底层是红黑树，因此set中的元素必须支持比较大小，对于自定义类型需要重载“&amp;lt;”，或者自定义一个比较函数并在创建set对象时指定。  &lt;br&gt;
+set被放到关联容器中范畴里面，是从功能上来说的，它本身不是基于键值对形式的，如果非要理解为键值对形式的，那么键就是值，值就是键。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
