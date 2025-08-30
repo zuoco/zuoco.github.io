@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://zuoco.github.io/</loc>
-    <lastmod>2025-08-20T00:00:00+00:00</lastmod>
+    <lastmod>2025-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/post/11-vtk/</loc>
+    <lastmod>2025-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/</loc>
+    <lastmod>2025-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/post/</loc>
+    <lastmod>2025-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/vtk/</loc>
+    <lastmod>2025-08-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</loc>
+    <lastmod>2025-08-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/3-freecad/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
@@ -11,16 +26,10 @@
     <loc>https://zuoco.github.io/categories/ai/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/categories/</loc>
-    <lastmod>2025-08-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/categories/freecad/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/freecad-mcp/</loc>
-    <lastmod>2025-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/post/</loc>
+    <loc>https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</loc>
     <lastmod>2025-08-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/8-python/</loc>
@@ -269,6 +278,9 @@
     <loc>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</loc>
     <lastmod>2024-08-21T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</loc>
+    <lastmod>2024-08-12T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</loc>
     <lastmod>2024-08-10T00:00:00+00:00</lastmod>
   </url><url>
@@ -299,14 +311,17 @@
     <loc>https://zuoco.github.io/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2024-06-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2024-06-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</loc>
     <lastmod>2024-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/categories/git/</loc>
+    <lastmod>2024-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</loc>
+    <lastmod>2024-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/04-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2024-05-27T00:00:00+00:00</lastmod>
@@ -413,13 +428,7 @@
     <loc>https://zuoco.github.io/p/lock_guardunique_lockscoped_lock/</loc>
     <lastmod>2023-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://zuoco.github.io/categories/git/</loc>
-    <lastmod>2023-06-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://zuoco.github.io/p/shared_ptrunique_ptrweake_ptr/</loc>
-    <lastmod>2023-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2023-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/6-c&#43;&#43;/02-%E6%A0%87%E5%87%86%E5%BA%93/05-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1/</loc>
@@ -549,6 +558,8 @@
     <lastmod>2022-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/99-%E5%85%B6%E4%BB%96/%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</loc>
+  </url><url>
+    <loc>https://zuoco.github.io/p/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/</loc>
   </url><url>
     <loc>https://zuoco.github.io/page/</loc>
   </url><url>

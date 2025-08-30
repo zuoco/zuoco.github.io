@@ -79,23 +79,80 @@
 </description>
         </item>
         <item>
-        <title>软件开发版本管理</title>
-        <link>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</link>
-        <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
+        <title>使用Git管理软件开发以及冲突解决</title>
+        <link>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</link>
+        <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</guid>
+        <guid>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</guid>
         <description>&lt;h1 id=&#34;分支管理&#34;&gt;分支管理
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;master分支&lt;/code&gt;:&lt;br&gt;
-用于生产环境的部署，不允许直接push分支，由release分支或者hotfix分支合并。 &lt;br&gt;
-&lt;code&gt;hotfix分支&lt;/code&gt;:&lt;br&gt;
-针对线上紧急问题进行修复的分支，以master分支为基线创建的，修复完成后合并到dev分支、master分支。 &lt;br&gt;
-&lt;code&gt;release分支&lt;/code&gt;:&lt;br&gt;
-预发布分支，UAT测试阶段使用，一般由test分支或hitfix分支合并。 &lt;br&gt;
-&lt;code&gt;dev分支&lt;/code&gt;:&lt;br&gt;
-开发分支，最新版本迭代代码，包括bug修复后的代码。 &lt;br&gt;
-&lt;code&gt;feature分支&lt;/code&gt;:&lt;br&gt;
+用于生产环境的部署，不允许直接push分支，由release分支或者hotfix分支合并。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hotfix分支&lt;/code&gt;:&lt;br&gt;
+针对线上紧急问题进行修复的分支，以master分支为基线创建的，修复完成后合并到dev分支、master分支。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;release分支&lt;/code&gt;:&lt;br&gt;
+预发布分支，UAT测试阶段使用，一般由test分支或hitfix分支合并。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dev分支&lt;/code&gt;:&lt;br&gt;
+开发分支，最新版本迭代代码，包括bug修复后的代码。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;feature分支&lt;/code&gt;:&lt;br&gt;
 基于dev分支在本地创建，每个开发人员的本地分支，针对各自的功能进行开发，开发完成合并到dev分支，并删除该fearure分支，feature是每个开发人员的本地分支，不可推送到远程，只能在本地合并到dev分支，然后推送dev分支。&lt;/p&gt;
-</description>
+&lt;h1 id=&#34;日常工作&#34;&gt;日常工作
+&lt;/h1&gt;&lt;p&gt;一般是从远程仓库将dev分支拉取到本地，然后创建feature分支，开发完成后，将feature分支合并到dev分支，并删除feature分支，然后推送dev分支到远程仓库。
+但是要注意，为避免与团队其他成员的代码冲突，定期将 dev 分支的最新代码合并到你的功能分支。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone &amp;lt;远程仓库地址&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &amp;lt;项目目录&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout dev                          &lt;span class=&#34;c1&#34;&gt;# 切换到 dev 分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin dev                       &lt;span class=&#34;c1&#34;&gt;# 拉取最新的 dev 分支代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout -b feature/your-module-name  &lt;span class=&#34;c1&#34;&gt;# 创建并切换到功能分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 开始开发功能，提交代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add .                        &lt;span class=&#34;c1&#34;&gt;# 添加所有修改&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;完成模块A的功能X&amp;#34;&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# 提交描述清晰&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 开发中，要定期同步 dev 分支的更新，如果合并时出现冲突，需要手动解决冲突后重新提交。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout feature/your-module-name  &lt;span class=&#34;c1&#34;&gt;# 切换回功能分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin dev                    &lt;span class=&#34;c1&#34;&gt;# 合并 dev 分支的最新代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 如果发生冲突，就手动处理一下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add &amp;lt;冲突文件&amp;gt;              &lt;span class=&#34;c1&#34;&gt;# 标记冲突已解决&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit                     &lt;span class=&#34;c1&#34;&gt;# 提交合并后的代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 解决完了冲突后，推送代码到远程仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin feature/user-authentication   &lt;span class=&#34;c1&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;后面还需要提PR，代码审查，修改，合并分支feature到dev，可能是merge，也可能是cherry-pick
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>Git基本使用</title>

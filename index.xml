@@ -7,16 +7,255 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>FreeCAD-MCP</title>
-        <link>https://zuoco.github.io/p/freecad-mcp/</link>
+        <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>第一个 VTK Demo</title>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</link>
+        <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%a4%e8%af%86-vtk-%e6%b8%b2%e6%9f%93%e7%ae%a1%e7%ba%bf&#34; &gt;1. 认识 VTK 渲染管线&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%b5%84%e6%96%99%e9%93%be%e6%8e%a5&#34; &gt;2. 资料链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-认识-vtk-渲染管线&#34;&gt;1. 认识 VTK 渲染管线
+&lt;/h2&gt;&lt;p&gt;先了解几个VTK中的常用&lt;code&gt;模板类型&lt;/code&gt;：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;模板类型&lt;/th&gt;
+          &lt;th&gt;功能&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkNew&lt;/td&gt;
+          &lt;td&gt;VTK封装的智能指针。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkNamedColors&lt;/td&gt;
+          &lt;td&gt;封装了VTK内置的命名颜色集合，提供RGB颜色定义，常用于可视化场景中的颜色配置。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkConeSource&lt;/td&gt;
+          &lt;td&gt;VTK可视化管线中的一个节点，它负责产生数据（输出类型为 vtkPolyData），供后续过滤器处理。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkPolyDataMapper&lt;/td&gt;
+          &lt;td&gt;该类将 vtkPolyData 数据转换为几何图元，方便使用底层接口渲染，如 OpenGL。&lt;br&gt; 需要将 vtkPolyData 的 output 连接到 vtkPolyDataMapper 的 input&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkActor&lt;/td&gt;
+          &lt;td&gt;“&lt;code&gt;演员&lt;/code&gt;” 是场景中所有&lt;code&gt;可渲染对象&lt;/code&gt;的基类。&lt;br&gt; 负责：绑定几何数据（通过 SetMapper）、管理外观属性（颜色、光照、纹理等）、应用变换矩阵（平移、旋转、缩放）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkRenderer&lt;/td&gt;
+          &lt;td&gt;VTK 渲染器，管理舞台（渲染场景）中的渲染操作，一个渲染器可以管理多个 Actor。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkRenderWindow&lt;/td&gt;
+          &lt;td&gt;渲染窗口是最终的输出载体，负责： &lt;br&gt;  管理一个或多个渲染器（通过 AddRenderer()）、 &lt;br&gt;  控制窗口大小和位置、   &lt;br&gt;   处理操作系统级的窗口事件、 &lt;br&gt;  触发实际的渲染操作。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkCamera&lt;/td&gt;
+          &lt;td&gt;可以理解为观察着的眼睛&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;我们看一个简单的Demo&lt;/strong&gt; ：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone.png&#34;
+	width=&#34;1768&#34;
+	height=&#34;1061&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_b32aab62c21aace6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_1c117ce18e2d9cad.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;166&#34;
+		data-flex-basis=&#34;399px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;49
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;50
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;51
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;52
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;53
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;54
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkActor.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkCamera.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkConeSource.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkNamedColors.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkNew.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkPolyDataMapper.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkProperty.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkRenderWindow.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;vtkRenderer.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 颜色对象。      
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;vtkNew&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vtkNamedColors&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;colors&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 创建了一个圆锥体数据源并设置其参数。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;vtkNew&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vtkConeSource&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cone&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;cone&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetHeight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;3.0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// 设置圆锥高度为3.0单位
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;cone&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetRadius&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;1.0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;        &lt;span class=&#34;c1&#34;&gt;// 设置底面半径为1.0单位
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;cone&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetResolution&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// 设置圆锥侧面由10个分段构成，应该叫做棱锥
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 将 vtkPolyData 的 output 连接到 vtkPolyDataMapper 的 input。 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;vtkNew&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vtkPolyDataMapper&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;coneMapper&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;coneMapper&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetInputConnection&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cone&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetOutputPort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 创建并配置一个VTK演员（vtkActor）对象。   
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;vtkNew&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vtkActor&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;coneActor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;coneActor&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetMapper&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;coneMapper&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;                                              &lt;span class=&#34;c1&#34;&gt;// 绑定几何数据
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;coneActor&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetProperty&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetColor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;colors&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetColor3d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;MistyRose&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 管理外观属性
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 创建并配置一个VTK渲染器。   
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;vtkNew&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vtkRenderer&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ren1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;     &lt;span class=&#34;c1&#34;&gt;// vtkRenderer 实例，用于管理场景中的渲染操作
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;ren1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AddActor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;coneActor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 将之前创建的演员（coneActor）添加到渲染器中，一个渲染器可以管理多个演员
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;ren1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetBackground&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;colors&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetColor3d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;MidnightBlue&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetData&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;());&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 设置渲染器的背景颜色，
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 创建并配置VTK渲染窗口
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;vtkNew&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;vtkRenderWindow&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;renWin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 最终显示渲染结果的窗口
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;renWin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;AddRenderer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ren1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;         &lt;span class=&#34;c1&#34;&gt;// 将之前创建的渲染器添加到窗口，一个窗口可包含多个渲染器
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;renWin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetSize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;300&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;renWin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SetWindowName&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Tutorial_Step1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 锥体的连续旋转动画
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;360&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 触发渲染窗口的渲染操作
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;renWin&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Render&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;                    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// GetActiveCamera() 获取当前渲染器的主相机   
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// Azimuth(1) 表示绕观察点水平旋转 1 度 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;ren1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;GetActiveCamera&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Azimuth&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EXIT_SUCCESS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这里就讲一下，相机视角的旋转问题：   &lt;br&gt;
+&lt;code&gt;vtkCamera* GetActiveCamera();&lt;/code&gt;获取当前渲染器的活动相机。&lt;br&gt;
+&lt;code&gt;void Azimuth(viskores::Float32 angleDegrees);&lt;/code&gt;旋转相机水平时视角。&lt;br&gt;
+既然有&lt;code&gt;水平视角&lt;/code&gt;，那么就有&lt;code&gt;垂直视角&lt;/code&gt;和&lt;code&gt;旋转&lt;/code&gt;，他们的关系如图： &lt;br&gt;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera.png&#34;
+	width=&#34;1356&#34;
+	height=&#34;904&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_389f75b1ab34ede6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_b7b91b677180cf8.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-资料链接&#34;&gt;2. 资料链接
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://examples.vtk.org/site/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VTK官方Demo&lt;/a&gt;，循序渐进的示例程序。      &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://vtk-951.netlify.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;VTK接口文档&lt;/a&gt;，类型以及函数接口文档。 &lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://examples.vtk.org/site/Cxx/Coverage/CxxVTKClassesUsed/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;类文档&lt;/a&gt;，带有示例的类文档。&lt;/p&gt;
+&lt;p&gt;官方网站的下载页面有 6 下载文件：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;VTK-9.5.1.tar.gz                &lt;span class=&#34;c1&#34;&gt;# 核心源码包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 测试数据包，解压后就是 `VTK-x.x.x/.ExternalData/`  &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;VTKData-9.5.1.tar.gz            &lt;span class=&#34;c1&#34;&gt;# 测试数据索引包， 告诉 CMake ExternalData 模块去哪里下载真正的测试输入 &amp;amp; 基准图像。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;VTKDataFiles-9.5.1.tar.gz       &lt;span class=&#34;c1&#34;&gt;# 和上面一样，但是包含了完整测试数据集，不用在线下载了。     &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 离线 HTML 文档包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vtkDocHtml-9.5.1.tar.gz         
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 这两个好像是旧版的测试数据包，不需要了&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;VTKLargeData-9.5.1.tar.gz   
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;VTKLargeDataFiles-9.5.1.tar.gz 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;当然官网也提供了&lt;a class=&#34;link&#34; href=&#34;https://vtk.org/files/release/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Python扩展包&lt;/a&gt;。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>FreeCAD-MCP，通过AI助手来操作FreeCAD</title>
+        <link>https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</link>
         <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/freecad-mcp/</guid>
+        <guid>https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</guid>
         <description>&lt;p&gt;  今天介绍一个开源项目——&lt;a class=&#34;link&#34; href=&#34;https://github.com/neka-nat/freecad-mcp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;FreeCAD-MCP&lt;/a&gt;，这是一个集成了MCP的FreeCAD控制方案，将AI助手与3D建模软件结合起来，用户可以通过描述需求控制FreeCAD生成3D模型，还支持从2D图纸生成3D模型，支持迭代设计细化，也就是可以请求对现有设计进行修改并实时查看更改。&lt;/p&gt;
 &lt;p&gt;该项目的整体架构如下：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/freecad-mcp/freecad-mcp.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/freecad-mcp.svg&#34;
 	
 	
 	
@@ -2877,7 +3116,7 @@ Main目录下就是不同模式的main函数了。&lt;/p&gt;
 &lt;/h2&gt;&lt;p&gt;FreeCAD的架构是基于工作台系统（Workbench）的，工作台是针对特定的设计任务而组建的，每个工作台都包含一系列专门的工具这是一种模块化设计，例如CAD、CAM、CAE。看起来和solidworks差不多。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;关键依赖库&lt;/strong&gt;：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;几何内核： OpenCASCADE(OOC)。&lt;/li&gt;
+&lt;li&gt;几何内核： OpenCASCADE(OCC)。&lt;/li&gt;
 &lt;li&gt;3D渲染： OpenInventor、Coin3D、Pivy。&lt;/li&gt;
 &lt;li&gt;Python脚本工具： PyCXX、Swig、Boost.python。脚本引擎和模块扩展支持，在命令模式支持Python脚本驱动，GUI模式下支持Python脚本宏录制。。&lt;/li&gt;
 &lt;li&gt;UI： Qt、PySide。&lt;/li&gt;
@@ -13760,6 +13999,222 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
 </description>
         </item>
         <item>
+        <title>Linux异步IO（01） — EPOLL</title>
+        <link>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</link>
+        <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</guid>
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-epoll%e5%8e%9f%e7%90%86%e4%bb%8b%e7%bb%8d&#34; &gt;1. EPOLL原理介绍&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-epoll%e4%bd%bf%e7%94%a8&#34; &gt;2. EPOLL使用&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#21-%e5%88%9b%e5%bb%baepoll%e5%af%b9%e8%b1%a1&#34; &gt;2.1. 创建EPOLL对象&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#22-%e6%93%8d%e4%bd%9c%e5%86%85%e6%a0%b8%e4%ba%8b%e4%bb%b6%e8%a1%a8&#34; &gt;2.2. 操作内核事件表&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#23-%e7%ad%89%e5%be%85%e4%ba%8b%e4%bb%b6&#34; &gt;2.3. 等待事件&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-et%e5%92%8clt%e6%a8%a1%e5%bc%8f%e5%af%b9%e6%af%94&#34; &gt;3. ET和LT模式对比&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-%e9%97%ae%e9%a2%98&#34; &gt;3.1. 问题&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-epolloneshot%e4%ba%8b%e4%bb%b6&#34; &gt;4. EPOLLONESHOT事件&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e5%85%b6%e4%bb%96%e5%b0%8f%e4%bb%a3%e7%a0%81&#34; &gt;5. 其他小代码&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;1-epoll原理介绍&#34;&gt;1. EPOLL原理介绍
+&lt;/h1&gt;&lt;p&gt;  EPOLL是Linux内核提供的的I/O复用函数，简单地说就说使用一个文件描述符来监控多个文件描述符上的事件，当文件描述符上的事件发生时，会通知用户。如果没有这种多路复用机制，那么，面对多个Socket同时通信的场景可能就需要多线程了，但是每个SOcket上并不是一直都有数据，使用多线程多浪费资源呀。&lt;/p&gt;
+&lt;p&gt;  Epoll把用户关心的“文件描述符”放在内核里面一个&lt;code&gt;事件表&lt;/code&gt;中，此时就需要一个单独“文件描述符”来标识内核中的这个事件表。另外EPOLL有两种工作模式：&lt;code&gt;水平触发&lt;/code&gt;(Level Triggered，LT)和&lt;code&gt;边缘触发&lt;/code&gt;(Edge Triggered，ET)，LT模式是EPOLL默认的工作模式，EPOLL和异步，非阻塞结合使用。&lt;/p&gt;
+&lt;p&gt;  简单讲一下原理，Epoll的核心是两个数据结构： 红黑树 和 就绪链表（双向链表）。然后结合内核回调机制，实现了高性能的事件管理。红黑树存储所有通过epoll_ctl()添加的文件句柄，树中的每个节点会关联一个结构体（保存了这个文件描述符的上需要监控的事件）。就绪的事件会被保存到储在就绪链表中，当就绪链表不为空时，内核会通知用户，用户可以通过epoll_wait()函数获取就绪事件。&lt;/p&gt;
+&lt;h1 id=&#34;2-epoll使用&#34;&gt;2. EPOLL使用
+&lt;/h1&gt;&lt;h2 id=&#34;21-创建epoll对象&#34;&gt;2.1. 创建EPOLL对象
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/epoll.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;epoll_create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// size参数没有意义。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;返回一个文件描述符，代表内核事件表。&lt;/p&gt;
+&lt;h2 id=&#34;22-操作内核事件表&#34;&gt;2.2. 操作内核事件表
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/epoll.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;epoll_ctl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;op&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//成功返回0，失败返回-1，并设置errno。  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;epfd：内核事件表文件描述符。&lt;br&gt;
+op：操作类型。&lt;br&gt;
+fd：要操作的文件描述符。&lt;br&gt;
+event：指向 epoll_event 结构体的指针，用于指定要添加、修改或删除的事件。&lt;/p&gt;
+&lt;p&gt;其中，op(操作类型)有三种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EPOLL_CTL_ADD：往内核事件表中添加事件。&lt;/li&gt;
+&lt;li&gt;EPOLL_CTL_MOD：修改事件。&lt;/li&gt;
+&lt;li&gt;EPOLL_CTL_DEL：删除事件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其中，event(关心的事件)的类型是&lt;code&gt;struct epoll_event&lt;/code&gt;，结构体定义如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;__uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;events&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 事件
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;epoll_data_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 事件携带的用户数据
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;strong&gt;events&lt;/strong&gt; 是一个位图，有EPOLLIN、EPOLLOUT、EPOLLET、EPOLLONESHOT。&lt;br&gt;
+&lt;strong&gt;data&lt;/strong&gt; 是&lt;code&gt;epoll_data_t&lt;/code&gt;类型，它是一个联合体，定义如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_data&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ptr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;uint64_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;epoll_data_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;由于这是一个联合体，所以这四个成员，我们只能使用其中的一个。&lt;/p&gt;
+&lt;h2 id=&#34;23-等待事件&#34;&gt;2.3. 等待事件
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/epoll.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;epoll_wait&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxevents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;timeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;epoll_wait在一段超时时间内，等待一组文件描述符上的事件，返回就绪的文件描述符的数量。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;timeout: 参数指定等待的时间，单位是毫秒。如果timeout为-1，则表示无限等待。&lt;/li&gt;
+&lt;li&gt;maxevents: 参数指定最多等待的事件数，必须大于0。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;epoll_wait检测到事件，就会将所有的就绪事件从内核事件表拷贝到events数组中，并返回就绪事件的数量，也就是说event中的事件都是就绪的。&lt;/p&gt;
+&lt;h1 id=&#34;3-et和lt模式对比&#34;&gt;3. ET和LT模式对比
+&lt;/h1&gt;&lt;p&gt;对于Socket读事件，只要Socket上的数据没有读完，就会一直触发EPOLL事件，而对于ET模式，Socket上每来一次数据就会触发一次&lt;code&gt;EPOLLIN&lt;/code&gt;事件，如果上一次触发后，未将 socket 上的数据读完，也不会再触发，除非再新来一次数据。对于 socket 写事件，如果 socket 的 TCP 窗口一直不饱和，会一直触发 EPOLLOUT 事件；而对于边缘模式，只会触发一次，除非 TCP 窗口由不饱和变成饱和再一次变成不饱和，才会再次触发 &lt;code&gt;EPOLLOUT&lt;/code&gt;事件。根据以上分析来看，如果采用ET模式就必须在收到事件后一次性将数据读取完，但如果采用默认模式，就可以根据业务每次收取固定的字节数，多次收取，显然相对于默认的LT模式，ET模式能够减少同一个事件被触发的次数，效率比LT模式高。&lt;/p&gt;
+&lt;h2 id=&#34;31-问题&#34;&gt;3.1. 问题
+&lt;/h2&gt;&lt;p&gt;多线程场景下，我们使用ET模式监听一个Socket上的读事件，当数据到达时触发EPOLLIN事件，我们在一个独立线程(或进程)中读取该Socket上的数据，但是我们还没有读取完，该Socket又有新数据到达，此时另一个线程(或进程)被唤醒来读取该Socket上的数据，那么就有两个线程(进程)同时操作同一个Socket，这样好吗，这样不好，但是如何解决呢？此时就该EPOLLONESHOT出场了。&lt;/p&gt;
+&lt;h1 id=&#34;4-epolloneshot事件&#34;&gt;4. EPOLLONESHOT事件
+&lt;/h1&gt;&lt;p&gt;显然，&lt;code&gt;一次性事件&lt;/code&gt;，就是触发以后，需要手动重新注册，给文件描述符注册EPOLLONESHOT事件，就可以保证同一时间只有一个人在使用。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 重新注册EPOLLONESHOT事件
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;reset_oneshot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLIN&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLET&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLONESHOT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;epoll_ctl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLL_CTL_MOD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;注意：&lt;/code&gt;
+listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接请求就不会再触发listening socket的EPOLLIN事件了。&lt;/p&gt;
+&lt;h1 id=&#34;5-其他小代码&#34;&gt;5. 其他小代码
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;1. 将文件描述符设置为非阻塞&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setnonblocking&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;old_option&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fcntl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;F_GETFL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new_option&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;old_option&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;O_NONBLOCK&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;fcntl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;F_SETFL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new_option&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;old_option&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;2. 事件注册&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;addfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;enable_et&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLIN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;enable_et&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//启用ET模式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;epoll_ctl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLL_CTL_ADD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;setnonblocking&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;3. 判断数据是否读取完了&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 非阻塞模式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;errno&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EAGAIN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;errno&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EWOULDBLOCK&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 数据读取完了
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>Linux进程间通信（02） — Unix-Socket</title>
         <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
@@ -14512,203 +14967,6 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
 </description>
         </item>
         <item>
-        <title>Linux异步IO（01） — EPOLL的使用</title>
-        <link>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
-        <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-        <description>&lt;h1 id=&#34;1-epoll介绍&#34;&gt;1. EPOLL介绍
-&lt;/h1&gt;&lt;p&gt;EPOLL是Linux特有的I/O复用函数，它把用户关心的“文件描述符”放在内核里面一个&lt;code&gt;事件表&lt;/code&gt;中，也就是说EPOLL需要一个“文件描述符”来标识内核中的这个事件表。另外EPOLL有两种工作模式：&lt;code&gt;水平触发&lt;/code&gt;(Level Triggered，LT)和&lt;code&gt;边缘触发&lt;/code&gt;(Edge Triggered，ET)，LT模式是EPOLL默认的工作模式，EPOLL和异步，非阻塞结合使用。&lt;/p&gt;
-&lt;h1 id=&#34;2-epoll使用&#34;&gt;2. EPOLL使用
-&lt;/h1&gt;&lt;h2 id=&#34;21-创建epoll对象&#34;&gt;2.1. 创建EPOLL对象
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/epoll.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;epoll_create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// size参数没有意义。
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;返回一个文件描述符，代表内核事件表。&lt;/p&gt;
-&lt;h2 id=&#34;22-操作内核事件表&#34;&gt;2.2. 操作内核事件表
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/epoll.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;epoll_ctl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;op&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//成功返回0，失败返回-1，并设置errno。  
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;epfd：内核事件表文件描述符。&lt;br&gt;
-op：操作类型。&lt;br&gt;
-fd：要操作的文件描述符。&lt;br&gt;
-event：指向 epoll_event 结构体的指针，用于指定要添加、修改或删除的事件。&lt;/p&gt;
-&lt;p&gt;其中，op(操作类型)有三种：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;EPOLL_CTL_ADD：往内核事件表中添加事件。&lt;/li&gt;
-&lt;li&gt;EPOLL_CTL_MOD：修改事件。&lt;/li&gt;
-&lt;li&gt;EPOLL_CTL_DEL：删除事件。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;其中，event(关心的事件)的类型是&lt;code&gt;struct epoll_event&lt;/code&gt;，结构体定义如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;__uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;events&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 事件
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kt&#34;&gt;epoll_data_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 事件携带的用户数据
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;events&lt;/strong&gt; 是一个位图，有EPOLLIN、EPOLLOUT、EPOLLET、EPOLLONESHOT。&lt;br&gt;
-&lt;strong&gt;data&lt;/strong&gt; 是&lt;code&gt;epoll_data_t&lt;/code&gt;类型，它是一个联合体，定义如下：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;union&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_data&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ptr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;uint32_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;uint64_t&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;u64&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;epoll_data_t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;由于这是一个联合体，所以这四个成员，我们只能使用其中的一个。&lt;/p&gt;
-&lt;h2 id=&#34;23-等待事件&#34;&gt;2.3. 等待事件
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;sys/epoll.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;epoll_wait&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxevents&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;timeout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;epoll_wait在一段超时时间内，等待一组文件描述符上的事件，返回就绪的文件描述符的数量。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;timeout: 参数指定等待的时间，单位是毫秒。如果timeout为-1，则表示无限等待。&lt;/li&gt;
-&lt;li&gt;maxevents: 参数指定最多等待的事件数，必须大于0。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;epoll_wait检测到事件，就会将所有的就绪事件从内核事件表拷贝到events数组中，并返回就绪事件的数量，也就是说event中的事件都是就绪的。&lt;/p&gt;
-&lt;h1 id=&#34;3-et和lt模式对比&#34;&gt;3. ET和LT模式对比
-&lt;/h1&gt;&lt;p&gt;对于Socket读事件，只要Socket上的数据没有读完，就会一直触发EPOLL事件，而对于ET模式，Socket上每来一次数据就会触发一次&lt;code&gt;EPOLLIN&lt;/code&gt;事件，如果上一次触发后，未将 socket 上的数据读完，也不会再触发，除非再新来一次数据。对于 socket 写事件，如果 socket 的 TCP 窗口一直不饱和，会一直触发 EPOLLOUT 事件；而对于边缘模式，只会触发一次，除非 TCP 窗口由不饱和变成饱和再一次变成不饱和，才会再次触发 &lt;code&gt;EPOLLOUT&lt;/code&gt;事件。根据以上分析来看，如果采用ET模式就必须在收到事件后一次性将数据读取完，但如果采用默认模式，就可以根据业务每次收取固定的字节数，多次收取，显然相对于默认的LT模式，ET模式能够减少同一个事件被触发的次数，效率比LT模式高。&lt;/p&gt;
-&lt;h2 id=&#34;31-问题&#34;&gt;3.1. 问题
-&lt;/h2&gt;&lt;p&gt;多线程场景下，我们使用ET模式监听一个Socket上的读事件，当数据到达时触发EPOLLIN事件，我们在一个独立线程(或进程)中读取该Socket上的数据，但是我们还没有读取完，该Socket又有新数据到达，此时另一个线程(或进程)被唤醒来读取该Socket上的数据，那么就有两个线程(进程)同时操作同一个Socket，这样好吗，这样不好，但是如何解决呢？此时就该EPOLLONESHOT出场了。&lt;/p&gt;
-&lt;h1 id=&#34;4-epolloneshot事件&#34;&gt;4. EPOLLONESHOT事件
-&lt;/h1&gt;&lt;p&gt;显然，&lt;code&gt;一次性事件&lt;/code&gt;，就是触发以后，需要手动重新注册，给文件描述符注册EPOLLONESHOT事件，就可以保证同一时间只有一个人在使用。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 重新注册EPOLLONESHOT事件
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;reset_oneshot&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLIN&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLET&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLONESHOT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;epoll_ctl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLL_CTL_MOD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;注意：&lt;/code&gt;
-listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接请求就不会再触发listening socket的EPOLLIN事件了。&lt;/p&gt;
-&lt;h1 id=&#34;5-其他小代码&#34;&gt;5. 其他小代码
-&lt;/h1&gt;&lt;p&gt;&lt;code&gt;1. 将文件描述符设置为非阻塞&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;setnonblocking&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;old_option&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;fcntl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;F_GETFL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new_option&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;old_option&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;O_NONBLOCK&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;fcntl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;F_SETFL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;new_option&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;old_option&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;2. 事件注册&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;addfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;enable_et&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;epoll_event&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLIN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;enable_et&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;events&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;|=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLLET&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//启用ET模式
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;epoll_ctl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;epollfd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EPOLL_CTL_ADD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;event&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nf&#34;&gt;setnonblocking&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;3. 判断数据是否读取完了&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c&#34; data-lang=&#34;c&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;// 非阻塞模式
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;errno&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EAGAIN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;errno&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;EWOULDBLOCK&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 数据读取完了
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description>
-        </item>
-        <item>
         <title>Linux网络管理（02） — Network Manager</title>
         <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</link>
         <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
@@ -15124,6 +15382,82 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;GET和POST请求&lt;/code&gt;&lt;br&gt;
 没用过。&lt;/p&gt;
 </description>
+        </item>
+        <item>
+        <title>使用Git管理软件开发以及冲突解决</title>
+        <link>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</link>
+        <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</guid>
+        <description>&lt;h1 id=&#34;分支管理&#34;&gt;分支管理
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;master分支&lt;/code&gt;:&lt;br&gt;
+用于生产环境的部署，不允许直接push分支，由release分支或者hotfix分支合并。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hotfix分支&lt;/code&gt;:&lt;br&gt;
+针对线上紧急问题进行修复的分支，以master分支为基线创建的，修复完成后合并到dev分支、master分支。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;release分支&lt;/code&gt;:&lt;br&gt;
+预发布分支，UAT测试阶段使用，一般由test分支或hitfix分支合并。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;dev分支&lt;/code&gt;:&lt;br&gt;
+开发分支，最新版本迭代代码，包括bug修复后的代码。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;feature分支&lt;/code&gt;:&lt;br&gt;
+基于dev分支在本地创建，每个开发人员的本地分支，针对各自的功能进行开发，开发完成合并到dev分支，并删除该fearure分支，feature是每个开发人员的本地分支，不可推送到远程，只能在本地合并到dev分支，然后推送dev分支。&lt;/p&gt;
+&lt;h1 id=&#34;日常工作&#34;&gt;日常工作
+&lt;/h1&gt;&lt;p&gt;一般是从远程仓库将dev分支拉取到本地，然后创建feature分支，开发完成后，将feature分支合并到dev分支，并删除feature分支，然后推送dev分支到远程仓库。
+但是要注意，为避免与团队其他成员的代码冲突，定期将 dev 分支的最新代码合并到你的功能分支。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone &amp;lt;远程仓库地址&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &amp;lt;项目目录&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout dev                          &lt;span class=&#34;c1&#34;&gt;# 切换到 dev 分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin dev                       &lt;span class=&#34;c1&#34;&gt;# 拉取最新的 dev 分支代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout -b feature/your-module-name  &lt;span class=&#34;c1&#34;&gt;# 创建并切换到功能分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 开始开发功能，提交代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add .                        &lt;span class=&#34;c1&#34;&gt;# 添加所有修改&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit -m &lt;span class=&#34;s2&#34;&gt;&amp;#34;完成模块A的功能X&amp;#34;&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;# 提交描述清晰&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 开发中，要定期同步 dev 分支的更新，如果合并时出现冲突，需要手动解决冲突后重新提交。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout feature/your-module-name  &lt;span class=&#34;c1&#34;&gt;# 切换回功能分支&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git pull origin dev                    &lt;span class=&#34;c1&#34;&gt;# 合并 dev 分支的最新代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 如果发生冲突，就手动处理一下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git add &amp;lt;冲突文件&amp;gt;              &lt;span class=&#34;c1&#34;&gt;# 标记冲突已解决&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git commit                     &lt;span class=&#34;c1&#34;&gt;# 提交合并后的代码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 解决完了冲突后，推送代码到远程仓库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git push -u origin feature/user-authentication   &lt;span class=&#34;c1&#34;&gt;# &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;后面还需要提PR，代码审查，修改，合并分支feature到dev，可能是merge，也可能是cherry-pick
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
         </item>
         <item>
         <title>iBMC服务器管理软件</title>
@@ -18590,25 +18924,6 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/div&gt;</description>
         </item>
         <item>
-        <title>软件开发版本管理</title>
-        <link>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</link>
-        <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/p/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</guid>
-        <description>&lt;h1 id=&#34;分支管理&#34;&gt;分支管理
-&lt;/h1&gt;&lt;p&gt;&lt;code&gt;master分支&lt;/code&gt;:&lt;br&gt;
-用于生产环境的部署，不允许直接push分支，由release分支或者hotfix分支合并。 &lt;br&gt;
-&lt;code&gt;hotfix分支&lt;/code&gt;:&lt;br&gt;
-针对线上紧急问题进行修复的分支，以master分支为基线创建的，修复完成后合并到dev分支、master分支。 &lt;br&gt;
-&lt;code&gt;release分支&lt;/code&gt;:&lt;br&gt;
-预发布分支，UAT测试阶段使用，一般由test分支或hitfix分支合并。 &lt;br&gt;
-&lt;code&gt;dev分支&lt;/code&gt;:&lt;br&gt;
-开发分支，最新版本迭代代码，包括bug修复后的代码。 &lt;br&gt;
-&lt;code&gt;feature分支&lt;/code&gt;:&lt;br&gt;
-基于dev分支在本地创建，每个开发人员的本地分支，针对各自的功能进行开发，开发完成合并到dev分支，并删除该fearure分支，feature是每个开发人员的本地分支，不可推送到远程，只能在本地合并到dev分支，然后推送dev分支。&lt;/p&gt;
-</description>
-        </item>
-        <item>
         <title>可调用对象之 bind</title>
         <link>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</link>
         <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
@@ -18891,31 +19206,34 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</guid>
-        <description>&lt;p&gt;参考书籍： 《C++ Lambda Story》&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-lambdab%e8%a1%a8%e8%be%be%e5%bc%8f%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86&#34; &gt;1. lambdab表达式组成部分&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-lambda%e8%a2%ab%e7%bc%96%e8%af%91%e5%99%a8%e7%bf%bb%e8%af%91%e6%88%90%e7%b1%bb&#34; &gt;2. lambda被编译器翻译成类&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e5%8f%82%e6%95%b0%e6%8d%95%e8%8e%b7&#34; &gt;3. 参数捕获&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#31-%e5%80%bc%e6%8d%95%e8%8e%b7&#34; &gt;3.1. 值捕获&lt;/a&gt;
-1. &lt;a class=&#34;link&#34; href=&#34;#311-%e6%8d%95%e8%8e%b7%e6%8c%87%e5%ae%9a%e5%8f%98%e9%87%8f&#34; &gt;3.1.1. 捕获指定变量&lt;/a&gt;
-2. &lt;a class=&#34;link&#34; href=&#34;#312-%e6%8d%95%e8%8e%b7%e5%85%a8%e9%83%a8%e7%94%a8%e5%88%b0%e7%9a%84%e5%8f%98%e9%87%8f&#34; &gt;3.1.2. 捕获全部用到的变量&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#32-%e5%bc%95%e7%94%a8%e6%8d%95%e8%8e%b7&#34; &gt;3.2. 引用捕获&lt;/a&gt;
-1. &lt;a class=&#34;link&#34; href=&#34;#321-%e6%8d%95%e8%8e%b7%e6%8c%87%e5%ae%9a%e5%8f%98%e9%87%8f&#34; &gt;3.2.1. 捕获指定变量&lt;/a&gt;
-2. &lt;a class=&#34;link&#34; href=&#34;#322-%e6%8d%95%e8%8e%b7%e5%85%a8%e9%83%a8%e7%94%a8%e5%88%b0%e7%9a%84%e5%8f%98%e9%87%8f&#34; &gt;3.2.2. 捕获全部用到的变量&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#33-%e6%b7%b7%e5%90%88%e6%8d%95%e8%8e%b7&#34; &gt;3.3. 混合捕获&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#34-this%e6%8d%95%e8%8e%b7%e4%b8%8ethis%e6%8d%95%e8%8e%b7&#34; &gt;3.4. this捕获与*this捕获&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#35-%e5%88%9d%e5%a7%8b%e5%8c%96%e6%8d%95%e8%8e%b7&#34; &gt;3.5. 初始化捕获&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e4%bf%ae%e9%a5%b0%e7%ac%a6&#34; &gt;4. 修饰符&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-mutalbe&#34; &gt;4.1. mutalbe&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-constexpr%e5%92%8cconxteval&#34; &gt;4.2. constexpr和conxteval&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e5%bd%a2%e5%8f%82%e4%bf%ae%e9%a5%b0&#34; &gt;5. 形参修饰&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#51-c20-%e6%a8%a1%e6%9d%bf%e5%bd%a2%e5%8f%82&#34; &gt;5.1. C++20 模板形参&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#52-const-auto&#34; &gt;5.2. const auto&amp;amp;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e6%b6%89%e5%8f%8a%e5%88%b0%e5%87%bd%e6%95%b0%e9%87%8d%e8%bd%bd%e6%97%b6&#34; &gt;6. 涉及到函数重载时&lt;/a&gt;&lt;/li&gt;
+        <description>&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-lambdab%e8%a1%a8%e8%be%be%e5%bc%8f%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86&#34; &gt;1. &lt;strong&gt;lambdab表达式组成部分&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8f%82%e6%95%b0%e6%8d%95%e8%8e%b7&#34; &gt;2. &lt;strong&gt;参数捕获&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-lambda%e8%a2%ab%e7%bc%96%e8%af%91%e5%99%a8%e7%bf%bb%e8%af%91%e6%88%90%e7%b1%bb&#34; &gt;3. &lt;strong&gt;lambda被编译器翻译成类&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%8f%82%e6%95%b0%e6%8d%95%e8%8e%b7%e8%af%a6%e8%a7%a3&#34; &gt;4. 参数捕获详解&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-%e5%80%bc%e6%8d%95%e8%8e%b7&#34; &gt;4.1. 值捕获&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-%e5%bc%95%e7%94%a8%e6%8d%95%e8%8e%b7&#34; &gt;4.2. 引用捕获&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#43-this%e6%8d%95%e8%8e%b7%e4%b8%8ethis%e6%8d%95%e8%8e%b7&#34; &gt;4.3. this捕获与*this捕获&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#44-%e5%88%9d%e5%a7%8b%e5%8c%96%e6%8d%95%e8%8e%b7&#34; &gt;4.4. 初始化捕获&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e4%bf%ae%e9%a5%b0%e7%ac%a6&#34; &gt;5. 修饰符&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#51-mutalbe&#34; &gt;5.1. mutalbe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#52-constexpr%e5%92%8cconxteval&#34; &gt;5.2. constexpr和conxteval&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#53-%e5%bd%a2%e5%8f%82%e4%bf%ae%e9%a5%b0&#34; &gt;5.3. 形参修饰&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#531-c20-%e6%a8%a1%e6%9d%bf%e5%bd%a2%e5%8f%82&#34; &gt;5.3.1. C++20 模板形参&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#532-const-auto&#34; &gt;5.3.2. const auto&amp;amp;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#7-lambda%e9%80%92%e5%bd%92&#34; &gt;7. Lambda递归&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;1-lambdab表达式组成部分&#34;&gt;1. lambdab表达式组成部分
-&lt;/h1&gt;&lt;p&gt;Lambda表达式的格式为：&lt;/p&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;1-lambdab表达式组成部分&#34;&gt;1. &lt;strong&gt;lambdab表达式组成部分&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;Lambda表达式的格式为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -18953,8 +19271,40 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;li&gt;&lt;strong&gt;-&amp;gt; return type&lt;/strong&gt;： 返回类型，能够自动推导时，可以省略。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;{}&lt;/strong&gt;： 函数体，和普通函数一样。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;2-lambda被编译器翻译成类&#34;&gt;2. lambda被编译器翻译成类
-&lt;/h1&gt;&lt;p&gt;上面的代码被翻译成类，并重载函数调用符&lt;code&gt;()&lt;/code&gt;，也就是仿函数：&lt;/p&gt;
+&lt;h2 id=&#34;2-参数捕获&#34;&gt;2. &lt;strong&gt;参数捕获&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;一个Lambda处于一个作用域内部，可以捕获该作用域中的局部变量，而对于静态变量，全局变量直接使用即可。对于局部变量的捕获可以分为以下集中情况：&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;捕获类型&lt;/th&gt;
+          &lt;th&gt;&amp;ndash;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;值捕获&lt;/td&gt;
+          &lt;td&gt;[x]: 捕获指定变量 &lt;br&gt;  [=]: 捕获所有变量&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;引用捕获&lt;/td&gt;
+          &lt;td&gt;[&amp;amp;x]（显式捕获单个变量的引用） &lt;br&gt; [&amp;amp;]（隐式捕获所有变量的引用）&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;混合捕获&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;[=, &amp;amp;x]&lt;/code&gt;：按值捕获所有变量，但x为引用 &lt;br&gt; &lt;code&gt;[&amp;amp;, =x]&lt;/code&gt;：按引用捕获所有变量，但x为值  &lt;br&gt; &lt;code&gt;[x, &amp;amp;y]&lt;/code&gt;: x使用值捕获，y使用引用捕获&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;捕获 this 指针&lt;/td&gt;
+          &lt;td&gt;[this] 或 [*this] &lt;br&gt; 在类成员函数中，捕获当前对象的 this 指针（[this]）或整个对象的副本（[*this]） &lt;br&gt; 用于访问类的成员变量和成员函数&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;其他&lt;/td&gt;
+          &lt;td&gt;&amp;hellip;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;3-lambda被编译器翻译成类&#34;&gt;3. &lt;strong&gt;lambda被编译器翻译成类&lt;/strong&gt;
+&lt;/h2&gt;&lt;p&gt;上面的代码被翻译成类，并重载函数调用符&lt;code&gt;()&lt;/code&gt;，也就是仿函数：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -19031,13 +19381,11 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;  从上面代码中可以看出，lambda表达式，会被翻译成一个类，捕获的变量用在类的构造函数中，初始化成员变量。并且该类还重载了函数调用运算符“（）”，重载函数的函数体就是lambda的函数体。&lt;/p&gt;
-&lt;h1 id=&#34;3-参数捕获&#34;&gt;3. 参数捕获
-&lt;/h1&gt;&lt;p&gt;  一个Lambda处于一个作用域内部，可以捕获该作用域中的局部变量，而对于静态变量，全局变量直接使用即可。对于局部变量的捕获有多种情况，&lt;/p&gt;
-&lt;h2 id=&#34;31-值捕获&#34;&gt;3.1. 值捕获
-&lt;/h2&gt;&lt;p&gt;  在创建类的时候，定义相应的类成员变量，然后在构造lambda对象时，使用捕获的变量初始化类成员变量。&lt;/p&gt;
-&lt;h3 id=&#34;311-捕获指定变量&#34;&gt;3.1.1. 捕获指定变量
-&lt;/h3&gt;&lt;p&gt;  不管Lambda函数体中有没有用到这些变量，都会创建对应的成员变量，并且调用构造函数时传入参数来初始化这些成员变量。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;从上面代码中可以看出，lambda表达式，会被翻译成一个类，捕获的变量用于在类的构造函数中初始化成员变量。并且该类还重载了函数调用运算符“（）”，重载函数的函数体就是lambda的函数体。&lt;/p&gt;
+&lt;h2 id=&#34;4-参数捕获详解&#34;&gt;4. 参数捕获详解
+&lt;/h2&gt;&lt;p&gt;无论值捕获还是引用捕获，当使用全部捕获时，编译器生成的类只会捕获使用到的变量，这个比较智能。&lt;/p&gt;
+&lt;h3 id=&#34;41-值捕获&#34;&gt;4.1. 值捕获
+&lt;/h3&gt;&lt;p&gt;  编译器在创建类的时候，会定义相应的类成员变量，然后在构造lambda对象时，使用捕获的变量初始化类成员变量。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -19094,8 +19442,6 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
@@ -19114,14 +19460,12 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;// 构造函数
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__lambda_7_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;__lambda_7_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c1&#34;&gt;// 调用构造函数时，会将x的值复制给类的成员变量x中。
@@ -19131,119 +19475,8 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;312-捕获全部用到的变量&#34;&gt;3.1.2. 捕获全部用到的变量
-&lt;/h3&gt;&lt;p&gt;  对于lamdba函数体中没有用到的变量，类就不会定义这个成员变量，这是一种比较智能的捕获方法。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;auto&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;](&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// [=]
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;翻译后：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;20&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;z&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;30&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;__lambda_9_12&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kr&#34;&gt;inline&lt;/span&gt; &lt;span class=&#34;cm&#34;&gt;/*constexpr */&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;__lambda_9_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;__lambda_9_12&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;__lambda_9_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)).&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;32-引用捕获&#34;&gt;3.2. 引用捕获
-&lt;/h2&gt;&lt;p&gt;  引用捕获，就会定义对应的引用类型的成员变量，这种情况下，lambda对于对于自身成员变量的操作会影响对应的外部变量。&lt;/p&gt;
-&lt;h3 id=&#34;321-捕获指定变量&#34;&gt;3.2.1. 捕获指定变量
-&lt;/h3&gt;&lt;p&gt;  同样，无论函数体中是否使用捕获列表中的参数，都会创建对应的成员变量。&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;42-引用捕获&#34;&gt;4.2. 引用捕获
+&lt;/h3&gt;&lt;p&gt;如果使用引用捕获，类中会定义对应的引用类型的成员变量，这种情况下，lambda对于自身成员变量的操作会影响对应的外部变量。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -19308,7 +19541,6 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
@@ -19330,8 +19562,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 引用捕获，就会定义对应的引用类型的成员变量
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;public&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;__lambda_7_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;__lambda_7_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  
@@ -19341,16 +19572,8 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h3 id=&#34;322-捕获全部用到的变量&#34;&gt;3.2.2. 捕获全部用到的变量
-&lt;/h3&gt;&lt;p&gt;[&amp;amp;]，只有创建使用到的成员变量。&lt;/p&gt;
-&lt;h2 id=&#34;33-混合捕获&#34;&gt;3.3. 混合捕获
-&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;[&amp;amp;, x]&lt;/code&gt;, x使用值捕获，其他变量使用引用捕获。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[=, &amp;amp;y]&lt;/code&gt;, y使用引用捕获，其他变量使用值捕获。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;[x, &amp;amp;y]&lt;/code&gt;, x使用值捕获，y使用引用捕获。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;34-this捕获与this捕获&#34;&gt;3.4. this捕获与*this捕获
-&lt;/h2&gt;&lt;p&gt;请看下面案例：&lt;/p&gt;
+&lt;/div&gt;&lt;h3 id=&#34;43-this捕获与this捕获&#34;&gt;4.3. this捕获与*this捕获
+&lt;/h3&gt;&lt;p&gt;请看下面案例：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -19486,8 +19709,8 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;  但是，要注意&lt;code&gt;this指向的对象的生命周期&lt;/code&gt;，这个很危险，Lambda表示式很多时候用来创建一个可调用对象，但是并不是马上就要调用，所以要确保调用的时候参数都是有效的，所以C++17中提供了&lt;code&gt;*this&lt;/code&gt;捕获。&lt;/p&gt;
-&lt;h2 id=&#34;35-初始化捕获&#34;&gt;3.5. 初始化捕获
-&lt;/h2&gt;&lt;p&gt;Demo1：&lt;/p&gt;
+&lt;h3 id=&#34;44-初始化捕获&#34;&gt;4.4. 初始化捕获
+&lt;/h3&gt;&lt;p&gt;Demo1：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
@@ -19564,9 +19787,9 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;4-修饰符&#34;&gt;4. 修饰符
-&lt;/h1&gt;&lt;h2 id=&#34;41-mutalbe&#34;&gt;4.1. mutalbe
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h2 id=&#34;5-修饰符&#34;&gt;5. 修饰符
+&lt;/h2&gt;&lt;h3 id=&#34;51-mutalbe&#34;&gt;5.1. mutalbe
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -19579,7 +19802,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19623,7 +19846,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19671,7 +19894,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19719,7 +19942,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19749,14 +19972,14 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;42-constexpr和conxteval&#34;&gt;4.2. constexpr和conxteval
-&lt;/h2&gt;&lt;ul&gt;
+&lt;/div&gt;&lt;h3 id=&#34;52-constexpr和conxteval&#34;&gt;5.2. constexpr和conxteval
+&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;constexpr：  声明Lambda可以在编译期执行。&lt;/li&gt;
 &lt;li&gt;conxteval： 声明表达式不会抛出异常， 这个特性在《 C++异常 》篇章讲解。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;5-形参修饰&#34;&gt;5. 形参修饰
-&lt;/h1&gt;&lt;h2 id=&#34;51-c20-模板形参&#34;&gt;5.1. C++20 模板形参
-&lt;/h2&gt;&lt;p&gt;C++20引入，没用过。&lt;/p&gt;
+&lt;h3 id=&#34;53-形参修饰&#34;&gt;5.3. 形参修饰
+&lt;/h3&gt;&lt;h4 id=&#34;531-c20-模板形参&#34;&gt;5.3.1. C++20 模板形参
+&lt;/h4&gt;&lt;p&gt;C++20引入，没用过。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
@@ -19774,7 +19997,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19831,7 +20054,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19846,13 +20069,13 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;#ifdef INSIGHTS_USE_TEMPLATE
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;##ifdef INSIGHTS_USE_TEMPLATE
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kr&#34;&gt;inline&lt;/span&gt; &lt;span class=&#34;cm&#34;&gt;/*constexpr */&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;#endif
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;##endif
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -19870,8 +20093,8 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h2 id=&#34;52-const-auto&#34;&gt;5.2. const auto&amp;amp;
-&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;h4 id=&#34;532-const-auto&#34;&gt;5.3.2. const auto&amp;amp;
+&lt;/h4&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -19889,9 +20112,9 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;map&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#inclide &amp;lt;iostream&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;functional&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;  
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;map&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##inclide &amp;lt;iostream&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;functional&amp;gt;  
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19949,9 +20172,9 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;map&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;functional&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;map&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;functional&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -19966,14 +20189,14 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;first&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;second&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;#ifdef INSIGHTS_USE_TEMPLATE
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;##ifdef INSIGHTS_USE_TEMPLATE
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;// 重点
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;gt;&lt;/span&gt;                                                      &lt;span class=&#34;c1&#34;&gt;// 此处形参的形参为 const std::pair&amp;lt;const int, int&amp;gt;&amp;amp; 是由const auto&amp;amp; 推导出来的
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;kr&#34;&gt;inline&lt;/span&gt; &lt;span class=&#34;cm&#34;&gt;/*constexpr */&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pair&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;::&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pair&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;first&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;second&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;#endif
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;cp&#34;&gt;##endif
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;    
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;template&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;type_parameter_0_0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;
@@ -19990,8 +20213,37 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;h1 id=&#34;6-涉及到函数重载时&#34;&gt;6. 涉及到函数重载时
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;/div&gt;&lt;p&gt;##- &lt;a class=&#34;link&#34; href=&#34;#1-lambdab%e8%a1%a8%e8%be%be%e5%bc%8f%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86&#34; &gt;1. &lt;strong&gt;lambdab表达式组成部分&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-lambdab%e8%a1%a8%e8%be%be%e5%bc%8f%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86&#34; &gt;1. &lt;strong&gt;lambdab表达式组成部分&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8f%82%e6%95%b0%e6%8d%95%e8%8e%b7&#34; &gt;2. &lt;strong&gt;参数捕获&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-lambda%e8%a2%ab%e7%bc%96%e8%af%91%e5%99%a8%e7%bf%bb%e8%af%91%e6%88%90%e7%b1%bb&#34; &gt;3. &lt;strong&gt;lambda被编译器翻译成类&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e5%8f%82%e6%95%b0%e6%8d%95%e8%8e%b7%e8%af%a6%e8%a7%a3&#34; &gt;4. 参数捕获详解&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#41-%e5%80%bc%e6%8d%95%e8%8e%b7&#34; &gt;4.1. 值捕获&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#42-%e5%bc%95%e7%94%a8%e6%8d%95%e8%8e%b7&#34; &gt;4.2. 引用捕获&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#43-this%e6%8d%95%e8%8e%b7%e4%b8%8ethis%e6%8d%95%e8%8e%b7&#34; &gt;4.3. this捕获与*this捕获&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#44-%e5%88%9d%e5%a7%8b%e5%8c%96%e6%8d%95%e8%8e%b7&#34; &gt;4.4. 初始化捕获&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#5-%e4%bf%ae%e9%a5%b0%e7%ac%a6&#34; &gt;5. 修饰符&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#51-mutalbe&#34; &gt;5.1. mutalbe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#52-constexpr%e5%92%8cconxteval&#34; &gt;5.2. constexpr和conxteval&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#53-%e5%bd%a2%e5%8f%82%e4%bf%ae%e9%a5%b0&#34; &gt;5.3. 形参修饰&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#531-c20-%e6%a8%a1%e6%9d%bf%e5%bd%a2%e5%8f%82&#34; &gt;5.3.1. C++20 模板形参&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#532-const-auto&#34; &gt;5.3.2. const auto&amp;amp;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#7-lambda%e9%80%92%e5%bd%92&#34; &gt;7. Lambda递归&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;涉及到函数重载时&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -20032,8 +20284,8 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;根据参数类型来选择对应的函数，内部实现为模板函数。&lt;/p&gt;
-&lt;h1 id=&#34;7-lambda递归&#34;&gt;7. Lambda递归
-&lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;h2 id=&#34;7-lambda递归&#34;&gt;7. Lambda递归
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
@@ -20056,7 +20308,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;##include &amp;lt;iostream&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -26952,6 +27204,14 @@ Unmodified files: 没有被git跟踪的文件。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>《代码重构》</title>
+        <link>https://zuoco.github.io/p/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E4%BB%A3%E7%A0%81%E9%87%8D%E6%9E%84/</guid>
+        <description></description>
         </item>
         <item>
         <title>Search</title>

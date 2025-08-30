@@ -8,15 +8,15 @@
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
         <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
-        <title>FreeCAD-MCP</title>
-        <link>https://zuoco.github.io/p/freecad-mcp/</link>
+        <title>FreeCAD-MCP，通过AI助手来操作FreeCAD</title>
+        <link>https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</link>
         <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/freecad-mcp/</guid>
+        <guid>https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</guid>
         <description>&lt;p&gt;  今天介绍一个开源项目——&lt;a class=&#34;link&#34; href=&#34;https://github.com/neka-nat/freecad-mcp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;FreeCAD-MCP&lt;/a&gt;，这是一个集成了MCP的FreeCAD控制方案，将AI助手与3D建模软件结合起来，用户可以通过描述需求控制FreeCAD生成3D模型，还支持从2D图纸生成3D模型，支持迭代设计细化，也就是可以请求对现有设计进行修改并实时查看更改。&lt;/p&gt;
 &lt;p&gt;该项目的整体架构如下：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/freecad-mcp/freecad-mcp.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/freecad-mcp.svg&#34;
 	
 	
 	

@@ -7,7 +7,15 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VTK</title>
+        <link>https://zuoco.github.io/categories/vtk/</link>
+        <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/vtk/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>AI</title>
         <link>https://zuoco.github.io/categories/ai/</link>
         <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
@@ -112,6 +120,14 @@
         <description>&lt;img src="https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/AAA.jpeg" alt="Featured image of post 资源收集" /&gt;</description>
         </item>
         <item>
+        <title>Git</title>
+        <link>https://zuoco.github.io/categories/git/</link>
+        <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/git/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/git/git.jpg" alt="Featured image of post Git" /&gt;</description>
+        </item>
+        <item>
         <title>虚拟化</title>
         <link>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
         <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
@@ -142,14 +158,6 @@
         
         <guid>https://zuoco.github.io/categories/tcp/</guid>
         <description>&lt;img src="https://zuoco.github.io/categories/tcp/AAA.png" alt="Featured image of post TCP" /&gt;</description>
-        </item>
-        <item>
-        <title>Git</title>
-        <link>https://zuoco.github.io/categories/git/</link>
-        <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
-        
-        <guid>https://zuoco.github.io/categories/git/</guid>
-        <description>&lt;img src="https://zuoco.github.io/categories/git/git.jpg" alt="Featured image of post Git" /&gt;</description>
         </item>
         <item>
         <title>STL 容器</title>
