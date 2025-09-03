@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on 阿左笔记</title>
+        <link>https://zuoco.github.io/categories/</link>
+        <description>Recent content in Categories on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>VTK</title>
+        <link>https://zuoco.github.io/categories/vtk/</link>
+        <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/vtk/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>AI</title>
+        <link>https://zuoco.github.io/categories/ai/</link>
+        <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/ai/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/ai/AAA.jpg" alt="Featured image of post AI" /&gt;</description>
+        </item>
+        <item>
+        <title>FreeCAD</title>
+        <link>https://zuoco.github.io/categories/freecad/</link>
+        <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/freecad/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/freecad/AAA.jpg" alt="Featured image of post FreeCAD" /&gt;</description>
+        </item>
+        <item>
+        <title>Python</title>
+        <link>https://zuoco.github.io/categories/python/</link>
+        <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/python/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/python/AAA.jpeg" alt="Featured image of post Python" /&gt;</description>
+        </item>
+        <item>
+        <title>Open3D</title>
+        <link>https://zuoco.github.io/categories/open3d/</link>
+        <pubDate>Sat, 07 Jun 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/open3d/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/open3d/AAA.png" alt="Featured image of post Open3D" /&gt;</description>
+        </item>
+        <item>
+        <title>Linux内核</title>
+        <link>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</link>
+        <pubDate>Wed, 21 May 2025 20:53:24 +0800</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/AAA.jpg" alt="Featured image of post Linux内核" /&gt;</description>
+        </item>
+        <item>
+        <title>DeskFlow</title>
+        <link>https://zuoco.github.io/categories/deskflow/</link>
+        <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/deskflow/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/deskflow/AAA.jpg" alt="Featured image of post DeskFlow" /&gt;</description>
+        </item>
+        <item>
+        <title>数据结构</title>
+        <link>https://zuoco.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+        <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/AAA.jpg" alt="Featured image of post 数据结构" /&gt;</description>
+        </item>
+        <item>
+        <title>Qemu</title>
+        <link>https://zuoco.github.io/categories/qemu/</link>
+        <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/qemu/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>网络协议原理与设计</title>
+        <link>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/</link>
+        <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>设计模式</title>
+        <link>https://zuoco.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+        <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/AAA.jpg" alt="Featured image of post 设计模式" /&gt;</description>
+        </item>
+        <item>
+        <title>网络</title>
+        <link>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C/</link>
+        <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>C&#43;&#43;</title>
+        <link>https://zuoco.github.io/categories/c&#43;&#43;/</link>
+        <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/c&#43;&#43;/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/c&#43;&#43;/000.jpg" alt="Featured image of post C&#43;&#43;" /&gt;</description>
+        </item>
+        <item>
+        <title>资源收集</title>
+        <link>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/AAA.jpeg" alt="Featured image of post 资源收集" /&gt;</description>
+        </item>
+        <item>
+        <title>Git</title>
+        <link>https://zuoco.github.io/categories/git/</link>
+        <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/git/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/git/git.jpg" alt="Featured image of post Git" /&gt;</description>
+        </item>
+        <item>
+        <title>虚拟化</title>
+        <link>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+        <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/AAA.jpg" alt="Featured image of post 虚拟化" /&gt;</description>
+        </item>
+        <item>
+        <title>C&#43;&#43; STL</title>
+        <link>https://zuoco.github.io/categories/c&#43;&#43;-stl/</link>
+        <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/c&#43;&#43;-stl/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/c&#43;&#43;-stl/000.jpg" alt="Featured image of post C&#43;&#43; STL" /&gt;</description>
+        </item>
+        <item>
+        <title>Linkers &amp; Loaders</title>
+        <link>https://zuoco.github.io/categories/linkers--loaders/</link>
+        <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/linkers--loaders/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>TCP</title>
+        <link>https://zuoco.github.io/categories/tcp/</link>
+        <pubDate>Fri, 23 Jun 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/tcp/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/tcp/AAA.png" alt="Featured image of post TCP" /&gt;</description>
+        </item>
+        <item>
+        <title>C&#43;&#43;容器</title>
+        <link>https://zuoco.github.io/categories/c&#43;&#43;%E5%AE%B9%E5%99%A8/</link>
+        <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/c&#43;&#43;%E5%AE%B9%E5%99%A8/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>STL 容器</title>
+        <link>https://zuoco.github.io/categories/stl-%E5%AE%B9%E5%99%A8/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/categories/stl-%E5%AE%B9%E5%99%A8/</guid>
+        <description>&lt;img src="https://zuoco.github.io/categories/stl-%E5%AE%B9%E5%99%A8/000.jpg" alt="Featured image of post STL 容器" /&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

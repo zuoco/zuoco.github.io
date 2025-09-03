@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>资源收集 on 阿左笔记</title>
+        <link>https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/</link>
+        <description>Recent content in 资源收集 on 阿左笔记</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>阿左阿右</copyright>
+        <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E8%B5%84%E6%BA%90/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>资源</title>
+        <link>https://zuoco.github.io/p/%E8%B5%84%E6%BA%90/</link>
+        <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://zuoco.github.io/p/%E8%B5%84%E6%BA%90/</guid>
+        <description>&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cppinsights.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cpp insight： 将 C++ 代码转换为内部实现形式&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.codeeeee.com/color/rgb.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;RGB颜色表&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.microsoft.com/zh-cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Winsows开发文档&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://hellogithub.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hello-GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;open.itc.cn/&#34; &gt;Open-GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://huggingface.co/models&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;HuggingFace&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.modelscope.cn/home&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;魔塔社区： 国产版的HuggingFace&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.autodl.com/home&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;AutoDL云算力租用&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://deepwiki.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;deepwiki&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zread.ai/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Zread&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;10&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/nvmd/libkdtree&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;libkdtree++: 一个用C++模板实现的k维树结构&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/mofeng-git/One-KVM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;One-KVM： 硬件级远控方案&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Nihiue/open-ip-kvm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;KVM-Over-IP: 硬件级远控方案&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/lwip-tcpip/lwip&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;lwip: 用户态协议栈&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/xiangechen/chili3d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Chili3D： 基于OpenCASCADE、WebAssembly的WebCAD&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
