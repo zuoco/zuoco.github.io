@@ -20,9 +20,11 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://zuoco.github.io/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/u21893736/zlkol4?#%e3%80%8aQML%e3%80%8b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;QML笔记 — 语雀文档&lt;/a&gt;&lt;br&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://github.com/xiangechen/chili3d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;h2 id=&#34;笔记&#34;&gt;笔记
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/u21893736/zlkol4?#%e3%80%8aQML%e3%80%8b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;QML笔记 — 语雀文档&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;资源&#34;&gt;资源
+&lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/xiangechen/chili3d&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Chili3D： 基于OpenCASCADE、WebAssembly的WebCAD&lt;/a&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://github.com/nvmd/libkdtree&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;libkdtree++: 一个用C++模板实现的k维树结构&lt;/a&gt;&lt;/p&gt;

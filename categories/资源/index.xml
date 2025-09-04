@@ -54,10 +54,8 @@
     &gt;Zread&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;ol start=&#34;10&#34;&gt;
-&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/nvmd/libkdtree&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;libkdtree++: 一个用C++模板实现的k维树结构&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/nvmd/libkdtree&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;libkdtree++: 一个用C++模板实现的k维树结构&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/mofeng-git/One-KVM&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
