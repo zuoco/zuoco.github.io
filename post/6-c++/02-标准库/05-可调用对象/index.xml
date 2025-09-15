@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《 可调用对象 》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/6-c&#43;&#43;/02-%E6%A0%87%E5%87%86%E5%BA%93/05-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1/</link>
+        <link>http://localhost:1313/post/6-c&#43;&#43;/02-%E6%A0%87%E5%87%86%E5%BA%93/05-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1/</link>
         <description>Recent content in 《 可调用对象 》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/6-c++/02-%E6%A0%87%E5%87%86%E5%BA%93/05-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/6-c++/02-%E6%A0%87%E5%87%86%E5%BA%93/05-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>可调用对象之 bind</title>
-        <link>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</link>
+        <link>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</link>
         <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</guid>
+        <guid>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%8f%af%e8%b0%83%e7%94%a8%e5%af%b9%e8%b1%a1&#34; &gt;1. 可调用对象&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-bind&#34; &gt;2. bind&lt;/a&gt;
@@ -286,10 +286,10 @@
         </item>
         <item>
         <title>可调用对象之 Lambda</title>
-        <link>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</link>
+        <link>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</link>
         <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</guid>
+        <guid>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-lambdab%e8%a1%a8%e8%be%be%e5%bc%8f%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86&#34; &gt;1. &lt;strong&gt;lambdab表达式组成部分&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8f%82%e6%95%b0%e6%8d%95%e8%8e%b7&#34; &gt;2. &lt;strong&gt;参数捕获&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

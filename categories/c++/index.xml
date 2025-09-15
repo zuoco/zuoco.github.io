@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>C&#43;&#43; on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/c&#43;&#43;/</link>
+        <link>http://localhost:1313/categories/c&#43;&#43;/</link>
         <description>Recent content in C&#43;&#43; on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 21 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/c++/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/c++/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>内存对齐</title>
-        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</link>
+        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</link>
         <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
+        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-alignas-%e4%b8%8e-alignof&#34; &gt;1. alignas 与 alignof&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-pragma-pack&#34; &gt;2. #pragma pack&lt;/a&gt;&lt;/li&gt;
@@ -164,10 +164,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>C&#43;&#43;包管理器之vcpkg</title>
-        <link>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
+        <link>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
         <pubDate>Wed, 31 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
+        <guid>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-vcpkg&#34; &gt;1. vcpkg&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%ae%89%e8%a3%85&#34; &gt;2. 安装&lt;/a&gt;&lt;/li&gt;
@@ -414,10 +414,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>C&#43;&#43; 多线程中的同步方法</title>
-        <link>https://zuoco.github.io/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</link>
+        <link>http://localhost:1313/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</link>
         <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</guid>
+        <guid>http://localhost:1313/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%ba%bf%e7%a8%8b%e5%90%8c%e6%ad%a5&#34; &gt;1. 线程同步&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%ba%92%e6%96%a5%e9%94%81-stdmutex&#34; &gt;2. 互斥锁 (std::mutex)&lt;/a&gt;&lt;/li&gt;
@@ -864,10 +864,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>std::thread</title>
-        <link>https://zuoco.github.io/p/stdthread/</link>
+        <link>http://localhost:1313/p/stdthread/</link>
         <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/stdthread/</guid>
+        <guid>http://localhost:1313/p/stdthread/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9%e8%b1%a1&#34; &gt;1. &lt;strong&gt;创建一个线程对象&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%9b%e5%bb%ba%e5%b8%a6%e5%8f%82%e6%95%b0thread%e5%af%b9%e8%b1%a1&#34; &gt;2. &lt;strong&gt;创建带参数thread对象&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1343,10 +1343,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>标准库基本组成</title>
-        <link>https://zuoco.github.io/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</link>
+        <link>http://localhost:1313/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</link>
         <pubDate>Sat, 10 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</guid>
+        <guid>http://localhost:1313/p/%E6%A0%87%E5%87%86%E5%BA%93%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%9f%ba%e6%9c%ac%e7%bb%84%e6%88%90&#34; &gt;1. 基本组成&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%a4%b4%e6%96%87%e4%bb%b6&#34; &gt;2. 头文件&lt;/a&gt;&lt;/li&gt;
@@ -1424,10 +1424,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>lock_guard、unique_lock、scoped_lock</title>
-        <link>https://zuoco.github.io/p/lock_guardunique_lockscoped_lock/</link>
+        <link>http://localhost:1313/p/lock_guardunique_lockscoped_lock/</link>
         <pubDate>Sun, 04 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/lock_guardunique_lockscoped_lock/</guid>
+        <guid>http://localhost:1313/p/lock_guardunique_lockscoped_lock/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-stdlock_guard&#34; &gt;1. &lt;strong&gt;std::lock_guard&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-stdunique_lock&#34; &gt;2. &lt;strong&gt;std::unique_lock&lt;/strong&gt;&lt;/a&gt;
@@ -1733,10 +1733,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>shared_ptr、unique_ptr、weake_ptr</title>
-        <link>https://zuoco.github.io/p/shared_ptrunique_ptrweake_ptr/</link>
+        <link>http://localhost:1313/p/shared_ptrunique_ptrweake_ptr/</link>
         <pubDate>Sat, 03 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/shared_ptrunique_ptrweake_ptr/</guid>
+        <guid>http://localhost:1313/p/shared_ptrunique_ptrweake_ptr/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-shared_ptr&#34; &gt;1. shared_ptr&lt;/a&gt;
 &lt;ul&gt;
@@ -2163,10 +2163,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>可调用对象之 bind</title>
-        <link>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</link>
+        <link>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</link>
         <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</guid>
+        <guid>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-bind/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%8f%af%e8%b0%83%e7%94%a8%e5%af%b9%e8%b1%a1&#34; &gt;1. 可调用对象&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-bind&#34; &gt;2. bind&lt;/a&gt;
@@ -2440,10 +2440,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>可调用对象之 Lambda</title>
-        <link>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</link>
+        <link>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</link>
         <pubDate>Sun, 28 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</guid>
+        <guid>http://localhost:1313/p/%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B-lambda/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-lambdab%e8%a1%a8%e8%be%be%e5%bc%8f%e7%bb%84%e6%88%90%e9%83%a8%e5%88%86&#34; &gt;1. &lt;strong&gt;lambdab表达式组成部分&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8f%82%e6%95%b0%e6%8d%95%e8%8e%b7&#34; &gt;2. &lt;strong&gt;参数捕获&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -3571,10 +3571,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>泛型算法</title>
-        <link>https://zuoco.github.io/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</link>
+        <link>http://localhost:1313/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</link>
         <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</guid>
+        <guid>http://localhost:1313/p/%E6%B3%9B%E5%9E%8B%E7%AE%97%E6%B3%95/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b3%9b%e5%9e%8b%e7%ae%97%e6%b3%95&#34; &gt;1. 泛型算法&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%85%b8%e5%9e%8b%e6%b3%9b%e5%9e%8b%e7%ae%97%e6%b3%95&#34; &gt;2. 典型泛型算法&lt;/a&gt;&lt;/li&gt;
@@ -4033,10 +4033,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>STL容器 — 总结</title>
-        <link>https://zuoco.github.io/p/stl%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</link>
+        <link>http://localhost:1313/p/stl%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</link>
         <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/stl%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</guid>
+        <guid>http://localhost:1313/p/stl%E5%AE%B9%E5%99%A8-%E6%80%BB%E7%BB%93/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%bb%80%e4%b9%88%e6%98%af%e5%ae%b9%e5%99%a8&#34; &gt;1. 什么是容器&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%ae%b9%e5%99%a8%e5%88%86%e7%b1%bb&#34; &gt;2. 容器分类&lt;/a&gt;
@@ -4223,10 +4223,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>迭代器</title>
-        <link>https://zuoco.github.io/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
+        <link>http://localhost:1313/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</link>
         <pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
+        <guid>http://localhost:1313/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%bf%ad%e4%bb%a3%e5%99%a8%e5%88%86%e7%b1%bb&#34; &gt;1. 迭代器分类&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%b8%b8%e8%a7%84%e8%bf%ad%e4%bb%a3%e5%99%a8&#34; &gt;2. 常规迭代器&lt;/a&gt;
@@ -4896,7 +4896,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/div&gt;
 &lt;/div&gt;&lt;h2 id=&#34;33-反向迭代器&#34;&gt;3.3. 反向迭代器
 &lt;/h2&gt;&lt;p&gt;  就是rbegin和rend。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/%E8%BF%AD%E4%BB%A3%E5%99%A8.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E8%BF%AD%E4%BB%A3%E5%99%A8/%E8%BF%AD%E4%BB%A3%E5%99%A8.svg&#34;
 	
 	
 	
@@ -5043,10 +5043,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>容器适配器</title>
-        <link>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/</link>
+        <link>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/</link>
         <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/</guid>
+        <guid>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8/</guid>
         <description>&lt;h1 id=&#34;啥是容器适配器&#34;&gt;啥是容器适配器
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;容器适配器&lt;/code&gt;还是&lt;code&gt;容器&lt;/code&gt;，具体地说就是对标准库的基础容器进行包装，把容器的成员函数组合一下，如此一来就搞出来一个新的容器，这个新容器可以满足某些特殊需求。&lt;/p&gt;
 &lt;table&gt;
@@ -5083,10 +5083,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>容器适配器之 queue</title>
-        <link>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</link>
+        <link>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</link>
         <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</guid>
+        <guid>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-queue/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-stdqueue&#34; &gt;1. std::queue&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%9b%e5%bb%ba-queue-%e5%ae%b9%e5%99%a8%e5%af%b9%e8%b1%a1&#34; &gt;2. 创建 queue 容器对象&lt;/a&gt;&lt;/li&gt;
@@ -5209,10 +5209,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>容器适配器之 stack</title>
-        <link>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</link>
+        <link>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</link>
         <pubDate>Wed, 17 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</guid>
+        <guid>http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-stdstack&#34; &gt;1. std::stack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%9b%e5%bb%bastack%e5%ae%b9%e5%99%a8%e5%af%b9%e8%b1%a1&#34; &gt;2. 创建Stack容器对象&lt;/a&gt;&lt;/li&gt;
@@ -5367,10 +5367,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>关键字</title>
-        <link>https://zuoco.github.io/p/%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+        <link>http://localhost:1313/p/%E5%85%B3%E9%94%AE%E5%AD%97/</link>
         <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+        <guid>http://localhost:1313/p/%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-explicit&#34; &gt;1. explicit&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-noexcept&#34; &gt;2. noexcept&lt;/a&gt;&lt;/li&gt;
@@ -5474,10 +5474,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>无序关联容器（哈希容器）</title>
-        <link>https://zuoco.github.io/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</link>
+        <link>http://localhost:1313/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</link>
         <pubDate>Wed, 26 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</guid>
+        <guid>http://localhost:1313/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%93%88%e5%b8%8c%e5%ae%b9%e5%99%a8&#34; &gt;1. 哈希容器&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%ba%95%e5%b1%82%e5%ae%9e%e7%8e%b0&#34; &gt;2. 底层实现&lt;/a&gt;&lt;/li&gt;
@@ -5495,7 +5495,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;p&gt;和关联式容器相比，无序容器擅长通过指定键查找对应的值（平均时间复杂度为 O(1)）；但是当使用迭代器遍历容器中存储的元素时，执行效率就不如关联式容器了。&lt;/p&gt;
 &lt;h1 id=&#34;2-底层实现&#34;&gt;2. 底层实现
 &lt;/h1&gt;&lt;p&gt;首先，我们要有一个vector数组，但是这个数组不是用来存储元素的，而是用来存储链表头指针的，这些链表被称为“&lt;code&gt;桶（bucket）&lt;/code&gt;”，哈希值相同的元素/key被放在同一个桶中，这就是所谓的链地址法。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/hash%E5%AE%B9%E5%99%A8.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E6%97%A0%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E5%93%88%E5%B8%8C%E5%AE%B9%E5%99%A8/hash%E5%AE%B9%E5%99%A8.svg&#34;
 	
 	
 	
@@ -5564,10 +5564,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>有序关联容器之 multimap和multiset</title>
-        <link>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</link>
+        <link>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</link>
         <pubDate>Mon, 24 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</guid>
+        <guid>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-multimap%E5%92%8Cmultiset/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-map%e5%92%8cmultimap%e7%9a%84%e5%8c%ba%e5%88%ab&#34; &gt;1. map和multimap的区别&lt;/a&gt;
 &lt;ul&gt;
@@ -5624,10 +5624,10 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
         </item>
         <item>
         <title>有序关联容器之 map</title>
-        <link>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</link>
+        <link>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</link>
         <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</guid>
+        <guid>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-stdpair&#34; &gt;1. std::pair&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-map&#34; &gt;2. map&lt;/a&gt;&lt;/li&gt;
@@ -5677,7 +5677,7 @@ shared_ptr就是通过&lt;code&gt;引用计数&lt;/code&gt;来管理对象的生
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.cppreference.com/w/cpp/container/map.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;std:map&lt;/a&gt;，基于红黑树，树的每一个节点都是一个std::pair，节点的&lt;code&gt;pair.first&lt;/code&gt;的类型必须支持“&amp;lt;”运算，或者自定义比较逻辑，相对于set，map才是真正关联容器。 &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/map.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-map/map.svg&#34;
 	
 	
 	
@@ -5874,10 +5874,10 @@ map的迭代器所指向的对象的“Key”是const的，“Key”本身是不
         </item>
         <item>
         <title>有序关联容器之 Set</title>
-        <link>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</link>
+        <link>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</link>
         <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</guid>
+        <guid>http://localhost:1313/p/%E6%9C%89%E5%BA%8F%E5%85%B3%E8%81%94%E5%AE%B9%E5%99%A8%E4%B9%8B-set/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%88%9d%e6%ad%a5%e8%ae%a4%e8%af%86&#34; &gt;1. 初步认识&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e6%af%94%e8%be%83%e5%87%bd%e6%95%b0&#34; &gt;2. 自定义比较函数&lt;/a&gt;&lt;/li&gt;
@@ -6248,10 +6248,10 @@ set被放到关联容器中范畴里面，是从功能上来说的，它本身�
         </item>
         <item>
         <title>序列容器之 list 和 forward_list</title>
-        <link>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</link>
+        <link>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</link>
         <pubDate>Tue, 18 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</guid>
+        <guid>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-list-%E5%92%8C-forward_list/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-stdlist&#34; &gt;1. std::list&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%bf%ad%e4%bb%a3%e5%99%a8&#34; &gt;2. 迭代器&lt;/a&gt;&lt;/li&gt;
@@ -6368,10 +6368,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>顺序容器之 —— deque</title>
-        <link>https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</link>
+        <link>http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</link>
         <pubDate>Mon, 17 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</guid>
+        <guid>http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-deque&#34; &gt;1. deque&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%bf%ad%e4%bb%a3%e5%99%a8&#34; &gt;2. 迭代器&lt;/a&gt;&lt;/li&gt;
@@ -6413,7 +6413,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;可以看到，deque容器底层使用分块存储，由多个相等大小的内存块组成，单是内存块之间不一定是连续的，可以位于在内存的不同区域。使用一个映射表（可能是vector）来保存各个块的起始地址。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E5%86%85%E5%AD%98%E5%9D%97.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E5%86%85%E5%AD%98%E5%9D%97.svg&#34;
 	
 	
 	
@@ -6453,7 +6453,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;例如插入元素：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E9%A1%BA%E5%BA%8F%E5%AE%B9%E5%99%A8%E4%B9%8B-deque/%E6%8F%92%E5%85%A5%E5%85%83%E7%B4%A0.svg&#34;
 	
 	
 	
@@ -6510,10 +6510,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>序列容器之  vector</title>
-        <link>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</link>
+        <link>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</link>
         <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</guid>
+        <guid>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-vector&#34; &gt;1. vector&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%bd%bf%e7%94%a8&#34; &gt;2. 使用&lt;/a&gt;
@@ -6537,7 +6537,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;h1 id=&#34;1-vector&#34;&gt;1. vector
 &lt;/h1&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://en.cppreference.com/w/cpp/container/vector.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;std::vector&lt;/a&gt;，动态数组，维护一块连续的存储空间，容量可动态改变。    &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-vector/vector%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84.svg&#34;
 	
 	
 	
@@ -6716,10 +6716,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>序列容器之 Array</title>
-        <link>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</link>
+        <link>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</link>
         <pubDate>Sat, 15 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</guid>
+        <guid>http://localhost:1313/p/%E5%BA%8F%E5%88%97%E5%AE%B9%E5%99%A8%E4%B9%8B-array/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-array&#34; &gt;1. Array&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e7%94%a8%e6%b3%95&#34; &gt;2. 用法&lt;/a&gt;
@@ -7035,10 +7035,10 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
         </item>
         <item>
         <title>C&#43;&#43;面向对象（07） — 对象的内存模型</title>
-        <link>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</link>
+        <link>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</link>
         <pubDate>Sun, 02 Apr 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</guid>
+        <guid>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%95%b0%e6%8d%ae%e6%88%90%e5%91%98%e5%92%8c%e5%87%bd%e6%95%b0%e6%88%90%e5%91%98&#34; &gt;1. &lt;strong&gt;数据成员和函数成员&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%95%b0%e6%8d%ae%e6%88%90%e5%91%98%e7%9a%84%e5%86%85%e5%ad%98%e5%b8%83%e5%b1%80&#34; &gt;2. &lt;strong&gt;数据成员的内存布局&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -7048,7 +7048,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-数据成员和函数成员&#34;&gt;1. &lt;strong&gt;数据成员和函数成员&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;  类是创建对象的模板，不存在于编译后的可执行文件中，而对象是实实在在的数据，需要内存来存储。在创建对象时要为对象分配内存，不同对象的成员变量值不同，所以需要单独分配内存，但成员函数的代码是相同的，所有对象共享同一段函数代码。成员变量在堆区或栈区分配内存，成员函数放在代码区。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B0.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B0.svg&#34;
 	
 	
 	
@@ -7093,7 +7093,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;类C对象的内存布局如下：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B1.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B1.svg&#34;
 	
 	
 	
@@ -7142,7 +7142,7 @@ remove_if(): 	删除容器中满足条件的元素。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B2.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B2.svg&#34;
 	
 	
 	
@@ -7186,7 +7186,7 @@ C::a，C::b遮蔽了A::a，B::b，但是A::a、B::b依然在内存中。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B3.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B3.svg&#34;
 	
 	
 	
@@ -7240,7 +7240,7 @@ C::a，C::b遮蔽了A::a，B::b，但是A::a、B::b依然在内存中。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B4.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A107-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B4.svg&#34;
 	
 	
 	
@@ -7253,10 +7253,10 @@ C::a，C::b遮蔽了A::a，B::b，但是A::a、B::b依然在内存中。&lt;/p&g
         </item>
         <item>
         <title>C&#43;&#43;面向对象（06） — 动态多态与虚函数</title>
-        <link>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/</link>
+        <link>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/</link>
         <pubDate>Sun, 26 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/</guid>
+        <guid>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%99%9a%e5%87%bd%e6%95%b0%e4%b8%8e%e7%ba%af%e8%99%9a%e5%87%bd%e6%95%b0&#34; &gt;1. &lt;strong&gt;虚函数与纯虚函数&lt;/strong&gt;&lt;/a&gt;
 &lt;ul&gt;
@@ -7552,10 +7552,10 @@ C::a，C::b遮蔽了A::a，B::b，但是A::a、B::b依然在内存中。&lt;/p&g
         </item>
         <item>
         <title>C&#43;&#43;面向对象（05） — 类继承中的知识点</title>
-        <link>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+        <link>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
         <pubDate>Sat, 25 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+        <guid>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#3-%e5%9f%ba%e7%b1%bb%e6%8c%87%e9%92%88&#34; &gt;3. &lt;strong&gt;基类指针&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#4-%e4%bd%bf%e7%94%a8using%e6%8f%90%e6%9d%83%e9%99%8d%e6%9d%83&#34; &gt;4. &lt;strong&gt;使用using提权/降权&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -7889,10 +7889,10 @@ C::a，C::b遮蔽了A::a，B::b，但是A::a、B::b依然在内存中。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;  这种结构导致D通过B和C继承了两个独立的A实例，从而引发数据冗余和成员访问二义性。C++提供了&lt;code&gt;虚拟继承&lt;/code&gt;机制，该机制下由派生类D来初始化虚基类A，也就说，由派生类D来调用A的构造函数，B和C调用A的构造函数是无效的，最终D中仅保留一份A的实例，B和C共享该实例。  &lt;br&gt;
   C++标准库中的iostream类就是一个虚继承的实际应用案例。iostream从istream和ostream直接继承而来，而istream和ostream又都继承自一个共同的名为base_ios的类，是典型的菱形继承。此时istream和ostream必须采用虚继承，否则将导致iostream类中保留两份base_ios类的成员。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF.png&#34;
 	width=&#34;590&#34;
 	height=&#34;389&#34;
-	srcset=&#34;https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF_hu_73b53e932c8d1793.png 480w, https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF_hu_575daed4f2b978c8.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF_hu_73b53e932c8d1793.png 480w, http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/%E8%8F%B1%E5%BD%A2%E7%BB%A7%E6%89%BF_hu_575daed4f2b978c8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -7997,10 +7997,10 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
         </item>
         <item>
         <title>C&#43;&#43;面向对象（04）— C&#43;&#43;运算符重载</title>
-        <link>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A104-c-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/</link>
+        <link>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A104-c-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/</link>
         <pubDate>Sat, 18 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A104-c-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/</guid>
+        <guid>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A104-c-%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%b5%8b%e5%80%bc%e8%bf%90%e7%ae%97%e7%ac%a6operator&#34; &gt;1. &lt;strong&gt;赋值运算符“operator=”&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#11-%e6%8b%b7%e8%b4%9d%e8%b5%8b%e5%80%bc&#34; &gt;1.1. &lt;strong&gt;拷贝赋值&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -8176,10 +8176,10 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
         </item>
         <item>
         <title>C&#43;&#43;面向对象（03） — 构造与析构</title>
-        <link>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/</link>
+        <link>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/</link>
         <pubDate>Sun, 12 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/</guid>
+        <guid>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5&#34; &gt;1. &lt;strong&gt;基本概念&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0&#34; &gt;2. &lt;strong&gt;构造函数&lt;/strong&gt;&lt;/a&gt;
@@ -8695,10 +8695,10 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
         </item>
         <item>
         <title>C&#43;&#43;面向对象（02） —  自定义类型</title>
-        <link>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B/</link>
+        <link>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Sat, 11 Mar 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B/</guid>
+        <guid>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A102-%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%9E%8B/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%af%b9%e8%b1%a1%e7%9a%84%e5%88%9d%e5%a7%8b%e5%8c%96&#34; &gt;1. &lt;strong&gt;对象的初始化&lt;/strong&gt;&lt;/a&gt;
 &lt;ul&gt;
@@ -8940,10 +8940,10 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
         </item>
         <item>
         <title>C&#43;&#43;面向对象（01） — 封装、继承、多态</title>
-        <link>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101-%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/</link>
+        <link>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101-%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/</link>
         <pubDate>Thu, 23 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101-%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/</guid>
+        <guid>http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A101-%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%b0%81%e8%a3%85&#34; &gt;1. &lt;strong&gt;封装&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e7%bb%a7%e6%89%bf&#34; &gt;2. &lt;strong&gt;继承&lt;/strong&gt;&lt;/a&gt;
@@ -9047,10 +9047,10 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
         </item>
         <item>
         <title>位域</title>
-        <link>https://zuoco.github.io/p/%E4%BD%8D%E5%9F%9F/</link>
+        <link>http://localhost:1313/p/%E4%BD%8D%E5%9F%9F/</link>
         <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E4%BD%8D%E5%9F%9F/</guid>
+        <guid>http://localhost:1313/p/%E4%BD%8D%E5%9F%9F/</guid>
         <description>&lt;h1 id=&#34;位域&#34;&gt;位域
 &lt;/h1&gt;&lt;p&gt;结构体和类中使用，显式表明对象的成员占用的位数。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -9076,10 +9076,10 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
         </item>
         <item>
         <title>联合体</title>
-        <link>https://zuoco.github.io/p/%E8%81%94%E5%90%88%E4%BD%93/</link>
+        <link>http://localhost:1313/p/%E8%81%94%E5%90%88%E4%BD%93/</link>
         <pubDate>Sun, 19 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E8%81%94%E5%90%88%E4%BD%93/</guid>
+        <guid>http://localhost:1313/p/%E8%81%94%E5%90%88%E4%BD%93/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%81%94%e5%90%88%e4%bd%93&#34; &gt;1. 联合体&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8c%bf%e5%90%8d%e8%81%94%e5%90%88%e4%bd%93&#34; &gt;2. 匿名联合体&lt;/a&gt;&lt;/li&gt;
@@ -9161,10 +9161,10 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
         </item>
         <item>
         <title>枚举</title>
-        <link>https://zuoco.github.io/p/%E6%9E%9A%E4%B8%BE/</link>
+        <link>http://localhost:1313/p/%E6%9E%9A%E4%B8%BE/</link>
         <pubDate>Sun, 19 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E6%9E%9A%E4%B8%BE/</guid>
+        <guid>http://localhost:1313/p/%E6%9E%9A%E4%B8%BE/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%9e%9a%e4%b8%be&#34; &gt;1. 枚举&lt;/a&gt;
 &lt;ol&gt;

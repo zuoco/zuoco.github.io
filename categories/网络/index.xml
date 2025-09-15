@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>网络 on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C/</link>
+        <link>http://localhost:1313/categories/%E7%BD%91%E7%BB%9C/</link>
         <description>Recent content in 网络 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux 虚拟网络</title>
-        <link>https://zuoco.github.io/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</link>
+        <link>http://localhost:1313/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</link>
         <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</guid>
+        <guid>http://localhost:1313/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-linux-bridge&#34; &gt;1. Linux Bridge&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-linux-bond&#34; &gt;2. Linux Bond&lt;/a&gt;&lt;/li&gt;
@@ -38,10 +38,10 @@
         </item>
         <item>
         <title>Linux异步IO（01） — EPOLL</title>
-        <link>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</link>
+        <link>http://localhost:1313/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</link>
         <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</guid>
+        <guid>http://localhost:1313/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-epoll%e5%8e%9f%e7%90%86%e4%bb%8b%e7%bb%8d&#34; &gt;1. EPOLL原理介绍&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-epoll%e4%bd%bf%e7%94%a8&#34; &gt;2. EPOLL使用&lt;/a&gt;
@@ -254,10 +254,10 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>Linux网络管理（03） — tcpdump抓包</title>
-        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</link>
+        <link>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</link>
         <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</guid>
+        <guid>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</guid>
         <description>&lt;h1 id=&#34;1-基本命令选项&#34;&gt;1. 基本命令选项
 &lt;/h1&gt;&lt;table&gt;
   &lt;thead&gt;
@@ -397,10 +397,10 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>Linux网络管理（02） — Network Manager</title>
-        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</link>
+        <link>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</link>
         <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</guid>
+        <guid>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</guid>
         <description>&lt;h1 id=&#34;1-network-manager网络管理工具&#34;&gt;1. Network-Manager网络管理工具
 &lt;/h1&gt;&lt;p&gt;在Debian系统中，NetworkManager（NM） 是一个功能强大的网络管理工具，支持有线、无线、VPN、代理等多种网络连接方式。&lt;/p&gt;
 &lt;h2 id=&#34;11-安装networkmanager&#34;&gt;1.1. 安装NetworkManager
@@ -474,10 +474,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出(CONNECTION 列显示当前使用的连接配置)：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status.bmp&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status.bmp&#34;
 	width=&#34;1173&#34;
 	height=&#34;287&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_3b808834d5e87588.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_8b72dd48c2d5d385.bmp 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_3b808834d5e87588.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_8b72dd48c2d5d385.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -496,10 +496,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出(IN-USE 标记 * 表示当前已连接的网络)：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list.bmp&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list.bmp&#34;
 	width=&#34;1541&#34;
 	height=&#34;410&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_495371c566f7012e.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_8348cb87ebec241e.bmp 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_495371c566f7012e.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_8348cb87ebec241e.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -526,10 +526,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli connection show
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status.bmp&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status.bmp&#34;
 	width=&#34;1382&#34;
 	height=&#34;362&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_61b3a888cc80a559.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_8cefa13ea190d44f.bmp 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_61b3a888cc80a559.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_8cefa13ea190d44f.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -562,10 +562,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
         </item>
         <item>
         <title>Linux网络管理（01） — 常用网络命令</title>
-        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</link>
+        <link>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</guid>
+        <guid>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;1-iproute2&#34;&gt;1. iproute2
 &lt;/h1&gt;&lt;p&gt;ip命令全称iproute2，&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; &lt;code&gt;查看所有网卡的状态&lt;/code&gt;&lt;/p&gt;
@@ -578,10 +578,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
 	width=&#34;1853&#34;
 	height=&#34;638&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -616,10 +616,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip -s link show eth0
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0.png&#34;
 	width=&#34;2508&#34;
 	height=&#34;375&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_8177b3380af5e02d.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_3fea5a7a16891152.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_8177b3380af5e02d.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_3fea5a7a16891152.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -654,10 +654,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 略&amp;hellip;&amp;hellip;&lt;/p&gt;
 &lt;h1 id=&#34;2-netstat&#34;&gt;2. netstat
 &lt;/h1&gt;&lt;p&gt;查看网络连接状态, 先看一下命令的默认输出：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2.png&#34;
 	width=&#34;1882&#34;
 	height=&#34;1083&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_765006fe5511afed.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_a6a5131b5399f4c5.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_765006fe5511afed.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_a6a5131b5399f4c5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -667,10 +667,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 默认情况下，对于一些有别名的 ip 地址和端口号 netstat 会显示别名，例如127.0.0.1显示localhost，80端口会显示成http，如果我们想要的是原始IP地址，可以使用-n参数。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3.png&#34;
 	width=&#34;1882&#34;
 	height=&#34;754&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_8d182fdfe505ecdf.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_edd16a229ed3221d.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_8d182fdfe505ecdf.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_edd16a229ed3221d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -708,10 +708,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;3-lsof&#34;&gt;3. lsof
 &lt;/h1&gt;&lt;p&gt;list opened filedesciptor，在Linux系统中，所有的与资源句柄相关的东西都可以统一抽象成文件描述符。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1.png&#34;
 	width=&#34;1701&#34;
 	height=&#34;271&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_905002137cfdaf85.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_c08405377156592a.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_905002137cfdaf85.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_c08405377156592a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -750,10 +750,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;发送数据&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;服务端： &lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1.png&#34;
 	width=&#34;841&#34;
 	height=&#34;187&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_bce24a1c70ac2a48.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_8c37ccf6f7e9215a.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_bce24a1c70ac2a48.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_8c37ccf6f7e9215a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -763,10 +763,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 &lt;code&gt;客户端： &lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2.png&#34;
 	width=&#34;980&#34;
 	height=&#34;187&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_1c0fd1c15c21f4ec.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_929749709fafec5d.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_1c0fd1c15c21f4ec.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_929749709fafec5d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -776,10 +776,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 &lt;code&gt;发送数据: &lt;/code&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3.png&#34;
 	width=&#34;1750&#34;
 	height=&#34;633&#34;
-	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_23b43c3f949ed182.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_802d9632d6b30e62.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_23b43c3f949ed182.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_802d9632d6b30e62.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

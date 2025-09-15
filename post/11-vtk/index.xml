@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《VTK》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/11-vtk/</link>
+        <link>http://localhost:1313/post/11-vtk/</link>
         <description>Recent content in 《VTK》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/11-vtk/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/11-vtk/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>第一个 VTK Demo</title>
-        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</link>
+        <link>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</link>
         <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</guid>
+        <guid>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%a4%e8%af%86-vtk-%e6%b8%b2%e6%9f%93%e7%ae%a1%e7%ba%bf&#34; &gt;1. 认识 VTK 渲染管线&lt;/a&gt;
 &lt;ul&gt;
@@ -68,10 +68,10 @@
 &lt;/table&gt;
 &lt;h3 id=&#34;11-使用-c-api-渲染圆锥体&#34;&gt;1.1. 使用 C++ API 渲染圆锥体
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;我们看一个简单的Demo&lt;/strong&gt; ：  &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone.png&#34;
 	width=&#34;1768&#34;
 	height=&#34;1061&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_b32aab62c21aace6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_1c117ce18e2d9cad.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_b32aab62c21aace6.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_1c117ce18e2d9cad.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -200,10 +200,10 @@
 &lt;code&gt;vtkCamera* GetActiveCamera();&lt;/code&gt;获取当前渲染器的活动相机。&lt;br&gt;
 &lt;code&gt;void Azimuth(viskores::Float32 angleDegrees);&lt;/code&gt;旋转相机水平时视角。&lt;br&gt;
 既然有&lt;code&gt;水平视角&lt;/code&gt;，那么就有&lt;code&gt;垂直视角&lt;/code&gt;和&lt;code&gt;旋转&lt;/code&gt;，他们的关系如图： &lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera.png&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera.png&#34;
 	width=&#34;1356&#34;
 	height=&#34;904&#34;
-	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_389f75b1ab34ede6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_b7b91b677180cf8.png 1024w&#34;
+	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_389f75b1ab34ede6.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_b7b91b677180cf8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

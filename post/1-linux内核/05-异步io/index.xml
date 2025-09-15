@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《异步IO》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/05-%E5%BC%82%E6%AD%A5io/</link>
+        <link>http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/05-%E5%BC%82%E6%AD%A5io/</link>
         <description>Recent content in 《异步IO》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/05-%E5%BC%82%E6%AD%A5io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 12 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/05-%E5%BC%82%E6%AD%A5io/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux异步IO（01） — EPOLL</title>
-        <link>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</link>
+        <link>http://localhost:1313/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</link>
         <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</guid>
+        <guid>http://localhost:1313/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-epoll%e5%8e%9f%e7%90%86%e4%bb%8b%e7%bb%8d&#34; &gt;1. EPOLL原理介绍&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-epoll%e4%bd%bf%e7%94%a8&#34; &gt;2. EPOLL使用&lt;/a&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>DeskFlow on 阿左笔记</title>
-        <link>https://zuoco.github.io/categories/deskflow/</link>
+        <link>http://localhost:1313/categories/deskflow/</link>
         <description>Recent content in DeskFlow on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/deskflow/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 02 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/deskflow/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Deskflow 项目功能和整体架构介绍</title>
-        <link>https://zuoco.github.io/p/deskflow-%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E5%92%8C%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</link>
+        <link>http://localhost:1313/p/deskflow-%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E5%92%8C%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</link>
         <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E5%92%8C%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E9%A1%B9%E7%9B%AE%E5%8A%9F%E8%83%BD%E5%92%8C%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%8a%9f%e8%83%bd%e4%bb%8b%e7%bb%8d&#34; &gt;1. 功能介绍&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%95%b4%e4%bd%93%e6%9e%b6%e6%9e%84%e4%b8%8e%e6%a8%a1%e5%9d%97%e5%8c%96%e8%ae%be%e8%ae%a1&#34; &gt;2. 整体架构与模块化设计&lt;/a&gt;&lt;/li&gt;
@@ -167,10 +167,10 @@
         </item>
         <item>
         <title>DeskFlow 异步网络接口（03） —  多路复用器设计</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8%e5%99%a8&#34; &gt;1. &lt;strong&gt;多路复用器&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8%e5%99%a8%e4%bb%bb%e5%8a%a1&#34; &gt;2. &lt;strong&gt;多路复用器任务&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -520,10 +520,10 @@
         </item>
         <item>
         <title>DeskFlow 异步网络接口（02） — 网络接口的工厂类</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</link>
         <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e7%b1%bb&#34; &gt;1. &lt;strong&gt;抽象工厂类&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%b7%a5%e5%8e%82%e7%b1%bb%e7%9a%84%e5%ae%9e%e7%8e%b0&#34; &gt;2. &lt;strong&gt;工厂类的实现&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -818,10 +818,10 @@
         </item>
         <item>
         <title>DeskFlow 异步网络接口（01） — 套接字封装</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</link>
         <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%95%b4%e4%bd%93%e8%ae%be%e8%ae%a1&#34; &gt;1. &lt;strong&gt;整体设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e7%b1%bb%e5%9e%8b%e8%ae%be%e8%ae%a1&#34; &gt;2. &lt;strong&gt;类型设计&lt;/strong&gt;&lt;/a&gt;
@@ -857,7 +857,7 @@
 &lt;li&gt;&lt;code&gt;工厂模式&lt;/code&gt;： 通过ISocketFactory创建不同的网络套接字。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;事件机制&lt;/code&gt;： 接收的网络数据保存到缓冲区，然后通过事件通过业务层数据已到达。同时事件机制也要处理一些网络异常事件。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97.svg&#34;
 	
 	
 	
@@ -866,7 +866,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h1 id=&#34;2-类型设计&#34;&gt;2. &lt;strong&gt;类型设计&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97%E7%B1%BB%E5%9E%8B.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97%E7%B1%BB%E5%9E%8B.svg&#34;
 	
 	
 	
@@ -1440,10 +1440,10 @@
         </item>
         <item>
         <title>DeskFlow 事件框架（02） — 代码解释</title>
-        <link>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</link>
+        <link>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</link>
         <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%ba%8b%e4%bb%b6%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84&#34; &gt;1. &lt;strong&gt;事件的基本结构&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%ba%8b%e4%bb%b6%e9%98%9f%e5%88%97%e7%9a%84%e5%ae%9e%e7%8e%b0&#34; &gt;2. &lt;strong&gt;事件队列的实现&lt;/strong&gt;&lt;/a&gt;
@@ -1963,10 +1963,10 @@
         </item>
         <item>
         <title>DeskFlow 事件框架（01） — 整体设计</title>
-        <link>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%be%e8%ae%a1%e6%80%9d%e8%b7%af&#34; &gt;1. &lt;strong&gt;设计思路&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b8%e5%bf%83%e7%b1%bb%e5%9e%8b&#34; &gt;2. &lt;strong&gt;核心类型&lt;/strong&gt;&lt;/a&gt;
@@ -1989,7 +1989,7 @@
 &lt;li&gt;IEventQueueBuffer，队列的底层实现，封装实际的平台操作，这是一个抽象类，所以需要每种操作系统提供对应的派生类实现。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;2-核心类型&#34;&gt;2. &lt;strong&gt;核心类型&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97.svg&#34;
 	
 	
 	
@@ -2237,10 +2237,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 多线程框架（03） — 互斥量与条件变量</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</link>
         <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%ba%92%e6%96%a5%e9%87%8f%e5%ae%9e%e4%bd%93&#34; &gt;1. &lt;strong&gt;互斥量实体&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%9d%a1%e4%bb%b6%e5%8f%98%e9%87%8f%e5%ae%9e%e4%bd%93&#34; &gt;2. &lt;strong&gt;条件变量实体&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -2551,10 +2551,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 多线程框架（02） — 线程对象管理</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</link>
         <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%80%bb%e4%bd%93%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1&#34; &gt;1. &lt;strong&gt;总体架构设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b8%e5%bf%83%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99&#34; &gt;2. &lt;strong&gt;核心设计原则&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -3046,10 +3046,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 多线程框架（01） — 异步任务的封装</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</link>
         <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%a0%b8%e5%bf%83%e6%8e%a5%e5%8f%a3%e8%ae%be%e8%ae%a1&#34; &gt;1. &lt;strong&gt;核心接口设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%85%b7%e4%bd%93%e5%ae%9e%e7%8e%b0%e7%b1%bb%e5%9e%8b&#34; &gt;2. &lt;strong&gt;具体实现类型&lt;/strong&gt;&lt;/a&gt;
@@ -3220,10 +3220,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 跨平台抽象层（07） — 字符编码</title>
-        <link>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8207-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+        <link>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8207-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
         <pubDate>Sun, 22 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8207-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8207-%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
         <description>&lt;h1 id=&#34;功能概述&#34;&gt;&lt;strong&gt;功能概述&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;ArchString 主要负责提供跨平台的字符编码功能，ArchString的核心功能包括：&lt;/p&gt;
 &lt;ul&gt;
@@ -3314,10 +3314,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 跨平台抽象层之（05） — 守护进程</title>
-        <link>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B05-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</link>
+        <link>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B05-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</link>
         <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B05-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B05-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%ae%88%e6%8a%a4%e8%bf%9b%e7%a8%8b%e8%ae%be%e8%ae%a1&#34; &gt;1. &lt;strong&gt;守护进程设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%8e%a5%e5%8f%a3%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd&#34; &gt;2. &lt;strong&gt;接口主要功能&lt;/strong&gt;&lt;/a&gt;
@@ -3337,7 +3337,7 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-守护进程设计&#34;&gt;1. &lt;strong&gt;守护进程设计&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B05-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%82%E4%B9%8B05-%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B/%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B.svg&#34;
 	
 	
 	
@@ -3510,10 +3510,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 跨平台抽象层（03） — 网络模块</title>
-        <link>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8203-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/</link>
+        <link>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8203-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/</link>
         <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8203-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8203-%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%be%e8%ae%a1%e6%80%9d%e8%b7%af&#34; &gt;1. &lt;strong&gt;设计思路&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%bb%a3%e7%a0%81%e8%ae%be%e8%ae%a1&#34; &gt;2. &lt;strong&gt;代码设计&lt;/strong&gt;&lt;/a&gt;
@@ -3844,10 +3844,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 跨平台抽象层（04） — 线程模块</title>
-        <link>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8204-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/</link>
+        <link>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8204-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/</link>
         <pubDate>Sat, 14 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8204-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8204-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%a4%9a%e7%ba%bf%e7%a8%8b%e6%a1%86%e6%9e%b6%e8%ae%be%e8%ae%a1%e6%80%9d%e8%b7%af&#34; &gt;1. &lt;strong&gt;多线程框架设计思路&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%b8%8d%e9%80%8f%e6%98%8e%e7%b1%bb%e5%9e%8b%e8%ae%be%e8%ae%a1&#34; &gt;2. &lt;strong&gt;不透明类型设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -3861,7 +3861,7 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-多线程框架设计思路&#34;&gt;1. &lt;strong&gt;多线程框架设计思路&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;  IArchMultithread是Deskflow中多线程功能的核心抽象接口，IArchMultithread是一个纯虚拟接口，承自IInterface，提供了线程管理、互斥锁、条件变量和信号处理等核心功能。&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8204-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/multi-thread.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8204-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9D%97/multi-thread.svg&#34;
 	
 	
 	
@@ -4254,10 +4254,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 跨平台抽象层（02） — Arch单例类</title>
-        <link>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8202-arch%E5%8D%95%E4%BE%8B%E7%B1%BB/</link>
+        <link>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8202-arch%E5%8D%95%E4%BE%8B%E7%B1%BB/</link>
         <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8202-arch%E5%8D%95%E4%BE%8B%E7%B1%BB/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8202-arch%E5%8D%95%E4%BE%8B%E7%B1%BB/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-arch%e7%b1%bb%e7%9a%84%e5%ae%9a%e4%b9%89&#34; &gt;1. &lt;strong&gt;Arch类的定义&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-arch%e7%b1%bb%e7%9a%84%e5%ae%9e%e7%8e%b0&#34; &gt;2. &lt;strong&gt;Arch类的实现&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -4485,10 +4485,10 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
         </item>
         <item>
         <title>DeskFlow 跨平台抽象层（01） — 整体设计</title>
-        <link>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8201-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8201-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sat, 07 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8201-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8201-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%b7%a8%e5%b9%b3%e5%8f%b0%e6%a1%86%e6%9e%b6&#34; &gt;1. &lt;strong&gt;跨平台框架&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e8%b7%a8%e5%b9%b3%e5%8f%b0%e6%8e%a5%e5%8f%a3%e5%9f%ba%e7%b1%bb&#34; &gt;2. &lt;strong&gt;跨平台接口基类&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -4498,7 +4498,7 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#6-%e5%ae%8f%e5%ae%9a%e4%b9%89%e6%98%a0%e5%b0%84%e7%b3%bb%e7%bb%9f&#34; &gt;6. &lt;strong&gt;宏定义映射系统&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-跨平台框架&#34;&gt;1. &lt;strong&gt;跨平台框架&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8201-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%BD%E8%B1%A1%E5%B1%8201-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%B3%BB%E7%BB%9F%E6%8E%A5%E5%8F%A3.svg&#34;
 	
 	
 	

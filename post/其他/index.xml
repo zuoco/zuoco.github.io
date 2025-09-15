@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>其他 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/</link>
+        <link>http://localhost:1313/post/%E5%85%B6%E4%BB%96/</link>
         <description>Recent content in 其他 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 28 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>资源</title>
-        <link>https://zuoco.github.io/p/%E8%B5%84%E6%BA%90/</link>
+        <link>http://localhost:1313/p/%E8%B5%84%E6%BA%90/</link>
         <pubDate>Sun, 28 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E8%B5%84%E6%BA%90/</guid>
+        <guid>http://localhost:1313/p/%E8%B5%84%E6%BA%90/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://cppinsights.io/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -78,10 +78,10 @@
         </item>
         <item>
         <title>使用Git管理软件开发以及冲突解决</title>
-        <link>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</link>
+        <link>http://localhost:1313/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</link>
         <pubDate>Mon, 03 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</guid>
+        <guid>http://localhost:1313/p/%E4%BD%BF%E7%94%A8git%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%BB%A5%E5%8F%8A%E5%86%B2%E7%AA%81%E8%A7%A3%E5%86%B3/</guid>
         <description>&lt;h1 id=&#34;分支管理&#34;&gt;分支管理
 &lt;/h1&gt;&lt;p&gt;&lt;code&gt;master分支&lt;/code&gt;:&lt;br&gt;
 用于生产环境的部署，不允许直接push分支，由release分支或者hotfix分支合并。&lt;/p&gt;
@@ -154,10 +154,10 @@
         </item>
         <item>
         <title>Git基本使用</title>
-        <link>https://zuoco.github.io/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
+        <link>http://localhost:1313/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</link>
         <pubDate>Fri, 03 Jun 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
+        <guid>http://localhost:1313/p/git%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5&#34; &gt;1. 基本概念&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-git%e7%9a%84%e9%85%8d%e7%bd%ae&#34; &gt;2. Git的配置&lt;/a&gt;&lt;/li&gt;

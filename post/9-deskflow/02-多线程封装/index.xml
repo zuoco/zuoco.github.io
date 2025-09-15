@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>02 《线程模型》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/9-deskflow/02-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B0%81%E8%A3%85/</link>
+        <link>http://localhost:1313/post/9-deskflow/02-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B0%81%E8%A3%85/</link>
         <description>Recent content in 02 《线程模型》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/9-deskflow/02-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B0%81%E8%A3%85/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 05 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/9-deskflow/02-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B0%81%E8%A3%85/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>DeskFlow 多线程框架（03） — 互斥量与条件变量</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</link>
         <pubDate>Sat, 05 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B603-%E4%BA%92%E6%96%A5%E9%87%8F%E4%B8%8E%E6%9D%A1%E4%BB%B6%E5%8F%98%E9%87%8F/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%ba%92%e6%96%a5%e9%87%8f%e5%ae%9e%e4%bd%93&#34; &gt;1. &lt;strong&gt;互斥量实体&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%9d%a1%e4%bb%b6%e5%8f%98%e9%87%8f%e5%ae%9e%e4%bd%93&#34; &gt;2. &lt;strong&gt;条件变量实体&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -323,10 +323,10 @@
         </item>
         <item>
         <title>DeskFlow 多线程框架（02） — 线程对象管理</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</link>
         <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B602-%E7%BA%BF%E7%A8%8B%E5%AF%B9%E8%B1%A1%E7%AE%A1%E7%90%86/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%80%bb%e4%bd%93%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1&#34; &gt;1. &lt;strong&gt;总体架构设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b8%e5%bf%83%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99&#34; &gt;2. &lt;strong&gt;核心设计原则&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -818,10 +818,10 @@
         </item>
         <item>
         <title>DeskFlow 多线程框架（01） — 异步任务的封装</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</link>
         <pubDate>Sat, 28 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%A1%86%E6%9E%B601-%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%a0%b8%e5%bf%83%e6%8e%a5%e5%8f%a3%e8%ae%be%e8%ae%a1&#34; &gt;1. &lt;strong&gt;核心接口设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%85%b7%e4%bd%93%e5%ae%9e%e7%8e%b0%e7%b1%bb%e5%9e%8b&#34; &gt;2. &lt;strong&gt;具体实现类型&lt;/strong&gt;&lt;/a&gt;

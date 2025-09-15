@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>04 《异步网络模型》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/9-deskflow/04-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%8E%82/</link>
+        <link>http://localhost:1313/post/9-deskflow/04-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%8E%82/</link>
         <description>Recent content in 04 《异步网络模型》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/9-deskflow/04-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%8E%82/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 20 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/9-deskflow/04-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E5%B7%A5%E5%8E%82/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>DeskFlow 异步网络接口（03） —  多路复用器设计</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sun, 20 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A303-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8%E5%99%A8%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8%e5%99%a8&#34; &gt;1. &lt;strong&gt;多路复用器&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%a4%9a%e8%b7%af%e5%a4%8d%e7%94%a8%e5%99%a8%e4%bb%bb%e5%8a%a1&#34; &gt;2. &lt;strong&gt;多路复用器任务&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -362,10 +362,10 @@
         </item>
         <item>
         <title>DeskFlow 异步网络接口（02） — 网络接口的工厂类</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</link>
         <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e7%b1%bb&#34; &gt;1. &lt;strong&gt;抽象工厂类&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%b7%a5%e5%8e%82%e7%b1%bb%e7%9a%84%e5%ae%9e%e7%8e%b0&#34; &gt;2. &lt;strong&gt;工厂类的实现&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -660,10 +660,10 @@
         </item>
         <item>
         <title>DeskFlow 异步网络接口（01） — 套接字封装</title>
-        <link>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</link>
+        <link>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</link>
         <pubDate>Sun, 13 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</guid>
+        <guid>http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%95%b4%e4%bd%93%e8%ae%be%e8%ae%a1&#34; &gt;1. &lt;strong&gt;整体设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e7%b1%bb%e5%9e%8b%e8%ae%be%e8%ae%a1&#34; &gt;2. &lt;strong&gt;类型设计&lt;/strong&gt;&lt;/a&gt;
@@ -699,7 +699,7 @@
 &lt;li&gt;&lt;code&gt;工厂模式&lt;/code&gt;： 通过ISocketFactory创建不同的网络套接字。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;事件机制&lt;/code&gt;： 接收的网络数据保存到缓冲区，然后通过事件通过业务层数据已到达。同时事件机制也要处理一些网络异常事件。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97.svg&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97.svg&#34;
 	
 	
 	
@@ -708,7 +708,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;h1 id=&#34;2-类型设计&#34;&gt;2. &lt;strong&gt;类型设计&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97%E7%B1%BB%E5%9E%8B.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A301-%E5%A5%97%E6%8E%A5%E5%AD%97%E5%B0%81%E8%A3%85/%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9D%97%E7%B1%BB%E5%9E%8B.svg&#34;
 	
 	
 	

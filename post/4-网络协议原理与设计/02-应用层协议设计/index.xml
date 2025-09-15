@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>&gt;&gt; 网络协议设计 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/4-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
+        <link>http://localhost:1313/post/4-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/</link>
         <description>Recent content in &gt;&gt; 网络协议设计 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/4-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 23 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/4-%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/02-%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>应用层协议设计的总结</title>
-        <link>https://zuoco.github.io/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/</link>
+        <link>http://localhost:1313/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/</link>
         <pubDate>Wed, 23 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
+        <guid>http://localhost:1313/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b5%81%e5%bc%8f%e5%8d%8f%e8%ae%ae&#34; &gt;1. &lt;strong&gt;流式协议&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%b5%81%e7%9a%84%e8%be%b9%e7%95%8c&#34; &gt;2. &lt;strong&gt;流的边界&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -36,7 +36,7 @@
 &lt;/h1&gt;&lt;p&gt;  应用层协议设计要和网络传输层解耦，协议层提供读写报文的回调函数的声明，但是函数实现交给由业务层完成，业务层需要将设计好的读写函数注册给协议层。协议层需要读写数据时直接调用读写函数即可。但是要注意，协议的读写回调需要使用非阻塞方式实现。一般情况下，网络部分也是独立的模块，业务层通过网络模块接收网络数据并将数据保存到缓存区中，然后将缓存区的使用权移交给协议层，同样协议层需要发送数据时，也要将报文的缓存区使用权移交给网络模块。&lt;/p&gt;
 &lt;h2 id=&#34;31-报文设计&#34;&gt;3.1. &lt;strong&gt;报文设计&lt;/strong&gt;
 &lt;/h2&gt;&lt;p&gt;报文一般会分为&lt;code&gt;控制报文&lt;/code&gt;和&lt;code&gt;数据报文&lt;/code&gt;。控制报文用于处理设备连接/断开、配置管理、流控制等，数据报文用于传输各种数据，报文大概的结构如下：&lt;br&gt;
-&lt;img src=&#34;https://zuoco.github.io/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.svg&#34;
+&lt;img src=&#34;http://localhost:1313/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84.svg&#34;
 	
 	
 	

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《进程间通信》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/07-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</link>
+        <link>http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/07-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/</link>
         <description>Recent content in 《进程间通信》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/07-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/07-%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Linux进程间通信（02） — Unix-Socket</title>
-        <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</link>
+        <link>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</guid>
+        <guid>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</guid>
         <description>&lt;p&gt;Unix Socket（Unix域套接字）是一种用于 本地进程间通信的机制。它与网络 Socket 不同，不需要通过网络协议栈，而是通过文件系统实现进程间的通信。和网络Socket一样，也提供&lt;code&gt;流式套接字&lt;/code&gt;和&lt;code&gt;数据报套接字&lt;/code&gt;。API接口的网络套接字是一样的，&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 服务器&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -174,10 +174,10 @@
         </item>
         <item>
         <title>Linux进程间通信（01） — 信号</title>
-        <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</link>
+        <link>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</link>
         <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</guid>
+        <guid>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b3%a8%e5%86%8c%e4%bf%a1%e5%8f%b7%e5%a4%84%e7%90%86%e5%99%a8&#34; &gt;1. &lt;strong&gt;注册信号处理器&lt;/strong&gt;&lt;/a&gt;
 &lt;ul&gt;

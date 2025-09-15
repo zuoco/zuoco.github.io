@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《 C&#43;&#43;多线程 》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/6-c&#43;&#43;/02-%E6%A0%87%E5%87%86%E5%BA%93/07-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
+        <link>http://localhost:1313/post/6-c&#43;&#43;/02-%E6%A0%87%E5%87%86%E5%BA%93/07-%E5%A4%9A%E7%BA%BF%E7%A8%8B/</link>
         <description>Recent content in 《 C&#43;&#43;多线程 》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 07 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/6-c++/02-%E6%A0%87%E5%87%86%E5%BA%93/07-%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 07 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/6-c++/02-%E6%A0%87%E5%87%86%E5%BA%93/07-%E5%A4%9A%E7%BA%BF%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>C&#43;&#43; 多线程中的同步方法</title>
-        <link>https://zuoco.github.io/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</link>
+        <link>http://localhost:1313/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</link>
         <pubDate>Wed, 07 Feb 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</guid>
+        <guid>http://localhost:1313/p/c-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%90%8C%E6%AD%A5%E6%96%B9%E6%B3%95/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%ba%bf%e7%a8%8b%e5%90%8c%e6%ad%a5&#34; &gt;1. 线程同步&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%ba%92%e6%96%a5%e9%94%81-stdmutex&#34; &gt;2. 互斥锁 (std::mutex)&lt;/a&gt;&lt;/li&gt;
@@ -459,10 +459,10 @@
         </item>
         <item>
         <title>std::thread</title>
-        <link>https://zuoco.github.io/p/stdthread/</link>
+        <link>http://localhost:1313/p/stdthread/</link>
         <pubDate>Sat, 03 Feb 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/stdthread/</guid>
+        <guid>http://localhost:1313/p/stdthread/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa%e7%ba%bf%e7%a8%8b%e5%af%b9%e8%b1%a1&#34; &gt;1. &lt;strong&gt;创建一个线程对象&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%9b%e5%bb%ba%e5%b8%a6%e5%8f%82%e6%95%b0thread%e5%af%b9%e8%b1%a1&#34; &gt;2. &lt;strong&gt;创建带参数thread对象&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;

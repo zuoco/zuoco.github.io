@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>06《 包管理器 》 on 阿左笔记</title>
-        <link>https://zuoco.github.io/post/6-c&#43;&#43;/06-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
+        <link>http://localhost:1313/post/6-c&#43;&#43;/06-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/</link>
         <description>Recent content in 06《 包管理器 》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 31 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/6-c++/06-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 31 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/6-c++/06-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>C&#43;&#43;包管理器之vcpkg</title>
-        <link>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
+        <link>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</link>
         <pubDate>Wed, 31 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://zuoco.github.io/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
+        <guid>http://localhost:1313/p/c-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8Bvcpkg/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-vcpkg&#34; &gt;1. vcpkg&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%ae%89%e8%a3%85&#34; &gt;2. 安装&lt;/a&gt;&lt;/li&gt;
