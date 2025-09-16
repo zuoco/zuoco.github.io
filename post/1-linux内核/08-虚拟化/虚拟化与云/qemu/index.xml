@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《Qemu》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/qemu/</link>
+        <link>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/qemu/</link>
         <description>Recent content in 《Qemu》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Tue, 12 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/qemu/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/08-%E8%99%9A%E6%8B%9F%E5%8C%96/%E8%99%9A%E6%8B%9F%E5%8C%96%E4%B8%8E%E4%BA%91/qemu/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Qemu对象模型（QOM）</title>
-        <link>http://localhost:1313/p/qemu%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8Bqom/</link>
+        <link>https://zuoco.github.io/p/qemu%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8Bqom/</link>
         <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/qemu%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8Bqom/</guid>
+        <guid>https://zuoco.github.io/p/qemu%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8Bqom/</guid>
         <description>&lt;h1 id=&#34;1-qemu类型系统&#34;&gt;1. Qemu类型系统
 &lt;/h1&gt;&lt;p&gt;Qemu目前主要是C语言编写（有少量Rust），C语言没有语言层面的面向对象支持，所以Qemu开发团队就为Qemu设计了一套对象系统，我们本专题要讲的就是Qemu的对象系统。&lt;br&gt;
 在Qemu代码中，我们经常看到如下代码：&lt;/p&gt;

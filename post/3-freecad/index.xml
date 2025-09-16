@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>&lt;FreeCAD&gt; on 阿左笔记</title>
-        <link>http://localhost:1313/post/3-freecad/</link>
+        <link>https://zuoco.github.io/post/3-freecad/</link>
         <description>Recent content in &lt;FreeCAD&gt; on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/3-freecad/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 20 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/3-freecad/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>FreeCAD-MCP，通过AI助手来操作FreeCAD</title>
-        <link>http://localhost:1313/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</link>
+        <link>https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</link>
         <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</guid>
+        <guid>https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/</guid>
         <description>&lt;p&gt;  今天介绍一个开源项目——&lt;a class=&#34;link&#34; href=&#34;https://github.com/neka-nat/freecad-mcp&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;FreeCAD-MCP&lt;/a&gt;，这是一个集成了MCP的FreeCAD控制方案，将AI助手与3D建模软件结合起来，用户可以通过描述需求控制FreeCAD生成3D模型，还支持从2D图纸生成3D模型，支持迭代设计细化，也就是可以请求对现有设计进行修改并实时查看更改。&lt;/p&gt;
 &lt;p&gt;该项目的整体架构如下：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/freecad-mcp.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/freecad-mcp%E9%80%9A%E8%BF%87ai%E5%8A%A9%E6%89%8B%E6%9D%A5%E6%93%8D%E4%BD%9Cfreecad/freecad-mcp.svg&#34;
 	
 	
 	
@@ -142,10 +142,10 @@
         </item>
         <item>
         <title>FreeCAD（07）— 工作台</title>
-        <link>http://localhost:1313/p/freecad07-%E5%B7%A5%E4%BD%9C%E5%8F%B0/</link>
+        <link>https://zuoco.github.io/p/freecad07-%E5%B7%A5%E4%BD%9C%E5%8F%B0/</link>
         <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad07-%E5%B7%A5%E4%BD%9C%E5%8F%B0/</guid>
+        <guid>https://zuoco.github.io/p/freecad07-%E5%B7%A5%E4%BD%9C%E5%8F%B0/</guid>
         <description>&lt;p&gt;Workbench是FreeCAD模块提供的工作台实现，工作台就是一组功能的集合，例如“零件建模工作台”、“CAM工作台”、“装配体工作台”。它定义了哪些GUI元素（如工具栏、菜单）会被添加到主窗口中，以及哪些会被移除或隐藏。当一个workbench对象首次被激活时，它所代表的模块会被加载到RAM中。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%b7%a5%e4%bd%9c%e5%8f%b0%e5%9f%ba%e7%b1%bb--guiworkbench&#34; &gt;1. 工作台基类 — Gui::Workbench&lt;/a&gt;&lt;/li&gt;
@@ -508,10 +508,10 @@
         </item>
         <item>
         <title>FreeCAD（06）— Python与C&#43;&#43;互操作</title>
-        <link>http://localhost:1313/p/freecad06-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/</link>
+        <link>https://zuoco.github.io/p/freecad06-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/</link>
         <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad06-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/</guid>
+        <guid>https://zuoco.github.io/p/freecad06-python%E4%B8%8Ec-%E4%BA%92%E6%93%8D%E4%BD%9C/</guid>
         <description>&lt;p&gt;先简单梳理一下，以后慢慢研究。&lt;/p&gt;
 &lt;h1 id=&#34;freecad的python绑定机制&#34;&gt;FreeCAD的Python绑定机制
 &lt;/h1&gt;&lt;h2 id=&#34;1-基础架构pyobjectbase&#34;&gt;1. 基础架构：PyObjectBase
@@ -579,10 +579,10 @@ Py_Header宏：&lt;/p&gt;
         </item>
         <item>
         <title>FreeCAD（05） — Python模块初始化</title>
-        <link>http://localhost:1313/p/freecad05-python%E6%A8%A1%E5%9D%97%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
+        <link>https://zuoco.github.io/p/freecad05-python%E6%A8%A1%E5%9D%97%E5%88%9D%E5%A7%8B%E5%8C%96/</link>
         <pubDate>Sat, 09 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad05-python%E6%A8%A1%E5%9D%97%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
+        <guid>https://zuoco.github.io/p/freecad05-python%E6%A8%A1%E5%9D%97%E5%88%9D%E5%A7%8B%E5%8C%96/</guid>
         <description>&lt;table&gt;
   &lt;thead&gt;
       &lt;tr&gt;
@@ -866,10 +866,10 @@ Py_Header宏：&lt;/p&gt;
         </item>
         <item>
         <title>FreeCAD（04） — 异常类型</title>
-        <link>http://localhost:1313/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</link>
+        <link>https://zuoco.github.io/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Sat, 14 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</guid>
+        <guid>https://zuoco.github.io/p/freecad04-%E5%BC%82%E5%B8%B8%E7%B1%BB%E5%9E%8B/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%bc%82%e5%b8%b8%e7%b1%bb%e5%9e%8b%e5%9f%ba%e7%b1%bb&#34; &gt;1. &lt;strong&gt;异常类型基类&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%8a%9b%e5%87%ba%e5%bc%82%e5%b8%b8&#34; &gt;2. &lt;strong&gt;抛出异常&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1064,10 +1064,10 @@ Py_Header宏：&lt;/p&gt;
         </item>
         <item>
         <title>FreeCAD（03） — 类型系统与根类型（Base模块）</title>
-        <link>http://localhost:1313/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</link>
+        <link>https://zuoco.github.io/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</link>
         <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</guid>
+        <guid>https://zuoco.github.io/p/freecad03-%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%A0%B9%E7%B1%BB%E5%9E%8Bbase%E6%A8%A1%E5%9D%97/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%b1%bb%e5%9e%8b%e7%b3%bb%e7%bb%9f&#34; &gt;1. &lt;strong&gt;类型系统&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b9%e7%b1%bb%e5%9e%8b--baseclass&#34; &gt;2. &lt;strong&gt;根类型 — BaseClass&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1383,10 +1383,10 @@ Py_Header宏：&lt;/p&gt;
         </item>
         <item>
         <title>FreeCAD（02） — 代码结构</title>
-        <link>http://localhost:1313/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</link>
+        <link>https://zuoco.github.io/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</link>
         <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</guid>
+        <guid>https://zuoco.github.io/p/freecad02-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</guid>
         <description>&lt;h1 id=&#34;代码目录结构&#34;&gt;代码目录结构
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -1505,10 +1505,10 @@ Main目录下就是不同模式的main函数了。&lt;/p&gt;
         </item>
         <item>
         <title>FreeCAD（01） — 介绍以及编译</title>
-        <link>http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</link>
+        <link>https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</link>
         <pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</guid>
+        <guid>https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d&#34; &gt;1. 简单介绍&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-linux&#34; &gt;2. Linux&lt;/a&gt;
@@ -1569,10 +1569,10 @@ Main目录下就是不同模式的main函数了。&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;3. 运行&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image.png&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image.png&#34;
 	width=&#34;2562&#34;
 	height=&#34;1400&#34;
-	srcset=&#34;http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_cf5a46a14855fd74.png 480w, http://localhost:1313/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_63bb6e0583e93345.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_cf5a46a14855fd74.png 480w, https://zuoco.github.io/p/freecad01-%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E7%BC%96%E8%AF%91/image_hu_63bb6e0583e93345.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《 Qemu 》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/qemu/</link>
+        <link>https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/qemu/</link>
         <description>Recent content in 《 Qemu 》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/qemu/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/2-%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0/qemu/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Qemu尾队列 Tail Queue</title>
-        <link>http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</link>
+        <link>https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</link>
         <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</guid>
+        <guid>https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%98%9f%e5%88%97%e5%ae%9a%e4%b9%89&#34; &gt;1. &lt;strong&gt;队列定义&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e9%98%9f%e5%88%97%e6%93%8d%e4%bd%9c%e5%ae%8f&#34; &gt;2. &lt;strong&gt;队列操作宏&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -179,7 +179,7 @@
 &lt;li&gt;field： 用户节点中的节点连接域。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;将给定节点（elm）插入到头部，if处理非空队列，else处理空队列。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
 	
 	
 	
@@ -207,7 +207,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;将给定节点插入到尾部，头部维护了一个指向尾部的指针。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%B0%BE%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E5%B0%BE%E9%98%9F%E5%88%97-tail-queue/%E5%B0%BE%E9%83%A8%E6%8F%92%E5%85%A5.svg&#34;
 	
 	
 	
@@ -290,10 +290,10 @@
         </item>
         <item>
         <title>Qemu简单队列 Simple Queue</title>
-        <link>http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</link>
+        <link>https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</link>
         <pubDate>Sun, 03 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</guid>
+        <guid>https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%98%9f%e5%88%97%e5%ae%9a%e4%b9%89&#34; &gt;1. 队列定义&lt;/a&gt;
 &lt;ul&gt;
@@ -577,7 +577,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;} while (&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*CONSTCOND*/&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;0)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97.svg&#34;
 	
 	
 	
@@ -609,7 +609,7 @@
 &lt;li&gt;head: 队列的头。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;1. 空队列插入节点&lt;/strong&gt;  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -618,7 +618,7 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;2. 非空队列插入节点&lt;/strong&gt;  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%9D%9E%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%9D%9E%E7%A9%BA%E9%98%9F%E5%88%97%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -643,7 +643,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;cp&#34;&gt;} while (&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;/*CONSTCOND*/&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;0)
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E5%B0%BE%E9%83%A8.svg&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E5%B0%BE%E9%83%A8.svg&#34;
 	
 	
 	
@@ -676,7 +676,7 @@
 &lt;ol&gt;
 &lt;li&gt;listelm是尾节点，和QSIMPLEQ_INSERT_TAIL差不多。&lt;/li&gt;
 &lt;li&gt;listelm不是尾节点，插入过程如下：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E4%B8%AD%E9%97%B4.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E6%8F%92%E5%85%A5%E5%88%B0%E4%B8%AD%E9%97%B4.svg&#34;
 	
 	
 	
@@ -708,7 +708,7 @@
 &lt;/div&gt;&lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;队列中的有两个及以上节点：  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B901.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B901.svg&#34;
 	
 	
 	
@@ -719,7 +719,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;队列中只有一个节点：   &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B902.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8%E8%8A%82%E7%82%B902.svg&#34;
 	
 	
 	
@@ -771,7 +771,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;如果elm是中间节点：     &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B901.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B901.svg&#34;
 	
 	
 	
@@ -782,7 +782,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;如果elm是最后一个节点：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B902.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B902.svg&#34;
 	
 	
 	
@@ -945,7 +945,7 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;将 head2 队列的所有元素插入到 head1 队列的尾部。&lt;/li&gt;
 &lt;li&gt;只有当 head2 队列非空时才执行操作，空队列合并是无效操作，直接跳过。
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%B0%BE%E9%83%A8.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%B0%BE%E9%83%A8.svg&#34;
 	
 	
 	
@@ -978,7 +978,7 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;将 head2 队列的所有元素插入到 head1 队列的头部。&lt;/li&gt;
 &lt;li&gt;只有当 head2 队列非空时才执行操作，空队列合并是无效操作，直接跳过。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%A4%B4%E9%83%A8.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%90%88%E5%B9%B6-%E5%A4%B4%E9%83%A8.svg&#34;
 	
 	
 	
@@ -1020,7 +1020,7 @@
 &lt;li&gt;elm:  从elm开始分割队列，将eml（包括）之前的节点划分给removed。&lt;/li&gt;
 &lt;li&gt;removed:  指向移除的队列。&lt;/li&gt;
 &lt;li&gt;以elm为非末尾节为例： &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%88%86%E5%89%B2.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/%E9%98%9F%E5%88%97%E5%88%86%E5%89%B2.svg&#34;
 	
 	
 	
@@ -1270,10 +1270,10 @@
         </item>
         <item>
         <title>Qemu - List 一种高效单链表</title>
-        <link>http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</link>
+        <link>https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</link>
         <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</guid>
+        <guid>https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e9%93%be%e8%a1%a8%e5%ae%9a%e4%b9%89&#34; &gt;1. 链表定义&lt;/a&gt;
 &lt;ul&gt;
@@ -1490,7 +1490,7 @@
 &lt;ol&gt;
 &lt;li&gt;使新节点的le_prev字段指向链表头的lh_first字段，也就是指向自己，这就是首元节点。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%A4%B4%E9%83%A8%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -1523,7 +1523,7 @@
 &lt;li&gt;elm： 要插入的节点&lt;/li&gt;
 &lt;li&gt;listelm： 插入到该节点后。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E5%89%8D%E6%8F%92%E5%85%A5.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9%E5%89%8D%E6%8F%92%E5%85%A5.svg&#34;
 	
 	
 	
@@ -1587,7 +1587,7 @@
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;elm: 要移除的节点。&lt;/li&gt;
 &lt;li&gt;field: 节点连接域。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	
@@ -1776,7 +1776,7 @@ QLIST_FOREACH：&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;我们以为两个非空链表为例： &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/qemu-list-%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E5%8D%95%E9%93%BE%E8%A1%A8/%E4%BA%A4%E6%8D%A2%E8%8A%82%E7%82%B9.svg&#34;
 	
 	
 	

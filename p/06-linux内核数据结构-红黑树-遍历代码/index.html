@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 中序遍历 2. 后序遍历 二叉树遍历中，以根节点的顺序为准，例如“根 —&gt; 左 —&gt; 右”就是前序遍历，“左 —&gt; 右 —&gt; 根”就是后序遍历，从左到右一层一层的遍历就是层序遍历。Linux红黑树主要提供中序和后序两种方法。\n">
 <title>06 — Linux内核数据结构 — 红黑树 — 遍历（代码）</title>
 
-<link rel='canonical' href='http://localhost:1313/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/'>
+<link rel='canonical' href='https://zuoco.github.io/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="06 — Linux内核数据结构 — 红黑树 — 遍历（代码）">
 <meta property='og:description' content=" 1. 中序遍历 2. 后序遍历 二叉树遍历中，以根节点的顺序为准，例如“根 —&gt; 左 —&gt; 右”就是前序遍历，“左 —&gt; 右 —&gt; 根”就是后序遍历，从左到右一层一层的遍历就是层序遍历。Linux红黑树主要提供中序和后序两种方法。\n">
-<meta property='og:url' content='http://localhost:1313/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/'>
+<meta property='og:url' content='https://zuoco.github.io/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-24T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-24T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="06 — Linux内核数据结构 — 红黑树 — 遍历（代码）">
@@ -1033,7 +1033,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

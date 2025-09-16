@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>VTK on 阿左笔记</title>
-        <link>http://localhost:1313/categories/vtk/</link>
+        <link>https://zuoco.github.io/categories/vtk/</link>
         <description>Recent content in VTK on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/vtk/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 29 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/vtk/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>第一个 VTK Demo</title>
-        <link>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</link>
+        <link>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</link>
         <pubDate>Fri, 29 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</guid>
+        <guid>https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%a4%e8%af%86-vtk-%e6%b8%b2%e6%9f%93%e7%ae%a1%e7%ba%bf&#34; &gt;1. 认识 VTK 渲染管线&lt;/a&gt;
 &lt;ul&gt;
@@ -34,7 +34,7 @@
   &lt;tbody&gt;
       &lt;tr&gt;
           &lt;td&gt;vtkNew&lt;/td&gt;
-          &lt;td&gt;VTK封装的智能指针。&lt;/td&gt;
+          &lt;td&gt;在堆内存中分配 VTK object，是 vtkSmartPointer 的替代品。&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;vtkNamedColors&lt;/td&gt;
@@ -66,12 +66,58 @@
       &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;&lt;/th&gt;
+          &lt;th&gt;&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkProp&lt;/td&gt;
+          &lt;td&gt;一个基类，所有可以在渲染场景中存在的类型的基类。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkActor2D&lt;/td&gt;
+          &lt;td&gt;继承自vtkProp，用于在渲染场景中显示二维对象。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkProp3D&lt;/td&gt;
+          &lt;td&gt;继承自vtkProp，表示一个用于放置在渲染场景中的3D对象。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkActor&lt;/td&gt;
+          &lt;td&gt;继承自vtkProp3D，表示渲染场景中的一个对象（几何形状和属性），支持矩阵变换。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkTextActor&lt;/td&gt;
+          &lt;td&gt;用于实现文本的 actor。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkRenderWindowInteractor&lt;/td&gt;
+          &lt;td&gt;继承自vtkObject，负责窗口交互，将鼠标/键盘/定时器消息路由至 vtkInteractorObserver 及其子类。 &lt;br&gt; 同时，vtkRenderWindowInteractor 还提供了对象拾取、渲染帧率控制以及头灯光源管理等交互功能。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkOrientationMarkerWidget&lt;/td&gt;
+          &lt;td&gt;用于操控标记道具的2D控件&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkInteractorObserver&lt;/td&gt;
+          &lt;td&gt;vtkInteractorObserver 是一个抽象基类，其子类用于观察由 vtkRenderWindowInteractor 触发的事件。这些子类通常是诸如 3D 控件之类的对象——它们能够与场景中的角色（actors）进行交互，或以交互方式探查场景信息。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;vtkInteractorStyleTrackballCamera&lt;/td&gt;
+          &lt;td&gt;vtkInteractorStyleTrackballCamera 允许用户以交互方式操控（旋转、平移等）场景的视点——即相机。在轨迹球交互模式下，鼠标移动的幅度与特定鼠标绑定触发的相机运动成正比。例如，小幅度的左键移动会使相机围绕其焦点产生小幅旋转。对于三键鼠标：左键用于旋转，右键用于缩放，中键用于平移，Ctrl+左键用于自转，Shift+右键用于环境旋转（若鼠标按键较少，则Ctrl+Shift+左键用于缩放，Shift+左键用于平移）。&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h3 id=&#34;11-使用-c-api-渲染圆锥体&#34;&gt;1.1. 使用 C++ API 渲染圆锥体
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;我们看一个简单的Demo&lt;/strong&gt; ：  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone.png&#34;
 	width=&#34;1768&#34;
 	height=&#34;1061&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_b32aab62c21aace6.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_1c117ce18e2d9cad.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_b32aab62c21aace6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/cone_hu_1c117ce18e2d9cad.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -200,10 +246,10 @@
 &lt;code&gt;vtkCamera* GetActiveCamera();&lt;/code&gt;获取当前渲染器的活动相机。&lt;br&gt;
 &lt;code&gt;void Azimuth(viskores::Float32 angleDegrees);&lt;/code&gt;旋转相机水平时视角。&lt;br&gt;
 既然有&lt;code&gt;水平视角&lt;/code&gt;，那么就有&lt;code&gt;垂直视角&lt;/code&gt;和&lt;code&gt;旋转&lt;/code&gt;，他们的关系如图： &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera.png&#34;
 	width=&#34;1356&#34;
 	height=&#34;904&#34;
-	srcset=&#34;http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_389f75b1ab34ede6.png 480w, http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_b7b91b677180cf8.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_389f75b1ab34ede6.png 480w, https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/camera_hu_b7b91b677180cf8.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -315,7 +361,7 @@
     &gt;VTK官方Demo&lt;/a&gt;，循序渐进的示例程序。 &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://examples.vtk.org/site/Python/#tutorial&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Python Demo&lt;/a&gt;，Python 示例程序。      &lt;br&gt;
-&lt;a class=&#34;link&#34; href=&#34;https://vtk-951.netlify.app/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+&lt;a class=&#34;link&#34; href=&#34;https://vtk.org/doc/nightly/html/index.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;VTK接口文档&lt;/a&gt;，类型以及函数接口文档。 &lt;br&gt;
 &lt;a class=&#34;link&#34; href=&#34;https://examples.vtk.org/site/Cxx/Coverage/CxxVTKClassesUsed/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;类文档&lt;/a&gt;，带有示例的类文档。&lt;/p&gt;

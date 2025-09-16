@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Electron on 阿左笔记</title>
-        <link>http://localhost:1313/categories/electron/</link>
+        <link>https://zuoco.github.io/categories/electron/</link>
         <description>Recent content in Electron on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/electron/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/electron/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Node 与 Electron</title>
-        <link>http://localhost:1313/p/node-%E4%B8%8E-electron/</link>
+        <link>https://zuoco.github.io/p/node-%E4%B8%8E-electron/</link>
         <pubDate>Mon, 15 Sep 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/node-%E4%B8%8E-electron/</guid>
+        <guid>https://zuoco.github.io/p/node-%E4%B8%8E-electron/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-node&#34; &gt;1. node&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-electron&#34; &gt;2. electron&lt;/a&gt;&lt;/li&gt;
@@ -259,10 +259,10 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;运行程序： npm start&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/node-%E4%B8%8E-electron/electron.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/node-%E4%B8%8E-electron/electron.png&#34;
 	width=&#34;802&#34;
 	height=&#34;641&#34;
-	srcset=&#34;http://localhost:1313/p/node-%E4%B8%8E-electron/electron_hu_9c1c32a254d18f4.png 480w, http://localhost:1313/p/node-%E4%B8%8E-electron/electron_hu_30767d8935cbebf2.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/node-%E4%B8%8E-electron/electron_hu_9c1c32a254d18f4.png 480w, https://zuoco.github.io/p/node-%E4%B8%8E-electron/electron_hu_30767d8935cbebf2.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

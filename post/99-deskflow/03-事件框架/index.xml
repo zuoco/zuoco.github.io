@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>03 《事件机制》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/99-deskflow/03-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6/</link>
+        <link>https://zuoco.github.io/post/99-deskflow/03-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6/</link>
         <description>Recent content in 03 《事件机制》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/99-deskflow/03-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 12 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/99-deskflow/03-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>DeskFlow 事件框架（02） — 代码解释</title>
-        <link>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</link>
+        <link>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</link>
         <pubDate>Sat, 12 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</guid>
+        <guid>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B602-%E4%BB%A3%E7%A0%81%E8%A7%A3%E9%87%8A/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%ba%8b%e4%bb%b6%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%bb%93%e6%9e%84&#34; &gt;1. &lt;strong&gt;事件的基本结构&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%ba%8b%e4%bb%b6%e9%98%9f%e5%88%97%e7%9a%84%e5%ae%9e%e7%8e%b0&#34; &gt;2. &lt;strong&gt;事件队列的实现&lt;/strong&gt;&lt;/a&gt;
@@ -532,10 +532,10 @@
         </item>
         <item>
         <title>DeskFlow 事件框架（01） — 整体设计</title>
-        <link>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
+        <link>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</link>
         <pubDate>Sun, 06 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
+        <guid>https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%ae%be%e8%ae%a1%e6%80%9d%e8%b7%af&#34; &gt;1. &lt;strong&gt;设计思路&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%a0%b8%e5%bf%83%e7%b1%bb%e5%9e%8b&#34; &gt;2. &lt;strong&gt;核心类型&lt;/strong&gt;&lt;/a&gt;
@@ -558,7 +558,7 @@
 &lt;li&gt;IEventQueueBuffer，队列的底层实现，封装实际的平台操作，这是一个抽象类，所以需要每种操作系统提供对应的派生类实现。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;2-核心类型&#34;&gt;2. &lt;strong&gt;核心类型&lt;/strong&gt;
-&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97.svg&#34;
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/%E4%BA%8B%E4%BB%B6%E9%98%9F%E5%88%97.svg&#34;
 	
 	
 	

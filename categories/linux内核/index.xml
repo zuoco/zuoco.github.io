@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Linux内核 on 阿左笔记</title>
-        <link>http://localhost:1313/categories/linux%E5%86%85%E6%A0%B8/</link>
+        <link>https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/</link>
         <description>Recent content in Linux内核 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 21 May 2025 20:53:24 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/linux%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 May 2025 20:53:24 +0800</lastBuildDate><atom:link href="https://zuoco.github.io/categories/linux%E5%86%85%E6%A0%B8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>内核OOM机制</title>
-        <link>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</link>
         <pubDate>Wed, 21 May 2025 20:53:24 +0800</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E6%A0%B8oom%E6%9C%BA%E5%88%B6/</guid>
         <description>&lt;h1 id=&#34;1-什么是oom&#34;&gt;1. 什么是OOM
 &lt;/h1&gt;&lt;p&gt;在内存不足时，内存管理系统会回收内核中可以释放的内存，当实在没有内存可用的时候，就会进入OOM（Out of Memory）状态，内存管理系统会执行OOM Killer，依据一定的规则杀死一些进程来释放内存，对于个人PC来说，这都不是事儿，但对于服务器，有可能就会将重要的业务进程给干死了，所以有的服务器会将sysctl的vm.panic_on_omc参数设为1，当发生OOM时强制关闭系统，如果设置为0(默认)，在OOM时就会运行OOM Killer。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -170,10 +170,10 @@
         </item>
         <item>
         <title>内存碎片化</title>
-        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E7%A2%8E%E7%89%87%E5%8C%96/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E7%A2%8E%E7%89%87%E5%8C%96/</link>
         <pubDate>Tue, 13 May 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E7%A2%8E%E7%89%87%E5%8C%96/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E7%A2%8E%E7%89%87%E5%8C%96/</guid>
         <description>&lt;h1 id=&#34;1-什么是内存碎片化&#34;&gt;1. 什么是内存碎片化
 &lt;/h1&gt;&lt;p&gt;随着系统的运行，内存会不断被分配和释放，被分割成大量不连续的小块空闲区域，这会致系统无法分配较大连续物理内存页面，当我们发现空闲内存总量可观，但是大块内存数量少，以及大块内存申请效率低下时，可能就是内存碎片化比较严重。&lt;/p&gt;
 &lt;h1 id=&#34;2-检查内存碎片化程度&#34;&gt;2. 检查内存碎片化程度
@@ -313,10 +313,10 @@
         </item>
         <item>
         <title>06 — Linux内核数据结构 — 红黑树 — 遍历（代码）</title>
-        <link>http://localhost:1313/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</link>
+        <link>https://zuoco.github.io/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</guid>
+        <guid>https://zuoco.github.io/p/06-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E9%81%8D%E5%8E%86%E4%BB%A3%E7%A0%81/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%b8%ad%e5%ba%8f%e9%81%8d%e5%8e%86&#34; &gt;1. &lt;strong&gt;中序遍历&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%90%8e%e5%ba%8f%e9%81%8d%e5%8e%86&#34; &gt;2. &lt;strong&gt;后序遍历&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -611,10 +611,10 @@
         </item>
         <item>
         <title>05 — Linux内核数据结构 — 红黑树 — 插入节点（代码）</title>
-        <link>http://localhost:1313/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
+        <link>https://zuoco.github.io/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
+        <guid>https://zuoco.github.io/p/05-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
         <description>&lt;h1 id=&#34;1-插入节点的用户接口&#34;&gt;1. &lt;strong&gt;插入节点的用户接口&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;红黑树第一篇讲到调用插入函数&lt;code&gt;rb_add&lt;/code&gt;插入节点时会调用两个重要函数，&lt;code&gt;rb_link_node&lt;/code&gt;，&lt;code&gt;rb_insert_color&lt;/code&gt;。其中rb_link_node用来将新节点链接到树中，而rb_insert_color用来在插入后修复平衡。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -982,10 +982,10 @@
         </item>
         <item>
         <title>04 — Linux内核数据结构 — 红黑树 — 插入节点与平衡（原理）</title>
-        <link>http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
+        <link>https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
         <pubDate>Fri, 14 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
+        <guid>https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%a2%9e%e5%bc%ba%e5%9e%8b%e4%b8%8e%e9%9d%9e%e5%a2%9e%e5%bc%ba%e5%9e%8b&#34; &gt;1. &lt;strong&gt;增强型与非增强型&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e6%8f%92%e5%85%a5%e8%8a%82%e7%82%b9&#34; &gt;2. &lt;strong&gt;插入节点&lt;/strong&gt;&lt;/a&gt;
@@ -1058,7 +1058,7 @@
 &lt;h3 id=&#34;231-父节点是祖父节点的左子节点&#34;&gt;2.3.1. &lt;strong&gt;父节点是祖父节点的左子节点&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Case3-1-1  叔叔节点是红色的&lt;/strong&gt;    &lt;br&gt;
 只需变色操作，每次修复后，cur_node都要更新到爷爷节点，并再次判断平衡是否有破坏，也就是将之前的祖父节点作为cur_node，同样parent，gparent也要更新。
-&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-1.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-1.svg&#34;
 	
 	
 	
@@ -1070,7 +1070,7 @@
 此时有分为两种情况 ： 新节点是父节点的左孩子、新节点是父节点的右还是。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;新节点是父节点的右孩子 :  左旋 + 右旋 + 变色   &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-1.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-1.svg&#34;
 	
 	
 	
@@ -1082,7 +1082,7 @@
 &lt;hr&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;新节点是父节点的左孩子 :  右旋 + 变色    &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-2.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-1-2-2.svg&#34;
 	
 	
 	
@@ -1094,7 +1094,7 @@
 &lt;h3 id=&#34;232-父节点是祖父节点的右子节点&#34;&gt;2.3.2. &lt;strong&gt;父节点是祖父节点的右子节点&lt;/strong&gt;
 &lt;/h3&gt;&lt;p&gt;&lt;strong&gt;Case3-2-1  叔叔节点是红色的&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;只需变色操作，每次修复后，cur_node都要更新到爷爷节点，并再次判断平衡是否有破坏，也就是将之前的祖父节点作为cur_node，同样parent，gparent也要更新。
-&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-1.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-1.svg&#34;
 	
 	
 	
@@ -1105,7 +1105,7 @@
 &lt;p&gt;&lt;strong&gt;Case3-2-2  叔叔节点是黑色的&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;新节点是父节点的右孩子 : 左旋 + 变色
-&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-1.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-1.svg&#34;
 	
 	
 	
@@ -1117,7 +1117,7 @@
 &lt;hr&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;新节点是父节点的左孩子
-&lt;img src=&#34;http://localhost:1313/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-2.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/04-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E6%8F%92%E5%85%A5%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/Case3-2-2-2.svg&#34;
 	
 	
 	
@@ -1130,10 +1130,10 @@
         </item>
         <item>
         <title>03 — Linux内核数据结构 — 红黑树 — 移除节点（代码）</title>
-        <link>http://localhost:1313/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
+        <link>https://zuoco.github.io/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</link>
         <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
+        <guid>https://zuoco.github.io/p/03-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%BB%A3%E7%A0%81/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%a7%bb%e9%99%a4%e8%8a%82%e7%82%b9%e7%9a%84%e7%94%a8%e6%88%b7%e6%8e%a5%e5%8f%a3&#34; &gt;1. 移除节点的用户接口&lt;/a&gt;
 &lt;ul&gt;
@@ -1505,10 +1505,10 @@
         </item>
         <item>
         <title>02 — Linux内核数据结构 — 红黑树 — 移除节点与平衡（原理）</title>
-        <link>http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
+        <link>https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</link>
         <pubDate>Fri, 07 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
+        <guid>https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%88%a0%e9%99%a4%e8%8a%82%e7%82%b9%e7%9a%84%e5%b9%b6%e5%b9%b3%e8%a1%a1%e7%9a%84%e6%95%b4%e4%bd%93%e6%80%9d%e8%b7%af&#34; &gt;1. &lt;strong&gt;删除节点的并平衡的整体思路&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%a0%e9%99%a4%e9%bb%91%e8%89%b2%e8%8a%82%e7%82%b9&#34; &gt;2. &lt;strong&gt;删除黑色节点&lt;/strong&gt;&lt;/a&gt;
@@ -1521,7 +1521,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-删除节点的并平衡的整体思路&#34;&gt;1. &lt;strong&gt;删除节点的并平衡的整体思路&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;移除节点分为集中情况，如下图所示：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1.svg&#34;
 	
 	
 	
@@ -1536,7 +1536,7 @@
 &lt;/h1&gt;&lt;p&gt;删除后会破坏特征2，也就所说经过该节点的路径都少一个黑节点，此时要根据兄弟节点的颜色分为2种情况讨论： 兄弟是黑的、兄弟是红的。&lt;/p&gt;
 &lt;h2 id=&#34;21-兄弟是黑色&#34;&gt;2.1. &lt;strong&gt;兄弟是黑色&lt;/strong&gt;
 &lt;/h2&gt;&lt;p&gt;&lt;strong&gt;兄弟节点至少一个红孩子&lt;/strong&gt;：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LL.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LL.svg&#34;
 	
 	
 	
@@ -1544,7 +1544,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RR.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RR.svg&#34;
 	
 	
 	
@@ -1552,7 +1552,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RL.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/RL.svg&#34;
 	
 	
 	
@@ -1560,7 +1560,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LR.svg&#34;
+&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/LR.svg&#34;
 	
 	
 	
@@ -1570,7 +1570,7 @@
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;兄弟节点两个孩子都是黑孩&lt;/strong&gt;：
-&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E9%BB%91RR.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E9%BB%91RR.svg&#34;
 	
 	
 	
@@ -1580,7 +1580,7 @@
 &gt;&lt;br&gt;
 其他类型和前面的类似。 &lt;br&gt;
 前面展示的情形中，被删除节点的父节点都是黑色的，如果是红色的只需要变色即可，如下所示：  &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E7%9A%84%E7%88%B6%E8%8A%82%E7%82%B9%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9%E7%9A%84%E7%88%B6%E8%8A%82%E7%82%B9%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
 	
 	
 	
@@ -1590,7 +1590,7 @@
 &gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;22-兄弟是红的&#34;&gt;2.2. &lt;strong&gt;兄弟是红的&lt;/strong&gt;
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%85%84%E5%BC%9F%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/02-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%A2%E9%BB%91%E6%A0%91-%E7%A7%BB%E9%99%A4%E8%8A%82%E7%82%B9%E4%B8%8E%E5%B9%B3%E8%A1%A1%E5%8E%9F%E7%90%86/%E5%85%84%E5%BC%9F%E6%98%AF%E7%BA%A2%E8%89%B2.svg&#34;
 	
 	
 	
@@ -1605,10 +1605,10 @@
         </item>
         <item>
         <title>01 — Linux内核数据结构 — 非增强型红黑树</title>
-        <link>http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</link>
+        <link>https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</link>
         <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</guid>
+        <guid>https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e4%bb%80%e4%b9%88%e6%98%af%e7%ba%a2%e9%bb%91%e6%a0%91&#34; &gt;1. &lt;strong&gt;什么是红黑树&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-linux%e5%86%85%e6%a0%b8%e7%ba%a2%e9%bb%91%e6%a0%91%e6%ba%90%e7%a0%81&#34; &gt;2. &lt;strong&gt;Linux内核红黑树源码&lt;/strong&gt;&lt;/a&gt;
@@ -1621,7 +1621,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;1-什么是红黑树&#34;&gt;1. &lt;strong&gt;什么是红黑树&lt;/strong&gt;
 &lt;/h1&gt;&lt;p&gt;红黑树的基本形态如下：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/rbtree.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/rbtree.svg&#34;
 	
 	
 	
@@ -2133,10 +2133,10 @@
         </item>
         <item>
         <title>Linux 虚拟网络</title>
-        <link>http://localhost:1313/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</link>
+        <link>https://zuoco.github.io/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</link>
         <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</guid>
+        <guid>https://zuoco.github.io/p/linux-%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-linux-bridge&#34; &gt;1. Linux Bridge&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-linux-bond&#34; &gt;2. Linux Bond&lt;/a&gt;&lt;/li&gt;
@@ -2162,10 +2162,10 @@
         </item>
         <item>
         <title>RCU，一种高效的并发同步机制</title>
-        <link>http://localhost:1313/p/rcu%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E7%9A%84%E5%B9%B6%E5%8F%91%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</link>
+        <link>https://zuoco.github.io/p/rcu%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E7%9A%84%E5%B9%B6%E5%8F%91%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</link>
         <pubDate>Thu, 19 Sep 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/rcu%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E7%9A%84%E5%B9%B6%E5%8F%91%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</guid>
+        <guid>https://zuoco.github.io/p/rcu%E4%B8%80%E7%A7%8D%E9%AB%98%E6%95%88%E7%9A%84%E5%B9%B6%E5%8F%91%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-rcu-%e7%9a%84%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5&#34; &gt;1. &lt;strong&gt;RCU 的核心概念&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-rcu-%e7%9a%84%e5%b7%a5%e4%bd%9c%e6%9c%ba%e5%88%b6&#34; &gt;2. &lt;strong&gt;RCU 的工作机制&lt;/strong&gt;&lt;/a&gt;
@@ -2454,10 +2454,10 @@
         </item>
         <item>
         <title>Linux异步IO（01） — EPOLL</title>
-        <link>http://localhost:1313/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</link>
+        <link>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</link>
         <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</guid>
+        <guid>https://zuoco.github.io/p/linux%E5%BC%82%E6%AD%A5io01-epoll/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-epoll%e5%8e%9f%e7%90%86%e4%bb%8b%e7%bb%8d&#34; &gt;1. EPOLL原理介绍&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-epoll%e4%bd%bf%e7%94%a8&#34; &gt;2. EPOLL使用&lt;/a&gt;
@@ -2670,10 +2670,10 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>Linux进程间通信（02） — Unix-Socket</title>
-        <link>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</link>
+        <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</link>
         <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</guid>
+        <guid>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A102-unix-socket/</guid>
         <description>&lt;p&gt;Unix Socket（Unix域套接字）是一种用于 本地进程间通信的机制。它与网络 Socket 不同，不需要通过网络协议栈，而是通过文件系统实现进程间的通信。和网络Socket一样，也提供&lt;code&gt;流式套接字&lt;/code&gt;和&lt;code&gt;数据报套接字&lt;/code&gt;。API接口的网络套接字是一样的，&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. 服务器&lt;/strong&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2835,10 +2835,10 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>虚拟内存</title>
-        <link>http://localhost:1313/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</link>
+        <link>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</link>
         <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</guid>
+        <guid>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%99%9a%e6%8b%9f%e5%86%85%e5%ad%98&#34; &gt;1. 虚拟内存&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e9%a1%b5&#34; &gt;2. 页&lt;/a&gt;
@@ -2853,7 +2853,7 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
 &lt;/ol&gt;
 &lt;h1 id=&#34;1-虚拟内存&#34;&gt;1. 虚拟内存
 &lt;/h1&gt;&lt;p&gt;  进程不会直接访问物理内存，进程能够看到的地址空间是&lt;code&gt;虚拟地址空间&lt;/code&gt;，虚拟地址通过一定的规则关联到物理地址，简单理解为下图：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98.svg&#34;
 	
 	
 	
@@ -2889,10 +2889,10 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>Linux网络管理（03） — tcpdump抓包</title>
-        <link>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</link>
+        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</link>
         <pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</guid>
+        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8603-tcpdump%E6%8A%93%E5%8C%85/</guid>
         <description>&lt;h1 id=&#34;1-基本命令选项&#34;&gt;1. 基本命令选项
 &lt;/h1&gt;&lt;table&gt;
   &lt;thead&gt;
@@ -3032,10 +3032,10 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>sar -r命令与sar -S命令</title>
-        <link>http://localhost:1313/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</link>
+        <link>https://zuoco.github.io/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Mon, 17 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/sar-r%E5%91%BD%E4%BB%A4%E4%B8%8Esar-s%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;1-sar--r命令&#34;&gt;1. sar -r命令
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -3101,10 +3101,10 @@ listening socket是不能使用EPOLLONESHOT的，否则后续的客户段连接�
         </item>
         <item>
         <title>Linux网络管理（02） — Network Manager</title>
-        <link>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</link>
+        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</link>
         <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</guid>
+        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/</guid>
         <description>&lt;h1 id=&#34;1-network-manager网络管理工具&#34;&gt;1. Network-Manager网络管理工具
 &lt;/h1&gt;&lt;p&gt;在Debian系统中，NetworkManager（NM） 是一个功能强大的网络管理工具，支持有线、无线、VPN、代理等多种网络连接方式。&lt;/p&gt;
 &lt;h2 id=&#34;11-安装networkmanager&#34;&gt;1.1. 安装NetworkManager
@@ -3178,10 +3178,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出(CONNECTION 列显示当前使用的连接配置)：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status.bmp&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status.bmp&#34;
 	width=&#34;1173&#34;
 	height=&#34;287&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_3b808834d5e87588.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_8b72dd48c2d5d385.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_3b808834d5e87588.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/device-status_hu_8b72dd48c2d5d385.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3200,10 +3200,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出(IN-USE 标记 * 表示当前已连接的网络)：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list.bmp&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list.bmp&#34;
 	width=&#34;1541&#34;
 	height=&#34;410&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_495371c566f7012e.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_8348cb87ebec241e.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_495371c566f7012e.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-list_hu_8348cb87ebec241e.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3230,10 +3230,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nmcli connection show
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status.bmp&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status.bmp&#34;
 	width=&#34;1382&#34;
 	height=&#34;362&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_61b3a888cc80a559.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_8cefa13ea190d44f.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_61b3a888cc80a559.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8602-network-manager/wifi-status_hu_8cefa13ea190d44f.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3266,10 +3266,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
         </item>
         <item>
         <title>Linux网络管理（01） — 常用网络命令</title>
-        <link>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</link>
+        <link>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;1-iproute2&#34;&gt;1. iproute2
 &lt;/h1&gt;&lt;p&gt;ip命令全称iproute2，&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; &lt;code&gt;查看所有网卡的状态&lt;/code&gt;&lt;/p&gt;
@@ -3282,10 +3282,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;命令输出：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a.bmp&#34;
 	width=&#34;1853&#34;
 	height=&#34;638&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_3e9015c031918902.bmp 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip-a_hu_e2fd6d34a139a4bb.bmp 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3320,10 +3320,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ip -s link show eth0
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0.png&#34;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0.png&#34;
 	width=&#34;2508&#34;
 	height=&#34;375&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_8177b3380af5e02d.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_3fea5a7a16891152.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_8177b3380af5e02d.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip0_hu_3fea5a7a16891152.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3358,10 +3358,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 略&amp;hellip;&amp;hellip;&lt;/p&gt;
 &lt;h1 id=&#34;2-netstat&#34;&gt;2. netstat
 &lt;/h1&gt;&lt;p&gt;查看网络连接状态, 先看一下命令的默认输出：&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2.png&#34;
 	width=&#34;1882&#34;
 	height=&#34;1083&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_765006fe5511afed.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_a6a5131b5399f4c5.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_765006fe5511afed.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip2_hu_a6a5131b5399f4c5.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3371,10 +3371,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 默认情况下，对于一些有别名的 ip 地址和端口号 netstat 会显示别名，例如127.0.0.1显示localhost，80端口会显示成http，如果我们想要的是原始IP地址，可以使用-n参数。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3.png&#34;
 	width=&#34;1882&#34;
 	height=&#34;754&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_8d182fdfe505ecdf.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_edd16a229ed3221d.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_8d182fdfe505ecdf.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/ip3_hu_edd16a229ed3221d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3412,10 +3412,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;h1 id=&#34;3-lsof&#34;&gt;3. lsof
 &lt;/h1&gt;&lt;p&gt;list opened filedesciptor，在Linux系统中，所有的与资源句柄相关的东西都可以统一抽象成文件描述符。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1.png&#34;
 	width=&#34;1701&#34;
 	height=&#34;271&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_905002137cfdaf85.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_c08405377156592a.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_905002137cfdaf85.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/lsof1_hu_c08405377156592a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3454,10 +3454,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;code&gt;发送数据&lt;/code&gt;&lt;br&gt;
 &lt;code&gt;服务端： &lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1.png&#34;
 	width=&#34;841&#34;
 	height=&#34;187&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_bce24a1c70ac2a48.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_8c37ccf6f7e9215a.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_bce24a1c70ac2a48.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc1_hu_8c37ccf6f7e9215a.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3467,10 +3467,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 &lt;code&gt;客户端： &lt;/code&gt;&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2.png&#34;
 	width=&#34;980&#34;
 	height=&#34;187&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_1c0fd1c15c21f4ec.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_929749709fafec5d.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_1c0fd1c15c21f4ec.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc2_hu_929749709fafec5d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3480,10 +3480,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
 	
 &gt; &lt;br&gt;
 &lt;code&gt;发送数据: &lt;/code&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3.png&#34;
 	width=&#34;1750&#34;
 	height=&#34;633&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_23b43c3f949ed182.png 480w, http://localhost:1313/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_802d9632d6b30e62.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_23b43c3f949ed182.png 480w, https://zuoco.github.io/p/linux%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%8601-%E5%B8%B8%E7%94%A8%E7%BD%91%E7%BB%9C%E5%91%BD%E4%BB%A4/nc3_hu_802d9632d6b30e62.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3518,10 +3518,10 @@ managed=false 表示 NetworkManager 不会管理接口（默认值）。&lt;/p&g
         </item>
         <item>
         <title>Linux内核构建、内核模块构建</title>
-        <link>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</link>
+        <link>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</link>
         <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</guid>
+        <guid>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/</guid>
         <description>&lt;h1 id=&#34;1-内核中的makefilekconfigconfig&#34;&gt;1. 内核中的Makefile、Kconfig、config
 &lt;/h1&gt;&lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;Makefile&lt;/strong&gt;：编译源文件的方法。&lt;/li&gt;
@@ -3868,10 +3868,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
 &lt;/h1&gt;&lt;p&gt;使用make menuconfig生成的配置文件。&lt;/p&gt;
 &lt;h1 id=&#34;5-make-menuconfig&#34;&gt;5. make menuconfig
 &lt;/h1&gt;&lt;p&gt;运行make menuconfig命令，会显示一个配置菜单:&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig.png&#34;
 	width=&#34;2473&#34;
 	height=&#34;1217&#34;
-	srcset=&#34;http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_28f37095ba1bb36b.png 480w, http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_5a66fc4359e47d7d.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_28f37095ba1bb36b.png 480w, https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E6%9E%84%E5%BB%BA%E5%86%85%E6%A0%B8%E6%A8%A1%E5%9D%97%E6%9E%84%E5%BB%BA/make-menuconfig_hu_5a66fc4359e47d7d.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	
@@ -3885,10 +3885,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
         </item>
         <item>
         <title>free命令</title>
-        <link>http://localhost:1313/p/free%E5%91%BD%E4%BB%A4/</link>
+        <link>https://zuoco.github.io/p/free%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/free%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/free%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;free命令&#34;&gt;free命令
 &lt;/h1&gt;&lt;p&gt;命令结果如下：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -3931,10 +3931,10 @@ N（No）：不编译此驱动。&lt;/p&gt;
         </item>
         <item>
         <title> Linux内核环境，以Ubuntu为例 </title>
-        <link>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E7%8E%AF%E5%A2%83%E4%BB%A5ubuntu%E4%B8%BA%E4%BE%8B/</link>
+        <link>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E7%8E%AF%E5%A2%83%E4%BB%A5ubuntu%E4%B8%BA%E4%BE%8B/</link>
         <pubDate>Thu, 18 Apr 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E5%86%85%E6%A0%B8%E7%8E%AF%E5%A2%83%E4%BB%A5ubuntu%E4%B8%BA%E4%BE%8B/</guid>
+        <guid>https://zuoco.github.io/p/linux%E5%86%85%E6%A0%B8%E7%8E%AF%E5%A2%83%E4%BB%A5ubuntu%E4%B8%BA%E4%BE%8B/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e7%b3%bb%e7%bb%9f%e5%9f%ba%e7%a1%80%e7%bb%84%e4%bb%b6&#34; &gt;1. 系统基础组件&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%86%85%e6%a0%b8%e9%95%9c%e5%83%8f&#34; &gt;2. 内核镜像&lt;/a&gt;&lt;/li&gt;
@@ -4175,15 +4175,15 @@ N（No）：不编译此驱动。&lt;/p&gt;
         </item>
         <item>
         <title>BootLoader</title>
-        <link>http://localhost:1313/p/bootloader/</link>
+        <link>https://zuoco.github.io/p/bootloader/</link>
         <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/bootloader/</guid>
+        <guid>https://zuoco.github.io/p/bootloader/</guid>
         <description>&lt;h1 id=&#34;1-bootloader&#34;&gt;1. BootLoader
 &lt;/h1&gt;&lt;p&gt;Bootloader是操作系统的“引导程序”以及“引导管理程序”，操作系统的启动流程可以简单理解为：&lt;br&gt;
 &lt;strong&gt;[上电]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[UEFI]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[bootloader]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[内核]&lt;/strong&gt; 。&lt;br&gt;
 显然，Bootloader的作用就是将内核加载到内存中，然后由于内核来加载操作系统的其他组件/服务，如文件系统，文件管理器，图形界面等。在linux生态中，常见的Bootloader有两种，Grub(用于X86架构)，U-Boot(用于ARM架构)。其中&lt;code&gt;引导&lt;/code&gt;就是进行一些硬件的检测、初始化的任务，然后将内核加载到内存中来启动内核，&lt;code&gt;引导管理&lt;/code&gt;就是当有多个内核时，在屏幕上显示一个菜单让用户选择要启动的哪个内核。
-&lt;img src=&#34;http://localhost:1313/p/bootloader/BootLoader.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/BootLoader.svg&#34;
 	
 	
 	
@@ -4229,7 +4229,7 @@ grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。&
 非XIP设备中存储的代码需要从存储设备中加载到内存中，然后才能执行，而XIP存储设备中的代码可以直接执行，XIP设备有SRAM、BROM等等，非XIP设备有EMMC、NANDFLASH、SD卡等等。&lt;/li&gt;
 &lt;li&gt;ARM-Linux启动流程&lt;br&gt;
 U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行BROM中的程序(由芯片厂写入)，该程序会根据芯片的引脚电平或者寄存器配置确定启动模式(从那个设备启动系统)，例如系统安装在SD卡，BROM中的程序会初始化SD卡，然后拷贝uboot-spl到SRAM中，开始执行uboot-spl中的程序，uboot-spl程序会初始化LDDR内存、pll、gpio等等硬件，然后从SD卡中加载uboot-proper到LDDR中，并跳转到程序的入口地址执行uboot-proper程序。uboot还会初始化一些其他设备，例如网卡等，然后从SD卡中加载内核文件。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/bootloader/u-boot.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/u-boot.svg&#34;
 	
 	
 	
@@ -4289,10 +4289,10 @@ U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行
         </item>
         <item>
         <title>Linux进程间通信（01） — 信号</title>
-        <link>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</link>
+        <link>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</link>
         <pubDate>Sun, 10 Sep 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</guid>
+        <guid>https://zuoco.github.io/p/linux%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A101-%E4%BF%A1%E5%8F%B7/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%b3%a8%e5%86%8c%e4%bf%a1%e5%8f%b7%e5%a4%84%e7%90%86%e5%99%a8&#34; &gt;1. &lt;strong&gt;注册信号处理器&lt;/strong&gt;&lt;/a&gt;
 &lt;ul&gt;
@@ -4590,10 +4590,10 @@ siginfo_t 是 POSIX 信号处理中用于传递 信号详细信息 的结构体�
         </item>
         <item>
         <title>进程中使用的内存</title>
-        <link>http://localhost:1313/p/%E8%BF%9B%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98/</link>
+        <link>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98/</link>
         <pubDate>Sat, 08 Jul 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%BF%9B%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98/</guid>
+        <guid>https://zuoco.github.io/p/%E8%BF%9B%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%86%85%E5%AD%98/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e5%86%85%e5%ad%98%e5%88%86%e9%85%8d%e5%9c%ba%e6%99%af&#34; &gt;1. 内存分配场景&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%88%9b%e5%bb%ba%e8%bf%9b%e7%a8%8b%e6%97%b6%e7%9a%84%e5%86%85%e5%ad%98%e5%88%86%e9%85%8d&#34; &gt;2. 创建进程时的内存分配&lt;/a&gt;
@@ -4627,10 +4627,10 @@ siginfo_t 是 POSIX 信号处理中用于传递 信号详细信息 的结构体�
         </item>
         <item>
         <title>ps命令</title>
-        <link>http://localhost:1313/p/ps%E5%91%BD%E4%BB%A4/</link>
+        <link>https://zuoco.github.io/p/ps%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ps%E5%91%BD%E4%BB%A4/</guid>
+        <guid>https://zuoco.github.io/p/ps%E5%91%BD%E4%BB%A4/</guid>
         <description>&lt;h1 id=&#34;1-用法&#34;&gt;1. 用法
 &lt;/h1&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -4653,10 +4653,10 @@ siginfo_t 是 POSIX 信号处理中用于传递 信号详细信息 的结构体�
         </item>
         <item>
         <title>常用Linux系统目录</title>
-        <link>http://localhost:1313/p/%E5%B8%B8%E7%94%A8linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</link>
+        <link>https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</link>
         <pubDate>Thu, 18 May 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%B8%B8%E7%94%A8linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</guid>
+        <guid>https://zuoco.github.io/p/%E5%B8%B8%E7%94%A8linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-boot&#34; &gt;1. boot&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-usrsrc&#34; &gt;2. usr/src&lt;/a&gt;&lt;/li&gt;

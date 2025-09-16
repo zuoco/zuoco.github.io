@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. std::stack 2. 创建Stack容器对象 3. 成员函数 1. std::stack 底层可以使用vector、deque或者list。\n1 2 3 4 5 // Defined in header &lt;stack&gt; template&lt; class T, class Container = std::deque&lt;T&gt; // 底层容器默认是deque &gt; class stack; 2. 创建Stack容器对象 1 2 // 一个空的stack std::stack&lt;int&gt; st; 1 2 // 指定底层容器为list std::stack&lt;int, std::list&lt;int&gt;&gt; st; 1 2 3 4 // 使用已有的基础容器实例初始化栈对象。 // 但要求基础容器类型和当前栈的底层类型相同。 std::list&lt;int&gt; lst = {4, 5, 6}; std::stack&lt;int, std::list&lt;int&gt;&gt; stack_list(lst); // 拷贝lst的内存 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 拷贝构造 // 要求基础栈数据类型和栈的底层类型相同。 #include &lt;iostream&gt; #include &lt;stack&gt; int main() { std::stack&lt;int&gt; original; original.push(10); original.push(20); original.push(30); std::stack&lt;int&gt; copied(original); while (!copied.empty()) { std::cout &lt;&lt; copied.top() &lt;&lt; &#34; &#34;; copied.pop(); } return 0; } 3. 成员函数 成员函数 功能 empty() 栈为空时返回true。 size() 返回 stack 栈中存储元素的个数。 top() 返回一个栈顶元素的引用，类型为 T&amp;。如果栈为空，程序会报错。 push(const T&amp; val) 先复制 val，再将 val 副本压入栈顶。这是通过调用底层容器的 push_back() 函数完成的。 push(T&amp;&amp; obj) 以移动元素的方式将其压入栈顶。这是通过调用底层容器的有右值引用参数的 push_back() 函数完成的。 pop() 弹出栈顶元素。 emplace(arg&hellip;) 在栈顶位置原地构造一个元素。 swap(stack &amp; other_stack) 将两个stack中的元素进行交换，2 个 stack 中的元素类型以及底层采用的基础容器类型都必须相同。 ">
 <title>容器适配器之 stack</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="容器适配器之 stack">
 <meta property='og:description' content=" 1. std::stack 2. 创建Stack容器对象 3. 成员函数 1. std::stack 底层可以使用vector、deque或者list。\n1 2 3 4 5 // Defined in header &lt;stack&gt; template&lt; class T, class Container = std::deque&lt;T&gt; // 底层容器默认是deque &gt; class stack; 2. 创建Stack容器对象 1 2 // 一个空的stack std::stack&lt;int&gt; st; 1 2 // 指定底层容器为list std::stack&lt;int, std::list&lt;int&gt;&gt; st; 1 2 3 4 // 使用已有的基础容器实例初始化栈对象。 // 但要求基础容器类型和当前栈的底层类型相同。 std::list&lt;int&gt; lst = {4, 5, 6}; std::stack&lt;int, std::list&lt;int&gt;&gt; stack_list(lst); // 拷贝lst的内存 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 // 拷贝构造 // 要求基础栈数据类型和栈的底层类型相同。 #include &lt;iostream&gt; #include &lt;stack&gt; int main() { std::stack&lt;int&gt; original; original.push(10); original.push(20); original.push(30); std::stack&lt;int&gt; copied(original); while (!copied.empty()) { std::cout &lt;&lt; copied.top() &lt;&lt; &#34; &#34;; copied.pop(); } return 0; } 3. 成员函数 成员函数 功能 empty() 栈为空时返回true。 size() 返回 stack 栈中存储元素的个数。 top() 返回一个栈顶元素的引用，类型为 T&amp;。如果栈为空，程序会报错。 push(const T&amp; val) 先复制 val，再将 val 副本压入栈顶。这是通过调用底层容器的 push_back() 函数完成的。 push(T&amp;&amp; obj) 以移动元素的方式将其压入栈顶。这是通过调用底层容器的有右值引用参数的 push_back() 函数完成的。 pop() 弹出栈顶元素。 emplace(arg&hellip;) 在栈顶位置原地构造一个元素。 swap(stack &amp; other_stack) 将两个stack中的元素进行交换，2 个 stack 中的元素类型以及底层采用的基础容器类型都必须相同。 ">
-<meta property='og:url' content='http://localhost:1313/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/'>
+<meta property='og:url' content='https://zuoco.github.io/p/%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%E4%B9%8B-stack/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-05-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-05-17T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="容器适配器之 stack">
@@ -897,7 +897,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

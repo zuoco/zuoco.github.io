@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
 <title>C&#43;&#43;面向对象（06） — 动态多态与虚函数</title>
 
-<link rel='canonical' href='http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/'>
+<link rel='canonical' href='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="C++面向对象（06） — 动态多态与虚函数">
 <meta property='og:description' content=" 1. 虚函数与纯虚函数 1.1. 虚函数 1.2. 纯虚函数 2. 构造与析构 2.1. 构造 2.2. 析构 3. 虚函数表 3.1. 什么是虚函数表 3.2. 虚函数表结构 4. 多态 4.1. 类的向上转型 4.2. 基类指针访问派生类 4.2.1. 访问成员函数 4.2.2. 访问成员变量 1. 虚函数与纯虚函数 抽象类： 包含至少一个纯虚函数的类，这种类无法实例化，用于定义接口规范，然后让派生类去实现。 强制实现：派生类必须实现所有纯虚函数，否则仍为抽象类。 1.1. 虚函数 基类中声明为 virtual 的成员函数，允许派生类继承并重写该函数，从而实现运行时多态性。\n">
-<meta property='og:url' content='http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/'>
+<meta property='og:url' content='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A106-%E5%8A%A8%E6%80%81%E5%A4%9A%E6%80%81%E4%B8%8E%E8%99%9A%E5%87%BD%E6%95%B0/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-03-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-03-26T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="C++面向对象（06） — 动态多态与虚函数">
@@ -1030,7 +1030,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>07 《其他》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/6-c&#43;&#43;/99-%E5%85%B6%E4%BB%96/</link>
+        <link>https://zuoco.github.io/post/6-c&#43;&#43;/99-%E5%85%B6%E4%BB%96/</link>
         <description>Recent content in 07 《其他》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Wed, 21 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/6-c++/99-%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 21 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/6-c++/99-%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>内存对齐</title>
-        <link>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</link>
+        <link>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</link>
         <pubDate>Wed, 21 Aug 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
+        <guid>https://zuoco.github.io/p/%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-alignas-%e4%b8%8e-alignof&#34; &gt;1. alignas 与 alignof&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-pragma-pack&#34; &gt;2. #pragma pack&lt;/a&gt;&lt;/li&gt;
@@ -164,10 +164,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>位域</title>
-        <link>http://localhost:1313/p/%E4%BD%8D%E5%9F%9F/</link>
+        <link>https://zuoco.github.io/p/%E4%BD%8D%E5%9F%9F/</link>
         <pubDate>Tue, 21 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E4%BD%8D%E5%9F%9F/</guid>
+        <guid>https://zuoco.github.io/p/%E4%BD%8D%E5%9F%9F/</guid>
         <description>&lt;h1 id=&#34;位域&#34;&gt;位域
 &lt;/h1&gt;&lt;p&gt;结构体和类中使用，显式表明对象的成员占用的位数。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -193,10 +193,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>联合体</title>
-        <link>http://localhost:1313/p/%E8%81%94%E5%90%88%E4%BD%93/</link>
+        <link>https://zuoco.github.io/p/%E8%81%94%E5%90%88%E4%BD%93/</link>
         <pubDate>Sun, 19 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%81%94%E5%90%88%E4%BD%93/</guid>
+        <guid>https://zuoco.github.io/p/%E8%81%94%E5%90%88%E4%BD%93/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e8%81%94%e5%90%88%e4%bd%93&#34; &gt;1. 联合体&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e5%8c%bf%e5%90%8d%e8%81%94%e5%90%88%e4%bd%93&#34; &gt;2. 匿名联合体&lt;/a&gt;&lt;/li&gt;
@@ -278,10 +278,10 @@ size：     要分配的字节数，必须是 alignment 的整数倍，否则分
         </item>
         <item>
         <title>枚举</title>
-        <link>http://localhost:1313/p/%E6%9E%9A%E4%B8%BE/</link>
+        <link>https://zuoco.github.io/p/%E6%9E%9A%E4%B8%BE/</link>
         <pubDate>Sun, 19 Feb 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E6%9E%9A%E4%B8%BE/</guid>
+        <guid>https://zuoco.github.io/p/%E6%9E%9A%E4%B8%BE/</guid>
         <description>&lt;ol&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-%e6%9e%9a%e4%b8%be&#34; &gt;1. 枚举&lt;/a&gt;
 &lt;ol&gt;

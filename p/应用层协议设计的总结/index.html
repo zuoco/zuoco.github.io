@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 流式协议 2. 流的边界 3. 应用层协议设计 3.1. 报文设计 3.2. 解析器设计 1. 流式协议 TCP提供一种可靠传输方式，通过序列号和包重传确认机制保证数据包的有序，不会丢包或包乱序，并且数据一定被正确发到目的地。如果我们使用UDP协议，但又不能接受丢包，那就要在UDP的基础去现类似TCP的有序和可靠传输机制了（例如 RTP、RUDP）。TCP作为流式协议，它保证数据有序送达，但是数据流中，那个字节是开始，那个字节是结束，这就不关人家的事情了，也就是说，我们从传输层拿到数据后，要自行处理数据的边界。\n">
 <title>应用层协议设计的总结</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="应用层协议设计的总结">
 <meta property='og:description' content=" 1. 流式协议 2. 流的边界 3. 应用层协议设计 3.1. 报文设计 3.2. 解析器设计 1. 流式协议 TCP提供一种可靠传输方式，通过序列号和包重传确认机制保证数据包的有序，不会丢包或包乱序，并且数据一定被正确发到目的地。如果我们使用UDP协议，但又不能接受丢包，那就要在UDP的基础去现类似TCP的有序和可靠传输机制了（例如 RTP、RUDP）。TCP作为流式协议，它保证数据有序送达，但是数据流中，那个字节是开始，那个字节是结束，这就不关人家的事情了，也就是说，我们从传输层拿到数据后，要自行处理数据的边界。\n">
-<meta property='og:url' content='http://localhost:1313/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/'>
+<meta property='og:url' content='https://zuoco.github.io/p/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%80%BB%E7%BB%93/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-23T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="应用层协议设计的总结">
@@ -856,7 +856,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

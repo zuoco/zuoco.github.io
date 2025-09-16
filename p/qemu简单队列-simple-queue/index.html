@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 队列定义 1.1. 使用案例 2. 队列操做 2.1. 基本访问方法 2.2. 队列初始化 2.3. 插入节点 2.3.1. 插入到头部 2.3.2. 插入到尾部 2.3.3. 插入到中间 3. 移除节点 3.1. 移除头部节点 3.2. 移除指定节点 3.3. 遍历 3.3.1. 遍历队列 3.3.2. 遍历队列（安全） 3.4. 尾节点快速定位 3.5. 队列合并 3.5.1. 合并到尾部 3.5.2. 合并到头部 3.6. 分割队列 4. 完整代码 1. 队列定义 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 队列头 #define QSIMPLEQ_HEAD(name, type) \\ struct name { \\ struct type *sqh_first; /* first element */ \\ struct type **sqh_last; /* addr of last next element */ \\ } // 初始化一个队列 #define QSIMPLEQ_HEAD_INITIALIZER(head) \\ { NULL, &amp;(head).sqh_first } // 节点中的连接域，指向下一个节点 #define QSIMPLEQ_ENTRY(type) \\ struct { \\ struct type *sqe_next; /* next element */ \\ } 1.1. 使用案例 qemu-8.2.2/qemu-img.c\n">
 <title>Qemu简单队列 Simple Queue</title>
 
-<link rel='canonical' href='http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
+<link rel='canonical' href='https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="Qemu简单队列 Simple Queue">
 <meta property='og:description' content=" 1. 队列定义 1.1. 使用案例 2. 队列操做 2.1. 基本访问方法 2.2. 队列初始化 2.3. 插入节点 2.3.1. 插入到头部 2.3.2. 插入到尾部 2.3.3. 插入到中间 3. 移除节点 3.1. 移除头部节点 3.2. 移除指定节点 3.3. 遍历 3.3.1. 遍历队列 3.3.2. 遍历队列（安全） 3.4. 尾节点快速定位 3.5. 队列合并 3.5.1. 合并到尾部 3.5.2. 合并到头部 3.6. 分割队列 4. 完整代码 1. 队列定义 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 // 队列头 #define QSIMPLEQ_HEAD(name, type) \\ struct name { \\ struct type *sqh_first; /* first element */ \\ struct type **sqh_last; /* addr of last next element */ \\ } // 初始化一个队列 #define QSIMPLEQ_HEAD_INITIALIZER(head) \\ { NULL, &amp;(head).sqh_first } // 节点中的连接域，指向下一个节点 #define QSIMPLEQ_ENTRY(type) \\ struct { \\ struct type *sqe_next; /* next element */ \\ } 1.1. 使用案例 qemu-8.2.2/qemu-img.c\n">
-<meta property='og:url' content='http://localhost:1313/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
+<meta property='og:url' content='https://zuoco.github.io/p/qemu%E7%AE%80%E5%8D%95%E9%98%9F%E5%88%97-simple-queue/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-11-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-11-03T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="Qemu简单队列 Simple Queue">
@@ -1715,7 +1715,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

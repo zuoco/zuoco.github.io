@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 抽象工厂类 2. 工厂类的实现 3. 使用 1. 抽象工厂类 ISocketFactory网络接口类将socket的创建过与使用解耦合，通过工厂方法，允许客户端代码通过统一的接口创建不同类型的套接字，而无需直接依赖具体的实现类，但这是一个抽象类型，实际由TCPSocketFactory实现，只提供了TCP的。\n">
 <title>DeskFlow 异步网络接口（02） — 网络接口的工厂类</title>
 
-<link rel='canonical' href='http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/'>
+<link rel='canonical' href='https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="DeskFlow 异步网络接口（02） — 网络接口的工厂类">
 <meta property='og:description' content=" 1. 抽象工厂类 2. 工厂类的实现 3. 使用 1. 抽象工厂类 ISocketFactory网络接口类将socket的创建过与使用解耦合，通过工厂方法，允许客户端代码通过统一的接口创建不同类型的套接字，而无需直接依赖具体的实现类，但这是一个抽象类型，实际由TCPSocketFactory实现，只提供了TCP的。\n">
-<meta property='og:url' content='http://localhost:1313/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/'>
+<meta property='og:url' content='https://zuoco.github.io/p/deskflow-%E5%BC%82%E6%AD%A5%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A302-%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B7%A5%E5%8E%82%E7%B1%BB/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-19T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="DeskFlow 异步网络接口（02） — 网络接口的工厂类">
@@ -1033,7 +1033,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

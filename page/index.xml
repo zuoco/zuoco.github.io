@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on 阿左笔记</title>
-        <link>http://localhost:1313/page/</link>
+        <link>https://zuoco.github.io/page/</link>
         <description>Recent content in Pages on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <copyright>阿左阿右</copyright><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <copyright>阿左阿右</copyright><atom:link href="https://zuoco.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Search</title>
-        <link>http://localhost:1313/search/</link>
+        <link>https://zuoco.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/search/</guid>
+        <guid>https://zuoco.github.io/search/</guid>
         <description></description>
         </item>
         <item>
         <title>关于</title>
-        <link>http://localhost:1313/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://zuoco.github.io/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://zuoco.github.io/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;h2 id=&#34;笔记&#34;&gt;笔记
 &lt;/h2&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.yuque.com/u21893736/zlkol4?#%e3%80%8aQML%e3%80%8b&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;QML笔记 — 语雀文档&lt;/a&gt;&lt;/p&gt;

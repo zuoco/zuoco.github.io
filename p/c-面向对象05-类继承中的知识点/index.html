@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 3. 基类指针 4. 使用using提权/降权 5. 继承中的构造与析构 5.1. 构造 5.2. 析构 6. 虚继承 3. 基类指针 1 2 3 4 5 6 7 8 9 10 11 12 13 14 class UsbDevice { }; class UsbHub : public UsbDevice { } int main() { UsbHub hub; UsbDevice&amp; device1 = hub; // 基类引用指向派生类对象 UsbDevice* device2 = &amp;hub; // 基类指针指向派生类对象 } 4. 使用using提权/降权 用于修饰类成员（从基类继承过来的成员），提升成员的权限，但是只能对基类的public和protected成员进行提权或降权操作，不能改变基类private成员的访问权限，因为它们在派生类中不可见。\n">
 <title>C&#43;&#43;面向对象（05） — 类继承中的知识点</title>
 
-<link rel='canonical' href='http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/'>
+<link rel='canonical' href='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="C++面向对象（05） — 类继承中的知识点">
 <meta property='og:description' content=" 3. 基类指针 4. 使用using提权/降权 5. 继承中的构造与析构 5.1. 构造 5.2. 析构 6. 虚继承 3. 基类指针 1 2 3 4 5 6 7 8 9 10 11 12 13 14 class UsbDevice { }; class UsbHub : public UsbDevice { } int main() { UsbHub hub; UsbDevice&amp; device1 = hub; // 基类引用指向派生类对象 UsbDevice* device2 = &amp;hub; // 基类指针指向派生类对象 } 4. 使用using提权/降权 用于修饰类成员（从基类继承过来的成员），提升成员的权限，但是只能对基类的public和protected成员进行提权或降权操作，不能改变基类private成员的访问权限，因为它们在派生类中不可见。\n">
-<meta property='og:url' content='http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/'>
+<meta property='og:url' content='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A105-%E7%B1%BB%E7%BB%A7%E6%89%BF%E4%B8%AD%E7%9A%84%E7%9F%A5%E8%AF%86%E7%82%B9/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-03-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-03-25T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="C++面向对象（05） — 类继承中的知识点">
@@ -1176,7 +1176,7 @@ iostream是最终派生类，istream、ostream是直接基类，base_ios是间�
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

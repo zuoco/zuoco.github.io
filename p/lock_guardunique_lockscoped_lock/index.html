@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. std::lock_guard 2. std::unique_lock 2.1. 多种构造方式 2.2. 使用方法 2.3. 条件变量 3. std::scoped_lock 智能锁 用途 std::lock_guard 简化的互斥锁管理模板类 std::unique_lock 增强版的lock_guard，支持条件变量 std::scoped_lock 用于理多个互斥锁 1. std::lock_guard std::lock_guard 是一个用于简化互斥锁（std::mutex）管理的RAII类模板。它的核心目标是确保在作用域结束时自动释放互斥锁，从而避免手动调用 lock() 和 unlock() 可能导致的资源泄漏或死锁问题。\n主要特性包括：\n">
 <title>lock_guard、unique_lock、scoped_lock</title>
 
-<link rel='canonical' href='http://localhost:1313/p/lock_guardunique_lockscoped_lock/'>
+<link rel='canonical' href='https://zuoco.github.io/p/lock_guardunique_lockscoped_lock/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="lock_guard、unique_lock、scoped_lock">
 <meta property='og:description' content=" 1. std::lock_guard 2. std::unique_lock 2.1. 多种构造方式 2.2. 使用方法 2.3. 条件变量 3. std::scoped_lock 智能锁 用途 std::lock_guard 简化的互斥锁管理模板类 std::unique_lock 增强版的lock_guard，支持条件变量 std::scoped_lock 用于理多个互斥锁 1. std::lock_guard std::lock_guard 是一个用于简化互斥锁（std::mutex）管理的RAII类模板。它的核心目标是确保在作用域结束时自动释放互斥锁，从而避免手动调用 lock() 和 unlock() 可能导致的资源泄漏或死锁问题。\n主要特性包括：\n">
-<meta property='og:url' content='http://localhost:1313/p/lock_guardunique_lockscoped_lock/'>
+<meta property='og:url' content='https://zuoco.github.io/p/lock_guardunique_lockscoped_lock/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-06-04T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-06-04T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="lock_guard、unique_lock、scoped_lock">
@@ -1044,7 +1044,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

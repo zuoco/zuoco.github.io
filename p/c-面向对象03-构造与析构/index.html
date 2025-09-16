@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 基本概念 2. 构造函数 2.1. 默认构造 2.2. 单一参数构造 2.3. 委托构造 2.4. 拷贝构成 2.5. 移动构造 3. 初始化列表 4. 析构函数 1. 基本概念 构造函数名称与类的名称相同。 创建对象，就是调用构造函数对对象进行初始化，确保成员包含有效值。 如果类定义时没有提供构造函数，编译器会默认生成一个无参构造函数。 如果构造函数没有初始化成员变量，那么这个成员变量就会包含一个垃圾值。 一旦我们自定义了构造函数，那么编译器将不会生成默认构造函数，所以自定义构造函数，就必须提供一个默认构造函数。 2. 构造函数 构造函数一般是public的。\n">
 <title>C&#43;&#43;面向对象（03） — 构造与析构</title>
 
-<link rel='canonical' href='http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/'>
+<link rel='canonical' href='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="C++面向对象（03） — 构造与析构">
 <meta property='og:description' content=" 1. 基本概念 2. 构造函数 2.1. 默认构造 2.2. 单一参数构造 2.3. 委托构造 2.4. 拷贝构成 2.5. 移动构造 3. 初始化列表 4. 析构函数 1. 基本概念 构造函数名称与类的名称相同。 创建对象，就是调用构造函数对对象进行初始化，确保成员包含有效值。 如果类定义时没有提供构造函数，编译器会默认生成一个无参构造函数。 如果构造函数没有初始化成员变量，那么这个成员变量就会包含一个垃圾值。 一旦我们自定义了构造函数，那么编译器将不会生成默认构造函数，所以自定义构造函数，就必须提供一个默认构造函数。 2. 构造函数 构造函数一般是public的。\n">
-<meta property='og:url' content='http://localhost:1313/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/'>
+<meta property='og:url' content='https://zuoco.github.io/p/c-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A103-%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2023-03-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2023-03-12T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="C++面向对象（03） — 构造与析构">
@@ -1250,7 +1250,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

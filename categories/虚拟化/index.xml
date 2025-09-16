@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>虚拟化 on 阿左笔记</title>
-        <link>http://localhost:1313/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
+        <link>https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/</link>
         <description>Recent content in 虚拟化 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/categories/%E8%99%9A%E6%8B%9F%E5%8C%96/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>iBMC服务器管理软件</title>
-        <link>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
+        <link>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</link>
         <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
+        <guid>https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/</guid>
         <description>&lt;h1 id=&#34;ibmc服务器管理软件&#34;&gt;iBMC服务器管理软件
 &lt;/h1&gt;&lt;p&gt;iBMC智能管理系统（Intelligent Baseboard Management Controller，以下简称iBMC）是面向服务器全生命周期的服务器嵌入式管理系统。提供硬件状态监控、部署、节能、安全等系列管理工具，标准化接口构建服务器管理更加完善的生态系统。&lt;/p&gt;
 &lt;h2 id=&#34;ibmc登陆界面&#34;&gt;iBMC登陆界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_da2fa607b63a6a06.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_496fb0aefcc422cb.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_da2fa607b63a6a06.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%99%BB%E9%99%86%E7%95%8C%E9%9D%A2_hu_496fb0aefcc422cb.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC登陆界面&#34;
@@ -31,10 +31,10 @@
 	
 &gt;&lt;/p&gt;
 &lt;h2 id=&#34;ibmc管理界面&#34;&gt;iBMC管理界面
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2.png&#34;
 	width=&#34;2556&#34;
 	height=&#34;1245&#34;
-	srcset=&#34;http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_e6a52f82634db2c1.png 480w, http://localhost:1313/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_893c42a947eaf23e.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_e6a52f82634db2c1.png 480w, https://zuoco.github.io/p/ibmc%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AE%A1%E7%90%86%E8%BD%AF%E4%BB%B6/iBMC%E7%AE%A1%E7%90%86%E7%95%8C%E9%9D%A2_hu_893c42a947eaf23e.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 		alt=&#34;iBMC管理界面&#34;
@@ -55,10 +55,10 @@
         </item>
         <item>
         <title>虚拟硬件模型</title>
-        <link>http://localhost:1313/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</link>
+        <link>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</link>
         <pubDate>Fri, 03 May 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</guid>
+        <guid>https://zuoco.github.io/p/%E8%99%9A%E6%8B%9F%E7%A1%AC%E4%BB%B6%E6%A8%A1%E5%9E%8B/</guid>
         <description>&lt;h1 id=&#34;1-虚拟硬件模型&#34;&gt;1. 虚拟硬件模型
 &lt;/h1&gt;&lt;p&gt;  简单的讲“虚拟化”就是使用软件模拟硬件，一个硬件设备，例如QXl（一种虚拟显卡），或者一套硬件，例如虚拟机（可以运行操作系统）。&lt;code&gt;虚拟硬件模型&lt;/code&gt;虚拟的就是一个完整的主板环境，如QEMU中的q35或i440fx。那么这个主板环境有那些东西呢？&lt;/p&gt;
 &lt;ul&gt;

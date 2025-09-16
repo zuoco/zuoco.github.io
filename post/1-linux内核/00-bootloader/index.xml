@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《 Bootloader 》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/00-bootloader/</link>
+        <link>https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/00-bootloader/</link>
         <description>Recent content in 《 Bootloader 》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/1-linux%E5%86%85%E6%A0%B8/00-bootloader/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 17 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/1-linux%E5%86%85%E6%A0%B8/00-bootloader/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>BootLoader</title>
-        <link>http://localhost:1313/p/bootloader/</link>
+        <link>https://zuoco.github.io/p/bootloader/</link>
         <pubDate>Sun, 17 Dec 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/bootloader/</guid>
+        <guid>https://zuoco.github.io/p/bootloader/</guid>
         <description>&lt;h1 id=&#34;1-bootloader&#34;&gt;1. BootLoader
 &lt;/h1&gt;&lt;p&gt;Bootloader是操作系统的“引导程序”以及“引导管理程序”，操作系统的启动流程可以简单理解为：&lt;br&gt;
 &lt;strong&gt;[上电]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[UEFI]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[bootloader]&lt;/strong&gt; &amp;ndash;&amp;gt; &lt;strong&gt;[内核]&lt;/strong&gt; 。&lt;br&gt;
 显然，Bootloader的作用就是将内核加载到内存中，然后由于内核来加载操作系统的其他组件/服务，如文件系统，文件管理器，图形界面等。在linux生态中，常见的Bootloader有两种，Grub(用于X86架构)，U-Boot(用于ARM架构)。其中&lt;code&gt;引导&lt;/code&gt;就是进行一些硬件的检测、初始化的任务，然后将内核加载到内存中来启动内核，&lt;code&gt;引导管理&lt;/code&gt;就是当有多个内核时，在屏幕上显示一个菜单让用户选择要启动的哪个内核。
-&lt;img src=&#34;http://localhost:1313/p/bootloader/BootLoader.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/BootLoader.svg&#34;
 	
 	
 	
@@ -63,7 +63,7 @@ grub程序保存在EFI分区中，EFI分区挂在于位于/boot/efi目录下。&
 非XIP设备中存储的代码需要从存储设备中加载到内存中，然后才能执行，而XIP存储设备中的代码可以直接执行，XIP设备有SRAM、BROM等等，非XIP设备有EMMC、NANDFLASH、SD卡等等。&lt;/li&gt;
 &lt;li&gt;ARM-Linux启动流程&lt;br&gt;
 U-Boot一般分为两个阶段，uboot-SPL和uboo-proper，CPU上电首先执行BROM中的程序(由芯片厂写入)，该程序会根据芯片的引脚电平或者寄存器配置确定启动模式(从那个设备启动系统)，例如系统安装在SD卡，BROM中的程序会初始化SD卡，然后拷贝uboot-spl到SRAM中，开始执行uboot-spl中的程序，uboot-spl程序会初始化LDDR内存、pll、gpio等等硬件，然后从SD卡中加载uboot-proper到LDDR中，并跳转到程序的入口地址执行uboot-proper程序。uboot还会初始化一些其他设备，例如网卡等，然后从SD卡中加载内核文件。&lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/bootloader/u-boot.svg&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/bootloader/u-boot.svg&#34;
 	
 	
 	

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点 2.2. 树 2.3. 红黑树操作 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
 <title>01 — Linux内核数据结构 — 非增强型红黑树</title>
 
-<link rel='canonical' href='http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/'>
+<link rel='canonical' href='https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="01 — Linux内核数据结构 — 非增强型红黑树">
 <meta property='og:description' content=" 1. 什么是红黑树 2. Linux内核红黑树源码 2.1. 节点 2.2. 树 2.3. 红黑树操作 1. 什么是红黑树 红黑树的基本形态如下：\n首先阅读一下比较正式的定义：“红黑树是一种平衡二叉查找树，它在二叉搜索树的基础上，通过附加的规则和操作（变色和旋转）来维持树的相对平衡，从而保证在最坏情况下基本操作（查找、插入、删除）的时间复杂度为O(log n)”。这里面有一些概念，例如二叉树、二叉（搜索）树、平衡。\n">
-<meta property='og:url' content='http://localhost:1313/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/'>
+<meta property='og:url' content='https://zuoco.github.io/p/01-linux%E5%86%85%E6%A0%B8%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%9D%9E%E5%A2%9E%E5%BC%BA%E5%9E%8B%E7%BA%A2%E9%BB%91%E6%A0%91/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-02-05T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-02-05T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="01 — Linux内核数据结构 — 非增强型红黑树">
@@ -1263,7 +1263,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

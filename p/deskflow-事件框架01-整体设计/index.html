@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1. 设计思路 2. 核心类型 2.1. 顶层接口 2.2. 平台层实现 3. 定时器 4. 线程安全 5. 事件处理器 6. 事件订阅 7. 事件发布 8. 事件循环 1. 设计思路 DeskFlow的事件框架实现了一个基于发布-订阅模式的异步事件系统。事件队列使用了三层设计： 接口层（IEventQueue）、平台缓冲层（IEventQueueBuffer）、平台实现层（各 OS 特定实现）。发布者和订阅者类型通过关联一个IEventQueue类型的成员与事件框架来发布或者订阅事件。\n">
 <title>DeskFlow 事件框架（01） — 整体设计</title>
 
-<link rel='canonical' href='http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/'>
+<link rel='canonical' href='https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="DeskFlow 事件框架（01） — 整体设计">
 <meta property='og:description' content=" 1. 设计思路 2. 核心类型 2.1. 顶层接口 2.2. 平台层实现 3. 定时器 4. 线程安全 5. 事件处理器 6. 事件订阅 7. 事件发布 8. 事件循环 1. 设计思路 DeskFlow的事件框架实现了一个基于发布-订阅模式的异步事件系统。事件队列使用了三层设计： 接口层（IEventQueue）、平台缓冲层（IEventQueueBuffer）、平台实现层（各 OS 特定实现）。发布者和订阅者类型通过关联一个IEventQueue类型的成员与事件框架来发布或者订阅事件。\n">
-<meta property='og:url' content='http://localhost:1313/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/'>
+<meta property='og:url' content='https://zuoco.github.io/p/deskflow-%E4%BA%8B%E4%BB%B6%E6%A1%86%E6%9E%B601-%E6%95%B4%E4%BD%93%E8%AE%BE%E8%AE%A1/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-10-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-10-06T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="DeskFlow 事件框架（01） — 整体设计">
@@ -1009,7 +1009,7 @@ dispatchEvent 方法负责将事件路由到相应的处理器。它首先查找
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《Python》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/8-python/</link>
+        <link>https://zuoco.github.io/post/8-python/</link>
         <description>Recent content in 《Python》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate>Tue, 12 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/post/8-python/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 12 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://zuoco.github.io/post/8-python/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Python的C&#43;&#43;扩展开发（02） — 使用PyCxx开发Python模块</title>
-        <link>http://localhost:1313/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9102-%E4%BD%BF%E7%94%A8pycxx%E5%BC%80%E5%8F%91python%E6%A8%A1%E5%9D%97/</link>
+        <link>https://zuoco.github.io/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9102-%E4%BD%BF%E7%94%A8pycxx%E5%BC%80%E5%8F%91python%E6%A8%A1%E5%9D%97/</link>
         <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9102-%E4%BD%BF%E7%94%A8pycxx%E5%BC%80%E5%8F%91python%E6%A8%A1%E5%9D%97/</guid>
+        <guid>https://zuoco.github.io/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9102-%E4%BD%BF%E7%94%A8pycxx%E5%BC%80%E5%8F%91python%E6%A8%A1%E5%9D%97/</guid>
         <description>&lt;p&gt;使用C++编写一个Python模块要做 4 件事情：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;1. C++类型定义&lt;/code&gt;，将这个类型封装为 Python 类对象。&lt;/li&gt;
@@ -508,10 +508,10 @@
         </item>
         <item>
         <title>Python的C&#43;&#43;扩展开发（01） - PyCxx中的有那些类型</title>
-        <link>http://localhost:1313/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9101-pycxx%E4%B8%AD%E7%9A%84%E6%9C%89%E9%82%A3%E4%BA%9B%E7%B1%BB%E5%9E%8B/</link>
+        <link>https://zuoco.github.io/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9101-pycxx%E4%B8%AD%E7%9A%84%E6%9C%89%E9%82%A3%E4%BA%9B%E7%B1%BB%E5%9E%8B/</link>
         <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9101-pycxx%E4%B8%AD%E7%9A%84%E6%9C%89%E9%82%A3%E4%BA%9B%E7%B1%BB%E5%9E%8B/</guid>
+        <guid>https://zuoco.github.io/p/python%E7%9A%84c-%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%9101-pycxx%E4%B8%AD%E7%9A%84%E6%9C%89%E9%82%A3%E4%BA%9B%E7%B1%BB%E5%9E%8B/</guid>
         <description>&lt;p&gt;为了简化 C++ 与 Python 的互操作，PyCXX设计了 Object 类，使用 C++ 封装了 Python 对象（PyObject*）。&lt;br&gt;
 整个库最核心的就是Object类，它的核心是封装了一个 PyObject* 指针，并管理其生命周期（引用计数）。&lt;br&gt;
 通过 C++ 的 RAII 机制，确保 Python 对象在 C++ 作用域内安全地创建和销毁。&lt;/p&gt;
@@ -779,10 +779,10 @@
         </item>
         <item>
         <title>Python的C/C&#43;&#43;绑定</title>
-        <link>http://localhost:1313/p/python%E7%9A%84c/c-%E7%BB%91%E5%AE%9A/</link>
+        <link>https://zuoco.github.io/p/python%E7%9A%84c/c-%E7%BB%91%E5%AE%9A/</link>
         <pubDate>Sun, 10 Aug 2025 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/python%E7%9A%84c/c-%E7%BB%91%E5%AE%9A/</guid>
+        <guid>https://zuoco.github.io/p/python%E7%9A%84c/c-%E7%BB%91%E5%AE%9A/</guid>
         <description>&lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#1-pythonc-api%e6%8e%a5%e5%8f%a3&#34; &gt;1. Python/C API接口&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;#2-%e4%bd%bf%e7%94%a8-cc-%e7%bc%96%e5%86%99-python-%e6%a8%a1%e5%9d%97&#34; &gt;2. 使用 C/C++ 编写 Python 模块&lt;/a&gt;&lt;/li&gt;
@@ -794,7 +794,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;1-pythonc-api接口&#34;&gt;1. Python/C API接口
-&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/p/python%E7%9A%84c/c-%E7%BB%91%E5%AE%9A/cpython.svg&#34;
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://zuoco.github.io/p/python%E7%9A%84c/c-%E7%BB%91%E5%AE%9A/cpython.svg&#34;
 	
 	
 	
@@ -1269,10 +1269,10 @@ test.py&lt;/p&gt;
         </item>
         <item>
         <title>Python虚拟环境</title>
-        <link>http://localhost:1313/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+        <link>https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
         <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+        <guid>https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
         <description>&lt;p&gt;直接使用 pip 在全局环境中安装 Python 包，会干扰系统的包管理器（如 apt）。从Python 3.11 开始引入的一项安全措施 —— 虚拟环境，旨在防止用户意外地破坏系统Python的环境。    &lt;br&gt;
 使用方法:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -1290,10 +1290,10 @@ test.py&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;p&gt;运行source myenv/bin/activate命令后就进入了python虚拟环境中：   &lt;br&gt;
-&lt;img src=&#34;http://localhost:1313/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png&#34;
+&lt;img src=&#34;https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png&#34;
 	width=&#34;1209&#34;
 	height=&#34;55&#34;
-	srcset=&#34;http://localhost:1313/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83_hu_c54a79f5b2c08434.png 480w, http://localhost:1313/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83_hu_a5cd596b8e59ba80.png 1024w&#34;
+	srcset=&#34;https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83_hu_c54a79f5b2c08434.png 480w, https://zuoco.github.io/p/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83_hu_a5cd596b8e59ba80.png 1024w&#34;
 	loading=&#34;lazy&#34;
 	
 	

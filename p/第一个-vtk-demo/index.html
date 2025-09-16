@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="认识 VTK 中的基本类型，使用 VTK 渲染一个圆锥">
 <title>第一个 VTK Demo</title>
 
-<link rel='canonical' href='http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/'>
+<link rel='canonical' href='https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/'>
 
 <link rel="stylesheet" href="/scss/style.min.694804b5d7b7bf52f24b1581703c4336e772349b33318d26c73b25538b7645cf.css"><meta property='og:title' content="第一个 VTK Demo">
 <meta property='og:description' content="认识 VTK 中的基本类型，使用 VTK 渲染一个圆锥">
-<meta property='og:url' content='http://localhost:1313/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/'>
+<meta property='og:url' content='https://zuoco.github.io/p/%E7%AC%AC%E4%B8%80%E4%B8%AA-vtk-demo/'>
 <meta property='og:site_name' content='阿左笔记'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2025-08-29T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2025-08-29T00:00:00&#43;00:00'/>
 <meta name="twitter:title" content="第一个 VTK Demo">
@@ -500,7 +500,7 @@
   <tbody>
       <tr>
           <td>vtkNew</td>
-          <td>VTK封装的智能指针。</td>
+          <td>在堆内存中分配 VTK object，是 vtkSmartPointer 的替代品。</td>
       </tr>
       <tr>
           <td>vtkNamedColors</td>
@@ -529,6 +529,52 @@
       <tr>
           <td>vtkCamera</td>
           <td>可以理解为观察着的眼睛</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>vtkProp</td>
+          <td>一个基类，所有可以在渲染场景中存在的类型的基类。</td>
+      </tr>
+      <tr>
+          <td>vtkActor2D</td>
+          <td>继承自vtkProp，用于在渲染场景中显示二维对象。</td>
+      </tr>
+      <tr>
+          <td>vtkProp3D</td>
+          <td>继承自vtkProp，表示一个用于放置在渲染场景中的3D对象。</td>
+      </tr>
+      <tr>
+          <td>vtkActor</td>
+          <td>继承自vtkProp3D，表示渲染场景中的一个对象（几何形状和属性），支持矩阵变换。</td>
+      </tr>
+      <tr>
+          <td>vtkTextActor</td>
+          <td>用于实现文本的 actor。</td>
+      </tr>
+      <tr>
+          <td>vtkRenderWindowInteractor</td>
+          <td>继承自vtkObject，负责窗口交互，将鼠标/键盘/定时器消息路由至 vtkInteractorObserver 及其子类。 <br> 同时，vtkRenderWindowInteractor 还提供了对象拾取、渲染帧率控制以及头灯光源管理等交互功能。</td>
+      </tr>
+      <tr>
+          <td>vtkOrientationMarkerWidget</td>
+          <td>用于操控标记道具的2D控件</td>
+      </tr>
+      <tr>
+          <td>vtkInteractorObserver</td>
+          <td>vtkInteractorObserver 是一个抽象基类，其子类用于观察由 vtkRenderWindowInteractor 触发的事件。这些子类通常是诸如 3D 控件之类的对象——它们能够与场景中的角色（actors）进行交互，或以交互方式探查场景信息。</td>
+      </tr>
+      <tr>
+          <td>vtkInteractorStyleTrackballCamera</td>
+          <td>vtkInteractorStyleTrackballCamera 允许用户以交互方式操控（旋转、平移等）场景的视点——即相机。在轨迹球交互模式下，鼠标移动的幅度与特定鼠标绑定触发的相机运动成正比。例如，小幅度的左键移动会使相机围绕其焦点产生小幅旋转。对于三键鼠标：左键用于旋转，右键用于缩放，中键用于平移，Ctrl+左键用于自转，Shift+右键用于环境旋转（若鼠标按键较少，则Ctrl+Shift+左键用于缩放，Shift+左键用于平移）。</td>
       </tr>
   </tbody>
 </table></div>
@@ -781,7 +827,7 @@
     >VTK官方Demo</a>，循序渐进的示例程序。 <br>
 <a class="link" href="https://examples.vtk.org/site/Python/#tutorial"  target="_blank" rel="noopener"
     >Python Demo</a>，Python 示例程序。      <br>
-<a class="link" href="https://vtk-951.netlify.app/"  target="_blank" rel="noopener"
+<a class="link" href="https://vtk.org/doc/nightly/html/index.html"  target="_blank" rel="noopener"
     >VTK接口文档</a>，类型以及函数接口文档。 <br>
 <a class="link" href="https://examples.vtk.org/site/Cxx/Coverage/CxxVTKClassesUsed/"  target="_blank" rel="noopener"
     >类文档</a>，带有示例的类文档。</p>
@@ -1008,7 +1054,7 @@
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
-            </script><script type="text/javascript" src="/ts/main.f999a9e2f8440c4e4ad0c6545ba1e81036bdf66abdccd704387b63d3b5933d53.js" defer></script>
+            </script><script type="text/javascript" src="/ts/main.1e9a3bafd846ced4c345d084b355fb8c7bae75701c338f8a1f8a82c780137826.js" defer></script>
 <script>
     (function () {
         const customFont = document.createElement('link');

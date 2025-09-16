@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>《DeskFlow： 多设备间共享一套键鼠》 on 阿左笔记</title>
-        <link>http://localhost:1313/post/99-deskflow/</link>
+        <link>https://zuoco.github.io/post/99-deskflow/</link>
         <description>Recent content in 《DeskFlow： 多设备间共享一套键鼠》 on 阿左笔记</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>阿左阿右</copyright>
-        <lastBuildDate></lastBuildDate><atom:link href="http://localhost:1313/post/99-deskflow/index.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate></lastBuildDate><atom:link href="https://zuoco.github.io/post/99-deskflow/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
